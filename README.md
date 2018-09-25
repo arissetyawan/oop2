@@ -1,2 +1,1 @@
-# oop2
-# use branch: poltek instead
+Use branch "poltek" instead :)
