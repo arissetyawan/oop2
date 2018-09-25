@@ -1,1 +1,0 @@
-Use branch "poltek" instead :)
