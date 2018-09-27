@@ -68,7 +68,7 @@ public class Person extends MyConnection{
     public boolean create() {
         String query = "INSERT INTO "+ tableName +"(name, phone, profession) values ('" + this.name + "', '" + this.phone + "', '" + this.profession + "')";
         try {
-            Statement stmt = this.conn.createStatement();
+            Statement stmt = this.conn().createStatement();
             return stmt.executeUpdate(query) > 0;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -105,7 +105,7 @@ public class Person extends MyConnection{
         Person person = new Person();
         String query = "SELECT * FROM " + tableName + " WHERE id = " + id + " ";
         try {
-            Statement stmt = this.conn.createStatement();
+            Statement stmt = this.conn().createStatement();
             ResultSet res = stmt.executeQuery(query);
             if (res.next()) {
                 person.setName(res.getString("name"));

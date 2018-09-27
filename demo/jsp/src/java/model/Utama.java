@@ -13,7 +13,7 @@ public class Utama{
     
     public static void main(String args[]){
         Person p= new Person();
-        p.find(4);
+        p.find(1);
         System.out.println(p);
         System.out.println(p.all());
     }
