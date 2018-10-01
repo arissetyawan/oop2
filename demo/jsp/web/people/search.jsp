@@ -1,7 +1,7 @@
 <%-- 
     Document   : search
     Created on : Oct 1, 2018, 1:55:29 PM
-    Author     : x201
+    Author     : arissetyawan.email@gmail.com
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

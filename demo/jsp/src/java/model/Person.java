@@ -6,7 +6,7 @@
 
 /**
  *
- * @author x201
+ * @author arissetyawan.email@gmail.com
  * CREATE TABLE people (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(30) NOT NULL,
@@ -76,7 +76,14 @@ public class Person extends MyConnection{
         }
     }
 
+    private boolean validate(){
+        return !"".equals(this.name);
+    }
+
     public boolean update() {
+        if(!validate()){
+            return false;
+        }
         String query = "UPDATE "+ tableName + " SET name='"
         + this.name + "', phone='" + this.phone
         + "', profession='" + this.profession
@@ -94,7 +101,7 @@ public class Person extends MyConnection{
         String query = "DELETE FROM " + tableName + " WHERE id = " + this.id + " ";
         try {
             Statement stmt = this.conn().createStatement();
-            return stmt.executeUpdate(query) > 0;
+            return stmt.executeUpdate(query) > 1;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
@@ -123,7 +130,7 @@ public class Person extends MyConnection{
         String query = "SELECT * FROM " + tableName;
         ArrayList<Person> persons = new ArrayList<>();
         try {
-            Statement stmt = this.conn().createStatement();
+            Statement stmt = this.conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
                 Person person = new Person();

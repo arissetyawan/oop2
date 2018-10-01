@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author x201
+ * @author arissetyawan.email@gmail.com
  */
 public class Utama{
     

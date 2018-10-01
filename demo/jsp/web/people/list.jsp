@@ -1,7 +1,7 @@
 <%-- 
     Document   : list
     Created on : Oct 1, 2018, 2:37:51 PM
-    Author     : x201
+    Author     : arissetyawan.email@gmail.com
 --%>
 <%@page language= "java" contentType="text/html; charset=UTF-8" pageEncoding="UTF8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

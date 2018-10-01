@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author x201
+ * @author arissetyawan.email@gmail.com
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MyConnection {
+public class myConnection {
     public int id;
     public Connection conn;
 

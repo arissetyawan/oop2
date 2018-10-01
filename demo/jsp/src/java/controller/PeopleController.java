@@ -18,7 +18,7 @@ import model.Person;
 
 /**
  *
- * @author x201
+ * @author arissetyawan.email@gmail.com
  */
 public class PeopleController extends HttpServlet {
     private final static String add_action = "edit";
