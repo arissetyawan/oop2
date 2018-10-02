@@ -79,7 +79,6 @@ public class Person extends MyConnection{
     private boolean validate(){
         return !"".equals(this.name);
     }
-
     public boolean update() {
         if(!validate()){
             return false;
@@ -101,7 +100,7 @@ public class Person extends MyConnection{
         String query = "DELETE FROM " + tableName + " WHERE id = " + this.id + " ";
         try {
             Statement stmt = this.conn().createStatement();
-            return stmt.executeUpdate(query) > 1;
+            return stmt.executeUpdate(query) > 0;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
@@ -130,7 +129,7 @@ public class Person extends MyConnection{
         String query = "SELECT * FROM " + tableName;
         ArrayList<Person> persons = new ArrayList<>();
         try {
-            Statement stmt = this.conn.createStatement();
+            Statement stmt = this.conn().createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
                 Person person = new Person();
