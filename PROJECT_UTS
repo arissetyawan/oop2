@@ -1,33 +1,73 @@
-	https://github.com/arissetyawan/oop2.git 
-
+ GUNAKAN PATTERN MVC, theme bootstrap
+ ikuti contoh folder project jsp dalam demo.
+ tidak sesuai pattern, tidak akan dinilai.
+ Target UTS selesai e-commerce web MVC java
+ Target UAS selesai webservice dengan documentasi apiary.io	
 
 	Kelompok max. 6
 
 	CRUD user
 		>> email
+		>> password
 		>> full_name
 		>> address
-		>> password
+  	>> created_at
+  	>> updated_at
 
 	CRUD product
 		>> category_id
 		>> name
 		>> price
 		>> stock
+  	>> created_at
+  	>> updated_at
+  	>> created_at
+  	>> updated_at
 
-	CRUD order
-		>> no
-		transaction
+	CRUD order + transaction (order has many transactions)
+		>> no # nomer order misal pake timestamp + random 12103930000
+	  CRUD transactions
 		>> product_id
 		>> price
 		>> qty
 		>> order_id
+  	>> created_at
+  	>> updated_at
 
 	CRUD category
 		>> name
 		>> category_id
-		>> list product by category
+  	>> created_at
+  	>> updated_at
 
-		>>> GUNAKAN PATTERN MVC
+	CRUD shippings
+		>> full_name
+		>> address
+		>> order_id
+  	>> created_at
+  	>> updated_at
 
+  CRUD payments
+  	>> order_id
+  	>> amount
+  	>> method
+  	>> created_at
+  	>> updated_at
 
+  CRUD feedbacks
+  	>> order_id
+  	>> product_id
+  	>> title
+  	>> content
+  	>> user_id
+  	>> created_at
+  	>> updated_at
+
+  CRUD post
+    >> title
+    >> content
+    >> user_id
+    >> post_id
+    >> created_at
+    >> updated_at
+    >> CRUD city
