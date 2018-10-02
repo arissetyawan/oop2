@@ -1,0 +1,33 @@
+	https://github.com/arissetyawan/oop2.git 
+
+
+	Kelompok max. 6
+
+	CRUD user
+		>> email
+		>> full_name
+		>> address
+		>> password
+
+	CRUD product
+		>> category_id
+		>> name
+		>> price
+		>> stock
+
+	CRUD order
+		>> no
+		transaction
+		>> product_id
+		>> price
+		>> qty
+		>> order_id
+
+	CRUD category
+		>> name
+		>> category_id
+		>> list product by category
+
+		>>> GUNAKAN PATTERN MVC
+
+
