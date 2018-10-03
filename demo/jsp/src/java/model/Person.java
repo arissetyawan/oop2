@@ -130,7 +130,7 @@ public class Person extends MyConnection{
         String query = "SELECT * FROM " + tableName;
         ArrayList<Person> persons = new ArrayList<>();
         try {
-            Statement stmt = this.conn.createStatement();
+            Statement stmt = this.conn().createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
                 Person person = new Person();
