@@ -14,6 +14,8 @@ public class Utama{
     public static void main(String args[]){
         Person p= new Person();
         p.find(1);
+        p.setName("Jono");
+        p.create();
         System.out.println(p);
         System.out.println(p.all());
     }

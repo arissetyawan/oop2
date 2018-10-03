@@ -10,7 +10,7 @@
 <body>
         <div align="center">
 
-                        <h1>List of People</h2></h1>
+            <h1>List of People</h2></h1>
             <h4><c:out value='${message}' /></h4>
             <h2><a href="people?action=new">Add Person</a></h2>
                 <table border="1" cellpadding="5">

@@ -24,15 +24,14 @@ import java.util.ArrayList;
 
 public class Person extends MyConnection{
     private final String tableName= "people";
-
-    public Person() {
-        super();
-    }
-
     public String name;
     public String phone;
     public String profession;
 
+
+    public Person() {
+        super();
+    }
     public int getId() {
         return id;
     }
@@ -66,6 +65,9 @@ public class Person extends MyConnection{
     }
     
     public boolean create() {
+        if(!validate()){
+            return false;
+        }
         String query = "INSERT INTO "+ tableName +"(name, phone, profession) values ('" + this.name + "', '" + this.phone + "', '" + this.profession + "')";
         try {
             Statement stmt = this.conn().createStatement();
@@ -77,7 +79,11 @@ public class Person extends MyConnection{
     }
 
     private boolean validate(){
-        return !"".equals(this.name);
+        boolean status= false;
+        if (!"".equals(this.name) &&  !"".equals(this.phone)){
+            status= true;
+        } 
+        return status;
     }
 
     public boolean update() {
@@ -101,7 +107,7 @@ public class Person extends MyConnection{
         String query = "DELETE FROM " + tableName + " WHERE id = " + this.id + " ";
         try {
             Statement stmt = this.conn().createStatement();
-            return stmt.executeUpdate(query) > 1;
+            return stmt.executeUpdate(query) > 0;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;

@@ -11,7 +11,10 @@
   <head><title>People MVC JSP Bean Application</title></head>
 
     <body>
-        <h1>Adding Person</h1>
+        <h1>Adding Person</h1>            
+        
+        <h4><c:out value='${message}' /></h4>
+
         <form action="/jsp/people?action=create" method="post"> 
         <%@include file= "form.html" %>
         </form>

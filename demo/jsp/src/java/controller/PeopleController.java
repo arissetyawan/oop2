@@ -21,7 +21,7 @@ import model.Person;
  * @author arissetyawan.email@gmail.com
  */
 public class PeopleController extends HttpServlet {
-    private final static String add_action = "edit";
+    private final static String add_action = "new";
     private final static String delete_action = "delete";
     private final static String edit_action = "edit";
     private final static String list_action = "list";
@@ -98,7 +98,7 @@ public class PeopleController extends HttpServlet {
         else{
             message= "new person failed to add";
             request.setAttribute("message", message);
-            request.getRequestDispatcher("people?action="+list_action).include(request, response);
+            request.getRequestDispatcher("people?action="+add_action).include(request, response);
         }
     }
 
@@ -146,7 +146,7 @@ public class PeopleController extends HttpServlet {
     }
  
     private void deletePerson(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
+            throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
  
         Person person = new Person();
@@ -158,7 +158,10 @@ public class PeopleController extends HttpServlet {
             message= "person was not deleted";                
         }    
         request.setAttribute("message", message);
-        response.sendRedirect("people?action="+list_action); 
+        RequestDispatcher dispatcher = request.getRequestDispatcher("people?action="+ list_action);
+        dispatcher.forward(request, response);
+
+//        response.sendRedirect("people?action="+list_action); 
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

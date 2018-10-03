@@ -28,10 +28,10 @@ public class MyConnection {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             this.conn= DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/jspmvcjdbc", "root", "root");
+            System.out.println("Connected");
         } catch (SQLException ex) {
             Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Connected");
         return this.conn;
     }
 
