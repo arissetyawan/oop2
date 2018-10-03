@@ -1,5 +1,6 @@
 	https://github.com/arissetyawan/oop2.git 
 
+		>>> GUNAKAN PATTERN MVC
 
 	Kelompok max. 6
 
@@ -10,6 +11,7 @@
 		>> password
 
 	CRUD product
+		>> user_id
 		>> category_id
 		>> name
 		>> price
@@ -17,17 +19,23 @@
 
 	CRUD order
 		>> no
+		>> user_id
 		transaction
 		>> product_id
 		>> price
 		>> qty
 		>> order_id
+			user beli banyak barang
+			nomer order 033000111
 
 	CRUD category
 		>> name
 		>> category_id
 		>> list product by category
 
-		>>> GUNAKAN PATTERN MVC
-
-
+	CRUD feedback
+		>> product_id
+		>> rating (12345)
+		>> comment
+		>> user_id
+		>> order_id

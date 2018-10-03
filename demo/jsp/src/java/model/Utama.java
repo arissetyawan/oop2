@@ -16,7 +16,14 @@ public class Utama{
         p.find(1);
         p.setName("Jono");
         p.create();
-        System.out.println(p);
+        System.out.println(System.currentTimeMillis());
         System.out.println(p.all());
+        Order o = new Order();
+        o.setUser(1);
+        o.initOrCeate(2);
+        o.find(1);
+        o.setUser(1);
+        o.initOrCeate(21);
+        o.find(5);
     }
 }
