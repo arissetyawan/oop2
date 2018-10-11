@@ -1,0 +1,48 @@
+<style>
+.error{
+	border: 1px solid #FF0000;
+}
+.button{
+	border: 1px solid blue;
+	display: inline;
+	background-color: #b1b2b2;
+	
+}
+</style>
+
+<form>
+email:	<input type="text" name="email" id="email" />
+<small id="email-note"></small><br />
+password: <input type="password" name="password" id="paswd" />
+<input type="submit" value="Login" id="login-btn" /><br />
+<div id="button-div" class="button" onclick="check();"> CLick ini </div>
+</form>
+<script src="jQuery v3.3.1.min.js"></script>
+<script type="text/javascript" >
+	//https://api.jquery.com/click/
+
+$("#login-btn").click(function(){
+	var email= $('#email');
+	email.removeClass('error');
+
+	if(email.val()==""){
+		email.addClass('error');
+		$('#email-note').text("Cant be blank");	
+		alert("Please double check entry !");
+		return false;
+	}
+		
+});
+
+function check(){
+
+	var email= $('#email');
+	email.removeClass('error');
+
+	if(email.val()==""){
+		email.addClass('error');
+		alert("Please double check entry !");
+		return false;
+	}
+}
+</script> 
