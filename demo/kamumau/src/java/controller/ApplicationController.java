@@ -48,6 +48,10 @@ public class ApplicationController extends HttpServlet {
             request.setAttribute("notice", "Welcome, " + user.getName());            
         }
     }
+    public void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        HttpSession session = request.getSession();
+        session.setAttribute("current_user", null);
+    }
 
     public void mustLoggedIn(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 

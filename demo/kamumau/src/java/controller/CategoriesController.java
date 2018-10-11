@@ -42,33 +42,21 @@ public class CategoriesController extends ApplicationController {
         try {
             switch (action) {
             case "new":
+                mustLoggedIn(request, response);
                 break;
             case "create":
+                mustLoggedIn(request, response);
                 break;
             case "delete":
+                mustLoggedIn(request, response);
                 break;
             case "edit":
+                mustLoggedIn(request, response);
                 break;
             case "update":
+                mustLoggedIn(request, response);
                 break;
             default:
-                /* testing area: attention KELOMPOK User
-                 i want to make it must logged in
-                 then i call mustLoggedIn, otherwise dont.
-                 setLoggedIn is to simulate login
-                 you have to call setLoggedIn after you executed eg. users?action=login
-                if user.find_by_email_and_password(email, password){
-                    setLoggedIn(user, request, response);
-                    // the above method will set session for logged user;
-                    // that is callable via mustLoggedIn
-                }
-                */
-                // to test:
-                User user= new User();
-                // in fact, you dont need to call this 
-                setLoggedIn( user, request, response);
-                //setLoggedIn( null, request, response);
-
                 mustLoggedIn(request, response);
                 listCategories(request, response);
                 break;

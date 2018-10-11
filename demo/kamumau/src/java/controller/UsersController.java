@@ -50,6 +50,12 @@ public class UsersController extends ApplicationController {
                 break;
             case "update":
                 break;
+            case "logout":
+                doLogout(request, response);
+                break;
+            case "do-login":
+                doLogin(request, response);
+                break;
             case "welcome":
                 showWelcomePage(request, response);
                 break;
@@ -59,6 +65,24 @@ public class UsersController extends ApplicationController {
         }
     }
 
+    private void doLogin(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException, ServletException  {
+                String email= request.getParameter("email");
+                String passwd= request.getParameter("password");
+                User user= new User();     
+                user.setEmail(email);
+                user.setPassword(passwd);
+                logout(request, response);
+                if(user.doLogin()){
+                    setLoggedIn(user, request, response);
+                    showWelcomePage(request, response);
+                }
+        }
+    private void doLogout(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException, ServletException  {
+                logout(request, response);
+                showLoginForm(request, response);
+        }
     private void showLoginForm(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException, ServletException  {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/users/login.jsp");

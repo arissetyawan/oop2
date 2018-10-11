@@ -36,7 +36,7 @@
         <a class="nav-link" href="#">My Profile</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Sign Out</a>
+        <a class="nav-link" href="users?action=logout">Sign Out</a>
       </li>
     </ul>
   </div>
