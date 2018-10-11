@@ -25,10 +25,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"   crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <!-- if not logged in -->
-    <%@include file= "/layouts/navbar_not_logged_in.jsp" %>
-    <!-- if logged in -->
-    <!-- %@include file= "/layouts/navbar_not_logged_in.jsp" % -->
+  <body class="text-center">
+    <% 
+    if (session.getAttribute("current_user") !=null) { %>
+        <jsp:include page="/layouts/navbar_logged_in.jsp" flush="true"/>
+    <% } else { %> 
+        <jsp:include page="/layouts/navbar_not_logged_in.jsp" flush="true"/>
+      <% } %>
 
     

@@ -15,12 +15,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Category;
+import model.User;
 
 /**
  *
  * @author x201
  */
-public class CategoriesController extends HttpServlet {
+public class CategoriesController extends ApplicationController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,35 +33,50 @@ public class CategoriesController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
+    @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = response.getWriter()) {
-                String action = request.getParameter("action");
-                if(action==null){
-                    action= "list";
+        String action = request.getParameter("action");
+        if(action==null){ action= "list"; }
+        try {
+            switch (action) {
+            case "new":
+                break;
+            case "create":
+                break;
+            case "delete":
+                break;
+            case "edit":
+                break;
+            case "update":
+                break;
+            default:
+                /* testing area: attention KELOMPOK User
+                 i want to make it must logged in
+                 then i call mustLoggedIn, otherwise dont.
+                 setLoggedIn is to simulate login
+                 you have to call setLoggedIn after you executed eg. users?action=login
+                if user.find_by_email_and_password(email, password){
+                    setLoggedIn(user, request, response);
+                    // the above method will set session for logged user;
+                    // that is callable via mustLoggedIn
                 }
-                try {
-                    switch (action) {
-                    case "new":
-                        break;
-                    case "create":
-                        break;
-                    case "delete":
-                        break;
-                    case "edit":
-                        break;
-                    case "update":
-                        break;
-                    default:
-                        listCategories(request, response);
-                        break;
-                    }
-                } 
-            catch (SQLException ex) {
-                throw new ServletException(ex);
+                */
+                // to test:
+                User user= new User();
+                // in fact, you dont need to call this 
+                setLoggedIn( user, request, response);
+                //setLoggedIn( null, request, response);
+
+                mustLoggedIn(request, response);
+                listCategories(request, response);
+                break;
             }
         }
+        catch (Exception ex) {
+            throw new ServletException(ex);
+        } 
     }
 
     
@@ -71,7 +87,6 @@ public class CategoriesController extends HttpServlet {
         request.setAttribute("categories", categories);
         RequestDispatcher dispatcher = request.getRequestDispatcher("categories/list.jsp");
         dispatcher.forward(request, response);
-        
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

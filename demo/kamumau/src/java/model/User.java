@@ -11,4 +11,11 @@ package model;
  */
 public class User {
     
+    public int getId(){
+        return 1;
+    }
+
+    public String getName(){
+        return "Nama user";
+    }
 }

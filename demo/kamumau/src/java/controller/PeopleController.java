@@ -20,7 +20,7 @@ import model.Person;
  *
  * @author arissetyawan.email@gmail.com
  */
-public class PeopleController extends HttpServlet {
+public class PeopleController extends ApplicationController {
     private final static String add_action = "new";
     private final static String delete_action = "delete";
     private final static String edit_action = "edit";
@@ -39,36 +39,34 @@ public class PeopleController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = response.getWriter()) {
-                String action = request.getParameter("action");
-                if(action==null){
-                    action= "list";
-                }
-                try {
-                    switch (action) {
-                    case "new":
-                        showNewForm(request, response);
-                        break;
-                    case "create":
-                        createPerson(request, response);
-                        break;
-                    case "delete":
-                        deletePerson(request, response);
-                        break;
-                    case "edit":
-                        showEditForm(request, response);
-                        break;
-                    case "update":
-                        updatePerson(request, response);
-                        break;
-                    default:
-                        listPerson(request, response);
-                        break;
-                    }
-                } 
-            catch (SQLException ex) {
-                throw new ServletException(ex);
+        String action = request.getParameter("action");
+        if(action==null){
+            action= "list";
+        }
+        try {
+            switch (action) {
+                case "new":
+                    showNewForm(request, response);
+                    break;
+                case "create":
+                    createPerson(request, response);
+                    break;
+                case "delete":
+                    deletePerson(request, response);
+                    break;
+                case "edit":
+                    showEditForm(request, response);
+                    break;
+                case "update":
+                    updatePerson(request, response);
+                    break;
+                default:
+                    listPerson(request, response);
+                    break;
             }
+        }
+        catch (SQLException ex) {
+            throw new ServletException(ex);
         }
     }
   
