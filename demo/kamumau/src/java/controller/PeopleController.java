@@ -5,9 +5,12 @@
  */
 package controller;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,6 +43,7 @@ public class PeopleController extends ApplicationController {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("action");
+        System.out.println(action);
         if(action==null){
             action= "list";
         }
@@ -60,6 +64,9 @@ public class PeopleController extends ApplicationController {
                 case "update":
                     updatePerson(request, response);
                     break;
+                case "list.json":
+                    listPersonJson(request, response);
+                    break;
                 default:
                     listPerson(request, response);
                     break;
@@ -70,6 +77,39 @@ public class PeopleController extends ApplicationController {
         }
     }
   
+    private void listPersonJson(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+        Person p= new Person();
+
+        ArrayList<HashMap> people3 = new ArrayList<>();
+
+        List<Person> people = p.all();
+        people.forEach((temp) -> {
+            HashMap myMap3 = new HashMap<>();
+            myMap3.put("id", temp.getId());
+            myMap3.put("name", temp.getName());
+            people3.add(myMap3);
+	});
+        
+
+        HashMap myMap = new HashMap<>();
+        myMap.put("a", "b");
+        myMap.put("c", "d");
+
+        HashMap myMap1 = new HashMap<>();
+        myMap1.put("1a", "b3");
+        myMap1.put("c1", "2d");
+
+        ArrayList<HashMap> people1 = new ArrayList<>();
+        people1.add(myMap);
+        people1.add(myMap1);
+
+        String json = new Gson().toJson(people3);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(json);
+    }
+
     private void listPerson(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         Person p= new Person();

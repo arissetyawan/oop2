@@ -136,7 +136,7 @@ public class Person extends MyConnection{
 
     public ArrayList<Person> all(){
         String query = "SELECT * FROM " + tableName;
-        ArrayList<Person> persons = new ArrayList<>();
+        ArrayList<Person> people = new ArrayList<>();
         try {
             Statement stmt = this.conn().createStatement();
             ResultSet res = stmt.executeQuery(query);
@@ -146,12 +146,12 @@ public class Person extends MyConnection{
                 person.setPhone(res.getString("phone"));
                 person.setProfession(res.getString("profession"));
                 person.setId(res.getInt("id"));
-                persons.add(person);
+                people.add(person);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return persons;
+        return people;
     }
    
 }
