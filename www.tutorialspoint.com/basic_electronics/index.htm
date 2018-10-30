@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Basic Electronics Tutorial</title>
+<meta name="description" content="Basic Electronics Tutorial for Beginners - Learn Basic Electronics in simple and easy steps starting from basic to advanced concepts with examples including Materials, Energy Bands, Semiconductors, Hall Effect, Resistors, Circuit Connections in Resistors, Non linear, Linear, Fixed Resistors, Capacitors, Circuit Connections in Capacitors, Variable, Fixed, Polarized Capacitors, Inductors, Inductance, Circuit Connections in Inductors, Types of Inductors, RF Inductors, Transformers, Types of Transformers, Transformers based on Usage, Transformer Efficiency, Diodes, Junction, Special Purpose, Optoelectronic Diodes, Transistors, Transistor Configurations, Transistor Regions of Operation, Transistor Load Line Analysis, Types of Transistors, JFET, MOSFET." /> 
+<meta name="keywords" content="Basic Electronics, Tutorials, Learning, Beginners, Materials, Energy Bands, Semiconductors, Hall Effect, Resistors, Circuit Connections in Resistors, Non linear, Linear, Fixed Resistors, Capacitors, Circuit Connections in Capacitors, Variable, Fixed, Polarized Capacitors, Inductors, Inductance, Circuit Connections in Inductors, Types of Inductors, RF Inductors, Transformers, Types of Transformers, Transformers based on Usage, Transformer Efficiency, Diodes, Junction, Special Purpose, Optoelectronic Diodes, Transistors, Transistor Configurations, Transistor Regions of Operation, Transistor Load Line Analysis, Types of Transistors, JFET, MOSFET." /> 
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #00806e !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #00806e url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #00806e !important;}
+.submenu-item{ border-bottom: 2px solid #00806e !important; border-top: 2px solid #00806e !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#00806e; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/basic_electronics/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.content img.raligned{margin: 5px 3px 0px 26px; float: right; width: 275px;}
+</style>
+<div class="mini-logo">
+<img src="/basic_electronics/images/basic-electronics-mini-logo.jpg" alt="Basic Electronics Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Basic Electronics Tutorial</li>
+<li><a href="/basic_electronics/index.htm">Basic Electronics - Home</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Electronic Components</li>
+<li><a href="/basic_electronics/basic_electronics_materials.htm">Basic Electronics - Materials</a></li>
+<li><a href="/basic_electronics/basic_electronics_energy_bands.htm">Basic Electronics - Energy Bands</a></li>
+<li><a href="/basic_electronics/basic_electronics_semiconductors.htm">Basic Electronics - Semiconductors</a></li>
+<li><a href="/basic_electronics/basic_electronics_hall_effect.htm">Basic Electronics - Hall Effect</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Resistors</li>
+<li><a href="/basic_electronics/basic_electronics_resistors.htm">Basic Electronics - Resistors</a></li>
+<li><a href="/basic_electronics/basic_electronics_circuit_connections_in_resistors.htm">Circuit Connections in Resistors</a></li>
+<li><a href="/basic_electronics/basic_electronics_nonlinear_resistors.htm">Non-linear Resistors</a></li>
+<li><a href="/basic_electronics/basic_electronics_linear_resistors.htm">Basic Electronics - Linear Resistors</a></li>
+<li><a href="/basic_electronics/basic_electronics_fixed_resistors.htm">Basic Electronics - Fixed Resistors</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Capacitors</li>
+<li><a href="/basic_electronics/basic_electronics_capacitors.htm">Basic Electronics - Capacitors</a></li>
+<li><a href="/basic_electronics/basic_electronics_circuit_connections_in_capacitors.htm">Circuit Connections in Capacitors</a></li>
+<li><a href="/basic_electronics/basic_electronics_variable_capacitors.htm">Variable Capacitors</a></li>
+<li><a href="/basic_electronics/basic_electronics_fixed_capacitors.htm">Basic Electronics - Fixed Capacitors</a></li>
+<li><a href="/basic_electronics/basic_electronics_polarized_capacitors.htm">Polarized Capacitors</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Inductors</li>
+<li><a href="/basic_electronics/basic_electronics_inductors.htm">Basic Electronics - Inductors</a></li>
+<li><a href="/basic_electronics/basic_electronics_inductance.htm">Basic Electronics - Inductance</a></li>
+<li><a href="/basic_electronics/basic_electronics_circuit_connections_in_inductors.htm">Circuit Connections in Inductors</a></li>
+<li><a href="/basic_electronics/basic_electronics_types_of_inductors.htm">Types of Inductors</a></li>
+<li><a href="/basic_electronics/basic_electronics_rf_inductors.htm">Basic Electronics - RF Inductors</a></li>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Transformers</li>
+<li><a href="/basic_electronics/basic_electronics_transformers.htm">Basic Electronics - Transformers</a></li>
+<li><a href="/basic_electronics/basic_electronics_types_of_transformers.htm">Types of Transformers</a></li>
+<li><a href="/basic_electronics/basic_electronics_transformers_based_on_usage.htm">Transformers based on Usage</a></li>
+<li><a href="/basic_electronics/basic_electronics_transformer_efficiency.htm">Transformer Efficiency</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Diodes</li>
+<li><a href="/basic_electronics/basic_electronics_diodes.htm">Basic Electronics - Diodes</a></li>
+<li><a href="/basic_electronics/basic_electronics_junction_diodes.htm">Basic Electronics - Junction Diodes</a></li>
+<li><a href="/basic_electronics/basic_electronics_special_purpose_diodes.htm">Special Purpose Diodes</a></li>
+<li><a href="/basic_electronics/basic_electronics_optoelectronic_diodes.htm">Optoelectronic Diodes</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Transistors</li>
+<li><a href="/basic_electronics/basic_electronics_transistors.htm">Basic Electronics - Transistors</a></li>
+<li><a href="/basic_electronics/basic_electronics_transistor_configurations.htm">Transistor Configurations</a></li>
+<li><a href="/basic_electronics/basic_electronics_transistor_regions_operation.htm">Transistor Regions of Operation</a></li>
+<li><a href="/basic_electronics/basic_electronics_transistor_load_line_analysis.htm">Transistor Load Line Analysis</a></li>
+<li><a href="/basic_electronics/basic_electronics_types_of_transistors.htm">Types of Transistors</a></li>
+<li><a href="/basic_electronics/basic_electronics_jfet.htm">Basic Electronics - JFET</a></li>
+<li><a href="/basic_electronics/basic_electronics_mosfet.htm">Basic Electronics - MOSFET</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Basic Electronics Useful Resources</li>
+<li><a href="/basic_electronics/basic_electronics_quick_guide.htm">Basic Electronics - Quick Guide</a></li>
+<li><a href="/basic_electronics/basic_electronics_useful_resources.htm">Basic Electronics - Useful Resources</a></li>
+<li><a href="/basic_electronics/basic_electronics_discussion.htm">Basic Electronics - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<div class="cover">
+<img class="img-responsive" src="/basic_electronics/images/basic-electronics.jpg" alt="Basic Electronics Tutorial" />
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/index.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/basic_electronics/basic_electronics_materials.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Basic Electronics Tutorial</h1>
+<div class="center-aligned tutorial-menu">
+<form action="/job_search.php" method="POST">
+<input type="hidden" name="search_string" value="Basic Electronics" />
+<button type="button" class="btn btn-default btn-sm btn-buy-tutorial"><i class="icon icon-file-pdf-o"></i><a href="/basic_electronics/basic_electronics_pdf_version.htm"> PDF Version</a></button>
+<button type="button" class="btn btn-default btn-sm btn-quick-guide"><i class="icon icon-book"></i><a href="/basic_electronics/basic_electronics_quick_guide.htm"> Quick Guide</a></button>
+<button type="button" class="btn btn-default btn-sm btn-extra-links"><i class="icon icon-external-link"></i><a href="/basic_electronics/basic_electronics_useful_resources.htm"> Resources</a></button>
+<button type="submit" class="btn btn-default btn-sm btn-job-search"><i class="icon icon-suitcase"></i> Job Search</button>
+<button type="button" class="btn btn-default btn-sm btn-job-search"><i class="fa fa-wechat"></i><a href="/basic_electronics/basic_electronics_discussion.htm"> Discussion</a></button>
+</form>
+</div>
+<p>This tutorial supplies basic information on how to use electronic components and explains the logic behind solid state circuit design. Starting with an introduction to semiconductor physics, the tutorial moves on to cover topics such as resistors, capacitors, inductors, transformers, diodes, and transistors. Some of the topics and the circuits built with the components discussed in this tutorial are elaborately discussed in the ELECTRONIC CIRCUITS tutorial.</p>
+<h1>Audience</h1> 
+<p>This tutorial should be useful for all readers who want to gain preliminary knowledge regarding the basic components used in electronic circuits.</p>
+<h1>Prerequisites</h1>
+<p>We don’t assume any prior knowledge of Electronics to understand this tutorial. The material is meant for beginners and it should be useful for most readers.</p>
+<hr />
+<div class="pre-btn">
+<a href="/index.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/basic_electronics/basic_electronics_materials.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/basic_electronics/index.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/basic_electronics/index.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/basic_electronics/index.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/basic_electronics/index.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/basic_electronics/index.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/basic_electronics/index.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

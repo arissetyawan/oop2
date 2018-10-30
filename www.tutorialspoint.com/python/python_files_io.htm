@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Python Files I/O</title>
+<meta name="description" content="Python Files I/O - Learn Python in simple and easy steps starting from basic to advanced concepts with examples including Python Syntax Object Oriented Language, Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML Programming." />
+<meta name="Keywords" content="Python, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Networking, Multithreading,Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML, Programming." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(/python/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #fdbf00 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fdbf00 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fdbf00 !important;}
+.submenu-item{ border-bottom: 2px solid #fdbf00 !important; border-top: 2px solid #fdbf00 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#fdbf00; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/python/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/python/images/python-mini.jpg" alt="Python Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Basic Tutorial</li>
+<li><a target="_top" href="/python/index.htm">Python - Home</a></li>
+<li><a target="_top" href="/python/python_overview.htm">Python - Overview</a></li>
+<li><a target="_top" href="/python/python_environment.htm">Python - Environment Setup</a></li>
+<li><a target="_top" href="/python/python_basic_syntax.htm">Python - Basic Syntax</a></li>
+<li><a target="_top" href="/python/python_variable_types.htm">Python - Variable Types</a></li>
+<li><a target="_top" href="/python/python_basic_operators.htm">Python - Basic Operators</a></li>
+<li><a target="_top" href="/python/python_decision_making.htm">Python - Decision Making</a></li>
+<li><a target="_top" href="/python/python_loops.htm">Python - Loops</a></li>
+<li><a target="_top" href="/python/python_numbers.htm">Python - Numbers</a></li>
+<li><a target="_top" href="/python/python_strings.htm">Python - Strings</a></li>
+<li><a target="_top" href="/python/python_lists.htm">Python - Lists</a></li>
+<li><a target="_top" href="/python/python_tuples.htm">Python - Tuples</a></li>
+<li><a target="_top" href="/python/python_dictionary.htm">Python - Dictionary</a></li>
+<li><a target="_top" href="/python/python_date_time.htm">Python - Date &amp; Time</a></li>
+<li><a target="_top" href="/python/python_functions.htm">Python - Functions</a></li>
+<li><a target="_top" href="/python/python_modules.htm">Python - Modules</a></li>
+<li><a target="_top" href="/python/python_files_io.htm">Python - Files I/O</a></li>
+<li><a target="_top" href="/python/python_exceptions.htm">Python - Exceptions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Advanced Tutorial</li>
+<li><a target="_top" href="/python/python_classes_objects.htm">Python - Classes/Objects</a></li>
+<li><a target="_top" href="/python/python_reg_expressions.htm">Python - Reg Expressions</a></li>
+<li><a target="_top" href="/python/python_cgi_programming.htm">Python - CGI Programming</a></li>
+<li><a target="_top" href="/python/python_database_access.htm">Python - Database Access</a></li>
+<li><a target="_top" href="/python/python_networking.htm">Python - Networking</a></li>
+<li><a target="_top" href="/python/python_sending_email.htm">Python - Sending Email</a></li>
+<li><a target="_top" href="/python/python_multithreading.htm">Python - Multithreading</a></li>
+<li><a target="_top" href="/python/python_xml_processing.htm">Python - XML Processing</a></li>
+<li><a target="_top" href="/python/python_gui_programming.htm">Python - GUI Programming</a></li>
+<li><a target="_top" href="/python/python_further_extensions.htm">Python - Further Extensions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python  Useful Resources</li>
+<li><a target="_top" href="/python/python_questions_answers.htm">Python - Questions and Answers</a></li>
+<li><a target="_top" href="/python/python_quick_guide.htm">Python - Quick Guide</a></li>
+<li><a target="_top" href="/python/python_tools_utilities.htm">Python - Tools/Utilities</a></li>
+<li><a target="_top" href="/python/python_useful_resources.htm">Python - Useful Resources</a></li>
+<li><a target="_top" href="/python/python_discussion.htm">Python - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Python - Files I/O</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/python/python_modules.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/python/python_exceptions.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This chapter covers all the basic I/O functions available in Python. For more functions, please refer to standard Python documentation.</p>
+<h2>Printing to the Screen</h2>
+<p>The simplest way to produce output is using the <i>print</i> statement where you can pass zero or more expressions separated by commas. This function converts the expressions you pass into a string and writes the result to standard output as follows &minus;</p>
+<a href="http://tpcg.io/SkYY22" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+print "Python is really a great language,", "isn't it?"
+</pre>
+<p>This produces the following result on your standard screen &minus;</p>
+<pre class="result notranslate">
+Python is really a great language, isn't it?
+</pre>
+<h2>Reading Keyboard Input</h2>
+<p>Python provides two built-in functions to read a line of text from standard input, which by default comes from the keyboard. These functions are &minus;</p>
+<ul class="list">
+<li>raw_input</li>
+<li>input</li>
+</ul>
+<h2>The <i>raw_input</i> Function</h2>
+<p>The <i>raw_input([prompt])</i> function reads one line from standard input and returns it as a string (removing the trailing newline).</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+str = raw_input("Enter your input: ");
+print "Received input is : ", str
+</pre>
+<p>This prompts you to enter any string and it would display same string on the screen. When I typed "Hello Python!", its output is like this &minus;</p>
+<pre class="result notranslate">
+Enter your input: Hello Python
+Received input is :  Hello Python
+</pre>
+<h2>The <i>input</i> Function</h2>
+<p>The <i>input([prompt])</i> function is equivalent to raw_input, except that it assumes the input is a valid Python expression and returns the evaluated result to you.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+str = input("Enter your input: ");
+print "Received input is : ", str
+</pre>
+<p>This would produce the following result against the entered input &minus;</p>
+<pre class="result notranslate">
+Enter your input: [x*5 for x in range(2,10,2)]
+Recieved input is :  [10, 20, 30, 40]
+</pre>
+<h2>Opening and Closing Files</h2>
+<p>Until now, you have been reading and writing to the standard input and output. Now, we will see how to use actual data files.</p>
+<p>Python provides basic functions and methods necessary to manipulate files by default. You can do most of the file manipulation using a <b>file</b> object.</p>
+<h2>The <i>open</i> Function</h2>
+<p>Before you can read or write a file, you have to open it using Python's built-in <i>open()</i> function. This function creates a <b>file</b> object, which would be utilized to call other support methods associated with it.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+file object = open(file_name [, access_mode][, buffering])
+</pre>
+<p>Here are parameter details &minus;</p>
+<ul class="list">
+<li><p><b>file_name</b> &minus; The file_name argument is a string value that contains the name of the file that you want to access.</p></li>
+<li><p><b>access_mode</b> &minus; The access_mode determines the mode in which the file has to be opened, i.e., read, write, append, etc. A complete list of possible values is given below in the table. This is optional parameter and the default file access mode is read (r).</p></li>
+<li><p><b>buffering</b> &minus; If the buffering value is set to 0, no buffering  takes place. If the buffering value is 1, line buffering is performed while accessing a file. If you specify the buffering value as an integer greater than 1, then buffering action is performed with the indicated buffer size. If negative, the buffer size is the system default(default behavior).</p></li>
+</ul>
+<p>Here is a list of the different modes of opening a file &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Modes &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>r</b></p>
+<p>Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>rb</b></p>
+<p>Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>r+</b></p>
+<p>Opens a file for both reading and writing. The file pointer placed at the beginning of the file.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>rb+</b></p>
+<p>Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>w</b></p>
+<p>Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>wb</b></p>
+<p>Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>w+</b></p>
+<p>Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</p></td>
+</tr> 
+<tr>
+<td class="ts">8</td>
+<td><p><b>wb+</b></p>
+<p>Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>a</b></p>
+<p>Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</p></td>
+</tr> 
+<tr>
+<td class="ts">10</td>
+<td><p><b>ab</b></p>
+<p>Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</p></td>
+</tr> 
+<tr>
+<td class="ts">11</td>
+<td><p><b>a+</b></p>
+<p>Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</p></td>
+</tr> 
+<tr>
+<td class="ts">12</td>
+<td><p><b>ab+</b></p>
+<p>Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</p></td>
+</tr>
+</table>
+<h2>The <i>file</i> Object Attributes</h2>
+<p>Once a file is opened and you have one <i>file</i> object, you can get various information related to that file.</p>
+<p>Here is a list of all attributes related to file object &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Attribute &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>file.closed</b></p>
+<p>Returns true if file is closed, false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>file.mode</b></p>
+<p>Returns access mode with which file was opened.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>file.name</b></p>
+<p>Returns name of the file.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>file.softspace</b></p>
+<p>Returns false if space explicitly required with print, true otherwise.</p></td>
+</tr>
+</table>
+<h3>Example</h3>
+<a href="http://tpcg.io/mIm72J" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "wb")
+print "Name of the file: ", fo.name
+print "Closed or not : ", fo.closed
+print "Opening mode : ", fo.mode
+print "Softspace flag : ", fo.softspace
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Name of the file:  foo.txt
+Closed or not :  False
+Opening mode :  wb
+Softspace flag :  0
+</pre>
+<h2>The <i>close()</i> Method</h2>
+<p>The close() method of a <i>file</i> object flushes any unwritten information and closes the file object, after which no more writing can be done.</p>
+<p>Python automatically closes a file when the reference object of a file is reassigned to another file. It is a good practice to use the close() method to close a file.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+fileObject.close();
+</pre>
+<h3>Example</h3>
+<a href="http://tpcg.io/pMu0CZ" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "wb")
+print "Name of the file: ", fo.name
+
+# Close opend file
+fo.close()
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Name of the file:  foo.txt
+</pre>
+<h2>Reading and Writing Files</h2>
+<p>The <i>file</i> object provides a set of access methods to make our lives easier. We would see how to use <i>read()</i> and <i>write()</i> methods to read and write files.</p>
+<h2>The <i>write()</i> Method</h2>
+<p>The <i>write()</i> method writes any string to an open file. It is important to note that Python strings can have binary data and not just text.</p>
+<p>The write() method does not add a newline character ('\n') to the end of the string &minus;</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+fileObject.write(string);
+</pre>
+<p>Here, passed parameter is the content to be written into the opened file.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "wb")
+fo.write( "Python is a great language.\nYeah its great!!\n");
+
+# Close opend file
+fo.close()
+</pre>
+<p>The above method would create <i>foo.txt</i> file and would write given content in that file and finally it would close that file. If you would open this file, it would have following content.</p>
+<pre class="result notranslate">
+Python is a great language.
+Yeah its great!!
+</pre>
+<h2>The <i>read()</i> Method</h2>
+<p>The <i>read()</i> method reads a string from an open file. It is important to note that Python strings can have binary data. apart from text data.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+fileObject.read([count]);
+</pre>
+<p>Here, passed parameter is the number of bytes to be read from the opened file. This method starts reading from the beginning of the file and if <i>count</i> is missing, then it tries to read as much as possible, maybe until the end of file.</p>
+<h3>Example</h3>
+<p> Let's take a file <i>foo.txt</i>, which we created above.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "r+")
+str = fo.read(10);
+print "Read String is : ", str
+# Close opend file
+fo.close()
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Read String is :  Python is
+</pre>
+<h2>File Positions</h2>
+<p>The <i>tell()</i> method tells you the current position within the file; in other words, the next read or write will occur at that many bytes from the beginning of the file.</p>
+<p>The <i>seek(offset[, from])</i> method changes the current file position. The <i>offset</i> argument indicates the number of bytes to be moved. The <i>from</i> argument specifies the reference position from where the bytes are to be moved.</p>
+<p>If <i>from</i> is set to 0, it means use the beginning of the file as the reference position and 1 means use the current position as the reference position and if it is set to 2 then the end of the file would be taken as the reference position.</p>
+<h3>Example</h3>
+<p> Let us take a file <i>foo.txt</i>, which we created above.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "r+")
+str = fo.read(10);
+print "Read String is : ", str
+
+# Check current position
+position = fo.tell();
+print "Current file position : ", position
+
+# Reposition pointer at the beginning once again
+position = fo.seek(0, 0);
+str = fo.read(10);
+print "Again read String is : ", str
+# Close opend file
+fo.close()
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">
+Read String is :  Python is
+Current file position :  10
+Again read String is :  Python is
+</pre>
+<h2>Renaming and Deleting Files</h2>
+<p>Python <b>os</b> module provides methods that help you perform file-processing operations, such as renaming and deleting files.</p>
+<p>To use this module you need to import it first and then you can call any related functions.</p>
+<h2>The rename() Method</h2>
+<p>The <i>rename()</i> method takes two arguments, the current filename and the new filename.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+os.rename(current_file_name, new_file_name)
+</pre>
+<h3>Example</h3>
+<p>Following is the example to rename an existing file <i>test1.txt</i> &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+import os
+
+# Rename a file from test1.txt to test2.txt
+os.rename( "test1.txt", "test2.txt" )
+
+</pre>
+<h2>The <i>remove()</i> Method</h2>
+<p>You can use the <i>remove()</i> method to delete files by supplying the name of the file to be deleted as the argument.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+os.remove(file_name)
+</pre>
+<h3>Example</h3>
+<p>Following is the example to delete an existing file <i>test2.txt</i> &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+import os
+
+# Delete file test2.txt
+os.remove("text2.txt")
+</pre>
+<h2>Directories in Python</h2>
+<p>All files are contained within various directories, and Python has no problem handling these too. The <b>os</b> module has several methods that help you create, remove, and change directories.</p>
+<h2>The <i>mkdir()</i> Method</h2>
+<p>You can use the <i>mkdir()</i> method of the <b>os</b> module to create directories in the current directory. You need to supply an argument to this method which contains the name of the directory to be created.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+os.mkdir("newdir")
+</pre>
+<h3>Example</h3>
+<p>Following is the example to create a directory <i>test</i> in the current directory &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+import os
+
+# Create a directory "test"
+os.mkdir("test")
+</pre>
+<h2>The <i>chdir()</i> Method</h2>
+<p>You can use the <i>chdir()</i> method to change the current directory. The chdir() method takes an argument, which is the name of the directory that you want to make the current directory.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+os.chdir("newdir")
+</pre>
+<h3>Example</h3>
+<p>Following is the example to go into "/home/newdir" directory &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+import os
+
+# Changing a directory to "/home/newdir"
+os.chdir("/home/newdir")
+</pre>
+<h2>The <i>getcwd()</i> Method</h2>
+<p>The <i>getcwd()</i> method displays the current working directory.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+os.getcwd()
+</pre>
+<h3>Example</h3>
+<p>Following is the example to give current directory &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+import os
+
+# This would give location of the current directory
+os.getcwd()
+</pre>
+<h2>The <i>rmdir()</i> Method</h2>
+<p>The <i>rmdir()</i> method deletes the directory, which is passed as an argument in the method.</p>
+<p>Before removing a directory, all the contents in it should be removed.</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+os.rmdir('dirname')
+</pre>
+<h3>Example</h3>
+<p>Following is the example to remove "/tmp/test" directory. It is required to give fully qualified name of the directory, otherwise it would search for that directory in the current directory.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+import os
+
+# This would  remove "/tmp/test"  directory.
+os.rmdir( "/tmp/test"  )
+</pre>
+<h2>File &amp; Directory Related Methods</h2>
+<p>There are three important sources, which provide a wide range of utility methods to handle and manipulate files &amp; directories on Windows and Unix operating systems. They are as follows &minus;</p>
+<ul class="list">
+<li><p><a href="/python/file_methods.htm">File Object Methods</a>: The <i>file</i> object provides functions to manipulate files.</p></li>
+<li><p><a href="/python/os_file_methods.htm">OS Object Methods</a>: This provides methods to process files as well as directories. </p></li>
+<!--
+<li><p><a href="/python/os_path_methods.htm">OS.Path Object Methods.</a>: This provides important functions to get information about a file or directory. </p></li>
+-->
+</ul>
+<hr />
+<div class="pre-btn">
+<a href="/python/python_modules.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/python/python_exceptions.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/python/python_files_io.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/python/python_files_io.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/python/python_files_io.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/python/python_files_io.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/python/python_files_io.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/python/python_files_io.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script src="/theme/js/jquery.colorbox-min.js"></script>
+<script>
+   var tryit = new $.TryIt('/python/try_python.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

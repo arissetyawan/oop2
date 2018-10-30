@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>How to display all the tables in MySQL with a storage engine</title>
+<meta name="Description" content="How to display all the tables in MySQL with a storage engine - We can display all the tables with the help of the WHERE clause The syntax for that is as follows SELECT table name FROM INFORMATION SCHEMA TABLES WHERE engine InnoDB Now the above syntax is applied to the given query mysql SELECT from INFO..."/>
+<meta name="Keywords" content=" Questions, Answers, display, tables, mysql, storage, engine" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/scripts/img/logo-footer.png" />  
+<meta name="twitter:title" property="og:title" content="How to display all the tables in MySQL with a storage engine" />
+<meta name="twitter:description" property="og:description" content="How to display all the tables in MySQL with a storage engine - We can display all the tables with the help of the WHERE clause The syntax for that is as follows SELECT table name FROM INFORMATION SCHEMA TABLES WHERE engine InnoDB Now the above syntax is applied to the given query mysql SELECT from INFO..." />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+ 
+<style>
+iframe body{overflow-x:hidden;}
+.qa-related-questions{background:#fff; width:100%; margin-bottom:10px; min-height:310px; max-height:320px; overflow:auto;}
+</style>
+
+<!-- Body Content Starts -->
+<div class="mui-container container-top">   
+   
+   <!-- center column content -->
+   <div class="mui-col-md-8 col3" id="question_index_id">                    
+      <div class="qa_widget">                          
+         <div class="qa_post" id="qusModalDivdVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09" data-qtitle="how-to-display-all-the-tables-in-mysql-with-a-storage-engine" >
+            <div class="qa_links">
+               <div class="mui-dropdown">
+                  <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                  <ul class="mui-dropdown__menu arrow_box">   
+                     <li><a class="comments_view qa_comments_view" data-entid='dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                     <li><a class="question_btn question_edit" data-qid="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09"><i class="fa fa-edit"></i> Edit Question</a></li>
+                     <li><a href="javascript:void(0);" class="question_category" data-qid="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>                        
+                  </ul>
+               </div>
+            </div>
+            <h1>How to display all the tables in MySQL with a storage engine?</h1>  
+            <div class="qa_category" id="tags_12982">
+                
+<div class="qa_category" id="tags_dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09">
+<a href='https://www.tutorialspoint.com/questions/category/MySQL' target='_blank'><span>MySQL</span></a><a href='https://www.tutorialspoint.com/questions/category/MySQLi' target='_blank'><span>MySQLi </span></a><a href='https://www.tutorialspoint.com/questions/category/Database' target='_blank'><span>Database</span></a></div>            </div>                
+            <p class="qa_description">
+                            </p>
+         </div>                     
+         <div class="clear"></div>  
+
+         <div class="qa_links_right">
+            <div class="mui-dropdown">                  
+               <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+               <a class="question_answer btn btn-info btn-lg question_btn" data-qid="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+               <a class="question_btn"><i class="fa fa-eye"></i> 28</a>
+               </ul>   
+            </div>
+         </div>
+                     
+         <div class="qa-links-left">               
+                        <a class="qa_vote" data-entid='dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+            <a class="qa_vote" data-entid='dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b>0 </b></a>
+            <div class="clear"></div>               
+         </div>
+         <div class="qa_social_dtls">
+            <div class="qa_comments" id="comments_dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09" style="display:none;">
+               <div id="comments_list_dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09"></div>
+            </div> 
+         </div>
+         <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+      <!-- /60931893/Native_QnA -->
+      <div id='div-gpt-ad-1532956972128-0'>
+      <script>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+      </script>
+      </div>
+      <div class="clear"></div>
+      <br>
+      <div class="qr_edits">
+                  <div class="qr_edits_follow"><strong><span>1 </span> Answer</strong></div>
+         <div class="qr_edits_dots"></div>
+      </div>         
+            
+      
+      <div id="Ankith-Reddy" ></div>
+      <div class="clear"></div>  
+      
+      <div class="qa_widget" id="ansModalDivYkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09" data-qtitle="how-to-display-all-the-tables-in-mysql-with-a-storage-engine" data-utitle="Ankith-Reddy">
+      <div class="qa_answer">                           
+         <div class="qa_answer_details qa_answer_bg qa_widget-top">
+            <a href='https://www.tutorialspoint.com/profile/Ankith-Reddy' target='_blank' title="Ankith Reddy"><img src='https://www.tutorialspoint.com/assets/profiles/22328/profile/60_142162-1519038074.jpg' alt='Ankith Reddy' data-user='Ankith-Reddy' /></a>  
+            <div class="qa_answer_name">
+            <a href='https://www.tutorialspoint.com/profile/Ankith-Reddy' target='_blank' class='user-pop' data-user='Ankith-Reddy' ><span>Ankith Reddy</span></a> 
+            </div>
+            <div class="qa_answer_dtm">
+               <time datetime="2018-10-18 17:06:01">Answered 1d 11h ago</time>, 
+              28 Views
+            </div>
+            <div class="qa_qs_follow"><a href="javascript:void(0);" title ="Follow Ankith Reddy " class="user_follow" data-uid= "K0FBOVNacHk4aVdJbU5ucEZBODk4UT09" data-name="Ankith Reddy" data-folflag="true"><i class="fa fa-user-plus"></i></a></div>         </div>    
+         <p>We can display all the tables with the help of the WHERE clause. The syntax for that is as
+follows &minus;<pre class="result notranslate">
+SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE engine = 'InnoDB';
+</pre><p>Now, the above syntax is applied to the given query &minus;</p><pre class="result notranslate">
+mysql&gt; SELECT * from INFORMATION_SCHEMA.TABLES WHERE engine = 'InnoDB';
+</pre><p>The following is the output obtained</p><pre class="prettyprint  notranslate">
++---------------+--------------+---------------------------+------------+--------+---------+------------+------------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+---------------------+------------+--------------------+----------+---------------------------------------+-----------------------------------------+
+| TABLE_CATALOG | TABLE_SCHEMA | TABLE_NAME | TABLE_TYPE | ENGINE  | VERSION | ROW_FORMAT | TABLE_ROWS   | AVG_ROW_LENGTH | DATA_LENGTH   | MAX_DATA_LENGTH | INDEX_LENGTH | DATA_FREE | AUTO_INCREMENT | CREATE_TIME | UPDATE_TIME | CHECK_TIME | TABLE_COLLATION | CHECKSUM | CREATE_OPTIONS | TABLE_COMMENT |
++---------------+--------------+---------------------------+------------+--------+---------+------------+------------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+---------------------+------------+--------------------+----------+---------------------------------------+-----------------------------------------+
+| def | mysql | innodb_table_stats | BASE TABLE | InnoDB | 10 | Dynamic| 65 | 252 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-22 20:37:26 | 2018-10-09 10:39:47 | NULL | utf8_bin | NULL |row_format=DYNAMIC stats_persistent=0 | |
+| def | mysql | innodb_index_stats | BASE TABLE | InnoDB | 10 | Dynamic| 221 | 222 | 49152 | 0 | 0 | 4194304 | NULL | 2018-09-22 20:37:26 | 2018-10-09 10:39:47 | NULL | utf8_bin | NULL |row_format=DYNAMIC stats_persistent=0 | |
+| def | mysql | db | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 16384 | 4194304 | NULL | 2018-09-2302:08:22 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Database privileges |
+| def | mysql | user | BASE TABLE | InnoDB | 10 | Dynamic |7 | 2340 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:22 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Users and global privileges |
+| def | mysql | default_roles | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:23 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Default roles |
+| def | mysql | role_edges | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:23 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Role hierarchy and role grants |
+| def | mysql | global_grants | BASE TABLE | InnoDB | 10 | Dynamic |28 | 585 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:23 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Extended global grants |
+| def | mysql | password_history | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:23 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Password history for user accounts |
+| def | mysql | func | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:24 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| User defined functions |
+| def | mysql | plugin | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:24 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| MySQL plugins |
+| def | mysql | servers | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:24 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| MySQL Foreign Servers table |
+| def | mysql | tables_priv | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 16384 | 4194304 | NULL | 2018-09-2302:08:24 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Table privileges |
+| def | mysql | columns_priv | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:24 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Column privileges |
+| def | mysql | help_topic | BASE TABLE | InnoDB | 10 | Dynamic |683 | 2326 | 1589248 | 0 | 81920 | 4194304 | NULL | 2018-09-2302:08:24 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| help topics |
+| def | mysql | help_category | BASE TABLE | InnoDB | 10 | Dynamic |40 | 409 | 16384 | 0 | 16384 | 4194304 | NULL | 2018-09-2302:08:25 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| help categories |
+| def | mysql | help_relation | BASE TABLE | InnoDB | 10 | Dynamic |1837 | 44 | 81920 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:25 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| keyword-topic relation |
+| def | mysql | help_keyword | BASE TABLE | InnoDB | 10 | Dynamic |577 | 170 | 98304 | 0 | 81920 | 4194304 | NULL | 2018-09-2302:08:25 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| help keywords |
+| def | mysql | time_zone_name | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:25 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| Time zone names |
+| def | mysql | time_zone | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | 1 | 2018-09-23 02:08:25 |NULL | NULL | utf8_general_ci | NULL | stats_persistent=0 |Time zones |
+| def | mysql | time_zone_transition | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:26 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| Time zone transitions |
+| def | mysql | time_zone_transition_type | BASE TABLE | InnoDB | 10 |Dynamic | 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL |2018-09-23 02:08:26 | NULL | NULL | utf8_general_ci | NULL |stats_persistent=0 | Time zone transition types |
+| def | mysql | time_zone_leap_second | BASE TABLE | InnoDB | 10 |Dynamic | 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL |2018-09-23 02:08:26 | NULL | NULL | utf8_general_ci | NULL |stats_persistent=0 | Leap seconds information for time zones |
+| def | mysql | procs_priv | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 16384 | 4194304 | NULL | 2018-09-2302:08:27 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| Procedure privileges |
+| def | mysql | component | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | 1 | 2018-09-23 02:08:28 |NULL | NULL | utf8_general_ci | NULL | |Components |
+| def | mysql | slave_relay_log_info | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:28 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| Relay Log Information |
+| def | mysql | slave_master_info | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:28 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| Master Information |
+| def | mysql | slave_worker_info | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:28 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| Worker Information |
+| def | mysql | gtid_executed | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:29 | NULL | NULL | utf8mb4_0900_ai_ci | NULL || |
+| def | mysql | server_cost | BASE TABLE | InnoDB | 10 | Dynamic |6 | 2730 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:29 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| |
+| def | mysql | engine_cost | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 0 | 4194304 | NULL | 2018-09-2302:08:29 | NULL | NULL | utf8_general_ci | NULL | stats_persistent=0| |
+| def | mysql | proxies_priv | BASE TABLE | InnoDB | 10 | Dynamic |1 | 16384 | 16384 | 0 | 16384 | 4194304 | NULL | 2018-09-2302:08:30 | NULL | NULL | utf8_bin | NULL | stats_persistent=0| User proxy privileges |
+| def | sys | sys_config | BASE TABLE | InnoDB | 10 | Dynamic |6 | 2730 | 16384 | 0 | 0 | 0 | NULL | 2018-09-23 02:08:49| NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | business | mytable | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-25 10:34:53 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | primarytable | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-09-25 11:26:14| NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | business | tblstudent | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-09-26 12:08:31| NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | business | modifydatatype | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-2612:26:16 | NULL | NULL | utf8mb4_0900_ai_ci | NULL || |
+| def | business | nulldemo | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-26 12:54:12 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | | | 
+| def | business | groupdemo | BASE TABLE | InnoDB | 10 | Dynamic |4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-09-26 13:21:38| NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | sample | mytable | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-26 14:50:13 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | sample | yourtable | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-26 14:50:49 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | business | texturl | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-27 10:07:44 | NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | business | varcharurl | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-27 10:14:01 | NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | addcolumntable | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-2713:14:31 | NULL | NULL | utf8mb4_0900_ai_ci | NULL || |
+| def | business | demoschema | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-2714:34:52 | NULL | NULL | utf8mb4_0900_ai_ci | NULL || |
+| def | business | demoint | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-27 16:59:58 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | nthrecorddemo | BASE TABLE | InnoDB | 10 | Dynamic| 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-09-2717:26:22 | NULL | NULL | utf8mb4_0900_ai_ci | NULL || |
+| def | business | int1demo | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-28 10:00:15 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | intdemo | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-09-28 10:10:10| NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | textdemo | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-28 10:38:54 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | chardemo | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-28 11:00:28 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | varchardemo | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-28 11:02:05 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | demo | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-09-28 12:49:57| NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | latandlangdemo | BASE TABLE | InnoDB | 10 | Dynamic| 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-09-2812:53:50 | NULL | NULL | utf8mb4_0900_ai_ci | NULL || |
+| def | business | smallintdemo | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-01 12:01:30 |NULL | NULL | utf8mb4_0900_ai_ci | NULL | ||
+| def | business | student | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 32768 | 0 | NULL | 2018-10-0112:26:57 | NULL | NULL | utf8mb4_unicode_ci | NULL || |
+| def | business | moviecollection | BASE TABLE | InnoDB | 10 | Dynamic |6 | 2730 | 16384 | 0 | 0 | 0 | NULL | 2018-10-01 15:30:42| NULL | NULL | utf8mb4_unicode_ci | NULL | ||
+| def | business | bookindexes | BASE TABLE | InnoDB | 10 | Dynamic |4 | 4096 | 16384 | 0 | 16384 | 0 | NULL | 2018-10-0116:28:10 | NULL | NULL | utf8mb4_unicode_ci | NULL || |
+| def | business | duplicatebookindexes | BASE TABLE | InnoDB | 10 | Dynamic| 4 | 4096 | 16384 | 0 | 16384 | 0 | NULL | 2018-10-0117:23:44 | NULL | NULL | utf8mb4_unicode_ci | NULL || |
+| def | business | tbluni | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-03 11:47:37 |NULL | NULL | utf8mb4_unicode_ci | NULL | ||
+| def | business | existsrowdemo | BASE TABLE | InnoDB | 10 | Dynamic| 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-10-0312:07:29 | NULL | NULL | utf8mb4_unicode_ci | NULL || |
+| def | business | demoascii | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-03 13:25:53| NULL | NULL | utf8mb4_unicode_ci | NULL | ||
+| def | business | modifycolumnnamedemo | BASE TABLE | InnoDB | 10 |Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL |2018-10-03 14:52:22 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | demobcrypt | BASE TABLE | InnoDB | 10 | Dynamic |0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-03 15:10:14 |NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | primarytable1 | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-03 16:12:36| NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | foreigntable | BASE TABLE | InnoDB | 10 | Dynamic |2 | 8192 | 16384 | 0 | 16384 | 0 | NULL | 2018-10-03 16:12:48 | NULL | NULL | utf8mb4_unicode_ci | NULL | | | 
+| def | business | autoincrementtable | BASE TABLE | InnoDB | 10 | Dynamic | 5 | 3276 | 16384 | 0 | 0 | 0 | 1001 | 2018-10-04 09:39:47 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | demoauto | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | 102 | 2018-10-04 10:13:52 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | demoonreplace | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-04 11:39:31 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | employeetable | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-04 14:12:54 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | whereconditon | BASE TABLE | InnoDB | 10 | Dynamic | 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-10-04 15:15:29 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | moneydemo | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-04 17:02:45 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | varchardemo1 | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 09:56:07 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | varchardemo2 | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 10:11:59 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | presenthistory | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 11:07:25 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | pasthistory | BASE TABLE | InnoDB | 10 | Dynamic | 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 11:09:28 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | columnvaluenulldemo | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 12:06:27 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | demoemptyandnull | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 14:17:30 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | nonasciidemo | BASE TABLE | InnoDB | 10 | Dynamic | 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-10-05 15:25:22 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | nullwithselect | BASE TABLE | InnoDB | 10 | Dynamic | 6 | 2730 | 16384 | 0 | 0 | 0 | NULL | 2018-10-06 11:22:51 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | autoincrement | BASE TABLE | InnoDB | 10 | Dynamic | 4 | 4096 | 16384 | 0 | 0 | 0 | 4 | 2018-10-06 13:28:25 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | unsigneddemo | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-06 13:40:51 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | education | university | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-06 14:54:04 | NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | education | student | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-06 15:07:29 | NULL | NULL | utf8mb4_0900_ai_ci | NULL | | |
+| def | business | dateadddemo | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 09:47:46 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | distinctdemo | BASE TABLE | InnoDB | 10 | Dynamic | 8 | 2048 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 10:06:34 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | groupdemo1 | BASE TABLE | InnoDB | 10 | Dynamic | 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 10:30:33 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | incasesensdemo | BASE TABLE | InnoDB | 10 | Dynamic | 4 | 4096 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 11:11:56 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | demo1 | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 14:57:45 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | spacecolumn | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 15:06:01 | NULL | NULL | utf8mb4_unicode_ci | NULL | | | 
+| def | business | milliseconddemo | BASE TABLE | InnoDB | 10 | Dynamic | 0 | 0 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 15:19:17 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | primarytabledemo | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-08 17:00:23 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | foreigntabledemo | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 16384 | 0 | NULL | 2018-10-08 17:01:21 | NULL | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | trailingandleadingdemo | BASE TABLE | InnoDB | 10 | Dynamic | 2 | 8192 | 16384 | 0 | 0 | 0 | NULL | 2018-10-09 10:07:41 | 2018-10-09 10:10:02 | NULL | utf8mb4_unicode_ci | NULL | | |
+| def | business | duplicatefound | BASE TABLE | InnoDB | 10 | Dynamic | 5 | 3276 | 16384 | 0 | 0 | 0 | NULL | 2018-10-09 10:38:31 | 2018-10-09 10:40:06 | NULL | utf8mb4_unicode_ci | NULL | | |
++---------------+--------------+---------------------------+------------+--------+---------+------------+------------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+---------------------+------------+--------------------+----------+---------------------------------------+-----------------------------------------+
+94 rows in set (4.68 sec)
+</pre><p>All the tables can also be displayed in the following way &minus;</p><pre class="result notranslate">
+mysql&gt; select table_name FROM INFORMATION_SCHEMA.TABLES WHERE engine =
+'InnoDB';
+</pre><p>The following is the output obtained &minus;</p><pre class="result notranslate">
++---------------------------+
+| TABLE_NAME                |
++---------------------------+
+| innodb_table_stats        |
+| innodb_index_stats        |
+| db                        |
+| user                      |
+| default_roles             |
+| role_edges                |
+| global_grants             |
+| password_history          |
+| func                      |
+| plugin                    |
+| servers                   |
+| tables_priv               |
+| columns_priv              |
+| help_topic                |
+| help_category             |
+| help_relation             |
+| help_keyword              |
+| time_zone_name            |
+| time_zone                 |
+| time_zone_transition      |
+| time_zone_transition_type |
+| time_zone_leap_second     |
+| procs_priv                |
+| component                 |
+| slave_relay_log_info      |
+| slave_master_info         |
+| slave_worker_info         |
+| gtid_executed             |
+| server_cost               |
+| engine_cost               |
+| proxies_priv              |
+| sys_config                |
+| mytable                   |
+| primarytable              |
+| tblstudent                |
+| modifydatatype            |
+| nulldemo                  |
+| groupdemo                 |
+| mytable                   |
+| yourtable                 |
+| texturl                   |
+| varcharurl                |
+| addcolumntable            |
+| demoschema                |
+| demoint                   |
+| nthrecorddemo             |
+| int1demo                  |
+| intdemo                   |
+| textdemo                  |
+| chardemo                  |
+| varchardemo               |
+| demo                      |
+| latandlangdemo            |
+| smallintdemo              |
+| student                   |
+| moviecollection           |
+| bookindexes               |
+| duplicatebookindexes      |
+| tbluni                    |
+| existsrowdemo             |
+| demoascii                 |
+| modifycolumnnamedemo      |
+| demobcrypt                |
+| primarytable1             |
+| foreigntable              |
+| autoincrementtable        |
+| demoauto                  |
+| demoonreplace             |
+| employeetable             |
+| whereconditon             |
+| moneydemo                 |
+| varchardemo1              |
+| varchardemo2              |
+| presenthistory            |
+| pasthistory               |
+| columnvaluenulldemo       |
+| demoemptyandnull          |
+| nonasciidemo              |
+| nullwithselect            |
+| autoincrement             |
+| unsigneddemo              |
+| university                |
+| student                   |
+| dateadddemo               |
+| distinctdemo              |
+| groupdemo1                |
+| incasesensdemo            |
+| demo1                     |
+| spacecolumn               |
+| milliseconddemo           |
+| primarytabledemo          |
+| foreigntabledemo          |
+| trailingandleadingdemo    |
+| duplicatefound            |
++---------------------------+
+94 rows in set (0.03 sec)
+</pre></p>
+         <div class="clear"></div>
+      </div>
+         
+      <script>
+         $(function () {
+            entityView('YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09', 'A');
+         });
+      </script>
+      <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+    <a href="javascript:void(0);" class="answer_edit" data-qid="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09" data-aid="YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09"  title="Suggest/Edit Answer"><i class="fa fa-pen-square"></i> Edit Answer</a>
+  <a href="javascript:void(0);" class="ancReportAnswer" data-qid="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09" data-aid="YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09" ><i class="fa fa-edit"></i> Report</a>
+</div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09" style="display:none;">
+<div id="comments_list_YkhFU0ZMSzZqT2FtbXN1UE1LQ3RZZz09"></div>
+</div>                     
+</div> 
+      </div>
+          
+      <div class="qa_widget bet_ans">
+         <a href="javascript:void(0);" class="question_answer" data-qid="dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09"><i class="fa fa-bell"></i> Would you like to add a better answer?</a>
+      </div>
+            <div class="clear"></div>  
+      <iframe class="qa-related-questions" src="https://www.tutorialspoint.com/questions/get_related_questions.php?qtitle=how-to-display-all-the-tables-in-mysql-with-a-storage-engine&qid=dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09" style="border:0" frameborder="0" scrolling="no"></iframe>      
+      <div class="clear"></div>
+				
+      <div class="bottomgooglead qa_widget align-center">
+         <div class="bottomadtag">Advertisements</div>
+         <!-- /60931893/tutorial_bottom_leader_board -->
+         <div id='div-gpt-ad-1532153686945-0'>
+         <script>
+         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532153686945-0'); });
+         </script>
+         </div>
+      </div>
+   </div> 
+
+   <!-- end of center column content -->
+   <!-- right column content -->  
+   <div class="mui-col-md-4" id="left-h">    
+      <!-- right column content -->      
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/how-to-display-all-the-tables-in-mysql-with-a-storage-engine','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/how-to-display-all-the-tables-in-mysql-with-a-storage-engine','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/how-to-display-all-the-tables-in-mysql-with-a-storage-engine&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/how-to-display-all-the-tables-in-mysql-with-a-storage-engine&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/how-to-display-all-the-tables-in-mysql-with-a-storage-engine&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/how-to-display-all-the-tables-in-mysql-with-a-storage-engine&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="">
+      <button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+   </div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad">Advertisements</div>
+      <div class="rightgooglead">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      google_ad_format = "300x250_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      google_ad_format = "300x600_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "ca-pub-2537027957187252";
+      /* Right Side Ad */
+      google_ad_slot = "right_side_ad";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+    
+   <div id="contribution_menu"></div>
+   <div class="clear"></div>    
+   
+</div>
+
+<script>
+   $(document).ready(function () {
+      getRightMenu();
+      function getRightMenu(){
+         $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetRightMenu.php",
+            method: "POST",
+            success: function (data) {
+            $('#contribution_menu').html(data);
+            }
+         });
+      }
+          });
+</script> 
+   </div>
+  <!-- end of right column content -->   
+ 
+</div>   
+<script>
+    $(function () {
+        progressively.init({
+            onLoadComplete: function () {
+            }
+        });
+        entityView('dVB3SmRNbFpBK3FkUHI5YTJqa2x0QT09', 'Q');
+
+    });
+</script>
+<!-- End of Body Content -->
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

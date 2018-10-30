@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>CSS Lists</title>
+<meta name="description" content="CSS Lists - CSS Tutorials for beginners to advanced developers Learning Cascading Style Sheet in simple and easy steps with examples. A complete reference manual for CSS2 & CSS3 properties." />
+<meta name="keywords" content="CSS, Tutorials, Learning, Beginners, CSS, Basics, Advanced, Cascading Style Sheet, CSS2, CSS3, Properties, HTMl, XHTML, Reference, Manual." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #a44170 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #a44170 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #a44170 !important;}
+.submenu-item{ border-bottom: 2px solid #a44170 !important; border-top: 2px solid #a44170 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#a44170; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/css/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/css/images/css-mini-logo.jpg" alt="CSS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">CSS Tutorial</li>
+<li><a href="/css/index.htm">CSS - Home</a></li>
+<li><a href="/css/what_is_css.htm">CSS - Introduction</a></li>
+<li><a href="/css/css_syntax.htm">CSS - Syntax</a></li>
+<li><a href="/css/css_inclusion.htm">CSS - Inclusion</a></li>
+<li><a href="/css/css_measurement_units.htm">CSS - Measurement Units</a></li>
+<li><a href="/css/css_colors.htm">CSS - Colors</a></li>
+<li><a href="/css/css_backgrounds.htm">CSS - Backgrounds</a></li>
+<li><a href="/css/css_fonts.htm">CSS - Fonts</a></li>
+<li><a href="/css/css_text.htm">CSS - Text</a></li>
+<li><a href="/css/css_images.htm">CSS - Images</a></li>
+<li><a href="/css/css_links.htm">CSS - Links</a></li>
+<li><a href="/css/css_tables.htm">CSS - Tables</a></li>
+<li><a href="/css/css_borders.htm">CSS - Borders</a></li>
+<li><a href="/css/css_margins.htm">CSS - Margins</a></li>
+<li><a href="/css/css_lists.htm">CSS - Lists</a></li>
+<li><a href="/css/css_padding.htm">CSS - Padding</a></li>
+<li><a href="/css/css_cursors.htm">CSS - Cursors</a></li>
+<li><a href="/css/css_outlines.htm">CSS - Outlines</a></li>
+<li><a href="/css/css_dimension.htm">CSS - Dimension</a></li>
+<li><a href="/css/css_scrollbars.htm">CSS - Scrollbars</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CSS Advanced</li>
+<li><a href="/css/css_visibility.htm">CSS - Visibility</a></li>
+<li><a href="/css/css_positioning.htm">CSS - Positioning</a></li>
+<li><a href="/css/css_layers.htm">CSS - Layers</a></li>
+<li><a href="/css/css_pseudo_classes.htm">CSS - Pseudo Classes</a></li>
+<li><a href="/css/css_pseudo_elements.htm">CSS - Pseudo Elements</a></li>
+<li><a href="/css/css_at_rules.htm">CSS - @ Rules</a></li>
+<li><a href="/css/css_text_effects.htm">CSS - Text Effects</a></li>
+<li><a href="/css/css_media_types.htm">CSS - Media Types</a></li>
+<li><a href="/css/css_paged_media.htm">CSS - Paged Media</a></li>
+<li><a href="/css/css_aural_media.htm">CSS - Aural Media</a></li>
+<li><a href="/css/css_printing.htm">CSS - Printing</a></li>
+<li><a href="/css/css_layouts.htm">CSS - Layouts</a></li>
+<li><a href="/css/css_validations.htm">CSS - Validations</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CSS3 Tutorial</li>
+<li><a href="/css/css3_tutorial.htm">CSS3 - Tutorial</a></li>
+<li><a href="/css/css3_rounded_corner.htm">CSS3 - Rounded Corner</a></li>
+<li><a href="/css/css3_boarder_image.htm">CSS3 - Border Images</a></li>
+<li><a href="/css/css3_multi_background.htm">CSS3 - Multi Background</a></li>
+<li><a href="/css/css3_color.htm">CSS3 - Color</a></li>
+<li><a href="/css/css3_gradients.htm">CSS3 - Gradients</a></li>
+<li><a href="/css/css3_shadow.htm">CSS3 - Shadow</a></li>
+<li><a href="/css/css3_text.htm">CSS3 - Text</a></li>
+<li><a href="/css/css3_web_font.htm">CSS3 - Web font</a></li>
+<li><a href="/css/css3_2d_transform.htm">CSS3 - 2d transform</a></li>
+<li><a href="/css/css3_3d_transform.htm">CSS3 - 3d transform</a></li>
+<li><a href="/css/css3_animation.htm">CSS3 - Animation</a></li>
+<li><a href="/css/css3_multi_columns.htm">CSS3 - Multi columns</a></li>
+<li><a href="/css/css3_userinterface.htm">CSS3 - User Interface</a></li>
+<li><a href="/css/css3_box_sizing.htm">CSS3 - Box Sizing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CSS Responsive</li>
+<li><a href="/css/css_responsive.htm">CSS - Responsive Web Design</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CSS References</li>
+<li><a href="/css/css_questions_answers.htm">CSS - Questions and Answers</a></li>
+<li><a href="/css/css_quick_guide.htm">CSS - Quick Guide</a></li>
+<li><a href="/css/css_references.htm">CSS - References</a></li>
+<li><a href="/css/css_color_references.htm">CSS - Color References</a></li>
+<li><a href="/css/css_web_browser.htm">CSS - Web browser References</a></li>
+<li><a href="/css/css_web_fonts.htm">CSS - Web safe fonts</a></li>
+<li><a href="/css/css_units.htm">CSS - Units</a></li>
+<li><a href="/css/css_animation.htm">CSS - Animation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CSS tools</li>
+<li><a href="/css/css_converter.htm">CSS - PX to EM converter</a></li>
+<li><a href="/css/css_color_picker.htm">CSS - Color Chooser &amp; Animation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CSS Resources</li>
+<li><a href="/css/css_useful_resources.htm">CSS - Useful Resources</a></li>
+<li><a href="/css/css_discussion.htm">CSS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>CSS - Lists</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/css/css_margins.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/css/css_padding.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Lists are very helpful in conveying a set of either numbered or bullet points. This chapter teaches you how to control list type, position, style, etc., using CSS.</p>
+<p>We have the following five CSS properties, which can be used to control lists &minus;</p>
+<ul class="list">
+<li><p>The <b>list-style-type</b> allows you to control the shape or appearance of the marker.</p></li>
+<li><p>The <b>list-style-position</b> specifies whether a long point that wraps to a second line should align with the first line or start underneath the start of the marker.</p></li>
+<li><p>The <b>list-style-image</b> specifies an image for the marker rather than a bullet point or number.</p></li>
+<li><p>The <b>list-style</b> serves as shorthand for the preceding properties.</p></li>
+<li><p>The <b>marker-offset</b> specifies the distance between a marker and the text in the list.</p></li>
+</ul>
+<p>Now, we will see how to use these properties with examples.</p>
+<h2>The list-style-type Property</h2>
+<p>The <i>list-style-type</i> property allows you to control the shape or style of bullet point (also known as a marker) in the case of unordered lists and the style of numbering characters in ordered lists.</p>
+<p>Here are the values which can be used for an unordered list &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%">Sr.No.</th>
+<th style="text-align:center;">Value &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>none</b></p>
+<p>NA</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>disc (default)</b></p>
+<p>A filled-in circle</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>circle</b></p>
+<p>An empty circle</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>square</b></p>
+<p>A filled-in square</p></td>
+</tr>
+</table>
+<p>Here are the values, which can be used for an ordered list &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Value</th>
+<th style="text-align:center;">Description</th>
+<th style="text-align:center;">Example</th>
+</tr>
+<tr>
+<td>decimal</td>
+<td>Number</td>
+<td>1,2,3,4,5</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">decimal-leading-zero</td>
+<td style="vertical-align:middle;">0 before the number</td>
+<td>01, 02, 03, 04, 05</td>
+</tr>
+<tr>
+<td>lower-alpha</td>
+<td>Lowercase alphanumeric characters</td>
+<td>a, b, c, d, e</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">upper-alpha</td>
+<td style="vertical-align:middle;">Uppercase alphanumeric characters</td>
+<td>A, B, C, D, E</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>Lowercase Roman numerals</td>
+<td>i, ii, iii, iv, v</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">upper-roman</td>
+<td style="vertical-align:middle;">Uppercase Roman numerals</td>
+<td>I, II, III, IV, V</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">lower-greek</td>
+<td style="vertical-align:middle;">The marker is lower-greek</td>
+<td>alpha, beta, gamma</td>
+</tr>
+<tr>
+<td>lower-latin</td>
+<td>The marker is lower-latin</td>
+<td>a, b, c, d, e</td>
+</tr>
+<tr>
+<td>upper-latin</td>
+<td>The marker is upper-latin</td>
+<td>A, B, C, D, E</td>
+</tr>
+<tr>
+<td>hebrew</td>
+<td style="width:55%;">The marker is traditional Hebrew numbering</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">armenian</td>
+<td>The marker is traditional Armenian numbering</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">georgian</td>
+<td>The marker is traditional Georgian numbering</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>cjk-ideographic</td>
+<td style="vertical-align:middle;">The marker is plain ideographic numbers</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>hiragana</td>
+<td>The marker is hiragana</td>
+<td>a, i, u, e, o, ka, ki</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">katakana</td>
+<td style="vertical-align:middle;">The marker is katakana</td>
+<td>A, I, U, E, O, KA, KI</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">hiragana-iroha</td>
+<td style="vertical-align:middle;">The marker is hiragana-iroha</td>
+<td>i, ro, ha, ni, ho, he, to</td>
+</tr>
+<tr>
+<td>katakana-iroha</td>
+<td style="vertical-align:middle;">The marker is katakana-iroha</td>
+<td>I, RO, HA, NI, HO, HE, TO</td>
+</tr>
+</table>
+<p>Here is an example &minus;</p>
+<a href="http://tpcg.io/9LSg6t" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style = "list-style-type:circle;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ul style = "list-style-type:square;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style = "list-style-type:decimal;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;ol style = "list-style-type:lower-alpha;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;ol style = "list-style-type:lower-roman;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<p>It will produce the following result &minus;</p>
+<iframe onload="resizeFrame(this)" class="result" src="/css/src/list.htm" height="370px" width="600px"></iframe>
+<h2>The list-style-position Property</h2>
+<p>The <i>list-style-position</i> property indicates whether the marker should appear inside or outside of the box containing the bullet points. It can have one the two values &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%">Sr.No.</th>
+<th style="text-align:center;">Value &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>none</b></p>
+<p>NA</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>inside</b></p>
+<p>If the text goes onto a second line, the text will wrap underneath the marker. It will also appear indented to where the text would have started if the list had a value of outside.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>outside</b></p>
+<p>If the text goes onto a second line, the text will be aligned with the start of the first line (to the right of the bullet).</p></td>
+</tr>
+</table>
+<p>Here is an example &minus;</p>
+<a href="http://tpcg.io/C83PnR" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style = "list-style-type:circle; list-stlye-position:outside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ul style = "list-style-type:square;list-style-position:inside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style = "list-style-type:decimal;list-stlye-position:outside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+      
+      &lt;ol style = "list-style-type:lower-alpha;list-style-position:inside;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+<p>It will produce the following result &minus;</p>
+<iframe onload="resizeFrame(this)" class="result" src="/css/src/list1.htm" height="300px" width="600px"></iframe>
+<h2>The list-style-image Property</h2>
+<p>The <i>list-style-image</i> allows you to specify an image so that you can use your own bullet style. The syntax is similar to the background-image property with the letters url starting the value of the property followed by the URL in brackets. If it does not find the given image then default bullets are used.</p>
+<p>Here is an example &minus;</p>
+<a href="http://tpcg.io/isxy76" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul&gt;
+         &lt;li style = "list-style-image: url(/images/bullet.gif);"&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol&gt;
+         &lt;li style = "list-style-image: url(/images/bullet.gif);"&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<p>It will produce the following result &minus;</p>
+<iframe onload="resizeFrame(this)" class="result" src="/css/src/list2.htm" height="170px" width="600px"></iframe>
+<h2>The list-style Property</h2>
+<p>The <i>list-style</i> allows you to specify all the list properties into a single expression. These properties can appear in any order.</p>
+<p>Here is an example &minus;</p>
+<a href="http://tpcg.io/aBDp0g" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;ul style = "list-style: inside square;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style = "list-style: outside upper-alpha;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+&lt;/html&gt; 
+</pre> 
+<p>It will produce the following result &minus;</p>
+<iframe onload="resizeFrame(this)" class="result" src="/css/src/list3.htm" height="170px" width="600px"></iframe>
+<h2>The marker-offset Property</h2>
+<p>The <i>marker-offset</i> property allows you to specify the distance between the marker and the text relating to that marker. Its value should be a length as shown in the following example &minus;</p>
+<p>Unfortunately, this property is not supported in IE 6 or Netscape 7.</p>
+<p>Here is an example &minus;</p>
+<a href="http://tpcg.io/YhPymO" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;ul style = "list-style: inside square; marker-offset:2em;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;ol style = "list-style: outside upper-alpha; marker-offset:2cm;"&gt;
+         &lt;li&gt;Maths&lt;/li&gt;
+         &lt;li&gt;Social Science&lt;/li&gt;
+         &lt;li&gt;Physics&lt;/li&gt;
+      &lt;/ol&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>It will produce the following result &minus;</p>
+<iframe onload="resizeFrame(this)" class="result" src="/css/src/list4.htm" height="170px" width="600px"></iframe>
+<hr />
+<div class="pre-btn">
+<a href="/css/css_margins.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/css/css_padding.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/css/css_lists.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/css/css_lists.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/css/css_lists.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/css/css_lists.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/css/css_lists.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/css/css_lists.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>C# Classes</title>
+<meta name="description" content="C# Classes - Learn C# in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<meta name="keywords" content="C#, Tutorial, Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #FE9400 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #FE9400 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #FE9400 !important;}
+.submenu-item{ border-bottom: 2px solid #FE9400 !important; border-top: 2px solid #FE9400 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#FE9400; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/csharp/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   vertical-align:middle !important;
+   text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/csharp/images/csharp-mini-logo.jpg" alt="Csharp Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/csharp_online_training/index.asp" target="_blank"><img src="/csharp/images/csharp-video-tutorials.jpg" alt="C# Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Basic Tutorial</li>
+<li><a href="/csharp/index.htm">C# - Home</a></li>
+<li><a href="/csharp/csharp_overview.htm">C# - Overview</a></li>
+<li><a href="/csharp/csharp_environment_setup.htm">C# - Environment</a></li>
+<li><a href="/csharp/csharp_program_structure.htm">C# - Program Structure</a></li>
+<li><a href="/csharp/csharp_basic_syntax.htm">C# - Basic Syntax</a></li>
+<li><a href="/csharp/csharp_data_types.htm">C# - Data Types</a></li>
+<li><a href="/csharp/csharp_type_conversion.htm">C# - Type Conversion</a></li>
+<li><a href="/csharp/csharp_variables.htm">C# - Variables</a></li>
+<li><a href="/csharp/csharp_constants.htm">C# - Constants</a></li>
+<li><a href="/csharp/csharp_operators.htm">C# - Operators</a></li>
+<li><a href="/csharp/csharp_decision_making.htm">C# - Decision Making</a></li>
+<li><a href="/csharp/csharp_loops.htm">C# - Loops</a></li>
+<li><a href="/csharp/csharp_encapsulation.htm">C# - Encapsulation</a></li>
+<li><a href="/csharp/csharp_methods.htm">C# -  Methods</a></li>
+<li><a href="/csharp/csharp_nullables.htm">C# -  Nullables</a></li>
+<li><a href="/csharp/csharp_arrays.htm">C# - Arrays</a></li>
+<li><a href="/csharp/csharp_strings.htm">C# - Strings</a></li>
+<li><a href="/csharp/csharp_struct.htm">C# - Structure</a></li>
+<li><a href="/csharp/csharp_enums.htm">C# - Enums</a></li>
+<li><a href="/csharp/csharp_classes.htm">C# - Classes</a></li>
+<li><a href="/csharp/csharp_inheritance.htm">C# - Inheritance</a></li>
+<li><a href="/csharp/csharp_polymorphism.htm">C# - Polymorphism</a></li>
+<li><a href="/csharp/csharp_operator_overloading.htm">C# - Operator Overloading</a></li>
+<li><a href="/csharp/csharp_interfaces.htm">C# - Interfaces</a></li>
+<li><a href="/csharp/csharp_namespaces.htm">C# - Namespaces</a></li>
+<li><a href="/csharp/csharp_preprocessor_directives.htm">C# - Preprocessor Directives</a></li>
+<li><a href="/csharp/csharp_regular_expressions.htm">C# - Regular Expressions</a></li>
+<li><a href="/csharp/csharp_exception_handling.htm">C# - Exception Handling</a></li>
+<li><a href="/csharp/csharp_file_io.htm">C# - File I/O</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Advanced Tutorial</li>
+<li><a href="/csharp/csharp_attributes.htm">C# - Attributes</a></li>
+<li><a href="/csharp/csharp_reflection.htm">C# - Reflection</a></li>
+<li><a href="/csharp/csharp_properties.htm">C# - Properties</a></li>
+<li><a href="/csharp/csharp_indexers.htm">C# - Indexers</a></li>
+<li><a href="/csharp/csharp_delegates.htm">C# - Delegates</a></li>
+<li><a href="/csharp/csharp_events.htm">C# - Events</a></li>
+<li><a href="/csharp/csharp_collections.htm">C# - Collections</a></li>
+<li><a href="/csharp/csharp_generics.htm">C# - Generics</a></li>
+<li><a href="/csharp/csharp_anonymous_methods.htm">C# - Anonymous Methods</a></li>
+<li><a href="/csharp/csharp_unsafe_codes.htm">C# - Unsafe Codes</a></li>
+<li><a href="/csharp/csharp_multithreading.htm">C# - Multithreading</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Useful Resources</li>
+<li><a href="/csharp/csharp_questions_answers.htm">C# - Questions and Answers</a></li>
+<li><a href="/csharp/csharp_quick_guide.htm">C# - Quick Guide</a></li>
+<li><a href="/csharp/csharp_useful_resources.htm">C# - Useful Resources</a></li>
+<li><a href="/csharp/csharp_discussion.htm">C# - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>C# - Classes</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_enums.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_inheritance.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>When you define a class, you define a blueprint for a data type. This does not actually define any data, but it does define what the class name means. That is, what an object of the class consists of and what operations can be performed on that object. Objects are instances of a class. The methods and variables that constitute a class are called members of the class.</p>
+<h2>Defining a Class</h2>
+<p>A class definition starts with the keyword class followed by the class name; and the class body enclosed by a pair of curly braces. Following is the general form of a class definition &minus;</p>
+<pre class="result notranslate">
+&lt;access specifier&gt; class  class_name {
+   // member variables
+   &lt;access specifier&gt; &lt;data type&gt; variable1;
+   &lt;access specifier&gt; &lt;data type&gt; variable2;
+   ...
+   &lt;access specifier&gt; &lt;data type&gt; variableN;
+   // member methods
+   &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list) {
+      // method body
+   }
+   &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list) {
+      // method body
+   }
+   ...
+   &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list) {
+      // method body
+   }
+}
+</pre>
+<p>Note &minus;</p>
+<ul class="list">
+<li><p>Access specifiers specify the access rules for the members as well as the class itself. If not mentioned, then the default access specifier for a class type is <b>internal</b>. Default access for the members is <b>private</b>.</p></li>
+<li><p>Data type specifies the type of variable, and return type specifies the data type of the data the method returns, if any.</p></li>
+<li><p>To access the class members, you use the dot (.) operator.</p></li>
+<li><p>The dot operator links the name of an object with the name of a member.</p></li>
+</ul>
+<p>The following example illustrates the concepts discussed so far &minus;</p>
+<a href="http://tpcg.io/bFVHMP" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace BoxApplication {
+   class Box {
+      public double length;   // Length of a box
+      public double breadth;  // Breadth of a box
+      public double height;   // Height of a box
+   }
+   class Boxtester {
+      static void Main(string[] args) {
+         Box Box1 = new Box();   // Declare Box1 of type Box
+         Box Box2 = new Box();   // Declare Box2 of type Box
+         double volume = 0.0;    // Store the volume of a box here
+
+         // box 1 specification
+         Box1.height = 5.0;
+         Box1.length = 6.0;
+         Box1.breadth = 7.0;
+
+         // box 2 specification
+         Box2.height = 10.0;
+         Box2.length = 12.0;
+         Box2.breadth = 13.0;
+           
+         // volume of box 1
+         volume = Box1.height * Box1.length * Box1.breadth;
+         Console.WriteLine("Volume of Box1 : {0}",  volume);
+
+         // volume of box 2
+         volume = Box2.height * Box2.length * Box2.breadth;
+         Console.WriteLine("Volume of Box2 : {0}", volume);
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Volume of Box1 : 210
+Volume of Box2 : 1560
+</pre>
+<h2>Member Functions and Encapsulation</h2>
+<p>A member function of a class is a function that has its definition or its prototype within the class definition similar to any other variable. It operates on any object of the class of which it is a member, and has access to all the members of a class for that object.</p>
+<p>Member variables are the attributes of an object (from design perspective) and they are kept private to implement encapsulation. These variables can only be accessed using the public member functions.</p>
+<p>Let us put above concepts to set and get the value of different class members in a class &minus;</p>
+<a href="http://tpcg.io/ob75lE" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace BoxApplication {
+   class Box {
+      private double length;   // Length of a box
+      private double breadth;  // Breadth of a box
+      private double height;   // Height of a box
+      
+      public void setLength( double len ) {
+         length = len;
+      }
+      public void setBreadth( double bre ) {
+         breadth = bre;
+      }
+      public void setHeight( double hei ) {
+         height = hei;
+      }
+      public double getVolume() {
+         return length * breadth * height;
+      }
+   }
+   class Boxtester {
+      static void Main(string[] args) {
+         Box Box1 = new Box();   // Declare Box1 of type Box
+         Box Box2 = new Box();
+         double volume;
+         
+         // Declare Box2 of type Box
+         // box 1 specification
+         Box1.setLength(6.0);
+         Box1.setBreadth(7.0);
+         Box1.setHeight(5.0);
+         
+         // box 2 specification
+         Box2.setLength(12.0);
+         Box2.setBreadth(13.0);
+         Box2.setHeight(10.0);
+         
+         // volume of box 1
+         volume = Box1.getVolume();
+         Console.WriteLine("Volume of Box1 : {0}" ,volume);
+         
+         // volume of box 2
+         volume = Box2.getVolume();
+         Console.WriteLine("Volume of Box2 : {0}", volume);
+         
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Volume of Box1 : 210
+Volume of Box2 : 1560
+</pre>
+<h2>C# Constructors</h2>
+<p>A class <b>constructor</b> is a special member function of a class that is executed whenever we create new objects of that class.</p>
+<p>A constructor has exactly the same name as that of class and it does not have any return type. Following example explains the concept of constructor &minus;</p>
+<a href="http://tpcg.io/YdmVGw" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace LineApplication {
+   class Line {
+      private double length;   // Length of a line
+      
+      public Line() {
+         Console.WriteLine("Object is being created");
+      }
+      public void setLength( double len ) {
+         length = len;
+      }
+      public double getLength() {
+         return length;
+      }
+
+      static void Main(string[] args) {
+         Line line = new Line();    
+         
+         // set line length
+         line.setLength(6.0);
+         Console.WriteLine("Length of line : {0}", line.getLength());
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Object is being created
+Length of line : 6
+</pre>
+<p>A <b>default constructor</b> does not have any parameter but if you need, a constructor can have parameters. Such constructors are called <b>parameterized constructors</b>. This technique helps you to assign initial value to an object at the time of its creation as shown in the following example &minus;</p>
+<a href="http://tpcg.io/BU1wgt" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace LineApplication {
+   class Line {
+      private double length;   // Length of a line
+      
+      public Line(double len) {  //Parameterized constructor
+         Console.WriteLine("Object is being created, length = {0}", len);
+         length = len;
+      }
+      public void setLength( double len ) {
+         length = len;
+      }
+      public double getLength() {
+         return length;
+      }
+      static void Main(string[] args) {
+         Line line = new Line(10.0);
+         Console.WriteLine("Length of line : {0}", line.getLength()); 
+         
+         // set line length
+         line.setLength(6.0);
+         Console.WriteLine("Length of line : {0}", line.getLength()); 
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Object is being created, length = 10
+Length of line : 10
+Length of line : 6
+</pre>
+<h2>C# Destructors</h2>
+<p>A <b>destructor</b> is a special member function of a class that is executed whenever an object of its class goes out of scope. A <b>destructor</b> has exactly the same name as that of the class with a prefixed tilde (~) and it can neither return a value nor can it take any parameters.</p>
+<p>Destructor can be very useful for releasing memory resources before exiting the program. Destructors cannot be inherited or overloaded.</p>
+<p>Following example explains the concept of destructor &minus;</p>
+<a href="http://tpcg.io/ACZcV1" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace LineApplication {
+   class Line {
+      private double length;   // Length of a line
+      
+      public Line() {   // constructor
+         Console.WriteLine("Object is being created");
+      }
+      ~Line() {   //destructor
+         Console.WriteLine("Object is being deleted");
+      }
+      public void setLength( double len ) {
+         length = len;
+      }
+      public double getLength() {
+         return length;
+      }
+      static void Main(string[] args) {
+         Line line = new Line();
+
+         // set line length
+         line.setLength(6.0);
+         Console.WriteLine("Length of line : {0}", line.getLength());           
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Object is being created
+Length of line : 6
+Object is being deleted
+</pre>
+<h2>Static Members of a C# Class</h2>
+<p>We can define class members as static using the <b>static</b> keyword. When we declare a member of a class as static, it means no matter how many objects of the class are created, there is only one copy of the static member.</p>
+<p>The keyword <b>static</b> implies that only one instance of the member exists for a class. Static variables are used for defining constants because their values can be retrieved by invoking the class without creating an instance of it. Static variables can be initialized outside the member function or class definition. You can also initialize static variables inside the class definition.</p>
+<p>The following example demonstrates the use of <b>static variables</b> &minus;</p>
+<a href="http://tpcg.io/B8J0mT" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace StaticVarApplication {
+   class StaticVar {
+      public static int num;
+      
+      public void count() {
+         num++;
+      }
+      public int getNum() {
+         return num;
+      }
+   }
+   class StaticTester {
+      static void Main(string[] args) {
+         StaticVar s1 = new StaticVar();
+         StaticVar s2 = new StaticVar();
+         
+         s1.count();
+         s1.count();
+         s1.count();
+         
+         s2.count();
+         s2.count();
+         s2.count();
+         
+         Console.WriteLine("Variable num for s1: {0}", s1.getNum());
+         Console.WriteLine("Variable num for s2: {0}", s2.getNum());
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Variable num for s1: 6
+Variable num for s2: 6
+</pre>
+<p>You can also declare a <b>member function</b> as <b>static</b>. Such functions can access only static variables. The static functions exist even before the object is created. The following example demonstrates the use of <b>static functions</b> &minus;</p>
+<a href="http://tpcg.io/5jtmC2" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace StaticVarApplication {
+   class StaticVar {
+      public static int num;
+      
+      public void count() {
+         num++;
+      }
+      public static int getNum() {
+         return num;
+      }
+   }
+   class StaticTester {
+      static void Main(string[] args) {
+         StaticVar s = new StaticVar();
+         
+         s.count();
+         s.count();
+         s.count();
+         
+         Console.WriteLine("Variable num: {0}", StaticVar.getNum());
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Variable num: 3
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_enums.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_inheritance.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/csharp/csharp_classes.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_classes.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_classes.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/csharp/csharp_classes.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_classes.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_classes.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

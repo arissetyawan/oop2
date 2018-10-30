@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>VBScript Interview Questions</title>
+<meta name="description" content="VBScript Interview Questions - Learn VBScript in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Basic Syntax, Placement, Enabling VBScript in Browsers, Placements, variables, Constants, Operators, Decision Making, Loops, Events, Cookies, Numbers, Strings, Arrays, Date and Time, Procedures, Dialog Boxes, Regular Expressions, Object Oriented, Error Handling, Form Validations, and Miscellaneous Statements." /> 
+<meta name="keywords" content="VBScript tutorial, learning, Beginners, Overview, Environment Setup, Basic Syntax, Placement, Enabling VBScript in Browsers, Placements, variables, Constants, Operators, Decision Making, Loops, Events, Cookies, Numbers, Strings, Arrays, Date and Time, Procedures, Dialog Boxes, Regular Expressions, Object Oriented, Error Handling, Form Validations, and Miscellaneous Statements." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #57b846 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #57b846 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #57b846 !important;}
+.submenu-item{ border-bottom: 2px solid #57b846 !important; border-top: 2px solid #57b846 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#57b846; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/vbscript/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+ vertical-align:middle !important;
+ text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/vbscript/images/vbscript-mini-logo.jpg" alt="VBScript Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VBScript Tutorial</li>
+<li><a href="/vbscript/index.htm">VBScript - Home</a></li>
+<li><a href="/vbscript/vbscript_overview.htm">VBScript - Overview</a></li>
+<li><a href="/vbscript/vbscript_syntax.htm">VBScript - Syntax</a></li>
+<li><a href="/vbscript/vbscript_enabling.htm">VBScript - Enabling</a></li>
+<li><a href="/vbscript/vbscript_placement.htm">VBScript - Placement</a></li>
+<li><a href="/vbscript/vbscript_variables.htm">VBScript - Variables</a></li>
+<li><a href="/vbscript/vbscript_constants.htm">VBScript - Constants</a></li>
+<li><a href="/vbscript/vbscript_operators.htm">VBScript - Operators</a></li>
+<li><a href="/vbscript/vbscript_decisions.htm">VBScript - Decisions</a></li>
+<li><a href="/vbscript/vbscript_loops.htm">VBScript - Loops</a></li>
+<li><a href="/vbscript/vbscript_events.htm">VBScript - Events</a></li>
+<li><a href="/vbscript/vbscript_cookies.htm">VBScript - Cookies</a></li>
+<li><a href="/vbscript/vbscript_numbers.htm">VBScript - Numbers</a></li>
+<li><a href="/vbscript/vbscript_strings.htm">VBScript - Strings</a></li>
+<li><a href="/vbscript/vbscript_arrays.htm">VBScript - Arrays</a></li>
+<li><a href="/vbscript/vbscript_date.htm">VBScript - Date</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">VBScript Advanced</li>
+<li><a href="/vbscript/vbscript_procedures.htm">VBScript - Procedures</a></li>
+<li><a href="/vbscript/vbscript_dialog_boxes.htm">VBScript - Dialog Boxes</a></li>
+<li><a href="/vbscript/vbscript_object_oriented.htm">VBScript - Object Oriented</a></li>
+<li><a href="/vbscript/vbscript_reg_expressions.htm">VBScript - Reg Expressions</a></li>
+<li><a href="/vbscript/vbscript_error_handling.htm">VBScript - Error Handling</a></li>
+<li><a href="/vbscript/vbscript_miscellaneous_statements.htm">VBScript - Misc Statements</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">VBScript Useful Resources</li>
+<li><a href="/vbscript/vbscript_questions_answers.htm">VBScript - Questions and Answers</a></li>
+<li><a href="/vbscript/vbscript_quick_guide.htm">VBScript - Quick Guide</a></li>
+<li><a href="/vbscript/vbscript_useful_resources.htm">VBScript - Useful Resources</a></li>
+<li><a href="/vbscript/vbscript_discussion.htm">VBScript - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>VBScript - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/vbscript/vbscript_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/vbscript/vbscript_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>VBScript Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>VBScript</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What is VBScript?</label>
+<div class="toggle-content">
+<p>Microsoft VBScript (Visual Basic Script) is a general-purpose, lightweight and active scripting language developed by Microsoft that is modelled on Visual Basic. Nowadays, VBScript is the primary scripting language for Quick Test Professional (QTP), which is a test automation tool.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of VBScript?</label>
+<div class="toggle-content">
+<p>Following are the advantages of VBScript &minus;</p>
+<ul class="list">
+<li><p>VBScript is a lightweight scripting language, which has a lightning fast interpreter.</p></li>
+<li><p>VBScript, for the most part, is case insensitive. It has a very simple syntax, easy to learn and to implement.</p></li>
+<li><p>Unlike C++ or Java, VBScript is an object-based scripting language and NOT an Object-Oriented Programming language.</p></li>
+<li><p>It uses Component Object Model (COM) in order to access the elements of the environment in which it is executing.</p></li>
+<li><p>Successful execution of VBScript can happen only if it is executed in Host Environment such as Internet Explorer (IE), Internet Information Services (IIS) and Windows Scripting Host (WSH).</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the disadvantages of VBScript?</label>
+<div class="toggle-content">
+<p>Following are the disadvantages of VBScript &minus;</p>
+<ul class="list">
+<li><p>VBscript is used only by IE Browsers. Other browsers such as Chrome, Firefox DONOT Support VBScript. Hence, JavaScript is preferred over VBScript.</p></li>
+<li><p>VBScript has a Limited command line support.</p></li>
+<li><p>Since there is no development environment available by default, debugging is difficult.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Is VBScript case sensitive?</label>
+<div class="toggle-content">
+<p>No! VBScript is a case-insensitive language. This means that language keywords, variables, function names and any other identifiers need NOT be typed with a consistent capitalization of letters.</p>
+<p>So identifiers int_counter, INT_Counter and INT_COUNTER have the same meaning within VBScript.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the variable naming conventions in  VBScript?</label>
+<div class="toggle-content">
+<p>Variable is a named memory location used to hold a value that can be changed during the script execution. VBScript has only ONE fundamental data type, Variant.</p>
+<p>Rules for Declaring Variables &minus;</p>
+<ul class="list">
+<li><p>Variable Name must begin with an alphabet.</p></li>
+<li><p>Variable names cannot exceed 255 characters.</p></li>
+<li><p>Variables Should NOT contain a period(.)</p></li>
+<li><p>Variable Names should be unique in the declared context.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do you declare a variable in VBScript?</label> 
+<div class="toggle-content">
+<p>Variables are declared using "dim" keyword.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Do you need to specify the type of variable during declaration?</label>
+<div class="toggle-content">
+<p>No! Since there is only ONE fundamental data type, all the declared variables are variant by default. Hence, a user NEED NOT mention the type of data during declaration.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to assign a numeric value to a variable?</label>
+<div class="toggle-content">
+<p>The numeric values should be assigned without double quotes.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to assign a string value to a variable?</label>
+<div class="toggle-content">
+<p>The String values should be enclosed within doublequotes(").</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to assign a date value to a variable?</label>
+<div class="toggle-content">
+<p>Date and Time variables should be enclosed within hash symbol(#).</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the valid scopes of a variable in VBScript?</label>
+<div class="toggle-content">
+<p>Following are the scopes of variable in VBScript &minus;</p>
+<ul class="list">
+<li><p>Dim</p></li>
+<li><p>Public</p></li>
+<li><p>Private</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the scope of a variable declared using Dim?</label>
+<div class="toggle-content">
+<p>Variables declared using "Dim" keyword at a Procedure level are available only within the same procedure. Variables declared using "Dim" Keyword at script level are available to all the procedures within the same script.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the scope of a variable declared using Public?</label>
+<div class="toggle-content">
+<p>Variables declared using "Public" Keyword are available to all the procedures across all the associated scripts. When declaring a variable of type "public", Dim keyword is replaced by "Public".</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the scope of a variable declared using Private?</label>
+<div class="toggle-content">
+<p>Variables that are declared as "Private" have scope only within that script in which they are declared. When declaring a variable of type "Private", Dim keyword is replaced by "Private".</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you declare a constant in VBScript?</label>
+<div class="toggle-content">
+<p>Constants are declared using "const" keyword.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the scope of a constant declared using Public?</label>
+<div class="toggle-content">
+<p>The Public constants are available for all the scripts and procedures.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the scopt of constant declared using Private?</label>
+<div class="toggle-content">
+<p>Private Constants are available within the procedure or Class.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How many types of operators VBScript supports?</label>
+<div class="toggle-content">
+<p> VBScript language supports following types of operators &minus;</p>
+<ul class="list">
+<li><p>Arithmetic Operators</p></li>
+<li><p>Comparison Operators</p></li>
+<li><p>Logical (or Relational) Operators</p></li>
+<li><p>Concatenation Operators</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Which opearator can be used to get the modulus of two numbers in VBScript?</label>
+<div class="toggle-content">
+<p>MOD opeator is used to get the modulus of two numbers.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim a : a = 5
+Dim b : b = 10
+Dim c
+c = b MOD a
+Document.write ("Modulus Result is " &amp;c)
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> Which opearator can be used to get the exponent of a number in VBScript?</label>
+<div class="toggle-content">
+<p>^ opeator is used to get the exponent of two numbers.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim a : a = 5
+Dim b : b = 10
+Dim c
+c = b ^ a
+Document.write ("Exponentiation Result is " &amp;c)
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> Which opearator can be used to check if two numbers are equal or not in VBScript?</label>
+<div class="toggle-content">
+<p>&lt;&gt; operator is used to check if two numbers are equal or not.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim a : a = 5
+Dim b : b = 10
+Dim c
+c = b &lt;&gt; a
+Document.write ("Equality Check is " &amp;c)
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> Which opearator can be used to do an XOR operation in VBScript?</label>
+<div class="toggle-content">
+<p>XOR Called Logical Exclusion operator. It is used to do an XOR operation.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+A. Dim a : a = 5
+Dim b : b = 10
+Dim c
+c = b XOR a
+Document.write ("XOR Check is " &amp;c)
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is the output of A + B in VBScript if A = 5 and B = 10?</label>
+<div class="toggle-content">
+<p>+ operator adds two Values as Variable Values are Numeric. So A + B will give 15.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the output of A + B in VBScript if A = "VB" and B = "Script"?</label>
+<div class="toggle-content">
+<p>+ operator concatenates two Values if values are string. So A + B will give VBScript.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the output of A &amp; B in VBScript if A = 5 and B = 10?</label>
+<div class="toggle-content">
+<p>&amp; operator concatenates two values. So A + B will give 510.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the output of A &amp; B in VBScript if A = "VB" and B = "Script"?</label>
+<div class="toggle-content">
+<p>&amp; operator concatenates two values. So A &amp; B will give VBScript.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you access Cookie using VBScript?</label>
+<div class="toggle-content">
+<p>VBScript can also manipulate cookies using the cookie property of the Document object. JavaScript can read, create, modify, and delete the cookie or cookies that apply to the current web page.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to create a Cookie using VBScript</label>
+<div class="toggle-content">
+<p>The simplest way to create a cookie is to assign a string value to the document.cookie object, which looks like this &minus;</p>
+<p>Syntax &minus;</p>
+<pre class="prettyprint notranslate">
+document.cookie = "key1 = value1; key2 = value2; expires = date";
+</pre>
+<p>Here expires attribute is optional. If you provide this attribute with a valid date or time then cookie will expire at the given date or time and after that cookies' value will not be accessible.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to read a Cookie using VBScript?</label>
+<div class="toggle-content">
+<p>Reading a cookie is just as simple as writing one, because the value of the document.cookie object is the cookie. So you can use this string whenever you want to access the cookie.</p>
+<p>The document.cookie string will keep a list of name=value pairs separated by semicolons, where name is the name of a cookie and value is its string value.</p>
+<p>You can use strings' split() function to break the string into key and values.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to delete a Cookie using VBScript?</label>
+<div class="toggle-content">
+<p>Sometimes you will want to delete a cookie so that subsequent attempts to read the cookie return nothing. To do this, you just need to set the expiration date to a time in the past.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a given number to double in VBScript?</label>
+<div class="toggle-content">
+<p>Using CDbl function, which converts a given number of any variant subtype to double.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+x = 123
+y = 123.882
+document.write("x value after converting to double - " & CDbl(x) & "&lt;br /&gt;")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a given number to Integer in VBScript?</label>
+<div class="toggle-content">
+<p>Using CInt function, which converts a given number of any variant subtype to Integer.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+x = 123
+y = 123.882
+document.write("y value after converting to Int - " & CInt(y) & "&lt;br /&gt;")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a given number to Long in VBScript?</label>
+<div class="toggle-content">
+<p>Using CLng function, which converts a given number of any variant subtype to Long.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+x = 123
+y = 123.882
+document.write("x value after converting to Long -" & CLng(x) & "&lt;br /&gt;")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a given number to Single in VBScript?</label>
+<div class="toggle-content">
+<p>Using CSng function, which converts a given number of any variant subtype to Single.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+x = 123
+y = 123.882
+document.write("x value after converting to Single -" & CSng(x) & "&lt;br /&gt;")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a given number to Hexadecimal in VBScript?</label>
+<div class="toggle-content">
+<p>Using Hex function, which converts a given number of any variant subtype to Hexadecimal.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+x = 123
+y = 123.882
+document.write("y value after converting to Hex -" & Hex(y) & "&lt;br /&gt;") 
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you format a number upto 3 decimal places in VBScript?</label>
+<div class="toggle-content">
+<p>Using FormatNumber function, which would return an expression formatted as a number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write(FormatNumber(num, 3))& "&lt;br/&gt;"     '-645.999
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you format a number in percetage format in VBScript?</label>
+<div class="toggle-content">
+<p>Using FormatPercent function, which would return an expression formatted as a percent.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write(FormatPercent(num, 2))& "&lt;br/&gt;"    '-64,599.86%
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the integer part of a number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Int function, which returns the integer part of the given number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write("int Result of num is : " & int(num))& "&lt;br/&gt;"  '-646
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the natural logarithm of the given number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Log function, which returns the natural logarithm of the given number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = 210
+document.write("Log Result of num2 is : " & Log(num2))& "&lt;br/&gt;" '5.34710753071747
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the octal value of the given number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Oct function, which returns the octal value of the given number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write("Oct Result of num is : " & Oct(num))& "&lt;br/&gt;" '37777776572
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the hexadecimal value of the given number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Hex function, which returns the hexadecimal value of the given number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write("Hex Result of num is : " & Hex(num))& "&lt;br/&gt;" 'FFFFFD7A
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get a random number between 0 and 1 in VBScript?</label>
+<div class="toggle-content">
+<p>Using Rnd function,which returns a random number between 0 and 1.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write("Rnd Result of num is : " & Rnd(num))& "&lt;br/&gt;" '0.5130115
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the square root of the given number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Sqr function, which returns the square root of the given number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -210
+document.write("Sqr Result of num is : " & Sqr(num))& "&lt;br/&gt;" '14.4913767461894
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the absolute value of the given number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Abs function, which returns the absolute value of the given number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write("Abs Result of num is : " & Abs(num))& "&lt;br/&gt;" '645.998651
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the exponent of the given number in VBScript?</label>
+<div class="toggle-content">
+<p>Using Exp function, which returns the value of e raised to the specified number.</p>
+<p>Example &minus;</p> 
+<pre class="prettyprint notranslate">
+Dim num : num = -645.998651
+document.write("Exp Result of num is : " & Exp(num))& "&lt;br/&gt;" '2.79479883633128E-281
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the first occurrence of one string within another string using VBScript?</label>
+<div class="toggle-content">
+<p>Using InStr function, which returns the first occurrence of one string within another string. The search happens from left to right.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the last occurrence of one string within another string using VBScript?</label>
+<div class="toggle-content">
+<p>Using InStrRev function, which returns the first occurrence of one string within another string. The search happens from right to left.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a string to lower case string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Lcase function, which returns the lower case of the specified string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you convert a string to upper case string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Ucase function, which returns the upper case of the specified string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you trim the spaces on the left of a string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Ltrim function, which returns a string after removing the spaces on the left side of the specified string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you trim the spaces on the right of a string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Rtrim function, which returns a string after removing the spaces on the left side of the specified string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you trim the leading as well as trailing spaces of a string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Trim function, which returns a string value after removing both leading and trailing blank spaces.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get length of a string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Len function, which returns the length of the given string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you replace a string with another string using VBScript?</label>
+<div class="toggle-content">
+<p>Using Replace function, which returns a string after replacing a string with another string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you fill the string with the specified number of spaces using VBScript?</label>
+<div class="toggle-content">
+<p>Using Space function, which fills a string with the specified number of spaces.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you compare two strings in VBScript?</label>
+<div class="toggle-content">
+<p>Using StrComp function, which returns an integer value after comparing the two specified strings.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How StrComp function works?</label>
+<div class="toggle-content">
+<p>The StrComp Function returns an integer value after comparing the two given strings. It can return any of the three values -1, 0 or 1 based on the input strings to be compared.</p>
+<ul class="list">
+<li><p>If String 1 &lt; String 2 then StrComp returns -1</p></li>
+<li><p>If String 1 = String 2 then StrComp returns 0</p></li>
+<li><p>If String 1 &gt; String 2 then StrComp returns 1</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get a string with the specified character the specified number of times in VBScript?</label>
+<div class="toggle-content">
+<p>Using String function, which returns a String with a specified character the specified number of times.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you reverse a String in VBScript?</label>
+<div class="toggle-content">
+<p>Using StrReverse function, whihc returns a String after reversing the sequece of the characters of the given string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to declare an array in VBScript?</label>
+<div class="toggle-content">
+<p>rrays are declared the same way a variable has been declared except that the declaration of an array variable uses parenthesis. In the below example, the size of the array is mentioned in the brackets.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+'Method 1 : Using Dim
+Dim arr1() 'Without Size
+'Method 2 : Mentioning the Size
+Dim arr2(5)  'Declared with size of 5
+'Method 3 : using 'Array' Parameter
+Dim arr3
+arr3 = Array("apple","Orange","Grapes")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you assign values to an array in VBScript?</label>
+<div class="toggle-content">
+<p>The values are assigned to the array by specifying array index value against each one of the values to be assigned.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim arr(5)
+arr(0) = "VBScript"    'String
+document.write("Value stored in Array index 0 : " & arr(0) & "&lt;br /&gt;")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How will you increase the size of an array in VBScript?</label>
+<div class="toggle-content">
+<p>Using ReDim statement, we can declare dynamic-array variables and allocate or reallocate storage space.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the smallest subscript of an array in VBScript?</label>
+<div class="toggle-content">
+<p>Using LBound function, which returns an integer that corresponds to the smallest subscript of the given arrays.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get the largest subscript of an array in VBScript?</label>
+<div class="toggle-content">
+<p>Using UBound function, which returns an integer that corresponds to the largest subscript of the given arrays.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you split a string into an array in VBScript?</label>
+<div class="toggle-content">
+<p>Using Split function, which returns an array that contains a specified number of values. Splitted based on a Delimiter.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get a combined string from array of string in VBScript?</label>
+<div class="toggle-content">
+<p>Using Join function, which returns a String that contains a specified number of substrings in an array. This is an exact opposite function of Split Method.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you get a subset of a array in VBScript?</label>
+<div class="toggle-content">
+<p>Using Filter function, returns a zero based array that contains a subset of a string array based on a specific filter criteria.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you check that a variable is an array in VBScript?</label>
+<div class="toggle-content">
+<p>Using IsArray function, which returns a boolean value that indicates whether or not the input variable is an array.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you release the memory acquired by an array variable in VBScript?</label>
+<div class="toggle-content">
+<p>Using Erase Function, which recovers the allocated memory for the array variables.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to create a function in VBScript?</label>
+<div class="toggle-content">
+<p>The most common way to define a function in VBScript is by using the Function keyword, followed by a unique function name and it may or may not carry a list of parameters and a statement with a End Function keyword, which indicates the end of the function.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to call a function in VBScript?</label>
+<div class="toggle-content">
+<p>To invoke a function somewhere later in the script, you would simple need to write the name of that function with the Call keyword.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to return a value from a function in VBScript?</label>
+<div class="toggle-content">
+<p>To return a value from a function, simply assign the value to the function name itself.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can in VBScript, function return multiple values?</label>
+<div class="toggle-content">
+<p>Yes! A function can return multiple values separated by comma as an array assigned to the function name itself.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are subprocedures in VBScript?</label>
+<div class="toggle-content">
+<p>Sub Procedures are similar to functions but there are few differences.</p>
+<ul class="list">
+<li><p>Sub procedures DONOT Return a value while functions may or may not return a value.</p></li>
+<li><p>Sub procedures Can be called without call keyword.</p></li>
+<li><p>Sub procedures are always enclosed within Sub and End Sub statements.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How to pass argument by value to a function in VBScript?</label>
+<div class="toggle-content">
+<p>If ByVal is specified, then the arguments are sent as by value when the function or procedure is called.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to pass argument by reference to a function in VBScript?</label>
+<div class="toggle-content">
+<p>If ByRef is specified, then the arguments are sent as by reference when the function or procedure is called.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you create an Object in VBScript?</label>
+<div class="toggle-content">
+<p>we need to declare the object and instantiate it using Set Keyword.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim obj  
+Set obj = CreateObject("Scripting.Dictionary")
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How can you destroy an object in VBScript?</label>
+<div class="toggle-content">
+<p>In order to destroy the objects, we need to use Set Keyword followed by the object name and point it to Nothing.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim obj  
+Set obj = CreateObject("Scripting.Dictionary")
+Set obj = Nothing
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Class in VBScript?</label>
+<div class="toggle-content">
+<p>Class is a construct that is used to define a unique type. Like Object Oriented Programming, VbScript 5.0 supports the creation of classes and it is very similar to writing COM objects with VB.</p>
+<p>Class is simply the template for an object and we instantiate an object to access the properties and methods of it. Classes can contain variables, properties, methods or events.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to create a Class in VBScript?</label>
+<div class="toggle-content">
+<p>VBScript classes are enclosed within Class .... End Class</p>
+<pre class="prettyprint notranslate">
+'Defining the Class
+Class classname    'Declare the object name
+...
+End Class
+' Instantiation of the Class
+Set objectname = new classname
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What are class variables?</label>
+<div class="toggle-content">
+<p>Classes can contain variables, which can be of private or public. Variables within classes should follow VBScript naming conventions. By default, the variables in class are Public. That is why they can be accessed outside the class.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim var1 , var2.
+Private var1 , var2.
+Public var1 , var2.
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What are class properties?</label>
+<div class="toggle-content">
+<p>Class properties, such as Property Let, which handles the process of data validation and assigning the new value to the private variable. Property set, which assigns the new property value to the private object variable.</p>
+<p>Read-only properties have only a Property Get procedure while write-only properties (which are rare) have only a Property Let or a Property Set procedure.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Class Comp
+   
+   Private modStrType
+   Private OS
+ 
+   Public Property Let ComputerType(strType)
+      modStrType = strType
+   End Property
+ 
+   Public Property Get ComputerType()
+      ComputerType = modStrType
+   End Property
+ 
+   Public Property Set OperatingSystem(oObj)
+      Set OS = oObj
+   End Property
+ 
+   Public Property Get OperatingSystem()
+      Set OperatingSystem = OS
+   End Property
+ 
+End Class
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What are class methods?</label>
+<div class="toggle-content">
+<p>Methods allow the class to perform the operation that the developer wants. The Methods are nothing but Functions or Subroutines.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Class Car
+   
+   Private Model
+   Private Year
+ 
+   Public Start()
+      Fuel = 2.45
+   Pressure =  4.15
+   End Function
+ 
+End Class
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What are class events?</label>
+<div class="toggle-content">
+<p>There are two events that are automatically associated with every class by default. Class_Initialize and Class_Terminate.</p>
+<p>Class_Initialize is triggered whenever you instantiate an object based on the class. Class_Terminate event is fired when the object goes out of scope or when the object is set to Nothing.</p>
+<p>Example &minus;</p>
+<p>In the below example, we will make you understand how the events work in VBScript.</p>
+<pre class="prettyprint notranslate">
+'Instantation of the Object
+Set objectname = New classname 
+   
+Private Sub Class_Initialize(  )
+ Initalization code goes here
+End Sub
+'When Object is Set to Nothing
+Private Sub Class_Terminate(  )
+ Termination code goes here
+End Sub
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is purpose of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>This class provides file system objects which help the developers to work with drives, folders and files.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Dim oFS, drive
+Set oFS = CreateObject("Scripting.FileSystemObject")
+Set drive = oFS.GetDrive(oFS.GetDriveName("C:\"))
+Document.write drive.VolumeName
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Drive object of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>Drive contains methods and properties that allow you to gather information about a drive attached to the system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of File object of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>File contains methods and properties that allow developers to create, delete or move a file.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Files object of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>Files provides a list of all files contained within a folder.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Folder object of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>Folder provides methods and properties that allow developers to create, delete or move folders.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Folders object of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>Folders provides a list of all the folders within a Folder.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of TextStream object of Scripting.FileSystemObject class in VBScript?</label>
+<div class="toggle-content">
+<p>TextStream enables developers to read and write text files.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of RegExp object in VBScript?</label>
+<div class="toggle-content">
+<p>RegExp object helps the developers to match the pattern of strings and the properties and methods help us to work with Regular Expressions easily.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the properties of RegExp object?</label>
+<div class="toggle-content">
+<p>Following are the properties of RegExp object &minus;</p>
+<ul class="list">
+<li><p><b>Pattern &minus;</b> The Pattern method represents a string that is used to define the regular expression and it should be set before using the regular expression object.</p></li>
+<li><p><b>IgnoreCase &minus;</b> A Boolean property that represents if the regular expression should be tested against all possible matches in a string if true or false. If not specified explicitly, IgnoreCase value is set to False.</p></li>
+<li><p><b>Global &minus;</b> A Boolean property that represents if the regular expression should be tested against all possible matches in a string. If not specified explicitly, Global value is set to False.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How RegExp.Test method works?</label>
+<div class="toggle-content">
+<p>The Test method takes a string as its argument and returns True if the regular expression can successfully be matched against the string, otherwise False is returned.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How RegExp.Replace method works?</label>
+<div class="toggle-content">
+<p>The Replace method takes 2 parameters. If the search is successful then it replaces that match with the replace-string, and the new string is returned. If there are no matches then the original search-string is returned.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How RegExp.Execute method works?</label>
+<div class="toggle-content">
+<p>The Execute method works like Replace, except that it returns a Matches collection object, containing a Match object for each successful match. It doesn't modify the original string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to capture a runtime Error in VBScript?</label>
+<div class="toggle-content">
+<p>If we want to capture the error, then Err Object is used.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to throw an error in VBScript?</label>
+<div class="toggle-content">
+<p>Use Err.Raise to throw an error.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Err.Raise 6   ' Raise an overflow error.
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How to get the error details in VBScript?</label>
+<div class="toggle-content">
+<p>Err.Number gives the error number and Err.Description gives error description.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Err.Raise 6   ' Raise an overflow error.
+MsgBox "Error # " & CStr(Err.Number) & " " & Err.Description
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How to clear an error in VBScript?</label>
+<div class="toggle-content">
+<p>Err.Clear clear an error.</p>
+<p>Example &minus;</p>
+<pre class="prettyprint notranslate">
+Err.Raise 6   ' Raise an overflow error.
+MsgBox "Error # " & CStr(Err.Number) & " " & Err.Description
+Err.Clear   ' Clear the error.
+</pre>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/vbscript/vbscript_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/vbscript/vbscript_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/vbscript/vbscript_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/vbscript/vbscript_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/vbscript/vbscript_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/vbscript/vbscript_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/vbscript/vbscript_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/vbscript/vbscript_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

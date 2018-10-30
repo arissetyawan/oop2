@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>jQuery Mock Test - TutorialsPoint</title>
+<meta name="description" content="jQuery Mock Test - Learn jQuery in simple and easy steps starting from basic to advanced concepts with examples including jQuery Overview, Basics, Selectors, Attributes, Traversing, CSS, DOM Manipulation, AJAX Support, Drag and Drop, Effects, Event Handling, UI, Plug-ins and other related Utilities." />
+<meta name="Keywords" content="jQuery, JavaScript, Tutorial, Overview, Basics, Selectors, Attributes, Traversing, CSS, DOM Manipulation, AJAX Support, Drag and Drop, Effects, Event Handling, UI, Plug-ins and other related Utilities." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #1ea2c9 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #1ea2c9 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #1ea2c9 !important;}
+.submenu-item{ border-bottom: 2px solid #1ea2c9 !important; border-top: 2px solid #1ea2c9 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#1ea2c9; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/jquery/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/jquery/images/jquery-mini-logo.jpg" alt="jQuery Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/jquery_online_training/index.asp" target="_blank"><img src="/jquery/images/jquery-video-tutorials.jpg" alt="jQuery Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">jQuery Tutorial</li>
+<li><a href="/jquery/index.htm">jQuery - Home</a></li>
+<li><a href="/jquery/jquery-overview.htm">jQuery - Overview</a></li>
+<li><a href="/jquery/jquery-basics.htm">jQuery - Basics</a></li>
+<li><a href="/jquery/jquery-selectors.htm">jQuery - Selectors</a></li>
+<li><a href="/jquery/jquery-attributes.htm">jQuery - Attributes</a></li>
+<li><a href="/jquery/jquery-traversing.htm">jQuery - Traversing</a></li>
+<li><a href="/jquery/jquery-css.htm">jQuery - CSS</a></li>
+<li><a href="/jquery/jquery-dom.htm">jQuery - DOM</a></li>
+<li><a href="/jquery/jquery-events.htm">jQuery - Events</a></li>
+<li><a href="/jquery/jquery-ajax.htm">jQuery - AJAX</a></li>
+<li><a href="/jquery/jquery-effects.htm">jQuery - Effects</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">jQuery UI</li>
+<li><a href="/jquery/jquery-interactions.htm">jQuery - Interactions</a></li>
+<li><a href="/jquery/jquery-widgets.htm">jQuery - Widgets</a></li>
+<li><a href="/jquery/jquery-theming.htm">jQuery - Theming</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">jQuery References</li>
+<li><a href="/jquery/jquery-utilities.htm">jQuery - Utilities</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">jQuery Plugins</li>
+<li><a href="/jquery/jquery-plugins.htm">jQuery - Plugins</a></li>
+<li><a href="/jquery/jquery-pagepiling.htm">jQuery - PagePiling.js</a></li>
+<li><a href="/jquery/jquery-flickerplate.htm">jQuery - Flickerplate.js</a></li>
+<li><a href="/jquery/jquery-multiscroll.htm">jQuery - Multiscroll.js</a></li>
+<li><a href="/jquery/jquery-slidebar.htm">jQuery - Slidebar.js</a></li>
+<li><a href="/jquery/jquery-rowgrid.htm">jQuery - Rowgrid.js</a></li>
+<li><a href="/jquery/jquery-alertify.htm">jQuery - Alertify.js</a></li>
+<li><a href="/jquery/jquery-progressbar.htm">jQuery - Progressbar.js</a></li>
+<li><a href="/jquery/jquery-slideshow.htm">jQuery - Slideshow.js</a></li>
+<li><a href="/jquery/jquery-drawsvg.htm">jQuery - Drawsvg.js</a></li>
+<li><a href="/jquery/jquery-tagsort.htm">jQuery - Tagsort.js</a></li>
+<li><a href="/jquery/jquery-logosdistort.htm">jQuery - LogosDistort.js</a></li>
+<li><a href="/jquery/jquery-filer.htm">jQuery - Filer.js</a></li>
+<li><a href="/jquery/jquery-whatsnearby.htm">jQuery - Whatsnearby.js</a></li>
+<li><a href="/jquery/jquery-checkout.htm">jQuery - Checkout.js</a></li>
+<li><a href="/jquery/jquery-blockrain.htm">jQuery - Blockrain.js</a></li>
+<li><a href="/jquery/jquery-producttour.htm">jQuery - Producttour.js</a></li>
+<li><a href="/jquery/jquery-megadropdown.htm">jQuery - Megadropdown.js</a></li>
+<li><a href="/jquery/jquery-weather.htm">jQuery - Weather.js</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">jQuery Useful Resources</li>
+<li><a href="/jquery/jquery_questions_answers.htm">jQuery - Questions and Answers</a></li>
+<li><a href="/jquery/jquery-quick-guide.htm">jQuery - Quick Guide</a></li>
+<li><a href="/jquery/jquery-resources.htm">jQuery - Useful Resources</a></li>
+<li><a href="/jquery/jquery-discussion.htm">jQuery - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>jQuery - Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/jquery/jquery_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/jquery/jquery_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>jQuery Framework</b>. You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/jquery/jquery_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/jquery/jquery_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/jquery/jquery_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/jquery/jquery_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>jQuery Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which of the following is correct about jQuery?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - jQuery is a fast and concise JavaScript Library created by John Resig in 2006 with a nice motto - Write less, do more.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - jQuery is a JavaScript toolkit designed to simplify various tasks by writing less code.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A1">
+<h3>Answer : D</h3>
+<h3>Explaination</h3>
+<p>All of the above options are correct.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Which of the following is correct about jQuery?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - The jQuery made it easy to select DOM elements, traverse them and modifying their content by using cross-browser open source selector engine called Sizzle.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The jQuery helps you a lot to develop a responsive and feature-rich site using AJAX technology.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - The jQuery comes with plenty of built-in animation effects which you can use in your websites.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A2">
+<h3>Answer : D</h3>
+<h3>Explaination</h3>
+<p>All of the above options are correct.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following is correct about jQuery?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - The jQuery is very lightweight library - about 19KB in size ( Minified and gzipped ).</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The jQuery has cross-browser support, and works well in IE 6.0+, FF 2.0+, Safari 3.0+, Chrome and Opera 9.0+</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - The jQuery supports CSS3 selectors and basic XPath syntax.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A3">
+<h3>Answer : D</h3>
+<h3>Explaination</h3>
+<p>All of the above options are correct.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which of the following is a valid type of function javascript supports?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - named function</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - anonymous function</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A4">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>A function in JavaScript can be either named or anonymous.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Can you assign a anonymous function to a variable?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - true</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - false</a></p>
+</div>
+<div class="A" id="A5">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Yes! An anonymous function can be assigned to a variable.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - Can you pass a anonymous function as an argument to another function?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - true</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - false</a></p>
+</div>
+<div class="A" id="A6">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Yes! An anonymous function can be passed as an argument to another function.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - How can you get the type of arguments passed to a function?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - using typeof operator</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - using getType function</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A7">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Using typeof operator, we can get the type of arguments passed to a function.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - How can you get the total number of arguments passed to a function?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Using args.length property</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Using arguments.length property</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A8">
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>Using arguments.length property, we can get the total number of arguments passed to a function.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Which of the following type of variable is visible everywhere in your JavaScript code?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - global variable</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - local variable</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A9">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Global Variables: A global variable has global scope which means it is visible everywhere in your JavaScript code.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following type of variable is visible only within a function where it is defined?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - global variable</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - local variable</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A10">
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>Local Variables: A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Which of the following type of variable takes precedence over other if names are same?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - global variable</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - local variable</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A11">
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>A local variable takes precedence over a global variable with the same name.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Which of the following is correct about callbacks?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - A callback is a plain JavaScript function passed to some method as an argument or option.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A12">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>A callback is a plain JavaScript function passed to some method as an argument or option. Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - Which built-in method returns the character at the specified index?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - characterAt()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - getCharAt()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - charAt()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A13">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>charAt() method returns the character at the specified index.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> - Which built-in method combines the text of two strings and returns a new string?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - append()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - concat()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - attach()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A14">
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>concat() method returns the character at the specified index.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - Which built-in method calls a function for each element in the array?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - while()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - loop()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - forEach()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A15">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>forEach() method calls a function for each element in the array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - Which built-in method returns the index within the calling String object of the first occurrence of the specified value?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - getIndex()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - location()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - indexOf()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A16">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>indexOf() method returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - Which built-in method returns the length of the string?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - length()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - size()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - index()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A17">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>length() method returns the length of the string.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - Which built-in method removes the last element from an array and returns that element?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - last()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - get()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - pop()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A18">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>pop() method removes the last element from an array and returns that element.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - Which built-in method adds one or more elements to the end of an array and returns the new length of the array?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - last()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - put()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - push()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A19">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>push() method adds one or more elements to the end of an array and returns the new length of the array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> - Which built-in method reverses the order of the elements of an array?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - changeOrder(order)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - reverse()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - sort(order)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A20">
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>reverse() method reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> - Which built-in method sorts the elements of an array?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - changeOrder(order)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - order()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - sort()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A21">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>sort() method sorts the elements of an array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - Which built-in method returns the characters in a string beginning at the specified location?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - substr()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - getSubstring()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - slice()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A22">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>substr() method returns the characters in a string beginning at the specified location through the specified number of characters.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> - Which built-in method returns the calling string value converted to lower case?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - toLowerCase()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - toLower()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - changeCase(case)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A23">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>toLowerCase() method returns the calling string value converted to lower case.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> - Which built-in method returns the calling string value converted to upper case?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - toUpperCase()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - toUpper()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - changeCase(case)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A24">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>toUpperCase() method returns the calling string value converted to upper case.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> - Which built-in method returns the string representation of the number's value?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - toValue()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - toNumber()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - toString()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A25">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>toString() method returns the string representation of the number's value.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>C</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/jquery/jquery_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/jquery/pdf/jquery_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/jquery/jquery_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams.js"></script>
+<div class="parent-file">jquery_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/jquery/jquery_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/jquery/jquery_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/jquery/jquery_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/jquery/jquery_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/jquery/jquery_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/jquery/jquery_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

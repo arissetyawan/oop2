@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>ASP.NET - Security</title>
+<meta name="description" content="ASP.NET Security - Free ASP.NET Tutorials, Reference Manual, and Quick Guide for Beginners. Learn ASP.NET starting from Environment Setup, Basic Controls, Directives, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel control, LINQ, Database Access, Security, Debugging, Error Handling, Configuration and Deployment." />
+<meta name="keywords" content="Free, ASP.NET, Tutorial, Reference, Manual, Guide, Beginners, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel, control, LINQ, Database Access, Security, Debugging, Error, Handling, Configuration, Deployment." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #147dc2 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #147dc2 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #147dc2 !important;}
+.submenu-item{ border-bottom: 2px solid #147dc2 !important; border-top: 2px solid #147dc2 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#147dc2; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/asp.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/asp.net/images/asp.net-mini-logo.jpg" alt="ASP.NET Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">ASP.NET Tutorial</li>
+<li><a target="_top" href="/asp.net/index.htm">ASP.NET - Home</a></li>
+<li><a target="_top" href="/asp.net/asp.net_introduction.htm">ASP.NET - Introduction</a></li>
+<li><a target="_top" href="/asp.net/asp.net_environment_setup.htm">ASP.NET - Environment</a></li>
+<li><a target="_top" href="/asp.net/asp.net_life_cycle.htm">ASP.NET - Life Cycle</a></li>
+<li><a target="_top" href="/asp.net/asp.net_first_example.htm">ASP.NET - First Example</a></li>
+<li><a target="_top" href="/asp.net/asp.net_event_handling.htm">ASP.NET - Event Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_side.htm">ASP.NET - Server Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_controls.htm">ASP.NET - Server Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_html_server.htm">ASP.NET - HTML Server</a></li>
+<li><a target="_top" href="/asp.net/asp.net_client_side.htm">ASP.NET - Client Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_basic_controls.htm">ASP.NET - Basic Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_directives.htm">ASP.NET - Directives</a></li>
+<li><a target="_top" href="/asp.net/asp.net_managing_state.htm">ASP.NET - Managing State</a></li>
+<li><a target="_top" href="/asp.net/asp.net_validators.htm">ASP.NET - Validators</a></li>
+<li><a target="_top" href="/asp.net/asp.net_database_access.htm">ASP.NET - Database Access</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ado_net.htm">ASP.NET - ADO.net</a></li>
+<li><a target="_top" href="/asp.net/asp.net_file_uploading.htm">ASP.NET - File Uploading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ad_rotator.htm">ASP.NET - Ad Rotator</a></li>
+<li><a target="_top" href="/asp.net/asp.net_calenders.htm">ASP.NET - Calendars</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_views.htm">ASP.NET - Multi Views</a></li>
+<li><a target="_top" href="/asp.net/asp.net_panel_controls.htm">ASP.NET - Panel Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ajax_control.htm">ASP.NET - AJAX Control</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_sources.htm">ASP.NET - Data Sources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_binding.htm">ASP.NET - Data Binding</a></li>
+<li><a target="_top" href="/asp.net/asp.net_custom_controls.htm">ASP.NET - Custom Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_personalization.htm">ASP.NET - Personalization</a></li>
+<li><a target="_top" href="/asp.net/asp.net_error_handling.htm">ASP.NET - Error Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_debugging.htm">ASP.NET - Debugging</a></li>
+<li><a target="_top" href="/asp.net/asp.net_linq.htm">ASP.NET - LINQ</a></li>
+<li><a target="_top" href="/asp.net/asp.net_security.htm">ASP.NET - Security</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_caching.htm">ASP.NET - Data Caching</a></li>
+<li><a target="_top" href="/asp.net/asp.net_web_services.htm">ASP.NET - Web Services</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_threading.htm">ASP.NET - Multi Threading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_configuration.htm">ASP.NET - Configuration</a></li>
+<li><a target="_top" href="/asp.net/asp.net_deployment.htm">ASP.NET - Deployment</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">ASP.NET Resources</li>
+<li><a target="_top" href="/asp.net/asp.net_quick_guide.htm">ASP.NET - Quick Guide</a></li>
+<li><a target="_top" href="/asp.net/asp.net_useful_resources.htm">ASP.NET - Useful Resources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_discussion.htm">ASP.NET - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>ASP.NET - Security</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_linq.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_data_caching.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Implementing security in a site has the following aspects:</p>
+<ul class="list">
+<li><p><b>Authentication</b> : It is the process of ensuring the user's identity and authenticity. ASP.NET allows four types of authentications:</p>
+<ul class="list">
+<li>Windows Authentication</li>
+<li>Forms Authentication</li>
+<li>Passport Authentication</li>
+<li>Custom Authentication</li>
+</ul>
+</li>
+<li><p><b>Authorization</b> : It is the process of defining and allotting specific roles to specific users.</p></li>
+<li><p><b>Confidentiality</b> : It involves encrypting the channel between the client browser and the web server.</p></li>
+<li><p><b>Integrity</b> : It involves maintaining the integrity of data. For example, implementing digital signature.</p></li>
+</ul>
+<h2>Forms-Based Authentication</h2>
+<p>Traditionally, forms-based authentication involves editing the web.config file and adding a login page with appropriate authentication code.</p>
+<p>The web.config file could be edited and the following codes written on it:</p>
+<pre class="prettyprint notranslate">
+&lt;configuration&gt;
+
+&lt;system.web&gt;
+   &lt;authentication mode="Forms"&gt;
+      &lt;forms loginUrl ="login.aspx"/&gt;
+   &lt;/authentication&gt;
+   
+   &lt;authorization&gt;
+      &lt;deny users="?"/&gt;
+   &lt;/authorization&gt;
+&lt;/system.web&gt;
+...
+...
+&lt;/configuration&gt;
+</pre>
+<p>The login.aspx page mentioned in the above code snippet could have the following code behind file with the usernames and passwords for authentication hard coded into it.</p>
+<pre class="prettyprint notranslate">
+protected bool authenticate(String uname, String pass)
+{
+   if(uname == "Tom")
+   {
+      if(pass == "tom123")
+         return true;
+   }
+   
+   if(uname == "Dick")
+   {
+      if(pass == "dick123")
+         return true;
+   }
+   
+   if(uname == "Harry")
+   {
+      if(pass == "har123")
+         return true;
+   }
+   
+   return false;
+}
+
+public void OnLogin(Object src, EventArgs e)
+{
+   if (authenticate(txtuser.Text, txtpwd.Text))
+   {
+      FormsAuthentication.RedirectFromLoginPage(txtuser.Text, chkrem.Checked);
+   }
+   else
+   {
+      Response.Write("Invalid user name or password");
+   }
+}
+</pre>
+<p>Observe that the FormsAuthentication class is responsible for the process of authentication.</p>
+<p>However, Visual Studio allows you to implement user creation, authentication, and authorization with seamless ease without writing any code, through the Web Site Administration tool. This tool allows creating users and roles.</p>
+<p>Apart from this, ASP.NET comes with readymade login controls set, which has controls performing all the jobs for you.</p>
+<h2>Implementing Forms-Based Security</h2>
+<p>To set up forms-based authentication, you need the following:</p>
+<ul class="list">
+<li>A database of users to support the authentication process</li>
+<li>A website that uses the database</li>
+<li>User accounts</li>
+<li>Roles</li>
+<li>Restriction of users and group activities</li>
+<li>A default page, to display the login status of the users and other information.</li>
+<li>A login page, to allow users to log in, retrieve password, or change password</li>
+</ul>
+<p>To create users, take the following steps:</p>
+<p><b>Step (1)</b> : Choose Website -&gt; ASP.NET Configuration to open the Web Application Administration Tool.</p>
+<p><b>Step (2)</b> : Click on the Security tab.</p>
+<img src="/asp.net/images/security_tab.jpg" alt="Security tab" />
+<p><b>Step (3)</b> : Select the authentication type to 'Forms based authentication' by selecting the  'From the Internet' radio button.</p>
+<img src="/asp.net/images/authentication_type.jpg" alt="Authentication Type" />
+<p><b>Step (4)</b> : Click on 'Create Users' link to create some users. If you already had created roles, you could assign roles to the user, right at this stage.</p>
+<img src="/asp.net/images/create_users_link.jpg" alt="Create Users link " />
+<p><b>Step (5)</b> : Create a web site and add the following pages:</p>
+<ul class="list">
+<li>Welcome.aspx</li>
+<li>Login.aspx</li>
+<li>CreateAccount.aspx</li>
+<li>PasswordRecovery.aspx</li>
+<li>ChangePassword.aspx</li>
+</ul>
+<p><b>Step (6)</b> : Place a LoginStatus control on the Welcome.aspx from the login section of the toolbox. It has two templates: LoggedIn and LoggedOut.</p>
+<p>In LoggedOut template, there is a login link and in the LoggedIn template, there is a logout link on the control. You can change the login and logout text properties of the control from the Properties window.</p>
+<img src="/asp.net/images/login_status_control.jpg" alt="Login Status control" />
+<p><b>Step (7)</b> : Place a LoginView control from the toolbox below the LoginStatus control. Here,	 you can put texts and other controls (hyperlinks, buttons etc.), which are displayed based on whether the user is logged in or not.</p>
+<p>This control has two view templates: Anonymous template and LoggedIn template. Select each view and write some text for the users to be displayed for each template. The text should be placed on the area marked red.</p>
+<img src="/asp.net/images/login_view_control.jpg" alt="Login View control" />
+<p><b>Step (8)</b> : The users for the application are created by the developer. You might want to allow a visitor to create a user account. For this, add a link beneath the LoginView control, which should link to the CreateAccount.aspx page. </p>
+<p><b>Step (9)</b> : Place a CreateUserWizard control on the create account page. Set the ContinueDestinationPageUrl property of this control to Welcome.aspx.</p>
+<img src="/asp.net/images/createuserwizard_control.jpg" alt="CreateUserWizard control" />
+<p><b>Step (10)</b> : Create the Login page. Place a Login control on the page. The LoginStatus control automatically links to the Login.aspx. To change this default, make the following changes in the web.config file.</p>
+<p>For example, if you want to name your log in page as signup.aspx, add the following lines to the &lt;authentication&gt; section of the web.config:</p>
+<pre class="prettyprint notranslate">
+&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;authentication mode="Forms"&gt;
+         &lt;forms loginUrl ="signup.aspx" defaultUrl = â€œWelcome.aspxâ€ /&gt;
+      &lt;/authentication&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;
+</pre>
+<p><b>Step (11)</b> : Users often forget passwords. The PasswordRecovery control helps the user gain access to the account. Select the Login control. Open its smart tag and click 'Convert to Template'.</p>
+<p>Customize the UI of the control to place a hyperlink control under the login button, which should link to the PassWordRecovery.aspx.</p>
+<img src="/asp.net/images/passwordrecovery_control.jpg" alt="PasswordRecovery control" />
+<p><b>Step (12)</b> : Place a PasswordRecovery control on the password recovery page. This control needs an email server to send the passwords to the users.</p>
+<img src="/asp.net/images/passwordrecovery_control2.jpg" alt="PasswordRecovery control2" />
+<p><b>Step (13)</b> : Create a link to the ChangePassword.aspx page in the LoggedIn template of the LoginView control in Welcome.aspx.</p>
+<img src="/asp.net/images/changepassword_control.jpg" alt="ChangePassword control" />
+<p><b>Step (14)</b> : Place a ChangePassword control on the change password page. This control also has two views.</p>
+<img src="/asp.net/images/changepassword_control2.jpg" alt="ChangePassword control2" />
+<p>Now run the application and observe different security operations.</p>
+<p>To create roles, go back to the Web Application Administration Tools and click on the Security tab. Click on 'Create Roles' and create some roles for the application.</p>
+<img src="/asp.net/images/web_application_administration.jpg" alt="Web Application Administration" />
+<p>Click on the 'Manage Users' link and assign roles to the users.</p>
+<img src="/asp.net/images/manage_users.jpg" alt="Manage Users" />
+<h2>IIS Authentication: SSL</h2>
+<p>The Secure Socket Layer or SSL is the protocol used to ensure a secure connection. With SSL enabled, the browser encrypts all data sent to the server and decrypts all data coming from the server. At the same time, the server encrypts and decrypts all data to and from browser.</p>
+<p>The URL for a secure connection starts with HTTPS instead of HTTP. A small lock is displayed by a browser using a secure connection. When a browser makes an initial attempt to communicate with a server over a secure connection using SSL, the server authenticates itself by sending its digital certificate.</p>
+<p>To use the SSL, you need to buy a digital secure certificate from a trusted Certification Authority (CA) and install it in the web server. Following are some of the trusted and reputed certification authorities:</p>
+<ul class="list">
+<li>www.verisign.com</li>
+<li>www.geotrust.com</li>
+<li>www.thawte.com</li>
+</ul>
+<p>SSL is built into all major browsers and servers. To enable SSL, you need to install the digital certificate. The strength of various digital certificates varies depending upon the length of the key generated during encryption. More the length, more secure is the certificate, hence the connection.</p>
+<table class="table table-bordered" >
+<tr>
+<th style="width:30%">Strength</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>40 bit</td>
+<td>Supported by most browsers but easy to break.</td>
+</tr>
+<tr>
+<td>56 bit</td>
+<td>Stronger than 40-bit.</td>
+</tr>
+<tr>
+<td>128 bit</td>
+<td>Extremely difficult to break but all the browsers do not support it.</td>
+</tr>
+</table>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_linq.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/asp.net/pdf/asp.net_security.pdf" title="ASP.NET - Security" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_data_caching.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/asp.net/asp.net_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/asp.net/asp.net_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

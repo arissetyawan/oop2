@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Kotlin Control Flow</title>
+<meta name="description" content="Kotlin Control Flow - Learn Kotlin in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Architecture, Basic Types, Control Flow, Class and Object, Constructors, Inheritance, Interface, Visibility Control, Extension, Data Classes, Sealed Class, Generics, Delegation, Functions, Destructuring Declarations, Exception Handling." />
+<meta name="keywords" content="Kotlin, Tutorial, Learning, Overview, Environment Setup, Architecture, Basic Types, Control Flow, Class and Object, Constructors, Inheritance, Interface, Visibility Control, Extension, Data Classes, Sealed Class, Generics, Delegation, Functions, Destructuring Declarations, Exception Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #de33a3 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #de33a3 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #de33a3 !important;}
+.submenu-item{ border-bottom: 2px solid #de33a3 !important; border-top: 2px solid #de33a3 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#de33a3; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/kotlin/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/kotlin/images/kotlin-mini-logo.jpg" alt="Kotlin Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Kotlin Tutorial</li>
+<li><a href="/kotlin/index.htm">Kotlin - Home</a></li>
+<li><a href="/kotlin/kotlin_overview.htm">Kotlin - Overview</a></li>
+<li><a href="/kotlin/kotlin_environment_setup.htm">Kotlin - Environment Setup</a></li>
+<li><a href="/kotlin/kotlin_architecture.htm">Kotlin - Architecture</a></li>
+<li><a href="/kotlin/kotlin_basic_types.htm">Kotlin - Basic Types</a></li>
+<li><a href="/kotlin/kotlin_control_flow.htm">Kotlin - Control Flow</a></li>
+<li><a href="/kotlin/kotlin_class_and_object.htm">Kotlin - Class &amp; Object</a></li>
+<li><a href="/kotlin/kotlin_constructors.htm">Kotlin - Constructors</a></li>
+<li><a href="/kotlin/kotlin_inheritance.htm">Kotlin - Inheritance</a></li>
+<li><a href="/kotlin/kotlin_interface.htm">Kotlin - Interface</a></li>
+<li><a href="/kotlin/kotlin_visibility_control.htm">Kotlin - Visibility Control</a></li>
+<li><a href="/kotlin/kotlin_extension.htm">Kotlin - Extension</a></li>
+<li><a href="/kotlin/kotlin_data_classes.htm">Kotlin - Data Classes</a></li>
+<li><a href="/kotlin/kotlin_sealed_class.htm">Kotlin - Sealed Class</a></li>
+<li><a href="/kotlin/kotlin_generics.htm">Kotlin - Generics</a></li>
+<li><a href="/kotlin/kotlin_delegation.htm">Kotlin - Delegation</a></li>
+<li><a href="/kotlin/kotlin_functions.htm">Kotlin - Functions</a></li>
+<li><a href="/kotlin/kotlin_destructuring_declarations.htm">Kotlin - Destructuring Declarations</a></li>
+<li><a href="/kotlin/kotlin_exception_handling.htm">Kotlin - Exception Handling</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Kotlin Useful Resources</li>
+<li><a href="/kotlin/kotlin_quick_guide.htm">Kotlin - Quick Guide</a></li>
+<li><a href="/kotlin/kotlin_useful_resources.htm">Kotlin - Useful Resources</a></li>
+<li><a href="/kotlin/kotlin_discussion.htm">Kotlin - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content"> 
+<div class="col-md-7 middle-col">
+<h1>Kotlin - Control Flow</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/kotlin/kotlin_basic_types.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/kotlin/kotlin_class_and_object.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In the previous chapter we have learned about different types of data types available in Kotlin system. In this chapter, we will discuss different types of control flow mechanism available in the Kotlin.</p>
+<h2>If - Else</h2>
+<p>Kotlin is a functional language hence like every functional language in Kotlin <b>“if”</b> is an expression, it is not a keyword. The expression <b>“if”</b> will return a value whenever necessary. Like other programming language, <b>“if-else”</b> block is used as an initial conditional checking operator. In the following example, we will compare two variables and provide the required output accordingly.</p>
+<a href="http://tpcg.io/3zdnlU" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val a:Int = 5
+   val b:Int = 2
+   var max: Int
+   
+   if (a &gt; b) {
+      max = a
+   } else {
+      max = b
+   }
+   print("Maximum of a or b is " +max)
+ 
+   // As expression 
+   // val max = if (a &gt; b) a else b
+}
+</pre>
+<p>The above piece of code yields the following output as a result in the browser. Our example also contains another line of code, which depicts how to use <b>“If”</b> statement as an expression.</p>
+<pre class="result notranslate">
+Maximum of a or b is 5
+</pre>
+<h2>Use of When</h2>
+<p>If you are familiar with other programming languages, then you might have heard of the term switch statement, which is basically a conditional operator when multiple conditions can be applied on a particular variable. <b>“when”</b> operator matches the variable value against the branch conditions. If it is satisfying the branch condition then it will execute the statement inside that scope. In the following example, we will learn more about “when” in Kotlin.</p>
+<a href="http://tpcg.io/lXxWhy" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val x:Int = 5
+   when (x) {
+      1 -&gt; print("x = = 1")
+      2 -&gt; print("x = = 2")
+      
+      else -&gt; { // Note the block
+         print("x is neither 1 nor 2")
+      }
+   }
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+x is neither 1 nor 2
+</pre>
+<p>In the above example, Kotlin compiler matches the value of <b>x</b> with the given branches. If it is not matching any of the branches, then it will execute the else part. Practically, when is equivalent to multiple if block. Kotlin provides another flexibility to the developer, where the developer can provide multiple checks in the same line by providing “,” inside the checks. Let us modify the above example as follows.</p>
+<a href="http://tpcg.io/8MFLuU" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val x:Int = 5
+   when (x) {
+      1,2 -&gt; print(" Value of X either 1,2")
+      
+      else -&gt; { // Note the block
+         print("x is neither 1 nor 2")
+      }
+   }
+}
+</pre>
+<p>Run the same in the browser, which will yield the following output in the browser.</p>
+<pre class="result notranslate">
+x is neither 1 nor 2
+</pre>
+<h2>For Loop</h2>
+<p>Loop is such an invention that provides the flexibility to iterate through any kind of data structure. Like other programming languages, Kotlin also provides many kinds of Looping methodology, however, among them <b>“For”</b> is the most successful one. The implementation and use of For loop is conceptually similar to Java for loop. The following example shows how we can use the same in real-life examples.</p>
+<a href="http://tpcg.io/4Nqvh1" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val items = listOf(1, 2, 3, 4)
+   for (i in items) println("values of the array"+i)
+}
+</pre>
+<p>In the above piece of code, we have declared one list named as “items” and using for loop we are iterating through that defined list and printing its value in the browser. Following is the output.</p>
+<pre class="result notranslate">
+values of the array1
+values of the array2
+values of the array3
+values of the array4
+</pre>
+<p>Following is another example of code, where we are using some library function to make our development work easier than ever before.</p>
+<a href="http://tpcg.io/MSOn9d" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val items = listOf(1, 22, 83, 4)
+   
+   for ((index, value) in items.withIndex()) {
+      println("the element at $index is $value")
+   }
+}
+</pre>
+<p>Once we compile and execute the above piece of code in our coding ground, it will yield the following output in the browser.</p>
+<pre class="result notranslate">
+the element at 0 is 1
+the element at 1 is 22
+the element at 2 is 83
+the element at 3 is 4
+</pre>
+<h2>While Loop and Do-While Loop</h2>
+<p>While and Do-While work exactly in a similar way like they do in other programming languages. The only difference between these two loops is, in case of Do-while loop the condition will be tested at the end of the loop. The following example shows the usage of the <b>While loop</b>.</p>
+<a href="http://tpcg.io/XR720M" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var x:Int = 0
+   println("Example of While Loop--")
+   
+   while(x&lt; = 10) {
+      println(x)
+      x++
+   } 
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+Example of While Loop--
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+<p>Kotlin also has another loop called Do-While loop, where the loop body will be executed once, only then the condition will be checked. The following example shows the usage of the <b>Do-while loop</b>.</p>
+<a href="http://tpcg.io/An8NB9" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var x:Int = 0
+   do {
+      x = x + 10
+      println("I am inside Do block---"+x)
+   } while(x &lt;= 50)
+}
+</pre>
+<p>The above piece of code yields the following output in the browser. In the above code, Kotlin compiler will execute the DO block, then it will go for condition checking in while block.</p>
+<pre class="result notranslate">
+I am inside Do block---10
+I am inside Do block---20
+I am inside Do block---30
+I am inside Do block---40
+I am inside Do block---50
+I am inside Do block---60
+</pre>
+<h2>Use of Return, Break, Continue</h2>
+<p>If you are familiar with any programming language, then you must have an idea of different keywords that help us implement good control flow in the application. Following are the different keywords that can be used to control the loops or any other types of control flow.</p>
+<p><b>Return</b> &minus; Return is a keyword that returns some value to the calling function from the called function. In the following example, we will implement this scenario using our Kotlin coding ground.</p>
+<a href="http://tpcg.io/WMgiYj" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var x:Int = 10
+   println("The value of X is--"+doubleMe(x))
+}
+fun doubleMe(x:Int):Int {
+   return 2*x;
+}
+</pre>
+<p>In the above piece of code, we are calling another function and multiplying the input with 2, and returning the resultant value to the called function that is our main function. Kotlin defines the function in a different manner that we will look at in a subsequent chapter. For now, it is enough to understand that the above code will generate the following output in the browser.</p>
+<pre class="result notranslate">
+The value of X is--20
+</pre>
+<p><b>Continue &amp; Break</b> &minus; Continue and break are the most vital part of a logical problem. The “break” keyword terminates the controller flow if some condition has failed and “continue” does the opposite. All this operation happens with immediate visibility. Kotlin is smarter than other programming languages, wherein the developer can apply more than one label as visibility. The following piece of code shows how we are implementing this label in Kotlin.</p>
+<a href="http://tpcg.io/TdGTLL" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   println("Example of Break and Continue")
+   myLabel@ for(x in 1..10) { // appling the custom label
+      if(x = = 5) {
+         println("I am inside if block with value"+x+"\n-- hence it will close the operation")
+         break@myLabel //specifing the label
+      } else {
+         println("I am inside else block with value"+x)
+         continue@myLabel
+      }
+   }
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+Example of Break and Continue
+I am inside else block with value1
+I am inside else block with value2
+I am inside else block with value3
+I am inside else block with value4
+I am inside if block with value5
+-- hence it will close the operation
+</pre>
+<p>As you can see, the controller continues the loop, until and unless the value of <b>x</b> is 5. Once the value of <b>x</b> reaches 5, it starts executing the if block and once the break statement is reached, the entire control flow terminates the program execution.</p>
+<hr />
+<div class="pre-btn">
+<a href="/kotlin/kotlin_basic_types.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/kotlin/kotlin_class_and_object.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/kotlin/kotlin_control_flow.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/kotlin/kotlin_control_flow.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/kotlin/kotlin_control_flow.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/kotlin/kotlin_control_flow.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/kotlin/kotlin_control_flow.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/kotlin/kotlin_control_flow.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

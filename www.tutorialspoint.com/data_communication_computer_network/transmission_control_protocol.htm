@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>DCN Transmission Control Protocol</title>
+<meta name="description" content="DCN Transmission Control Protocol - Learn Data Communication &amp; Computer Network in simple and easy steps starting from their overview and then covering Network Architecture, Network topologies, Network Models, Physical Layer, Digital Transmission, Transmission media, Wireless Transmission, Analog Transmission, Multiplexing, Switching, Data Link Layer, Error detection and Correction, Data Link Control & Protocols, Network Layer, Network Addressing, Routing, Transport Layer, Transmission Control Protocol (TCP), Application Layer with DNS, SMTP, FTP, POP, HTTP." />
+<meta name="keywords" content="Data Communication, Computer Network, Tutorial, Network Architecture, Network topologies, Network Models, Physical Layer, Digital Transmission, Transmission media, Wireless Transmission, Analog Transmission, Multiplexing, Switching, Data Link Layer, Error detection and Correction, Data Link Control, Protocols, Network Layer, Network Addressing, Routing, Transport Layer, Transmission, control, protocol (TCP), Application Layer with DNS, SMTP, FTP, POP, HTTP." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #2bb2b0 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #2bb2b0 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #2bb2b0 !important;}
+.submenu-item{ border-bottom: 2px solid #2bb2b0 !important; border-top: 2px solid #2bb2b0 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#2bb2b0; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/data_communication_computer_network/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/data_communication_computer_network/images/dcn-mini-logo.jpg" alt="Data Communication and Computer Network" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">DCN Tutorial</li>
+<li><a target="_top" href="/data_communication_computer_network/index.htm">Data Comm &amp; Networks Home</a></li>
+<li><a target="_top" href="/data_communication_computer_network/data_communication_computer_network_overview.htm">DCN -  Overview</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_types.htm">DCN - Computer Network Types</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_lan_technologies.htm">DCN - Network LAN Technologies</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_topologies.htm">DCN - Computer Network Topologies</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_models.htm">DCN - Computer Network Models</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_security.htm">DCN - Computer Network Security</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Physical Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/physical_layer_introduction.htm">DCN - Physical Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/digital_transmission.htm">DCN - Digital Transmission</a></li>
+<li><a target="_top" href="/data_communication_computer_network/analog_transmission.htm">DCN - Analog Transmission</a></li>
+<li><a target="_top" href="/data_communication_computer_network/transmission_media.htm">DCN - Transmission media</a></li>
+<li><a target="_top" href="/data_communication_computer_network/wireless_transmission.htm">DCN - Wireless Transmission</a></li>
+<li><a target="_top" href="/data_communication_computer_network/physical_layer_multiplexing.htm">DCN - Multiplexing</a></li>
+<li><a target="_top" href="/data_communication_computer_network/physical_layer_switching.htm">DCN - Network Switching</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Data Link Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/data_link_layer_introduction.htm">DCN - Data Link Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/error_detection_and_correction.htm">DCN - Error detection and Correction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/data_link_control_and_protocols.htm">DCN - Data Link Control &amp; Protocols</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Network Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/network_layer_introduction.htm">DCN - Network Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_addressing.htm">DCN - Network Addressing</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_layer_routing.htm">DCN - Routing</a></li>
+<li><a target="_top" href="/data_communication_computer_network/internetworking.htm">DCN - Internetworking</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_layer_protocols.htm">DCN - Network Layer Protocols</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Transport Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/transport_layer_introduction.htm">DCN - Transport Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/transmission_control_protocol.htm">DCN - Transmission Control Protocol</a></li>
+<li><a target="_top" href="/data_communication_computer_network/user_datagram_protocol.htm">DCN - User Datagram Protocol</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Application Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/application_layer_introduction.htm">DCN - Application Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/client_server_model.htm">DCN - Client-Server Model</a></li>
+<li><a target="_top" href="/data_communication_computer_network/application_protocols.htm">DCN - Application Protocols</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_services.htm">DCN - Network Services</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DCN Useful Resources</li>
+<li><a target="_top" href="/data_communication_computer_network/dcn_quick_guide.htm">DCN - Quick Guide</a></li>
+<li><a target="_top" href="/data_communication_computer_network/dcn_useful_resources.htm">DCN - Useful Resources</a></li>
+<li><a target="_top" href="/data_communication_computer_network/dcn_discussion.htm">DCN - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>DCN - Transmission Control Protocol</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/data_communication_computer_network/transport_layer_introduction.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/data_communication_computer_network/user_datagram_protocol.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>The transmission Control Protocol (TCP) is one of the most important protocols of Internet Protocols suite.  It is most widely used protocol for data transmission in communication network such as internet.</p>
+<h2>Features</h2>
+<ul class="list">
+<li><p>TCP is reliable protocol. That is, the receiver always sends either positive or negative acknowledgement about the data packet to the sender, so that the sender always has bright clue about whether the data packet is reached the destination or it needs to resend it.</p></li>
+<li><p>TCP ensures that the data reaches intended destination in the same order it was sent.</p></li>
+<li><p>TCP is connection oriented.  TCP requires that connection between two remote points be established before sending actual data.</p></li>
+<li><p>TCP provides error-checking and recovery mechanism.</p></li>
+<li><p>TCP provides end-to-end communication.</p></li>
+<li><p>TCP provides flow control and quality of service.</p></li>
+<li><p>TCP operates in Client/Server point-to-point mode.</p></li>
+<li><p>TCP provides full duplex server, i.e. it can perform roles of both receiver and sender.</p></li>
+</ul>
+<h2>Header</h2>
+<p>The length of TCP header is minimum 20 bytes long and maximum 60 bytes.</p>
+<img src="/data_communication_computer_network/images/TCP_Header.jpg" alt="TCP Header"/>
+<ul class="list">
+<li><p><b>Source Port (16-bits)</b>&nbsp; - It identifies source port of the application process on the sending device.</p></li>
+<li><p><b>Destination Port (16-bits)</b>&nbsp;- It identifies destination port of the application process on the receiving device.</p></li>
+<li><p><b>Sequence Number (32-bits)</b>&nbsp;- Sequence number of data bytes of a segment in a session.</p></li>
+<li><p><b>Acknowledgement Number (32-bits)</b>&nbsp; - When ACK flag is set, this number contains the next sequence number of the data byte expected and works as acknowledgement of the previous data received.</p></li>
+<li><p><b>Data Offset (4-bits)</b>&nbsp; - This field implies both, the size of TCP header (32-bit words) and the offset of data in current packet in the whole TCP segment.</p></li>
+<li><p><b>Reserved (3-bits)</b>&nbsp; - Reserved for future use and all are set zero by default.</p></li>
+<li><p><b>Flags (1-bit each)</b><p>
+	<ul class="list">
+	<li><p><b>NS</b> - Nonce Sum bit is used by Explicit Congestion Notification signaling process.</p></li>
+	<li><p><b>CWR</b> - When a host receives packet with ECE bit set, it sets Congestion Windows Reduced to acknowledge that ECE received.</p></li>
+	<li><p><b>ECE</b> -It has two meanings:</p>
+		<ul class="list">
+		<li><p>If SYN bit is clear to 0, then ECE means that the IP packet has its CE (congestion experience) bit set.</p></li>
+		<li><p>If SYN bit is set to 1, ECE means that the device is ECT capable.</p></li>
+		</ul>
+		</li>
+	<li><p><b>URG</b> - It indicates that Urgent Pointer field has significant data and should be processed.</p></li>
+	<li><p><b>ACK</b> - It indicates that Acknowledgement field has significance.  If ACK is cleared to 0, it indicates that packet does not contain any acknowledgement.</p></li>
+	<li><p><b>PSH</b> - When set, it is a request to the receiving station to PUSH data (as soon as it comes) to the receiving application without buffering it.</p></li>
+	<li><p><b>RST</b> - Reset flag has the following features: </p>
+		<ul class="list">
+		<li><p>It is used to refuse an incoming connection.</p></li>
+		<li><p>It is used to reject a segment.</p></li>
+		<li><p>It is used to restart a connection.</p></li>
+		</ul>
+		</li>
+	<li><p><b>SYN</b> - This flag is used to set up a connection between hosts.</p></li>
+	<li><p><b>FIN</b> - This flag is used to release a connection and no more data is exchanged thereafter.  Because packets with SYN and FIN flags have sequence numbers, they are processed in correct order.</p></li>
+	</ul>
+	</li>
+<li><p><b>Windows Size</b>&nbsp; - This field is used for flow control between two stations and indicates the amount of buffer (in bytes) the receiver has allocated for a segment, i.e. how much data is the receiver expecting.</p></li>
+<li><p><b>Checksum</b>&nbsp;- This field contains the checksum of Header, Data and Pseudo Headers.</p></li>
+<li><p><b>Urgent Pointer</b>&nbsp; - It points to the urgent data byte if URG flag is set to 1.</p></li>
+<li><p><b>Options</b>&nbsp; - It facilitates additional options which are not covered by the regular header. Option field is always described in 32-bit words.  If this field contains data less than 32-bit, padding is used to cover the remaining bits to reach 32-bit boundary.</p></li>
+</ul>
+<h2>Addressing</h2>
+<p>TCP communication between two remote hosts is done by means of port numbers (TSAPs).  Ports numbers can range from 0 – 65535 which are divided as:</p>
+<ul class="list">
+<li>System Ports (0 – 1023)</li>
+<li>User Ports ( 1024 – 49151)</li>
+<li>Private/Dynamic Ports (49152 – 65535)</li>
+</ul>
+<h2>Connection Management</h2>
+<p>TCP communication works in Server/Client model.  The client initiates the connection and the server either accepts or rejects it.  Three-way handshaking is used for connection management.</p>
+<img src="/data_communication_computer_network/images/TCP_handshake.jpg" alt="TCP Handshake"/>
+<h3>Establishment</h3>
+<p>Client initiates the connection and sends the segment with a Sequence number.  Server acknowledges it back with its own Sequence number and ACK of client’s segment which is one more than client’s Sequence number. Client after receiving ACK of its segment sends an acknowledgement of Server’s response.</p>
+<h3>Release</h3>
+<p>Either of server and client can send TCP segment with FIN flag set to 1.  When the receiving end responds it back by ACKnowledging FIN, that direction of TCP communication is closed and connection is released.</p>
+<h2>Bandwidth Management</h2>
+<p>TCP uses the concept of window size to accommodate the need of Bandwidth management.  Window size tells the sender at the remote end, the number of data byte segments the receiver at this end can receive.  TCP uses slow start phase by using window size 1 and increases the window size exponentially after each successful communication.</p>
+<p>For example, the client uses windows size 2 and sends 2 bytes of data.  When the acknowledgement of this segment received the windows size is doubled to 4 and next sent the segment sent will be 4 data bytes long.  When the acknowledgement of 4-byte data segment is received, the client sets windows size to 8 and so on.</p>
+<p>If an acknowledgement is missed, i.e. data lost in transit network or it received NACK, then the window size is reduced to half and slow start phase starts again.</p>
+<h2>Error Control &and Flow Control</h2>
+<p>TCP uses port numbers to know what application process it needs to handover the data segment. Along with that, it uses sequence numbers to synchronize itself with the remote host.  All data segments are sent and received with sequence numbers.  The Sender knows which last data segment was received by the Receiver when it gets ACK.  The Receiver knows about the last segment sent by the Sender by referring to the sequence number of recently received packet.</p>
+<p>If the sequence number of a segment recently received does not match with the sequence number the receiver was expecting, then it is discarded and NACK is sent back.  If two segments arrive with the same sequence number, the TCP timestamp value is compared to make a decision.</p>
+<h2>Multiplexing</h2>
+<p>The technique to combine two or more data streams in one session is called Multiplexing.  When a TCP client initializes a connection with Server, it always refers to a well-defined port number which indicates the application process. The client itself uses a randomly generated port number from private port number pools.</p>
+<p>Using TCP Multiplexing, a client can communicate with a number of different application process in a single session.  For example, a client requests a web page which in turn contains different types of data (HTTP, SMTP, FTP etc.) the TCP session timeout is increased and the session is kept open for longer time so that the three-way handshake overhead can be avoided.</p>
+<p>This enables the client system to receive multiple connection over single virtual connection.  These virtual connections are not good for Servers if the timeout is too long.</p>
+<h2>Congestion Control</h2>
+<p>When large amount of data is fed to system which is not capable of handling it, congestion occurs. TCP controls congestion by means of Window mechanism.  TCP sets a window size telling the other end how much data segment to send.  TCP may use three algorithms for congestion control:</p>
+<ul class="list">
+<li><p>Additive increase, Multiplicative Decrease</p></li>
+<li><p>Slow Start</p></li>
+<li><p>Timeout React</p></li>
+</ul>
+<h2>Timer Management</h2>
+<p>TCP uses different types of timer to control and management various tasks:</p>
+<h3>Keep-alive timer:</h3>
+<ul class="list">
+<li><p>This timer is used to check the integrity and validity of a connection.</p></li>
+<li><p>When keep-alive time expires, the host sends a probe to check if the connection still exists.</p></li>
+</ul>
+<h3>Retransmission timer:</h3>
+<ul class="list">
+<li><p>This timer maintains stateful session of data sent.</p></li>
+<li><p>If the acknowledgement of sent data does not receive within the Retransmission time, the data segment is sent again.</p></li>
+</ul>
+<h3>Persist timer:</h3>
+<ul class="list">
+<li><p>TCP session can be paused by either host by sending Window Size 0.</p></li>
+<li><p>To resume the session a host needs to send Window Size with some larger value.</p></li>
+<li><p>If this segment never reaches the other end, both ends may wait for each other for infinite time.</p></li>
+<li><p>When the Persist timer expires, the host re-sends its window size to let the other end know.</p></li>
+<li><p>Persist Timer helps avoid deadlocks in communication.</p></li>
+</ul>
+<h3>Timed-Wait:</h3>
+<ul class="list">
+<li><p>After releasing a connection, either of the hosts waits for a Timed-Wait time to terminate the connection completely.</p></li>
+<li><p>This is in order to make sure that the other end has received the acknowledgement of its connection termination request.</p></li>
+<li><p>Timed-out can be a maximum of 240 seconds (4 minutes).</p></li>
+</ul>
+<h2>Crash Recovery</h2>
+<p>TCP is very reliable protocol.  It provides sequence number to each of byte sent in segment.  It provides the feedback mechanism i.e. when a host receives a packet, it is bound to ACK that packet having the next sequence number expected (if it is not the last segment).</p>
+<p>When a TCP Server crashes mid-way communication and re-starts its process it sends TPDU broadcast to all its hosts.  The hosts can then send the last data segment which was never unacknowledged and carry onwards.</p>
+<hr />
+<div class="pre-btn">
+<a href="/data_communication_computer_network/transport_layer_introduction.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/data_communication_computer_network/pdf/transmission_control_protocol.pdf" title="DCN Transmission Control Protocol" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/data_communication_computer_network/user_datagram_protocol.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/data_communication_computer_network/transmission_control_protocol.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/data_communication_computer_network/transmission_control_protocol.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/data_communication_computer_network/transmission_control_protocol.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/data_communication_computer_network/transmission_control_protocol.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/data_communication_computer_network/transmission_control_protocol.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/data_communication_computer_network/transmission_control_protocol.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

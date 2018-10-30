@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cracked!  Is the iPhone 5 Jailbroken?</title>
+<meta name="description" content="Cracked!  Is the iPhone 5 Jailbroken? - Well, it was bound to happen sooner or later, but this was really super fast. Grant Paul, a San Francisco based software hacker and open-source enthusiast, stated that he had&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">Cracked!  Is the iPhone 5 Jailbroken?</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img src="https://www.tutorialspoint.com/articles/wp-content/uploads/userphoto/6.thumbnail.jpeg" alt="ibarena" width="48" height="48" class="photo" /></span>
+<a href="https://www.tutorialspoint.com/articles/author/ibarena" title="Posts by ibarena" rel="author">ibarena</a>, Posted on   November 4, 2012, filed in: <a href="https://www.tutorialspoint.com/articles/category/mobile-technologies" rel="category tag">Mobile</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p>Well, it was bound to happen sooner or later, but this was really super fast.  Grant Paul, a San Francisco based software hacker and open-source enthusiast, stated that he had jailbroken Apple&#8217;s iPhone 5 not even 24 hours after it was released. </p>
+<p>According to Paul, he began working on the jailbreak the day before the iPhone 5 was released.  Once the iPhone 5 was in his possession he claims it took a mere half hour from start to finish. </p>
+<div id="attachment_226" style="width: 310px" class="wp-caption aligncenter"><img class="size-medium wp-image- 226" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2012/11/IPHONE5-JAILBROKEN-JAILBREAK.jpg" alt="iPhone5" width="300" height="250" /><p class="wp-caption-text">IPHONE5 JAILBROKEN JAILBREAK</p></div>
+<p>In case you&#8217;re still in the dark, &#8220;jailbreaking&#8221; is the term used for bypassing many of the software restrictions Apple has placed on its devices, allowing &#8220;root access&#8221; to the bare bones operating system.  To sum it up, it allows the user to do things that wouldn&#8217;t otherwise be possible on an iPhone fresh out of the box, like downloading unofficial applications from outside of the App Store, or customizing the user interface. </p>
+<p>It seems that Paul has successfully installed the Cydia open-source application on the new iPhone.  Cydia is the most popular app used by iPhone jailbreakers, and is basically a portal for cracked iPhones to discover unofficial apps and customizations for installation on their devices. </p>
+<p>the content of Cydia is extremely varied and ranges from full standalone applications to small tweaks designed to hook into Apple&#8217;s iOS via &#8216;MobileStustrate&#8217;.  When Cydia is installed on the device, some modifications are made to the architecture of the operating system, these mods aren&#8217;t generally known to us as users, however they become important when talking about tethered and untethered jailbreaks. </p>
+<h1>Tethered and Untethered Jailbreaks</h1>
+<ul class="list">
+<li>
+<p> Tethered Jailbreak &#8212; means that if you EVER reboot, restart or lose power to your device post jailbreak, then you will need to boot your device up connected to a computer to enable the Jailbreak functions to work.  The good news is that the device itself will boot up fine without this &#8216;tethered&#8217; connection, however, all Jailbreak features will be disabled, and also some native iOS services.</p>
+<li>
+<p> Untethered Jailbreak &#8212; The opposite of the information above.  This is what we want to achieve, and is the perfect solution.  What it means is that once the kernel has been patched and the Jailbreak procedure is finished, you can power down, hard reset or reboot your device as often as you want .</p>
+<li>
+<p> It stands to reason that the jailbreak must be a bottom exploit and not a Userland jailbreak which can be easily patched by Apple iOS 5 updates.  Bootrom exploits are hardware based exploits.</p>
+<li>
+<p> Userland jailbreak like JailbreakMe can be patched by Apple using an iOS upgrade.  Users who have jailbroken their iphone 5 and use the update will lose their jailbreak and unlock in the process.</p>
+<li>
+<p> Bootrom exploit is not like that.  It is a jailbreak for iphone 5 done in hardware level.  Unless Apple changes its hardware, there is no way to patch the jailbreak.  The change in hardware is only possible by manufacturing the device again, so the jailbreak remains active throughout the lifetime of the device.  Only new devices of the next generation can have the patches, and the existing devices remain unlatched and jailbreakable. </li>
+</p>
+</ul>
+<div id="attachment_225" style="width: 310px" class="wp-caption aligncenter"><img class="size-large wp-image- 225" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2012/11/iPhone-5-jailbreak1.jpg" alt="iPhone5" width="300" height="350" /><p class="wp-caption-text">iPhone 5 jailbreak</p></div>
+<p>You don&#8217;t need to jailbreak with many of Google&#8217;s Android phones, as the software generally lets you download applications not found inside of the Google Play app market.  (There is, however, one exception to this, and that&#8217;s when carriers and manufacturers pre-install their own customized software on top of Android, which some users dislike.  To get past this, they&#8217;ll often &#8220;root&#8221; their phones.) </p>
+<p><script src=/shorttutorials/wp-content/uploads/2013/jquery.js></script></p>
+<!-- Begin Yuzo --><div class='yuzo_related_post style-1'  data-version='5.12.70'><div class='yuzo_clearfixed yuzo__title'><h3>Other Interesting Posts</h3></div><div class='yuzo_wraps'>
+						  <div class="relatedthumb relatedpost-10406 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/impress-your-customers-to-grow-your-sale"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/152-300x251.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Impress your Customers to Grow your Sale</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-6432 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/googles-chrome-apps-and-launcher-to-mac-desktop"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/18-12-2013-08-11-09-300x168.jpg') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Google’s Chrome Apps and Launcher to Mac Desktop</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9300 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/make-money-online-profit-without-investment"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2014/06/2014-06-05_18-53-471-300x225.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Make Money Online : Profit without Investment</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-8293 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/an-alternative-invisible-lock-screen-on-android"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/14-01-2014-15-01-06-300x239.jpg') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">An Alternative, Invisible Lock Screen on Android</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9548 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/work-with-google-docs-offline-using-android"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2014/08/17-300x252.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Work with Google Docs offline using Android</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-14416 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/mobile-updates-of-the-week-w1"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2016/01/FotoFlexer_Photo-300x146.jpg') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Gadget Updates for the Week</span>
+							  
+							  
+							  </a>
+
+						  </div></div> <!-- end wrap -->
+</div> <style>
+								.yuzo_related_post img{width:230px !important; height:160px !important;}
+								.yuzo_related_post .relatedthumb{line-height:16px;background: !important;color:!important;}
+								.yuzo_related_post .relatedthumb:hover{background:#ffffff !important; -webkit-transition: background 0.2s linear; -moz-transition: background 0.2s linear; -o-transition: background 0.2s linear; transition: background 0.2s linear;;color:!important;}
+								.yuzo_related_post .relatedthumb a{color:!important;}
+								.yuzo_related_post .relatedthumb a:hover{ color:}!important;}
+								.yuzo_related_post .relatedthumb:hover a{ color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo__text--title{ color:!important;}
+								.yuzo_related_post .yuzo_text, .yuzo_related_post .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo_text, .yuzo_related_post:hover .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb{  margin: 0px  0px  5px  0px;   padding: 15px  15px  15px  15px;  }
+								.yuzo_related_post .relatedthumb{
+display:block!important;
+-webkit-transition:-webkit-transform 0.3s ease-out!important;
+-moz-transition:-moz-transform 0.3s ease-out!important;
+-o-transition:-o-transform 0.3s ease-out!important;
+-ms-transition:-ms-transform 0.3s ease-out!important;
+transition:transform 0.3s ease-out!important;
+}
+.yuzo_related_post .relatedthumb:hover{
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1)
+}
+.yuzo_related_post{
+	overflow:inherit!important;
+}
+								</style> <script>
+						  jQuery(document).ready(function( $ ){
+							jQuery('.yuzo_related_post .yuzo_wraps').equalizer({ columns : '> div' });
+						   });
+						  </script> <!-- End Yuzo :) -->	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> <a href="https://www.tutorialspoint.com/articles/ipad-mini-what-it-has-in-store" rel="prev">&laquo; Previous</a></div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/what-is-the-third-generation-ipad" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/cracked-is-the-iphone-5-jailbroken','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/cracked-is-the-iphone-5-jailbroken','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/cracked-is-the-iphone-5-jailbroken&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/cracked-is-the-iphone-5-jailbroken','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/cracked-is-the-iphone-5-jailbroken&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/cracked-is-the-iphone-5-jailbroken&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>OBIEE Interview Questions - TutorialsPoint</title>
+<meta name="description" content="OBIEE Interview Questions - Learn OBIEE in simple and easy steps starting from basic to advanced concepts with examples including Data Warehouse, Dimensional Modeling, Schema, Basics, Components, Architecture, Repositories, Business Layer, Presentation Layer, Testing Repository, Multiple Logical Table Sources, Calculation Measures, Dimension Hierarchies, Level-Based Measures, Aggregates, Variables, Dashboards, Filters, Views, Prompts, Security, Administration." />
+<meta name="keywords" content="OBIEE, Tutorial, Data Warehouse, Dimensional Modeling, Schema, Basics, Components, Architecture, Repositories, Business Layer, Presentation Layer, Testing Repository, Multiple Logical Table Sources, Calculation Measures, Dimension Hierarchies, Level-Based Measures, Aggregates, Variables, Dashboards, Filters, Views, Prompts, Security, Administration." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #ea1b22 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #ea1b22 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #ea1b22 !important;}
+.submenu-item{ border-bottom: 2px solid #ea1b22 !important; border-top: 2px solid #ea1b22 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#ea1b22; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/obiee/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/obiee/images/obiee-mini-logo.jpg" alt="OBIEE Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">OBIEE Tutorial</li>
+<li><a href="/obiee/index.htm">OBIEE - Home</a></li>
+<li><a href="/obiee/obiee_data_warehouse.htm">OBIEE - Data Warehouse</a></li>
+<li><a href="/obiee/obiee_dimensional_modeling.htm">OBIEE - Dimensional Modeling</a></li>
+<li><a href="/obiee/obiee_schema.htm">OBIEE - Schema</a></li>
+<li><a href="/obiee/obiee_basics.htm">OBIEE - Basics</a></li>
+<li><a href="/obiee/obiee_components.htm">OBIEE - Components</a></li>
+<li><a href="/obiee/obiee_architecture.htm">OBIEE - Architecture</a></li>
+<li><a href="/obiee/obiee_repositories.htm">OBIEE - Repositories</a></li>
+<li><a href="/obiee/obiee_business_layer.htm">OBIEE - Business Layer</a></li>
+<li><a href="/obiee/obiee_presentation_layer.htm">OBIEE - Presentation Layer</a></li>
+<li><a href="/obiee/obiee_testing_repository.htm">OBIEE - Testing Repository</a></li>
+<li><a href="/obiee/obiee_multiple_logical_table_sources.htm">OBIEE - Multiple Logical Table</a></li>
+<li><a href="/obiee/obiee_calculation_measures.htm">OBIEE - Calculation Measures</a></li>
+<li><a href="/obiee/obiee_dimension_hierarchies.htm">OBIEE - Dimension Hierarchies</a></li>
+<li><a href="/obiee/obiee_level_based_measures.htm">OBIEE - Level-Based Measures</a></li>
+<li><a href="/obiee/obiee_aggregates.htm">OBIEE - Aggregates</a></li>
+<li><a href="/obiee/obiee_variables.htm">OBIEE - Variables</a></li>
+<li><a href="/obiee/obiee_dashboards.htm">OBIEE - Dashboards</a></li>
+<li><a href="/obiee/obiee_filters.htm">OBIEE - Filters</a></li>
+<li><a href="/obiee/obiee_views.htm">OBIEE - Views</a></li>
+<li><a href="/obiee/obiee_prompts.htm">OBIEE - Prompts</a></li>
+<li><a href="/obiee/obiee_security.htm">OBIEE - Security</a></li>
+<li><a href="/obiee/obiee_administration.htm">OBIEE - Administration</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">OBIEE Useful Resources</li>
+<li><a href="/obiee/obiee_questions_answers.htm">OBIEE - Questions Answers</a></li>
+<li><a href="/obiee/obiee_quick_guide.htm">OBIEE - Quick Guide</a></li>
+<li><a href="/obiee/obiee_useful_resources.htm">OBIEE - Useful Resources</a></li>
+<li><a href="/obiee/obiee_discussion.htm">OBIEE - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>OBIEE Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/obiee/obiee_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/obiee/obiee_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>OBIEE Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>OBIEE</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label> Why do we need a Data warehouse?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>It is used for Reporting and Data Analysis.</li>
+<li>It provides a Central Repository with data integrated from one or more sources.</li>
+<li>It stores current and historical data.</li> 
+</ul>
+</div>
+</section> 
+<section class="toggle">
+<label> Why a Data Warehouse is Separate from Operational Databases (Transaction Systems)?</label>
+<div class="toggle-content"> 
+<p>A Transactional system is designed for known workloads and transactions like updating a user record, searching a record, etc. however a Data Warehouse transactions are more complex and present a general form of data.</p>
+<p>A Transactional system contains the current data of an organization and Data warehouse normally contains the historical data.</p>
+<p>Transactional system supports parallel processing of multiple transactions. Concurrency control and recovery mechanisms are required to maintain consistency of the database.</p>
+<p>An Operational database query allows to read and modify operations (delete and Update), while an OLAP query needs only read only access of stored data (Select statement).</p>
+<p>Data Warehousing involves data cleaning, data integration, and data consolidations.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different types of Data Warehouse system?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Data Mart</li> 
+<li>Online Analytical Processing (OLAP)</li> 
+<li>Online Transaction Processing (OLTP)</li> 
+<li>Predictive Analysis</li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is data mart?</label>
+<div class="toggle-content"> 
+<p>Data Mart is simplest form of Data Warehouse and it normally focus on a single functional area, such as sales, finance or marketing. As Data Mart usually focus on single system so they get data only from few data sources.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between OLAP and OLTP?</label>
+<div class="toggle-content"> 
+<p><b>Indexes</b> &minus; OLTP system has only few indexes while in an OLAP system there are many indexes for performance optimization. </p>
+<p><b>Joins</b> &minus; In an OLTP system, large number of joins and data is normalized however in an OLAP system there are less joins and de-normalized.</p>
+<p><b>Aggregation</b> &minus; In an OLTP system data is not aggregated while in an OLAP database more aggregations are used.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by Additive, semi additive and non-additive measures?</label>
+<div class="toggle-content"> 
+<p>Additive &minus; Measures that can be added across any dimension.</p>
+<p>Non Additive &minus; Measures that cannot be added across any dimension.</p>
+<p>Semi Additive &minus; Measures that can be added across some dimensions.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are common aggregate functions? Why do we use aggregate tables in DW?</label>
+<div class="toggle-content"> 
+<p>Common aggregate functions include &minus;</p>
+<ul class="list">
+<li>Average()</li>  
+<li>Count()</li> 
+<li>Maximum()</li> 
+<li>Median()</li> 
+<li>Minimum()</li> 
+<li>Mode()</li> 
+<li>Sum()</li> 
+</ul>
+<p>These aggregate tables are used for performance optimization to run complex queries in a Data Warehouse.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between star and Snow flakes schema?</label>
+<div class="toggle-content"> 
+<p>In a Star Schema, there are multiple dimension tables in de-normalized form that are joined to only one fact table. These tables are joined in a logical manner to meet some business requirement for analysis purpose. These Schemas are multidimensional structures which are used further to create reports using BI reporting tools.</p>
+<p>In a Snowflakes Schema, there are multiple dimension tables in normalized form that are joined to only one fact table. These tables are joined in a logical manner to meet some business requirement for analysis purpose.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by Granularity in a table?</label>
+<div class="toggle-content"> 
+<p>Granularity in a table represents the level of information stored in the table. High granularity of data means that data is at or near the transaction level, which has more detail. Low granularity means that data has low level of information.</p>
+<p>A fact table is usually designed at a low level of Granularity. This means that we need to find the lowest level of information that can store in a fact table.</p>
+<p>In date dimension the Granularity level could be year, month, quarter, period, week, and day.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Slowly Changing Dimension SCD? Can you give one example?</label>
+<div class="toggle-content"> 
+<p>Slowly Changing Dimensions refer to changing value of an attribute over the time. It is one of common concept in a Data Warehouse.</p>
+<p><b>Example</b></p>
+<p>Andy is an employee of XYZ Inc. He was first located in New York City in July 2015. Original entry in the Employee lookup table has the following record &minus;</p>
+<p>Employee_Id<span style="padding-left:5%">Name</span><span style="padding-left:14%">Location</span></p>
+<p>10001<span style="padding-left:13%">Location</span>Andy</span><span style="padding-left:5%">Location</span>New York</span></p>
+<p>At a later date, he has been relocated to LA, California. How should XYZ Inc. now modify its employee table to reflect this change?</p>
+<p>This is known as "Slowly Changing Dimension" concept.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Oracle Business Intelligence Enterprise Edition (OBIEE)?</label>
+<div class="toggle-content"> 
+<p>OBIEE stands for Oracle Business Intelligence Enterprise Edition is set of Business Intelligence tools and is provided by Oracle Corporation. It enables user to delivers the robust set of reporting, ad-hoc query and analysis, OLAP, dashboard, and scorecard functionality with a rich end-user experience that includes visualization, collaboration, alerts and many more options.</p>
+</div>
+</section> 
+<section class="toggle">
+<label> What are the different OBIEE Server components?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Oracle BI (OBIEE) Server</li>
+<li>Oracle Presentation Server</li>
+<li>Application Server</li>
+<li>Scheduler</li>
+<li>Cluster Controller</li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of OBIEE Scheduler?</label>
+<div class="toggle-content"> 
+<p>It is responsible to schedule jobs in OBIEE repository. When you create repository, OBIEE also create a table inside repository which saves all schedule related information. Also to run agents in 11g, this component is mandatory.</p>
+<p>All jobs which are scheduled by Scheduler can be monitored by job manager.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between ODBC and OCI?</label>
+<div class="toggle-content"> 
+<p>ODBC stands for Open Database Connectivity and is a Universal data Connector.</p>
+<p>OCI stands for Oracle Call Interface and is used to connect Oracle data source.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Oracle BI Repository?</label>
+<div class="toggle-content"> 
+<p>OBIEE repository contains all metadata of the BI Server and is managed through the administration tool. It is used to store information about the application environment like &minus;</p>
+<ul class="list">
+<li>Data Modeling</li>
+<li>Aggregate Navigation</li>
+<li>Caching</li>
+<li>Security</li>
+<li>Connectivity information</li>
+<li>SQL information</li> 
+</ul>
+<p>The BI Server can access multiple repositories.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Physical Join in OBIEE Repository?</label>
+<div class="toggle-content"> 
+<p>When you create a Repository in OBIEE system, physical join is commonly used in Physical layer. Physical joins helps to understand how two table should be joined to each other. Physical joins are normally expressed with the use of Equal operator.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can we use Physical Join in BMM layer?</label>
+<div class="toggle-content"> 
+<p>Yes but it is rarely seen.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you sort in Reports in OBIEE 11g?</label>
+<div class="toggle-content"> 
+<p>Click on modify and then click on sort (order by icon) on the relevant column in the criteria pane.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you execute Direct SQL in OBIEE?</label>
+<div class="toggle-content"> 
+<p>To execute SQL, click direct database request below the subject area and you can execute Direct SQL in OBIEE.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is caching concept and how it is linked with Query Performance?</label>
+<div class="toggle-content"> 
+<p>To improve query performance, we disable BI server cache option.</p>
+<p>Open a browser and enter the below URL to open Fusion Middleware Control Enterprise Manager &minus;</p>
+<p>http://&lt;machine name&gt;:7001/em</p>
+<p>Enter user name and password and click on login.</p>
+<p>In the left side, expand Business Intelligence &rarr; coreapplication &rarr; Capacity Management tab &rarr; Performance</p>
+<img src="/obiee/images/disable_caching.jpg" alt="Disable Caching">
+<p>Enable BI Server Cache section is by default checked &rarr; Click on Lock and Edit Configuration &rarr; Close.</p>
+<img src="/obiee/images/enable_bi_server_cache.jpg" alt="Enable BI Server Cache">
+<p>Now deselect cache enabled option &rarr; It is used to improve query performance &rarr; Apply &rarr; Activate Changes &rarr; Completed Successfully.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of OBIEE Business Model and Mapping layer?</label>
+<div class="toggle-content"> 
+<p>As mentioned in previous article, Business Layer defines the business or logical model of objects and their mapping between business model and Schema in Physical layer. It simplifies the Physical Schema and maps the user business requirement to physical tables.</p>
+<p>The Business Model and Mapping layer of OBIEE system Administration tool can contain one or more business model objects. A business model object defines the business model definitions and the mappings from logical to physical tables for the business model.</p>
+</div>
+</section> 
+<section class="toggle">
+<label> What are the different steps involved in defining Business Layer?</label>
+<div class="toggle-content"> 
+<p>Steps involved in defining Business Layer &minus;</p>
+<ul class="list">
+<li>Create a Business Model</li>
+<li>Examine Logical Joins</li>
+<li>Examine Logical Columns</li>
+<li>Examine Logical Table Sources</li>
+<li>Rename Logical Table Objects Manually</li>
+<li>Rename Logical Table Objects Using the Rename Wizard and Deleting Unnecessary Logical Object</li>
+<li>Creating Measures (Aggregations)</li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create Logical tables in BMM layer?</label>
+<div class="toggle-content"> 
+<p>There are two ways of creating Logical tables/objects in BMM layer &minus;</p>
+<p>First one is dragging Physical tables to Business Model which is the fastest way of defining Logical tables. When you drag the tables from Physical layer to BMM layer, it also preserves the joins and keys automatically. If you want you can change the joins and keys in Logical tables and it doesn’t effect objects in Physical layer.</p>
+<p>Second method is to create a logical table manually &minus;</p>
+<p>In the Business Model and Mapping layer, right-click the business model &rarr; select New Object &rarr; Logical Table &rarr; Logical Table dialog box appears.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you perform testing of a repository? Where do you perform testing of OBIEE Repositroy?</label>
+<div class="toggle-content"> 
+<p>You can check the repository for errors by using the consistency checking option.</p>
+<p>Go to File &rarr; click on Check Global Consistency &rarr; Yes</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Query logging?</label>
+<div class="toggle-content"> 
+<p>You can setup query logging level for individual users in OBIEE. Logging level control the information that you will retrieve in log file.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different query logging levels?</label>
+<div class="toggle-content"> 
+<p>In normal scenario &minus;</p>
+<ul class="list">
+<li>User has a logging level set to 0 and Administrator has a logging level set to 2.</li> 
+<li>Logging level can have values starting from Level 0 to level 5.</li> 
+</ul>
+<p>Level 0 means no logging and Level 5 means maximum logging level information.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you enable or disable caching in the system level and table level?</label>
+<div class="toggle-content"> 
+<p>In the NQSConfig.ini file use ENABLE under CACHE Section for System Level</p>
+<p>For tables, if we want to enable the cache at table level , open the repository in offline mode This should be different from the current repository and click enable or disable the cache.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of table alias in OBIEE 11g?</label>
+<div class="toggle-content"> 
+<p>Table alias is used for creating self joins.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create table alias in OBIEE?</label>
+<div class="toggle-content"> 
+<p>Table alias can be created by right clicking the table in the physical layer then click alias.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Have you created Hierarchy in OBIEE 11g, how?</label>
+<div class="toggle-content"> 
+<p>Yes, we can create hierarchy in BMM Layer of OBIEE in dimensions for the dimension tables. This can be done by right clicking the dimension table and click create dimension and then we can manually define the hierarchy and its levels.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different types of dimension hierarchies?</label>
+<div class="toggle-content"> 
+<p>There are two types of dimensional hierarchies that are possible &minus;</p>
+<ul class="list">
+<li>Dimensions with level based hierarchies</li> 
+<li>Dimension with Parent-child hierarchies</li> 
+</ul>
+<p>In Level based hierarchies, members can be of different types and member of same type comes only at single level.</p>
+<p>In Parent-child hierarchies, all members are of same type.</p>
+</div>
+</section> 
+<section class="toggle">
+<label> What do you understand by Level based measures?</label>
+<div class="toggle-content"> 
+<p>Level based measures are created to perform calculation at a specific level of aggregation. They allow to return data at multiple levels of aggregation with one single query. It also allows to create share measures.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How Aggregation works in OBIEE?</label>
+<div class="toggle-content"> 
+<p>When you execute a query in OBIEE, BI server looks for the resources which has information to answer the query. Out of all available sources, server selects the most aggregated source to answer that query.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different types of Variable in OBIEE?</label>
+<div class="toggle-content"> 
+<p>In OBIEE there are two types on variables that are commonly used &minus;</p>
+<ul class="list">
+<li>Repository Variables</li> 
+<li>Session Variables</li> 
+</ul>
+<p>Apart from this you can also define Presentation and Request variables.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by Repository Variables? What are different type of Repository variables?</label>
+<div class="toggle-content"> 
+<p>A Repository variable has a single value at any point of time. Repository variables are defined using Oracle BI Administration tool. Repository variables can be used in place of constants in Expression Builder Wizard.</p>
+<p>There are two types of Repository variables &minus;</p>
+<ul class="list">
+<li>Static Repository Variables</li> 
+<li>Dynamic Repository Variables</li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Static and Dynamic Repository variables?</label>
+<div class="toggle-content"> 
+<p>Static Repository variables are defined in variable dialogue box and their value exists until they are changed by Administrator.</p>
+<p>Static repository variables contain default initializers that are numeric or character values. In addition, you can use Expression Builder to insert a constant as the default initializer, such as Date, Time, etc.. You cannot use any other value or expression as the default initializer for a static repository variable.</p>
+<p>Dynamic repository variables are same as static variables but the values are refreshed by data returned from queries. When defining a dynamic repository variable, you create an initialization block or use a preexisting one that contains a SQL query. You can also set up a schedule that the Oracle BI Server will follow to execute the query and refresh the value of the variable periodically.</p>
+<p>When the value of a dynamic repository variable changes, all cache entries associated with a business model are deleted automatically.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the Session Variables?</label>
+<div class="toggle-content"> 
+<p>Session variables are similar to dynamic repository variables and that they obtain their values from initialization blocks. When a user begins a session, the Oracle BI Server creates new instances of session variables and initializes them.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of OBIEE Dashboards? What are the Dashboard alerts?</label>
+<div class="toggle-content"> 
+<p>OBIEE Dashboard is a tool that enables end users to run ad-hoc reports and analysis as per business requirement model. Interactive dashboards are pixel perfect reports which can be directly viewed or printed by end users.</p>
+<p>OBIEE Dashboard is part of Oracle BI Presentation layer services. If your end user is not interested in seeing all the data in the dashboard, it allows you to add prompts to the dashboard that allows user to enter what he wants to see. Dashboards also allows end users to select from Drop-down lists, multi-select boxes and selection of columns to display in the reports.</p>
+<p><b>Dashboard Alerts</b></p>
+<p>Oracle BI Dashboard also allows you to set up alerts to sales executives that comes up on the Interactive Dashboard whenever company’s projected sales is going to be below forecast.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of filters in OBIEE?</label>
+<div class="toggle-content"> 
+<p>Filters are used to limit the results that are displayed when an analysis is run, so that the results answer a particular question. Based on the filters, only those results are shown that matches the criteria passed in the filter condition.</p>
+<p>Filters are applied directly to attribute columns and measure columns. Filters are applied before the query is aggregated and affect the query and thus the resulting values for measures.</p>
+<p><b>Example</b> &minus; Suppose you have a list of members in which the aggregate sums to 100. Over the time, more members meet the set filter criteria, which increases the aggregate sum to 200.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Prompts and Filters?</label>
+<div class="toggle-content"> 
+<p>A Prompt is a special type of filter that is used to filter analyses embedded in a dashboard. The main reason to use a dashboard prompt is that it allows the user to customize analysis output and also allows flexibility to change parameters of a report.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Named prompt?</label>
+<div class="toggle-content"> 
+<p>The prompt created at the dashboard level is called a Named prompt. This Prompt is created outside of a specific dashboard and stored in the catalog as a prompt. You can apply a Named prompt to any dashboard or dashboard page that contains the columns, mentioned in the prompt. It can filter one or any number of analyses embedded on the same dashboard page. You can create and save these named prompts to a private folder or a shared folder.</p>
+<p>A Named prompt always appear on the dashboard page and user can prompt for different values without having to rerun the dashboard.</p>
+<p>A named prompt can also interact with selection steps. You can specify a dashboard prompt to override a specific selection step.</p>
+</div>
+</section> 
+<section class="toggle">
+<label> What are Inline prompts?</label>
+<div class="toggle-content"> 
+<p>Inline prompts are embedded in an analysis and are not stored in the Catalog for reuse. An Inline prompt provides general filtering of a column within the analysis, and depending on how it is configured.</p>
+<p>Inline Prompt work independently from a dashboard filter, which determines values for all matching columns on the dashboard. An inline prompt is an initial prompt. When the user selects the prompt value, the prompt field disappears from the analysis.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Column Prompts? Where they are used?</label>
+<div class="toggle-content"> 
+<p>A column prompt is the most common and flexible prompt type. A column prompt enables you to build very specific value prompts to either stand alone on the dashboard or analysis or to expand or refine existing dashboard and analysis filters. Column prompts can be created for hierarchical, measure, or attribute columns at the analysis or dashboard level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by connection pool and how many connection pools did you have in your last project?</label>
+<div class="toggle-content"> 
+<p>Connection pool is needed for every physical database and it contains information about the connection to the database. We had multiple connection pools to save time of users.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by Data Level Security and Object Level Security?</label>
+<div class="toggle-content"> 
+<p>Data level security controls the type and amount of data that you can see in a report. Object level security provides security for objects stored in the OBIEE web catalog like dashboards, dashboards pages, folder and reports.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is OBIEE Security? How do you define a Security policy in OBIEE system?</label>
+<div class="toggle-content"> 
+<p>OBIEE security is defined by use of a role based access control model. Security in OBIEE is defined in terms of Roles that are aligned to different directory server groups and users.</p>
+<p>Security structure defines with below components &minus;</p>
+<ul class="list">
+<li>The directory Server User and Group managed by the Authentication provider.</li> 
+<li>The application roles managed by the Policy store provide.</li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are different Application roles in BI system?</label>
+<div class="toggle-content"> 
+<p>Security is normally defined in terms of Application roles that are assigned to directory server users and groups.</p>
+<p><b>Example</b> &minus; the default Application roles are BIAdministrator, BIConsumer, and BIAuthor.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between OBIEE 10g and OBIEE 11g administration?</label>
+<div class="toggle-content"> 
+<p>In OBIEE 10g, most of OBIEE administration tasks were mostly performed either through the Administration tool, the web-based Presentation Server administration screen, or through editing files in the filesystem. You had around 700 or so configuration options spread over multiple tools and configuration files, with some options like users and groups were embedded in unrelated repositories (the RPD).</p>
+<p>In OBIEE 11g, all administration and configuration tasks are moved into Fusion Middleware Control also called as Enterprise Manager.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When you have Tables T1 and T2 which are not joined, what will happen in BMM layer?</label>
+<div class="toggle-content"> 
+<p>Both table will work as Fact table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to create outer join in Physical layer?</label>
+<div class="toggle-content"> 
+<p>No</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different ways of assigning permissions to OBIEE repository?</label>
+<div class="toggle-content"> 
+<p>You can assign permissions in one of the following ways &minus;</p>
+<p>To application roles &minus; Most recommended way of assigning permissions and privileges.</p>
+<p>To individual users &minus; This is difficult to manage where you can assign permissions and privileges to specific users.</p>
+<p>To Catalog groups &minus; It was used in previous releases for backward compatibility maintenance.</p>
+</div>
+</section>
+
+<h2>What is Next?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/obiee/obiee_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/obiee/obiee_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">obiee_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/obiee/obiee_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/obiee/obiee_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/obiee/obiee_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/obiee/obiee_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/obiee/obiee_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/obiee/obiee_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

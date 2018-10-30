@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Relational Algebra</title>
+<meta name="description" content="Relational Algebra - Learn DBMS in simple and easy steps starting from its overview, Architecture, data models, data schemas, data independece, ED Diagram, Generalization, Aggregation, Codd's Rules, Relational Data Model, Relational Algebra, Database Design, Normalization, Database Joins, Database Storage, Database File System, Indexing, Hashing, Transaction, Concurrency Control, Deadlock, Backup and Recovery." />
+<meta name="keywords" content="DBMS, Tutorial, Network Architecture, Overview, Architecture, data models, data schemas, data independece, ED Diagram, Generalization, Aggregation, Codd's Rules, Relational Data Model, Relational Algebra, Database Design, Normalization, Database Joins, Database Storage, Database File System, Indexing, Hashing, Transaction, Concurrency Control, Deadlock, Backup and Recovery." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #fbb42b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fbb42b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fbb42b !important;}
+.submenu-item{ border-bottom: 2px solid #fbb42b !important; border-top: 2px solid #fbb42b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#fbb42b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/dbms/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/dbms/images/dbms-mini-logo.jpg" alt="DBMS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DBMS Tutorial</li>
+<li><a target="_top" href="/dbms/index.htm">DBMS - Home</a></li>
+<li><a target="_top" href="/dbms/dbms_overview.htm">DBMS - Overview</a></li>
+<li><a target="_top" href="/dbms/dbms_architecture.htm">DBMS - Architecture</a></li>
+<li><a target="_top" href="/dbms/dbms_data_models.htm">DBMS - Data Models</a></li>
+<li><a target="_top" href="/dbms/dbms_data_schemas.htm">DBMS - Data Schemas</a></li>
+<li><a target="_top" href="/dbms/dbms_data_independence.htm">DBMS - Data Independence</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Entity Relationship Model</li>
+<li><a target="_top" href="/dbms/er_model_basic_concepts.htm">DBMS - ER Model Basic Concepts</a></li>
+<li><a target="_top" href="/dbms/er_diagram_representation.htm">DBMS - ER Diagram Representation</a></li>
+<li><a target="_top" href="/dbms/dbms_generalization_aggregation.htm">DBMS - Generalization, Aggregation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Relational Model</li>
+<li><a target="_top" href="/dbms/dbms_codds_rules.htm">DBMS - Codd's Rules</a></li>
+<li><a target="_top" href="/dbms/relational_data_model.htm">DBMS - Relational Data Model</a></li>
+<li><a target="_top" href="/dbms/relational_algebra.htm">DBMS - Relational Algebra</a></li>
+<li><a target="_top" href="/dbms/er_model_to_relational_model.htm">DBMS - ER to Relational Model</a></li>
+<li><a target="_top" href="/dbms/sql_overview.htm">DBMS- SQL Overview</a></li>
+</ul>                                                                
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Relational Database Design</li>
+<li><a target="_top" href="/dbms/database_normalization.htm">DBMS - Database Normalization</a></li>
+<li><a target="_top" href="/dbms/database_joins.htm">DBMS - Database Joins</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Storage and File Structure </li>
+<li><a target="_top" href="/dbms/dbms_storage_system.htm">DBMS - Storage System</a></li>
+<li><a target="_top" href="/dbms/dbms_file_structure.htm">DBMS - File Structure</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Indexing and Hashing</li>
+<li><a target="_top" href="/dbms/dbms_indexing.htm">DBMS - Indexing</a></li>
+<li><a target="_top" href="/dbms/dbms_hashing.htm">DBMS - Hashing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Transaction And Concurrency</li>
+<li><a target="_top" href="/dbms/dbms_transaction.htm">DBMS - Transaction</a></li>
+<li><a target="_top" href="/dbms/dbms_concurrency_control.htm">DBMS - Concurrency Control</a></li>
+<li><a target="_top" href="/dbms/dbms_deadlock.htm">DBMS - Deadlock</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Backup and Recovery</li>
+<li><a target="_top" href="/dbms/dbms_data_backup.htm">DBMS - Data Backup</a></li>
+<li><a target="_top" href="/dbms/dbms_data_recovery.htm">DBMS - Data Recovery</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DBMS Useful Resources</li>
+<li><a target="_top" href="/dbms/dbms_quick_guide.htm">DBMS - Quick Guide</a></li>
+<li><a target="_top" href="/dbms/dbms_useful_resources.htm">DBMS - Useful Resources</a></li>
+<li><a target="_top" href="/dbms/dbms_discussion.htm">DBMS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Relational Algebra</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/dbms/relational_data_model.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/dbms/er_model_to_relational_model.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Relational database systems are expected to be equipped with a query language that can assist its users to query the database instances. There are two kinds of query languages &minus; relational algebra and relational calculus.</p>
+<h2>Relational Algebra</h2>
+<p>Relational algebra is a procedural query language, which takes instances of relations as input and yields instances of relations as output. It uses operators to perform queries. An operator can be either <b>unary</b> or <b>binary</b>.  They accept relations as their input and yield relations as their output. Relational algebra is performed recursively on a relation and intermediate results are also considered relations.</p>
+<p>The fundamental operations of relational algebra are as follows &minus;</p>
+<ul class="list">
+<li>Select</li>
+<li>Project</li>
+<li>Union</li>
+<li>Set different</li>
+<li>Cartesian product</li>
+<li>Rename</li>
+</ul>
+<p>We will discuss all these operations in the following sections.</p>
+<h2>Select Operation (&#963;)</h2>
+<p>It selects tuples that satisfy the given predicate from a relation.</p>
+<p><b>Notation</b> &minus; &#963;<sub><i>p</i></sub>(r)</p>
+<p>Where <b>&#963;</b> stands for selection predicate and <b>r</b> stands for relation. <i>p</i> is prepositional logic formula which may use connectors like <b>and, or,</b> and <b>not</b>. These terms may use relational operators like &minus; &#61;,&nbsp;&#8800;,&nbsp;&ge;,&nbsp;&lt; ,&nbsp; &gt;, &nbsp;&le;.</p>
+<p><b>For example</b> &minus;</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#963;<sub><i>subject = "database"</i></sub>(Books)</span>
+</pre>
+<p><b>Output</b> &minus; Selects tuples from books where subject is 'database'.</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#963;<sub>subject = "database" and price = "450"</sub>(Books)</span>
+</pre>
+<p><b>Output</b> &minus; Selects tuples from books where subject is 'database' and 'price' is 450.</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#963;<sub>subject = "database" and price = "450" or year &gt; "2010"</sub>(Books)</span>
+</pre>
+<p><b>Output</b> &minus; Selects tuples from books where subject is 'database' and 'price' is 450 or those books published after 2010.</p>
+<h2>Project Operation (&#8719;)</h2>
+<p>It projects column(s) that satisfy a given predicate.</p>
+<p>Notation &minus; &#8719;<sub>A<sub><small>1</small></sub>, A<sub><small>2</small></sub>, A<sub><small>n</small></sub></sub> (r)</p>
+<p>Where A<sub><small>1</small></sub>, A<sub><small>2</small></sub> , A<sub><small>n</small></sub> are attribute names of relation <b>r</b>.</p>
+<p>Duplicate rows are automatically eliminated, as relation is a set.</p>
+<p><b>For example</b> &minus;</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#8719;<sub>subject, author</sub> (Books)</span>
+</pre>
+<p>Selects and projects columns named as subject and author from the relation Books.</p>
+<h2>Union Operation (&#8746;)</h2>
+<p>It performs binary union between two given relations and is defined as &minus;</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">r &#8746; s = { t | t &#8712; r or t &#8712; s}</span>
+</pre>
+<p><b>Notation</b> &minus; r U s </p>
+<p>Where <b>r</b> and <b>s</b> are either database relations or relation result set (temporary relation).</p>
+<p>For a union operation to be valid, the following conditions must hold &minus;</p>
+<ul class="list">
+<li><b>r</b>, and <b>s</b> must have the same number of attributes.</li>
+<li>Attribute domains must be compatible.</li>
+<li>Duplicate tuples are automatically eliminated.</li>
+</ul>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#8719; <sub>author</sub> (Books) &#8746; &#8719; <sub>author</sub> (Articles)</span>
+</pre>
+<p><b>Output</b> &minus; Projects the names of the authors who have either written a book or an article or both.</p>
+<h2>Set Difference (&#8722;)</h2>
+<p>The result of set difference operation is tuples, which are present in one relation but are not in the second relation.</p>
+<p><b>Notation</b> &minus; <b>r</b> &#8722; <b>s</b></p>
+<p>Finds all the tuples that are present in <b>r</b> but not in <b>s</b>.</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#8719; <sub>author</sub> (Books) &#8722; &#8719; <sub>author</sub> (Articles)</span>
+</pre>
+<p><b>Output</b> &minus; Provides the name of authors who have written books but not articles.</p>
+<h2>Cartesian Product (&#935;)</h2>
+<p>Combines information of two different relations into one. </p>
+<p><b>Notation</b> &minus; r &#935; s</p>
+<p>Where <b>r</b> and <b>s</b> are relations and their output will be defined as &minus;</p>
+<p>r &#935;  s = { q t | q &#8712;  r and t &#8712; s}</p>
+<pre class="result notranslate">
+<span style="font-size:1.2em">&#963;<sub>author = 'tutorialspoint'</sub>(Books &#935; Articles)</span>
+</pre>
+<p><b>Output</b> &minus; Yields a relation, which shows all the books and articles written by tutorialspoint.</p>
+<h2>Rename Operation (&#961;)</h2>
+<p>The results of relational algebra are also relations but without any name. The rename operation allows us to rename the output relation. 'rename' operation is denoted with small Greek letter <b>rho</b> <i>&#961;</i>.</p>
+<p><b>Notation</b> &minus; <i>&#961;</i> <sub>x</sub> (E)</p>
+<p>Where the result of expression <b>E</b> is saved with name of <b>x</b>.</p>
+<p>Additional operations are &minus;</p>
+<ul class="list">
+<li>Set intersection</li>
+<li>Assignment</li>
+<li>Natural join</li>
+</ul>
+<h2>Relational Calculus</h2>
+<p>In contrast to Relational Algebra, Relational Calculus is a non-procedural query language, that is, it tells what to do but never explains how to do it.</p>
+<p>Relational calculus exists in two forms &minus;</p>
+<h3>Tuple Relational Calculus (TRC)</h3>
+<p>Filtering variable ranges over tuples</p>
+<p><b>Notation</b> &minus; {T | Condition} </p>
+<p>Returns all tuples T that satisfies a condition.</p>
+<p><b>For example</b> &minus;</p>
+<pre class="result notranslate">
+{ T.name |  Author(T) AND T.article = 'database' }
+</pre>
+<p><b>Output</b> &minus; Returns tuples with 'name' from Author who has written article on 'database'.</p>
+<p>TRC can be quantified. We can use Existential (&#8707;) and Universal Quantifiers (&#8704;).</p>
+<p><b>For example</b> &minus;</p>
+<pre class="result notranslate">
+{ R| &#8707;T &nbsp; &#8712; Authors(T.article='database' AND R.name=T.name)}
+</pre>
+<p><b>Output</b> &minus; The above query will yield the same result as the previous one.</p>
+<h3>Domain Relational Calculus (DRC)</h3>
+<p>In DRC, the filtering variable uses the domain of attributes instead of entire tuple values (as done in TRC, mentioned above).</p>
+<p><b>Notation</b> &minus;</p>
+<p>{ a<sub><small>1</small></sub>, a<sub><small>2</small></sub>, a<sub><small>3</small></sub>, ..., a<sub><small>n</small></sub> | P (a<sub><small>1</small></sub>, a<sub><small>2</small></sub>, a<sub><small>3</small></sub>, ... ,a<sub><small>n</small></sub>)}</p>
+<p>Where a1, a2 are attributes and <b>P</b> stands for formulae built by inner attributes.</p>
+<p><b>For example</b> &minus;</p>
+<pre class="result notranslate">
+{< article, page, subject > | <article, page, subject > &#8712; TutorialsPoint &#8743; subject = 'database'}
+</pre>
+<p><b>Output</b> &minus; Yields Article, Page, and Subject from the relation TutorialsPoint, where subject is database.</p>
+<p>Just like TRC, DRC can also be written using existential and universal quantifiers.  DRC also involves relational operators.</p>
+<p>The expression power of Tuple Relation Calculus and Domain Relation Calculus is equivalent to Relational Algebra.</p>
+<hr />
+<div class="pre-btn">
+<a href="/dbms/relational_data_model.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/dbms/pdf/relational_algebra.pdf" title="Relational Algebra" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/dbms/er_model_to_relational_model.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/dbms/relational_algebra.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/dbms/relational_algebra.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/dbms/relational_algebra.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/dbms/relational_algebra.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/dbms/relational_algebra.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/dbms/relational_algebra.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

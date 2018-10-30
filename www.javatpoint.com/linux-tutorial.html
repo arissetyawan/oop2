@@ -1,0 +1,775 @@
+ <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Learn Linux Tutorial - javatpoint</title><link rel="SHORTCUT ICON" href="/images/logo/icon.png" />
+<link rel="stylesheet" type="text/css" href="/link.css"/>
+<meta name="keywords" content="linux, tutorial, beginners, professionals, introduction, example, command, file, directory, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi"/><meta name="description" content="Learn Linux tutorial for beginners and professionals with examples on files, directories, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi etc.."/><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="https://www.javatpoint.com/linux-tutorial" />
+<meta property="og:title" content="Learn Linux Tutorial - javatpoint" /><meta property="og:description" content="Learn Linux tutorial for beginners and professionals with examples on files, directories, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi etc.." />
+<meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta name="twitter:title" property="og:title" content="Learn Linux Tutorial - javatpoint" /><meta name="twitter:description" property="og:description" content="Learn Linux tutorial for beginners and professionals with examples on files, directories, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi etc.." /><meta property="og:url" content="https://www.javatpoint.com/linux-tutorial" /><meta property="og:site_name" content="www.javatpoint.com" /><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@pagejavatpoint"/><meta name="twitter:domain" content="www.javatpoint.com"/><meta name="twitter:creator" content="@pagejavatpoint"/>
+<script  id="feedify_webscript" >
+var feedify = feedify || {};
+window.feedify_options={fedify_url:"https://feedify.net/"};
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src = feedify_options.fedify_url+'getjs/feedbackembad-min-1.0.js';
+document.getElementsByTagName('head')[0].appendChild(s);
+</script>
+<link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+</head> 
+<body onload="highlightlink()"> 
+<!-- /13406045/javatpoint_cmda -->
+<div id='div-gpt-ad-1512468834310-0' style='height:1px; width:1px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512468834310-0'); });
+</script>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
+<div id="page" style="margin:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><table style="width:100%;margin-bottom:5px">
+    <tr>
+        <td>
+            <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px">
+                <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo" /></a>
+            </div>
+            <div style="float:left;width:60%;">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                
+            </div>
+            
+        </td>
+    </tr>
+        <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>-->
+
+</table> </div>
+<div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"/></span>
+<span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+
+</div>
+<div style="margin:0px;padding:0px;clear:both">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+<!--<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint"/><input type="hidden" name="sitesearch" value="www.javatpoint.com"/></form>-->
+
+</div>
+</div>
+<div id="link" style="clear:both">  <div  class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com">Home</a></li>
+<li><a href="c-programming-language-tutorial">C</a></li>
+<li><a href="java-tutorial">Java</a></li>
+<li><a href="linux-tutorial" class="selected">Linux</a></li>
+<li><a href="shell-scripting-tutorial">Shell Scripting</a></li>
+<li><a href="sql-tutorial">SQL</a></li>
+<li><a href="html-tutorial">HTML</a></li>
+<li><a href="css-tutorial">CSS</a></li>
+<li><a href="javascript-tutorial">JavaScript</a></li>
+<li><a href="xml-tutorial">XML</a></li>
+<li><a href="ajax-tutorial">Ajax</a></li>
+<li><a href="python-tutorial">Python</a></li>
+<li><a href="android-tutorial">Android</a></li>
+<li><a href="examaccess">Quiz</a></li>
+<li><a href="free-java-projects">Projects</a></li>
+<li><a href="corejava-interview-questions">Interview Q</a></li>
+<li><a href="comment.jsp">Comment</a></li>
+<li><a href="forum">Forum</a></li>
+</ul>
+<br style="clear: left" />
+</div></div>
+<div class="mobilemenu" style="clear:both"> 
+<script async
+src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cm_300x250_Mob_14/9 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:300px;height:250px"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="7014272519"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="menu">
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Linux Tutorial</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="linux-tutorial"><span>Linux Tutorial</span></a>
+<a href="what-is-linux"><span>What is Linux</span></a>
+<a href="linux-history"><span>Linux History</span></a>
+<a href="linux-features"><span>Linux Features</span></a>
+<a href="unix-vs-linux" class="l1">Unix vs Linux</a>
+<a href="linux-distributions"><span>Linux Distributions</span></a>
+<a href="linux-licensing"><span>Linux Licensing</span></a> 
+</div>
+
+ <div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Linux Directories</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="linux-directories">Linux Directories</a>
+<a href="linux-pwd">Linux pwd</a>
+<a href="linux-cd">Linux cd</a>
+<a href="linux-absolute-relative-paths">Linux Absolute Relative</a>
+<a href="linux-path-completion">Linux Path Completion</a>
+<a href="linux-ls">Linux ls</a>
+<a href="linux-mkdir">Linux mkdir</a>
+<a href="linux-rmdir">Linux rmdir</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Linux Files</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="linux-files">Linux files</a>
+<a href="linux-file">Linux file </a> 
+<a href="linux-touch">Linux touch</a>
+<a href="linux-rm">Linux rm</a>
+<a href="linux-cp">Linux cp</a>
+<a href="linux-mv">Linux mv</a>
+<a href="linux-rename">Linux rename</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Linux Man Pages</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="linux-man">Linux man</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Linux File Contents</span></h2>
+</div>
+<div class="leftmenu" >
+ <a href="linux-file-contents">Linux File Contents</a>
+<a href="linux-head">Linux head</a>
+<a href="linux-tail">Linux tail</a>
+<a href="linux-cat">Linux cat</a>
+<a href="linux-tac">Linux tac</a>
+<a href="linux-more">Linux more</a>
+<a href="linux-less">Linux less</a>
+</div>
+<div class="leftmenu2" >
+<a href="linux-file-hierarchy-system"><span>Linux File Hierarchy</span> </a>
+<a href="linux-filters"><span>12 Linux Filters</span></a>
+<a href="linux-input-output-redirection"><span>Linux I/O Redirection</span></a>
+<a href="linux-basic-unix-tools"><span>Linux Unix Tools</span></a>
+<a href="linux-regular-expression"><span>Linux Regex</span></a>
+<a href="linux-users"><span>Linux Users</span></a>
+<a href="linux-file-ownership"><span>Linux File Security</span></a>
+<a href="linux-shell-commands"><span>Linux Shell</span></a>
+<a href="linux-networking-commands"><span>Linux Networking</span></a>
+<a href="vi-editor"><span>vi editor</span></a>
+<a href="linux-system-admin-commands"><span>Linux System Admin</span></a>
+<a href="linux-commands"><span>100+ Linux Commands</span></a>
+<a href="linux-interview-questions"><span>Linux Interview</span></a>
+</div>
+<img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"/>
+<br/>
+<div id="leftad" style="margin-left:20px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javatpointleft -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="4476401222"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="onlycontent">
+<div class="onlycontentad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord"
+style="display:inline-block"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="onlycontentinner">
+ <div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="what-is-linux">next &rarr;</a>
+</div>
+
+<h1 class="h1">Linux/Unix Tutorial</h1>
+<a href="https://training.javatpoint.com/linux-training.jsp" target="_blank"><img style="width:350px" src="corebasic/images/linux.png" class="imageright" alt="Linux"/></a>
+
+<!--<img src="linux/images/linux-first.png" alt="Linux first" style="float:right;" />-->
+<p>Linux tutorial provides basic and advanced concepts of Linux. Our Linux tutorial is designed for beginners and professionals.</p>
+<p>Linux is an open-source operating system. It is like Windows, Mac, Android, etc.</p>
+<p>Unix is also an operating system like Linux. It is an commercial OS. It consists of three parts: Kernal, Shell and Programs. Most of the Unix and Linux commands are similar in nature.</p>
+<p>Our Linux tutorial includes all topics of Linux OS such as Linux commands, Directories, Files, Man Pages, File Contents, File Permissions, shells, VI editor etc. There is also given Linux interview questions to help you better understand the Linux operating system.</p>
+
+<hr/>
+<h2 class="h2 center textshadow">Linux Index</h2>
+<hr/>
+<div class="responsivediv">
+<div class="col-2">
+<p><strong>Linux Tutorial</strong></p>
+<ul class="points">
+<li><a href="linux-tutorial">Linux Tutorial</a></li>
+<li><a href="what-is-linux">What is Linux</a></li>
+<li><a href="linux-history">Linux History</a></li>
+<li><a href="linux-features">Linux Features</a></li>
+<li><a href="unix-vs-linux">Unix vs Linux</a></li>
+<li><a href="linux-distributions">Linux Distributions</a></li>
+<li><a href="linux-licensing">Linux Licensing</a></li>
+</ul>
+<p><strong>Linux Directories</strong></p>
+<ul class="points">
+<li><a href="linux-directories">Linux Directories</a></li>
+<li><a href="linux-pwd">Linux pwd</a></li>
+<li><a href="linux-cd">Linux cd</a></li>
+<li><a href="linux-absolute-relative-paths">Linux Absolute Relative</a></li>
+<li><a href="linux-path-completion">Linux Path Completion</a></li>
+<li><a href="linux-ls">Linux ls</a></li>
+<li><a href="linux-mkdir">Linux mkdir</a>
+<ul class="points">
+<li><a href="linux-mkdir-p">mkdir -p, -parents</a></li>
+<li><a href="linux-mkdir-v">mkdir -v, -verbose</a></li>
+<li><a href="linux-mkdir-m-mode">mkdir -m -mode=MODE</a></li>
+</ul></li>
+<li><a href="linux-rmdir">Linux rmdir</a></li>
+</ul>
+<p><strong>Linux Files</strong></p>
+<ul class="points">
+<li><a href="linux-files">Linux files</a>
+<ul class="points">
+<li><a href="linux-file">file</a></li>
+<li><a href="linux-touch">touch</a></li>
+<li><a href="linux-rm">rm</a></li>
+<li><a href="linux-cp">cp</a></li>
+<li><a href="linux-mv">mv</a></li>
+<li><a href="linux-rename">rename</a></li>
+</ul>
+</li>
+<li><a href="linux-file">Linux file</a>
+<ul class="points">
+<li><a href="linux-file-s">file -s</a></li>
+<li><a href="linux-file-asterisk">file *</a></li>
+<li><a href="linux-file-directory-name">file /directory name/*</a></li>
+<li><a href="linux-file-range">file [range]*</a></li>
+</ul></li> 
+<li><a href="linux-touch">Linux touch</a>
+<ul class="points">
+<li><a href="linux-touch-a">touch -a</a></li>
+<li><a href="linux-touch-m">touch -m</a></li>
+<li><a href="linux-touch-r">touch -r</a></li>
+<li><a href="linux-touch-t">touch -t</a></li>
+<li><a href="linux-touch-c">touch -c</a></li>
+</ul></li>
+<li><a href="linux-rm">Linux rm</a>
+<ul class="points">
+<li><a href="linux-rm-extension">rm *extension</a></li>
+<li><a href="linux-rm-r">rm -r or R</a></li>
+<li><a href="linux-rm-i">rm -i</a></li>
+<li><a href="linux-rm-rf">rm -rf</a></li>
+</ul>
+</li>
+<li><a href="linux-cp">Linux cp</a>
+<ul class="points">
+<li><a href="linux-cp-r">cp -r </a></li>
+<li><a href="linux-copy-multiple-files">cp file1 file 2 directory name </a></li>
+<li><a href="linux-cp-backup">cp -backup</a></li>
+<li><a href="linux-cp-i">cp -i </a></li>
+<li><a href="linux-cp-l">cp -l </a></li>
+<li><a href="linux-cp-p">cp -p </a></li>
+<li><a href="linux-cp-u-v">cp -u -v </a></li>
+</ul>
+</li>
+<li><a href="linux-mv">Linux mv</a>
+<ul class="points">
+<li><a href="linux-mv-i">mv -i</a></li>
+<li><a href="linux-mv-asterisk">mv *</a></li>
+<li><a href="linux-mv-suffix">mv --suffix</a></li>
+<li><a href="linux-mv-u">mv -u</a></li>
+</ul>
+</li>
+<li><a href="linux-rename">Linux rename</a>
+<ul class="points">
+<li><a href="linux-rename-n">rename -n</a></li>
+<li><a href="linux-rename-v">rename -v</a></li>
+<li><a href="linux-rename-uppercase-lowercase">rename (a-z)(A-Z)/ (A-Z)(a-z)</a></li>
+<li><a href="linux-rename-f">rename -f</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Linux Man Pages</strong></p>
+<ul class="points">
+<li><a href="linux-man">Linux man</a></li>
+<li><a href="linux-man-a">Linux man -a</a></li>
+<li><a href="linux-man-aw">Linux man -aw</a></li>
+<li><a href="linux-man-f">Linux man -f</a></li>
+<li><a href="linux-man-k">Linux man -k(apropos)</a></li>
+<li><a href="linux-man-whereis">Linux man whereis</a></li>
+</ul>
+<p><strong>Linux File Contents</strong></p>
+<ul class="points">
+<li><a href="linux-file-contents">Linux File Contents</a></li>
+<li><a href="linux-head">Linux head</a></li>
+<li><a href="linux-tail">Linux tail</a></li>
+<li><a href="linux-cat">Linux cat</a>
+<ul class="points">
+<li><a href="linux-cat-create">cat > [fileName]</a></li>
+<li><a href="linux-cat-copy">cat [oldfile] > [newfile]</a></li>
+<li><a href="linux-cat-concatenate">cat [file1 file2 and so on] > [new file name] </a></li>
+<li><a href="linux-cat-display-line-numbers">cat -n/cat -b [fileName]</a></li>
+<li><a href="linux-cat-e">cat -e [fileName]</a></li>
+<li><a href="linux-cat-end-marker">cat [fileName] &lt;&lt;EOF </a></li>
+</ul>
+</li>
+<li><a href="linux-tac">Linux tac</a></li>
+<li><a href="linux-more">Linux more</a></li>
+<li><a href="linux-less">Linux less</a></li>
+</ul>
+<p><strong>Linux File Hierarchy</strong></p>
+<ul class="points">
+<li><a href="linux-file-hierarchy-system">Linux File Hierarchy</a></li>
+<li><a href="linux-fhs-binary-directories">Binary Directories</a></li>
+<li><a href="linux-fhs-configuration-directory">Configuration Directories</a></li>
+<li><a href="linux-fhs-data-directory">Data Directories</a></li>
+<li><a href="linux-fhs-memory-directory">Memory Directories</a></li>
+<li><a href="linux-unix-system-resources">Usr Directory</a></li>
+<li><a href="linux-fhs-variable-directory">var Directory</a></li>
+<li><a href="linux-fhs-non-standard-directories">Non-standard directories</a></li>
+</ul>
+<p><strong>12 Linux Filters</strong></p>
+<ul class="points">
+<li><a href="linux-filters">Linux Filters</a></li>
+<li><a href="linux-cat-filters">Linux cat</a></li>
+<li><a href="linux-cut">Linux cut</a></li>
+<li><a href="linux-grep">Linux grep</a></li>
+<li><a href="linux-comm">Linux comm</a></li>
+<li><a href="linux-sed">Linux sed</a></li>
+<li><a href="linux-tee">Linux tee</a></li>
+<li><a href="linux-tr">Linux tr</a></li>
+<li><a href="linux-uniq">Linux uniq</a></li>
+<li><a href="linux-wc">Linux wc</a></li>
+<li><a href="linux-od">Linux od</a></li>
+<li><a href="linux-sort">Linux sort</a></li>
+<li><a href="linux-gzip">Linux gzip</a></li>
+</ul>
+<p><strong>Linux I/O Redirection</strong></p>
+<ul class="points">
+<li><a href="linux-input-output-redirection">Linux I/O Redirection</a></li>
+<li><a href="linux-input-redirection">Linux Input Redirection</a></li>
+<li><a href="linux-output-redirection">Linux Output Redirection</a></li>
+<li><a href="linux-error-redirection">Linux Error Redirection</a></li>
+</ul>
+
+<p><strong>Linux Unix Tools</strong></p>
+<ul class="points">
+<li><a href="linux-basic-unix-tools">Linux Unix Tools</a></li>
+<li><a href="linux-find">Linux Find</a></li>
+<li><a href="linux-locate">Linux Locate</a></li>
+<li><a href="linux-date">Linux Date</a></li>
+<li><a href="linux-cal">Linux Cal</a></li>
+<li><a href="linux-sleep">Linux Sleep</a></li>
+<li><a href="linux-time">Linux Time</a></li>
+<li><a href="linux-zcat-zmore">Linux zcat/zmore</a></li>
+<li><a href="linux-bzip2-bunzip2">Linux bzip2 / bunzip2</a></li>
+<li><a href="linux-bzcat-bzmore">Linux bzcat / bzmore</a></li>
+<li><a href="linux-df">Linux df</a></li>
+</ul>
+
+<p><strong>Linux Regex</strong></p>
+<ul class="points">
+<li><a href="linux-regular-expression">Linux RegEx</a></li>
+<li><a href="linux-grep-regular-expressions">Linux Grep RegEx</a></li>
+<li><a href="linux-rename-regular-expression">Linux rename RegEx</a></li>
+<li><a href="linux-sed-regular-expression">Linux Sed RegEx</a></li>
+</ul>
+<p><strong>Linux Users</strong></p>
+<ul class="points">
+<li><a href="linux-users">Linux Users</a></li>
+<li><a href="linux-su-commands">Local su Commands</a></li>
+<li><a href="linux-user-management">Linux User Management</a></li>
+<li><a href="linux-user-password">User Password</a></li>
+<li><a href="linux-groups">Local Groups</a></li>
+</ul>
+
+<p><strong>Linux File Security</strong></p>
+<ul class="points">
+<li><a href="linux-file-ownership">Linux File OwnerShip</a></li>
+<li><a href="linux-file-permissions">Linux Permission</a></li>
+<li><a href="linux-advanced-file-permission">Linux Advance Permission</a></li>
+<li><a href="linux-file-links">Linux File Links</a></li>
+<li><a href="linux-inodes">1) Linux Inodes</a></li>
+<li><a href="linux-file-links-directories">2) Linux Link Directories</a></li>
+<li><a href="linux-hard-links">3) Linux Hard links</a></li>
+<li><a href="linux-symbolic-links">4) Linux Soft links</a></li>
+<li><a href="linux-removing-links">5) Linux Remove link</a></li>
+</ul>
+
+<p><strong>Linux Shell Commands</strong></p>
+<ul class="points">
+<li><a href="linux-shell-commands">Linux Commands</a></li>
+<li><a href="linux-aliases">Linux Aliases</a></li>
+<li><a href="linux-arguments">Linux Arguments</a></li>
+<li><a href="linux-displaying-shell">Linux Displaying Shell</a></li>
+<li><a href="linux-control-operators">Linux Control Operators</a></li>
+<li><a href="linux-semicolon">1) Semicolon</a></li>
+<li><a href="linux-ampersand">2) Ampersand</a></li>
+<li><a href="linux-dollar-question-mark">3) Dollar Question Mark</a></li>
+<li><a href="linux-double-ampersand">4) Double Ampersand</a></li>
+<li><a href="linux-double-vertical-bar">5) Double Vertical Bar</a></li>
+<li><a href="linux-combining-and-or-operators">6) Combining && and ||</a></li>
+<li><a href="linux-pound-sign">7) Pound Sign</a></li>
+<li><a href="linux-escaping-special-characters">8) ESC</a></li>
+<li><a href="linux-file-globbing">Linux File Globbing</a></li>
+<li><a href="linux-shell-embedding">Linux Shell Embedding</a></li>
+<li><a href="linux-shell-history">Linux Shell History</a></li>
+<li><a href="linux-shell-history-commands">Linux History Commands</a></li>
+<li><a href="linux-history-size">Linux Histroy Size</a></li>
+<li><a href="linux-bang-bang">Linux Bang Bang</a></li>
+</ul>
+</div>
+
+
+<div class="col-2">
+
+
+
+<p><strong>Linux Networking</strong></p>
+<ul class="points">
+<li><a href="linux-networking-commands">Linux Networking</a></li>
+<li><a href="linux-ifconfig">1) Linux ifconfig</a> </li>
+<li><a href="linux-ip">2) Linux ip</a></li>
+<li><a href="linux-traceroute">3) Linux traceroute</a> </li>
+<li><a href="linux-tracepath">4) Linux tracepath</a> </li>
+<li><a href="linux-ping">5) Linux ping</a> </li>
+<li><a href="linux-netstat">6) Linux netstat</a> </li>
+<li><a href="linux-ss">7) Linux ss</a> </li>
+<li><a href="linux-dig">8) Linux dig</a> </li>
+<li><a href="linux-nslookup">9) Linux nslookup</a> </li>
+<li><a href="linux-route">10) Linux route</a> </li>
+<li><a href="linux-host">11) Linux host</a> </li>
+<li><a href="linux-arp">12) Linux arp</a> </li>
+<li><a href="linux-iwconfig">13) Linux iwconfig</a> </li>
+<li><a href="linux-hostname">14) Linux hostname</a> </li>
+<li><a href="linux-curl-and-wget">15) Linux curl & wget</a> </li>
+<li><a href="linux-mtr">16) Linux mtr</a> </li>
+<li><a href="linux-whois">17) Linux whois</a> </li>
+<li><a href="linux-ifplugstatus">18) Linux ifplugstatus</a></li>
+</ul>
+<p><strong>Linux vi editor</strong></p>
+<ul class="points">
+<li><a href="vi-editor">Vi Editor</a></li>
+<li><a href="vi-commands">Vi Commands</a></li>
+<li><a href="linux-vi-switch">1) switch</a></li>
+<li><a href="linux-vi-move">2) move</a></li>
+<li><a href="linux-vi-jump">3) jump</a></li>
+<li><a href="linux-vi-delete">4) delete</a></li>
+<li><a href="linux-vi-undo-and-repeat">5) undo and repeat</a></li>
+<li><a href="linux-vi-cut-copy-paste">6) cut, copy, paste</a></li>
+<li><a href="linux-vi-cut-copy-paste-blocks">7) cut, copy, paste blocks</a></li>
+<li><a href="linux-vi-start-and-end">8) Start and end</a></li>
+<li><a href="linux-vi-joining">9) Joining</a></li>
+<li><a href="linux-vi-word">10) word</a></li>
+<li><a href="linux-vi-searhing">11)  Search</a></li>
+<li><a href="linux-vi-replace-all">12) Replace all</a></li>
+<li><a href="linux-vi-text-buffers">13) Text Buffers</a></li>
+<li><a href="linux-vi-abbreviations">14) Abbreviations</a></li>
+</ul>
+<p><strong>Linux System Admin</strong></p>
+<ul class="points">
+<li><a href="linux-system-admin-commands">Linux Admin Commands</a></li>
+<li><a href="linux-uptime">Linux uptime</a></li>
+<li><a href="linux-service">Linux service</a></li>
+<li><a href="linux-terminating"> Linux terminating</a></li>
+<li><a href="linux-kill">1) Linux kill</a></li>
+<li><a href="linux-killall">2) Linux killall</a></li>
+<li><a href="linux-pkill"> 3) Linux pkill</a> </li>
+<li><a href="linux-xkill">4) Linux xkill</a></li>
+<li><a href="linux-pmap"> Linux pmap</a>
+<ul class="points">
+<li><a href="linux-pmap-x">-x</a></li>
+<li><a href="linux-pmap-d">-d</a></li>
+<li><a href="linux-pmap-q">-q</a></li>
+<li><a href="linux-pmap-v">-v</a></li>
+</ul>
+</li>
+<li><a href="linux-wget">Linux wget command</a>
+<ul class="points">
+<li><a href="linux-wget-single-file">wget &lt;URL&gt;</a></li>
+<li><a href="linux-wget-store-with-different-file-name">wget -O &lt;fileName&gt; &lt;URL&gt;</a></li>
+<li><a href="linux-limiting-downloading-speed">wget --limit-rate=&lt;Numberk&gt; &lt;URL&gt;</a></li>
+<li><a href="linux-completing-partially-downloaded-file">wget -c &lt;URL&gt;</a></li>
+<li><a href="linux-download-in-background">wget -b &lt;URL&gt;</a></li>
+<li><a href="linux-set-number-retrying-attempts">wget --tries=&lt;Number&gt; &lt;URL&gt;</a></li>
+<li><a href="linux-download-multiple-files">wget -i &lt;fileName&gt;</a></li>
+<li><a href="linux-downloading-full-website">wget --mirror -p --convert-links -P ./local dir &lt;webURL&gt;</a></li>
+<li><a href="linux-rejecting-file-types">wget --reject=&lt;rejectingFile&gt; &lt;URL&gt;</a></li>
+<li><a href="linux-quit-downloading-after-crossing-certain-limit">wget -Q&lt;Value&gt;m -i &lt;fileName&gt;</a></li>
+<li><a href="linux-downloading-certain-file-type">wget -r -A.&lt;fileType&gt; &lt;webURL&gt;</a></li>
+<li><a href="linux-redirecting-log-file">wget -o &lt;logFile&gt; &lt;URL&gt;</a></li>
+</ul>
+</li>
+<li><a href="linux-ftp-and-sftp">Linux ftp or sftp</a></li>
+<li><a href="linux-free-command">Linux  free Command</a>
+<ul class="points">
+<li><a href="linux-free-t">free -t </a></li>
+<li><a href="linux-free-o">free -o</a></li>
+<li><a href="linux-free-s">free -s &lt;time&gt;</a></li>
+<li><a href="linux-free-l">free -l</a></li>
+<li><a href="linux-watch-free">watch free</a></li>
+</ul>
+</li>
+<li><a href="linux-top">Linux top</a></li>
+<li><a href="linux-last">Linux last</a>
+<ul class="points">
+<li><a href="linux-last-limit-displayed-number-of-lines">last -n &lt;number&gt;</a></li>
+<li><a href="linux-last-disable-displaying-hostname">last -R</a></li>
+<li><a href="linux-last-displaying-hostname-in-last-column">last -a</a></li>
+<li><a href="linux-last-display-full-login-and-logout-time">last -F</a></li>
+<li><a href="linux-last-display-specific-username">last &lt;username&gt;</a></li>
+<li><a href="linux-last-shutdown-time">last -x</a></li>
+</ul>
+</li>
+<li><a href="linux-ps">Linux ps</a>
+<ul class="points">
+<li><a href="linux-list-running-process-in-full-format">ps -ef/ ps -aux</a></li>
+<li><a href="linux-list-all-running-process">ps -ax</a></li>
+<li><a href="linux-list-process-with-specific-username">ps -u &lt;username&gt;</a></li>
+<li><a href="linux-list-process-with-specific-command">ps -C &lt;command&gt;</a></li>
+<li><a href="linux-list-process-with-specific-pid">ps -p &lt;PID&gt;</a></li>
+<li><a href="linux-list-process-with-specific-ppid">ps -ppid &lt;PPID&gt;</a></li>
+<li><a href="linux-listing-process-in-hierarchy">pstree</a></li>
+<li><a href="linux-listing-all-threads-for-specific-process">ps -L </a></li>
+<li><a href="linux-finding-memory-leak">ps --sort pmem</a></li>
+<li><a href="linux-listing-different-information">ps -eo</a></li>
+<li><a href="linux-show-root-runing-process">ps -U root -u root u</a></li>
+</ul>
+</li>
+<li><a href="linux-shutdown">Linux shutdown</a></li>
+<li><a href="linux-info">Linux info</a></li>
+<li><a href="linux-env">Linux env</a></li>
+<li><a href="linux-du">Linux du</a></li>
+<li><a href="linux-init">Linux init</a></li>
+<li><a href="linux-nano-editor">Linux Nano Editor</a></li>
+<li><a href="linux-shred"> Linux shred</a></li>
+<li><a href="linux-mount">Linux mount</a></li>
+<li><a href="linux-route"> Linux route</a></li>
+</ul>
+
+<p><strong>100+ Linux Commands</strong></p>
+<ul class="points">
+<li><a href="linux-commands">100+ Linux Commands</a></li>
+<li><a href="linux-bzip2-bunzip2">bzip2 / bunzip2</a></li>
+<li><a href="linux-bzcat-bzmore">bzcat / bzmore</a></li>
+<li><a href="linux-cal">cal</a></li>
+<li><a href="linux-cat">cat</a></li>
+<li><a href="linux-cd">cd</a></li>
+<li><a href="linux-comm">comm</a></li>
+<li><a href="linux-cp">cp</a></li>
+<li><a href="linux-cut">cut</a></li>
+<li><a href="linux-date">date</a></li>
+<li><a href="linux-df">df</a></li>
+<li><a href="linux-file">file</a></li>
+<li><a href="linux-find">find</a></li>
+<li><a href="linux-grep">grep</a></li>
+<li><a href="linux-gzip">gzip / gunzip</a></li>
+<li><a href="linux-head">head</a></li>
+<li><a href="linux-less">less</a></li>
+<li><a href="linux-locate">locate</a></li>
+<li><a href="linux-ls">ls</a></li>
+<li><a href="linux-man">man</a></li>
+<li><a href="linux-mkdir">mkdir</a></li>
+<li><a href="linux-more">more</a></li>
+<li><a href="linux-mv">mv</a></li>
+<li><a href="linux-od">od</a></li>
+<li><a href="linux-pwd">pwd</a></li>
+<li><a href="linux-rename">rename </a></li>
+<li><a href="linux-rm">rm</a></li>
+<li><a href="linux-rmdir">rmdir</a></li>
+<li><a href="linux-sed">sed</a></li>
+<li><a href="linux-sleep">sleep</a></li>
+<li><a href="linux-sort">sort</a></li>
+<li><a href="linux-tac">tac</a></li>
+<li><a href="linux-tail">tail</a></li>
+<li><a href="linux-tee">tee</a></li>
+<li><a href="linux-time">time</a></li>
+<li><a href="linux-touch">touch</a></li>
+<li><a href="linux-tr">tr</a></li>
+<li><a href="linux-uniq">uniq</a></li>
+<li><a href="linux-wc">wc</a></li>
+<li><a href="linux-zcat-zmore">zcat / zmore</a></li>
+</ul>
+
+<p><strong>Interview Questions</strong></p>
+<ul class="points">
+<li><a href="linux-interview-questions">Linux Interview Questions</a></li>
+</ul>
+</div>
+</div>
+<hr/>
+<h2 class="h2">Prerequisite</h2>
+<p>Before learning Linux, you must have the basic knowledge of Operating System.</p>
+
+<h2 class="h2">Audience</h2>
+<p>Our Linux or Unix tutorial is designed to help beginners and professionals.</p>
+
+<h2 class="h2">Problem</h2>
+<p>We assure that you will not find any problem in this Linux tutorial. But if there is any mistake, please post the problem in contact form.</p>
+
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="what-is-linux">What is Linux</a></span>
+</div>
+
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a style="float:right" class="next" href="what-is-linux">next &rarr;</a>
+</div>
+
+<br/><br/>
+
+</td></tr>
+</table>
+</div>
+<!-- contribute start-->
+
+<!-- contribute end-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="7776236568"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2 class="h2">Please Share</h2>
+<a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/linux-tutorial"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"/></a>
+<a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/linux-tutorial"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"/></a>
+<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://www.javatpoint.com/linux-tutorial"><img src="https://www.javatpoint.com/images/google-plus32.png" alt="google plus"/></a>
+<a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/linux-tutorial"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"/></a>
+<!--<a rel="nofollow" title="Tumblr" target="_blank" href="https://www.tumblr.com/share/link?url=https://www.javatpoint.com/linux-tutorial"><img src="https://www.javatpoint.com/images/tumblr32.png" alt="tumbler"/></a>-->
+
+<!-- latest tutorials start -->
+<h2 class="h2">Learn Latest Tutorials</h2>
+<div class="firsthomecontent">
+                        <a href="https://www.javatpoint.com/selenium-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/selenium/images/selenium-home.jpg" alt="Selenium tutorial" />
+                                <p>Selenium</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/control-system-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/control-system/images/control-system-home.jpg" alt="Control Systems tutorial" />
+                                <p>Control System</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/rust-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/rust/images/rust-home.jpg" alt="Rust Programming tutorial" />
+                                <p>Rust</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/intellij-idea-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/intellij-idea/images/intellij-idea-home.png" alt="Intellij Idea tutorial" />
+                                <p>Intellij</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/dbms-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/dbms/images/dbms-home.jpg" alt="DBMS tutorial" />
+                                <p>DBMS</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/aptitude/quantitative">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Quantitative Aptitude tutorial" />
+                                <p>Aptitude</p>
+                            </div>
+                        </a>
+</div>
+
+</div>
+
+
+<br><br/><div class="mobilemenu" style="clear:both">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins class="adsbygoogle"     style="display:block"     data-ad-client="ca-pub-4699858549023382"     data-ad-slot="8222866318"     data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br/><br/>
+
+
+</div>
+<div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br/><br/>
+</div>
+<br/>
+<div id="footer" style="clear:both;width:100%">
+
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>--><div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p><ul class="points"> <li>Website Designing</li><li>Website Development</li><li>Java Development</li><li>PHP Development</li><li>WordPress</li><li>Graphic Designing</li><li>Logo</li><li>Digital Marketing</li><li>On Page and Off Page SEO</li><li>PPC</li><li>Content Development</li><li>Corporate Training</li><li>Classroom and Online Training</li><li>Data Entry</li></ul> <p style="padding-bottom:60px"></p></div><div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p></div><!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a><a rel="nofollow" href="http://www.hindi-typing.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/><p>Hindi-Typing</p></div></a></marquee></div>--><script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script><div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://www.javatpoint.com/images/social/rss1.png" alt="RSS Feed"/></a> <a target="_blank"  rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://www.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"/></a> <a  rel="nofollow" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://www.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"/></a> <a target="_blank" rel="nofollow" href="https://plus.google.com/u/0/+javatpoint"><img src="https://www.javatpoint.com/images/social/google1.png" alt="Google Page"/></a> <a target="_blank" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://www.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"/></a> <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://www.javatpoint.com/images/youtube32.png" alt="YouTube"/></a> <a target="_blank" rel="nofollow" href="https://javatpoint.blogspot.com"><img src="https://www.javatpoint.com/images/social/blog.png" alt="Blog Page"/></a> </div><footer class="footer1"><div class="column4"><h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a></div><div class="column4"><h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow" target="_blank" href="http://www.hindi-typing.com">Hindi-typing.com</a><a rel="nofollow" target="_blank" href="http://www.shayaree.com">Shayaree.com</a><a rel="nofollow" target="_blank" href="https://www.wordcountee.com">Wordcountee.com</a><a rel="nofollow" target="_blank" href="https://www.charactercountee.com">Charactercountee.com</a><a rel="nofollow" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a></div><div class="column4"><h3>Our Services</h3><p>Website Development</p><p>Android Development</p><p>Website Designing</p><p>Digital Marketing</p><p>Summer Training</p><p>Industrial Training</p><p>College Campus Training</p></div><div class="column4"><h3>Contact</h3><p>Address: G-13, 2nd Floor, Sec-3</p><p>Noida, UP, 201301, India</p><p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a></div></footer><footer class="footer2"><p>&copy; Copyright 2011-2018 www.javatpoint.com. All rights reserved. <a rel="nofollow" target="_blank" href="https://www.sssit.org">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p></footer>
+</div></div></div>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4699858549023382",
+          enable_page_level_ads: true
+     });
+</script>
+
+<script src="/js/shcoreandbrush.js"></script><script> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+</body> </html> 

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>JUnit Interview Questions</title>
+<meta name="description" content="JUnit Interview Questions - Learn JUnit testing framework in simple and easy steps starting from Environment Setup, Test Framework, Basic usage, Writing Tests, Annotations, Executing Tests, Suite Test,  Ignore Test, Time Test, Exceptions Test, Parameterized Test,  Using Assertion, Plug with Ant, Plug with Eclipse." />
+<meta name="keywords" content="JUnit tutorial, Beginners,  Environment Setup, Test Framework, Basic usage, Writing Tests, Annotations, Executing Tests, Suite Test,  Ignore Test, Time Test, Exceptions Test, Parameterized Test,  Using Assertion, Plug with Ant, Plug with Eclipse." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(/junit/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #f77c00 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #f77c00 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #f77c00 !important;}
+.submenu-item{ border-bottom: 2px solid #f77c00 !important; border-top: 2px solid #f77c00 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#f77c00; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/junit/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/junit/images/junit-mini-logo.jpg" alt="JUnit Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">JUnit Tutorial</li>
+<li><a href="/junit/index.htm">JUnit - Home</a></li>
+<li><a href="/junit/junit_overview.htm">JUnit - Overview</a></li>
+<li><a href="/junit/junit_environment_setup.htm">JUnit - Environment Setup</a></li>
+<li><a href="/junit/junit_test_framework.htm">JUnit - Test Framework</a></li>
+<li><a href="/junit/junit_basic_usage.htm">JUnit - Basic Usage</a></li>
+<li><a href="/junit/junit_api.htm">JUnit - API</a></li>
+<li><a href="/junit/junit_writing_tests.htm">JUnit - Writing a Tests</a></li>
+<li><a href="/junit/junit_using_assertion.htm">JUnit - Using Assertion</a></li>
+<li><a href="/junit/junit_execution_procedure.htm">JUnit - Execution Procedure</a></li>
+<li><a href="/junit/junit_executing_tests.htm">JUnit - Executing Tests</a></li>
+<li><a href="/junit/junit_suite_test.htm">JUnit - Suite Test</a></li>
+<li><a href="/junit/junit_ignore_test.htm">JUnit - Ignore Test</a></li>
+<li><a href="/junit/junit_time_test.htm">JUnit - Time Test</a></li>
+<li><a href="/junit/junit_exceptions_test.htm">JUnit - Exceptions Test</a></li>
+<li><a href="/junit/junit_parameterized_test.htm">JUnit - Parameterized Test</a></li>
+<li><a href="/junit/junit_plug_with_ant.htm">JUnit - Plug with Ant</a></li>
+<li><a href="/junit/junit_plug_with_eclipse.htm">JUnit - Plug with Eclipse</a></li>
+<li><a href="/junit/junit_extensions.htm">JUnit - Extensions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">JUnit Useful Resources</li>
+<li><a href="/junit/junit_questions_answers.htm">JUnit - Questions and Answers</a></li>
+<li><a href="/junit/junit_quick_guide.htm">JUnit - Quick Guide</a></li>
+<li><a href="/junit/junit_useful_resources.htm">JUnit - Useful Resources</a></li>
+<li><a href="/junit/junit_discussion.htm">JUnit - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>JUnit - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/junit/junit_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/junit/junit_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>JUnit Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>JUnit</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What is Testing?</label>
+<div class="toggle-content">
+<p>Testing is the process of checking the functionality of the application whether it is working as per requirements.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Unit Testing?</label>
+<div class="toggle-content">
+<p>Unit testing is the testing of single entity (class or method). Unit testing is very essential to every software company to give a quality product to their customers.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Manual testing?</label>
+<div class="toggle-content">
+<p>Executing the test cases manually without any tool support is known as manual testing.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Automated testing?</label>
+<div class="toggle-content">
+<p>Taking tool support and executing the test cases by using automation tool is known as automation testing.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the disadvantages of manual testing?</label>
+<div class="toggle-content">
+<p>Following are the disadvantages of manual testing &minus;</p>
+<ul class="list">
+<li><p>Time consuming and tedious &minus; Since test cases are executed by human resources so it is very slow and tedious.</p></li>
+<li><p>Huge investment in human resources &minus; As test cases need to be executed manually so more testers are required in manual testing.</p></li>
+<li><p>Less reliable &minus; Manual testing is less reliable as tests may not be performed with precision each time because of human errors.</p></li>
+<li><p>Non-programmable &minus; No programming can be done to write sophisticated tests which fetch hidden information.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of automated testing?</label>
+<div class="toggle-content">
+<p>Following are the advantages of automated testing &minus;</p>
+<ul class="list">
+<li><p><b>Fast</b> &minus; Automation runs test cases significantly faster than human resources.</p></li>
+<li><p><b>Less investment in human resources</b> &minus; Test cases are executed by using automation tool so less tester are required in automation testing.</p></li>
+<li><p><b>More reliable</b> &minus; Automation tests perform precisely same operation each time they are run.</p></li>
+<li><p><b>Programmable</b> &minus; Testers can program sophisticated tests to bring out hidden information.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is JUnit?</label>
+<div class="toggle-content">
+<p>JUnit is a Regression Testing Framework used by developers to implement unit testing in Java and accelerate programming speed and increase the quality of code.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are important features of JUnit?</label>
+<div class="toggle-content">
+<p>Following are the important features of JUnit &minus;</p>
+<ul class="list">
+<li><p>It is an open source framework.</p></li>
+<li><p>Provides Annotation to identify the test methods.</p></li>
+<li><p>Provides Assertions for testing expected results.</p></li>
+<li><p>Provides Test runners for running tests.</p></li>
+<li><p>JUnit tests can be run automatically and they check their own results and provide immediate feedback.</p></li>
+<li><p>JUnit tests can be organized into test suites containing test cases and even other test suites.</p></li>
+<li><p>JUnit shows test progress in a bar that is green if test is going fine and it turns red when a test fails.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Unit Test Case?</label>
+<div class="toggle-content">
+<p>A Unit Test Case is a part of code which ensures that the another part of code (method) works as expected. To achieve those desired results quickly, test framework is required .JUnit is perfect unit test framework for java programming language.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the best practices to write a Unit Test Case?</label>
+<div class="toggle-content">
+<p>A formal written unit test case is characterized by a known input and by an expected output, which is worked out before the test is executed. The known input should test a precondition and the expected output should test a postcondition.</p>
+<p>There must be at least two unit test cases for each requirement: one positive test and one negative test. If a requirement has sub-requirements, each sub-requirement must have at least two test cases as positive and negative.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When are Unit Tests written in Development Cycle?</label>
+<div class="toggle-content">
+<p>Tests are written before the code during development in order to help coders write the best code.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why not just use System.out.println() for testing?</label>
+<div class="toggle-content">
+<p>Debugging the code using system.out.println() will lead to manual scanning of the whole output every time the program is run to ensure the code is doing the expected operations. Moreover, in the long run, it takes lesser time to code JUnit methods and test them on class files.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to install JUnit?</label>
+<div class="toggle-content">
+<p>Follow the steps below &minus;</p>
+<ul class="list">
+<li><p>Download the latest version of JUnit, referred to below as junit.zip.</p></li>
+<li><p>Unzip the junit.zip distribution file to a directory referred to as %JUNIT_HOME%.</p></li>
+<li><p>Add JUnit to the classpath &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+set CLASSPATH=%CLASSPATH%;%JUNIT_HOME%\junit.jar
+</pre>
+<ul class="list">
+<li><p>Test the installation by running the sample tests distributed with JUnit (sample tests are located in the installation directory directly, not the junit.jar file). Then simply type &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+java org.junit.runner.JUnitCore org.junit.tests.AllTests
+</pre>
+<ul class="list">
+<li><p>All the tests should pass with an "OK" message. If the tests don't pass, verify that junit.jar is in the CLASSPATH.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Why does JUnit only report the first failure in a single test?</label>
+<div class="toggle-content">
+<p>Reporting multiple failures in a single test is generally a sign that the test does too much and it is too big a unit test. JUnit is designed to work best with a number of small tests. It executes each test within a separate instance of the test class. It reports failure on each test.</p>
+</div>
+</section>
+<section class="toggle">
+<label> In Java, assert is a keyword. Won't this conflict with JUnit's assert() method?</label>
+<div class="toggle-content">
+<p>JUnit 3.7 deprecated assert() and replaced it with assertTrue(), which works exactly the same way. JUnit 4 is compatible with the assert keyword. If you run with the -ea JVM switch, assertions that fail will be reported by JUnit.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do I test things that must be run in a J2EE container (e.g. servlets, EJBs)?</label>
+<div class="toggle-content">
+<p>Refactoring J2EE components to delegate functionality to other objects that don't have to be run in a J2EE container will improve the design and testability of the software. Cactus is an open source JUnit extension that can be used for unit testing server-side java code.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name the tools with which JUnit can be easily integrated.</label>
+<div class="toggle-content">
+<p>JUnit Framework can be easily integrated with either of the followings &minus;</p>
+<ul class="list">
+<li>Eclipse</li>
+<li>Ant</li>
+<li>Maven</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the core features of JUnit?</label>
+<div class="toggle-content">
+<p>JUnit test framework provides following important features &minus;</p>
+<ul class="list">
+<li>Fixtures</li>
+<li>Test suites</li>
+<li>Test runners</li>
+<li>JUnit classes</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is a fixture?</label>
+<div class="toggle-content">
+<p>Fixture is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable. It includes following methods &minus;</p>
+<ul class="list">
+<li><p>setUp() method which runs before every test invocation.</p></li>
+<li><p>tearDown() method which runs after every test method.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is a test suite?</label>
+<div class="toggle-content">
+<p>Test suite means bundle a few unit test cases and run it together. In JUnit, both @RunWith and @Suite annotation are used to run the suite test.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a test runner?</label>
+<div class="toggle-content">
+<p>Test runner is used for executing the test cases.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are JUnit classes? List some of them.</label>
+<div class="toggle-content">
+<p>JUnit classes are important classes which are used in writing and testing JUnits. Some of the important classes are &minus;</p>
+<ul class="list">
+<li><p><b>Assert</b> &minus; It contains a set of assert methods.</p></li>
+<li><p><b>TestCase</b> &minus; It contains a test case defines the fixture to run multiple tests.</p></li>
+<li><p><b>TestResult</b> &minus; It contains methods to collect the results of executing a test case.</p></li>
+<li><p><b>TestSuite</b> &minus; It is a Composite of Tests.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are annotations and how are they useful in JUnit?</label>
+<div class="toggle-content">
+<p>Annotations are like meta-tags that you can add to you code and apply them to methods or in class. The annotation in JUnit gives us information about test methods, which methods are going to run before &amp; after test methods, which methods run before &amp; after all the methods, which methods or class will be ignore during execution.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How will you run JUnit from command window?</label>
+<div class="toggle-content">
+<p>Follow the steps below &minus;</p>
+<ul class="list">
+<li><p>Set the CLASSPATH</p></li>
+<li><p>Invoke the runner &minus;</p></li>
+</ul>
+<pre class="result notranslate">
+java org.junit.runner.JUnitCore 
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of org.junit.Assert class?</label>
+<div class="toggle-content">
+<p>This class provides a set of assertion methods useful for writing tests. Only failed assertions are recorded.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of org.junit.TestResult class?</label>
+<div class="toggle-content">
+<p>A TestResult collects the results of executing a test case. It is an instance of the Collecting Parameter pattern. The test framework distinguishes between failures and errors. A failure is anticipated and checked for with assertions. Errors are unanticipated problems like an ArrayIndexOutOfBoundsException.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of org.junit.TestSuite class?</label>
+<div class="toggle-content">
+<p>A TestSuite is a Composite of Tests. It runs a collection of test cases.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of @Test annotation in JUnit?</label>
+<div class="toggle-content">
+<p>The Test annotation tells JUnit that the public void method to which it is attached can be run as a test case.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of @Before annotation in JUnit?</label>
+<div class="toggle-content">
+<p>Several tests need similar objects created before they can run. Annotating a public void method with @Before causes that method to be run before each Test method.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of @After annotation in JUnit?</label>
+<div class="toggle-content">
+<p>If you allocate external resources in a Before method you need to release them after the test runs. Annotating a public void method with @After causes that method to be run after the Test method.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of @BeforeClass annotation in JUnit?</label>
+<div class="toggle-content">
+<p>Annotating a public static void method with @BeforeClass causes it to be run once before any of the test methods in the class.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of @AfterClass annotation in JUnit?</label>
+<div class="toggle-content">
+<p>This will perform the method after all tests have finished. This can be used to perform clean-up activities.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is @Ignore annotation and how is this useful?</label>
+<div class="toggle-content">
+<p>Following are some of the usefulness of @Ignore annotation &minus;</p>
+<p>You can easily identify all @Ignore annotations in the source code, while unannotated or commented out tests are not so simple to find.</p>
+<p>There are cases when you can't fix a code that is failing, but you still want to method to be around, precisely so that it does not get forgotten. In such cases @Ignore makes sense.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Explain the execution procedure of the JUint test API methods?</label>
+<div class="toggle-content">
+<p>Following is how the JUnit execution procedure works &minus;</p>
+<ul class="list">
+<li><p>First of all method annotated as @BeforeClass execute only once.</p></li>
+<li><p>Lastly, the method annotated as @AfterClass executes only once.</p></li>
+<li><p>Method annotated as @Before executes for each test case but before executing the test case.</p></li>
+<li><p>Method annotated as @After executes for each test case but after the execution of test case.</p></li>
+<li><p>In between method annotated as @Before and method annotated as @After each test case executes.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of org.junit.JUnitCore class?</label>
+<div class="toggle-content">
+<p>The test cases are executed using JUnitCore class. JUnitCore is a facade for running tests. It supports running JUnit 4 tests, JUnit 3.8.x tests, and mixtures.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to simulate timeout situation in JUnit?</label>
+<div class="toggle-content">
+<p>Junit provides a handy option of Timeout. If a test case takes more time than specified number of milliseconds then Junit will automatically mark it as failed. The timeout parameter is used along with @Test annotation.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you use JUnit to test that the code throws desired exception?</label>
+<div class="toggle-content">
+<p>JUnit provides a option of tracing the Exception handling of code. You can test if a code throws desired exception or not. The expected parameter is used along with @Test annotation as follows &minus; @Test(expected)</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are Parameterized tests?</label>
+<div class="toggle-content">
+<p>Junit 4 has introduced a new feature Parameterized tests. Parameterized tests allow developer to run the same test over and over again using different values. </p>
+</div>
+</section>
+<section class="toggle">
+<label> How to create Parameterized tests?</label>
+<div class="toggle-content">
+<p>There are five steps, that you need to follow to create Parameterized tests&minus;</p>
+<ul class="list">
+<li><p>Annotate test class with @RunWith(Parameterized.class).</p></li>
+<li><p>Create a public static method annotated with @Parameters that returns a Collection of Objects (as Array) as test data set.</p></li>
+<li><p>Create a public constructor that takes in what is equivalent to one "row" of test data.</p></li>
+<li><p>Create an instance variable for each "column" of test data.</p></li>
+<li><p>Create your tests case(s) using the instance variables as the source of the test data.</p></li>
+<li><p>The test case will be invoked once per each row of data. Let's see Parameterized tests in action.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do you use test fixtures?</label>
+<div class="toggle-content">
+<p>Fixtures is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable. It includes &minus;</p>
+<ul class="list">
+<li><p>setUp() method which runs before every test invocation.</p></li>
+<li><p>tearDown() method which runs after every test method.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How to compile a JUnit Test Class?</label>
+<div class="toggle-content">
+<p>Compiling a JUnit test class is like compiling any other Java classes. The only thing you need watch out is that the JUnit JAR file must be included in the classpath.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What happens if a JUnit Test Method is Declared as "private"?</label>
+<div class="toggle-content">
+<p>If a JUnit test method is declared as "private", it compiles successfully. But the execution will fail. This is because JUnit requires that all test methods must be declared as "public".</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you test a "protected" method?</label>
+<div class="toggle-content">
+<p>When a method is declared as "protected", it can only be accessed within the same package where the class is defined. Hence to test a "protected" method of a target class, define your test class in the same package as the target class.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you test a "private" method?</label>
+<div class="toggle-content">
+<p>When a method is declared as "private", it can only be accessed within the same class. So there is no way to test a "private" method of a target class from any test class. Hence you need to perform unit testing manually. Or you have to change your method from "private" to "protected".</p>
+</div>
+</section>
+<section class="toggle">
+<label> What happens if a JUnit test method is declared to return "String"?</label>
+<div class="toggle-content">
+<p>If a JUnit test method is declared to return "String", the compilation will pass ok. But the execution will fail. This is because JUnit requires that all test methods must be declared to return "void".</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you use a main() Method for Unit Testing?</label>
+<div class="toggle-content">
+<p>Yes you can test using main() method. One obvious advantage seems to be that you can whitebox test the class. That is, you can test the internals of it (private methods for example). You can't do that with unit-tests. But primarily the test framework tests the interface and the behavior from the user's perspective.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Do you need to write a test class for every class that needs to be tested?</label>
+<div class="toggle-content">
+<p>No. We need not write an independent test class for every class that needs to be tested. If there is a small group of tests sharing a common test fixture, you may move those tests to a new test class.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When are tests garbage collected?</label>
+<div class="toggle-content">
+<p>The test runner holds strong references to all Test instances for the duration of the test execution. This means that for a very long test run with many Test instances, none of the tests may be garbage collected until the end of the entire test run. Explicitly setting an object to null in the tearDown() method, for example, allows it to be garbage collected before the end of the entire test run.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Mock Object?</label>
+<div class="toggle-content">
+<p>In a unit test, mock objects can simulate the behavior of complex, real (non-mock) objects and are therefore useful when a real object is impractical or impossible to incorporate into a unit test.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Explain unit testing using Mock Objects.</label>
+<div class="toggle-content">
+<p>The common coding style for testing with mock objects is to &minus;</p>
+<ul class="list">
+<li>Create instances of mock objects.</li>
+<li>Set state and expectations in the mock objects.</li>
+<li>Invoke domain code with mock objects as parameters.</li>
+<li>Verify consistency in the mock objects.</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the JUnit Extensions.</label>
+<div class="toggle-content">
+<p>Following are the JUnit extensions &minus;</p>
+<ul class="list">
+<li><p>Cactus</p></li>
+<li><p>JWebUnit</p></li>
+<li><p>XMLUnit</p></li>
+<li><p>MockObject</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is Cactus?</label>
+<div class="toggle-content">
+<p>Cactus is a simple test framework for unit testing server-side java code (Servlets, EJBs, Tag Libs, Filters). The intent of Cactus is to lower the cost of writing tests for server-side code. It uses JUnit and extends it. Cactus implements an in-container strategy, meaning that tests are executed inside the container.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the core components of Cactus?</label>
+<div class="toggle-content">
+<p>Cactus Ecosystem is made of several components &minus;</p>
+<ul class="list">
+<li><p>Cactus Framework is the heart of Cactus. It is the engine that provides the API to write Cactus tests.</p></li>
+<li><p>Cactus Integration Modules are front ends and frameworks that provide easy ways of using the Cactus Framework (Ant scripts, Eclipse plugin, Maven plugin).</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is JWebUnit?</label>
+<div class="toggle-content">
+<p>WebUnit is a Java-based testing framework for web applications. It wraps existing testing frameworks such as HtmlUnit and Selenium with a unified, simple testing interface to allow you to quickly test the correctness of your web applications.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of using JWebUnit?</label>
+<div class="toggle-content">
+<p>JWebUnit provides a high-level Java API for navigating a web application combined with a set of assertions to verify the application's correctness. This includes navigation via links, form entry and submission, validation of table contents, and other typical business web application features.</p>
+<p>The simple navigation methods and ready-to-use assertions allow for more rapid test creation than using only JUnit or HtmlUnit. And if you want to switch from HtmlUnit to other plugins such as Selenium (available soon), there is no need to rewrite your tests.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is XMLUnit?</label>
+<div class="toggle-content">
+<p>XMLUnit provides a single JUnit extension class, XMLTestCase, and a set of supporting classes.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of supporting classes in XMLUnit?</label>
+<div class="toggle-content">
+<p>Supporting classes allow assertions to be made about&minus;</p>
+<ul class="list">
+<li><p>The differences between two pieces of XML (via Diff and DetailedDiff classes).</p></li>
+<li><p>The validity of a piece of XML (via Validator class).</p></li>
+<li><p>The outcome of transforming a piece of XML using XSLT (via Transform class).</p></li>
+<li><p>The evaluation of an XPath expression on a piece of XML (via classes implementing the XpathEngine interface).</p></li>
+<li><p>Individual nodes in a piece of XML that are exposed by DOM Traversal (via NodeTest class).</p></li>
+</ul>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/junit/junit_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/junit/junit_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">junit_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/junit/junit_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/junit/junit_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/junit/junit_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/junit/junit_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/junit/junit_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/junit/junit_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script src="/theme/js/jquery.colorbox-min.js"></script>
+<script>
+   var tryit = new $.TryIt('/junit/try_junit.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

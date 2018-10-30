@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Perl Mock Test - TutorialsPoint</title>
+<meta name="description" content="Perl Mock Test - Learning Perl in simple and easy steps - A beginner's tutorial containing complete knowledge of Perl Syntax Syntax, Classes, Variables, Comments, Loops, File, I/O, Functions, Objects, arrays, strings, methods, blocks, Exception, Hashes, Modules, Common Gateway Interface (CGI), Database Interface (DBI) and Object Oriented Perl">
+<meta name="Keywords" content="Perl, Programming, Language, Object Oriented Perl, Perl Variables, Scalars, Arrays, Hash, File I/O, Looping, Regular Expressions, Subroutines, Coding Standard, Writing Modules, Process Management, Socket, Examples, References, Special Variables, Syntax Overview, Advanced Perl, Tutorial, Tutorials, Operators, Built-in Functions, Quiz.">
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #43C2C8 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #43C2C8 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #43C2C8 !important;}
+.submenu-item{ border-bottom: 2px solid #43C2C8 !important; border-top: 2px solid #43C2C8 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#43C2C8; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/perl/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/perl/images/perl-mini-logo.jpg" alt="Perl Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Perl Basics</li>
+<li><a href="/perl/index.htm">Perl - Home</a></li>
+<li><a href="/perl/perl_introduction.htm">Perl - Introduction</a></li>
+<li><a href="/perl/perl_environment.htm">Perl - Environment</a></li>
+<li><a href="/perl/perl_syntax.htm">Perl - Syntax Overview</a></li>
+<li><a href="/perl/perl_data_types.htm">Perl - Data Types</a></li>
+<li><a href="/perl/perl_variables.htm">Perl - Variables</a></li>
+<li><a href="/perl/perl_scalars.htm">Perl - Scalars</a></li>
+<li><a href="/perl/perl_arrays.htm">Perl - Arrays</a></li>
+<li><a href="/perl/perl_hashes.htm">Perl - Hashes</a></li>
+<li><a href="/perl/perl_conditions.htm">Perl - IF...ELSE</a></li>
+<li><a href="/perl/perl_loops.htm">Perl - Loops</a></li>
+<li><a href="/perl/perl_operators.htm">Perl - Operators</a></li>
+<li><a href="/perl/perl_date_time.htm">Perl - Date &amp; Time</a></li>
+<li><a href="/perl/perl_subroutines.htm">Perl - Subroutines</a></li>
+<li><a href="/perl/perl_references.htm">Perl - References</a></li>
+<li><a href="/perl/perl_formats.htm">Perl - Formats</a></li>
+<li><a href="/perl/perl_files.htm">Perl - File I/O</a></li>
+<li><a href="/perl/perl_directories.htm">Perl - Directories</a></li>
+<li><a href="/perl/perl_error_handling.htm">Perl - Error Handling</a></li>
+<li><a href="/perl/perl_special_variables.htm">Perl - Special Variables</a></li>
+<li><a href="/perl/perl_coding_standard.htm">Perl - Coding Standard</a></li>
+<li><a href="/perl/perl_regular_expressions.htm">Perl - Regular Expressions</a></li>
+<li><a href="/perl/perl_sending_email.htm">Perl - Sending Email</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Perl Advanced</li>
+<li><a href="/perl/perl_socket_programming.htm">Perl - Socket Programming</a></li>
+<li><a href="/perl/perl_object_oriented.htm">Perl - Object Oriented</a></li>
+<li><a href="/perl/perl_database_access.htm">Perl - Database Access</a></li>
+<li><a href="/perl/perl_cgi_programming.htm">Perl - CGI Programming</a></li>
+<li><a href="/perl/perl_packages_modules.htm">Perl - Packages &amp; Modules</a></li>
+<li><a href="/perl/perl_process_management.htm">Perl - Process Management</a></li>
+<li><a href="/perl/perl_embedded_documentation.htm">Perl - Embedded Documentation</a></li>
+<li><a href="/perl/perl_function_references.htm">Perl - Functions References</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Perl Useful Resources</li>
+<li><a href="/perl/perl_questions_answers.htm">Perl - Questions and Answers</a></li>
+<li><a href="/perl/perl_quick_guide.htm">Perl - Quick Guide</a></li>
+<li><a href="/perl/perl_useful_resources.htm">Perl - Useful Resources</a></li>
+<li><a href="/perl/perl_discussion.htm">Perl - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Perl Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/perl/perl_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/perl/perl_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>Perl</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/perl/perl_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/perl/perl_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/perl/perl_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/perl/perl_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>Perl Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which of the following is correct about Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Perl stands for Practical Extraction and Report Language.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Perl is an Open Source software, licensed under its Artistic License, or the GNU General Public License (GPL).</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Perl supports both procedural and object-oriented programming.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A1">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>All of the above options are correct.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Which of the following is correct about Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Perl can handle encrypted Web data, including e-commerce transactions.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Perl's DBI package makes web-database integration easy.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Perl is an interpreted language, which means that your code can be run as is, without a compilation stage that creates a non portable executable program.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A2">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>All of the above options are correct.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following interpolates variables and special characters in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Single Quotes based String</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Double Quotes based String</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A3">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Only double quotes interpolate variables and special characters such as newlines 
+, where as single quote does not interpolate any variable or special character.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Is perl a case sensitive language?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - true</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - false</a></p>
+</div>
+<div class="A" id="A4">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Perl is a case sensitive programming language. Thus $Manpower and $manpower are two different identifiers in Perl.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Which of the following data type is suppported in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Array</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Hashes</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A5">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>All of the above data types are supported in Perl.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - Which of the following correctly describes scalar data types in Perl?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - These are simple variables. They are preceded by a dollar sign ($).</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - These are ordered lists of scalars that you access with a numeric index which starts with 0.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - These are unordered sets of key/value pairs that you access using the keys as subscripts.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A6">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Scalars are simple variables. They are preceded by a dollar sign ($). A scalar is either a number, a string, or a reference. A reference is actually an address of a variable, which we will see in the upcoming chapters.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - Which of the following correctly describes Array data types in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - These are simple variables. They are preceded by a dollar sign ($).</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - These are ordered lists of scalars that you access with a numeric index which starts with 0.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - These are unordered sets of key/value pairs that you access using the keys as subscripts.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A7">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Arrays are ordered lists of scalars that you access with a numeric index which starts with 0. They are preceded by an "at" sign (@).</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - Which of the following correctly describes Hashes data types in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - These are simple variables. They are preceded by a dollar sign ($).</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - These are ordered lists of scalars that you access with a numeric index which starts with 0.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - These are unordered sets of key/value pairs that you access using the keys as subscripts.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A8">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Hashes are unordered sets of key/value pairs that you access using the keys as subscripts. They are preceded by a percent sign (%).</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Which of the following data types are preceded by a dollar sign ($) in Perl?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Array</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Hashes</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A9">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Scalars are preceded by a dollar sign ($).</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following data types are preceded by an "at" sign (@) in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Array</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Hashes</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A10">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Arrays are preceded by an "at" sign (@).</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Which of the following data types are preceded by a percent sign (%) in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Array</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Hashes</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A11">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Hashes are preceded by a percent sign (%).</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - In which of the following variable context, assignment to a scalar variable evaluates the right-hand side in a scalar context?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - List</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Boolean</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Void.</a></p>
+</div>
+<div class="A" id="A12">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Scalar &minus; Assignment to a scalar variable evaluates the right-hand side in a scalar context.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - In which of the following variable context, assignment to an array or a hash evaluates the right-hand side in a list context?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - List</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Boolean</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Void.</a></p>
+</div>
+<div class="A" id="A13">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>List &minus; Assignment to an array or a hash evaluates the right-hand side in a list context.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> - In which of the following variable context, an expression is being evaluated to see whether it's true or false?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - List</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Boolean</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Void.</a></p>
+</div>
+<div class="A" id="A14">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Boolean &minus; Boolean context is simply any place where an expression is being evaluated to see whether it's true or false.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - Which of the following variable context doesn't care what the return value is?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Scalar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - List</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Boolean</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Void.</a></p>
+</div>
+<div class="A" id="A15">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Void &minus; This context not only doesn't care what the return value is, it doesn't even want a return value.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - Which of the following variable context only happens inside quotes, or things that work like quotes?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Interpolative</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - List</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Boolean</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Void.</a></p>
+</div>
+<div class="A" id="A16">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Interpolative &minus; This context only happens inside quotes, or things that work like quotes.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - Which of the following special variable represents current file name?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - FILE</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - _FILE_</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - file</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A17">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>_FILE_ -represents current file name.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - Which of the following special variable represents current line number?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - LINE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Line</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - _LINE_</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A18">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>_LINE_ -represents current line number.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - Which of the following special variable represents current package name?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - _PACKAGE_</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Package</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - PACKAGE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A19">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>_PACKAGE_ -represents current package name.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> - Which of the following is correct about Array in Perl?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - An array is a variable that stores an ordered list of scalar values.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Array variables are preceded by an "at" (@) sign.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - To refer to a single element of an array, you will use the dollar sign ($) with the variable name followed by the index of the element in square brackets.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A20">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>All of the above options are correct.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> - Which of the following method pushes the values of the list onto the end of the array?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - push @ARRAY, LIST</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - pop @ARRAY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - shift @ARRAY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - unshift @ARRAY, LIST</a></p>
+</div>
+<div class="A" id="A21">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>push @ARRAY, LIST &minus; Pushes the values of the list onto the end of the array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - Which of the following method pops off and returns the last value of the array?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - push @ARRAY, LIST</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - pop @ARRAY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - shift @ARRAY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - unshift @ARRAY, LIST</a></p>
+</div>
+<div class="A" id="A22">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>pop @ARRAY - Pops off and returns the last value of the array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> - Which of the following method shifts the first value of the array off and returns it, shortening the array by 1 and moving everything down?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - push @ARRAY, LIST</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - pop @ARRAY</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - shift @ARRAY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - unshift @ARRAY, LIST</a></p>
+</div>
+<div class="A" id="A23">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>shift @ARRAY &minus; Shifts the first value of the array off and returns it, shortening the array by 1 and moving everything down.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> - Which of the following method prepends list to the front of the array, and returns the number of elements in the new array?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - push @ARRAY, LIST</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - pop @ARRAY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - shift @ARRAY</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - unshift @ARRAY, LIST</a></p>
+</div>
+<div class="A" id="A24">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>unshift @ARRAY, LIST - Prepends list to the front of the array, and returns the number of elements in the new array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> - Which of the following method remove the elements of @ARRAY designated by OFFSET and LENGTH, and replaces them with LIST, if specified?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - splice @ARRAY, OFFSET [ , LENGTH [ , LIST ] ]</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - split @ARRAY, OFFSET [ , LENGTH [ , LIST ] ]</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - join @ARRAY, OFFSET [ , LENGTH [ , LIST ] ]</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - sort @ARRAY, OFFSET [ , LENGTH [ , LIST ] ]</a></p>
+</div>
+<div class="A" id="A25">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>splice @ARRAY, OFFSET [ , LENGTH [ , LIST ] ] - This function will remove the elements of @ARRAY designated by OFFSET and LENGTH, and replaces them with LIST, if specified. Finally, it returns the elements removed from the array.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>A</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/perl/perl_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/perl/pdf/perl_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/perl/perl_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">perl_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/perl/perl_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/perl/perl_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/perl/perl_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/perl/perl_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/perl/perl_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/perl/perl_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

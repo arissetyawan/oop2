@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Entity Framework Data Annotations</title>
+<meta name="description" content="Entity Framework Data Annotations - Learn Entity Framework starting from Overview, Architecture, Environment Setup, Database Setup, Data Model, DbContext, Types, Relationships, Lifecycle, Code First Approach, Model First Approach, Database First Approach, DEV Approaches, Database Operations, Concurrency, Transaction, Views, Index, Stored Procedures, Disconnected Entities, Table-Valued Function, Native SQL, Enum Support, Asynchronous Query, Persistence, Projection Queries, Command Logging, Command Interception, Spatial Data Type, Inheritance, Migration, Eager, Lazy, Explicit Loading, Validation, Track Changes, Colored Entities, First Example, Data Annotations, Fluent API, Seed Database, Code First Migration, Multiple DbContext, Nested Entity Types." />
+<meta name="keywords" content="Entity Framework, Tutorial, Overview, Architecture, Environment Setup, Database Setup, Data Model, DbContext, Types, Relationships, Lifecycle, Code First Approach, Model First Approach, Database First Approach, DEV Approaches, Database Operations, Concurrency, Transaction, Views, Index, Stored Procedures, Disconnected Entities, Table-Valued Function, Native SQL, Enum Support, Asynchronous Query, Persistence, Projection Queries, Command Logging, Command Interception, Spatial Data Type, Inheritance, Migration, Eager, Lazy, Explicit Loading, Validation, Track Changes, Colored Entities, First Example, Data Annotations, Fluent API, Seed Database, Code First Migration, Multiple DbContext, Nested Entity Types." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #036db0 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #036db0 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #036db0 !important;}
+.submenu-item{ border-bottom: 2px solid #036db0 !important; border-top: 2px solid #036db0 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#036db0; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/entity_framework/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/entity_framework/images/entity-framework-mini-logo.jpg" alt="Entity Framework Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Entity Framework Tutorial</li>
+<li><a href="/entity_framework/index.htm">Entity Framework - Home</a></li>
+<li><a href="/entity_framework/entity_framework_overview.htm">Entity Framework - Overview</a></li>
+<li><a href="/entity_framework/entity_framework_architecture.htm">Entity Framework - Architecture</a></li>
+<li><a href="/entity_framework/entity_framework_environment_setup.htm">Entity F - Environment Setup</a></li>
+<li><a href="/entity_framework/entity_framework_database_setup.htm">Entity Framework - Database Setup</a></li>
+<li><a href="/entity_framework/entity_framework_data_model.htm">Entity Framework - Data Model</a></li>
+<li><a href="/entity_framework/entity_framework_dbcontext.htm">Entity Framework - DbContext</a></li>
+<li><a href="/entity_framework/entity_framework_types.htm">Entity Framework - Types</a></li>
+<li><a href="/entity_framework/entity_framework_relationships.htm">Entity Framework - Relationships</a></li>
+<li><a href="/entity_framework/entity_framework_lifecycle.htm">Entity Framework - Lifecycle</a></li>
+<li><a href="/entity_framework/entity_code_first_approach.htm">Entity F - Code First Approach</a></li>
+<li><a href="/entity_framework/entity_model_first_approach.htm">Entity F - Model First Approach</a></li>
+<li><a href="/entity_framework/entity_database_first_approach.htm">Entity F - Database First Approach</a></li>
+<li><a href="/entity_framework/entity_framework_dev_approaches.htm">Entity Framework - DEV Approaches</a></li>
+<li><a href="/entity_framework/entity_framework_database_operations.htm">Entity F - Database Operations</a></li>
+<li><a href="/entity_framework/entity_framework_concurrency.htm">Entity Framework - Concurrency</a></li>
+<li><a href="/entity_framework/entity_framework_transaction.htm">Entity Framework - Transaction</a></li>
+<li><a href="/entity_framework/entity_framework_views.htm">Entity Framework - Views</a></li>
+<li><a href="/entity_framework/entity_framework_index.htm">Entity Framework - Index</a></li>
+<li><a href="/entity_framework/entity_framework_stored_procedures.htm">Entity F - Stored Procedures</a></li>
+<li><a href="/entity_framework/entity_framework_disconnected_entities.htm">Entity F - Disconnected Entities</a></li>
+<li><a href="/entity_framework/entity_table_valued_function.htm">Entity F - Table-Valued Function</a></li>
+<li><a href="/entity_framework/entity_framework_native_sql.htm">Entity Framework - Native SQL</a></li>
+<li><a href="/entity_framework/entity_framework_enum_support.htm">Entity Framework - Enum Support</a></li>
+<li><a href="/entity_framework/entity_framework_asynchronous_query.htm">Entity F - Asynchronous Query</a></li>
+<li><a href="/entity_framework/entity_framework_persistence.htm">Entity Framework - Persistence</a></li>
+<li><a href="/entity_framework/entity_framework_projection_queries.htm">Entity F - Projection Queries</a></li>
+<li><a href="/entity_framework/entity_framework_command_logging.htm">Entity F - Command Logging</a></li>
+<li><a href="/entity_framework/entity_framework_command_interception.htm">Entity F - Command Interception</a></li>
+<li><a href="/entity_framework/entity_framework_spatial_data_type.htm">Entity Framework - Spatial Data Type</a></li>
+<li><a href="/entity_framework/entity_framework_inheritance.htm">Entity Framework - Inheritance</a></li>
+<li><a href="/entity_framework/entity_framework_migration.htm">Entity Framework - Migration</a></li>
+<li><a href="/entity_framework/entity_framework_eager_loading.htm">Entity Framework - Eager Loading</a></li>
+<li><a href="/entity_framework/entity_framework_lazy_loading.htm">Entity Framework - Lazy Loading</a></li>
+<li><a href="/entity_framework/entity_framework_explicit_loading.htm">Entity Framework - Explicit Loading</a></li>
+<li><a href="/entity_framework/entity_framework_validation.htm">Entity Framework - Validation</a></li>
+<li><a href="/entity_framework/entity_framework_track_changes.htm">Entity Framework - Track Changes</a></li>
+<li><a href="/entity_framework/entity_framework_colored_entities.htm">Entity Framework - Colored Entities</a></li>
+<li><a href="/entity_framework/entity_framework_code_first_approach.htm">Entity F - Code First Approach</a></li>
+<li><a href="/entity_framework/entity_framework_first_example.htm">Entity Framework - First Example</a></li>
+<li><a href="/entity_framework/entity_framework_data_annotations.htm">Entity Framework - Data Annotations</a></li>
+<li><a href="/entity_framework/entity_framework_fluent_api.htm">Entity Framework - Fluent API</a></li>
+<li><a href="/entity_framework/entity_framework_seed_database.htm">Entity Framework - Seed Database</a></li>
+<li><a href="/entity_framework/entity_framework_code_first_migration.htm">Entity F - Code First Migration</a></li>
+<li><a href="/entity_framework/entity_framework_multiple_dbcontext.htm">Entity F - Multiple DbContext</a></li>
+<li><a href="/entity_framework/entity_framework_nested_entity_types.htm">Entity F - Nested Entity Types</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Entity Framework Resources</li>
+<li><a href="/entity_framework/entity_framework_quick_guide.htm">Entity Framework - Quick Guide</a></li>
+<li><a href="/entity_framework/entity_framework_useful_resources.htm">Entity Framework - Useful Resources</a></li>
+<li><a href="/entity_framework/entity_framework_discussion.htm">Entity Framework - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Entity Framework - Data Annotations</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/entity_framework/entity_framework_first_example.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/entity_framework/entity_framework_fluent_api.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>DataAnnotations is used to configure the classes which will highlight the most commonly needed configurations. DataAnnotations are also understood by a number of .NET applications, such as ASP.NET MVC which allows these applications to leverage the same annotations for client-side validations. DataAnnotation attributes override default CodeFirst conventions.</p>
+<p><b>System.ComponentModel.DataAnnotations</b> includes the following attributes that impacts the nullability or size of the column.</p>
+<ul class="list">
+<li>Key</li>
+<li>Timestamp</li>
+<li>ConcurrencyCheck</li>
+<li>Required</li>
+<li>MinLength</li>
+<li>MaxLength</li>
+<li>StringLength</li>
+</ul>
+<p><b>System.ComponentModel.DataAnnotations.Schema</b> namespace includes the following attributes that impacts the schema of the database.</p>
+<ul class="list">
+<li>Table</li>
+<li>Column</li>
+<li>Index</li>
+<li>ForeignKey</li>
+<li>NotMapped</li>
+<li>InverseProperty</li>
+</ul>
+<h2>Key</h2>
+<p>Entity Framework relies on every entity having a key value that it uses for tracking entities. One of the conventions that Code First depends on is how it implies which property is the key in each of the Code First classes.</p>
+<ul class="list">
+<li><p>Convention is to look for a property named “Id” or one that combines the class name and “Id”, such as “StudentId”.</p></li>
+<li><p>The property will map to a primary key column in the database.</p></li>
+<li><p>The Student, Course and Enrollment classes follow this convention.</p></li>
+</ul>
+<p>Now let’s suppose Student class used the name StdntID instead of ID. When Code First does not find a property that matches this convention, it will throw an exception because of Entity Framework’s requirement that you must have a key property. You can use the key annotation to specify which property is to be used as the EntityKey.</p>
+<p>Let’s take a look at the following code of a Student class which contains StdntID, but it doesn’t follow the default Code First convention. So to handle this, a Key attribute is added which will make it a primary key.</p>
+<pre class="prettyprint notranslate">
+public class Student {
+
+   [Key]
+   public int StdntID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>When you run your application and look into your database in SQL Server Explorer you will see that the primary key is now StdntID in Students table.</p>
+<img src="/entity_framework/images/primary_key.jpg" alt="Primary Key" />
+<p>Entity Framework also supports composite keys. <b>Composite keys</b> are also primary keys that consist of more than one property. For example, you have a DrivingLicense class whose primary key is a combination of LicenseNumber and IssuingCountry.</p>
+<pre class="prettyprint notranslate">
+public class DrivingLicense {
+
+   [Key, Column(Order = 1)]
+   public int LicenseNumber { get; set; }
+   [Key, Column(Order = 2)]
+   public string IssuingCountry { get; set; }
+   public DateTime Issued { get; set; }
+   public DateTime Expires { get; set; }
+}
+</pre>
+<p>When you have composite keys, Entity Framework requires you to define an order of the key properties. You can do this using the Column annotation to specify an order.</p>
+<img src="/entity_framework/images/column_annotation.jpg" alt="Column Annotation" />
+<h2>Timestamp</h2>
+<p>Code First will treat Timestamp properties the same as ConcurrencyCheck properties, but it will also ensure that the database field that code first generates is non-nullable.</p>
+<ul class="list">
+<li><p>It's more common to use rowversion or timestamp fields for concurrency checking.</p></li>
+<li><p>Rather than using the ConcurrencyCheck annotation, you can use the more specific TimeStamp annotation as long as the type of the property is byte array.</p></li>
+<li><p>You can only have one timestamp property in a given class.</p></li>
+</ul>
+<p>Let’s take a look at a simple example by adding the TimeStamp property to the Course class &minus;</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   public string Title { get; set; }
+   public int Credits { get; set; }
+   [Timestamp]
+   public byte[] TStamp { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>As you can see in the above example, Timestamp attribute is applied to Byte[] property of the Course class. So, Code First will create a timestamp column <code>TStamp</code> in the Courses table.</p>
+<h2>ConcurrencyCheck</h2>
+<p>The ConcurrencyCheck annotation allows you to flag one or more properties to be used for concurrency checking in the database when a user edits or deletes an entity. If you've been working with the EF Designer, this aligns with setting a property's ConcurrencyMode to Fixed.</p>
+<p>Let’s take a look at a simple example of how ConcurrencyCheck works by adding it to the Title property in Course class.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   [ConcurrencyCheck]
+   public string Title { get; set; }
+   public int Credits { get; set; }
+   [Timestamp, DataType("timestamp")]
+   public byte[] TimeStamp { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>In the above Course class, ConcurrencyCheck attribute is applied to the existing Title property. Now, Code First will include Title column in update command to check for optimistic concurrency as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+exec sp_executesql N'UPDATE [dbo].[Courses]
+   SET [Title] = @0
+   WHERE (([CourseID] = @1) AND ([Title] = @2))
+   ',N'@0 nvarchar(max) ,@1 int,@2 nvarchar(max) ',@0=N'Maths',@1=1,@2=N'Calculus'
+go
+</pre>
+<h2>Required Annotation</h2>
+<p>The Required annotation tells EF that a particular property is required. Let’s take a look at the following Student class in which Required id is added to the FirstMidName property. Required attribute will force EF to ensure that the property has data in it.</p>
+<pre class="prettyprint notranslate">
+public class Student {
+
+   [Key]
+   public int StdntID { get; set; }
+
+   [Required]
+   public string LastName { get; set; }
+
+   [Required]
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>As seen in the above example, Required attribute is applied to FirstMidName and LastName. So, Code First will create a NOT NULL FirstMidName and LastName columns in the Students table as shown in the following image.</p>
+<img src="/entity_framework/images/not_null.jpg" alt="Not Null" />
+<h2>MaxLength</h2>
+<p>The MaxLength attribute allows you to specify additional property validations. It can be applied to a string or array type property of a domain class. EF Code First will set the size of a column as specified in MaxLength attribute.</p>
+<p>Let’s take a look at the following Course class in which MaxLength(24) attribute is applied to Title property.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   [ConcurrencyCheck]
+   [MaxLength(24)]
+   public string Title { get; set; }
+   public int Credits { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>When you run the above application, Code First will create a nvarchar(24) column Title in the CourseId table as shown in the following image.</p>
+<img src="/entity_framework/images/nvarchar_column.jpg" alt="nvarchar Column" />
+<p>When the user sets the Title which contains more than 24 characters, then EF will throw EntityValidationError.</p>
+<h2>MinLength</h2>
+<p>The MinLength attribute also allows you to specify additional property validations, just as you did with MaxLength. MinLength attribute can also be used with MaxLength attribute as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   [ConcurrencyCheck]
+   [MaxLength(24) , MinLength(5)]
+   public string Title { get; set; }
+   public int Credits { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>EF will throw EntityValidationError, if you set a value of Title property less than the specified length in MinLength attribute or greater than specified length in MaxLength attribute.</p>
+<h2>StringLength</h2>
+<p>StringLength also allows you to specify additional property validations like MaxLength. The only difference is that StringLength attribute can only be applied to a string type property of Domain classes.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   [StringLength (24)]
+   public string Title { get; set; }
+   public int Credits { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>Entity Framework also validates the value of a property for StringLength attribute. If the user sets the Title which contains more than 24 characters, then EF will throw EntityValidationError.</p>
+<h2>Table</h2>
+<p>Default Code First convention creates a table name similar to the class name. If you are letting Code First create the database, and also want to change the name of the tables it is creating. Then &minus;</p>
+<ul class="list">
+<li><p>You can use Code First with an existing database. But it's not always the case that the names of the classes match the names of the tables in your database.</p></li>
+<li><p>Table attribute overrides this default convention.</p></li>
+<li><p>EF Code First will create a table with a specified name in Table attribute for a given domain class.</p></li>
+</ul>
+<p>Let’s take a look at the following example in which the class is named Student and by convention, Code First presumes this will map to a table named Students. If that's not the case, you can specify the name of the table with the Table attribute as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+[Table("StudentsInfo")]
+public class Student {
+
+   [Key]
+   public int StdntID { get; set; }
+   [Required]
+   public string LastName { get; set; }
+   [Required]
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>Now you can see that Table attribute specifies the table as StudentsInfo. When the table is generated, you will see the table name StudentsInfo as shown in the following image.</p>
+<img src="/entity_framework/images/studentsinfo.jpg" alt="StudentsInfo" />
+<p>You cannot only specify the table name but you can also specify a schema for the table using Table attribute as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+[Table("StudentsInfo", Schema = "Admin")] 
+public class Student {
+
+   [Key]
+   public int StdntID { get; set; }
+   [Required]
+   public string LastName { get; set; }
+   [Required]
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>You can see in the above example, the table is specified with admin schema. Now Code First will create StudentsInfo table in Admin schema as shown in the following image.</p>
+<img src="/entity_framework/images/admin_schema.jpg" alt="Admin Schema" />
+<h2>Column</h2>
+<p>It is also the same as Table attribute, but Table attribute overrides the table behavior while Column attribute overrides the column behavior. Default Code First convention creates a column name similar to the property name. If you are letting Code First create the database, and also want to change the name of the columns in your tables. Then &minus;</p>
+<ul class="list">
+<li><p>Column attribute overrides the default convention.</p></li>
+<li><p>EF Code First will create a column with a specified name in the Column attribute for a given property.</p></li>
+</ul>
+<p>Let’s take a look at the following example in which the property is named FirstMidName and by convention, Code First presumes this will map to a column named FirstMidName.</p>
+<p>If that's not the case you can specify the name of the column with the Column attribute as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+public class Student {
+
+   public int ID { get; set; }
+   public string LastName { get; set; }
+   [Column("FirstName")]
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>You can see that Column attribute specifies the column as FirstName. When the table is generated, you will see the column name FirstName as shown in the following image.</p>
+<img src="/entity_framework/images/firstname.jpg" alt="FirstName" />
+<h2>Index</h2>
+<p>The Index attribute was introduced in Entity Framework 6.1. If you are using an earlier version, the information in this section does not apply.</p>
+<ul class="list">
+<li><p>You can create an index on one or more columns using the IndexAttribute.</p></li>
+<li><p>Adding the attribute to one or more properties will cause EF to create the corresponding index in the database when it creates the database.</p></li>
+<li><p>Indexes make the retrieval of data faster and efficient, in most cases. However, overloading a table or view with indexes could unpleasantly affect the performance of other operations such as inserts or updates.</p></li>
+<li><p>Indexing is the new feature in Entity Framework where you can improve the performance of your Code First application by reducing the time required to query data from the database.</p></li>
+<li><p>You can add indexes to your database using the Index attribute, and override the default Unique and Clustered settings to get the index best suited to your scenario.</p></li>
+<li><p>By default, the index will be named IX_&lt;property name&gt;</p></li>
+</ul>
+<p>Let’s take a look at the following code in which Index attribute is added in Course class for Credits.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+   public int CourseID { get; set; }
+   public string Title { get; set; }
+   [Index]
+   public int Credits { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>You can see that the Index attribute is applied to the Credits property. When the table is generated, you will see IX_Credits in Indexes.</p>
+<img src="/entity_framework/images/ix_credits.jpg" alt="IX Credits" />
+<p>By default, indexes are non-unique, but you can use the <b>IsUnique</b> named parameter to specify that an index should be unique. The following example introduces a unique index as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+   public int CourseID { get; set; }
+   [Index(IsUnique = true)]
+	
+   public string Title { get; set; }
+   [Index]
+	
+   public int Credits { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<h2>ForeignKey</h2>
+<p>Code First convention will take care of the most common relationships in your model, but there are some cases where it needs help. For example, by changing the name of the key property in the Student class created a problem with its relationship to Enrollment class.</p>
+<pre class="prettyprint notranslate">
+public class Enrollment {
+   public int EnrollmentID { get; set; }
+   public int CourseID { get; set; }
+   public int StudentID { get; set; }
+   public Grade? Grade { get; set; }
+	
+   public virtual Course Course { get; set; }
+   public virtual Student Student { get; set; }
+}
+
+public class Student {
+   [Key]
+   public int StdntID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>While generating the database, Code First sees the StudentID property in the Enrollment class and recognizes it, by the convention that it matches a class name plus “ID”, as a foreign key to the Student class. However, there is no StudentID property in the Student class, but it is StdntID property is Student class.</p>
+<p>The solution for this is to create a navigation property in the Enrollment and use the ForeignKey DataAnnotation to help Code First understand how to build the relationship between the two classes as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+public class Enrollment {
+   public int EnrollmentID { get; set; }
+   public int CourseID { get; set; }
+   public int StudentID { get; set; }
+	
+   public Grade? Grade { get; set; }
+   public virtual Course Course { get; set; }
+   [ForeignKey("StudentID")]
+	
+   public virtual Student Student { get; set; }
+}
+</pre>
+<p>You can see now that the ForeignKey attribute is applied to the navigation property.</p>
+<img src="/entity_framework/images/foreignkey_attribute.jpg" alt="ForeignKey Attribute" />
+<h2>NotMapped</h2>
+<p>By default conventions of Code First, every property that is of a supported data type and which includes getters and setters are represented in the database. But this isn’t always the case in your applications. NotMapped attribute overrides this default convention. For example, you might have a property in the Student class such as FatherName, but it does not need to be stored. You can apply NotMapped attribute to a FatherName property which you do not want to create a column of in the database as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+public class Student {
+   [Key]
+   public int StdntID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+	
+   public DateTime EnrollmentDate { get; set; }
+   [NotMapped]
+
+   public int FatherName { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>You can see that NotMapped attribute is applied to the FatherName property. When the table is generated you will see that FatherName column will not be created in a database, but it is present in Student class.</p>
+<img src="/entity_framework/images/notmapped_attribute.jpg" alt="NotMapped Attribute" />
+<p>Code First will not create a column for a property, which does not have either getters or setters as shown in the following example of Address and Age properties of Student class.</p>
+<h2>InverseProperty</h2>
+<p>InverseProperty is used when you have multiple relationships between classes. In the Enrollment class, you may want to keep track of who enrolled a Current Course and Previous Course. Let’s add two navigation properties for the Enrollment class.</p>
+<pre class="prettyprint notranslate">
+public class Enrollment {
+   public int EnrollmentID { get; set; }
+   public int CourseID { get; set; }
+   public int StudentID { get; set; }
+   public Grade? Grade { get; set; }
+	
+   public virtual Course CurrCourse { get; set; }
+   public virtual Course PrevCourse { get; set; }
+   public virtual Student Student { get; set; }
+}
+</pre>
+<p>Similarly, you’ll also need to add in the Course class referenced by these properties. The Course class has navigation properties back to the Enrollment class, which contains all the current and previous enrollments.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   public string Title { get; set; }
+   [Index]
+
+   public int Credits { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; CurrEnrollments { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; PrevEnrollments { get; set; }
+}
+</pre>
+<p>Code First creates {Class Name}_{Primary Key} foreign key column, if the foreign key property is not included in a particular class as shown in the above classes. When the database is generated, you will see the following foreign keys.</p>
+<img src="/entity_framework/images/foreign_keys.jpg" alt="Foreign Keys" />
+<p>As you can see that Code first is not able to match up the properties in the two classes on its own. The database table for Enrollments should have one foreign key for the CurrCourse and one for the PrevCourse, but Code First will create four foreign key properties, i.e.</p>
+<ul class="list">
+<li>CurrCourse _CourseID</li>
+<li>PrevCourse _CourseID</li>
+<li>Course_CourseID, and</li>
+<li>Course_CourseID1</li>
+</ul>
+<p>To fix these problems, you can use the InverseProperty annotation to specify the alignment of the properties.</p>
+<pre class="prettyprint notranslate">
+public class Course {
+
+   public int CourseID { get; set; }
+   public string Title { get; set; }
+   [Index]
+
+   public int Credits { get; set; }
+   [InverseProperty("CurrCourse")]
+
+   public virtual ICollection&lt;Enrollment&gt; CurrEnrollments { get; set; }
+   [InverseProperty("PrevCourse")]
+
+   public virtual ICollection&lt;Enrollment&gt; PrevEnrollments { get; set; }
+}
+</pre>
+<p>As you can see the InverseProperty attribute is applied in the above Course class by specifying which reference property of Enrollment class it belongs to. Now, Code First will generate a database and create only two foreign key columns in Enrollments table as shown in the following image.</p>
+<img src="/entity_framework/images/foreign_key_columns.jpg" alt="Foreign Key Columns" />
+<p>We recommend that you execute the above example in a step-by-step manner for better understanding.</p>
+<hr />
+<div class="pre-btn">
+<a href="/entity_framework/entity_framework_first_example.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/entity_framework/entity_framework_fluent_api.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/entity_framework/entity_framework_data_annotations.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/entity_framework/entity_framework_data_annotations.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/entity_framework/entity_framework_data_annotations.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/entity_framework/entity_framework_data_annotations.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/entity_framework/entity_framework_data_annotations.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/entity_framework/entity_framework_data_annotations.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

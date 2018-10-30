@@ -1,0 +1,609 @@
+ <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Rust Lifetime - javatpoint</title><link rel="SHORTCUT ICON" href="/images/logo/icon.png" />
+<link rel="stylesheet" type="text/css" href="/link.css"/>
+<meta name="keywords" content="rust tutorial, introduction, rust features, first_program, if-else, intro, loop, structue, slices, installation, ownership, ownership and functions, if_in_a_let"/><meta name="description" content="Rust Lifetime with Rust Tutorial, Rust Introduction, Rust Features, first_program, if-else, Intro, Loop, Structue, Slices, Rust Installation, Rust Ownership, References and Borrowing, if_in_a_let etc."/><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="https://www.javatpoint.com/rust-lifetime" />
+<meta property="og:title" content="Rust Lifetime - javatpoint" /><meta property="og:description" content="Rust Lifetime with Rust Tutorial, Rust Introduction, Rust Features, first_program, if-else, Intro, Loop, Structue, Slices, Rust Installation, Rust Ownership, References and Borrowing, if_in_a_let etc." />
+<meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta name="twitter:title" property="og:title" content="Rust Lifetime - javatpoint" /><meta name="twitter:description" property="og:description" content="Rust Lifetime with Rust Tutorial, Rust Introduction, Rust Features, first_program, if-else, Intro, Loop, Structue, Slices, Rust Installation, Rust Ownership, References and Borrowing, if_in_a_let etc." /><meta property="og:url" content="https://www.javatpoint.com/rust-lifetime" /><meta property="og:site_name" content="www.javatpoint.com" /><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@pagejavatpoint"/><meta name="twitter:domain" content="www.javatpoint.com"/><meta name="twitter:creator" content="@pagejavatpoint"/>
+<script  id="feedify_webscript" >
+var feedify = feedify || {};
+window.feedify_options={fedify_url:"https://feedify.net/"};
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src = feedify_options.fedify_url+'getjs/feedbackembad-min-1.0.js';
+document.getElementsByTagName('head')[0].appendChild(s);
+</script>
+<link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+</head> 
+<body onload="highlightlink()"> 
+<!-- /13406045/javatpoint_cmda -->
+<div id='div-gpt-ad-1512468834310-0' style='height:1px; width:1px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512468834310-0'); });
+</script>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
+<div id="page" style="margin:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><table style="width:100%;margin-bottom:5px">
+    <tr>
+        <td>
+            <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px">
+                <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo" /></a>
+            </div>
+            <div style="float:left;width:60%;">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                
+            </div>
+            
+        </td>
+    </tr>
+        <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>-->
+
+</table> </div>
+<div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"/></span>
+<span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+
+</div>
+<div style="margin:0px;padding:0px;clear:both">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+<!--<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint"/><input type="hidden" name="sitesearch" value="www.javatpoint.com"/></form>-->
+
+</div>
+</div>
+<div id="link" style="clear:both"> <div id="smoothmenu1" class="ddsmoothmenu">
+<ul>
+<li><a href="https://www.javatpoint.com">Home</a></li>
+<li><a href="rust-tutorial" class="selected">Rust</a></li>
+<li><a href="java-tutorial">Java</a></li>
+<li><a href="servlet-tutorial">Servlet</a></li>
+<li><a href="c-programming-language-tutorial">C</a></li>
+<li><a href="c-sharp-tutorial">C#</a></li>
+<li><a href="jsp-tutorial">JSP</a></li>
+<li><a href="ejb-tutorial">EJB</a></li>
+<li><a href="struts-2-tutorial">Struts2</a></li>
+<li><a href="java-mail-api-tutorial">Mail</a></li>
+<li><a href="hibernate-tutorial">Hibernate</a></li>
+<li><a href="spring-tutorial">Spring</a></li>
+<li><a href="android-tutorial">Android</a></li>
+<li><a href="design-patterns-in-java">Design P</a></li>
+<li><a href="examaccess">Quiz</a></li>
+<li><a href="free-java-projects">Projects</a></li>
+<li><a href="corejava-interview-questions">Interview Q</a>
+<li><a href="comment.jsp">Comment</a>
+<li><a href="forum">Forum</a>
+<li><a href="training">Training</a>
+</li>
+</ul>
+<br style="clear: left" />
+</div></div>
+<div class="mobilemenu" style="clear:both"> 
+<script async
+src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cm_300x250_Mob_14/9 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:300px;height:250px"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="7014272519"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="menu">
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Tutorial</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-tutorial">What is Rust</a>
+<a href="rust-features">Rust Features</a>
+<a href="rust-installation">Rust Installation</a>
+<a href="first-rust-program">First Rust Program</a>
+<!--<a href="rust-variables-and-mutability">Rust Variables &amp; Mutability</a>
+<a href="rust-data-types">Rust Data types</a>
+<a href="rust-comments">Rust Comments</a>
+<a href="rust-keywords">Rust Keywords</a>
+<a href="rust-operators">Rust Operators</a>-->
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Control Statements</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-if-statement">Rust if-else</a>	
+<a href="rust-if-in-a-let-statement">Rust if in a let</a>
+<a href="rust-loop">Rust Loop</a>
+<a href="rust-while-loop">Rust While Loop</a>
+<a href="rust-for-loop">Rust For Loop</a>
+<!--<a href="rust-break">Rust Break</a>-->
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Ownership</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-ownership">What is Ownership</a>
+<a href="rust-references-and-borrowing">Rust References &amp; Borrowing</a>
+<a href="rust-slices">Rust Slices</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Structs</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-struct">What is Struct</a>
+<a href="rust-struct-update-syntax">Update Syntax</a>
+<a href="rust-struct-method-syntax">Method syntax</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Enum</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-enum">What is enum</a>
+<a href="rust-enum-control-flow-with-match-operator">Match Operator</a>
+<a href="rust-enum-control-flow-with-if-let-operator">If Let Operator</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Modules</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-modules">Rust Modules</a>
+<a href="rust-module-filesystem">Rust Filesystem</a>
+<a href="rust-making-a-function-public">Controlling visibility with pub</a>
+<a href="rust-module-use-keyword">Rust use Keyword</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Collections</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-vector">Rust Vectors</a>
+<a href="rust-string">Rust Strings</a>
+<!--<a href="rust-hashmap">Rust Hashmaps</a>-->
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Error Handling</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-error-handling">Rust Error handling</a>
+<a href="rust-unrecoverable-errors">Unrecoverable Errors</a>
+<a href="rust-recoverable-errors">Recoverable Errors</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Generics &amp; Traits</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-generic">Rust Generics</a>
+<a href="rust-trait">Rust Traits</a>
+<a href="rust-lifetime">Rust Lifetime</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Rust Smart Pointers</span></h2>
+</div>
+<div class="leftmenu">
+<a href="rust-smart-pointers">Smart Pointers</a>
+<a href="rust-box-t">Rust Box&lt;T&gt;</a>
+<a href="rust-deref-trait">Rust Deref Trait</a>
+<a href="rust-drop-trait">Rust Drop Trait</a>
+<a href="rust-rc-t">Rust Rc(T)</a>
+<a href="rust-refcell-t">Rust RefCell(T)</a>
+</div>
+<img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"/>
+<br/>
+<div id="leftad" style="margin-left:20px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javatpointleft -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="4476401222"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="onlycontent">
+<div class="onlycontentad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord"
+style="display:inline-block"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="onlycontentinner">
+<div id="city">
+<table>
+<tr><td>
+
+<div id="bottomnextup">
+<a class="next" href="#">next &rarr;</a>
+<a class="next" href="#">&larr; prev</a>
+</div>
+
+<h1 class="h1">Rust Lifetime</h1>
+<ul class="points">
+<li>Lifetime defines the scope for which reference is valid.</li>
+<li>Lifetimes are implicit and inferred.</li>
+<li>Rust uses the generic lifetime parameters to ensure that actual references are used which are valid.</li>
+</ul>
+<h2 class="h2">Preventing Dangling references with Lifetimes</h2>
+<p>When a program tries to access the invalid reference is known as a <strong>Dangling reference</strong>. The pointer which is pointing to the invalid resource is known as a <strong>Dangling pointer</strong>.</p>
+<p><strong>Let's see a simple example:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn main()
+{
+  let a;
+  {
+    let b = 10;
+     a = &b;
+  }
+  println!("a : {}",a);
+}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<br>
+<img src="tutorial/rust/images/rust-lifetime.png" alt="Rust Lifetime"/>
+<br>
+<p>In the above example, the outer scope contains the variable whose named as 'a' and it does not contain any value. An inner scope contains the variable 'b' and it stores the value 10. The reference of 'b' variable is stored in the variable 'a'. When the inner scope ends, and we try to access the value of 'a'. The Rust compiler will throw a compilation error as 'a' variable is referring to the location of the variable which is gone out of the scope. Rust will determine that the code is invalid by using the <strong>borrow checker</strong>.</p>
+<h2 class="h2">Borrow checker</h2>
+<p>The borrow checker is used to resolve the problem of dangling references. The borrow checker is used to compare the scopes to determine whether they are valid or not.</p>
+<br>
+<img src="tutorial/rust/images/rust-lifetime1.png" alt="Rust Lifetime"/>
+<br>
+<p>In the above example, we have annotated the lifetime of 'a' variable with the 'a and the lifetime of 'b' variable with the 'b. At the compile time, Rust will reject this program as the lifetime of 'a' variable is greater than the lifetime of 'b' variable. The above code can be fixed so that no compiler error occurs.</p>
+<br>
+<img src="tutorial/rust/images/rust-lifetime2.png" alt="Rust Lifetime"/>
+<br>
+<p>In the above example, the lifetime of 'a' variable is shorter than the lifetime of 'b' variable. Therefore, the above code runs without any compilation error.</p>
+<h2 class="h2">Lifetime annotation syntax</h2>
+<ul class="points">
+<li>Lifetime annotation does not change how long any of the references live.</li>
+<li>Functions can also accept the references of any lifetime by using the generic lifetime parameter.</li>
+<li>Lifetime annotation describes the relationship among the lifetimes of multiple parameters.</li>
+</ul>
+<p><strong>Steps to be followed for the lifetime annotation syntax:</strong></p>
+<ul class="points">
+<li>The names of the lifetime parameters should start with (') apostrophe. </li>
+<li>They are mainly lowercase and short. For example: 'a.</li>
+<li>Lifetime parameter annotation is placed after the '&' of a reference and then space to separate the annotation from the reference type.</li>
+</ul>
+<p><strong>Some examples of lifetime annotation syntax are given below:</strong></p>
+<ul class="points">
+<li>&i32&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;// reference</li>
+<li>& 'a i32 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// reference with a given lifetime.</li>
+<li>& 'a mut i32&nbsp;&nbsp;&nbsp;&nbsp;// mutable reference with a given lifetime.</li>
+</ul>
+<h2 class="h2">Lifetime Annotations in Function Signatures</h2>
+<p>The 'a represents the lifetime of a reference. Every reference has a lifetime associated with it. We can use the <strong>lifetime annotations</strong> in function signatures as well. The generic lifetime parameters are used between angular brackets &lt;&gt; , and the angular brackets are placed between the function name and the parameter list. Let's look:</p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn fun&lt;'a&gt;(...);
+</textarea></div>
+<p>In the above case, fun is the function name which has one lifetime, i.e., <strong>'a. If a function contains two reference parameters with two different lifetimes, then it can be represented as:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn fun&lt;'a,'b&gt;(...);
+</textarea></div>
+<p><strong>If a function contains a single variable named as 'y'.</strong></p>
+<p>If 'y' is an immutable reference, then the parameter list would be:</p>
+<div class="codeblock"><textarea name="code" class="rust">
+fn fun&lt;'a&gt;(y : & 'a i32);
+</textarea></div>
+<p>If 'y' is a mutable reference, then the parameter list would be:</p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn fun&lt;'a&gt;(y : & 'a mut i32);
+</textarea></div>
+<p>Both &amp; 'a i32 and & 'a mut i32 are similar. The only difference is that 'a is placed between the &amp; and mut.</p>
+<p>&amp; mut i32 means "mutable reference to an i32" .</p>
+<p>&amp; 'a mut i32 means "mutable reference to an i32 with a lifetime 'a".</p>
+<h2 class="h2">Lifetime Annotations in struct</h2>
+<p>We can also use the explicit lifetimes in the struct as we have used in functions.</p>
+<p><strong>Let's look:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+       struct Example
+      {
+          x : &amp; 'a i32,  //  x is a variable of type i32 that has the lifetime 'a.
+      }      
+</textarea></div>
+<p><strong>Let's see a simple example:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+   struct Example&lt;'a&gt; {
+    x: &'a i32,
+}
+fn main() {
+    let y = &9; 
+    let b = Example{ x: y };
+    println!("{}", b.x);
+}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+9
+</pre></div>
+<h2 class="h2">impl blocks</h2>
+<p>We can implement the struct type having a lifetime 'a using impl block.</p>
+<p><strong>Let's see a simple example:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+ struct Example&lt;'a&gt; {
+    x: &'a i32,
+}
+impl&lt;'a&gt; Example&lt;'a&gt;
+{
+fn display(&self)
+{
+  print!("Value of x is : {}",self.x);
+}
+}
+fn main() {
+    let y = &90; 
+    let b = Example{ x: y };
+    b.display();
+}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Value of x is : 90
+</pre></div>
+<h2 class="h2">Multiple Lifetimes</h2>
+<p>There are two possibilities that we can have:</p>
+<ul class="points">
+<li>Multiple references have the same lifetime.</li>
+<li>Multiple references have different lifetimes.</li>
+</ul>
+<p><strong>When references have the same lifetime.</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn fun &lt;'a&gt;(x: & 'a i32 , y: & 'a i32) -&gt; & 'a i32
+{
+    //block of code.
+}
+</textarea></div>
+<p>In the above case, both the references x and y have the same lifetime, i.e., 'a.</p>
+<p><strong>When references have the different lifetimes.</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn fun&lt;'a , 'b&gt;(x: & 'a i32 , y: & 'b i32) 
+{
+    // block of code.
+}  
+</textarea></div>
+<p>In the above case, both the references x and y have different lifetimes, i.e., 'a and 'b respectively.</p>
+<h2 class="h2">'static</h2>
+<p>The lifetime named as 'static is a special lifetime. It signifies that something has the lifetime 'static will have the lifetime over the entire program. Mainly 'static lifetime is used with the strings. The references which have the 'static lifetime are valid for the entire program.</p>
+<p><strong>Let's look:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+let s : & 'static str = "javaTpoint tutorial" ; 
+</textarea></div>
+<h2 class="h2">Lifetime Ellision</h2>
+<p>Lifetime Ellision is an inference algorithm which makes the common patterns more ergonomic. Lifetime Ellision makes a program to be ellided. </p>
+<p><strong>Lifetime Ellision can be used anywhere</strong>:</p>
+<ul class="points">
+<li>& 'a T</li>
+<li>& 'a mut T</li>
+<li>T&lt;'a&gt;</li>
+</ul>
+<p><strong>Lifetime Ellision can appear in two ways:</strong></p>
+<ul class="points">
+<li><strong>Input lifetime</strong>: An input lifetime is a lifetime associated with the parameter of a function.</li>
+<li><strong>Output lifetime</strong>: An output lifetime is a lifetime associated with the return type of the function.</li>
+</ul>
+<p><strong>Let's look:</strong></p>
+<div class="codeblock"><textarea name="code" class="rust">
+ fn fun&lt;'a&gt;( x : & 'a i32);                       // input lifetime
+ fn fun&lt;'a&gt;() -&gt; & 'a i32;                      // output lifetime
+fn fun&lt;'a&gt;(x : & 'a i32)-&gt; & 'a i32;      // Both input and output lifetime.
+</textarea></div>
+<h3 class="h3">Rules of Lifetime Ellision:</h3>
+<ul class="points">
+<li>Each parameter passed by the reference has got a distinct lifetime annotation.</li>
+</ul>
+<table class="alt">
+<tr>
+	<td><pre>fn fun( x : &i32, y : &i32)
+	{ 
+	} </pre></td>
+</tr>
+</tr>
+    <td>&rarr;</td>
+</tr>
+</tr>
+    <td><pre>fn fun&lt;'a , 'b&gt;( x :& 'a i32, y : & 'b i32)
+	{
+	}</pre></td>
+</tr>
+</table>
+<ul class="points">
+<li>If the single parameter is passed by reference, then the lifetime of that parameter is assigned to all the elided output lifetimes.</li>
+</ul>
+<table class="alt">
+<tr>
+	<td><pre>fn fun(x : i32, y : &i32) -&gt; &i32
+	{
+	}</pre></td>
+</tr>
+</tr>
+    <td>&rarr;</td>
+</tr>
+</tr>
+    <td><pre>fn fun&lt;'a&gt;(x : i32, y : & 'a i32) -&gt; & 'a i3
+	{
+	}</pre></td>
+</tr>
+</table>
+<ul class="points">
+<li>If multiple parameters passed by reference and one of them is &self or &mut self, then the lifetime of self is assigned to all the elided output lifetimes.</li>
+</ul>
+<table class="alt">
+<tr>
+	<td><pre>fn fun(&self, x : &str)
+	{
+	}</pre></td>
+</tr>
+</tr>
+    <td>&rarr;</td>
+</tr>
+</tr>
+    <td><pre>fn fun&lt;'a,'b&gt;(& 'a self, x : & 'b str) -&gt; & 'a str
+	{
+	}</pre></td>
+</tr>
+</table>
+<p><strong>For Example:</strong></p>
+<p>fn fun( x : &str); &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; // Elided form.</p>
+<p>fn fun&lt;'a&gt;(x : & 'a str) -&gt; & 'a str; &nbsp;&nbsp;&nbsp;// Expanded form.</p>
+
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="#">#</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a style="float:left" class="next" href="#">&larr; prev</a>
+<a style="float:right" class="next" href="#">next &rarr;</a>
+</div>
+
+<br/><br/>
+</td></tr>
+</table>
+</div>
+<!-- contribute start-->
+
+<!-- contribute end-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="7776236568"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2 class="h2">Please Share</h2>
+<a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/rust-lifetime"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"/></a>
+<a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/rust-lifetime"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"/></a>
+<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://www.javatpoint.com/rust-lifetime"><img src="https://www.javatpoint.com/images/google-plus32.png" alt="google plus"/></a>
+<a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/rust-lifetime"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"/></a>
+<!--<a rel="nofollow" title="Tumblr" target="_blank" href="https://www.tumblr.com/share/link?url=https://www.javatpoint.com/rust-lifetime"><img src="https://www.javatpoint.com/images/tumblr32.png" alt="tumbler"/></a>-->
+
+<!-- latest tutorials start -->
+<h2 class="h2">Learn Latest Tutorials</h2>
+<div class="firsthomecontent">
+                        <a href="https://www.javatpoint.com/selenium-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/selenium/images/selenium-home.jpg" alt="Selenium tutorial" />
+                                <p>Selenium</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/control-system-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/control-system/images/control-system-home.jpg" alt="Control Systems tutorial" />
+                                <p>Control System</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/rust-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/rust/images/rust-home.jpg" alt="Rust Programming tutorial" />
+                                <p>Rust</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/intellij-idea-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/intellij-idea/images/intellij-idea-home.png" alt="Intellij Idea tutorial" />
+                                <p>Intellij</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/dbms-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/dbms/images/dbms-home.jpg" alt="DBMS tutorial" />
+                                <p>DBMS</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/aptitude/quantitative">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Quantitative Aptitude tutorial" />
+                                <p>Aptitude</p>
+                            </div>
+                        </a>
+</div>
+
+</div>
+
+
+<br><br/><div class="mobilemenu" style="clear:both">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins class="adsbygoogle"     style="display:block"     data-ad-client="ca-pub-4699858549023382"     data-ad-slot="8222866318"     data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br/><br/>
+
+
+</div>
+<div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br/><br/>
+</div>
+<br/>
+<div id="footer" style="clear:both;width:100%">
+
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>--><div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p><ul class="points"> <li>Website Designing</li><li>Website Development</li><li>Java Development</li><li>PHP Development</li><li>WordPress</li><li>Graphic Designing</li><li>Logo</li><li>Digital Marketing</li><li>On Page and Off Page SEO</li><li>PPC</li><li>Content Development</li><li>Corporate Training</li><li>Classroom and Online Training</li><li>Data Entry</li></ul> <p style="padding-bottom:60px"></p></div><div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p></div><!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a><a rel="nofollow" href="http://www.hindi-typing.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/><p>Hindi-Typing</p></div></a></marquee></div>--><script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script><div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://www.javatpoint.com/images/social/rss1.png" alt="RSS Feed"/></a> <a target="_blank"  rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://www.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"/></a> <a  rel="nofollow" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://www.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"/></a> <a target="_blank" rel="nofollow" href="https://plus.google.com/u/0/+javatpoint"><img src="https://www.javatpoint.com/images/social/google1.png" alt="Google Page"/></a> <a target="_blank" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://www.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"/></a> <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://www.javatpoint.com/images/youtube32.png" alt="YouTube"/></a> <a target="_blank" rel="nofollow" href="https://javatpoint.blogspot.com"><img src="https://www.javatpoint.com/images/social/blog.png" alt="Blog Page"/></a> </div><footer class="footer1"><div class="column4"><h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a></div><div class="column4"><h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow" target="_blank" href="http://www.hindi-typing.com">Hindi-typing.com</a><a rel="nofollow" target="_blank" href="http://www.shayaree.com">Shayaree.com</a><a rel="nofollow" target="_blank" href="https://www.wordcountee.com">Wordcountee.com</a><a rel="nofollow" target="_blank" href="https://www.charactercountee.com">Charactercountee.com</a><a rel="nofollow" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a></div><div class="column4"><h3>Our Services</h3><p>Website Development</p><p>Android Development</p><p>Website Designing</p><p>Digital Marketing</p><p>Summer Training</p><p>Industrial Training</p><p>College Campus Training</p></div><div class="column4"><h3>Contact</h3><p>Address: G-13, 2nd Floor, Sec-3</p><p>Noida, UP, 201301, India</p><p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a></div></footer><footer class="footer2"><p>&copy; Copyright 2011-2018 www.javatpoint.com. All rights reserved. <a rel="nofollow" target="_blank" href="https://www.sssit.org">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p></footer>
+</div></div></div>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4699858549023382",
+          enable_page_level_ads: true
+     });
+</script>
+
+<script src="/js/shcoreandbrush.js"></script><script> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+</body> </html> 

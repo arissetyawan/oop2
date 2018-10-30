@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Javascript Interview Questions - tutorialspoint</title>
+<meta name="description" content="Javascript Interview Questions - Learning Javascript in simple and easy steps. A beginner's tutorial containing complete knowledge of Javascript Syntax Objects Embedding with  HTML Validations Cookies Regular Expressions Literals Variables Loops Conditions." />
+<meta name="Keywords" content="Javascript, Tutorials, Learning, Beginners, Javascript Basics, Scripting Language, Javascript Tutorials, Functions, Objects, Usage" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(javascript/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #f8ba24 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #f8ba24 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #f8ba24 !important;}
+.submenu-item{ border-bottom: 2px solid #f8ba24 !important; border-top: 2px solid #f8ba24 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#f8ba24; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/javascript/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/javascript/images/javascript-mini-logo.jpg" alt="Javascript Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/javascript_online_training/index.asp" target="_blank"><img src="/javascript/images/javascript-video-tutorials.jpg" alt="JavaScript Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Javascript Basics Tutorial</li>
+<li><a href="/javascript/index.htm">Javascript - Home</a></li>
+<li><a href="/javascript/javascript_overview.htm">Javascript - Overview</a></li>
+<li><a href="/javascript/javascript_syntax.htm">Javascript - Syntax</a></li>
+<li><a href="/javascript/javascript_enabling.htm">Javascript - Enabling</a></li>
+<li><a href="/javascript/javascript_placement.htm">Javascript - Placement</a></li>
+<li><a href="/javascript/javascript_variables.htm">Javascript - Variables</a></li>
+<li><a href="/javascript/javascript_operators.htm">Javascript - Operators</a></li>
+<li><a href="/javascript/javascript_ifelse.htm">Javascript - If...Else</a></li>
+<li><a href="/javascript/javascript_switch_case.htm">Javascript - Switch Case</a></li>
+<li><a href="/javascript/javascript_while_loop.htm">Javascript - While Loop</a></li>
+<li><a href="/javascript/javascript_for_loop.htm">Javascript - For Loop</a></li>
+<li><a href="/javascript/javascript_forin_loop.htm">Javascript - For...in</a></li>
+<li><a href="/javascript/javascript_loop_control.htm">Javascript - Loop Control</a></li>
+<li><a href="/javascript/javascript_functions.htm">Javascript - Functions</a></li>
+<li><a href="/javascript/javascript_events.htm">Javascript - Events</a></li>
+<li><a href="/javascript/javascript_cookies.htm">Javascript - Cookies</a></li>
+<li><a href="/javascript/javascript_page_redirect.htm">Javascript - Page Redirect</a></li>
+<li><a href="/javascript/javascript_dialog_boxes.htm">Javascript - Dialog Boxes</a></li>
+<li><a href="/javascript/javascript_void_keyword.htm">Javascript - Void Keyword</a></li>
+<li><a href="/javascript/javascript_page_printing.htm">Javascript - Page Printing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">JavaScript Objects</li>
+<li><a href="/javascript/javascript_objects.htm">Javascript - Objects</a></li>
+<li><a href="/javascript/javascript_number_object.htm">Javascript - Number</a></li>
+<li><a href="/javascript/javascript_boolean_object.htm">Javascript - Boolean</a></li>
+<li><a href="/javascript/javascript_strings_object.htm">Javascript - Strings</a></li>
+<li><a href="/javascript/javascript_arrays_object.htm">Javascript - Arrays</a></li>
+<li><a href="/javascript/javascript_date_object.htm">Javascript - Date</a></li>
+<li><a href="/javascript/javascript_math_object.htm">Javascript - Math</a></li>
+<li><a href="/javascript/javascript_regexp_object.htm">Javascript - RegExp</a></li>
+<li><a href="/javascript/javascript_html_dom.htm">Javascript - HTML DOM</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">JavaScript Advanced</li>
+<li><a href="/javascript/javascript_error_handling.htm">Javascript - Error Handling</a></li>
+<li><a href="/javascript/javascript_form_validations.htm">Javascript - Validations</a></li>
+<li><a href="/javascript/javascript_animation.htm">Javascript - Animation</a></li>
+<li><a href="/javascript/javascript_multimedia.htm">Javascript - Multimedia</a></li>
+<li><a href="/javascript/javascript_debugging.htm">Javascript - Debugging</a></li>
+<li><a href="/javascript/javascript_image_map.htm">Javascript - Image Map</a></li>
+<li><a href="/javascript/javascript_browsers_handling.htm">Javascript - Browsers</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">IMS DB Resources</li>
+<li><a href="/javascript/javascript_questions_answers.htm">Javascript - Questions And Answers</a></li>
+<li><a href="/javascript/javascript_quick_guide.htm">Javascript - Quick Guide</a></li>
+<li><a href="/javascript/javascript_builtin_functions.htm">Javascript - Functions</a></li>
+<li><a href="/javascript/javascript_resources.htm">Javascript - Resources</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Javascript Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/javascript/javascript_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/javascript/javascript_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>JavaScript Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>JavaScript</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What is JavaScript?</label>
+<div class="toggle-content">
+<p>JavaScript is a lightweight, interpreted programming language with object-oriented capabilities that allows you to build interactivity into otherwise static HTML pages.</p>
+<p>The general-purpose core of the language has been embedded in Netscape, Internet Explorer, and other web browsers.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the JavaScript features.</label>
+<div class="toggle-content">
+<p>Following are the features of JavaScript &minus;</p>
+<ul class="list">
+<li><p>JavaScript is a lightweight, interpreted programming language.</p></li>
+<li><p>JavaScript is designed for creating network-centric applications.</p></li>
+<li><p>JavaScript is complementary to and integrated with Java.</p></li>
+<li><p>JavaScript is is complementary to and integrated with HTML.</p></li>
+<li><p>JavaScript is open and cross-platform.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of using JavaScript?</label>
+<div class="toggle-content">
+<p>Following are the advantages of using JavaScript &minus;</p>
+<ul class="list">
+<li><p><b>Less server interaction &minus;</b> You can validate user input before sending the page off to the server. This saves server traffic, which means less load on your server.</p></li>
+<li><p><b>Immediate feedback to the visitors &minus;</b> They don't have to wait for a page reload to see if they have forgotten to enter something.</p></li>
+<li><p><b>Increased interactivity &minus;</b> You can create interfaces that react when the user hovers over them with a mouse or activates them via the keyboard.</p></li>
+<li><p><b>Richer interfaces &minus;</b> You can use JavaScript to include such items as drag-and-drop components and sliders to give a Rich Interface to your site visitors.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are disadvantages of using JavaScript?</label>
+<div class="toggle-content">
+<p>We can not treat JavaScript as a full fledged programming language. It lacks the following important features &minus;</p>
+<ul class="list">
+<li><p>Client-side JavaScript does not allow the reading or writing of files. This has been kept for security reason.</p></li>
+<li><p>JavaScript can not be used for Networking applications because there is no such support available.</p></li>
+<li><p>JavaScript doesn't have any multithreading or multiprocess capabilities.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Is JavaScript a case-sensitive language?</label>
+<div class="toggle-content">
+<p>Yes! JavaScript is a case-sensitive language. This means that language keywords, variables, function names, and any other identifiers must always be typed with a consistent capitalization of letters.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you create an Object in JavaScript?</label>
+<div class="toggle-content">
+<p>JavaScript supports Object concept very well. You can create an object using the object literal as follows &minus;</p>
+<pre class="prettyprint notranslate">
+var emp = {
+   name: "Zara",
+   age: 10
+};
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How can you read properties of an Object in JavaScript?</label>
+<div class="toggle-content">
+<p>You can write and read properties of an object using the dot notation as follows &minus;</p>
+<pre class="prettyprint notranslate">
+// Getting object properties
+emp.name  // ==&gt; Zara
+emp.age   // ==&gt; 10
+// Setting object properties
+emp.name = "Daisy"  // &lt;== Daisy
+emp.age  =  20      // &lt;== 20
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How can you create an Array in JavaScript?</label>
+<div class="toggle-content">
+<p>You can define arrays using the array literal as follows &minus;</p>
+<pre class="prettyprint notranslate">
+var x = [];
+var y = [1, 2, 3, 4, 5];
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How to read elements of an array in JavaScript?</label>
+<div class="toggle-content">
+<p>An array has a length property that is useful for iteration. We can read elements of an array as follows &minus;</p>
+<pre class="prettyprint notranslate">
+var x = [1, 2, 3, 4, 5];
+for (var i = 0; i &lt; x.length; i++) {
+   // Do something with x[i]
+}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is a named function in JavaScript? How to define a named function?</label>
+<div class="toggle-content">
+<p>A named function has a name when it is defined. A named function can be defined using function keyword as follows &minus;</p>
+<pre class="prettyprint notranslate">
+function named(){
+   // do some stuff here
+}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How many types of functions JavaScript supports?</label>
+<div class="toggle-content">
+<p>A function in JavaScript can be either named or anonymous.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to define a anonymous function?</label>
+<div class="toggle-content">
+<p>An anonymous function can be defined in similar way as a normal function but it would not have any name.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you assign a anonymous function to a variable?</label>
+<div class="toggle-content">
+<p>Yes! An anonymous function can be assigned to a variable.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you pass a anonymous function as an argument to another function?</label>
+<div class="toggle-content">
+<p>Yes! An anonymous function can be passed as an argument to another function.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is arguments object in JavaScript?</label>
+<div class="toggle-content">
+<p>JavaScript variable arguments represents the arguments passed to a function.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you get the type of arguments passed to a function?</label>
+<div class="toggle-content">
+<p>Using typeof operator, we can get the type of arguments passed to a function. For example &minus;</p>
+<pre class="prettyprint notranslate">
+function func(x){
+   console.log(typeof x, arguments.length);
+}
+func();                //==&gt; "undefined", 0
+func(1);               //==&gt; "number", 1
+func("1", "2", "3");   //==&gt; "string", 3
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How can you get the total number of arguments passed to a function?</label>
+<div class="toggle-content">
+<p>Using arguments.length property, we can get the total number of arguments passed to a function. For example &minus;</p>
+<pre class="prettyprint notranslate">
+function func(x){
+   console.log(typeof x, arguments.length);
+}
+func();                //==&gt; "undefined", 0
+func(1);               //==&gt; "number", 1
+func("1", "2", "3");   //==&gt; "string", 3
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How can you get the reference of a caller function inside a function?</label>
+<div class="toggle-content">
+<p>The arguments object has a callee property, which refers to the function you're inside of. For example &minus;</p>
+<pre class="prettyprint notranslate">
+function func() {
+   return arguments.callee; 
+}
+func();                // ==&gt; func
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of 'this' operator in JavaScript?</label>
+<div class="toggle-content">
+<p>JavaScript famous keyword this always refers to the current context.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the valid scopes of a variable in JavaScript?</label>
+<div class="toggle-content">
+<p>The scope of a variable is the region of your program in which it is defined. JavaScript variable will have only two scopes.</p>
+<ul class="list">
+<li><p><b>Global Variables &minus;</b> A global variable has global scope which means it is visible everywhere in your JavaScript code.</p></li>
+<li><p><b>Local Variables &minus;</b> A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Which type of variable among global and local, takes precedence over other if names are same?</label>
+<div class="toggle-content">
+<p>A local variable takes precedence over a global variable with the same name.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is callback?</label>
+<div class="toggle-content">
+<p>A callback is a plain JavaScript function passed to some method as an argument or option. Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is closure?</label>
+<div class="toggle-content">
+<p>Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Give an example of closure?</label>
+<div class="toggle-content">
+<p>Following example shows how the variable counter is visible within the create, increment, and print functions, but not outside of them &minus;</p>
+<pre class="prettyprint notranslate">
+function create() {
+   var counter = 0;
+   return {
+      increment: function() {
+         counter++;
+      },
+  
+      print: function() {
+         console.log(counter);
+      }
+   }
+}
+var c = create();
+c.increment();
+c.print();     // ==&gt; 1
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the character at the specified index?</label>
+<div class="toggle-content">
+<p>charAt() method returns the character at the specified index.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method combines the text of two strings and returns a new string?</label>
+<div class="toggle-content">
+<p>concat() method returns the character at the specified index.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method calls a function for each element in the array?</label>
+<div class="toggle-content">
+<p>forEach() method calls a function for each element in the array.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the index within the calling String object of the first occurrence of the specified value?</label>
+<div class="toggle-content">
+<p>indexOf() method returns the index within the calling String object of the first occurrence of the specified value, or &minus;1 if not found.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the length of the string?</label>
+<div class="toggle-content">
+<p>length() method returns the length of the string.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method removes the last element from an array and returns that element?</label>
+<div class="toggle-content">
+<p>pop() method removes the last element from an array and returns that element.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method adds one or more elements to the end of an array and returns the new length of the array?</label>
+<div class="toggle-content">
+<p>push() method adds one or more elements to the end of an array and returns the new length of the array.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method reverses the order of the elements of an array?</label>
+<div class="toggle-content">
+<p>reverse() method reverses the order of the elements of an array &minus;&minus; the first becomes the last, and the last becomes the first.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method sorts the elements of an array?</label>
+<div class="toggle-content">
+<p>sort() method sorts the elements of an array.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the characters in a string beginning at the specified location?</label>
+<div class="toggle-content">
+<p>substr() method returns the characters in a string beginning at the specified location through the specified number of characters.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the calling string value converted to lower case?</label>
+<div class="toggle-content">
+<p>toLowerCase() method returns the calling string value converted to lower case.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the calling string value converted to upper case?</label>
+<div class="toggle-content">
+<p>toUpperCase() method returns the calling string value converted to upper case.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which built-in method returns the string representation of the number's value?</label>
+<div class="toggle-content">
+<p>toString() method returns the string representation of the number's value.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the variable naming conventions in JavaScript?</label>
+<div class="toggle-content">
+<p>While naming your variables in JavaScript keep following rules in mind.</p>
+<p>You should not use any of the JavaScript reserved keyword as variable name. These keywords are mentioned in the next section. For example, break or boolean variable names are not valid.</p>
+<p>JavaScript variable names should not start with a numeral (0-9). They must begin with a letter or the underscore character. For example, 123test is an invalid variable name but _123test is a valid one.</p>
+<p>JavaScript variable names are case sensitive. For example, Name and name are two different variables.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How typeof operator works?</label>
+<div class="toggle-content">
+<p>The typeof is a unary operator that is placed before its single operand, which can be of any type. Its value is a string indicating the data type of the operand.</p>
+<p>The typeof operator evaluates to "number", "string", or "boolean" if its operand is a number, string, or boolean value and returns true or false based on the evaluation.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What typeof returns for a null value?</label>
+<div class="toggle-content">
+<p>It returns "object".</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you access Cookie using javascript?</label>
+<div class="toggle-content">
+<p>JavaScript can also manipulate cookies using the cookie property of the Document object. JavaScript can read, create, modify, and delete the cookie or cookies that apply to the current web page.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to create a Cookie using JavaScript?</label>
+<div class="toggle-content">
+<p>The simplest way to create a cookie is to assign a string value to the document.cookie object, which looks like this &minus;</p>
+<p>Syntax &minus;</p>
+<pre class="prettyprint notranslate">
+document.cookie = "key1 = value1; key2 = value2; expires = date";
+</pre>
+<p>Here expires attribute is option. If you provide this attribute with a valid date or time then cookie will expire at the given date or time and after that cookies' value will not be accessible.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to read a Cookie using JavaScript?</label>
+<div class="toggle-content">
+<p>Reading a cookie is just as simple as writing one, because the value of the document.cookie object is the cookie. So you can use this string whenever you want to access the cookie.</p>
+<p>The document.cookie string will keep a list of name = value pairs separated by semicolons, where name is the name of a cookie and value is its string value.</p>
+<p>You can use strings' split() function to break the string into key and values.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to delete a Cookie using JavaScript?</label>
+<div class="toggle-content">
+<p>Sometimes you will want to delete a cookie so that subsequent attempts to read the cookie return nothing. To do this, you just need to set the expiration date to a time in the past.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to redirect a url using JavaScript?</label>
+<div class="toggle-content">
+<p>his is very simple to do a page redirect using JavaScript at client side. To redirect your site visitors to a new page, you just need to add a line in your head section as follows &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;head&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+   window.location="http://www.newlocation.com";
+//--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> How to print a web page using javascript?</label>
+<div class="toggle-content">
+<p>JavaScript helps you to implement this functionality using print function of window object. The JavaScript print function window.print() will print the current web page when executed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Date object in JavaScript?</label>
+<div class="toggle-content">
+<p>The Date object is a datatype built into the JavaScript language. Date objects are created with the new Date( ).</p>
+<p>Once a Date object is created, a number of methods allow you to operate on it. Most methods simply allow you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC (universal, or GMT) time.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Number object in JavaScript?</label>
+<div class="toggle-content">
+<p>he Number object represents numerical date, either integers or floating-point numbers. In general, you do not need to worry about Number objects because the browser automatically converts number literals to instances of the number class.</p>
+<p>Syntax &minus;</p>
+<p>Creating a number object &minus;</p>
+<pre class="prettyprint notranslate">
+var val = new Number(number);
+</pre>
+<p>If the argument cannot be converted into a number, it returns NaN (Not-a-Number).</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to handle exceptions in JavaScript?</label>
+<div class="toggle-content">
+<p>The latest versions of JavaScript added exception handling capabilities. JavaScript implements the try...catch...finally construct as well as the throw operator to handle exceptions.</p>
+<p>You can catch programmer-generated and runtime exceptions, but you cannot catch JavaScript syntax errors.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is purpose of onError event handler in JavaScript?</label>
+<div class="toggle-content">
+<p>The onerror event handler was the first feature to facilitate error handling for JavaScript. The error event is fired on the window object whenever an exception occurs on the page.</p>
+<p>The onerror event handler provides three pieces of information to identify the exact nature of the error &minus;</p>
+<ul class="list">
+<li><p><b>Error message &minus;</b> The same message that the browser would display for the given error.</p></li>
+<li><p><b>URL &minus;</b> The file in which the error occurred.</p></li>
+<li><p><b>Line number &minus;</b> The line number in the given URL that caused the error.</p></li>
+</ul>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/javascript/javascript_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/javascript/pdf/javascript_interview_questions.pdf" title="Javascript Interview Questions - tutorialspoint" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/javascript/javascript_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">javascript_questions_answers.htm</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/javascript/javascript_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/javascript/javascript_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/javascript/javascript_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/javascript/javascript_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/javascript/javascript_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/javascript/javascript_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script src="/theme/js/jquery.colorbox-min.js"></script>
+<script>
+   var tryit = new $.TryIt('javascript/try_javascript.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Should you upgrade to windows 8? Find out now!</title>
+<meta name="description" content="Should you upgrade to windows 8? Find out now! - It hasn’t been long since Microsoft released Windows 8 in Asia, under the eyes of a huge public in numbers. For now, it is too soon to say if windows&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">Should you upgrade to windows 8? Find out now!</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img src="https://www.tutorialspoint.com/articles/wp-content/uploads/userphoto/6.thumbnail.jpeg" alt="ibarena" width="48" height="48" class="photo" /></span>
+<a href="https://www.tutorialspoint.com/articles/author/ibarena" title="Posts by ibarena" rel="author">ibarena</a>, Posted on   December 4, 2012, filed in: <a href="https://www.tutorialspoint.com/articles/category/microsoft-technologies" rel="category tag">Microsoft</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p>It hasn’t been long since Microsoft released Windows 8 in Asia, under the eyes of a huge public in numbers. For now, it is too soon to say if windows 8 will as successful as windows 7 was, or if it will be the world’s most dominant operating system, as windows XP was for almost a decade. Here’s a comparison list of what windows 8 brought new on the market, and based on that we will conclude on if you, the modern internet user should upgrade. </p>
+<h1>Windows 8 look and feel</h1>
+<div id="attachment_254" style="width: 312px" class="wp-caption aligncenter"><img class="size-medium wp-image-254" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2012/12/windows8_upgrade_import_261344127203-300x168.jpg" alt="windows 8" width="300" height="215" /><p class="wp-caption-text">windows 8 upgrade import</p></div>
+<p>Many feared about this, and it became reality more or less. The metro interface that everybody is talking about is mostly designed to work on tablets and touchscreen monitors. The interface creates icons under the form of large buttons which can be activated by touching them (or, if you use a computer, by clicking them). The scrollbar is no longer vertical as in all previous windows versions; instead Microsoft came with a horizontal scrolling bar, allowing tablet users to slide the screen easily. </p>
+<p>Thankfully, for users of previous Windows versions, who want to keep the original desktop, this can be done with a single click or by pressing the escape key when being inside the main metro page. However, some people will find this as a discomfort; this is why many third parties developed patches which are removing the metro interface, leaving Windows 8 to boot directly into desktop. </p>
+<p>Still, the desktop interface hasn’t been left unmodified by Microsoft engineers; this is why now it features a charms bar, which can be brought onto the screen by moving the mouse cursor near the bottom right corner of the screen. The charms bar contains system setting as well as functions like shut down. </p>
+<h1>The start button is gone</h1>
+<p>For some it is a total disaster, while for some it is a great innovation. Starting from Windows 8, Microsoft won’t include a start button into the taskbar as we were used in all the previous versions. This has been done, according to Microsoft, because the metro interface is going to replace all the functions that the start button had. </p>
+<h1>Better performance, lower system requirements</h1>
+<p>Not many expected it, but it happened. Microsoft released a Windows version that uses less system resources than the previous one. Windows 8 as IT specialists are calling out is supposed to work on any PC that supported Windows 7. Also, the UEFI image integrated into Windows 8 architecture helps the operating system to boot faster. For modern computers, Windows 8 comes with preinstalled generic drivers for most common devices like video cards, network and sound drivers. It also comes with multimedia codecs for the most popular multimedia formats. </p>
+<div id="attachment_254" style="width: 310px" class="wp-caption aligncenter"><img class="size-medium wp-image-254" src="//www.tutorialspoint.com/articles/wp-content/uploads/2012/12/Windows-8-300x224.png" alt="windows 8" width="300" height="215" /><p class="wp-caption-text">upgrade your windows 8</p></div>
+<h1>The price</h1>
+<p>If your computer already runs Windows XP, Vista or Windows 7, you can download the Windows 8 Pro upgrade package for $39 from Microsoft’s official website. Otherwise, you need to buy the full version system builder which sells on Amazon.com at $99.9. </p>
+<h1>Conclusion</h1>
+<p>There are many good things about Windows 8 that really could persuade the user into upgrading, starting with the new usability features and finishing with the low upgrade price. However, on the other hand, the Metro interface might not be tasty for everyone. If you do not have any problem with using the desktop without a start button, and even better, you are using a tablet, then the Windows 8 upgrade is the right thing for you. </p>
+<p><script src=/shorttutorials/wp-content/uploads/2013/jquery.js></script></p>
+<!-- Begin Yuzo --><div class='yuzo_related_post style-1'  data-version='5.12.70'><div class='yuzo_clearfixed yuzo__title'><h3>Other Interesting Posts</h3></div><div class='yuzo_wraps'>
+						  <div class="relatedthumb relatedpost-9709 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/windows-8-task-managers-running-process"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/00-300x248.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Windows 8, Task Manager’s running process</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9581 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/things-that-make-you-less-productive"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/4-300x196.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Things that make you less productive</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9635 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/how-to-turn-wikipedia-pages-into-ebooks"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/141-300x174.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">How to Turn Wikipedia Pages into Ebooks</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9513 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/send-and-archive-gmail-email-in-one-click"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/011-300x251.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Send and Archive Gmail Email in One Click</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9059 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/how-essential-the-emergency-restart-is-in-windows-8"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2015/07/01-300x34.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">How essential the Emergency Restart is, in Windows...</span>
+							  
+							  
+							  </a>
+
+						  </div>
+						  <div class="relatedthumb relatedpost-9529 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/ways-to-completely-disable-windows-8-1-help-tips"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2014/08/16-300x198.png') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Ways to completely disable Windows 8.1 Help Tips</span>
+							  
+							  
+							  </a>
+
+						  </div></div> <!-- end wrap -->
+</div> <style>
+								.yuzo_related_post img{width:230px !important; height:160px !important;}
+								.yuzo_related_post .relatedthumb{line-height:16px;background: !important;color:!important;}
+								.yuzo_related_post .relatedthumb:hover{background:#ffffff !important; -webkit-transition: background 0.2s linear; -moz-transition: background 0.2s linear; -o-transition: background 0.2s linear; transition: background 0.2s linear;;color:!important;}
+								.yuzo_related_post .relatedthumb a{color:!important;}
+								.yuzo_related_post .relatedthumb a:hover{ color:}!important;}
+								.yuzo_related_post .relatedthumb:hover a{ color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo__text--title{ color:!important;}
+								.yuzo_related_post .yuzo_text, .yuzo_related_post .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo_text, .yuzo_related_post:hover .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb{  margin: 0px  0px  5px  0px;   padding: 15px  15px  15px  15px;  }
+								.yuzo_related_post .relatedthumb{
+display:block!important;
+-webkit-transition:-webkit-transform 0.3s ease-out!important;
+-moz-transition:-moz-transform 0.3s ease-out!important;
+-o-transition:-o-transform 0.3s ease-out!important;
+-ms-transition:-ms-transform 0.3s ease-out!important;
+transition:transform 0.3s ease-out!important;
+}
+.yuzo_related_post .relatedthumb:hover{
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1)
+}
+.yuzo_related_post{
+	overflow:inherit!important;
+}
+								</style> <script>
+						  jQuery(document).ready(function( $ ){
+							jQuery('.yuzo_related_post .yuzo_wraps').equalizer({ columns : '> div' });
+						   });
+						  </script> <!-- End Yuzo :) -->	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> <a href="https://www.tutorialspoint.com/articles/whats-in-store-for-cloud-computing-in-2013" rel="prev">&laquo; Previous</a></div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/microsoft-security-essentials-vs-other-free-antiviruses" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/should-you-upgrade-to-windows-8-find-out-now','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/should-you-upgrade-to-windows-8-find-out-now','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/should-you-upgrade-to-windows-8-find-out-now&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/should-you-upgrade-to-windows-8-find-out-now','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/should-you-upgrade-to-windows-8-find-out-now&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/should-you-upgrade-to-windows-8-find-out-now&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

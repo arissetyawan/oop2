@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP PI Mock Test - TutorialsPoint</title>
+<meta name="description" content="SAP PI Mock Test - Learn SAP PI in simple and easy steps starting from Introduction, Installation Options, Netweaver PI Architecture, UI Tools, Home Page, System Landscape Directory, Communication, Securing Objects, Creating Objects, Modeling Scenarios, Design Objects, Display Design Objects, Integration Scenarios, File to File Scenario, Creating Service Interface, Creating Message Mapping, Creating Operation Mapping, Creating a Communication Channel, Creating Integrated Configuration, Connectivity, ccBPM Overview, ccBPM Configuration, Monitoring Integration Processes, Web Services." />
+<meta name="keywords" content="SAP PI, Tutorial, Learning, Introduction, Installation Options, Netweaver PI Architecture, UI Tools, Home Page, System Landscape Directory, Communication, Securing Objects, Creating Objects, Modeling Scenarios, Design Objects, Display Design Objects, Integration Scenarios, File to File Scenario, Creating Service Interface, Creating Message Mapping, Creating Operation Mapping, Creating a Communication Channel, Creating Integrated Configuration, Connectivity, ccBPM Overview, ccBPM Configuration, Monitoring Integration Processes, Web Services." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #017385 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #017385 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #017385 !important;}
+.submenu-item{ border-bottom: 2px solid #017385 !important; border-top: 2px solid #017385 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#017385; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_pi/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_pi/images/sap-pi-mini-logo.jpg" alt="SAP PI Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP PI Tutorial</li>
+<li><a href="/sap_pi/index.htm">SAP PI - Home</a></li>
+<li><a href="/sap_pi/sap_pi_introduction.htm">SAP PI - Introduction</a></li>
+<li><a href="/sap_pi/sap_pi_installation_options.htm">SAP PI - Installation Options</a></li>
+<li><a href="/sap_pi/sap_pi_netweaver_pi_architecture.htm">SAP PI - Netweaver PI Architecture</a></li>
+<li><a href="/sap_pi/sap_pi_ui_tools.htm">SAP PI - UI Tools</a></li>
+<li><a href="/sap_pi/sap_pi_home_page.htm">SAP PI - Home Page</a></li>
+<li><a href="/sap_pi/sap_pi_system_landscape_directory.htm">SAP PI - System Landscape Directory</a></li>
+<li><a href="/sap_pi/sap_pi_communication.htm">SAP PI - Communication</a></li>
+<li><a href="/sap_pi/sap_pi_securing_objects.htm">SAP PI - Securing Objects</a></li>
+<li><a href="/sap_pi/sap_pi_creating_objects.htm">SAP PI - Creating Objects</a></li>
+<li><a href="/sap_pi/sap_pi_modeling_scenarios.htm">SAP PI - Modeling Scenarios</a></li>
+<li><a href="/sap_pi/sap_pi_design_objects.htm">SAP PI - Design Objects</a></li>
+<li><a href="/sap_pi/sap_pi_display_design_objects.htm">SAP PI - Display Design Objects</a></li>
+<li><a href="/sap_pi/sap_pi_integration_scenarios.htm">SAP PI - Integration Scenarios</a></li>
+<li><a href="/sap_pi/sap_pi_file_to_file_scenario.htm">SAP PI - File to File Scenario</a></li>
+<li><a href="/sap_pi/sap_pi_creating_service_interface.htm">SAP PI - Creating Service Interface</a></li>
+<li><a href="/sap_pi/sap_pi_creating_message_mapping.htm">SAP PI - Creating Message Mapping</a></li>
+<li><a href="/sap_pi/sap_pi_creating_operation_mapping.htm">Creating Operation Mapping</a></li>
+<li><a href="/sap_pi/sap_pi_creating_communication_channel.htm">Creating a Communication Channel</a></li>
+<li><a href="/sap_pi/sap_pi_creating_integrated_configuration.htm">Creating Integrated Configuration</a></li>
+<li><a href="/sap_pi/sap_pi_connectivity.htm">SAP PI - Connectivity</a></li>
+<li><a href="/sap_pi/sap_pi_ccbpm_overview.htm">SAP PI - ccBPM Overview</a></li>
+<li><a href="/sap_pi/sap_pi_ccbpm_configuration.htm">SAP PI - ccBPM Configuration</a></li>
+<li><a href="/sap_pi/sap_pi_monitoring_integration_processes.htm">Monitoring Integration Processes</a></li>
+<li><a href="/sap_pi/sap_pi_web_services.htm">SAP PI - Web Services</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP PI Useful Resources</li>
+<li><a href="/sap_pi/sap_pi_questions_answers.htm">SAP PI - Questions Answers</a></li>
+<li><a href="/sap_pi/sap_pi_quick_guide.htm">SAP PI - Quick Guide</a></li>
+<li><a href="/sap_pi/sap_pi_useful_resources.htm">SAP PI - Useful Resources</a></li>
+<li><a href="/sap_pi/sap_pi_discussion.htm">SAP PI - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP PI Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_pi/sap_pi_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_pi/sap_pi_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>SAP PI</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/sap_pi/sap_pi_mock_test.htm?min=1&max=12"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/sap_pi/sap_pi_mock_test.htm?min=13&max=24"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/sap_pi/sap_pi_mock_test.htm?min=25&max=37"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/sap_pi/sap_pi_mock_test.htm?min=38&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>SAP PI Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which of the following is not a capability of SAP PI system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Connectivity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Routing</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Mapping</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - ETL</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p><b>Connectivity</b></p>
+<p>Using SAP PI, you can connect different applications and systems that has different technical way of communication. It provides you with variety of adapters that allows you to connect applications based on different protocols like HTTPS or Remote Function call RFC.</p>
+<p><b>Routing</b></p>
+<p>Routing define the rules for flow of messages between different systems at run time.</p>
+<p><b>Mapping</b></p>
+<p>As SAP PI is used to connect different applications or systems in a distributed environment that can be set up between different companies so there is a possibility that structure of data exchange between two components differs from each other.</p>
+<p>Mapping determines structure of data in a source system to structure of data in target system and conversion rules that are applied on data between source and target system.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - In SAP PI installation, which of the following installation option provides run time engines-Integration Engine, Business Process Engine, and Advanced Adapter Engine for PI design and configuration?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Advance Adapter Engine Extended</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Dual Usage type</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Stand alone</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p><b>Dual Usage Type</b></p>
+<p>This installation is based on ABAP and Java and provide tools for designing and configuring integration content and also these run time engines &minus;</p>
+<ul class="list">
+<li>Integration Engine</li>
+<li>Business Process Engine</li>
+<li>Advanced Adapter Engine</li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - In SAP PI architecture, which of the following is used for routing and mapping and provides central integration server services and mapping runtime for source and target system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Runtime Workbench</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Business Process Engine</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Integration Engine</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Central Advanced Adapter Engine AAE</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p><b>Integration Engine</b></p>
+<p>This engine is used for routing and mapping and provides central integration server services. If source structure is different from target structure, integration engine calls mapping runtime as shown in below pic to convert source structure to target structure.</p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - In latest releases when SAP PI moved to single stack system, new engine is known as Advanced Adapter Engine AAE contains?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - most of the adapters are Java stack and only two adapters are based on ABAP stack</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - most of the adapters are ABAP stack and only two adapters are based on Java stack</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - All are also moved to Java stack adapters.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All are also moved to ABAP stack adapters.</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>In latest releases when SAP PI moved to single stack system, these two adapters are also moved to Java stack adapters and new engine is known as Advanced Adapter Engine AAE.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Which of the following contain objects like mapping, interfaces and process definitions in PI system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Services Registry</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Enterprise Service Repository</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - System Landscape Directory</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Integration Directory</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Enterprise Service Repository is used to store design time repository objects like mapping, interfaces and process definitions in PI system.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - In SAP PI system, which of the following acknowledgement type is available for asynchronous communication?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - ABAP Acknowledgement</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Java Acknowledgement</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - HTTP Acknowledgement</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - System Acknowledgement</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : D</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - In latest releases of SAP PI, ABAP stack components are modified to work on Java stack so SAP PI needs only Java stack to run and is called single stack system?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p><b>Java Stack Adapters</b> &minus;</p>
+<p>RFC adapter, SAP Business Connector adapter, file/FTP adapter, JDBC adapter, JMS adapter, SOAP adapter, Marketplace Adapter, Mail adapter, RNIF adapter, CIDX adapter</p>
+<p><b>ABAP Stack Adapters</b> &minus;</p>
+<p>IDOC and HTTP adapter</p>
+<p>In latest releases when SAP PI moved to single stack system, these two adapters are also moved to Java stack adapters and new engine is known as Advanced Adapter Engine AAE.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - In SAP PI system, which of the following conversion parameters are available in the SOAP adapter?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - File content Conversion</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Sync/Asynch bridge</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Keep Headers</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : C</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Which if the following is not an advantage of using Enterprise service repository in PI system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Mapping of messages as per sender and receiver data structure</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Fast implementation based on pre-configured content that supports industry standards</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - You can design Interface objects, mapping objects and integration processes.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Additional configuration options for the Advanced Adapter Engine Extended</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>In SAP PI, Enterprise Service Repository is used to design and create objects to be used in integration scenario. You can design Interface objects, mapping objects and integration processes.</p>
+<p><b>Interface Objects</b> &minus; Service Interface, Data type and message type</p>
+<p><b>Mapping Objects</b> &minus; Mapping of messages as per sender and receiver data structure</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following is not a UI tool under Enterprise Service Repository ESR in PI system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Enterprise Service Builder</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Web UI</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Service Registry</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Integration Builder</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Under Enterprise Service Repository, you can see different UI tools- Enterprise Service Builder and Web
+UI and Service Registry.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - In ES Repository web based interface, you can</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Search for service interface, data types, etc.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Subscribe for notifications</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Manage lifecycle status of service interfaces, data types, etc.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : D</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - In SAP PI integration directory, which of the following configuration is used to determine inbound interface to which message to be sent and interface mapping for processing the message?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Sender Agreement</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Receiver Determination</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Interface Determination</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Receiver agreement</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>In Integration directory, you can make four types of configuration &minus;</p>
+<ul class="list">
+<li><p>Sender Agreement to determine how the message is transformed by Integration server.</p></li>
+<li><p>Receiver Determination is used to determine information of receiver to whom message to be sent.</p></li>
+<li><p>Interface Determination is used to determine inbound interface to which message to be sent and interface mapping for processing the message.</p></li>
+<li><p>Receiver agreement define how message is transformed and to be processed by receiver.</p></li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>C</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/sap_pi/sap_pi_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/sap_pi/pdf/sap_pi_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_pi/sap_pi_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">sap_pi_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_pi/sap_pi_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_pi/sap_pi_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_pi/sap_pi_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_pi/sap_pi_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_pi/sap_pi_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_pi/sap_pi_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

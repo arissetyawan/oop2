@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>C# Strings</title>
+<meta name="description" content="C# Strings - Learn C# in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<meta name="keywords" content="C#, Tutorial, Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #FE9400 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #FE9400 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #FE9400 !important;}
+.submenu-item{ border-bottom: 2px solid #FE9400 !important; border-top: 2px solid #FE9400 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#FE9400; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/csharp/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   vertical-align:middle !important;
+   text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/csharp/images/csharp-mini-logo.jpg" alt="Csharp Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/csharp_online_training/index.asp" target="_blank"><img src="/csharp/images/csharp-video-tutorials.jpg" alt="C# Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Basic Tutorial</li>
+<li><a href="/csharp/index.htm">C# - Home</a></li>
+<li><a href="/csharp/csharp_overview.htm">C# - Overview</a></li>
+<li><a href="/csharp/csharp_environment_setup.htm">C# - Environment</a></li>
+<li><a href="/csharp/csharp_program_structure.htm">C# - Program Structure</a></li>
+<li><a href="/csharp/csharp_basic_syntax.htm">C# - Basic Syntax</a></li>
+<li><a href="/csharp/csharp_data_types.htm">C# - Data Types</a></li>
+<li><a href="/csharp/csharp_type_conversion.htm">C# - Type Conversion</a></li>
+<li><a href="/csharp/csharp_variables.htm">C# - Variables</a></li>
+<li><a href="/csharp/csharp_constants.htm">C# - Constants</a></li>
+<li><a href="/csharp/csharp_operators.htm">C# - Operators</a></li>
+<li><a href="/csharp/csharp_decision_making.htm">C# - Decision Making</a></li>
+<li><a href="/csharp/csharp_loops.htm">C# - Loops</a></li>
+<li><a href="/csharp/csharp_encapsulation.htm">C# - Encapsulation</a></li>
+<li><a href="/csharp/csharp_methods.htm">C# -  Methods</a></li>
+<li><a href="/csharp/csharp_nullables.htm">C# -  Nullables</a></li>
+<li><a href="/csharp/csharp_arrays.htm">C# - Arrays</a></li>
+<li><a href="/csharp/csharp_strings.htm">C# - Strings</a></li>
+<li><a href="/csharp/csharp_struct.htm">C# - Structure</a></li>
+<li><a href="/csharp/csharp_enums.htm">C# - Enums</a></li>
+<li><a href="/csharp/csharp_classes.htm">C# - Classes</a></li>
+<li><a href="/csharp/csharp_inheritance.htm">C# - Inheritance</a></li>
+<li><a href="/csharp/csharp_polymorphism.htm">C# - Polymorphism</a></li>
+<li><a href="/csharp/csharp_operator_overloading.htm">C# - Operator Overloading</a></li>
+<li><a href="/csharp/csharp_interfaces.htm">C# - Interfaces</a></li>
+<li><a href="/csharp/csharp_namespaces.htm">C# - Namespaces</a></li>
+<li><a href="/csharp/csharp_preprocessor_directives.htm">C# - Preprocessor Directives</a></li>
+<li><a href="/csharp/csharp_regular_expressions.htm">C# - Regular Expressions</a></li>
+<li><a href="/csharp/csharp_exception_handling.htm">C# - Exception Handling</a></li>
+<li><a href="/csharp/csharp_file_io.htm">C# - File I/O</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Advanced Tutorial</li>
+<li><a href="/csharp/csharp_attributes.htm">C# - Attributes</a></li>
+<li><a href="/csharp/csharp_reflection.htm">C# - Reflection</a></li>
+<li><a href="/csharp/csharp_properties.htm">C# - Properties</a></li>
+<li><a href="/csharp/csharp_indexers.htm">C# - Indexers</a></li>
+<li><a href="/csharp/csharp_delegates.htm">C# - Delegates</a></li>
+<li><a href="/csharp/csharp_events.htm">C# - Events</a></li>
+<li><a href="/csharp/csharp_collections.htm">C# - Collections</a></li>
+<li><a href="/csharp/csharp_generics.htm">C# - Generics</a></li>
+<li><a href="/csharp/csharp_anonymous_methods.htm">C# - Anonymous Methods</a></li>
+<li><a href="/csharp/csharp_unsafe_codes.htm">C# - Unsafe Codes</a></li>
+<li><a href="/csharp/csharp_multithreading.htm">C# - Multithreading</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Useful Resources</li>
+<li><a href="/csharp/csharp_questions_answers.htm">C# - Questions and Answers</a></li>
+<li><a href="/csharp/csharp_quick_guide.htm">C# - Quick Guide</a></li>
+<li><a href="/csharp/csharp_useful_resources.htm">C# - Useful Resources</a></li>
+<li><a href="/csharp/csharp_discussion.htm">C# - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>C# - Strings</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr/>
+<div class="pre-btn">
+<a href="/csharp/csharp_arrays.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_struct.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In C#, you can use strings as array of characters, However, more common practice is to use the <b>string</b> keyword to declare a string variable. The string keyword is an alias for the <b>System.String</b> class.</p>
+<h2>Creating a String Object</h2>
+<p>You can create string object using one of the following methods &minus;</p>
+<ul class="list">
+<li><p>By assigning a string literal to a String variable</p></li>
+<li><p>By using a String class constructor</p></li>
+<li><p>By using the string concatenation operator (+)</p></li>
+<li><p>By retrieving a property or calling a method that returns a string</p></li>
+<li><p>By calling a formatting method to convert a value or an object to its string representation</p></li>
+</ul>
+<p>The following example demonstrates this &minus;</p>
+<pre class="prettyprint notranslate tryit">
+using System;
+
+namespace StringApplication {
+
+   class Program {
+   
+      static void Main(string[] args) {
+         //from string literal and string concatenation
+         string fname, lname;
+         fname = "Rowan";
+         lname = "Atkinson";
+			
+         char []letters= { 'H', 'e', 'l', 'l','o' };
+         string [] sarray={ "Hello", "From", "Tutorials", "Point" };
+         
+         string fullname = fname + lname;
+         Console.WriteLine("Full Name: {0}", fullname);
+         
+         //by using string constructor { 'H', 'e', 'l', 'l','o' };
+         string greetings = new string(letters);
+         Console.WriteLine("Greetings: {0}", greetings);
+         
+         //methods returning string { "Hello", "From", "Tutorials", "Point" };
+         string message = String.Join(" ", sarray);
+         Console.WriteLine("Message: {0}", message);
+         
+         //formatting method to convert a value
+         DateTime waiting = new DateTime(2012, 10, 10, 17, 58, 1);
+         string chat = String.Format("Message sent at {0:t} on {0:D}", waiting);
+         Console.WriteLine("Message: {0}", chat);
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Full Name: RowanAtkinson
+Greetings: Hello
+Message: Hello From Tutorials Point
+Message: Message sent at 5:58 PM on Wednesday, October 10, 2012
+</pre>
+<h2>Properties of the String Class</h2>
+<p>The String class has the following two properties &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Property &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>Chars</b></p>
+<p>Gets the <i>Char</i> object at a specified position in the current <i>String</i> object.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>Length</b></p>
+<p>Gets the number of characters in the current String object.</p></td>
+</tr>
+</table>
+<h2>Methods of the String Class</h2>
+<p>The String class has numerous methods that help you in working with the string objects. The following table provides some of the most commonly used methods &minus;</p>
+<section class="toggle">
+<label>Given below is the list of methods of the String class.</label>
+<div class="toggle-content">
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>public static int Compare(string strA, string strB)</b></p>
+<p>Compares two specified string objects and returns an integer that indicates their relative position in the sort order.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>public static int Compare(string strA, string strB, bool ignoreCase )</b></p>
+<p>Compares two specified string objects and returns an integer that indicates their relative position in the sort order. However, it ignores case if the Boolean parameter is true.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>public static string Concat(string str0, string str1)</b></p>
+<p>Concatenates two string objects.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>public static string Concat(string str0, string str1, string str2)</b></p>
+<p>Concatenates three string objects.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>public static string Concat(string str0, string str1, string str2, string str3)</b></p>
+<p>Concatenates four string objects.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>public bool Contains(string value)</b></p>
+<p>Returns a value indicating whether the specified String object occurs within this string.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>public static string Copy(string str)</b></p>
+<p>Creates a new String object with the same value as the specified string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>public void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count)</b></p>
+<p>Copies a specified number of characters from a specified position of the String object to a specified position in an array of Unicode characters.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>public bool EndsWith(string value)</b></p>
+<p>Determines whether the end of the string object matches the specified string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>public bool Equals(string value)</b></p>
+<p>Determines whether the current String object and the specified String object have the same value.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>public static bool Equals(string a, string b)</b></p>
+<p>Determines whether two specified String objects have the same value.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><p><b>public static string Format(string format, Object arg0)</b></p>
+<p>Replaces one or more format items in a specified string with the string representation of a specified object.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><p><b>public int IndexOf(char value)</b></p>
+<p>Returns the zero-based index of the first occurrence of the specified Unicode character in the current string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td><p><b>public int IndexOf(string value)</b></p>
+<p>Returns the zero-based index of the first occurrence of the specified string in this instance.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><p><b>public int IndexOf(char value, int startIndex)</b></p>
+<p>Returns the zero-based index of the first occurrence of the specified Unicode character in this string, starting search at the specified character position.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td><p><b>public int IndexOf(string value, int startIndex)</b></p>
+<p>Returns the zero-based index of the first occurrence of the specified string in this instance, starting search at the specified character position.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">17</td>
+<td><p><b>public int IndexOfAny(char[] anyOf)</b></p>
+<p>Returns the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">18</td>
+<td><p><b>public int IndexOfAny(char[] anyOf, int startIndex)</b></p>
+<p>Returns the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters, starting search at the specified character position.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">19</td>
+<td><p><b>public string Insert(int startIndex, string value)</b></p>
+<p>Returns a new string in which a specified string is inserted at a specified index position in the current string object.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">20</td>
+<td><p><b>public static bool IsNullOrEmpty(string value)</b></p>
+<p>Indicates whether the specified string is null or an Empty string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">21</td>
+<td><p><b>public static string Join(string separator, params string[] value)</b></p>
+<p>Concatenates all the elements of a string array, using the specified separator between each element.</p>
+</td></tr>
+<tr>
+<td class="ts">22</td>
+<td><p><b>public static string Join(string separator, string[] value, int startIndex, int count)</b></p>
+<p>Concatenates the specified elements of a string array, using the specified separator between each element.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">23</td>
+<td><p><b>public int LastIndexOf(char value)</b></p>
+<p>Returns the zero-based index position of the last occurrence of the specified Unicode character within the current string object.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">24</td>
+<td><p><b>public int LastIndexOf(string value)</b></p>
+<p>Returns the zero-based index position of the last occurrence of a specified string within the current string object.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">25</td>
+<td><p><b>public string Remove(int startIndex)</b></p>
+<p>Removes all the characters in the current instance, beginning at a specified position and continuing through the last position, and returns the string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">26</td>
+<td><p><b>public string Remove(int startIndex, int count)</b></p>
+<p>Removes the specified number of characters in the current string beginning at a specified position and returns the string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">27</td>
+<td><p><b>public string Replace(char oldChar, char newChar)</b></p>
+<p>Replaces all occurrences of a specified Unicode character in the current string object with the specified Unicode character and returns the new string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">28</td>
+<td><p><b>public string Replace(string oldValue, string newValue)</b></p>
+<p>Replaces all occurrences of a specified string in the current string object with the specified string and returns the new string.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">29</td>
+<td><p><b>public string[] Split(params char[] separator)</b></p>
+<p>Returns a string array that contains the substrings in the current string object, delimited by elements of a specified Unicode character array.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">30</td>
+<td><p><b>public string[] Split(char[] separator, int count)</b></p>
+<p>Returns a string array that contains the substrings in the current string object, delimited by elements of a specified Unicode character array. The int parameter specifies the maximum number of substrings to return.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">31</td>
+<td><p><b>public bool StartsWith(string value)</b></p>
+<p>Determines whether the beginning of this string instance matches the specified string.</td>
+</tr>
+<tr>
+<td class="ts">32</td>
+<td><p><b>public char[] ToCharArray()</b></p>
+<p>Returns a Unicode character array with all the characters in the current string object.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">33</td>
+<td><p><b>public char[] ToCharArray(int startIndex, int length)</b></p>
+<p>Returns a Unicode character array with all the characters in the current string object, starting from the specified index and up to the specified length.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">34</td>
+<td><p><b>public string ToLower()</b></p>
+<p>Returns a copy of this string converted to lowercase.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">35</td>
+<td><p><b>public string ToUpper()</b></p>
+<p>Returns a copy of this string converted to uppercase.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">36</td>
+<td><p><b>public string Trim()</b></p>
+<p>Removes all leading and trailing white-space characters from the current String object.</p>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<p>You can visit MSDN library for the complete list of methods and String class constructors.</p>
+<h2>Examples</h2>
+<p>The following example demonstrates some of the methods mentioned above &minus;</p>
+<h3>Comparing Strings</h3>
+<pre class="prettyprint notranslate tryit">
+using System;
+
+namespace StringApplication {
+
+   class StringProg {
+   
+      static void Main(string[] args) {
+         string str1 = "This is test";
+         string str2 = "This is text";
+
+         if (String.Compare(str1, str2) == 0) {
+            Console.WriteLine(str1 + " and " + str2 +  " are equal.");
+         } else {
+            Console.WriteLine(str1 + " and " + str2 + " are not equal.");
+         }
+         Console.ReadKey() ;
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+This is test and This is text are not equal.
+</pre>
+<h3>String Contains String</h3>
+<pre class="prettyprint notranslate tryit">
+using System;
+
+namespace StringApplication {
+
+   class StringProg {
+   
+      static void Main(string[] args) {
+         string str = "This is test";
+         
+         if (str.Contains("test")) {
+            Console.WriteLine("The sequence 'test' was found.");
+         }
+         Console.ReadKey() ;
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+The sequence 'test' was found.
+</pre>
+<h3>Getting a Substring</h3>
+<pre class="prettyprint notranslate tryit">
+using System;
+
+namespace StringApplication {
+
+   class StringProg {
+   
+      static void Main(string[] args) {
+         string str = "Last night I dreamt of San Pedro";
+         Console.WriteLine(str);
+         string substr = str.Substring(23);
+         Console.WriteLine(substr);
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+San Pedro
+</pre>
+<h3>Joining Strings</h3>
+<pre class="prettyprint notranslate tryit">
+using System;
+
+namespace StringApplication {
+
+   class StringProg {
+   
+      static void Main(string[] args) {
+         string[] starray = new string[]{"Down the way nights are dark",
+            "And the sun shines daily on the mountain top",
+            "I took a trip on a sailing ship",
+            "And when I reached Jamaica",
+            "I made a stop"};
+
+         string str = String.Join("\n", starray);
+         Console.WriteLine(str);
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Down the way nights are dark
+And the sun shines daily on the mountain top
+I took a trip on a sailing ship
+And when I reached Jamaica
+I made a stop
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_arrays.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_struct.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/csharp/csharp_strings.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_strings.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_strings.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/csharp/csharp_strings.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_strings.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_strings.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

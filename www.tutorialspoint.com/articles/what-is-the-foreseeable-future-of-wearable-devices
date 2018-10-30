@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>What is the foreseeable future of WEARABLE DEVICES?</title>
+<meta name="description" content="What is the foreseeable future of WEARABLE DEVICES? - One of the most electrifying fields in consumer technology is 'wearable devices.' Indeed 2014 was dubbed as the 'Year of Wearable Technology;' and by 2018, the technology is expected to&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">What is the foreseeable future of WEARABLE DEVICES?</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img src="https://www.tutorialspoint.com/articles/wp-content/uploads/userphoto/2722.thumbnail.jpg" alt="Payal Bhatnagar" width="29" height="48" class="photo" /></span>
+<a href="https://www.tutorialspoint.com/articles/author/payal" title="Posts by Payal Bhatnagar" rel="author">Payal Bhatnagar</a>, Posted on   September 18, 2017, filed in: <a href="https://www.tutorialspoint.com/articles/category/health" rel="category tag">Health</a>, <a href="https://www.tutorialspoint.com/articles/category/technology-news" rel="category tag">Tech News</a>, <a href="https://www.tutorialspoint.com/articles/category/technology" rel="category tag">Technology</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p style="text-align: justify;">One of the most electrifying fields in consumer technology is &#8216;wearable devices.&#8217; Indeed 2014 was dubbed as the &#8216;Year of Wearable Technology;&#8217; and by 2018, the technology is expected to peg at $27 billion.</p>
+<p>Their existence began way back in the 17th century with Abacus Ring, 1780 Pedometer to Exoskeleton in 1965, moving towards digital watch in 1972, bluetooth headset in 2000, GoPro in 2004, Pebble in 2012, Google Glass and fitness bands in 2013, Google Cardboard in 2014, and Spectacles in 2016.</p>
+<p><strong>What is a wearable device?</strong></p>
+<p>A technology worn on the human body is known as a wearable device or wearable gadgets or just &#8216;wearables.&#8217; These collect information about a person&#8217;s health/fitness, sometime emotions too, and deliver this information to the individual. Some wearables include the Apple iWatch, Google Glass, Samsung Gear VR,  fitness tracking devices like the pedometer and the fitbit (a watch that counts/captures the calories burnt, body temperature, heart rate) etc. Users can backup their data and track locations; make phone calls through their watches, make a calendar appointment, dim the lights etc. These devices push one towards adopting a healthy lifestyle. Apart from healthcare systems using wearables (remote patient monitoring systems), they are also used in engineering and construction facilities for checking potential hazards, whereas police use it as a part of body cameras. There are also bike helmets such as Livall&#8217;s MT1 which have turn signals, a heart rate monitor that tracks the effort undertaken, speaks for directions and accelerometers to check on the speed, check incoming accidents and make an emergency call in the case of one. Another one called Lumo Lift checks bad posture and vibrates as a signal to change it. Omron&#8217;s smart watch (Project Zero) lets one check the blood pressure and Motio HW detects sleep apnea metrics. Nike&#8217;s AirMag shoes are available for people with Parkinson&#8217;s. <img class="size-full wp-image-26273 alignright" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/08/wearables-AR1.png" alt="" width="200" height="200" /></p>
+<p><strong>The statistics:</strong></p>
+<p>CNBC reports that after smart phones, it will be the wearables which will be sold the most in the future. The wearables industry expects that 411 million devices worth $34 billion will be sold by 2020 (forbes.com). The devices dominating seem to be fitness trackers and smart watches. Further by around the same time (2020), 96 million VR headsets will be sold with HTC Vive, PlayStation VR and Oculus Rift dominating the industry; while the AR genre being $1 billion by 2017 with Microsoft HoloLens Headset and Google Glass dominating the genre. A total of 24 million AR and VR devices would be sold by 2018.</p>
+<p><strong>The growth:</strong></p>
+<p>Many people tend to leave their fitbits at home due to less battery life as well as the problem of data integration. However, alternative sources of power are being worked at; and there are a few places where wearables promise to be exciting. They are:</p>
+<p><strong>Data points:</strong> Apart from the already existing aspects checked by wearables, the probability of them checking on glucose levels and cholesterol could be made possible.</p>
+<p><strong>Data resolution:</strong> As much as the data is accurate, the resolution could be made higher, for e.g. instead of checking heart beats every few minutes, it could be better with every heart beat being sensed.</p>
+<p><strong>Size:</strong> Makers of wearables such as AiQ Clothing, OMsignal and Hexoskin are looking towards creating biometric garments that track the body vital statistics. Innovations such as thin films in jewelry which track one&#8217;s and work patterns could be in line too; eg. Cuff and Misfit are already experimenting with posing a personalized approach to wearables.</p>
+<p><strong>Power:</strong> Companies are trying to associate wearables with alternate power supplies such as Peltier Ring by Sean Hodgins that uses body heat to power a ring&#8217;s LED lights; or Tommy Hilfiger&#8217;s clothing with solar cells to charge devices such as solar jackets for charging phones.</p>
+<p><strong>Permissions and sentient:</strong> Instead of being disturbed round the clock through ads, it is highly possible that wearables will come with the technology of permission based settings &#8211; to set the times of when people can/cannot be disturbed.</p>
+<p><strong>Multi-point:</strong> With people using smart phones and wearables, technology will soon be able to gather data from all these sources and provide a holistic view of the way the individual&#8217;s human body works. Wearables may provide a seamless experience without even having to tap any button, and just make use of sensors in the body to enter one&#8217;s house or even check hydration levels, or begin the cooling or heating requirements in the room after checking the body temperature etc. <img class="size-full wp-image-26274 alignright" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/08/wearables-AR2.png" alt="" width="199" height="199" /></p>
+<p><strong>The future:</strong></p>
+<p>Wearables offer convenience &#8211; from being completely hands off with the help of a blue tooth or a smart watch, or controlling speakers through Amazon Echo, or controlling home settings via Google Home.</p>
+<p>Wearables may just be more desirable and useful in the near future, chiefly in the fitness and healthcare sector. Apart from these sectors, some other industries which will see a growth are media and entertainment. Wearables might have the capabilities to combine social media updates, video games can become more engaging along with advertising targeted towards specific audience. Further, retail experiences can be enhanced with higher customer service and loyalty, and promotional spending to improve the shopping experience. Predictive analytics and gamification technology must go beyond numbers, be able to provide actionable recommendations (when and how to take actions) as per human behavior, and provide actionable insights and suggestions such as  improved preventive care and patient satisfaction and a better lifestyle overall.</p>
+<p>The future of wearables is also dependent on the data they collect. People in the next generation of wearables will need this data to make sense; for e.g. computational biology models are being applied to indicate the actions of a human body and what it is trying to convey. Jawbone, a fitness and health tracker manufacturer tracks the sleeping cycle and uses the data to improve upon sleep and overall health through Up3 band. Other companies such as Fitbit, Intel&#8217;s Basis, Google Health, Microsoft Health and Apple Health are also joining in to collect, collate and improve with data.</p>
+<blockquote>
+<p style="text-align: justify;"><em>Wearable technology would essentially mean smart watches to smart jewelry to smart clothing in the near future. Wearables is a young market, and success will be of those whose products customers find more appealing and authoritarian &#8211; its future is yet to evolve, explored and utilized.</em></p>
+</blockquote>
+<!-- Begin Yuzo --><div class='yuzo_related_post style-1'  data-version='5.12.70'>
+</div>   <!-- End Yuzo :) -->	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> <a href="https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone" rel="prev">&laquo; Previous</a></div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/red-hat-updates-openshift-container-platform-with-new-service-catalog" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

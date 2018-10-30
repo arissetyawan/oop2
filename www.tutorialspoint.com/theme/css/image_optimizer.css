@@ -1,0 +1,145 @@
+@font-face { font-family: 'FontAwesome'; src: url('../../fonts/fontawesome-webfont.eot?v=4.3.0'); src: url('../../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg'); font-weight: normal; font-style: normal; }
+body { margin:0px; padding:0px 0px; font-family:'Ubuntu',sans-serif; }
+.whtboard { border-left:1px solid #ccc; height:17px; color:#000; font-size:13px; float:left; margin:16px 5px 0px 5px; padding:6px 0px 0px 9px; text-transform:uppercase; font-weight:bold; letter-spacing:3px;}
+.panel-with-icon { padding-left:22px!important; }
+.wrap { width:100%; margin:0px; padding:0px; }
+.wrapLoader { width:100%; margin:0; /*height:550px;*/ position:absolute; background-color:transparent; opacity:.95; z-index:1000; display:none; }
+/* css of top navigation */
+.logo { float:left; margin:-6px 0 0; padding:0px 0px 0px 20px; }
+
+/*  fontawesome css */
+.fa-upload:before { content:"\f093"; font-family:'FontAwesome'; font-size:100%; font-style:normal; }
+.fa-download:before { content:"\f019"; font-family:'FontAwesome'; font-size:100%; font-style:normal; }
+.fa-code:before { content:"\f121"; font-family:'FontAwesome'; font-style:normal; font-size:100%; }
+.fa-arrow-down:before { content:"\f063"; font-family:'Fontawesome'; font-weight:normal; font-style:normal; }
+.fa-arrows-v:before { content:"\f07d"; font-family:'Fontawesome'; font-weight:normal; font-style:normal; }
+.fa-desktop:before { content:"\f108"; font-family:'FontAwesome'; font-style:normal; font-size:80%; }
+.fa-file-image-o:before { content: "\f1c5"; font-family:'FontAwesome'; font-style:normal; font-size:100%; }
+.icon-external-link:before { content:"\f08e"; font-family:'FontAwesome'; font-style:normal; font-size:100%; }
+.clear { clear:both; }
+.menu-text a { text-decoration:none; color:#424242;}  
+/* end of fontawesome css */
+ 
+/* css for optimize */
+.opt-img-bg { padding:10px; margin:0px 0px 10px 0px; } 
+.opt-img-bg h2 {font-size:18px; color:#444; font-weight:bold; margin:-2px -3px 6px -3px; padding:10px 0px 10px 0px;}
+.opt-img-top { /*width:85%;*/ margin:10px auto 0px auto; padding:0px; position:relative; z-index:999; }
+.opt-img-top h1 { font-size:26px; color:#424242; text-align:left; font-weight:bold; padding:0px 0px 20px 0px; margin:0px; }
+.opt-img-top img { width:100%; padding:0px; margin:0px; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; -khtml-border-radius:4px; border:none; }
+.opt-img-top .cola { width:31.3%; float:left; text-align:center; margin:10px 0px; padding:10px; border-right:1px dashed #ccc; }
+.opt-img-top h6 { font-size:20px!important; font-weight:bold; line-height:18px!important; margin:0px; padding:0px 15px 10px 10px; }
+.opt-img-top p { font-size:13.5px!important; font-weight:normal; line-height:20px!important; margin:0px; padding:0px; }
+.op_title { font-size:32px; color:#fff; text-align:center; text-shadow:none; }
+.opt-down {background:#eee; border-radius: 60px; text-align: center; padding: 13px 23px; font-size: 210%; position: relative; bottom:131px; margin: 0px auto; left:0px; z-index:99; }
+.home-intro p { display:block!important; max-width:100%!important; font-size:14px!important; color:#fff; text-align:center; }
+.imop_bg { background:#fff url(/images/upload-bg-optim.png) no-repeat 49.8% 5%; height:220px; text-align:center; border:2px dashed #B5B5B5; padding:0px; margin:0px auto 0px auto; vertical-align:middle; border-radius:10px; -moz-border-radius:10px; }
+.imop_bg:hover { opacity:.7; cursor:pointer; }
+.imop_bg div { font-family:'Oswald', sans-serif; color:#444; font-size:38px; font-weight:bold; text-align:center; padding:0px 0px 0px 0px; margin:0px; vertical-align:middle; position:relative; top:19px; height:2px; }
+.imop_bg div span { font-family:'Ubuntu',sans-serif; font-size:17px; font-weight:normal; text-align:center; padding:5px; margin:0px; position:relative; top:-27px }
+.imop_bg div .max-size { font-family:'Ubuntu',sans-serif; font-size:15px; font-weight:normal; margin:0px; padding:0px; top:-29px; }
+#fileUpload { opacity:0; width:100%; background-color:#000; margin:-92px 0px 0px 0px; padding:101px 0px; position:static; top:0px; z-index:9; cursor:pointer; left:11px; right:0px; }
+#east, #south{ display:none; }
+.wrapLoader{width:100%;margin:0;height:5500px;position:absolute;background-color:#eee;opacity:.95;z-index:1000;display:none}
+.imgLoader{margin:0 auto;position:fixed;top:50%;left:42%} 
+/* end of css for optimize */ 
+table { width:100%; text-align:center; margin:0px; padding:2px; }
+table tr th { background:#628C6F; color:#fff; padding:9px 8px; margin:0px; font-weight:bold; border-right:1px solid #fff; }
+table tr th:last-child { border-right:0px solid #fff; } 
+table tr td { padding:4px; margin:0px; font-weight: normal; border:1px solid #ccc; }
+table tr td img { width:110px; height:75px; border:1px solid #fff; padding:2px; }
+.tagline { font-family:'Bad Script', cursive; font-size:38px; text-align:center; font-weight:bold; margin:0px; padding:10px 0px 0px 0px; position:relative; z-index:999; } 
+.simple-ad { text-align:right; background-color:#5d5d5d; padding:10px 20px 10px 0px; height:50px; margin:0px; }
+.simple-ad img { width:25px; height:25px; margin:0px 2px 0px 2px; padding:0px; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; -khtml-border-radius:4px; border:none; }
+.simple-ad ul { float:left; margin:0px; padding:18px 0px 0px 20px; }
+.simple-ad ul li { float:left; list-style:none; color:#fff; font-size:14px; border-right:1px solid #fafafa; padding:0px 10px; margin:0px; }
+.simple-ad ul li a{ color:#fff; text-decoration:none; }
+.simple-ad div span { color:#fff; font-size:14px; padding:0px 5px 0px 4px; position:relative; top:-7px; }
+.simple-ad .cprght { float:left; font-size:14px; color:#fff; text-align:center; width:50%; padding:15px 0px 0px 0px; }
+/* css for upload images output */
+.desc-output { width:100%; margin:10px 0px 0px 0px; padding:0px; border:1px solid #d6d6d6; }
+.img-output-main { width:80%; float:left; margin:0px 0px 0px 0px; padding:0px; position:relative; z-index:999; }
+.img-output { width:100%; float:left; margin:0px 0px -1px 0px; padding:0px; border-bottom:1px solid #d6d6d6; position:relative; z-index:999; }
+.img-header { height:33px; font-size:17px; font-weight:bold; padding:0px 0px; margin:0px 0px; background:#d9dddd; }
+.img-header .img-header-div { width:19.9%; float:left; color:#333; text-align:center; line-height:25px; height:25px; padding:3px 0px; margin:0px; border-right:1px solid #BDBDBD; } 
+.img-output-r { width:19.95%; float:right; margin:0px 0px 0px 0px; padding:0px; border-bottom:0px solid #d6d6d6; position:relative; z-index:999; }
+.img-header-r {height:33px; font-size:14px; font-weight:bold; padding:0px 0px; margin:0px 0px; background:#d9dddd; }
+.img-header-r .img-header-div-r { color:#333; text-align:center; line-height:22px; padding:3.5px 0px; margin:0px; } 
+.img-output .rslt-opt { width:19.9%; float:left; height:55px; padding:15px 0px 35px 0px; margin:0px 0px 0px 0px; text-align:center; border-bottom:0px solid #d6d6d6; border-right:1px solid #d6d6d6; }
+.img-title  .rslt-opt { height:54.2px; padding:15px 0px 35px 0px; margin:0px 0px 0px 0px; text-align:center; border-bottom:1px solid #d6d6d6; border-right:0px solid #d6d6d6; }
+.rslt-opt img { padding:1px; border:1px solid #ccc; margin:0px; padding:0px; }
+.rslt-opt .rslt-size { font-size:16px; color:#464646; font-weight:bold; }
+.img-title { width:100%; height:105px; text-align:center; margin:0px; padding:0px; clear:both; } 
+.img-rowa { color:#424242; font-weight:normal; border-right:0px solid #d6d6d6; height:100%; }
+.img-rowa img { /*width:80px; height:60 px; */padding:2px; border:1px solid #ccc; margin:7px 0px 6px 0px; }
+.preview, .upload { background-color:#eee; color:#848484; padding:5px 8px; border-radius: 3px; text-decoration: none; margin: 0px 5px 0px 5px; position:relative; top:15px; font-size:120%; font-weight:normal; }  
+.size { margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; }
+.size b { font-size:19px; color:#464646; font-weight:normal; } 
+.size b span{ color:#a7a7a9; }
+.boxa { height:105.5px; border-bottom:1px solid #d6d6d6; }
+.boxa:last-child{ border-bottom:0px solid #d6d6d6; }
+.boxa .box-border { border:0px dashed #eee; padding:26px 10px 40px 10px; margin:0px auto 0px auto;}
+.img-header-r input[type="text"] { width:45%; margin:-11px 0px 0px -5px; padding:2px 0px 3px 3px; font-size:12px; height:17px;outline:none; border:1px solid #757575; } 
+.img-header-r input[type="button"] { width:12%; margin:0px 0px 0px -4px; border:none; padding:4px 4px 6px 0px; font-size:12px; background-color:#757575; color:#fff; cursor:pointer; outline:none; }
+.downldall { width:110px; border:none; color:#fafafa; padding:6px 12px 6px 6px; margin:8px auto 8px auto; text-decoration:none; cursor:pointer; outline:none; border-radius:2px; -webkit-border-radius:2px; -khtml-border-radius:2px; background: #17943d; border-bottom:2px solid #095420;}
+.downldall a { color:#fafafa; text-decoration:none; } 
+.down-btn { border-right:1px solid #f6f6f6f; padding-right:2px; }
+#resultData h4 { margin:30px 0px 0px 0px; padding:0px; font-size:22px; }
+.download-icon { width:45px; height:40px; padding:71px 0px 0px 0px; margin:0px 0px -24px 0px; opacity:.4; }
+.cus-qlty  { font-family:'Bad Script', cursive; color:#424242; font-size:20px; font-weight:bold; line-height:30px; padding:27px 0px 0px 15px; text-align:center; }
+.previewimg { width:14px!important; height:13px!important; border:none!important; vertical-align:middle!important; position:relative!important; top:-1px!important; } 
+.img-fnl-output { width:80%; }
+.img-fnl-output .img-weight { width:19.9%; text-align:center; float:left; height:45px; padding:0px; border-right:1px solid #d6d6d6; }
+.img-fnl-output .img-totsize { width:19.9%; text-align:center; color:#464646; font-size:19px; float:left; height:18px; padding:15px 0px 18px 0px; border-bottom:1px solid #d6d6d6; border-right:1px solid #d6d6d6; line-height:12px; }
+.img-fnl-output .img-totsize b{ font-size:14px; }
+.img-fnl-output .img-totsize span{ color:#a7a7a9; }
+.img-title .img-totsize { color:#464646; text-align:center; font-size:19px; height:17px; padding:15px 0px 18px 0px; border-bottom:1px solid #d6d6d6;}
+.img-title  .img-totsize b{ font-size:14px; }
+.img-title  .img-totsize span{ color:#a7a7a9; }
+.panel-tool-collapse, .panel-tool-min, .panel-tool-max { display:none!important; } 
+img.imgprebox { max-width:100%; height:auto; padding:10px; margin:0px; }
+.org_img { height:100px; border-bottom:1px solid #d6d6d6; padding:4px 0px 3px 0px; }
+.org_img .org_size { font-size:16px; color:#464646; font-weight:bold; }
+@-moz-document url-prefix(){ .img-title input[type="button"] { padding:4px 12px 6px 6px;} .boxa { height:105.5px; } .size-l { min-height:21.5px; } .previewimg { top:-2px !important; } .org_img { padding:5px 0px 4px 0px; } .img-header-div input[type="button"] {padding:2.7px 0 3px 0px; } .img-title  .rslt-opt { height:54.1px; } .img-header-r input[type="button"] { padding:3px 4px 3px 0;} }
+/* end of css for upload iamges output */
+ 
+.search-url {height:160px; background:#006e4a url(/images/url-bg-optim.jpg) no-repeat center center; background-size:cover; padding:50px 10px 5px 10px; margin:10px 10px 0px 10px; text-align:center; border:1px solid #266A2E; position:relative; z-index:99;border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; -khtml-border-radius:4px; }
+.search-url input[type="text"] {width:46%; height:18px; color:#6d6d6d; background:#fff; font-size:14px; border:2px solid #fafafa; margin:0px 0px 0px 0px; padding:9px 0px 10px 7px; outline:none; line-height:23px; border-radius:4px; -webkit- border-radius:4px; -khtml- border-radius:4px; -moz- border-radius:4px; } 
+.search-url h4 { font-size:23px; text-align:center; margin:0px; padding:5px 0px; color:#fff; }
+.search-url h6 { font-size:20px; text-align:center; margin:0px; padding:6px 0px; color:#fafafa; font-weight:bold; }
+.srch-btn { right:none;position: absolute; z-index:9; height:37px; width:42px; cursor:pointer; margin:2px 0px 0px -44px; }
+.srch-btn button { font-family:'Ubuntu',sans-serif; height:100%; width:100%; border:none; border-radius:0 2px 2px 0; background:#006E4A; color:#fff; font-size:18px; cursor:pointer;}
+.devtools-icon { background:url(/images/tools-optim.png) 0% 57% no-repeat; padding:0px 0px 0px 19px; margin:0px; }
+.l-btn-plain:hover { background:#e2e2e2; border:1px solid #ccc; border-radius:5px; }
+.noimages { background:url(/images/no-image-found-optim.jpg) no-repeat center center; border:1px solid #d6d6d6; margin:10px 0px; padding:5px; border-radius:4px; height:300px; }
+.noimages h6 { font-size:36px; color:#424242; text-align:center; }
+/* end of css for search url */ 
+
+/* LIGHT BOX CSS Preload images */
+body:after { content: url(/images/close-optim.png) url(/images/loading-optim.gif) url(/images/prev-optim.png) url(/images/next-optim.png); display: none; }
+.lightboxOverlay { position: absolute; top: 0; left: 0; z-index: 9999; background-color: black; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; display: none; }
+.lightbox { position:absolute; left: 0; width: 100%; z-index: 10000; text-align: center; line-height: 0; font-weight: normal; }
+.lightbox .lb-image { display:block; height:auto; max-width:inherit; border-bottom-left-radius:4px; border-bottom-right-radius:4px; -moz-border-bottom-left-radius:4px; -moz-border-bottom-right-radius:4px; position: absolute; top:0; bottom:0; left:0; right:0; margin:auto; } 
+.lightbox a img { border:none; } 
+.lb-outerContainer { position:relative; background-color:white; *zoom:1; width:250px; height:250px; min-width:450px; min-height:300px; margin:0 auto; border-bottom-left-radius:4px; border-bottom-right-radius:4px; -moz-border-bottom-left-radius:4px; -moz-border-bottom-right-radius:4px; border-right:2px solid #afafaf; border-left:2px solid #afafaf; border-bottom:2px solid #afafaf; }
+.lb-outerContainer:after { content:""; display:table; clear:both; }
+.lb-container { padding:0px; }
+.lb-loader { position:absolute; top:43%; left:0; height:25%; width:100%; text-align:center; line-height:0; }
+.lb-cancel { display:block; width:32px; height:32px; margin:0 auto; background:url(/images/loading-optim.gif) no-repeat; }
+.lb-nav { position:absolute; top:0; left:0; height:100%; width:100%; z-index:10; }
+.lb-container > .nav { left:0; }
+.lb-nav a { outline:none; background-image:url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='); }
+.lb-next { height:100%; position:absolute; right:-14px!important; cursor:pointer; display:block; }
+.lb-prev { height:100%; position:absolute; left:-14px!important; cursor:pointer; display:block; }
+.lb-nav a.lb-prev { width:64%; left: 0; float: left; background:url(/images/prev-optim.png) left 48% no-repeat; } 
+.lb-nav a.lb-prev:hover { }
+.lb-nav a.lb-next { width: 64%; right: 0; float: right; background: url(/images/next-optim.png) right 48% no-repeat; }
+.lb-nav a.lb-next:hover { } 
+.lb-dataContainer { background:#eee; margin: 0 auto; padding:5px 0px 5px 0px; *zoom: 1; min-width:450px; width: 100%; border-top-left-radius:4px; border-top-right-radius:4px; -moz-border-top-left-radius:4px; -moz-border-top-right-radius:4px; border-right:2px solid #afafaf; border-left:2px solid #afafaf; border-top:2px solid #afafaf; }
+.lb-dataContainer:after { content: ""; display: table; clear: both; } 
+.lb-data { padding: 0 4px; color: #ccc; }
+.lb-data .lb-details { width:62%; margin:0px 0px 0px -6px; float: left; text-align: left; line-height: 1.1em; }
+.lb-data .lb-caption { font-size: 13px; font-weight: bold; line-height: 1em; color:#424242; padding-left:10px; }
+.lb-data .lb-number { display: block; clear: left; padding-bottom: 1em; font-size: 12px; color: #999999; }
+.lb-data .lb-close { display: block; float: right; width: 18px; height: 18px; background:#424242 url(/images/close-optim.png) 45% 35% no-repeat; text-align: right; outline: none; position:relative; top:-1px; right:0px; padding:2px; border-radius:40px; }
+.lb-data .lb-close:hover { cursor: pointer; }
+/* END OF LIGHT BOX CSS */

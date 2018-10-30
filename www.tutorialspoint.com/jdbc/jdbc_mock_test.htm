@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>JDBC Mock Test - TutorialsPoint</title>
+<meta name="description" content="JDBC Mock Test - Learning JDBC in simple and easy steps using this beginner's tutorial containing basic to advanced knowledge of JDBC including Drivers, Environment Setup, SQL Statement, Insert, Update, Select, Delete, Group By, Where Clause, Pagination, Result Sets, Database, Exception, Handling etc." />
+<meta name="keywords" content="Java, JDBC, Tutorials, Learning, Beginners, Basics, Drivers, Environment, Setup, SQL, Statement, Insert, Update, Select, Delete, Group By, Where Clause, Pagination, Result Sets, Database, Exception, Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #1890c4 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #1890c4 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #1890c4 !important;}
+.submenu-item{ border-bottom: 2px solid #1890c4 !important; border-top: 2px solid #1890c4 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#1890c4; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/jdbc/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/jdbc/images/jdbc-mini-logo.jpg" alt="JDBC Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">JDBC Tutorial</li>
+<li><a target="_top" href="/jdbc/index.htm">JDBC - Home</a></li>
+<li><a target="_top" href="/jdbc/jdbc-introduction.htm">JDBC - Introduction</a></li>
+<li><a target="_top" href="/jdbc/jdbc-sql-syntax.htm">JDBC - SQL Syntax</a></li>
+<li><a target="_top" href="/jdbc/jdbc-environment-setup.htm">JDBC - Environment</a></li>
+<li><a target="_top" href="/jdbc/jdbc-sample-code.htm">JDBC - Sample Code</a></li>
+<li><a target="_top" href="/jdbc/jdbc-driver-types.htm">JDBC - Driver Types</a></li>
+<li><a target="_top" href="/jdbc/jdbc-db-connections.htm">JDBC - Connections</a></li>
+<li><a target="_top" href="/jdbc/jdbc-statements.htm">JDBC - Statements</a></li>
+<li><a target="_top" href="/jdbc/jdbc-result-sets.htm">JDBC - Result Sets</a></li>
+<li><a target="_top" href="/jdbc/jdbc-data-types.htm">JDBC - Data Types</a></li>
+<li><a target="_top" href="/jdbc/jdbc-transactions.htm">JDBC - Transactions</a></li>
+<li><a target="_top" href="/jdbc/jdbc-exceptions.htm">JDBC - Exceptions</a></li>
+<li><a target="_top" href="/jdbc/jdbc-batch-processing.htm">JDBC - Batch Processing</a></li>
+<li><a target="_top" href="/jdbc/jdbc-stored-procedure.htm">JDBC - Stored Procedure</a></li>
+<li><a target="_top" href="/jdbc/jdbc-streaming-data.htm">JDBC - Streaming Data</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">JDBC Examples</li>
+<li><a target="_top" href="/jdbc/jdbc-create-database.htm">JDBC - Create Database</a></li>
+<li><a target="_top" href="/jdbc/jdbc-select-database.htm">JDBC - Select Database</a></li>
+<li><a target="_top" href="/jdbc/jdbc-drop-database.htm">JDBC - Drop Database</a></li>
+<li><a target="_top" href="/jdbc/jdbc-create-tables.htm">JDBC - Create Tables</a></li>
+<li><a target="_top" href="/jdbc/jdbc-drop-tables.htm">JDBC - Drop Tables</a></li>
+<li><a target="_top" href="/jdbc/jdbc-insert-records.htm">JDBC - Insert Records</a></li>
+<li><a target="_top" href="/jdbc/jdbc-select-records.htm">JDBC - Select Records</a></li>
+<li><a target="_top" href="/jdbc/jdbc-update-records.htm">JDBC - Update Records</a></li>
+<li><a target="_top" href="/jdbc/jdbc-delete-records.htm">JDBC - Delete Records</a></li>
+<li><a target="_top" href="/jdbc/jdbc-where-clause.htm">JDBC - WHERE Clause</a></li>
+<li><a target="_top" href="/jdbc/jdbc-like-clause.htm">JDBC - Like Clause</a></li>
+<li><a target="_top" href="/jdbc/jdbc-sorting-data.htm">JDBC - Sorting Data</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">JDBC Useful Resources</li>
+<li><a target="_top" href="/jdbc/jdbc_questions_answers.htm">JDBC - Questions and Answers</a></li>
+<li><a target="_top" href="/jdbc/jdbc-quick-guide.htm">JDBC - Quick Guide</a></li>
+<li><a target="_top" href="/jdbc/jdbc-useful-resources.htm">JDBC - Useful Resources</a></li>
+<li><a target="_top" href="/jdbc/jdbc-discussion.htm">JDBC - Discussion</a></li>
+<li><a target="_top" href="/java/index.htm">Useful - Java Tutorials</a></li>
+</ul>
+
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>JDBC Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/jdbc/jdbc_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/jdbc/jdbc_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>JDBC Framework</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/jdbc/jdbc_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/jdbc/jdbc_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/jdbc/jdbc_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/jdbc/jdbc_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>JDBC Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - What JDBC stands for?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Java Database Connectivity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Java Driver for Basic Connection</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Joint Database Connectivity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Joint Driver for Basic Connection</a></p>
+</div>
+<div class="A" id="A1">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>JDBC stands for Java Database Connectivity.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - What is JDBC?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC is a java based protocol.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - JDBC is a standard Java API for database-independent connectivity between the Java programming language and a wide range of databases.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - JDBC is a specification to tell how to connect to a database.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Joint Driver for Basic Connection</a></p>
+</div>
+<div class="A" id="A2">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>JDBC is a standard Java API for database-independent connectivity between the Java programming language and a wide range of databases.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following is true about JDBC architecture?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC API layer provides the application-to-JDBC Manager connection.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - JDBC Driver API layer supports the JDBC Manager-to-Driver Connection.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A3">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>General JDBC Architecture consists of two layers: JDBC API (This provides the application-to-JDBC Manager connection) and JDBC Driver API (This supports the JDBC Manager-to-Driver Connection).</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which of the following is not a component/class of JDBC API?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - DriverManager</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Connection</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Transaction</a></p>
+</div>
+<div class="A" id="A4">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Transaction is not a class of JDBC API. JDBC API consists of following interfaces and classes: DriverManager, Driver, Connection, Statement, ResultSet, SQLException.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Which of the following is not a component/class of JDBC API?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Statement</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - ResultSet</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SQLException</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - ConnectionPool</a></p>
+</div>
+<div class="A" id="A5">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>ConnectionPool is not a class of JDBC API. JDBC API consists of following interfaces and classes: DriverManager, Driver, Connection, Statement, ResultSet, SQLException.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - Which of the following is correct about DriverManager class of JDBC?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC DriverManager is a class that manages a list of database drivers.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - It matches connection requests from the java application with the proper database driver using communication subprotocol.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above.</a></p>
+</div>
+<div class="A" id="A6">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>JDBC DriverManager is a class that manages a list of database drivers. It matches connection requests from the java application with the proper database driver using communication subprotocol.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - Which of the following is correct about driver interface of JDBC?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC driver is an interface enabling a Java application to interact with a database.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The JDBC driver gives out the connection to the database and implements the protocol for transferring the query and result between client and database.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above.</a></p>
+</div>
+<div class="A" id="A7">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>JDBC driver is an interface enabling a Java application to interact with a database. To connect with individual databases, JDBC requires drivers for each database. The JDBC driver gives out the connection to the database and implements the protocol for transferring the query and result between client and database.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - Which of the following is correct about Connection interface of JDBC?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Connection interface consists of methods for contacting a database.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - It represents communication context.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above.</a></p>
+</div>
+<div class="A" id="A8">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Connection interface consists of methods for contacting a database. The connection object represents communication context.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Which of the following is correct about  Statement class of JDBC?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Statement encapsulates an SQL statement which is passed to the database to be parsed and compiled.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Statement encapsulates an SQL statement which is passed to the database to be planned and executed.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above.</a></p>
+</div>
+<div class="A" id="A9">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Statement encapsulates an SQL statement which is passed to the database to be parsed, compiled, planned and executed.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following is correct about  ResultSet class of JDBC?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - ResultSet holds data retrieved from a database after you execute an SQL query using Statement objects.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - It acts as an iterator to allow you to move through its data.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - The java.sql.ResultSet interface represents the result set of a database query.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above.</a></p>
+</div>
+<div class="A" id="A10">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>ResultSet objects hold data retrieved from a database after you execute an SQL query using Statement objects. It acts as an iterator to allow you to move through its data. The java.sql.ResultSet interface represents the result set of a database query.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Which of the following manages a list of database drivers in JDBC?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - DriverManager</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - JDBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Connection</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Statement</a></p>
+</div>
+<div class="A" id="A11">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>DriverManager class manages a list of database drivers in JDBC.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Which of the following gives out the connection to the database and implements the protocol for transferring the query and result between client and database?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - DriverManager</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - JDBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Connection</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Statement</a></p>
+</div>
+<div class="A" id="A12">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>JDBC driver gives out the connection to the database and implements the protocol for transferring the query and result between client and database.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - Which of the following consists of methods for contacting a database?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - DriverManager</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - JDBC driver</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Connection</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Statement</a></p>
+</div>
+<div class="A" id="A13">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Connection consists of methods for contacting a database.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> - Which of the following encapsulates an SQL statement which is passed to the database to be parsed, compiled, planned and executed?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - DriverManager</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - JDBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Connection</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Statement</a></p>
+</div>
+<div class="A" id="A14">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Statement encapsulates an SQL statement which is passed to the database to be parsed, compiled, planned and executed.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - Which of the following holds data retrieved from a database after you execute an SQL query using Statement objects?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - ResultSet</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - JDBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Connection</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Statement</a></p>
+</div>
+<div class="A" id="A15">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>ResultSet holds data retrieved from a database after you execute an SQL query using Statement objects.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - Which of the following is not a valid type of ResultSet?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - ResultSet.TYPE_FORWARD_ONLY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - ResultSet.TYPE_SCROLL_INSENSITIVE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - ResultSet.TYPE_SCROLL_SENSITIVE</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - ResultSet.TYPE_BACKWARD_ONLY</a></p>
+</div>
+<div class="A" id="A16">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>ResultSet.TYPE_BACKWARD_ONLY is not a valid type of ResultSet.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - In which of the following type of ResultSet, the cursor can only move forward in the result set?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - ResultSet.TYPE_FORWARD_ONLY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - ResultSet.TYPE_SCROLL_INSENSITIVE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - ResultSet.TYPE_SCROLL_SENSITIVE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A17">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>ResultSet.TYPE_FORWARD_ONLY: The cursor can only move forward in the result set.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - In which of the following type of ResultSet, the cursor can scroll forwards and backwards, and the result set is not sensitive to changes made by others to the database that occur after the result set was created.?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - ResultSet.TYPE_FORWARD_ONLY</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - ResultSet.TYPE_SCROLL_INSENSITIVE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - ResultSet.TYPE_SCROLL_SENSITIVE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A18">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>ResultSet.TYPE_SCROLL_INSENSITIVE: The cursor can scroll forwards and backwards, and the result set is not sensitive to changes made by others to the database that occur after the result set was created.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - In which of the following type of ResultSet, the cursor can scroll forwards and backwards, and the result set is sensitive to changes made by others to the database that occur after the result set was created?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - ResultSet.TYPE_FORWARD_ONLY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - ResultSet.TYPE_SCROLL_INSENSITIVE</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - ResultSet.TYPE_SCROLL_SENSITIVE</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A19">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>ResultSet.TYPE_SCROLL_SENSITIVE: The cursor can scroll forwards and backwards, and the result set is sensitive to changes made by others to the database that occur after the result set was created.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> - Which of the following type of JDBC driver, calls native code of the locally available ODBC driver?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - JDBC-ODBC Bridge plus ODBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Native-API, partly Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - JDBC-Net, pure Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Native-protocol, pure Java driver</a></p>
+</div>
+<div class="A" id="A20">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>JDBC-ODBC Bridge plus ODBC driver calls native code of the locally available ODBC driver.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> - Which of the following type of JDBC driver, calls database vendor native library on a client side. This code then talks to database over network?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC-ODBC Bridge plus ODBC driver</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Native-API, partly Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - JDBC-Net, pure Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Native-protocol, pure Java driver</a></p>
+</div>
+<div class="A" id="A21">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Native-API, partly Java driver calls database vendor native library on a client side. This code then talks to database over network.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - Which of the following type of JDBC driver, talks with the server-side middleware that then talks to database?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC-ODBC Bridge plus ODBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Native-API, partly Java driver</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - JDBC-Net, pure Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Native-protocol, pure Java driver</a></p>
+</div>
+<div class="A" id="A22">
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>JDBC-Net, pure Java driver, partly Java driver talks with the server-side middleware that then talks to database.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> - Which of the following type of JDBC driver, uses database native protocol?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC-ODBC Bridge plus ODBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Native-API, partly Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - JDBC-Net, pure Java driver</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Native-protocol, pure Java driver</a></p>
+</div>
+<div class="A" id="A23">
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Native-protocol, pure Java driver, uses database native protocol.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> - Which of the following type of JDBC driver, is also called Type 1 JDBC driver?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - JDBC-ODBC Bridge plus ODBC driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Native-API, partly Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - JDBC-Net, pure Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Native-protocol, pure Java driver</a></p>
+</div>
+<div class="A" id="A24">
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>JDBC-ODBC Bridge plus ODBC driver, is also called Type 1 JDBC driver.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> - Which of the following type of JDBC driver, is also called Type 2 JDBC driver?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - JDBC-ODBC Bridge plus ODBC driver</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Native-API, partly Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - JDBC-Net, pure Java driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Native-protocol, pure Java driver</a></p>
+</div>
+<div class="A" id="A25">
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Native-API, partly Java driver, is also called Type2 JDBC driver.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>B</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/jdbc/jdbc_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/jdbc/pdf/jdbc_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/jdbc/jdbc_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams.js"></script>
+<div class="parent-file">jdbc_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/jdbc/jdbc_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/jdbc/jdbc_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/jdbc/jdbc_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/jdbc/jdbc_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/jdbc/jdbc_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/jdbc/jdbc_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

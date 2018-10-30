@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>DB2 Mock Test - Questions Set From 1 to 25</title>
+<meta name="description" content="DB2 Mock Test Questions Set From 1 to 25 - Learn DB2 Concepts in simple and easy steps starting from their overview and then covering, introduction to db2, db2 server installation, db2 instance, databases, buffer pools, table spaces, storage groups, schemas, data type, tables, alias, constraints, indexes, triggers, sequences, views, db2 with xml, backup and recovery, database security, roles, ldap etc." />
+<meta name="keywords" content="DB2 Bufferpools, introduction to db2, db2 server installation, db2 instance, databases, buffer pools, table spaces, storage groups, schemas, data type, tables, alias, constraints, indexes, triggers, sequences, views, db2 with xml, backup and recovery, database security, roles, ldap etc." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #16a017 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #16a017 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #16a017 !important;}
+.submenu-item{ border-bottom: 2px solid #16a017 !important; border-top: 2px solid #16a017 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#16a017; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/db2/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/db2/images/db2-mini-logo.jpg" alt="DB2 Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/db2_online_training/index.asp" target="_blank"><img src="/db2/images/db2-video-tutorials.jpg" alt="DB2 Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">DB2 Tutorial</li>
+<li><a  href="/db2/index.htm">Home</a></li>
+<li><a  href="/db2/db2_introduction.htm">DB2 - Introduction</a></li>
+<li><a  href="/db2/db2_server_installation.htm">DB2 - Server Installation</a></li>
+<li><a  href="/db2/db2_instance.htm">DB2 - Instance</a></li>
+<li><a  href="/db2/db2_databases.htm">DB2 - Databases</a></li>
+<li><a  href="/db2/db2_bufferpools.htm">DB2 - Bufferpools</a></li>
+<li><a  href="/db2/db2_tablespaces.htm">DB2 - Tablespaces</a></li>
+<li><a  href="/db2/db2_storagegroups.htm">DB2 - Storagegroups</a></li>
+<li><a  href="/db2/db2_schemas.htm">DB2 - Schemas</a></li>
+<li><a  href="/db2/db2_data_type.htm">DB2 - Data Types</a></li>
+<li><a  href="/db2/db2_tables.htm">DB2 - Tables</a></li>
+<li><a  href="/db2/db2_alias.htm">DB2 - Alias</a></li>
+<li><a  href="/db2/db2_constraints.htm">DB2 - Constraints</a></li>
+<li><a  href="/db2/db2_indexes.htm">DB2 - Indexes</a></li>
+<li><a  href="/db2/db2_triggers.htm">DB2 - Triggers</a></li>
+<li><a  href="/db2/db2_sequences.htm">DB2 - Sequences</a></li>
+<li><a  href="/db2/db2_views.htm">DB2 - Views</a></li>
+<li><a  href="/db2/db2_with_xml.htm">DB2 with XML</a></li>
+<li><a  href="/db2/db2_backup_and_recovery.htm">DB2 - Backup and Recovery</a></li>
+<li><a  href="/db2/db2_database_security.htm">DB2 - Database Security</a></li>
+<li><a  href="/db2/db2_roles.htm">DB2 - Roles</a></li>
+<li><a  href="/db2/db2_ldap.htm">DB2 - LDAP</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DB2 Useful Resources</li>
+<li><a href="/db2/db2_questions_answers.htm">DB2 - Questions and Answers</a></li>
+<li><a href="/db2/db2_quick_guide.htm">DB2 - Quick Guide</a></li>
+<li><a href="/db2/db2_useful_resources.htm">DB2 - Useful Resources</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>DB2 Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/db2/db2_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/db2/db2_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>DB2</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/db2/db2_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/db2/db2_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/db2/db2_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/db2/db2_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>DB2 Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which component handles DB2 startup and shutdown? </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Locking Services Component</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - System Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Database Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Stored Procedures Component</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>System services component handles DB2 startup and shutdown. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Which component is responsible for execution of SQL statements?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Locking Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - System Services Component</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Database Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Stored Procedures Component</a></p></div>
+<div class="A" id='A2'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Database services component is responsible for execution of SQL statements and it manages buffer pool also. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which component checks DB2 deadlocks?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Locking Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - System Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Database Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Stored Procedures Component</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Locking services are provided by Locking services component which is known as Internal Resource Lock Manager (IRLM) and manages concurrency issues and dead locks.</p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which component provides support for execution of stored procedures?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Locking Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - System Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Database Services Component</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Stored Procedures Component</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Stored procedure components provides support for execution of stored procedures.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Can a DB2 system have more than one databases?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - No</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Yes</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Yes, a DB2 system can have more than one database.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - Which DB2 component is used for remote database server connection?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Locking Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - System Services Component</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Database Services Component</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Distributed Data Facility Component</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Distributed Data Facility Component is responsible for handling remote database server connections.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - Which of the following are logical objects?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Tables</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Views</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Both B &amp; C</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Tables, Views, Synonyms and Alias are logical objects which are used by users and developers.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - Which of the following are physical objects?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Database</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Views</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Both A &amp; B</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Database and Table space are physical objects.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Collection of one or more DASD volumes creates a storage group. What is the maximum limit of DASD which can be used for a storage group? </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 125</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 200</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 133</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 123</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>This is self explanatory.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - How many databases can a DB2 system manage?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 1 database</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - 65279 databases</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 10 databases</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Unlimited</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>This is self explanatory.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Which table space can have one or more tables and can have rows from multiple tables on a single page?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Simple Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Segmented Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Partitioned Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>A simple table space can contain one or more tables and there is no limit on the number of tables. Rows from multiple tables can be on a single page.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Which table space is divided into segments of 4 to 64 pages in increments of 4 and each segment holds data for only one table?
+</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Simple Table space</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Segmented Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Partitioned Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Segmented table space is divided into segments of equal size and segments are of 4 to 64 pages size in increments of 4 pages. It can have one or more tables. Each segment is dedicated to a table and a table can occupy multiple segments. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - Which table space houses only one table?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Simple Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Segmented Table space</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Partitioned Table space</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A13'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>A partitioned table space can house one table and allows a table to be divided by rows into partitions that the system can manage separately.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> - How many numbers of tables can be created inside a table space?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 255</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Only 1</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - No Limit</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A14'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>A table space can house any number of tables.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - Which columns are good for indexing?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Primary Key Columns</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Foreign Key Columns</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Columns with unique values</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of these</a></p>
+</div>
+<div class="A" id='A15'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The purpose of index is to retrieve the data faster. So we choose those columns which are unique. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - Which columns are not good for indexing?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Frequently updated columns</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - More than 30 characters of data</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Have redundant values</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of these</a></p>
+</div>
+<div class="A" id='A16'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The purpose of index is to retrieve the data faster. So we choose those columns which are unique or less frequently updated.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - How many clustering index we can have for a single table?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 15</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 10</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 1</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - No Limit</a></p>
+</div>
+<div class="A" id='A17'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>We can have only one clustering index for a table.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - Which of the following can refer to both local as well as remote tables?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Synonyms</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Alias</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both A &amp; B</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A18'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Alias can refer to both local as well as remote tables whereas synonyms refers only to local tables.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - Which of the following can refer only to local tables?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Synonyms</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Alias</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both A &amp; B</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A19'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Alias can refer to both local as well as remote tables whereas synonyms refers only to local tables.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> - Suppose a table A has an Alias named AL1. Which of the query is correct to drop the AL1 alias?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - DROP ALIAS AL1 ON TABLE A</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - DROP ALIAS AL1</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - DROP AL1</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - DROP TABLE AL1</a></p>
+</div>
+<div class="A" id='A20'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>DROP ALIAS alias-name is the correct syntax.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> - Which index must be present for partitioned table space?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Unique Index</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Clustered Index</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Non-Unique Index</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of these</a></p>
+</div>
+<div class="A" id='A21'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>A partitioned table space must have a clustered index.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - In which format index in stored?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Free List format</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - B-Tree format</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both A &amp; B</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A22'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>An indexed is stored in B-tree format.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> - What does SPUFI stands for?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - SQL Processor Using File Input</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Sequential Processor Using File Input</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Structured Processor Using File Input</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Standard Processor Using File Input</a></p>
+</div>
+<div class="A" id='A23'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>SPUFI stands for SQL Processor Using File Input.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> - What is not a valid DB2 data type?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Char</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Alphanumeric</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Varchar</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Integer</a></p>
+</div>
+<div class="A" id='A24'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Alphanumeric is a COBOL data type. We do not use this while creating DB2 objects.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> - What is the maximum size of a VARCHAR data type in DB2?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 256 bytes</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 1032 bytes</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 4046 bytes</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 1064 bytes</a></p>
+</div>
+<div class="A" id='A25'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Varchar data type maximum size is of 4046 bytes.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>C</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/db2/db2_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/db2/pdf/db2_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/db2/db2_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams.js"></script>
+<div class="parent-file">db2_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/db2/db2_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/db2/db2_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/db2/db2_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/db2/db2_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/db2/db2_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/db2/db2_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

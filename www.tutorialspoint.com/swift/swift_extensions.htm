@@ -1,0 +1,613 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Swift Extensions</title>
+<meta name="description" content="Swift Extensions - Learn Swift in simple and easy steps starting from basic to advanced concepts with examples including overview, basic syntax, environment setup, data types, variables, optionals, constants, literals, operators, decision making, strings, characters, arrays, dictionaries, loops, control flow, functions, closures, enumerations, classes, structures, properties, methods, inheritance, initialization, deinitialization, ARC overview, optional chaining, type casting, automatic reference count, extensions, protocols, generics, access control etc." />
+<meta name="keywords" content="Swift, Tutorial, beginners, overview, basic Syntax, environment setup, data types, variables, optionals, constants, literals, operators, decision making, strings, characters, arrays, dictionaries, loops, control flow, functions, closures, enumerations, classes, structures, properties, methods, inheritance, initialization, deinitialization, ARC overview, optional chaining, type casting, automatic reference count, extensions, protocols, generics, access control etc." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #f05c02 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #f05c02 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #f05c02 !important;}
+.submenu-item{ border-bottom: 2px solid #f05c02 !important; border-top: 2px solid #f05c02 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#f05c02; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/swift/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/swift/images/swift-mini-logo.jpg" alt="Swift Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Swift Tutorial</li>
+<li><a href="/swift/index.htm">Swift - Home</a></li>
+<li><a href="/swift/swift_overview.htm">Swift - Overview</a></li>
+<li><a href="/swift/swift_environment.htm">Swift - Environment</a></li>
+<li><a href="/swift/swift_basic_syntax.htm">Swift - Basic Syntax</a></li>
+<li><a href="/swift/swift_data_types.htm">Swift - Data Types</a></li>
+<li><a href="/swift/swift_variables.htm">Swift - Variables</a></li>
+<li><a href="/swift/swift_optionals.htm">Swift - Optionals</a></li>
+<li><a href="/swift/swift_tuples.htm">Swift - Tuples</a></li>
+<li><a href="/swift/swift_constants.htm">Swift - Constants</a></li>
+<li><a href="/swift/swift_literals.htm">Swift - Literals</a></li>
+<li><a href="/swift/swift_operators.htm">Swift - Operators</a></li>
+<li><a href="/swift/swift_decision_making.htm">Swift - Decision Making</a></li>
+<li><a href="/swift/swift_loops.htm">Swift - Loops</a></li>
+<li><a href="/swift/swift_strings.htm">Swift - Strings</a></li>
+<li><a href="/swift/swift_characters.htm">Swift - Characters</a></li>
+<li><a href="/swift/swift_arrays.htm">Swift - Arrays</a></li>
+<li><a href="/swift/swift_sets.htm">Swift - Sets</a></li>
+<li><a href="/swift/swift_dictionaries.htm">Swift - Dictionaries</a></li>
+<li><a href="/swift/swift_functions.htm">Swift - Functions</a></li>
+<li><a href="/swift/swift_closures.htm">Swift - Closures</a></li>
+<li><a href="/swift/swift_enumerations.htm">Swift - Enumerations</a></li>
+<li><a href="/swift/swift_structures.htm">Swift - Structures</a></li>
+<li><a href="/swift/swift_classes.htm">Swift - Classes</a></li>
+<li><a href="/swift/swift_properties.htm">Swift - Properties</a></li>
+<li><a href="/swift/swift_methods.htm">Swift - Methods</a></li>
+<li><a href="/swift/swift_subscripts.htm">Swift - Subscripts</a></li>
+<li><a href="/swift/swift_inheritance.htm">Swift - Inheritance</a></li>
+<li><a href="/swift/swift_initialization.htm">Swift - Initialization</a></li>
+<li><a href="/swift/swift_deinitialization.htm">Swift - Deinitialization</a></li>
+<li><a href="/swift/swift_arc_overview.htm">Swift - ARC Overview</a></li>
+<li><a href="/swift/swift_optional_chaining.htm">Swift - Optional Chaining</a></li>
+<li><a href="/swift/swift_type_casting.htm">Swift - Type Casting</a></li>
+<li><a href="/swift/swift_extensions.htm">Swift - Extensions</a></li>
+<li><a href="/swift/swift_protocols.htm">Swift - Protocols</a></li>
+<li><a href="/swift/swift_generics.htm">Swift - Generics</a></li>
+<li><a href="/swift/swift_access_control.htm">Swift - Access Control</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Swift Useful Resources</li>
+<li><a href="/swift/compile_swift_online.htm">Swift - Compile Online</a></li>
+<li><a href="/swift/swift_quick_guide.htm">Swift - Quick Guide</a></li>
+<li><a href="/swift/swift_useful_resources.htm">Swift - Useful Resources</a></li>
+<li><a href="/swift/swift_discussion.htm">Swift - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Swift - Extensions</h1>
+<hr />
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/swift/swift_type_casting.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/swift/swift_protocols.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Functionality of an existing class, structure or enumeration type can be added with the help of extensions. Type functionality can be added with extensions but overriding the functionality is not possible with extensions.</p>
+<p><b>Swift Extension Functionalities</b> &minus;</p>
+<ul class="list">
+<li>Adding computed properties and computed type properties</li>
+<li>Defining instance and type methods.</li>
+<li>Providing new initializers.</li>
+<li>Defining subscripts</li>
+<li>Defining and using new nested types</li>
+<li>Making an existing type conform to a protocol</li>
+</ul>
+<p>Extensions are declared with the keyword 'extension'</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+extension SomeType {
+   // new functionality can be added here
+}
+</pre>
+<p>Existing type can also be added with extensions to make it as a protocol standard and its syntax is similar to that of classes or structures.</p>
+<pre class="result notranslate">
+extension SomeType: SomeProtocol, AnotherProtocol {
+   // protocol requirements is described here
+}
+</pre>
+<h2>Computed Properties</h2>
+<p>Computed 'instance' and 'type' properties can also be extended with the help of extensions.</p>
+<a href="http://tpcg.io/4s8KA8" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+extension Int {
+   var add: Int {return self + 100 }
+   var sub: Int { return self - 10 }
+   var mul: Int { return self * 10 }
+   var div: Int { return self / 5 }
+}
+
+let addition = 3.add
+print("Addition is \(addition)")
+
+let subtraction = 120.sub
+print("Subtraction is \(subtraction)")
+
+let multiplication = 39.mul
+print("Multiplication is \(multiplication)")
+
+let division = 55.div
+print("Division is \(division)")
+
+let mix = 30.add + 34.sub
+print("Mixed Type is \(mix)")
+</pre>
+<p>When we run the above program using playground, we get the following result &minus;</p>
+<pre class="result notranslate">
+Addition is 103
+Subtraction is 110
+Multiplication is 390
+Division is 11
+Mixed Type is 154
+</pre>
+<h2>Initializers</h2>
+<p>Swift 4 provides the flexibility to add new initializers to an existing type by extensions. The user can add their own custom types to extend the types already defined and additional initialization options are also possible. Extensions supports only init(). deinit() is not supported by the extensions.</p>
+<a href="http://tpcg.io/Qg3OVJ" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+struct sum {
+   var num1 = 100, num2 = 200
+}
+
+struct diff {
+   var no1 = 200, no2 = 100
+}
+
+struct mult {
+   var a = sum()
+   var b = diff()
+}
+
+let calc = mult()
+print ("Inside mult block \(calc.a.num1, calc.a.num2)")
+print("Inside mult block \(calc.b.no1, calc.b.no2)")
+
+let memcalc = mult(a: sum(num1: 300, num2: 500),b: diff(no1: 300, no2: 100))
+print("Inside mult block \(memcalc.a.num1, memcalc.a.num2)")
+print("Inside mult block \(memcalc.b.no1, memcalc.b.no2)")
+
+extension mult {
+   init(x: sum, y: diff) {
+      let X = x.num1 + x.num2
+      let Y = y.no1 + y.no2
+   }
+}
+
+let a = sum(num1: 100, num2: 200)
+print("Inside Sum Block:\( a.num1, a.num2)")
+
+let b = diff(no1: 200, no2: 100)
+print("Inside Diff Block: \(b.no1, b.no2)")
+</pre>
+<p>When we run the above program using playground, we get the following result &minus;</p>
+<pre class="result notranslate">
+Inside mult block (100, 200)
+Inside mult block (200, 100)
+Inside mult block (300, 500)
+Inside mult block (300, 100)
+Inside Sum Block:(100, 200)
+Inside Diff Block: (200, 100)
+</pre>
+<h2>Methods</h2>
+<p>New instance methods and type methods can be added further to the subclass with the help of extensions.</p>
+<a href="http://tpcg.io/FX15jk" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+extension Int {
+   func topics(summation: () -&gt; ()) {
+      for _ in 0..&lt;self {
+         summation()
+      }
+   }
+}
+
+4.topics(summation: {
+   print("Inside Extensions Block")
+})
+
+3.topics(summation: {
+   print("Inside Type Casting Block")
+})
+</pre>
+<p>When we run the above program using playground, we get the following result &minus;</p>
+<pre class="result notranslate">
+Inside Extensions Block
+Inside Extensions Block
+Inside Extensions Block
+Inside Extensions Block
+Inside Type Casting Block
+Inside Type Casting Block
+Inside Type Casting Block
+</pre>
+<p>topics() function takes argument of type '(summation: () &rarr; ())' to indicate the function does not take any arguments and it won't return any values. To call that function multiple number of times, for block is initialized and call to the method with topic() is initialized.</p>
+<h2>Mutating Instance Methods</h2>
+<p>Instance methods can also be mutated when declared as extensions.</p>
+<p>Structure and enumeration methods that modify self or its properties must mark the instance method as mutating, just like mutating methods from an original implementation.</p>
+<a href="http://tpcg.io/YnkL9T" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+extension Double {
+   mutating func square() {
+      let pi = 3.1415
+      self = pi * self * self
+   }
+}
+
+var Trial1 = 3.3
+Trial1.square()
+print("Area of circle is: \(Trial1)")
+
+var Trial2 = 5.8
+Trial2.square()
+print("Area of circle is: \(Trial2)")
+
+var Trial3 = 120.3
+Trial3.square()
+print("Area of circle is: \(Trial3)")
+</pre>
+<p>When we run the above program using playground, we get the following result &minus;</p>
+<pre class="result notranslate">
+Area of circle is: 34.210935
+Area of circle is: 105.68006
+Area of circle is: 45464.070735
+</pre>
+<h2>Subscripts</h2>
+<p>Adding new subscripts to already declared instances can also be possible with extensions.</p>
+<pre class="prettyprint notranslate">
+extension Int {
+   subscript(var multtable: Int) -&gt; Int {
+      var no1 = 1
+      while multtable &gt; 0 {
+         no1 *= 10
+         --multtable
+      }
+      return (self / no1) % 10
+   }
+}
+
+print(12[0])
+print(7869[1])
+print(786543[2])
+</pre>
+<p>When we run the above program using playground, we get the following result &minus;</p>
+<pre class="result notranslate">
+2
+6
+5
+</pre>
+<h2>Nested Types</h2>
+<p>Nested types for class, structure and enumeration instances can also be extended with the help of extensions.</p>
+<a href="http://tpcg.io/diM4Zf" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+extension Int {
+   enum calc {
+      case add
+      case sub
+      case mult
+      case div
+      case anything
+   }
+   var print: calc {
+      switch self {
+         case 0:
+            return .add
+         case 1:
+            return .sub
+         case 2:
+            return .mult
+         case 3:
+            return .div
+         default:
+            return .anything
+      }
+   }
+}
+
+func result(numb: [Int]) {
+   for i in numb {
+      switch i.print {
+         case .add:
+            print(" 10 ")
+         case .sub:
+            print(" 20 ")
+         case .mult:
+            print(" 30 ")
+         case .div:
+            print(" 40 ")
+         default:
+            print(" 50 ")
+      }
+   }
+}
+result(numb: [0, 1, 2, 3, 4, 7])
+</pre>
+<p>When we run the above program using playground, we get the following result &minus;</p>
+<pre class="result notranslate">
+10
+20
+30
+40
+50
+50
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/swift/swift_type_casting.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/swift/swift_protocols.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/swift/swift_extensions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/swift/swift_extensions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/swift/swift_extensions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/swift/swift_extensions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/swift/swift_extensions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/swift/swift_extensions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

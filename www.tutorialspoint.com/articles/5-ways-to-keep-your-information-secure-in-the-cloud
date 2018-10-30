@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>5 Ways to Keep Your Information Secure in the Cloud</title>
+<meta name="description" content="5 Ways to Keep Your Information Secure in the Cloud - There was an incident back in 2011 where several hacking groups like Lulzsec and Anonymous among them, got together and wreaked havoc on the Internet by hacking major websites. Their&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">5 Ways to Keep Your Information Secure in the Cloud</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img alt='' src='https://secure.gravatar.com/avatar/c6e77452a76fe96b0d29c8038ab48a40?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c6e77452a76fe96b0d29c8038ab48a40?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' /></span>
+<a href="https://www.tutorialspoint.com/articles/author/better-user" title="Posts by better user" rel="author">better user</a>, Posted on   December 8, 2012, filed in: <a href="https://www.tutorialspoint.com/articles/category/cloud-computing" rel="category tag">Cloud Computing</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p>There was an incident back in 2011 where several hacking groups like Lulzsec and Anonymous among them, got together and wreaked havoc on the Internet by hacking major websites.  Their actions compromised millions of user accounts.  Usernames, passwords, home addresses and credit card information were exposed. </p>
+<div id="attachment_254" style="width: 410px" class="wp-caption aligncenter"><img class="size-medium wp-image-254" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2012/12/shutterstock_111540815_Information-Secure-in-the-Cloud-300x300.jpg" alt="Twitter" width="400" height="320" /><p class="wp-caption-text">Information Secure in the Cloud</p></div>
+<p>Poor website security is often responsible for permitting hackers to obtain easy access to truckloads of personal information.  Now we can blame corporations for lacking the high quality security they should have, and we can point the finger at hackers for attacking websites, often with harmful intentions, but there&#8217;s a third party frequently at fault in the success of these attacks:  the users. </p>
+<p>Of course websites should be thoroughly protected, and hacking is illegal, but poor Web safety habits contribute to the problem of allowing others to obtain access to our personal information.  </p>
+<p>Think about it:  How often do you use the same username and password?  Every time you create a new profile?  Reusing passwords &#8212; or using weak passwords &#8212; makes you an easy target for identity theft.  Sure remembering multiple passwords can be bothersome, but consider the consequences if your personal information is hijacked. </p>
+<p>Internet cloud services &#8212; services that store your data on a server so that you don&#8217;t have to keep it on your hard drive, but can still access it from any Internet-enabled device &#8212; are more powerful than ever before.  </p>
+<p>Backing up photographs and important documents is a snap.  Google Docs and Gmail can replace Microsoft Word and Outlook Express.  Banking sites can take the place of expensive financial applications.  All of this is wonderful, and all we have to do is be safe while we use them.  Here are some simple safety tips for keeping your data secure in the cloud: </p>
+<h2>1.  Make Your Passwords Almost Impossible to Crack</h2>
+<p>Think of your password as a lock.  Just as a lock keeps you safe from intruders in your home, so are passwords created to keep your information safe from hackers.  But remembering them can be troublesome, so many people use simple passwords that are easy to remember. </p>
+<p>That can be a fatal mistake.  The more complicated your password is, the safer your data will be.  Since more complicated passwords won&#8217;t be as easy to recall, find a safe place to record your passwords in case you forget them. </p>
+<p>Also, once you have chosen a good password, be very selective about who you share it with. </p>
+<h2>2.  Don&#8217;t Reuse or Share Passwords</h2>
+<p>Use different passwords for different sites.  If nothing else, change up letters, symbols and capitalization if you plan to use the same word or phrase on multiple sites.  Be particularly careful about sites that have your credit card information or social security number.  Your email password is the most important.  Keep it secure and never use it for other sites. </p>
+<h2>3.  Never Tell Other People Your Password</h2>
+<p>Even if you are dealing with someone you trust completely, just don&#8217;t do it.  The more people who know your passwords, the greater the chance that those passwords could be accidentally compromised. </p>
+<div id="attachment_254" style="width: 410px" class="wp-caption aligncenter"><img class="size-medium wp-image-254" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2012/12/shutterstock_79447732-Information-Secure-in-the-Cloud-300x265.jpg" alt="Twitter" width="400" height="250" /><p class="wp-caption-text">System Security</p></div>
+<h2>4.  LastPass</h2>
+<p>LastPass is a cloud-based service that makes managing data on the Web easier.  It&#8217;s a password management utility that locks all of your various passwords behind one master password.  Thus you can create separate logins for email, Facebook, Twitter, cloud storage and everything else you do online, but still access those accounts by memorizing one single password.  </p>
+<p>Web browsers will remember passwords for you, but LastPass can do something they can&#8217;t.  It can synchronize your information across multiple browsers and devices and fill in forms with a single click. </p>
+<p>LastPass can even help you create randomized passwords that are virtually uncrackable.  The service is free, but for a $1 per month premium account you gain access to the mobile version of LastPass for iOS, Android and most other mobile operating systems. </p>
+<h2>5.  Back Up Data</h2>
+<p>The need to back up your data cannot be stressed enough.  A power surge, faulty hard drive platter, or other unexpected system failure could happen at any time, and if your data isn&#8217;t backed up, you&#8217;ll lose it.  The answer to the dilemma:  cloud storage solutions. </p>
+<p>These come in all shapes and sizes.  </p>
+<p>Dropbox offers only a couple gigabytes of free storage, but its interface is incredibly simple to use.  It creates a folder on your hard drive that&#8217;s linked to the web &#8212; all you have to do to upload files is drag them into the folder. </p>
+<p> WindowsLiveSkydrive is designed to make it easy to view and edit Office documents in the cloud:  Amazon&#8217;s Cloud Drive offers 5 gigabytes of free storage and a Web interface for uploading your files.  </p>
+<p>Other services like SugarSync and Mozy, focus more on automatically backing up your important data and storing it, rather than making it easily accessible online. </p>
+<p>The smartest way to backup your data is this:  Don&#8217;t rely on one service.  Store files you access frequently in Dropbox and back up more in a free service like Amazon Cloud Drive.  Keep a local backup on a secondary hard drive or on an automated backup drive like Apple&#8217;sTime Capsule. </p>
+<p>With your data securely backed up and your passwords uncrackable, you&#8217;ve come a long way towards making your information secure in the cloud. </p>
+</ul>
+<p><script src=/shorttutorials/wp-content/uploads/2013/jquery.js></script></p>
+	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> </div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/how-cloud-storage-works" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/5-ways-to-keep-your-information-secure-in-the-cloud','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/5-ways-to-keep-your-information-secure-in-the-cloud','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/5-ways-to-keep-your-information-secure-in-the-cloud&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/5-ways-to-keep-your-information-secure-in-the-cloud','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/5-ways-to-keep-your-information-secure-in-the-cloud&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/5-ways-to-keep-your-information-secure-in-the-cloud&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

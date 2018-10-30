@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Apache POI Quick Guide</title>
+<meta name="description" content="Apache POI Quick Guide - Learn Apache POI in simple and easy steps starting from basic to advanced concepts with examples including Overview, Flavours of Java Excel API, Installation, classes and Methods, Workbooks, Spreadsheets, Cells, Fonts and Text, Formula, Hyperlink, PrintArea and Database Interaction." />
+<meta name="keywords" content="Apache POI, Tutorial, Overview, Flavours of Java Excel API, Installation, Classes and Methods, Workbooks, Spreadsheets, Cells, Fonts and Text, Formula, Hyperlink, PrintArea, Database Interaction." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #ea3c01 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #ea3c01 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #ea3c01 !important;}
+.submenu-item{ border-bottom: 2px solid #ea3c01 !important; border-top: 2px solid #ea3c01 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#ea3c01; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/apache_poi/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+  vertical-align:middle !important;
+  text-align:center !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/apache_poi/images/apache-poi-mini-logo.jpg" alt="Apache POI tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Apache POI Tutorial</li>
+<li><a href="/apache_poi/index.htm">Apache POI - Home</a></li>
+<li><a href="/apache_poi/apache_poi_overview.htm">Apache POI - Overview</a></li>
+<li><a href="/apache_poi/apache_poi_java_excel.htm">Apache POI - Java Excel APIs</a></li>
+<li><a href="/apache_poi/apache_poi_environment.htm">Apache POI - Environment</a></li>
+<li><a href="/apache_poi/apache_poi_core_classes.htm">Apache POI - Core Classes</a></li>
+<li><a href="/apache_poi/apache_poi_workbooks.htm">Apache POI - Workbooks</a></li>
+<li><a href="/apache_poi/apache_poi_spreadsheets.htm">Apache POI - Spreadsheets</a></li>
+<li><a href="/apache_poi/apache_poi_cells.htm">Apache POI - Cells</a></li>
+<li><a href="/apache_poi/apache_poi_fonts.htm">Apache POI - Fonts</a></li>
+<li><a href="/apache_poi/apache_poi_formula.htm">Apache POI - Formula</a></li>
+<li><a href="/apache_poi/apache_poi_hyperlink.htm">Apache POI - Hyperlink</a></li>
+<li><a href="/apache_poi/apache_poi_print_area.htm">Apache POI - Print Area</a></li>
+<li><a href="/apache_poi/apache_poi_database.htm">Apache POI - Database</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Apache POI Useful Resources</li>
+<li><a href="/apache_poi/apache_poi_questions_answers.htm">Apache POI - Questions &amp; Answers</a></li>
+<li><a href="/apache_poi/apache_poi_quick_guide.htm">Apache POI - Quick Guide</a></li>
+<li><a href="/apache_poi/apache_poi_useful_resources.htm">Apache POI - Useful Resources</a></li>
+<li><a href="/apache_poi/apache_poi_discussion.htm">Apache POI - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Apache POI - Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/apache_poi/apache_poi_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/apache_poi/apache_poi_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Apache POI - Overview</h1>
+<p>Many a time, a software application is required to generate reports in Microsoft Excel file format. Sometimes, an application is even expected to receive Excel files as input data. For example, an application developed for the Finance department of a company will be required to generate all their outputs in Excel.</p>
+<p>Any Java programmer who wants to produce MS Office files as output must use a predefined and read-only API to do so.</p>
+<h2>What is Apache POI?</h2>
+<p>Apache POI is a popular API that allows programmers to create, modify, and display MS Office files using Java programs. It is an open source library developed and distributed by Apache Software Foundation to design or modify Microsoft Office files using Java program. It contains classes and methods to decode the user input data or a file into MS Office documents.</p>
+<h2>Components of Apache POI</h2>
+<p>Apache POI contains classes and methods to work on all OLE2 Compound documents of MS Office. The list of components of this API is given below.</p>
+<ul class="list">
+<li><p><b>POIFS</b> (Poor Obfuscation Implementation File System) &minus; This component is the basic factor of all other POI elements. It is used to read different files explicitly.</p></li>
+<li><p><b>HSSF</b> (Horrible Spreadsheet Format) &minus; It is used to read and write <b>xls</b> format of MS-Excel files.</p></li>
+<li><p><b>XSSF</b> (XML Spreadsheet Format) &minus; It is used for <b>xlsx</b> file format of MS-Excel.</p></li>
+<li><p><b>HPSF</b> (Horrible Property Set Format) &minus; It is used to extract <b>property sets</b> of the MS-Office files.</p></li>
+<li><p><b>HWPF</b> (Horrible Word Processor Format) &minus; It is used to read and write <b>doc</b> extension files of MS-Word.</p></li>
+<li><p><b>XWPF</b> (XML Word Processor Format) &minus; It is used to read and write <b>docx</b> extension files of MS-Word.</p></li>
+<li><p><b>HSLF</b> (Horrible Slide Layout Format) &minus; It is used for read, create, and edit PowerPoint presentations.</p></li>
+<li><p><b>HDGF</b> (Horrible DiaGram Format) &minus; It contains classes and methods for <b>MS-Visio</b> binary files.</p></li>
+<li><p><b>HPBF</b> (Horrible PuBlisher Format) &minus; It is used to read and write <b>MS-Publisher</b> files.</p></li>
+</ul>
+<p>This tutorial guides you through the process of working on Excel files using Java. Therefore the discussion is confined to HSSF and XSSF components.</p>
+<p><b>Note</b> &minus; Older versions of POI support binary file formats such as doc, xls, ppt, etc. Version 3.5 onwards, POI supports OOXML file formats of MS-Office such as docx, xlsx, pptx, etc.</p>
+<p>Like Apache POI, there are other libraries provided by various vendors for Excel file generation. These include <b>Aspose cells for Java</b> by Aspose, <b>JXL</b> by Commons Libraries, and <b>JExcel</b> by Team Dev.</p>
+<h1>Apache POI - Java Excel APIs</h1>
+<p>This chapter takes you through some of the flavors of Java Excel API and their features. There are many vendors who provide Java Excel related APIs; some of them are considered in this chapter.</p>
+<h2>Aspose Cells for Java</h2>
+<p>Aspose Cells for Java is a purely licensed Java Excel API developed and distributed by the vendor Aspose.  The latest version of this API is 8.1.2, released in July 2014. It is a rich and heavy API (combination of plain Java classes and AWT classes) for designing the Excel component that can read, write, and manipulate spreadsheets.</p>
+<p>The common uses of this API are as follows &minus;</p>
+<ul class="list">
+<li>Excel reporting, build dynamic Excel reports</li>
+<li>High-fidelity Excel rendering and printing</li>
+<li>Import and export data from Excel spreadsheets</li>
+<li>Generate, edit, and convert spreadsheets</li>
+</ul>
+<h2>JXL</h2>
+<p>JXL is a third-party framework designed for Selenium that supports data driven automation on web browsers (auto-update of data on web browsers). However it is also used as a common support library for JExcel API because it has basic features to create, read, and write spreadsheets.</p>
+<p>The basic features are as follows &minus;</p>
+<ul class="list">
+<li>Generate Excel files</li>
+<li>Import data from workbooks and spreadsheets</li>
+<li>Obtain the total number of rows and columns</li>
+</ul>
+<p><b>Note</b> &minus; JXL supports only .xls file format and it cannot handle large data volume.</p>
+<h2>JExcel</h2>
+<p>JExcel is a purely licensed API provided by Team Dev. Using this, programmers can easily read, write, display, and modify Excel workbooks in both <b>.xls</b> and <b>.xlsx</b> formats. This API can be easily embedded with Java Swing and AWT. The latest version of this API is Jexcel-2.6.12, released in 2009.</p>
+<p>The main features are as follows &minus;</p>
+<ul class="list">
+<li>Automate Excel application, workbooks, spreadsheets, etc</li>
+<li>Embed workbooks in a Java Swing application as ordinary Swing component</li>
+<li>Add event listeners to workbooks and spreadsheets</li>
+<li>Add event handlers to handle the behavior of workbook and spreadsheet events</li>
+<li>Add native peers to develop custom functionality</li>
+</ul>
+<h2>Apache POI</h2>
+<p>Apache POI is a 100% open source library provided by Apache Software Foundation. Most of the small and medium scale application developers depend heavily on Apache POI (HSSF + XSSF). It supports all the basic features of Excel libraries; however, rendering and text extraction are its main features.</p>
+<img src="/apache_poi/images/circle.jpeg" alt="Circle" />
+<h1>Apache POI - Environment</h1>
+<p>This chapter takes you through the process of setting up Apache POI on Windows and Linux based systems. Apache POI can be easily installed and integrated with your current Java environment following a few simple steps without any complex setup procedures. User administration is required while installation.</p>
+<h2>System Requirements</h2>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">JDK</th>
+<td>Java SE 2 JDK 1.5 or above</td>
+</tr>
+<tr>
+<th style="text-align:center;">Memory</th>
+<td>1 GB RAM (recommended)</td>
+</tr>
+<tr>
+<th style="text-align:center;">Disk Space</th>
+<td>No minimum requirement</td>
+</tr>
+<tr>
+<th style="text-align:center;">Operating System Version</th>
+<td>Windows XP or above, Linux</td>
+</tr>
+</table>
+<p>Let us now proceed with the steps to install Apache POI.</p>
+<h2>Step 1: Verify your Java Installation</h2>
+<p>First of all, you need to have Java Software Development Kit (SDK) installed on your system. To verify this, execute any of the two commands depending on the platform you are working on.</p>
+<p>If the Java installation has been done properly, then it will display the current version and specification of your Java installation. A sample output is given in the following table.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Platform</th>
+<th style="text-align:center;">Command</th>
+<th style="text-align:center;">Sample Output</th>
+</tr>
+<tr>
+<td class="ts">Windows</td>
+<td class="ts"><p>Open command console and type &minus;</p>
+<p><b>\&gt;java –version</b></p></td>
+<td><p>Java version "1.7.0_60"</p>
+<p>Java (TM) SE Run Time Environment (build 1.7.0_60-b19)</p>
+<p>Java Hotspot (TM) 64-bit Server VM (build 24.60-b09,mixed mode)</p></td>
+</tr>
+<tr>
+<td class="ts">Linux</td>
+<td class="ts"><p>Open command terminal and type &minus;</p>
+<p><b>$java –version</b></p></td>
+<td><p>java version "1.7.0_25"</p>
+<p>Open JDK Runtime Environment (rhel-2.3.10.4.el6_4-x86_64)</p>
+<p>Open JDK 64-Bit Server VM (build 23.7-b01, mixed mode)</p></td>
+</tr>
+</table>
+<ul class="list">
+<li><p>We assume the readers of this tutorial have Java SDK version 1.7.0_60 installed on their system.</p></li>
+<li><p>In case you do not have Java SDK, download its current version from <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="nofollow">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a> and have it installed.</p>
+</li>
+</ul>
+<h2>Step 2: Set your Java Environment</h2>
+<p>Set the environment variable JAVA_HOME to point to the base directory location where Java is installed on your machine. For example,</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Platform &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>Windows</b></p>
+<p>Set JAVA_HOME to C:\ProgramFiles\java\jdk1.7.0_60</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>Linux</b></p>
+<p>Export JAVA_HOME = /usr/local/java-current</p></td>
+</tr>
+</table>
+<p>Append the full path of Java compiler location to the System Path.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Platform &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>Windows</b></p>
+<p>Append the String "C:\Program Files\Java\jdk1.7.0_60\bin" to the end of the system variable PATH.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>Linux</b></p>
+<p>Export PATH = $PATH:$JAVA_HOME/bin/</p></td>
+</tr>
+</table>
+<p>Execute the command <b>java -version</b> from the command prompt as explained above.</p>
+<h2>Step 3: Install Apache POI Library</h2>
+<p>Download the latest version of Apache POI from <a target="_blank" rel="nofollow" href="https://poi.apache.org/download.html">https://poi.apache.org/download.html</a> and unzip its contents to a folder from where the required libraries can be linked to your Java program. Let us assume the files are collected in a folder on C drive.</p>
+<p>The following images show the directories and the file structure inside the downloaded folder.</p>
+<img src="/apache_poi/images/jar_hirarchi.jpeg" alt="Jar" />
+<p></p>
+<img src="/apache_poi/images/jar_hirarchi_2.jpeg" alt="Jar" />
+<p>Add the complete path of the five <b>jars</b> as highlighted in the above image to the CLASSPATH.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Platform &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>Windows</b></p>
+<p>Append the following strings to the end of the user variable</p>
+<p>CLASSPATH &minus;</p>
+<p>“C:\poi-3.9\poi-3.9-20121203.jar;”</p>
+<p>“C:\poi-3.9\poi-ooxml-3.9-20121203.jar;”</p>
+<p>“C:\poi-3.9\poi-ooxml-schemas-3.9-20121203.jar;”</p>
+<p>“C:\poi-3.9\ooxml-lib\dom4j-1.6.1.jar;”</p>
+<p>“C:\poi-3.9\ooxml-lib\xmlbeans-2.3.0.jar;.;”</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>Linux</b></p>
+<p>Export CLASSPATH = $CLASSPATH:</p>
+<p>/usr/share/poi-3.9/poi-3.9-20121203.tar:</p>
+<p>/usr/share/poi-3.9/poi-ooxml-schemas-3.9-20121203.tar:</p>
+<p>/usr/share/poi-3.9/poi-ooxml-3.9-20121203.tar:</p>
+<p>/usr/share/poi-3.9/ooxml-lib/dom4j-1.6.1.tar:</p>
+<p>/usr/share/poi-3.9/ooxml-lib/xmlbeans-2.3.0.tar</p>
+</td>
+</tr>
+</table>
+<h1>Apache POI – Core Classes</h1>
+<p>This chapter explains a few classes and methods under the Apache POI API that are critical to work on Excel files using Java programs.</p>
+<h2>Workbook</h2>
+<p>This is the super-interface of all classes that create or maintain Excel workbooks. It belongs to the <b>org.apache.poi.ss.usermodel</b> package. The two classes that implement this interface are as follows &minus;</p>
+<ul class="list">
+<li><p><b>HSSFWorkbook</b> &minus; This class has methods to read and write Microsoft Excel files in .xls format. It is compatible with MS-Office versions 97–2003.</p></li>
+<li><p><b>XSSFWorkbook</b> &minus;  This class has methods to read and write Microsoft Excel and OpenOffice xml files in .xls or .xlsx format. It is compatible with MS-Office versions 2007 or later.</p></li> 
+</ul>
+<h2>HSSFWorkbook</h2>
+<p>It is a high-level class under the <b>org.apache.poi.hssf.usermodel</b> package. It implements the <b>Workbook</b> interface and is used for Excel files in .xls format. Listed below are some of the methods and constructors under this class.</p>
+<h3>Class Constructors</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>HSSFWorkbook()</b></p>
+<p>Creates a new HSSFWorkbook object from scratch.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>HSSFWorkbook(DirectoryNode directory, boolean preserveNodes)</b></p>
+<p>Creates a new HSSFWworkbook objectinside a specific directory.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>HSSFWorkbook(DirectoryNode directory, POIFSFileSystem fs, boolean preserveNodes)</b></p>
+<p>Given a POIFSFileSystem object and a specific directory within it, it creates an SSFWorkbook object to read a specified workbook.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>HSSFWorkbook(java.io.InputStream s)</b></p>
+<p>Creates a new HSSFWorkbook object using an input stream.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>HSSFWorkbook(java.io.InputStream s, boolean preserveNodes)</b></p>
+<p>Constructs a POI file system around your input stream.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>HSSFWorkbook(POIFSFileSystem fs)</b></p>
+<p>Constructs a new HSSFWorkbook object using a POIFSFileSystem object.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>HSSFWorkbook(POIFSFileSystem fs, boolean preserveNodes)</b></p>
+<p>Given a POIFSFileSystem object, it creates a new HSSFWorkbook object to read a specified workbook.</p></td>
+</tr>
+</table>
+<p>The frequently used parameters inside these constructors are &minus;</p>
+<ul class="list">
+<li><p><b>directory</b> &minus; It is the POI filesystem directory to process from.</p></li>
+<li><p><b>fs</b> &minus; It is the POI filesystem that contains the workbook stream.</p></li>
+<li><p><b>preservenodes</b> &minus; This is an optional parameter that decides whether to preserve other nodes like macros. It consumes a lot of memory as it stores all the POIFileSystem in memory (if set).</p></li>
+</ul>
+<p><b>Note</b> &minus; The HSSFWorkbook class contains a number of methods; however they are compatible with xls format only. In this tutorial, the focus is on the latest version of Excel file formats. Hence, the class methods of HSSFWorkbook are not listed here. If you require these class methods, then refer POI-HSSFWorkbook class API at <a href="http://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFWorkbook.html" rel="nofollow" target="_blank">https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFWorkbook.html.</a></p>
+<h2>XSSFWorkbook</h2>
+<p>It is a class that is used to represent both high and low level Excel file formats. It belongs to the <b>org.apache.xssf.usemodel</b> package and implements the <b>Workbook</b> interface. Listed below are the methods and constructors under this class.</p>
+<h3>Class Constructors</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>XSSFWorkbook()</b></p>
+<p>Creates a new XSSFworkbook object from scratch.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>XSSFWorkbook(java.io.File file)</b></p>
+<p>Constructs an XSSFWorkbook object from a given file.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>XSSFWorkbook(java.io.InputStream is)</b></p>
+<p>Constructs an XSSFWorkbook object, by buffering the whole input stream into memory and then opening an OPCPackage object for it.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>XSSFWorkbook(java.lang.String path)</b></p>
+<p>Constructs an XSSFWorkbook object given the full path of a file.</p></td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>createSheet()</b></p>
+<p>Creates an XSSFSheet for this workbook, adds it to the sheets, and returns the high level representation.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>createSheet(java.lang.String sheetname)</b></p>
+<p>Creates a new sheet for this Workbook and returns the high level representation.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>createFont()</b></p>
+<p>Creates a new font and adds it to the workbook's font table.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>createCellStyle()</b></p>
+<p>Creates a new XSSFCellStyle and adds it to the workbook's style table.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>createFont()</b></p>
+<p>Creates a new font and adds it to the workbook's font table.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>setPrintArea(int sheetIndex, int startColumn, int endColumn, int startRow,int endRow)</b></p>
+<p>Sets the print area of a given sheet as per the specified parameters.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFWorkbook.html" rel="nofollow" target="_blank">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFWorkbook.html.</a> for the complete list of methods.</p>
+<h2>Sheet</h2>
+<p>Sheet is an interface under the <b>org.apache.poi.ss.usermodel</b> package and it is a super-interface of all classes that create high or low level spreadsheets with specific names. The most common type of spreadsheet is worksheet, which is represented as a grid of cells.</p>
+<h2>HSSFSheet</h2>
+<p>This is a class under the <b>org.apache.poi.hssf.usermodel</b> package. It can create excel spreadsheets and it allows to format the sheet style and sheet data.</p>
+<h3>Class Constructors</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>HSSFSheet(HSSFWorkbook workbook)</b></p>
+<p>Creates new HSSFSheet called by HSSFWorkbook to create a sheet from scratch.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>HSSFSheet(HSSFWorkbook workbook, InternalSheet sheet)</b></p>
+<p>Creates an HSSFSheet representing the given sheet object.</p></td>
+</tr>
+</table>
+<h2>XSSFSheet</h2>
+<p>This is a class which represents high level representation of excel spreadsheet. It is under <b>org.apache.poi.hssf.usermodel</b> package.</p>
+<h3>Class Constructors</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>XSSFSheet()</b></p>
+<p>Creates new XSSFSheet - called by XSSFWorkbook to create a sheet from scratch.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>XSSFSheet(PackagePart part, PackageRelationship rel)</b></p>
+<p>Creates an XSSFSheet representing the given package part and relationship.</p></td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>addMergedRegion(CellRangeAddress region)</b></p>
+<p>Adds a merged region of cells (hence those cells form one).</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>autoSizeColumn(int column)</b></p>
+<p>Adjusts the column width to fit the contents.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>iterator()</b></p>
+<p>This method is an alias for rowIterator() to allow foreach loops</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>addHyperlink(XSSFHyperlink hyperlink)</b></p>
+<p>Registers a hyperlink in the collection of hyperlinks on this sheet</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API at: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html.</a></p>
+<h2>Row</h2>
+<p>This is an interface under the <b>org.apache.poi.ss.usermodel</b> package. It is used for high-level representation of a row of a spreadsheet. It is a super-interface of all classes that represent rows in POI library.</p>
+<h2>XSSFRow</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It implements the Row interface, therefore it can create rows in a spreadsheet. Listed below are the methods and constructors under this class.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>createCell(int columnIndex)</b></p>
+<p>Creates new cells within the row and returns it.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>setHeight(short height)</b></p>
+<p>Sets the height in short units.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, follow the given link <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFRow.html</a></p>
+<h2>Cell</h2>
+<p>This is an interface under the <b>org.apache.poi.ss.usermodel</b> package. It is a super-interface of all classes that represent cells in the rows of a spreadsheet.</p>
+<p>Cells can take various attributes such as blank, numeric, date, error, etc. Cells should have their own numbers (0 based) before being added to a row.</p>
+<h2>XSSFCell</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It implements the Cell interface. It is a high-level representation of cells in the rows of a spreadsheet.</p>
+<h3>Field Summary</h3>
+<p>Listed below are some of the fields of the XSSFCell class along with their description.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Cell Type &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>CELL_TYPE_BLANK</b></p>
+<p>Represents blank cell</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>CELL_TYPE_BOOLEAN</b></p>
+<p>Represents Boolean cell (true or false)</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>CELL_TYPE_ERROR</b></p>
+<p>Represents error value on a cell</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>CELL_TYPE_FORMULA</b></p>
+<p>Represents formula result on a cell</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>CELL_TYPE_NUMERIC</b></p>
+<p>Represents numeric data on a cell</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>CELL_TYPE_STRING</b></p>
+<p>Represents string (text) on a cell</p></td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>setCellStyle(CellStyle style)</b></p>
+<p>Sets the style for the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>setCellType(int cellType)</b></p>
+<p>Sets the type of cells (numeric, formula, or string).</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>setCellValue(boolean value)</b></p>
+<p>Sets a boolean value for the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setCellValue(java.util.Calendar value)</b></p>
+<p>Sets a date value for the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>setCellValue(double value)</b></p>
+<p>Sets a numeric value for the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>setCellValue(java.lang.String str)</b></p>
+<p>Sets a string value for the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>setHyperlink(Hyperlink hyperlink)</b></p>
+<p>Assigns a hyperlink to this cell.</p></td>
+</tr>
+</table>
+<p>For the remaining methods and fields of this class, visit the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCell.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCell.html</a></p>
+<h2>XSSFCellStyle</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It will provide possible information regarding the format of the content in a cell of a spreadsheet. It also provides options for modifying that format. It implements the CellStyle interface.</p>
+<h3>Field Summary</h3>
+<p>The following table lists a few fields that are inherited from the CellStyle interface.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Field &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>ALIGN_CENTER</b></p>
+<p>Center align the cell contents</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>ALIGN_CENTER_SELECTION</b></p>
+<p>Center-selection horizontal alignment</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>ALIGN_FILL</b></p>
+<p>Cell fit to the content size</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>ALIGN_JUSTIFY</b></p>
+<p>Fit cell contents to its width</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>ALIGN_LEFT</b></p>
+<p>Left align the cell contents</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>ALIGN_RIGHT</b></p>
+<p>Right align the cell contents</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>BORDER_DASH_DOT</b></p>
+<p>Cell style with dash and dot</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>BORDER_DOTTED</b></p>
+<p>Cell style with dotted border</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>BORDER_DASHED</b></p>
+<p>Cell style with dashed border</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>BORDER_THICK</b></p>
+<p>Cell style with thick border</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>BORDER_THIN</b></p>
+<p>Cell style with thin border</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>   
+<td><p><b>VERTICAL_BOTTOM</b></p>
+<p>Align the cell contents vertical bottom</p></td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><p><b>VERTICAL_CENTER</b></p>
+<p>Align the cell contents vertical center</p></td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><p><b>VERTICAL_JUSTIFY </b></p>
+<p>Align and justify the cell contents vertically</p></td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td><p><b>VERTICAL_TOP</b></p>
+<p>Top aligned vertical alignment</p></td>
+</tr>
+</table>
+<h3>Class Constructors</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>XSSFCellStyle(int cellXfId, int cellStyleXfId, StylesTable stylesSource, ThemesTable theme)</b></p>
+<p>Creates a cell style from the supplied parts</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>XSSFCellStyle(StylesTable stylesSource)</b></p>
+<p>Creates an empty cell Style</p>
+</td>
+</tr>
+</table>
+<h3>Class Methods</h3>           
+<table class="table table-bordered">
+<tr>
+<th>S.No</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>setAlignment(short align)</b></p>
+<p>Sets the type of horizontal alignment for the cell</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>    
+<td><p><b>setBorderBottom(short border)</b></p>
+<p>Sets the type of border for the bottom border of the cell</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>    
+<td><p><b>setBorderColor(XSSFCellBorder.BorderSide side, XSSFColor color)</b></p>
+<p>Sets the color for the selected border</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setBorderLeft(Short border)</b></p>
+<p>Sets the type of border for the left border of the cell</p>    
+</td>    
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>setBorderRight(short border)</b></p>
+<p>Sets the type of border for the right border of the cell</p>        
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>setBorderTop(short border)</b></p>
+<p>Sets the type of border for the top border of the cell</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>setFillBackgroundColor(XSSFColor color)</b></p>
+<p>Sets the background fill color represented as an XSSFColor value.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>    
+<td><p><b>setFillForegroundColor(XSSFColor color)</b></p>
+<p>Sets the foreground fill color represented as an XSSFColor value.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>    
+<td><p><b>setFillPattern(short fp)</b></p>
+<p>Specifies the cell fill information for pattern and solid color cell fills.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>setFont(Font font)</b></p>
+<p>Sets the font for this style.</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>setRotation(short rotation)</b></p>
+<p>Sets the degree of rotation for the text in the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><p><b>setVerticalAlignment(short align)</b></p>
+<p>Sets the type of vertical alignment for the cell.</p></td>
+</tr>
+</table>
+<p>For the remaining methods and fields in this class, go through the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCellStyle.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCellStyle.html</a></p>
+<h2>HSSFColor</h2>
+<p>This is a class under the <b>org.apache.poi.hssf.util</b> package. It provides different colors as nested classes. Usually these nested classes are represented by using their own indexes. It implements the Color interface.</p>
+<h3>Nested classes</h3>
+<p>All nested classes of this class are static and each class has its index. These nested color classes are used for cell formatting such as cell content, border, foreground, and background. Listed below are some of the nested classes.</p>
+<table class="table table-bordered" align="center" style="text-align:center;">
+<tr>
+<th style="text-align:center; width:5%;">Sr.No.</th>
+<th style="text-align:center;">Class names (colors)</th>
+</tr>
+<tr>
+<td>1</td>
+<td>HSSFColor.AQUA</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HSSFColor.AUTOMATIC</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HSSFColor.BLACK</td>
+</tr>
+<tr>
+<td>4</td>
+<td>HSSFColor.BLUE</td>
+</tr>
+<tr>
+<td>5</td>
+<td>HSSFColor.BRIGHT_GREEN</td>
+</tr>
+<tr>
+<td>6</td>
+<td>HSSFColor.BRIGHT_GRAY</td>
+</tr>
+<tr>
+<td>7</td>
+<td>HSSFColor.CORAL</td>
+</tr>
+<tr>
+<td>8</td>
+<td>HSSFColor.DARK_BLUE</td>
+</tr>
+<tr>
+<td>9</td>
+<td>HSSFColor.DARK_GREEN</td>
+</tr>
+<tr>
+<td>10</td>
+<td>HSSFColor.SKY_BLUE</td>
+</tr>
+<tr>
+<td>11</td>
+<td>HSSFColor.WHITE</td>
+</tr>
+<tr>
+<td>12</td>
+<td>HSSFColor.YELLOW</td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<p>Only one method of this class is important and that is used to get the index value.</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>getIndex()</b></p>
+<p>This method is used to get the index value of a nested class.</p></td>
+</tr>
+</table>
+<p>For the remaining methods and nested classes, refer the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/hssf/util/HSSFColor.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/hssf/util/HSSFColor.html</a></p>
+<h2>XSSFColor</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It is used to represent color in a spreadsheet. It implements the Color interface. Listed below are some of its methods and constructors.</p>
+<h3>Class Constructors</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>XSSFColor()</b></p>
+<p>Creates a new instance of XSSFColor.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>XSSFColor(byte[] rgb)</b></p>
+<p>Creates a new instance of XSSFColor using RGB.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>XSSFColor(java.awt.Color clr)</b></p>
+<p>Creates a new instance of XSSFColor using the Color class from the awt package.</p></td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>setAuto(boolean auto)</b></p>
+<p>Sets a boolean value to indicate that the ctColor is automatic and the system ctColor is dependent.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>setIndexed(int indexed)</b></p>
+<p>Sets indexed ctColor value as system ctColor.</p></td>
+</tr>
+</table>
+<p>For the remaining methods, visit the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFColor.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFColor.html</a></p>
+<h2>XSSFFont</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It implements the Font interface and therefore it can handle different fonts in a workbook.</p>
+<h3>Class Constructor</h3>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%">Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>XSSFFont()</b></p>
+<p>Creates a new XSSFont instance.</p></td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>setBold(boolean bold)</b></p>
+<p>Sets a Boolean value for the 'bold' attribute.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>setColor(short color)</b></p>
+<p>Sets the indexed color for the font.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>setColor(XSSFColor color)</b></p>
+<p>Sets the color for the font in Standard Alpha RGB color value.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setFontHeight(short height)</b></p>
+<p>Sets the font height in points.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>setFontName(java.lang.String name)</b></p>
+<p>Sets the name for the font.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>setItalic(boolean italic)</b></p>
+<p>Sets a Boolean value for the 'italic' property.</p></td>
+</tr>
+</table>
+<p>For the remaining methods, go through the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFFont.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFFont.html</a></p>
+<h2>XSSFHyperlink</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It implements the Hyperlink interface. It is used to set a hyperlink to the cell contents of a spreadsheet.</p>
+<h3>Fields</h3>
+<p>The fields of this class are as follows. Here, fields mean the types of hyperlinks used.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Field &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>LINK_DOCUMENT</b></p>
+<p>Used to link any other document</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>LINK_EMAIL</b></p>
+<p>Used to link email</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>LINK_FILE</b></p>
+<p>Used to link any other file in any format</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>LINK_URL</b></p>
+<p>Used to link a web URL</p></td>
+</tr>
+</table>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>setAddress(java.lang.String address)</b></p>
+<p>Hyperlink address.</p></td>
+</tr>
+</table>
+<p>For the remaining methods, visit the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFHyperlink.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFHyperlink.html</a></p>
+<h2>XSSFCreationHelper</h2>
+<p>This is a class under the <b>org.apache.poi.xssf.usermodel</b> package. It implements the CreationHelper interface. It is used as a support class for formula evaluation and setting up hyperlinks.</p>
+<h3>Class methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>createFormulaEvaluator()</b></p>
+<p>Creates an XSSFFormulaEvaluator instance, the object that evaluates formula cells.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>createHyperlink(int type)</b></p>
+<p>Creates a new XSSFHyperlink.</p></td>
+</tr>
+</table>
+<p>For the remaining methods, refer the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCreationHelper.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/xssf/usermodel/XSSFCreationHelper.html</a></p>
+<h2>XSSFPrintSetup</h2>
+<p>This is a class under the <b>org.apache.poi.xsssf.usermodel</b> package. It implements the <b>PrintSetup</b> interface. It is used to set print page size, area, options, and settings.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>setLandscape(boolean ls)</b></p>
+<p>Sets a boolean value to allow or block landscape printing.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>setLeftToRight(boolean ltor)</b></p>
+<p>Sets whether to go left to right or top down in ordering while printing.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>setPaperSize(short size)</b></p>
+<p>Sets the paper size.</p></td>
+</tr>
+</table>
+<p>For the remaining methods, visit the following link: <a href="https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFPrintSetup.html" target="_blank" rel="nofollow">https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFPrintSetup.html</a></p>
+<h1>Apache POI – Workbooks</h1>
+<p>Here the term 'Workbook' means Microsoft Excel file. After completion of this chapter, you will be able to create new Workbooks and open existing Workbooks with your Java program.</p>
+<h2>Create Blank Workbook</h2>
+<p>The following simple program is used to create a blank Microsoft Excel Workbook.</p>
+<pre class="prettyprint notranslate">
+import java.io.*;
+import org.apache.poi.xssf.usermodel.*;
+
+public class CreateWorkBook {
+   public static void main(String[] args)throws Exception {
+      //Create Blank workbook
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+
+      //Create file system using specific name
+      FileOutputStream out = new FileOutputStream(new File("createworkbook.xlsx"));
+
+      //write operation workbook using file out object 
+      workbook.write(out);
+      out.close();
+      System.out.println("createworkbook.xlsx written successfully");
+   }
+}
+</pre>
+<p>Let us save the above Java code as <b>CreateWorkBook.java</b>, and then compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac CreateWorkBook.java
+$java CreateWorkBook
+</pre>
+<p>If your system environment is configured with the POI library, it will compile and execute to generate the blank Excel file named <b>createworkbook.xlsx</b> in your current directory and display the following output in the command prompt.</p>
+<pre class="result notranslate">
+createworkbook.xlsx written successfully
+</pre>
+<h2>Open Existing Workbook</h2>
+<p>Use the following code to open an existing workbook.</p>
+<pre class="prettyprint notranslate">
+import java.io.*;
+import org.apache.poi.xssf.usermodel.*;
+
+public class OpenWorkBook {
+   public static void main(String args[])throws Exception { 
+      File file = new File("openworkbook.xlsx");
+      FileInputStream fIP = new FileInputStream(file);
+      
+      //Get the workbook instance for XLSX file 
+      XSSFWorkbook workbook = new XSSFWorkbook(fIP);
+      
+      if(file.isFile() &amp;&amp; file.exists()) {
+         System.out.println("openworkbook.xlsx file open successfully.");
+      } else {
+         System.out.println("Error to open openworkbook.xlsx file.");
+      }
+   }
+}
+</pre>
+<p>Save the above Java code as <b>OpenWorkBook.java</b>, and then compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac OpenWorkBook.java
+$java OpenWorkBook
+</pre>
+<p>It will compile and execute to generate the following output.</p>
+<pre class="result notranslate">
+openworkbook.xlsx file open successfully.
+</pre>
+<p>After opening a workbook, you can perform read and write operations on it.</p>
+<h1>Apache POI – Spreadsheets</h1>
+<p>This chapter explains how to create a spreadsheet and manipulate it using Java. Spreadsheet is a page in an Excel file; it contains rows and columns with specific names.</p>
+<p>After completing this chapter, you will be able to create a spreadsheet and perform read operations on it.</p>
+<h2>Create a Spreadsheet</h2>
+<p>First of all, let us create a spreadsheet using the referenced classes discussed in the earlier chapters. By following the previous chapter, create a workbook first and then we can go on and create a sheet.</p>
+<p>The following code snippet is used to create a spreadsheet.</p>
+<pre class="prettyprint notranslate">
+//Create Blank workbook
+XSSFWorkbook workbook = new XSSFWorkbook();
+
+//Create a blank spreadsheet
+XSSFSheet spreadsheet = workbook.createSheet("Sheet Name");
+</pre>
+<h2>Rows on Spreadsheet</h2>
+<p>Spreadsheets have a grid layout. The rows and columns are identified with specific names. The columns are identified with alphabets and rows with numbers.</p>
+<p>The following code snippet is used to create a row.</p>
+<pre class="result notranslate">
+XSSFRow row = spreadsheet.createRow((short)1);
+</pre>
+<h2>Write into a Spreadsheet</h2>
+<p>Let us consider an example of employee data. Here the employee data is given in a tabular form.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">Emp Id</th>
+<th style="text-align:center;">Emp Name</th>
+<th style="text-align:center;">Designation</th>
+</tr>
+<tr>
+<td>Tp01</td>
+<td>Gopal</td>
+<td>Technical Manager</td>
+</tr>
+<tr>
+<td>TP02</td>
+<td>Manisha</td>
+<td>Proof Reader</td>
+</tr>
+<tr>
+<td>Tp03</td>
+<td>Masthan</td>
+<td>Technical Writer</td>
+</tr>
+<tr>
+<td>Tp04</td>
+<td>Satish</td>
+<td>Technical Writer</td>
+</tr>
+<tr>
+<td>Tp05</td>
+<td>Krishna</td>
+<td>Technical Writer</td>
+</tr>
+</table>
+<p>The following code is used to write the above data into a spreadsheet.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Writesheet {
+   public static void main(String[] args) throws Exception {
+
+      //Create blank workbook
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+
+      //Create a blank sheet
+      XSSFSheet spreadsheet = workbook.createSheet(" Employee Info ");
+
+      //Create row object
+      XSSFRow row;
+
+      //This data needs to be written (Object[])
+      Map &lt; String, Object[] &gt; empinfo = 
+      new TreeMap &lt; String, Object[] &gt;();
+      empinfo.put( "1", new Object[] { "EMP ID", "EMP NAME", "DESIGNATION" });
+      empinfo.put( "2", new Object[] { "tp01", "Gopal", "Technical Manager" });
+      empinfo.put( "3", new Object[] { "tp02", "Manisha", "Proof Reader" });
+      empinfo.put( "4", new Object[] { "tp03", "Masthan", "Technical Writer" });
+      empinfo.put( "5", new Object[] { "tp04", "Satish", "Technical Writer" });
+      empinfo.put( "6", new Object[] { "tp05", "Krishna", "Technical Writer" });
+      
+      //Iterate over data and write to sheet
+      Set &lt; String &gt; keyid = empinfo.keySet();
+      int rowid = 0;
+
+      for (String key : keyid) {
+         row = spreadsheet.createRow(rowid++);
+         Object [] objectArr = empinfo.get(key);
+         int cellid = 0;
+
+         for (Object obj : objectArr) {
+            Cell cell = row.createCell(cellid++);
+            cell.setCellValue((String)obj);
+         }
+      }
+
+      //Write the workbook in file system
+      FileOutputStream out = new FileOutputStream(new File("Writesheet.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("Writesheet.xlsx written successfully");
+   }
+}
+</pre>
+<p>Save the above Java code as <b>Writesheet.java</b>, and then compile and run it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac Writesheet.java
+$java Writesheet
+</pre>
+<p>It will compile and execute to generate an Excel file named <b>Writesheet.xlsx</b> in your current directory and you will get the following output in the command prompt.</p>
+<pre class="result notranslate">
+Writesheet.xlsx written successfully
+</pre>
+<p>The <b>Writesheet.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/writesheet.jpeg" alt="Writesheet" />
+<h2>Read from a Spreadsheet</h2>
+<p>Let us consider the above excel file named <b>Writesheet.xslx</b> as input. Observe the following code; it is used for reading the data from a spreadsheet.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileInputStream;
+
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Readsheet {
+   static XSSFRow row;
+   public static void main(String[] args) throws Exception {
+      FileInputStream fis = new FileInputStream(new File("WriteSheet.xlsx"));
+      
+      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+      XSSFSheet spreadsheet = workbook.getSheetAt(0);
+      Iterator &lt; Row &gt;  rowIterator = spreadsheet.iterator();
+      
+      while (rowIterator.hasNext()) {
+         row = (XSSFRow) rowIterator.next();
+         Iterator &lt; Cell &gt;  cellIterator = row.cellIterator();
+         
+         while ( cellIterator.hasNext()) {
+            Cell cell = cellIterator.next();
+            
+            switch (cell.getCellType()) {
+               case Cell.CELL_TYPE_NUMERIC:
+                  System.out.print(cell.getNumericCellValue() + " \t\t ");
+                  break;
+               
+               case Cell.CELL_TYPE_STRING:
+                  System.out.print(
+                  cell.getStringCellValue() + " \t\t ");
+                  break;
+            }
+         }
+         System.out.println();
+      }
+      fis.close();
+   }
+}
+</pre>
+<p>Let us keep the above code in <b>Readsheet.java</b> file, and then compile and run it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac Readsheet.java
+$java Readsheet
+</pre>
+<p>If your system environment is configured with the POI library, it will compile and execute to generate the following output in the command prompt.</p>
+<pre class="result notranslate">
+EMP ID   EMP NAME       DESIGNATION 
+ tp01     Gopal       Technical Manager 
+ tp02     Manisha     Proof Reader 
+ tp03     Masthan     Technical Writer 
+ tp04     Satish      Technical Writer 
+ tp05     Krishna     Technical Writer
+</pre>
+<h1>Apache POI – Cells</h1>
+<p>Any data that you enter into a spreadsheet is always stored in a cell. We use the labels of rows and columns to identify a cell. This chapter describes how to manipulate data in cells in a spreadsheet using Java programming.</p>
+<h2>Create a Cell</h2>
+<p>You need to create a row before creating a cell. A row is nothing but a collection of cells.</p>
+<p>The following code snippet is used for creating a cell.</p>
+<pre class="prettyprint notranslate">
+//create new workbook
+XSSFWorkbook workbook = new XSSFWorkbook(); 
+
+//create spreadsheet with a name
+XSSFSheet spreadsheet = workbook.createSheet("new sheet");
+
+//create first row on a created spreadsheet
+XSSFRow row = spreadsheet.createRow(0);
+
+//create first cell on created row
+XSSFCell cell = row.createCell(0);
+</pre>
+<h2>Types of Cells</h2>
+<p>The cell type specifies whether a cell can contain strings, numeric value, or formulas. A string cell cannot hold numeric values and a numeric cell cannot hold strings. Given below are the types of cells, their values, and type syntax.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">Type of cell value</th>
+<th style="text-align:center;">Type Syntax</th>
+</tr>
+<tr>
+<td>Blank cell value</td>
+<td>XSSFCell.CELL_TYPE_BLANK</td>
+</tr>
+<tr>
+<td>Boolean cell value</td>
+<td>XSSFCell.CELL.TYPE_BOOLEAN</td>
+</tr>
+<tr>
+<td>Error cell value</td>
+<td>XSSFCell.CELL_TYPE_ERROR</td>
+</tr>
+<tr>
+<td>Numeric cell value</td>
+<td>XSSFCell.CELL_TYPE_NUMERIC</td>
+</tr>
+<tr>
+<td>String cell value</td>
+<td>XSSFCell.CELL_TYPE_STRING</td>
+</tr>
+</table>
+<p>The following code is used to create different types of cells in a spreadsheet.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import java.util.Date;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class TypesofCells {
+   public static void main(String[] args)throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("cell types");
+      
+      XSSFRow row = spreadsheet.createRow((short) 2);
+      row.createCell(0).setCellValue("Type of Cell");
+      row.createCell(1).setCellValue("cell value");
+      
+      row = spreadsheet.createRow((short) 3);
+      row.createCell(0).setCellValue("set cell type BLANK");
+      row.createCell(1);
+      
+      row = spreadsheet.createRow((short) 4);
+      row.createCell(0).setCellValue("set cell type BOOLEAN");
+      row.createCell(1).setCellValue(true);
+      
+      row = spreadsheet.createRow((short) 5);
+      row.createCell(0).setCellValue("set cell type ERROR");
+      row.createCell(1).setCellValue(XSSFCell.CELL_TYPE_ERROR );
+      
+      row = spreadsheet.createRow((short) 6);
+      row.createCell(0).setCellValue("set cell type date");
+      row.createCell(1).setCellValue(new Date());
+      
+      row = spreadsheet.createRow((short) 7);
+      row.createCell(0).setCellValue("set cell type numeric");
+      row.createCell(1).setCellValue(20 );
+      
+      row = spreadsheet.createRow((short) 8);
+      row.createCell(0).setCellValue("set cell type string");
+      row.createCell(1).setCellValue("A String");
+      
+      FileOutputStream out = new FileOutputStream(new File("typesofcells.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("typesofcells.xlsx written successfully");
+   }
+}
+</pre>
+<p>Save the above code in a file named <b>TypesofCells.java</b>, compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac TypesofCells.java
+$java TypesofCells
+</pre>
+<p>If your system is configured with the POI library, then it will compile and execute to generate an Excel file named <b>typesofcells.xlsx</b> in your current directory and display the following output.</p> 
+<pre class="result notranslate">
+typesofcells.xlsx written successfully
+</pre>
+<p>The <b>typesofcells.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/typesofcells.jpeg" alt="Type Of Cells" />
+<h2>Cell Styles</h2>
+<p>Here you can learn how to do cell formatting and apply different styles such as merging adjacent cells, adding borders, setting cell alignment and filling with colors.</p>
+<p>The following code is used to apply different styles to cells using Java programming.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class CellStyle {
+   public static void main(String[] args)throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("cellstyle");
+      XSSFRow row = spreadsheet.createRow((short) 1);
+      row.setHeight((short) 800);
+      XSSFCell cell = (XSSFCell) row.createCell((short) 1);
+      cell.setCellValue("test of merging");
+
+      //MEARGING CELLS 
+      //this statement for merging cells
+
+      spreadsheet.addMergedRegion(
+         new CellRangeAddress(
+            1, //first row (0-based)
+            1, //last row (0-based)
+            1, //first column (0-based)
+            4 //last column (0-based)
+         )
+      );
+      
+      //CELL Alignment
+      row = spreadsheet.createRow(5); 
+      cell = (XSSFCell) row.createCell(0);
+      row.setHeight((short) 800);
+      
+      // Top Left alignment 
+      XSSFCellStyle style1 = workbook.createCellStyle();
+      spreadsheet.setColumnWidth(0, 8000);
+      style1.setAlignment(XSSFCellStyle.ALIGN_LEFT);
+      style1.setVerticalAlignment(XSSFCellStyle.VERTICAL_TOP);
+      cell.setCellValue("Top Left");
+      cell.setCellStyle(style1);
+      row = spreadsheet.createRow(6); 
+      cell = (XSSFCell) row.createCell(1);
+      row.setHeight((short) 800);
+      
+      // Center Align Cell Contents 
+      XSSFCellStyle style2 = workbook.createCellStyle();
+      style2.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+      style2.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+      cell.setCellValue("Center Aligned"); 
+      cell.setCellStyle(style2);
+      row = spreadsheet.createRow(7); 
+      cell = (XSSFCell) row.createCell(2);
+      row.setHeight((short) 800);
+      
+      // Bottom Right alignment 
+      XSSFCellStyle style3 = workbook.createCellStyle();
+      style3.setAlignment(XSSFCellStyle.ALIGN_RIGHT);
+      style3.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+      cell.setCellValue("Bottom Right");
+      cell.setCellStyle(style3);
+      row = spreadsheet.createRow(8);
+      cell = (XSSFCell) row.createCell(3);
+      
+      // Justified Alignment 
+      XSSFCellStyle style4 = workbook.createCellStyle();
+      style4.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+      style4.setVerticalAlignment(XSSFCellStyle.VERTICAL_JUSTIFY);
+      cell.setCellValue("Contents are Justified in Alignment"); 
+      cell.setCellStyle(style4);
+      
+      //CELL BORDER
+      row = spreadsheet.createRow((short) 10);
+      row.setHeight((short) 800);
+      cell = (XSSFCell) row.createCell((short) 1);
+      cell.setCellValue("BORDER");
+      
+      XSSFCellStyle style5 = workbook.createCellStyle();
+      style5.setBorderBottom(XSSFCellStyle.BORDER_THICK);
+      style5.setBottomBorderColor(IndexedColors.BLUE.getIndex());
+      style5.setBorderLeft(XSSFCellStyle.BORDER_DOUBLE);
+      style5.setLeftBorderColor(IndexedColors.GREEN.getIndex());
+      style5.setBorderRight(XSSFCellStyle.BORDER_HAIR);
+      style5.setRightBorderColor(IndexedColors.RED.getIndex());
+      style5.setBorderTop(XSSFCellStyle.BIG_SPOTS);
+      style5.setTopBorderColor(IndexedColors.CORAL.getIndex());
+      cell.setCellStyle(style5);
+      
+      //Fill Colors
+      //background color
+      row = spreadsheet.createRow((short) 10 );
+      cell = (XSSFCell) row.createCell((short) 1);
+      
+      XSSFCellStyle style6 = workbook.createCellStyle();
+      style6.setFillBackgroundColor(HSSFColor.LEMON_CHIFFON.index );
+      style6.setFillPattern(XSSFCellStyle.LESS_DOTS);
+      style6.setAlignment(XSSFCellStyle.ALIGN_FILL);
+      spreadsheet.setColumnWidth(1,8000);
+      cell.setCellValue("FILL BACKGROUNG/FILL PATTERN");
+      cell.setCellStyle(style6);
+      
+      //Foreground color
+      row = spreadsheet.createRow((short) 12);
+      cell = (XSSFCell) row.createCell((short) 1);
+      
+      XSSFCellStyle style7 = workbook.createCellStyle();
+      style7.setFillForegroundColor(HSSFColor.BLUE.index);
+      style7.setFillPattern( XSSFCellStyle.LESS_DOTS);
+      style7.setAlignment(XSSFCellStyle.ALIGN_FILL);
+      cell.setCellValue("FILL FOREGROUND/FILL PATTERN");
+      cell.setCellStyle(style7);
+
+      FileOutputStream out = new FileOutputStream(new File("cellstyle.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("cellstyle.xlsx written successfully");
+   }
+}
+</pre>
+<p>Save the above code in a file named <b>CellStyle.java</b>, compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac CellStyle.java
+$java CellStyle
+</pre>
+<p>It will generate an Excel file named <b>cellstyle.xlsx</b> in your current directory and display the following output.</p>
+<pre class="result notranslate">
+cellstyle.xlsx written successfully
+</pre>
+<p>The cellstyle.xlsx file looks as follows.</p>
+<img src="/apache_poi/images/cellstyle.jpeg" alt="CellStyle" />
+<h1>Apache POI – Fonts</h1>
+<p>This chapter explains how to set different fonts, apply styles, and display text in different angles of direction in an Excel spreadsheet.</p>
+<p>Every system comes bundled with a huge collection of fonts such as Arial, Impact, Times New Roman, etc. The collection can also be updated with new fonts, if required. Similarly there are various styles in which a font can be displayed, for example, bold, italic, underline, strike through, etc.</p>
+<h2>Fonts and Font Styles</h2>
+<p>The following code is used to apply a particular font and style to the contents of a cell.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class FontStyle {
+   public static void main(String[] args)throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("Fontstyle");
+      XSSFRow row = spreadsheet.createRow(2);
+
+      //Create a new font and alter it.
+      XSSFFont font = workbook.createFont();
+      font.setFontHeightInPoints((short) 30);
+      font.setFontName("IMPACT");
+      font.setItalic(true);
+      font.setColor(HSSFColor.BRIGHT_GREEN.index);
+
+      //Set font into style
+      XSSFCellStyle style = workbook.createCellStyle();
+      style.setFont(font);
+
+      // Create a cell with a value and set style to it.
+      XSSFCell cell = row.createCell(1);
+      cell.setCellValue("Font Style");
+      cell.setCellStyle(style);
+      
+      FileOutputStream out = new FileOutputStream(new File("fontstyle.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("fontstyle.xlsx written successfully");
+   }
+}
+</pre>
+<p>Let us save the above code in a file named <b>FontStyle.java</b>. Compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac FontStyle.java
+$java FontStyle
+</pre>
+<p>It generates an Excel file named <b>fontstyle.xlsx</b> in your current directory and display the following output on the command prompt.</p>
+<pre class="result notranslate">
+fontstyle.xlsx written successfully
+</pre>
+<p>The <b>fontstyle.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/fontstyle.jpeg" alt="FontStyle" />
+<h2>Text Direction</h2>
+<p>Here you can learn how to set the text direction in different angles. Usually cell contents are displayed horizontally, from left to right, and at 00 angle; however you can use the following code to rotate the text direction, if required.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class TextDirection {
+   public static void main(String[] args)throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("Text direction");
+      XSSFRow row = spreadsheet.createRow(2);
+      XSSFCellStyle myStyle = workbook.createCellStyle();
+      myStyle.setRotation((short) 0);
+      XSSFCell cell = row.createCell(1);
+      cell.setCellValue("0D angle");
+      cell.setCellStyle(myStyle);
+
+      //30 degrees
+      myStyle = workbook.createCellStyle();
+      myStyle.setRotation((short) 30);
+      cell = row.createCell(3);
+      cell.setCellValue("30D angle");
+      cell.setCellStyle(myStyle);
+
+      //90 degrees
+      myStyle = workbook.createCellStyle();
+      myStyle.setRotation((short) 90);
+      cell = row.createCell(5);
+      cell.setCellValue("90D angle");
+      cell.setCellStyle(myStyle);
+
+      //120 degrees
+      myStyle = workbook.createCellStyle();
+      myStyle.setRotation((short) 120);
+      cell = row.createCell(7);
+      cell.setCellValue("120D angle");
+      cell.setCellStyle(myStyle);
+
+      //270 degrees
+      myStyle = workbook.createCellStyle();
+      myStyle.setRotation((short) 270);
+      cell = row.createCell(9);
+      cell.setCellValue("270D angle");
+      cell.setCellStyle(myStyle);
+
+      //360 degrees
+      myStyle = workbook.createCellStyle();
+      myStyle.setRotation((short) 360);
+      cell = row.createCell(12);
+      cell.setCellValue("360D angle");
+      cell.setCellStyle(myStyle);
+      
+      FileOutputStream out = new FileOutputStream(new File("textdirection.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("textdirection.xlsx written successfully");
+   }
+}
+</pre>
+<p>Keep the above code in <b>TextDirectin.java</b> file, then compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac TextDirection.java
+$java TextDirection
+</pre>
+<p>It will compile and execute to generate an Excel file named <b>textdirection.xlsx</b> in your current directory and display the following output on the command prompt.</p>
+<pre class="result notranslate">
+textdirection.xlsx written successfully
+</pre>
+<p>The <b>textdirection.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/textdirection.jpeg" alt="TextDirectin" />
+<h1>Apache POI – Formula</h1>
+<p>This chapter takes you through the process of applying different formulas on cells using Java programming. The basic purpose of Excel application is to maintain numerical data by applying formulas on it.</p>
+<p>In a formula, we pass dynamic values or locations of the values in the Excel sheet. On executing this formula, you get the desired result. The following table lists a few basic formulas that are frequently used in Excel.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Operation</th>
+<th style="text-align:center;">Syntax</th>
+</tr>
+<tr>
+<td>Adding multiple numbers</td>
+<td>= SUM(Loc1:Locn) <b>or</b> = SUM(n1,n2,)</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>= COUNT(Loc1:Locn) <b>or</b> = COUNT(n1,n2,)</td>
+</tr>
+<tr>
+<td>Power of two numbers</td>
+<td>= POWER(Loc1,Loc2) <b>or</b> = POWER(number, power)</td>
+</tr>
+<tr>
+<td>Max of multiple numbers</td>
+<td>= MAX(Loc1:Locn) <b>or</b> = MAX(n1,n2,)</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>= PRODUCT(Loc1:Locn) <b>or</b> = PRODUCT(n1,n2,)</td>
+</tr>
+<tr>
+<td>Factorial</td>
+<td>= FACT(Locn) <b>or</b> = FACT(number)</td>
+</tr>
+<tr>
+<td>Absolute number</td>
+<td>= ABS(Locn) <b>or</b> = ABS(number)</td>
+</tr>
+<tr>
+<td>Today date</td>
+<td>=TODAY()</td>
+</tr>
+<tr>
+<td>Converts lowercase</td>
+<td>= LOWER(Locn) <b>or</b> = LOWER(text)</td>
+</tr>
+<tr>
+<td>Square root</td>
+<td>= SQRT(locn) <b>or</b> = SQRT(number)</td>
+</tr>
+</table>
+<p>The following code is used to add formulas to a cell and execute it.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Formula {
+   public static void main(String[] args)throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("formula");
+      XSSFRow row = spreadsheet.createRow(1);
+      XSSFCell cell = row.createCell(1);
+      
+      cell.setCellValue("A = ");
+      cell = row.createCell(2);
+      cell.setCellValue(2);
+      row = spreadsheet.createRow(2);
+      cell = row.createCell(1);
+      cell.setCellValue("B = ");
+      cell = row.createCell(2);
+      cell.setCellValue(4);
+      row = spreadsheet.createRow(3);
+      cell = row.createCell(1);
+      cell.setCellValue("Total = ");
+      cell = row.createCell(2);
+      
+      // Create SUM formula
+      cell.setCellType(XSSFCell.CELL_TYPE_FORMULA);
+      cell.setCellFormula("SUM(C2:C3)");
+      cell = row.createCell(3);
+      cell.setCellValue("SUM(C2:C3)");
+      row = spreadsheet.createRow(4);
+      cell = row.createCell(1);
+      cell.setCellValue("POWER =");
+      cell=row.createCell(2);
+      
+      // Create POWER formula
+      cell.setCellType(XSSFCell.CELL_TYPE_FORMULA);
+      cell.setCellFormula("POWER(C2,C3)");
+      cell = row.createCell(3);
+      cell.setCellValue("POWER(C2,C3)");
+      row = spreadsheet.createRow(5);
+      cell = row.createCell(1);
+      cell.setCellValue("MAX = ");
+      cell = row.createCell(2);
+      
+      // Create MAX formula
+      cell.setCellType(XSSFCell.CELL_TYPE_FORMULA);
+      cell.setCellFormula("MAX(C2,C3)");
+      cell = row.createCell(3);
+      cell.setCellValue("MAX(C2,C3)");
+      row = spreadsheet.createRow(6);
+      cell = row.createCell(1);
+      cell.setCellValue("FACT = ");
+      cell = row.createCell(2);
+      
+      // Create FACT formula
+      cell.setCellType(XSSFCell.CELL_TYPE_FORMULA);
+      cell.setCellFormula("FACT(C3)");
+      cell = row.createCell(3);
+      cell.setCellValue("FACT(C3)");
+      row = spreadsheet.createRow(7);
+      cell = row.createCell(1);
+      cell.setCellValue("SQRT = ");
+      cell = row.createCell(2);
+      
+      // Create SQRT formula
+      cell.setCellType(XSSFCell.CELL_TYPE_FORMULA);
+      cell.setCellFormula("SQRT(C5)");
+      cell = row.createCell(3);
+      cell.setCellValue("SQRT(C5)");
+      workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
+      FileOutputStream out = new FileOutputStream(new File("formula.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("fromula.xlsx written successfully");
+   }
+}
+</pre>
+<p>Save the above code as <b>Formula.java</b> and then compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac Formula.java
+$java Formula
+</pre>
+<p>It will generate an Excel file named <b>formula.xlsx</b> in your current directory and display the following output on the command prompt.</p>
+<pre class="result notranslate">
+fromula.xlsx written successfully
+</pre>
+<p>The <b>formula.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/formula.jpeg" alt="Formula" />
+<h1>Apache POI – Hyperlink</h1>
+<p>This chapter explains how to add hyperlinks to the contents in a cell. Usually hyperlinks are used to access any web URL, email, or an external file.</p>
+<p>The following code shows how to create hyperlinks on cells.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.common.usermodel.Hyperlink;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFHyperlink;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class HyperlinkEX {
+   public static void main(String[] args) throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("Hyperlinks");
+      XSSFCell cell;
+      CreationHelper createHelper = workbook.getCreationHelper();
+      XSSFCellStyle hlinkstyle = workbook.createCellStyle();
+      XSSFFont hlinkfont = workbook.createFont();
+      hlinkfont.setUnderline(XSSFFont.U_SINGLE);
+      hlinkfont.setColor(HSSFColor.BLUE.index);
+      hlinkstyle.setFont(hlinkfont);
+
+      //URL Link
+      cell = spreadsheet.createRow(1).createCell((short) 1);
+      cell.setCellValue("URL Link");
+      XSSFHyperlink link = (XSSFHyperlink)createHelper.createHyperlink(Hyperlink.LINK_URL);
+      link.setAddress("http://www.tutorialspoint.com/");
+      cell.setHyperlink((XSSFHyperlink) link);
+      cell.setCellStyle(hlinkstyle);
+
+      //Hyperlink to a file in the current directory
+      cell = spreadsheet.createRow(2).createCell((short) 1);
+      cell.setCellValue("File Link");
+      link = (XSSFHyperlink)createHelper.createHyperlink(Hyperlink.LINK_FILE);
+      link.setAddress("cellstyle.xlsx");
+      cell.setHyperlink(link);
+      cell.setCellStyle(hlinkstyle);
+
+      //e-mail link
+      cell = spreadsheet.createRow(3).createCell((short) 1);
+      cell.setCellValue("Email Link");
+      link = (XSSFHyperlink)createHelper.createHyperlink(Hyperlink.LINK_EMAIL);
+      link.setAddress("mailto:contact@tutorialspoint.com?" + "subject = Hyperlink");
+      cell.setHyperlink(link);
+      cell.setCellStyle(hlinkstyle);
+      
+      FileOutputStream out = new FileOutputStream(new File("hyperlink.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("hyperlink.xlsx written successfully");
+   }
+}
+</pre>
+<p>Save the above code as <b>HyperlinkEX.java</b>. Compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac HyperlinkEX.java
+$java HyperlinkEX
+</pre>
+<p>It will generate an Excel file named <b>hyperlink.xlsx</b> in your current directory and display the following output on the command prompt.</p>
+<pre class="result notranslate">
+hyperlink.xlsx written successfully
+</pre>
+<p>The <b>hyperlink.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/hyperlink.jpeg" alt="Hyperlink" />
+<h1>Apache POI – Print Area</h1>
+<p>This chapter explains how to set the print area on a spreadsheet. The usual print area is from left top to right bottom on Excel spreadsheets. Print area can be customized according to your requirement. It means you can print a particular range of cells from the whole spreadsheet, customize the paper size, print the contents with the grid lines turned on, etc.</p> 
+<p>The following code is used to set up the print area on a spreadsheet.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFPrintSetup;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class PrintArea {
+   public static void main(String[] args)throws Exception {
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("Print Area");
+
+      //set print area with indexes
+      workbook.setPrintArea(
+         0, //sheet index
+         0, //start column
+         5, //end column
+         0, //start row
+         5 //end row
+      );
+      
+      //set paper size
+      spreadsheet.getPrintSetup().setPaperSize(XSSFPrintSetup.A4_PAPERSIZE);
+      
+      //set display grid lines or not
+      spreadsheet.setDisplayGridlines(true);
+      
+      //set print grid lines or not
+      spreadsheet.setPrintGridlines(true);
+      
+      FileOutputStream out = new FileOutputStream(new File("printarea.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("printarea.xlsx written successfully"); 
+   }
+}
+</pre>
+<p>Let us save the above code as <b>PrintArea.java</b>. Compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac PrintArea.java
+$java PrintArea
+</pre>
+<p>It will generate a file named <b>printarea.xlsx</b> in your current directory and display the following output on the command prompt.</p>
+<pre class="result notranslate">
+printarea.xlsx written successfully
+</pre>
+<p>In the above code, we have not added any cell values. Hence <b>printarea.xlsx</b> is a blank file. But you can observe in the following figure that the print preview shows the print area with grid lines.</p> 
+<img src="/apache_poi/images/printarea.jpeg" alt="PrintArea" />
+<h1>Apache POI - Database</h1>
+<p>This chapter explains how the POI library interacts with a database. With the help of JDBC, you can retrieve data from a database and insert that data into a spreadsheet using the POI library. Let us consider MySQL database for SQL operations.</p>
+<h2>Write into Excel from Database</h2>
+<p>Let us assume the following employee data table called <b>emp_tbl</b> is to be retrieved from the MySQL database <b>test</b>.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">EMP ID</th>
+<th style="text-align:center;">EMP NAME</th>
+<th style="text-align:center;">DEG</th>
+<th style="text-align:center;">SALARY</th>
+<th style="text-align:center;">DEPT</th>
+</tr>
+<tr>
+<td>1201</td>
+<td>Gopal</td>
+<td>Technical Manager</td>
+<td>45000</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>1202</td>
+<td>Manisha</td>
+<td>Proof reader</td>
+<td>45000</td>
+<td>Testing</td>
+</tr>
+<tr>
+<td>1203</td>
+<td>Masthanvali</td>
+<td>Technical Writer</td>
+<td>45000</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>1204</td>
+<td>Kiran</td>
+<td>Hr Admin</td>
+<td>40000</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>1205</td>
+<td>Kranthi</td>
+<td>Op Admin</td>
+<td>30000</td>
+<td>Admin</td>
+</tr>
+</table>
+<p>Use the following code to retrieve data from a database and insert the same into a spreadsheet.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelDatabase {
+   public static void main(String[] args) throws Exception {
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection connect = DriverManager.getConnection( 
+         "jdbc:mysql://localhost:3306/test" , 
+         "root" , 
+         "root"
+      );
+      
+      Statement statement = connect.createStatement();
+      ResultSet resultSet = statement.executeQuery("select * from emp_tbl");
+      XSSFWorkbook workbook = new XSSFWorkbook(); 
+      XSSFSheet spreadsheet = workbook.createSheet("employe db");
+      
+      XSSFRow row = spreadsheet.createRow(1);
+      XSSFCell cell;
+      cell = row.createCell(1);
+      cell.setCellValue("EMP ID");
+      cell = row.createCell(2);
+      cell.setCellValue("EMP NAME");
+      cell = row.createCell(3);
+      cell.setCellValue("DEG");
+      cell = row.createCell(4);
+      cell.setCellValue("SALARY");
+      cell = row.createCell(5);
+      cell.setCellValue("DEPT");
+      int i = 2;
+
+      while(resultSet.next()) {
+         row = spreadsheet.createRow(i);
+         cell = row.createCell(1);
+         cell.setCellValue(resultSet.getInt("eid"));
+         cell = row.createCell(2);
+         cell.setCellValue(resultSet.getString("ename"));
+         cell = row.createCell(3);
+         cell.setCellValue(resultSet.getString("deg"));
+         cell = row.createCell(4);
+         cell.setCellValue(resultSet.getString("salary"));
+         cell = row.createCell(5);
+         cell.setCellValue(resultSet.getString("dept"));
+         i++;
+      }
+
+      FileOutputStream out = new FileOutputStream(new File("exceldatabase.xlsx"));
+      workbook.write(out);
+      out.close();
+      System.out.println("exceldatabase.xlsx written successfully");
+   }
+}
+</pre>
+<p>Let us save the above code as <b>ExcelDatabase.java</b>. Compile and execute it from the command prompt as follows.</p>
+<pre class="result notranslate">
+$javac ExcelDatabase.java
+$java ExcelDatabase
+</pre>
+<p>It will generate an Excel file named <b>exceldatabase.xlsx</b> in your current directory and display the following output on the command prompt.</p>
+<pre class="result notranslate">
+exceldatabase.xlsx written successfully
+</pre>
+<p>The <b>exceldatabase.xlsx</b> file looks as follows.</p>
+<img src="/apache_poi/images/exceldatabase.jpeg" alt="Excel Database" />
+<hr />
+<div class="pre-btn">
+<a href="/apache_poi/apache_poi_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/apache_poi/apache_poi_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/apache_poi/apache_poi_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/apache_poi/apache_poi_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/apache_poi/apache_poi_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/apache_poi/apache_poi_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/apache_poi/apache_poi_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/apache_poi/apache_poi_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

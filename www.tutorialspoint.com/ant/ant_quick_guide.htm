@@ -1,0 +1,1549 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ant Quick Guide</title>
+<meta name="description" content="Ant Quick Guide - learn Ant programming in simple and easy steps using this beginner's tutorial starting from basic concepts of the language, Free, Apache, Ant, Tutorials, Reference, Manual, Guide, Beginners, JAR, WAR, Data Types, Quick, Guide, Build Files, Packaging Applications, Deploying Applications, Executing Java Code, Eclipse Integration, JUnit Integration, Extending Art." />
+<meta name="keywords" content="Ant, Tutorial, Introduction, Environment Setup, Build Files, Property Task, Property Files, Data Types, Building Projects, Build Documentation, Creating JAR Files, WAR Files, Packaging Applications, Deploying Applications, Executing Java Code, Eclipse Integration, JUnit Integration, Extending Art." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #A91C7E !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #A91C7E url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #A91C7E !important;}
+.submenu-item{ border-bottom: 2px solid #A91C7E !important; border-top: 2px solid #A91C7E !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#A91C7E; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/ant/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/ant/images/ant-mini-logo.jpg" alt="Ant Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Ant Tutorial</li>
+<li><a href="/ant/index.htm">Ant - Home</a></li>
+<li><a href="/ant/ant_introduction.htm">Ant - Introduction</a></li>
+<li><a href="/ant/ant_environment.htm">Ant - Environment Setup</a></li>
+<li><a href="/ant/ant_build_files.htm">Ant - Build Files</a></li>
+<li><a href="/ant/ant_property_task.htm">Ant - Property Task</a></li>
+<li><a href="/ant/ant_property_files.htm">Ant - Property Files</a></li>
+<li><a href="/ant/ant_data_types.htm">Ant - Data Types</a></li>
+<li><a href="/ant/ant_build_project.htm">Ant - Building Projects</a></li>
+<li><a href="/ant/ant_build_documentation.htm">Ant - Build Documentation</a></li>
+<li><a href="/ant/ant_creating_jar_files.htm">Ant - Creating JAR files</a></li>
+<li><a href="/ant/ant_creating_war_files.htm">Ant - Creating WAR files</a></li>
+<li><a href="/ant/ant_packaging_applications.htm">Ant - Packaging Applications</a></li>
+<li><a href="/ant/ant_deploying_applications.htm">Ant - Deploying Applications</a></li>
+<li><a href="/ant/ant_executing_java_code.htm">Ant - Executing Java code</a></li>
+<li><a href="/ant/ant_eclipse_integration.htm">Ant - Eclipse Integration</a></li>
+<li><a href="/ant/ant_junit_integration.htm">Ant - Junit Integration</a></li>
+<li><a href="/ant/ant_extending_ant.htm">Ant - Extending Ant</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Ant Useful Resources</li>
+<li><a href="/ant/ant_questions_answers.htm">Ant - Questions and Answers</a></li>
+<li><a href="/ant/ant_quick_guide.htm">Ant - Quick Guide</a></li>
+<li><a href="/ant/ant_useful_resources.htm">Ant - Useful Resources</a></li>
+<li><a href="/ant/ant_discussion.htm">Ant - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Ant Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align:center">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/ant/ant_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/ant/ant_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>ANT stands for Another Neat Tool. It is a Java-based build tool from Apache. Before going into the details of Apache Ant, let us first understand why we need a build tool in the first place.</p>
+<h2>Need for a Build Tool</h2>
+<p>On an average, a developer spends a substantial amount of time doing mundane tasks like build and deployment that include:</p>
+<ul class="list">
+<li>Compiling the code</li>
+<li>Packaging the binaries</li>
+<li>Deploying the binaries to the test server</li>
+<li>Testing the changes</li>
+<li>Copying the code from one location to another</li>
+</ul>
+<p>To automate and simplify the above tasks, Apache Ant is useful. It is an Operating System build and deployment tool that can be executed from the command line.</p>
+<h2>History of Apache Ant</h2>
+<ul class="list">
+<li><p>Ant was created by James Duncan Davidson (the original author of Tomcat).</p></li>
+<li><p>It was originally used to build Tomcat, and was bundled as a part of Tomcat distribution.</p></li>
+<li><p>Ant was born out of the problems and complexities associated with the Apache Make tool.</p></li>
+<li><p>Ant was promoted as an independent project in Apache in the year 2000. The latest version of Apache Ant as on May 2014 is 1.9.4.</p></li>
+</ul>
+<h2>Features of Apache Ant</h2>
+<ul class="list">
+<li><p>Ant is the most complete Java build and deployment tool available.</p></li>
+<li><p>Ant is platform neutral and can handle platform specific properties such as file separators.</p></li>
+<li><p>Ant can be used to perform platform specific tasks such as modifying the modified time of a file using 'touch' command.</p></li>
+<li><p>Ant scripts are written using plain XML. If you are already familiar with XML, you can learn Ant pretty quickly.</p></li>
+<li><p>Ant is good at automating complicated repetitive tasks.</p></li>
+<li><p>Ant comes with a big list of predefined tasks.</p></li>
+<li><p>Ant provides an interface to develop custom tasks.</p></li>
+<li><p>Ant can be easily invoked from the command line and it can integrate with free and commercial IDEs.</p></li>
+</ul>
+<h1>Ant - Environment Setup</h1>
+<p>Apache Ant Ant is distributed under the Apache Software License, a fully-fledged open source license certified by the open source initiative.</p>
+<p>The latest Apache Ant version, including its full-source code, class files, and documentation can be found at <a href="http://ant.apache.org.">http://ant.apache.org.</a></p>
+<h2>Installing Apache Ant</h2>
+<p>It is assumed that you have already downloaded and installed Java Development Kit (JDK) on your computer. If not, please follow the instructions <a href="/java/java_environment_setup.htm" target="_blank">here</a>.</p>
+<ul class="list">
+<li><p>Ensure that the JAVA_HOME environment variable is set to the folder where your JDK is installed.</p></li>
+<li><p>Download the binaries from <a rel="nofollow" target="_blank" href="http://ant.apache.org">http://ant.apache.org</a></p></li>
+<li><p>Unzip the zip file to a convenient location c:\folder. using Winzip, winRAR, 7-zip or similar tools.</p></li>
+<li><p>Create a new environment variable called <b>ANT_HOME</b> that points to the Ant installation folder, in this case <b>c:\apache-ant-1.8.2-bin</b> folder.</p></li>
+<li><p>Append the path to the Apache Ant batch file to the PATH environment variable. In our case this would be the <b>c:\apache-ant-1.8.2-bin\bin</b> folder.</p></li>
+</ul>
+<h2>Verifying Apache Ant Installation</h2>
+<p>To verify the successful installation of Apache Ant on your computer, type ant on your command prompt.</p>
+<p>You should see an output similar to:</p>
+<pre class="result notranslate">
+C:\&gt;ant -version
+Apache Ant(TM) version 1.8.2 compiled on December 20 2010
+</pre>
+<p>If you do not see the above output, then please verify that you have followed the installation steps properly.</p>
+<h2>Installing Eclipse</h2>
+<p>This tutorial also covers integration of Ant with Eclipse IDE. Hence, if you have not installed Eclipse already, please download and install Eclipse</p>
+<p>To install Eclipse:</p>
+<ul class="list">
+<li><p>Download the latest Eclipse binaries from <a rel="nofollow" target="_blank" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigor">www.eclipse.org</a></p></li>
+<li><p>Unzip the Eclipse binaries to a convenient location, say c:\folder</p></li>
+<li><p>Run Eclipse from c:\eclipse\eclipse.exe</p></li>
+</ul>
+<h1>Ant - Build Files</h1>
+<p>Typically, Ant's build file, called <b>build.xml</b> should reside in the base directory of the project. However there is no restriction on the file name or its location. You are free to use other file names or save the build file in some other location.</p>
+<p>For this exercise, create a file called build.xml anywhere in your computer with the following contents in it:</p>
+<pre class="prettyprint notranlate">
+&lt;?xml version="1.0"?&gt;
+   &lt;project name="Hello World Project" default="info"&gt;
+   &lt;target name="info"&gt;
+      &lt;echo&gt;Hello World - Welcome to Apache Ant!&lt;/echo&gt;
+   &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<p>Note that there should be no blank line(s) or whitespace(s) before the xml declaration. If you allow them, the following error message occurs while executing the ant build -</p> 
+<p><i>The processing instruction target matching "[xX][mM][lL]" is not allowed.</i>
+All build files require the <b>project</b> element and at least one <b>target</b> element.</p>
+<p>The XML element <b>project</b> has three attributes :</p>
+<table class="table table-bordered">
+<tr>
+<th>Attributes</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>name</td>
+<td>The Name of the project. (Optional)</td>
+</tr>
+<tr>
+<td>default</td>
+<td>The default target for the build script. A project may contain any number of targets. This attribute specifies which target should be considered as the default. (Mandatory)</td>
+</tr>
+<tr>
+<td>basedir</td>
+<td>The base directory (or) the root folder for the project. (Optional)</td>
+</tr>
+</table>
+<p>A target is a collection of tasks that you want to run as one unit. In our example, we have a simple target to provide an informational message to the user.</p>
+<p>Targets can have dependencies on other targets. For example, a <b>deploy</b> target may have a dependency on the <b>package</b> target, the <b>package</b> target may have a dependency on the <b>compile</b> target and so forth. Dependencies are denoted using the <b>depends</b> attribute. For example:</p>
+<pre class="prettyprint notranlate">
+&lt;target name="deploy" depends="package"&gt;
+  ....
+&lt;/target&gt;
+&lt;target name="package" depends="clean,compile"&gt;
+  ....
+&lt;/target&gt;
+&lt;target name="clean" &gt;
+  ....
+&lt;/target&gt;
+&lt;target name="compile" &gt;
+  ....
+&lt;/target&gt;
+</pre>
+<p>The target element has the following attributes:</p>
+<table class="table table-bordered">
+<tr>
+<th>Attributes</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the target (Required)</td>
+</tr>
+<tr>
+<td>depends</td>
+<td>Comma separated list of all targets that this target depends on. (Optional)</td>
+</tr>
+<tr>
+<td>description</td>
+<td>A short description of the target. (optional)</td>
+</tr>
+<tr>
+<td>if</td>
+<td>Allows the execution of a target based on the trueness of a conditional attribute. (optional)</td>
+</tr>
+<tr>
+<td>unless</td>
+<td>Adds the target to the dependency list of the specified Extension Point. An Extension Point is similar to a target, but it does not have any tasks. (Optional)</td>
+</tr>
+</table>
+<p>The <b>echo</b> task in the above example is a trivial task that prints a message. In our example, it prints the message <i>Hello World</i>.</p>
+<p>To run the ant build file, open up command prompt and navigate to the folder where the build.xml resides, and type <b>ant info</b>. You could also type <b>ant</b> instead. Both will work, because <b>info</b> is the default target in the build file. You should see the following output:</p>
+<pre class="result notranlate">
+C:\&gt;ant
+Buildfile: C:\build.xml
+
+info: [echo] Hello World - Welcome to Apache Ant!
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+
+C:\&gt;
+</pre>
+<h1>Ant - Property Task</h1>
+<p>Ant build files are written in XML, which does not allow declaring variables as you do in your favorite programming language. However, as you may have imagined, it would be useful if Ant allowed declaring variables such as project name, project source directory, etc.</p>
+<p>Ant uses the <b>property</b> element which allows you to specify properties. This allows the properties to be changed from one build to another or from one environment to another.</p>
+<p>By default, Ant provides the following pre-defined properties that can be used in the build file:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Properties</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ant.file</td>
+<td>The full location of the build file.</td>
+</tr>
+<tr>
+<td>ant.version</td>
+<td>The version of the Apache Ant installation.</td>
+</tr>
+<tr>
+<td>basedir</td>
+<td>The basedir of the build, as specified in the <b>basedir</b> attribute of the <b>project</b> element.</td>
+</tr>
+<tr>
+<td>ant.java.version</td>
+<td>The version of the JDK that is used by Ant.</td>
+</tr>
+<tr>
+<td>ant.project.name</td>
+<td>The name of the project, as specified in the <b>name</b> atrribute of the <b>project</b> element.</td>
+</tr>
+<tr>
+<td>ant.project.default-target</td>
+<td>The default target of the current project.</td>
+</tr>
+<tr>
+<td style="width:35%;">ant.project.invoked-targets</td>
+<td>Comma separated list of the targets that were invoked in the current project.</td></tr>
+<tr>
+<td>ant.core.lib</td>
+<td>The full location of the Ant jar file.</td>
+</tr>
+<tr>
+<td>ant.home</td>
+<td>The home directory of Ant installation.</td>
+</tr>
+<tr>
+<td>ant.library.dir</td>
+<td>The home directory for Ant library files - typically ANT_HOME/lib folder.</td>
+</tr>
+</table>
+<p>Ant also makes the system properties (Example: file.separator)  available to the build file.</p>
+<p>In addition to the above, the user can define additional properties using the <b>property</b> element. The following example shows how to define a property called <b>sitename</b>:</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0"?&gt;
+&lt;project name="Hello World Project" default="info"&gt;
+   &lt;property name="sitename" value="www.tutorialspoint.com"/&gt;
+   &lt;target name="info"&gt;
+      &lt;echo&gt;Apache Ant version is ${ant.version} - You are 
+         at ${sitename} &lt;/echo&gt;
+   &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<p>Running Ant on the above build file produces the following output:</p>
+<pre class="result notranslate">
+C:\&gt;ant
+Buildfile: C:\build.xml
+
+info: [echo] Apache Ant version is Apache Ant(TM) version 1.8.2  
+      compiled on December 20 2010 - You are at www.tutorialspoint.com
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+C:\&gt;
+</pre>
+<h1>Ant - Property Files</h1>
+<p>Setting properties directly in the build file is fine, if you are working with a handful of properties. However, for a large project, it makes sense to store the properties in a separate property file.</p>
+<p>Storing the properties in a separate file offers the following benefits:</p>
+<ul class="list"> 
+<li><p>It allows you to reuse the same build file, with different property settings for different execution environment. For example, build properties file can be maintained separately for DEV, TEST, and PROD environments.</p></li>
+<li><p>It is useful when you do not know the values for a property (in a particular environment) up-front. This allows you to perform the build in other environments where the property value is known.</p></li>
+</ul>
+<p>There is no hard and fast rule, but typically the property file is named <b>build.properties</b> and is placed along-side the <b>build.xml</b> file. You could create multiple build properties files based on the deployment environments - such as <b>build.properties.dev</b> and <b>build.properties.test.</b></p>
+<p>The contents of the build property file are similar to the normal java property file. They contain one property per line. Each property is represented by a name and a value pair. The name and value pairs are separated by an equals (=) sign. It is highly recommended that the properties are annotated with proper comments. Comments are listed using the hash (#) character.</p>
+<p>The following example shows a <b>build.xml</b> file and its associated <b>build.properties</b> file:</p>
+<h2>build.xml</h2>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0"?&gt;
+&lt;project name="Hello World Project" default="info"&gt;
+   &lt;property file="build.properties"/&gt;
+      &lt;target name="info"&gt;
+         &lt;echo&gt;Apache Ant version is ${ant.version} - You are 
+            at ${sitename} &lt;/echo&gt;
+      &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<h2>build.properties</h2>
+<pre class="prettyprint notranslate">
+# The Site Name
+sitename=www.tutorialspoint.com
+buildversion=3.3.2
+</pre>
+<p>In the above example, <b>sitename</b> is a custom property which is mapped to the website name. You can declare any number of custom properties in this fashion. Another custom property listed in the above example is the <b>buildversion</b>, which, in this instance refers to the version of the build.</p>
+<p>In addition to the above, Ant comes with a number of predefined build properties, which are listed in the previous section, but is represented below once again.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Properties</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ant.file</td>
+<td>The full location of the build file.</td>
+</tr>
+<tr>
+<td>ant.version</td>
+<td>The version of the Apache Ant installation.</td>
+</tr>
+<tr>
+<td>basedir</td>
+<td>The basedir of the build, as specified in the <b>basedir</b> attribute of the <b>project</b> element.</td>
+</tr>
+<tr>
+<td>ant.java.version</td>
+<td>The version of the JDK that is used by Ant.</td>
+</tr>
+<tr>
+<td>ant.project.name</td>
+<td>The name of the project, as specified in the <b>name</b> atrribute of the <b>project</b> element.</td>
+</tr>
+<tr>
+<td>ant.project.default-target</td>
+<td>The default target of the current project.</td>
+</tr>
+<tr>
+<td>ant.project.invoked-targets</td>
+<td>Comma separated list of the targets that were invoked in the current project.</td>
+</tr>
+<tr>
+<td>ant.core.lib</td>
+<td>The full location of the Ant jar file.</td>
+</tr>
+<tr>
+<td>ant.home</td>
+<td>The home directory of Ant installation.</td>
+</tr>
+<tr>
+<td>ant.library.dir</td>
+<td>The home directory for Ant library files - typically ANT_HOME/lib folder.</td>
+</tr>
+</table>
+<p>The example presented in this chapter uses the <b>ant.version</b> built-in property.</p>
+<h1>Ant - Data Types</h1>
+<p>Ant provides a number of predefined data types. Do not confuse the term "data types" with those that are available in the programming language, instead consider them as a set of services that are built into the product already.</p>
+<p>The following data types are provided by Apache Ant.</p>
+<h2>Fileset</h2>
+<p>The fileset data types represents a collection of files. It is used as a filter to include or exclude files that match a particular pattern.</p>
+<p>For example, refer the following code. Here, the src attribute points to the source folder of the project.</p>
+<p>The fileset selects all .java files in the source folder except those contain the word 'Stub'. The case-sensitive filter is applied to the fileset which means a file with the name Samplestub.java will not be excluded from the fileset.</p>
+<pre class="prettyprint notranslate">
+&lt;fileset dir="${src}" casesensitive="yes"&gt;
+   &lt;include name="**/*.java"/&gt;
+   &lt;exclude name="**/*Stub*"/&gt;
+&lt;/fileset&gt;
+</pre>
+<h2>Pattern set</h2>
+<p>A pattern set is a pattern that allows to filter files or folders easily based on certain  patterns. Patterns can be created using the following meta characters:</p>
+<ul class="list">
+<li><p><b>?</b> - Matches one character only.</p></li>
+<li><p><b>*</b> - Matches zero or many characters.</p></li>
+<li><p><b>**</b> - Matches zero or many directories recursively.</p></li>
+</ul>
+<p>The following example depicts the usage of a pattern set.</p>
+<pre class="prettyprint notranslate">
+&lt;patternset id="java.files.without.stubs"&gt;
+   &lt;include name="src/**/*.java"/&gt;
+   &lt;exclude name="src/**/*Stub*"/&gt;
+&lt;/patternset&gt;
+</pre>
+<p>The patternset can then be reused with a fileset as follows:</p>
+<pre class="prettyprint notranslate">
+&lt;fileset dir="${src}" casesensitive="yes"&gt;
+   &lt;patternset refid="java.files.without.stubs"/&gt;
+&lt;/fileset&gt;
+</pre>
+<h2>File list</h2>
+<p>The filelist data type is similar to the file set except the following differences:</p>
+<ul class="list">
+<li><p>filelist contains explicitly named lists of files and it does not support wild cards.</p></li>
+<li><p>filelist data type can be applied for existing or non-existing files.</p></li>
+</ul>
+<p>Let us see the following example of the filelist data type. Here, the attribute <b>webapp.src.folder</b> points to the web application source folder of the project.</p>
+<pre class="prettyprint notranslate">
+&lt;filelist id="config.files" dir="${webapp.src.folder}"&gt;
+   &lt;file name="applicationConfig.xml"/&gt;
+   &lt;file name="faces-config.xml"/&gt;
+   &lt;file name="web.xml"/&gt;
+   &lt;file name="portlet.xml"/&gt;
+&lt;/filelist&gt;
+</pre>
+<h2>Filter set</h2>
+<p>Using a filterset data type along with the copy task, you can replace certain text in all files that matches the pattern with a replacement value.</p>
+<p>A common example is to append the version number to the release notes file, as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+&lt;copy todir="${output.dir}"&gt;
+   &lt;fileset dir="${releasenotes.dir}" includes="**/*.txt"/&gt;
+   &lt;filterset&gt;
+      &lt;filter token="VERSION" value="${current.version}"/&gt;
+   &lt;/filterset&gt;
+&lt;/copy&gt;
+</pre>
+<p>In this Code:</p>
+<ul class="list">
+<li><p>The attribute <b>output.dir</b> points to the output folder of the project.</p></li>
+<li><p>The attribute <b>releasenotes.dir</b> points to the release notes folder of the project.</p></li>
+<li><p>The attribute <b>current.version</b> points to the current version folder of the project.</p></li>
+<li><p>The copy task, as the name suggests, is used to copy files from one location to another.</p></li>
+</ul>
+<h2>Path</h2>
+<p>The <b>path</b> data type is commonly used to represent a class-path. Entries in the path are separated using semicolons or colons. However, these characters are replaced at the run-time by the executing system's path separator character.</p>
+<p>The classpath is set to the list of jar files and classes in the project, as shown in the example below.</p>
+<pre class="prettyprint notranslate">
+&lt;path id="build.classpath.jar"&gt;
+   &lt;pathelement path="${env.J2EE_HOME}/${j2ee.jar}"/&gt;
+   &lt;fileset dir="lib"&gt;
+      &lt;include name="**/*.jar"/&gt;
+   &lt;/fileset&gt;
+&lt;/path&gt;
+</pre>
+<p>In this code:</p>
+<ul class="list">
+<li><p>The attribute <b>env.J2EE_HOME</b> points to the environment variable <b>J2EE_HOME</b>.</p></li>
+<li><p>The attribute <b>j2ee.jar</b> points to the name of the J2EE jar file in the J2EE base folder.</p></li>
+</ul>
+<h1>Ant - Building Projects</h1>
+<p>Now that we have learnt about the data types in Ant, it is time to put that knowledge into action. We will build a project in this chapter. The aim of this chapter is to build an Ant file that compiles the java classes and places them in the WEB-INF\classes folder.</p>
+<p>Consider the following project structure:</p>
+<ul class="list">
+<li><p>The database scripts are stored in the <b>db</b> folder.</p></li>
+<li><p>The java source code is stored in the <b>src</b> folder.</p></li>
+<li><p>The images, js, META-INF, styles (css) are stored in the <b>war</b> folder.</p></li>
+<li><p>The JSPs are stored in the <b>jsp</b> folder.</p></li>
+<li><p>The third party jar files are stored in the <b>lib</b> folder.</p></li>
+<li><p>The java class files are stored in the <b>WEB-INF\classes</b> folder.</p></li>
+</ul>
+<p>This project forms the <b>Hello World</b> Fax Application for the rest of this tutorial.</p>
+<pre class="prettyprint notranslate">
+C:\work\FaxWebApplication&gt;tree
+Folder PATH listing
+Volume serial number is 00740061 EC1C:ADB1
+C:.
++---db
++---src
+.  +---faxapp
+.  +---dao
+.  +---entity
+.  +---util
+.  +---web
++---war
+   +---images
+   +---js
+   +---META-INF
+   +---styles
+   +---WEB-INF
+      +---classes
+      +---jsp
+      +---lib
+</pre>
+<p>Here is the build.xml required for this project. Let us consider it piece by piece.</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0"?&gt;
+&lt;project name="fax" basedir="." default="build"&gt;
+   &lt;property name="src.dir" value="src"/&gt;
+   &lt;property name="web.dir" value="war"/&gt;
+   &lt;property name="build.dir" value="${web.dir}/WEB-INF/classes"/&gt;
+   &lt;property name="name" value="fax"/&gt;
+
+   &lt;path id="master-classpath"&gt;
+      &lt;fileset dir="${web.dir}/WEB-INF/lib"&gt;
+         &lt;include name="*.jar"/&gt;
+      &lt;/fileset&gt;
+      &lt;pathelement path="${build.dir}"/&gt;
+   &lt;/path&gt;
+
+   &lt;target name="build" description="Compile source tree java files"&gt;
+      &lt;mkdir dir="${build.dir}"/&gt;
+      &lt;javac destdir="${build.dir}" source="1.5" target="1.5"&gt;
+         &lt;src path="${src.dir}"/&gt;
+         &lt;classpath refid="master-classpath"/&gt;
+      &lt;/javac&gt;
+   &lt;/target&gt;
+ 
+   &lt;target name="clean" description="Clean output directories"&gt;
+      &lt;delete&gt;
+         &lt;fileset dir="${build.dir}"&gt;
+            &lt;include name="**/*.class"/&gt;
+         &lt;/fileset&gt;
+      &lt;/delete&gt;
+   &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<p>First, let us declare some properties for the source, web, and build folders.</p>
+<pre class="prettyprint notranslate">
+&lt;property name="src.dir" value="src"/&gt;
+&lt;property name="web.dir" value="war"/&gt;
+&lt;property name="build.dir" value="${web.dir}/WEB-INF/classes"/&gt;
+</pre>
+<p>In this example:</p>
+<ul class="list">
+<li><p><b>src.dir</b> refers to the source folder of the project where the java source files can be found.</p></li>
+<li><p><b>web.dir</b> refers to the web source folder of the project, where you can find the JSPs, web.xml, css, javascript and other web related files</p></li>
+<li><p><b>build.dir</b> refers to the output folder of the project compilation.</p></li>
+</ul>
+<p>Properties can refer to other properties. As shown in the above example, the <b>build.dir</b> property makes a reference to the <b>web.dir</b> property.</p>
+<p>In this example, the <b>src.dir</b> refers to the source folder of the project.</p>
+<p>The default target of our project is the <b>compile</b> target. But first let us look at the <b>clean</b> target.</p>
+<p>The clean target, as the name suggests, deletes the files in the build folder.</p>
+<pre class="prettyprint notranslate">
+&lt;target name="clean" description="Clean output directories"&gt;
+   &lt;delete&gt;
+      &lt;fileset dir="${build.dir}"&gt;
+         &lt;include name="**/*.class"/&gt;
+      &lt;/fileset&gt;
+   &lt;/delete&gt;
+&lt;/target&gt;
+</pre>
+<p>The master-classpath holds the classpath information. In this case, it includes the classes in the build folder and the jar files in the lib folder.</p>
+<pre class="prettyprint notranslate">
+&lt;path id="master-classpath"&gt;
+   &lt;fileset dir="${web.dir}/WEB-INF/lib"&gt;
+      &lt;include name="*.jar"/&gt;
+   &lt;/fileset&gt;
+   &lt;pathelement path="${build.dir}"/&gt;
+&lt;/path&gt;
+</pre>
+<p>Finally, the build target to build the files. First of all, we create the build directory, if it does not exist. Then we execute the javac command (specifying jdk1.5 as our target compilation). We supply the source folder and the classpath to the javac task and ask it to drop the class files in the build folder.</p>
+<pre class="prettyprint notranslate">
+&lt;target name="build" description="Compile main source tree java files"&gt;
+   &lt;mkdir dir="${build.dir}"/&gt;
+   &lt;javac destdir="${build.dir}" source="1.5" target="1.5" debug="true"
+      deprecation="false" optimize="false" failonerror="true"&gt;
+      &lt;src path="${src.dir}"/&gt;
+      &lt;classpath refid="master-classpath"/&gt;
+   &lt;/javac&gt;
+&lt;/target&gt;
+</pre>
+<p>Executing Ant on this file compiles the java source files and places the classes in the build folder.</p>
+<p>The following outcome is the result of running the Ant file:</p>
+<pre class="result notranslate">
+C:\&gt;ant
+Buildfile: C:\build.xml
+
+BUILD SUCCESSFUL
+Total time: 6.3 seconds
+</pre>
+<p>The files are compiled and placed in the <b>build.dir</b> folder.</p>
+<h1>Ant - Build Documentation</h1>
+<p>Documentation is a must in any project. Documentation plays a great role in the maintenance of a project. Java makes documentation easier by the use of the in-built <b>javadoc</b> tool. Ant makes it even easier by generating the documentation on demand.</p>
+<p>As you know, the javadoc tool is highly flexible and allows a number of configuration options. Ant exposes these configuration options via the javadoc task. If you are unfamiliar with javadocs, we suggest that you start with this <a href="/java/java_documentation.htm">Java Documentation Tutorial</a>.</p>
+<p>The following section lists the most commonly used javadoc options that are used in Ant.</p>
+<h2>Attributes</h2>
+<p>Source can be specified using <b>sourcepath</b>, <b>sourcepathref</b> or <b>sourcefiles</b>.</p>
+<ul class="list">
+<li><p><b>sourcepath</b> is used to point to the folder of the source files (e.g. src folder).</p></li>
+<li><p><b>sourcepathref</b> is used to refer a path that is referenced by the path attribute (e.g, delegates.src.dir).</p></li>
+<li><p><b>sourcefiles</b> is used when you want to specify the individual files as a comma separated list.</p></li>
+</ul>
+<p>Destination path is specified using the <b>destdir</b> folder (e.g build.dir).</p>
+<p>You could filter the <b>javadoc</b> task by specifying the package names to be included. This is achieved by using the <b>packagenames</b> attribute, a comma separated list of package files.</p>
+<p>You could filter the javadoc process to show only the public, private, package, or protected classes and members. This is achieved by using the <b>private</b>, <b>public</b>, <b>package</b> and <b>protected</b> attributes.</p>
+<p>You could also tell the javadoc task to include the author and version information using the respective attributes.</p>
+<p>You could also group the packages together using the <b>group</b> attribute, so that it becomes easy to navigate.</p>
+<h2>Putting it all together</h2>
+<p>Let us continue our theme of the <b>Hello world</b> Fax application. Let us add a documentation target to our Fax application project.</p>
+<p>Given below is an example javadoc task used in our project. In this example, we have specified the javadoc to use the <b>src.dir</b> as the source directory, and <b>doc</b> as the target.</p>
+<p>We have also customized the window title, the header, and the footer information that appear on the java documentation pages.</p>
+<p>Also, we have created three groups:</p>
+<ul class="list">
+<li>one for the utility classes in our source folder,</li>
+<li>one for the user interfaces classes, and</li>
+<li>one for the database related classes.</li>
+</ul>
+<p>You may notice that the data package group has two packages -– faxapp.entity and faxapp.dao.</p>
+<pre class="prettyprint notranslate">
+&lt;target name="generate-javadoc"&gt;
+   &lt;javadoc packagenames="faxapp.*" sourcepath="${src.dir}" 
+      destdir="doc" version="true" windowtitle="Fax Application"&gt;
+      &lt;doctitle&gt;&lt;![CDATA[= Fax Application =]]&gt;&lt;/doctitle&gt;
+      &lt;bottom&gt;
+         &lt;![CDATA[Copyright &#169; 2011. All Rights Reserved.]]&gt;
+      &lt;/bottom&gt;
+      &lt;group title="util packages" packages="faxapp.util.*"/&gt;
+      &lt;group title="web packages" packages="faxapp.web.*"/&gt;
+      &lt;group title="data packages" 
+         packages="faxapp.entity.*:faxapp.dao.*"/&gt;
+   &lt;/javadoc&gt;
+   &lt;echo message="java doc has been generated!" /&gt;
+&lt;/target&gt;
+</pre>
+<p>Let us execute the javadoc Ant task. It generates and places the java documentation files in the doc folder.</p>
+<p>When the <b>javadoc target</b> is executed, it produces the following outcome: </p>
+<pre class="result notranslate">
+C:\&gt;ant generate-javadoc
+Buildfile: C:\build.xml
+
+java doc has been generated!
+
+BUILD SUCCESSFUL
+Total time: 10.63 second
+</pre>
+<p>The java documentation files are now present in the <b>doc</b> folder.</p>
+<p>Typically, the javadoc files are generated as a part of the release or package targets.</p>
+<h1>Ant - Creating JAR files</h1>
+<p>The next logical step after compiling your java source files, is to build the java archive, i.e., the JAR file. Creating JAR files with Ant is quite easy with the <b>jar</b> task. The commonly used attributes of the jar task are as follows:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:20%">Attributes</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>basedir</td>
+<td>The base directory for the output JAR file. By default, this is set to the base directory of the project.</td>
+</tr>
+<tr>
+<td>compress</td>
+<td>Advises Ant to compress the file as it creates the JAR file.</td>
+</tr>
+<tr>
+<td>keepcompression</td>
+<td>While the <b>compress</b> attribute is applicable to the individual files, the <b>keepcompression</b> attribute does the same thing, but it applies to the entire archive.</td>
+</tr>
+<tr>
+<td>destfile</td>
+<td>The name of the output JAR file.</td>
+</tr>
+<tr>
+<td>duplicate</td>
+<td>Advises Ant on what to do when duplicate files are found. You could add, preserve, or fail the duplicate files.</td>
+</tr>
+<tr>
+<td>excludes</td>
+<td>Advises Ant to not include these comma separated list of files in the package.</td>
+</tr>
+<tr>
+<td>excludesfile</td>
+<td>Same as above, except the exclude files are specified using a pattern.</td>
+</tr>
+<tr>
+<td>inlcudes</td>
+<td>Inverse of excludes.</td>
+</tr>
+<tr>
+<td>includesfile</td>
+<td>Inverse of excludesfile.</td>
+</tr>
+<tr>
+<td>update</td>
+<td>Advises Ant to overwrite files in the already built JAR file.</td>
+</tr>
+</table>
+<p>Continuing our <b>Hello World</b> Fax Application project, let us add a new target to produce the jar files. But before that, let us consider the jar task given below.</p>
+<pre class="prettyprint notranslate">
+&lt;jar destfile="${web.dir}/lib/util.jar"
+   basedir="${build.dir}/classes"
+   includes="faxapp/util/**"
+   excludes="**/Test.class"
+/&gt;
+</pre>
+<p>Here, the <b>web.dir</b> property points to the path of the web source files. In our case, this is where the util.jar will be placed.</p>
+<p>The <b>build.dir</b> property in this example points to the build folder where the class files for the util.jar can be found.</p>
+<p>In this example, we create a jar file called <b>util.jar</b> using the classes from the <b>faxapp.util.*</b> package. However, we are excluding  the classes that end with the name Test. The output jar file will be placed in the web application lib folder.</p>
+<p>If we want to make the util.jar an executable jar file we need to add the <b>manifest</b> with the <b>Main-Class</b> meta attribute.</p>
+<p>Therefore, the above example will be updated as:</p>
+<pre class="prettyprint notranslate">
+&lt;jar destfile="${web.dir}/lib/util.jar"
+   basedir="${build.dir}/classes"
+   includes="faxapp/util/**"
+   excludes="**/Test.class"&gt
+   &lt;manifest&gt;
+      &lt;attribute name="Main-Class" value="com.tutorialspoint.util.FaxUtil"/&gt;
+   &lt;/manifest&gt;
+&lt;/jar&gt;
+</pre>
+<p>To execute the jar task, wrap it inside a target, most commonly, the build or package target, and execute them.</p>
+<pre class="prettyprint notranslate">
+&lt;target name="build-jar"&gt;
+&lt;jar destfile="${web.dir}/lib/util.jar"
+   basedir="${build.dir}/classes"
+   includes="faxapp/util/**"
+   excludes="**/Test.class"&gt;
+   &lt;manifest&gt;
+      &lt;attribute name="Main-Class" value="com.tutorialspoint.util.FaxUtil"/&gt;
+   &lt;/manifest&gt;
+&lt;/jar&gt;
+&lt;/target&gt;
+</pre>
+<p>Running Ant on this file creates the util.jar file for us.</p>
+<p>The following outcome is the result of running the Ant file: </p>
+<pre class="result notranslate">
+C:\&gt;ant build-jar
+Buildfile: C:\build.xml
+
+BUILD SUCCESSFUL
+Total time: 1.3 seconds
+</pre>
+<p>The util.jar file is now placed in the output folder.</p>
+<h1>Ant - Creating WAR files</h1>
+<p>Creating WAR files with Ant is extremely simple, and very similar to the creating JAR files task. After all, WAR file, like  JAR file is just another ZIP file.</p>
+<p>The WAR task is an extension to the JAR task, but it has some nice additions to manipulate what goes into the WEB-INF/classes folder, and generating the web.xml file. The WAR task is useful to specify a particular layout of the WAR file.</p>
+<p>Since the WAR task is an extension of the JAR task, all attributes of the JAR task apply to the WAR task.</p>
+<table class="table table-bordered">
+<tr>
+<th>Attributes</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>webxml</td>
+<td>Path to the web.xml file</td>
+</tr>
+<tr>
+<td>lib</td>
+<td>A grouping to specify what goes into the WEB-INF\lib folder.</td>
+</tr>
+<tr>
+<td>classes</td>
+<td>A grouping to specify what goes into the WEB-INF\classes folder.</td>
+</tr>
+<tr>
+<td>metainf</td>
+<td>Specifies the instructions for generating the MANIFEST.MF file.</td>
+</tr>
+</table>
+<p>Continuing our <b>Hello World</b> Fax Application project, let us add a new target to produce the jar files. But before that let us consider the war task. Consider the following example:</p>
+<pre class="prettyprint notranslate">
+&lt;war destfile="fax.war" webxml="${web.dir}/web.xml"&gt;
+   &lt;fileset dir="${web.dir}/WebContent"&gt;
+      &lt;include name="**/*.*"/&gt;
+   &lt;/fileset&gt;
+   &lt;lib dir="thirdpartyjars"&gt;
+      &lt;exclude name="portlet.jar"/&gt;
+   &lt;/lib&gt;
+   &lt;classes dir="${build.dir}/web"/&gt;
+&lt;/war&gt;
+</pre>
+<p>As per the previous examples, the <b>web.dir</b> variable refers to the source web folder, i.e, the folder that contains the JSP, css, javascript files etc.</p>
+<p>The <b>build.dir</b> variable refers to the output folder - This is where the classes for the WAR package can be found. Typically, the classes will be bundled into the WEB-INF/classes folder of the WAR file.</p>
+<p>In this example, we are creating a war file called fax.war. The WEB.XML file is obtained from the web source folder. All files from the 'WebContent' folder under web are copied into the WAR file.</p>
+<p>The WEB-INF/lib folder is populated with the jar files from the thirdpartyjars folder. However, we are excluding the portlet.jar as this is already present in the application server's lib folder. Finally, we are copying all classes from the build directory's web folder and putting into the WEB-INF/classes folder.</p>
+<p>Wrap the war task inside an Ant target (usually package) and run it. This will create the WAR file in the specified location.</p>
+<p>It is entirely possible to nest the classes, lib, metainf and webinf directors so that they live in scattered folders anywhere in the project structure. But best practices suggest that your Web project should have the Web Content structure that is similar to the structure of the WAR file. The Fax Application project has its structure outlined using this basic principle.</p>
+<p>To execute the war task, wrap it inside a target, most commonly, the build or package target, and run them.</p>
+<pre class="prettyprint notranslate">
+&lt;target name="build-war"&gt;
+   &lt;war destfile="fax.war" webxml="${web.dir}/web.xml"&gt;
+   &lt;fileset dir="${web.dir}/WebContent"&gt;
+      &lt;include name="**/*.*"/&gt;
+   &lt;/fileset&gt;
+   &lt;lib dir="thirdpartyjars"&gt;
+      &lt;exclude name="portlet.jar"/&gt;
+   &lt;/lib&gt;
+   &lt;classes dir="${build.dir}/web"/&gt;
+   &lt;/war&gt;
+&lt;/target&gt;
+</pre>
+<p>Running Ant on this file will create the <b>fax.war</b> file for us.</p>
+<p>The following outcome is the result of running the Ant file: </p>
+<pre class="result notranslate">
+C:\&gt;ant build-war
+Buildfile: C:\build.xml
+
+BUILD SUCCESSFUL
+Total time: 12.3 seconds
+</pre>
+<p>The fax.war file is now placed in the output folder. The contents of the war file will be:</p>
+<pre class="prettyprint notranslate">
+fax.war:
+   +---jsp             <i>This folder contains the jsp files</i>
+   +---css             <i>This folder contains the stylesheet files</i>
+   +---js              <i>This folder contains the javascript files</i>
+   +---images          <i>This folder contains the image files</i>
+   +---META-INF        <i>This folder contains the Manifest.Mf</i>
+   +---WEB-INF
+      +---classes   <i>This folder contains the compiled classes</i>
+      +---lib       <i>Third party libraries and the utility jar files</i>
+      WEB.xml       <i>Configuration file that defines the WAR package</i>
+</pre>
+<h1>Ant - Packaging Applications</h1>
+<p>We have learnt the different aspects of Ant using the <b>Hello World</b> Fax web application in bits and pieces.</p>
+<p>Now it is time to put everything together to create a full and complete build.xml file. Consider <b>build.properties</b> and <b>build.xml</b> files as follows:</p>
+<h2>build.properties</h2>
+<pre class="prettyprint notranslate">
+deploy.path=c:\tomcat6\webapps
+</pre>
+<h2>build.xml</h2>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0"?&gt;
+
+&lt;project name="fax" basedir="." default="usage"&gt;
+   &lt;property file="build.properties"/&gt;
+   &lt;property name="src.dir" value="src"/&gt;
+   &lt;property name="web.dir" value="war"/&gt;
+   &lt;property name="javadoc.dir" value="doc"/&gt;
+   &lt;property name="build.dir" value="${web.dir}/WEB-INF/classes"/&gt;
+   &lt;property name="name" value="fax"/&gt;
+
+   &lt;path id="master-classpath"&gt;
+      &lt;fileset dir="${web.dir}/WEB-INF/lib"&gt;
+         &lt;include name="*.jar"/&gt;
+      &lt;/fileset&gt;
+      &lt;pathelement path="${build.dir}"/&gt;
+   &lt;/path&gt;
+    
+   &lt;target name="javadoc"&gt;
+      &lt;javadoc packagenames="faxapp.*" sourcepath="${src.dir}" 
+         destdir="doc" version="true" windowtitle="Fax Application"&gt;
+      &lt;doctitle&gt;&lt;![CDATA[&lt;h1&gt;= Fax Application =&lt;/h1&gt;]]&gt;
+      &lt;/doctitle&gt;
+      &lt;bottom&gt;&lt;![CDATA[Copyright &#169; 2011. All Rights Reserved.]]&gt;
+      &lt;/bottom&gt;
+      &lt;group title="util packages" packages="faxapp.util.*"/&gt;
+      &lt;group title="web packages" packages="faxapp.web.*"/&gt; 
+      &lt;group title="data packages" 
+         packages="faxapp.entity.*:faxapp.dao.*"/&gt;
+      &lt;/javadoc&gt;
+   &lt;/target&gt;
+
+   &lt;target name="usage"&gt;
+      &lt;echo message=""/&gt;
+      &lt;echo message="${name} build file"/&gt;
+      &lt;echo message="-----------------------------------"/&gt;
+      &lt;echo message=""/&gt;
+      &lt;echo message="Available targets are:"/&gt;
+      &lt;echo message=""/&gt;
+      &lt;echo message="deploy    --&gt; Deploy application as directory"/&gt;
+      &lt;echo message="deploywar --&gt; Deploy application as a WAR file"/&gt;
+      &lt;echo message=""/&gt;
+   &lt;/target&gt;
+
+   &lt;target name="build" description="Compile main 
+      source tree java files"&gt;
+   &lt;mkdir dir="${build.dir}"/&gt;
+      &lt;javac destdir="${build.dir}" source="1.5" 
+         target="1.5" debug="true"
+         deprecation="false" optimize="false" failonerror="true"&gt;
+      &lt;src path="${src.dir}"/&gt;
+      &lt;classpath refid="master-classpath"/&gt;
+      &lt;/javac&gt;
+   &lt;/target&gt;
+
+   &lt;target name="deploy" depends="build" 
+      description="Deploy application"&gt;
+   &lt;copy todir="${deploy.path}/${name}" 
+      preservelastmodified="true"&gt;
+      &lt;fileset dir="${web.dir}"&gt;
+         &lt;include name="**/*.*"/&gt
+      &lt;/fileset&gt;
+   &lt;/copy&gt;
+   &lt;/target&gt;
+
+   &lt;target name="deploywar" depends="build" 
+      description="Deploy application as a WAR file"&gt;
+      &lt;war destfile="${name}.war"
+         webxml="${web.dir}/WEB-INF/web.xml"&gt;
+         &lt;fileset dir="${web.dir}"&gt;
+            &lt;include name="**/*.*"/&gt;
+         &lt;/fileset&gt;
+      &lt;/war&gt;
+      &lt;copy todir="${deploy.path}" preservelastmodified="true"&gt;
+         &lt;fileset dir="."&gt;
+            &lt;include name="*.war"/&gt;
+         &lt;/fileset&gt;
+      &lt;/copy&gt;
+   &lt;/target&gt;
+    
+
+   &lt;target name="clean" description="Clean output directories"&gt;
+      &lt;delete&gt;
+         &lt;fileset dir="${build.dir}"&gt;
+            &lt;include name="**/*.class"/&gt;
+         &lt;/fileset&gt;
+      &lt;/delete&gt;
+   &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<p>In this example:</p>
+<ul class="list">
+<li><p>We first declare the path to the webapps folder in Tomcat in the build properties file as the <b>deploy.path</b> variable.</p></li>
+<li><p>We also declare the source folder for the java files in the <b>src.dir</b> variable.</p></li>
+<li><p>Then we declare the source folder for the web files in the <b>web.dir</b> variable. <b>javadoc.dir</b> is the folder for storing the java documentation, and <b>build.dir</b> is the path for storing the build output files.</p></li>
+<li><p>Then we declare the name of the web application, which is <b>fax</b> in our case.</p></li>
+<li><p>We also define the master class path which contains the JAR files present in the WEB-INF/lib folder of the project.</p></li>
+<li><p>We also include the class files present in the <b>build.dir</b> in the master class path.</p></li>
+<li><p>The Javadoc target produces the javadoc required for the project and the usage target is used to print the common targets that are present in the build file.</p></li>
+</ul>
+<p>The above example shows two deployment targets : <b>deploy</b> and <b>deploywar.</b></p>
+<p>The deploy target copies the files from the web directory to the deploy directory preserving the last modified date time stamp. This is useful when deploying to a server that supports hot deployment.</p>
+<p>The clean target clears all the previously built files.</p>
+<p>The deploywar target builds the war file and then copies the war file to the deploy directory of the application server.</p>
+<h1>Ant - Deploying Applications</h1>
+<p>In the previous chapter, we have learnt how to package an application and deploy it to a folder.</p> 
+<p>In this chapter, we are going to deploy the web application directly to the application server deploy folder, then we are going to add a few Ant targets to start and stop the services. Let us continue with the <b>Hello World</b> fax web application. This is a continuation of the previous chapter, the new components are highlighted in <font style="color:red;">bold.</font></p>
+<h2>build.properties</h2>
+<pre class="prettyprint notranslate">
+# Ant properties for building the springapp
+
+appserver.home=c:\\install\\apache-tomcat-7.0.19
+# for Tomcat 5 use $appserver.home}/server/lib
+# for Tomcat 6 use $appserver.home}/lib
+appserver.lib=${appserver.home}/lib
+
+deploy.path=${appserver.home}/webapps
+
+tomcat.manager.url=http://www.tutorialspoint.com:8080/manager
+tomcat.manager.username=tutorialspoint
+tomcat.manager.password=secret
+</pre>
+<h2>build.xml</h2>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0"?&gt;
+
+&lt;project name="fax" basedir="." default="usage"&gt;
+   &lt;property file="build.properties"/&gt;
+   &lt;property name="src.dir" value="src"/&gt;
+   &lt;property name="web.dir" value="war"/&gt;
+   &lt;property name="javadoc.dir" value="doc"/&gt;
+   &lt;property name="build.dir" value="${web.dir}/WEB-INF/classes"/&gt;
+   &lt;property name="name" value="fax"/&gt;
+
+   &lt;path id="master-classpath"&gt;
+      &lt;fileset dir="${web.dir}/WEB-INF/lib"&gt;
+         &lt;include name="*.jar"/&gt;
+      &lt;/fileset&gt;
+   &lt;pathelement path="${build.dir}"/&gt;
+   &lt;/path&gt;
+    
+   &lt;target name="javadoc"&gt;
+   &lt;javadoc packagenames="faxapp.*" sourcepath="${src.dir}" 
+      destdir="doc" version="true" windowtitle="Fax Application"&gt;
+      &lt;doctitle&gt;&lt;![CDATA[&lt;h1&gt;= Fax Application 
+         =&lt;/h1&gt;]]&gt;&lt;/doctitle&gt;
+      &lt;bottom&gt;&lt;![CDATA[Copyright &#169; 2011. All 
+         Rights Reserved.]]&gt;&lt;/bottom&gt;
+      &lt;group title="util packages" packages="faxapp.util.*"/&gt;
+      &lt;group title="web packages" packages="faxapp.web.*"/&gt;
+      &lt;group title="data packages" packages="faxapp.entity.*:faxapp.dao.*"/&gt;
+   &lt;/javadoc&gt;
+   &lt;/target&gt;
+
+   &lt;target name="usage"&gt;
+   &lt;echo message=""/&gt;
+   &lt;echo message="${name} build file"/&gt;
+   &lt;echo message="-----------------------------------"/&gt;
+   &lt;echo message=""/&gt;
+   &lt;echo message="Available targets are:"/&gt;
+   &lt;echo message=""/&gt;
+   &lt;echo message="deploy    --&gt; Deploy application as directory"/&gt;
+   &lt;echo message="deploywar --&gt; Deploy application as a WAR file"/&gt;
+   &lt;echo message=""/&gt;
+   &lt;/target&gt;
+
+   &lt;target name="build" description="Compile main 
+      source tree java files"&gt;
+   &lt;mkdir dir="${build.dir}"/&gt;
+   &lt;javac destdir="${build.dir}" source="1.5" target="1.5" debug="true"
+      deprecation="false" optimize="false" failonerror="true"&gt;
+      &lt;src path="${src.dir}"/&gt;
+      &lt;classpath refid="master-classpath"/&gt;
+   &lt;/javac&gt;
+   &lt;/target&gt;
+
+   &lt;target name="deploy" depends="build" description="Deploy application"&gt;
+      &lt;copy todir="${deploy.path}/${name}" 
+         preservelastmodified="true"&gt;
+         &lt;fileset dir="${web.dir}"&gt;
+            &lt;include name="**/*.*"/&gt;
+         &lt;/fileset&gt;
+      &lt;/copy&gt;
+   &lt;/target&gt;
+
+   &lt;target name="deploywar" depends="build" 
+      description="Deploy application as a WAR file"&gt;
+      &lt;war destfile="${name}.war"
+         webxml="${web.dir}/WEB-INF/web.xml"&gt;
+         &lt;fileset dir="${web.dir}"&gt;
+            &lt;include name="**/*.*"/&gt;
+         &lt;/fileset&gt;
+      &lt;/war&gt;
+      &lt;copy todir="${deploy.path}" preservelastmodified="true"&gt;
+         &lt;fileset dir="."&gt;
+            &lt;include name="*.war"/&gt;
+         &lt;/fileset&gt;
+      &lt;/copy&gt;
+   &lt;/target&gt;
+    
+
+   &lt;target name="clean" description="Clean output directories"&gt;
+      &lt;delete&gt;
+         &lt;fileset dir="${build.dir}"&gt;
+            &lt;include name="**/*.class"/&gt;
+         &lt;/fileset&gt;
+      &lt;/delete&gt;
+   &lt;/target&gt;
+</pre>
+<pre class="prettyprint notranslate">
+&lt;!-- ============================================================ --&gt;
+&lt;!-- Tomcat tasks --&gt;
+&lt;!-- ============================================================ --&gt;
+
+&lt;path id="catalina-ant-classpath"&gt;
+&lt;!-- We need the Catalina jars for Tomcat --&gt;
+&lt;!--  * for other app servers - check the docs --&gt;
+   &lt;fileset dir="${appserver.lib}"&gt;
+      &lt;include name="catalina-ant.jar"/&gt;
+   &lt;/fileset&gt;
+&lt;/path&gt;
+
+&lt;taskdef name="install" classname="org.apache.catalina.ant.InstallTask"&gt;
+   &lt;classpath refid="catalina-ant-classpath"/&gt;
+&lt;/taskdef&gt;
+&lt;taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask"&gt;
+   &lt;classpath refid="catalina-ant-classpath"/&gt;
+&lt;/taskdef&gt;
+&lt;taskdef name="list" classname="org.apache.catalina.ant.ListTask"&gt;
+   &lt;classpath refid="catalina-ant-classpath"/&gt;
+&lt;/taskdef&gt;
+&lt;taskdef name="start" classname="org.apache.catalina.ant.StartTask"&gt;
+   &lt;classpath refid="catalina-ant-classpath"/&gt;
+&lt;/taskdef&gt;
+&lt;taskdef name="stop" classname="org.apache.catalina.ant.StopTask"&gt;
+   &lt;classpath refid="catalina-ant-classpath"/&gt;
+&lt;/taskdef&gt;
+
+&lt;target name="reload" description="Reload application in Tomcat"&gt;
+   &lt;reload url="${tomcat.manager.url}"username="${tomcat.manager.username}"
+      password="${tomcat.manager.password}" path="/${name}"/&gt;
+&lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<p>In this example,, we have used Tomcat as our application server. First, in the build properties file, we have defined some additional properties.</p>
+<ul class="list">
+<li><p>The <b>appserver.home</b> points to the installation path to the Tomcat application server.</p></li>
+<li><p>The <b>appserver.lib</b> points to the library files in the Tomcat installation folder.</p></li>
+<li><p>The <b>deploy.path</b> variable now points to the webapp folder in Tomcat.</p></li>
+</ul>
+<p>Applications in Tomcat can be stopped and started using the Tomcat manager application. The URL for the manager application, username and password are also specified in the build.properties file. Next, we declare a new CLASSPATH that contains the <b>catalina-ant.jar</b>. This jar file is required to execute Tomcat tasks through Apache Ant.</p>
+<p>The catalina-ant.jar provides the following tasks:</p>
+<table class="table table-bordered">
+<tr>
+<th>Properties</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>InstallTask</td>
+<td>Installs a web application. Class Name: org.apache.catalina.ant.InstallTask</td>
+</tr>
+<tr>
+<td>ReloadTask</td>
+<td>Reload a web application. Class Name: org.apache.catalina.ant.ReloadTask</td>
+</tr>
+<tr>
+<td>ListTask</td>
+<td>Lists all web applications. Class Name: org.apache.catalina.ant.ListTask</td>
+</tr>
+<tr>
+<td>StartTask</td>
+<td>Starts a web application. Class Name: org.apache.catalina.ant.StartTask</td>
+</tr>
+<tr>
+<td>StopTask</td>
+<td>Stops a web application. Class Name: org.apache.catalina.ant.StopTask</td>
+</tr>
+<tr>
+<td>ReloadTask</td>
+<td> Reloads a web application without stopping. Class Name: org.apache.catalina.ant.ReloadTask</td>
+</tr>
+</table>
+<p>The reload task requires the following additional parameters:</p>
+<ul class="list">
+<li>URL to the manager application</li>
+<li>Username to restart the web application</li>
+<li>Password to restart the web application</li>
+<li>Name of the web application to be restarted</li>
+</ul>
+<p>Let us issue the <b>deploy-war</b> command to copy the webapp to the Tomcat webapps folder and then let us reload the Fax Web application. The following outcome is the result of running the Ant file: </p>
+<pre class="result notranslate">
+C:\&gt;ant deploy-war
+Buildfile: C:\build.xml
+
+BUILD SUCCESSFUL
+Total time: 6.3 seconds
+
+C:\&gt;ant reload
+Buildfile: C:\build.xml
+
+BUILD SUCCESSFUL
+Total time: 3.1 seconds
+</pre>
+<p>Once the above task is run, the web application is deployed and the web application is reloaded.</p>
+<h1>Ant - Executing Java code</h1>
+<p>You can use Ant to execute Java code. In the following example, the java class takes in an argument (administrator's email address) and sends out an email.</p>
+<pre class="prettyprint notranslate">
+public class NotifyAdministrator
+{
+   public static void main(String[] args)
+   {
+      String email = args[0];
+      notifyAdministratorviaEmail(email);
+      System.out.println("Administrator "+email+" has been notified");
+   }
+   public static void notifyAdministratorviaEmail(String email
+   { 
+	   //......
+   }
+}
+</pre>
+<p>Here is a simple build that executes this java class.</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0"?&gt;
+&lt;project name="sample" basedir="." default="notify"&gt;
+   &lt;target name="notify"&gt;
+      &lt;java fork="true" failonerror="yes" classname="NotifyAdministrator"&gt;
+         &lt;arg line="admin@test.com"/&gt;
+      &lt;/java&gt;
+   &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+<p>When the build is executed, it produces the following outcome: </p>
+<pre class="result notranslate">
+C:\&gt;ant
+Buildfile: C:\build.xml
+
+notify: [java] Administrator admin@test.com has been notified
+
+BUILD SUCCESSFUL
+Total time: 1 second
+</pre>
+<p>In this example, the java code does a simple thing - to send an email. We could have used the built in the Ant task to do that. However, now that you have got the idea, you can extend your build file to call the java code that performs complicated things, for example: encrypts your source code.</p>
+<h1>Ant - Eclipse Integration</h1>
+<p>If you have downloaded and installed Eclipse already, you have very little to do to get started. Eclipse comes pre bundled with the Ant plugin, ready to use.</p>
+<p>Follow the simple steps, to integrate Ant into Eclipse.</p>
+<ul class="list">
+<li><p>Make sure that the build.xml is a part of your java project, and does not reside at a location that is external to the project.</p></li>
+<li><p>Enable Ant View by following <b>Window &gt; Show View &gt; Other &gt; Ant  &gt; Ant.</b></p></li>
+<li><p>Open Project Explorer, drag the build.xml into the Ant View.</p></li>
+</ul>
+<p>Your Ant view looks similar to:</p>
+<img src="/ant/images/eclipse-ant.jpg" alt="Eclipse Ant Integration" />
+<p>Clicking on the targets, build / clean / usage will run Ant with the target.</p>
+<p>Clicking "fax" will execute the default target - <b>usage.</b></p>
+<p>The Ant Eclipse plugin also comes with a good editor for editing build.xml files. The editor is aware of the build.xml schema and can assist you with code completion.</p>
+<p>To use the Ant editor, right click your build.xml (from the Project Explorer) and select Open with &gt; Ant Editor. The Ant editor should look something similar to:</p>
+<img src="/ant/images/eclipse-anteditor.jpg" alt="Eclipse Ant Integration" />
+<p>The Ant editor lists the targets on the right hand side. The target list serves as a bookmark that allows you to jump straight into editing a particular target.</p>
+<h1>Ant - JUnit Integration</h1>
+<p>JUnit is the commonly used unit testing framework for Java-based developments. It is easy to use and easy to extend. There are a number of JUnit extensions available. If you are unfamiliar with JUnit, you should download it from <a rel="nofollow" target="_blank" href="http://junit.org/">www.junit.org</a> and read its manual.</p>
+<p>This chapter shows how to execute JUnit tests using Ant. Ant makes it straight forward through the JUnit task.</p>
+<p>The attributes of the JUnit task are presented below:</p>
+<table class="table table-bordered">
+<tr>
+<th>Properties</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>dir</td>
+<td> Where to invoke the VM from. This is ignored when <b>fork</b> is disabled.</td>
+</tr>
+<tr>
+<td>jvm</td>
+<td>Command used to invoke the JVM. This is ignored when <b>fork</b> is disabled.</td>
+</tr>
+<tr>
+<td>fork</td>
+<td>Runs the test in a separate JVM</td>
+</tr>
+<tr>
+<td>errorproperty</td>
+<td>The name of the property to set if there is a JUnit error</td>
+</tr>
+<tr>
+<td>failureproperty</td>
+<td>The name of the property to set if there is a JUnit failure</td>
+</tr>
+<tr>
+<td>haltonerror</td>
+<td>Stops execution when a test error occurs</td>
+</tr>
+<tr>
+<td>haltonfailure</td>
+<td>Stops execution when a failure occurs</td>
+</tr>
+<tr>
+<td>printsummary</td>
+<td>Advises Ant to display simple statistics for each test</td>
+</tr>
+<tr>
+<td>showoutput</td>
+<td>Advises Ant to send the output to its logs and formatters</td>
+</tr>
+<tr>
+<td>tempdir</td>
+<td>Path to the temporary file that Ant will use</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Exits the tests that take longer to run than this setting (in milliseconds).</td>
+</tr>
+</table>
+<p>Let us continue the theme of the <b>Hello World</b> Fax web application and add a JUnit target.</p>
+<p>The following example shows a simple JUnit test execution:</p>
+<pre class="prettyprint notranslate">
+&lt;target name="unittest"&gt;
+   &lt;junit haltonfailure="true" printsummary="true"&gt;
+      &lt;test name="com.tutorialspoint.UtilsTest"/&gt;
+   &lt;/junit&gt;
+&lt;/target&gt;
+</pre>
+<p>This example shows the execution of JUnit on the com.tutorialspoint.UtilsTest junit class. Running the above code produces the following output:</p>
+<pre class="result notranslate">
+test:
+[echo] Testing the application
+[junit] Running com.tutorialspoint.UtilsTest
+[junit] Tests run: 12, Failures: 0, Errors: 0, Time elapsed: 16.2 sec
+BUILD PASSED
+</pre>
+<h1>Ant - Extending Ant</h1>
+<p>Ant comes with a predefined set of tasks, however you can create your own tasks, as shown in the example below.</p>
+<p>Custom Ant Tasks should extend the <b>org.apache.tools.ant.Task</b> class and should extend the execute() method. Below is a simple example:</p>
+<pre class="prettyprint notranslate">
+package com.tutorialspoint.ant;
+import org.apache.tools.ant.Task;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.BuildException;
+public class MyTask extends Task {
+   String message;
+   public void execute() throws BuildException {
+      log("Message: " + message, Project.MSG_INFO);
+   }
+   public void setMessage(String message) {
+      this.message= message;
+   }
+}
+</pre>
+<p>To execute the custom task, you need to add the following to the <b>Hello World</b> Fax web application:</p>
+<pre class="prettyprint notranslate">
+&lt;target name="custom"&gt;
+   &lt;taskdef name="custom" classname="com.tutorialspoint.ant.MyTask" /&gt;
+   &lt;custom message="Hello World!"/&gt;
+&lt;/target&gt;
+</pre>
+<p>Executing the above custom task prints the message 'Hello World!'</p>
+<pre class="prettyprint notranslate">
+c:\&gt;ant custom
+test:
+[custom] Message : Hello World!
+elapsed: 0.2 sec
+BUILD PASSED
+</pre>
+<p>This is just a simple example, you can use the power of Ant to do whatever you want to improve your build and deployment process.</p>
+<hr />
+<div class="pre-btn">
+<a href="/ant/ant_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div><div class="print-btn">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/ant/ant_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/ant/ant_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/ant/ant_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/ant/ant_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/ant/ant_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/ant/ant_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/ant/ant_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

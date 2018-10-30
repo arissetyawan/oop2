@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>JCL Interview Questions - tutorialspoint</title>
+<meta name="description" content="JCL Interview Questions - Learn  JCL ( Job Control Language) in simple and easy steps starting from their overview, Environment Setup, JOB statement, Exec Statement, DD Statement, Base Library, Procedures, Conditional Job Processing, Defining Datasets, Input, Output, Running COBOL Programs, Utility Programs, Sort Tricks, FAQ." />
+<meta name="keywords" content="JCL, Job, Control, Language, Tutorial, Environment, Setup, JOB statement, Exec Statement, DD Statement, Base Library, Procedures, Conditional Job Processing, Defining Datasets, Input, Output, Running COBOL Programs,  Utility Programs, Sort Tricks, FAQ." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #814489 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #814489 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #814489 !important;}
+.submenu-item{ border-bottom: 2px solid #814489 !important; border-top: 2px solid #814489 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#814489; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/jcl/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/jcl/images/jcl-mini-logo.jpg" alt="JCL Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/jcl_online_training/index.asp" target="_blank"><img src="/jcl/images/jcl-video-tutorials.jpg" alt="JCL Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">JCL Tutorial</li>
+<li><a target="_top" href="/jcl/index.htm">JCL Home</a></li>
+<li><a target="_top" href="/jcl/jcl_overview.htm">JCL - Overview</a></li>
+<li><a target="_top" href="/jcl/jcl_environment_setup.htm">JCL - Environment</a></li>
+<li><a target="_top" href="/jcl/jcl_job_statement.htm">JCL - JOB Statement</a></li>
+<li><a target="_top" href="/jcl/jcl_exec_statement.htm">JCL - EXEC Statement</a></li>
+<li><a target="_top" href="/jcl/jcl_dd_statement.htm">JCL - DD Statement</a></li>
+<li><a target="_top" href="/jcl/jcl_base_library.htm">JCL - Base Library</a></li>
+<li><a target="_top" href="/jcl/jcl_procedures.htm">JCL - Procedures</a></li>
+<li><a target="_top" href="/jcl/jcl_conditional_processing.htm">JCL - Conditional Processing</a></li>
+<li><a target="_top" href="/jcl/jcl_defining_datasets.htm">JCL - Defining Datasets</a></li>
+<li><a target="_top" href="/jcl/jcl_input_output.htm">JCL - Input/Output Methods</a></li>
+<li><a target="_top" href="/jcl/jcl_run_cobol_programs.htm">JCL - Run COBOL Programs</a></li>
+<li><a target="_top" href="/jcl/jcl_utility_programs.htm">JCL - Utility Programs</a></li>
+<li><a target="_top" href="/jcl/jcl_basic_sort_tricks.htm">JCL - Basic Sort Tricks</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">JCL Useful Resources</li>
+<li><a target="_top" href="/jcl/jcl_questions_answers.htm">JCL - Questions and Answers</a></li>
+<li><a target="_top" href="/jcl/jcl_quick_guide.htm">JCL - Quick Guide</a></li>
+<li><a target="_top" href="/jcl/jcl_useful_resources.htm">JCL - Useful Resources</a></li>
+<li><a target="_top" href="/jcl/jcl_discussion.htm">JCL - Discussion</a></li>
+</ul>
+
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>JCL Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/jcl/jcl_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/jcl/jcl_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>JCL Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>JCL</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label>There is a concatenated input DD name with 3 datasets. How to override only one dataset in those 3 datasets?</label>
+<div class="toggle-content">
+<p>Specify DD DUMMY in the overriding JCL for the ones, which are not overridden.</p>
+<pre class="prettyprint">
+//STEP1.IN1	DD DUMMY
+// 		DD DSN=MYDATA.URMI.IN2,DISP=SHR
+//		DD DUMMY
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>Current version of a GDG is used as input in step1 of a job and a new version is created as output. The output of step1 is used in step2 and the next version is created as output in step2. How do you reference each GDG version in each step?</label>
+<div class="toggle-content">
+<p>Following piece of code shows the reference of each GDG version &minus;</p>
+<pre class="prettyprint">
+Step1 input: (0)
+Step1 output: (+1)
+Step2 input: (+1)
+Step2 output: (+2)
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How can you check if a file is empty using JCL?</label>
+<div class="toggle-content">
+<p>When the file is used as input in IDCAMS, job completes with a warning (return code 4) if the file is empty. </p>
+</div>
+</section>
+<section class="toggle">
+<label>A JCL has 4 steps and job abends. How to restart the job and run only step 2? </label>
+<div class="toggle-content">
+<p>Specify RESTART = STEP2 in JOB statement. And include IF-THEN-ELSE construct as below&minus;</p>
+<pre class="prettyprint">
+//URMIIF JOB 1, CLASS=6, MSGCLASS=0, NOTIFY = &amp;SYSUID,RESTART=STEP2
+//*
+//STEP1   EXEC
+//STEP2   EXEC
+//IF1     IF (STEP2.RC = 0 &amp; STEP2.RC <> 0) THEN
+//STEP3      EXEC
+//STEP4      EXEC
+//ENDIF  
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What are the ways of passing data to a COBOL program from JCL?</label>
+<div class="toggle-content">
+<p>Data can be passed to a COBOL program through files, PARM parameter and SYSIN DD statement. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How can the same PROC be re-used and called by many JOBs? </label>
+<div class="toggle-content">
+<p>The varying portion of the JCL can be specified using symbolic parameters in the JOB and the static parts can be specified in the PROC. For example, if the file name changes for every JOB that uses the PROC, then the varying portion of the file name can be coded in JCL using symbolic parameter. </p>
+<pre class="prettyprint">
+//IN1 DD DSN = &amp;ID.URMI.IN1, DISP = SHR  //*Coded in PROC
+ID=MYDATA1 is coded in JOB1, ID = MYDATA2 is coded in JOB2 and so on
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How do you create a dataset in a JCL with the same file organisation as that of another existing dataset? </label>
+<div class="toggle-content">
+<p>Use IEBGENER and pass existing file in SYSUT1. Pass new file in SYSUT2 and mention DCB=*.SYSUT1 to get the same DCB as that of SYSUT1 dataset. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you access an uncataloged dataset in a JCL? </label>
+<div class="toggle-content">
+<p>By using the UNIT and VOL serial parameters in the dataset DD statement. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the statements that are not valid to be included in an INCLUDE statement? </label>
+<div class="toggle-content">
+<p>Dummy DD statements, data card specifications, PROCs, JOB, PROC statements cannot be coded within an INCLUDE member. An INLCUDE statement can be coded within an INCLUDE member and further nesting can be done up to 15 levels.</p>
+</div>
+</section>
+<section class="toggle">
+<label>A JCL has 2 steps. How to code the JCL such that if step1 abends, then step2 runs. Else, job terminates with step1?</label>
+<div class="toggle-content">
+<p>Code COND = ONLY in STEP2. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How to do automated RESTART when a job abends? </label>
+<div class="toggle-content">
+<p>Using RD parameter in JOB/EXEC statement. The abend codes for which RESTART need to be performed can be mentioned in the SCHEDxx member of the IBM system parmlib library.</p>
+</div>
+</section>
+<section class="toggle">
+<label>A JCL has 10 steps. How to run step3 and step7 (only) without using COND parameter or IF-THEN-ELSE?</label>
+<div class="toggle-content">
+<p>Using IEBEDIT in a JCL, selected steps of another JCL can be run. In the above JCL, the input JCL with 10 steps is present in MYDATA.URMI.JOBS(INPUTJOB). STEP3 and STEP7 is specified in SYSIN of IEBEDIT, so that those two steps are run.</p>
+<pre class="prettyprint">
+//STEP001  EXEC PGM=IEBEDIT                                   
+//SYSUT1   DD  DSN=MYDATA.URMI.JOBS(INPUTJOB),DISP=SHR    
+//SYSUT2   DD  SYSOUT=(*,INTRDR)                              
+//SYSPRINT DD  SYSOUT=*                                       
+//SYSIN    DD  *                                              
+  EDIT TYPE=INCLUDE,STEPNAME=(STEP3,STEP7)                        
+/*
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>When does a dataset go uncataloged? </label>
+<div class="toggle-content">
+<p>When it is defined with DISP = (NEW,KEEP) at the time of creation. In case of a GDG, least recent generation is uncataloged if the GDG base had been defined with NOEMPTY parameter when the LIMIT is reached. All generations are uncataloged when coded with EMPTY. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How can a GDG base be created in a JCL. What is the difference between EMPTY and SCRATCH parameter while defining/altering GDG base? </label>
+<div class="toggle-content">
+<p>GDG base can be created using IDCAMS utility. EMPTY uncataloges all the generations when the LIMIT is reached. SCRATCH physically deletes the generation, when it is uncataloged. (LIMIT specifies the maximum number of versions that the GDG base can hold).</p>
+</div>
+</section>
+<section class="toggle">
+<label>A dataset contains 2500 records. How can the last 1500 records copied to an output file? </label>
+<div class="toggle-content">
+<p>In the SORT/ICETOOL program, SKIPREC = n can be used, which skips the first n records and then copies the rest to the output file. </p>
+<pre class="prettyprint">
+//JSTEP020 EXEC PGM=ICETOOL                                          
+//TOOLMSG  DD SYSOUT = *                                               
+//DFSMSG   DD SYSOUT = *                                               
+//IN1      DD DSN = MYDATA.URMI.SKIPREC,DISP=SHR    
+//OUT1	   DD SYSOUT = *
+//TOOLIN   DD *                                                      
+  COPY FROM(IN1) TO(OUT1) USING(CTL1)                                  
+/*
+//CTL1CNTL DD *                        
+  SORT FIELDS = COPY
+  SKIPREC = 1000               
+/*   
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How can a file of 3n records be split into 3 files each containing n records? </label>
+<div class="toggle-content">
+<p>STARTREC and ENDREC restricts the READ from the input file on the specified record number. </p>
+<pre class="prettyprint">
+//URMISPLT EXEC PGM = SORT 
+//SORTIN   DD DSN=MYDATA.URMI.FILEIN,DISP=SHR 
+//SORTOF01 DD DSN = MYDATA.URMI.FILEOUT1, 
+//            DISP = (NEW,CATLG,DELETE),
+//            RECFM = FB, LRECL = 50 
+//SORTOF02 DD DSN = MYDATA.URMI.FILEOUT2,
+//            DISP = (NEW, CATLG, DELETE),
+//            RECFM = FB, LRECL = 50 
+//SORTOF03 DD DSN = MYDATA.URMI.FILEOUT3, 
+//            DISP = (NEW, CATLG, DELETE),
+//            RECFM = FB, LRECL = 50 
+//SYSPRINT DD SYSOUT = * 
+//SYSOUT   DD SYSOUT = * 
+//SYSUDUMP DD SYSOUT = * 
+//SYSIN DD *      
+  SORT FIELDS = COPY 
+  OUTFIL FILES = 01,ENDREC=100  //*assuming input file has 300 records.
+  OUTFIL FILES = 02, STARTREC = 101, ENDREC = 200 
+  OUTFIL FILES = 03, STARTREC = 201 
+//*
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>When can a job time-out occur? How to overcome that?</label>
+<div class="toggle-content">
+<p>A job time-out error can occur when the program takes more time than the time limit for the specified class. This is called a S322 abend. This error is encountered when there are some looping errors in the program and it does not reach completion.<br>If the data processed in the program is genuinely huge and needs more time than the class limit, then the TIME parameter can be coded as TIME = 1440 to get infinite time until job completion. </p>
+</div>
+</section>
+<section class="toggle">
+<label>In a JCL, a large volume dataset is loaded to a table using BMCLOAD in STEP1 and an image copy of the loaded table is taken using BMCCOPY in step2. Step2 abends because the image copy dataset cannot hold the volume of the table. How can this be rectified? </label>
+<div class="toggle-content">
+<p>The SPACE parameter of the image copy dataset can be increased based on the volume of the table and the job can be restarted from step2.</p>
+</div>
+</section>
+<section class="toggle">
+<label>If the submitter of a job wants to inform another user about the job completion, how can it be done? </label>
+<div class="toggle-content">
+<p>NOTIFY = userid of the person (not the submitter) can be specified in the JOB statement so that the user gets a notification with the return code upon job completion. But the job log is present in the spool under the submitter's userid only.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can a FB file converted to VB file using SORT program? </label>
+<div class="toggle-content">
+<p>FTOV option in SORT helps in converting FB to VB file. </p>
+<pre class="prettyprint">
+//URMIFTOV EXEC PGM = SORT 
+//SORTIN   DD *
+  123*******
+  4560000000
+  123****123
+  789
+//SORTOF01 DD DSN = MYDATA.URMI.FILEOUT1, 
+//            DISP = (NEW, CATLG, DELETE),
+//            RECFM = VB, LRECL = 54
+//SORTOF02 DD DSN = MYDATA.URMI.FILEOUT2,
+//            DISP = (NEW, CATLG, DELETE),
+//            RECFM = VB, LRECL = 54 
+//SORTOF03 DD DSN = MYDATA.URMI.FILEOUT3, 
+//            DISP = (NEW, CATLG, DELETE),
+//            RECFM = VB, LRECL = 54 
+//SYSPRINT DD SYSOUT = * 
+//SYSOUT   DD SYSOUT = * 
+//SYSUDUMP DD SYSOUT = * 
+//SYSIN DD *      
+  SORT FIELDS=COPY 
+  OUTFIL FNAMES = SORTOF01, FTOV, VLTRIM = C'*' //*removes trailing '*'
+  OUTFIL FNAMES = SORTOF02, FTOV, VLTRIM = X'40'//*removes trailing space
+  OUTFIL FNAMES = SORTOF03, FTOV, VLTRIM = X'00'//*removes trailing zeros
+//*
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is a JCL? </label>
+<div class="toggle-content">
+<p>JCL stands for Job Control Language which provides the specifications necessary to process a job. It is a set of control statements which provides the specifications necessary to process a job. It is a interface between programs &amp; MVS operating system.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What does MVS stand for? </label>
+<div class="toggle-content">
+<p>MVS stands for Multiple Virtual storage which is the operating system for the IBM mainframe systems. </p>
+</div>
+</section>
+<section class="toggle">
+<label>Where &amp; how do you code Identifier in JCL? </label>
+<div class="toggle-content">
+<p>Identifiers are two slashes (//) starting from column number 1. All JCL statements starts with identifiers except for two exceptions - For a delimiter statement, /* starting in col 1 and for a comment statement , //* starting at col 1. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the various stages of Job processing? </label>
+<div class="toggle-content">
+<p>Input &minus;&gt; Conversion &minus;&gt; Execution &minus;&gt; Output &minus;&gt; Hard copy &minus;&gt; Purge </p>
+</div>
+</section>
+<section class="toggle">
+<label>In Job processing, what happens in Conversion stage? </label>
+<div class="toggle-content">
+<p>The JCL along with the PROC is converted into an interpreted text to be understood by JES and stored into a dataset, which we call as SPOOL.</p>
+</div>
+</section>
+<section class="toggle">
+<label>In Job processing, what happens in Execution stage? </label>
+<div class="toggle-content">
+<p>When the job reaches its highest priority, it is taken up for execution from the job queue. The JCL is read from the SPOOL, the program is executed and the output is redirected to the corresponding output destination as specified in the JCL.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What operation is performed by JOB statement?</label>
+<div class="toggle-content">
+<p>Specifies the information required for SPOOLing of the job such as job id, priority of execution, user-id to be notified upon completion of the job.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you code a Null statement? </label>
+<div class="toggle-content">
+<p>JCL is terminated by a null statement which is optional. For a null statement code only // starting from column 1. All the lines after this will not be executed. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of coding CLASS parameter in job statement? </label>
+<div class="toggle-content">
+<p>Based on the time duration and the number of resources required by the job, companies assign different job classes. These can be visualized as individual schedulers used by the OS to receive the jobs. Placing the jobs in the right scheduler will aid in easy execution of the jobs. Some companies have different classes for jobs in test and production environment. Valid values for CLASS parameter are A to Z characters and 0 to 9 numeric (of length 1). Following is the syntax &minus; CLASS=0 to 9 | A to Z </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of coding NOTIFY parameter in job statement? </label>
+<div class="toggle-content">
+<p>The system sends the success or failure message (Maximum Condition Code) to the user specified in this parameter. Syntax &minus; NOTIFY = "userid | &amp;SYSUID" </p>
+</div>
+</section>
+<section class="toggle">
+<label>Which parameter is used to check the syntax of a JCL without executing it? </label>
+<div class="toggle-content">
+<p>TYPRUN = SCAN checks the syntax errors of the JCL without executing it. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is use of DSN parameter in DD statement? </label>
+<div class="toggle-content">
+<p>The DSN parameter refers to the physical dataset name of a newly created or existing dataset. The DSN value can be made up of sub-names each of 1 to 8 characters length, separated by periods and of total length of 44 characters (alphanumeric).</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is use of DISP parameter in DD statement? </label>
+<div class="toggle-content">
+<p>The DISP parameter is used to describe the status of the dataset, disposition at the end of the job step on normal and abnormal completion. DISP is not required in a DD statement only when the dataset gets created and deleted in the same job step (like the temporary datasets). Syntax &minus; DISP = (status, normal-disposition, abnormal-disposition) </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is use of SPACE parameter in DD statement? </label>
+<div class="toggle-content">
+<p>The SPACE parameter specifies the space required for the dataset in the DASD (Direct Access Storage Disk). Syntax &minus; SPACE = (spcunits, (pri, sec, dir), RLSE) </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is use of DCB parameter in DD statement? </label>
+<div class="toggle-content">
+<p>The Data Control Block (DCB) parameter details the physical characteristics of a dataset. This parameter is required for datasets that are newly created in the job step. LRECL is the length of each record held within the dataset. RECFM is the record format of the dataset.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How you will define a temporary dataset in JCL? </label>
+<div class="toggle-content">
+<p>A temporary dataset is the one that is created and deleted within a job and is declared as DSN=&amp;&amp;TEMP. Do not mention the DSN parameters with this. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How you will the direct the data to spool using SYSOUT option? </label>
+<div class="toggle-content">
+<p>Code SYSOUT = *, then the data will be directed to spool.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which utility is used a dummy utility? </label>
+<div class="toggle-content">
+<p>IEFBR14 is no operation utility. Used to return control to user and terminate. It is usually used to create empty dataset or delete an existing dataset.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What DISP parameter we mention for creation of temporary dataset so that we can use it in later steps? </label>
+<div class="toggle-content">
+<p>DISP = (NEW,PASS). PASS is valid only for normal disposition. This is used when the dataset is to be passed and processed by the next job step in a JCL.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which utility is used to run a COBOL-DB2 program?</label>
+<div class="toggle-content">
+<p>IKJEFT01 utility is used to run a COBOL-DB2 program.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which parameter is use to declare the name of dataset in DD statement?</label>
+<div class="toggle-content">
+<p>DSN(Dataset Name) is used to declare the name of dataset in a DD statement.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which statement is used to end the in-stream procedure in a JCL?</label>
+<div class="toggle-content">
+<p>PEND statement is used to end the in-stream procedure.</p>
+</div>
+</section>
+<section class="toggle">
+<label>If we want to use a GDG which is already created by some job, then how to use the reference of the last generation in a JCL? </label>
+<div class="toggle-content">
+<p>To refer the latest generation of a GDG, we use the reference as (+0). </p>
+</div>
+</section>
+<section class="toggle">
+<label>In order to execute step2 a job after a return code of 8 in step1, what condition you will code in step2? </label>
+<div class="toggle-content">
+<p>COND=(12,LT,STEP1), it will read the condition as 12 less than 8, which is false, so this step will be executed. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What sort card you will use to copy the data from one dataset to another dataset? </label>
+<div class="toggle-content">
+<p>In the SORT step mention the SYSIN & SYSOUT dataset name & in sort card code SORT FIELDS=COPY to copy data from input file to output file. </p>
+</div>
+</section>
+<section class="toggle">
+<label>A CHKPT is the parameter coded for multi-volume QSAM datasets in a DD statement. When a CHKPT is coded as CHKPT=EOV, a checkpoint is written to the dataset specified in the SYSCKEOV statement at the end of each volume of the input/output multi-volume dataset. State whether true or false? </label>
+<div class="toggle-content">
+<p>This statement is true. </p>
+</div>
+</section>
+<section class="toggle">
+<label>Which utility is used to sort a file in JCL? </label>
+<div class="toggle-content">
+<p>SORT utility is used to sort a file in a particular order based on the sort card. </p>
+</div>
+</section>
+<section class="toggle">
+<label>Which utility is used to update PDS? </label>
+<div class="toggle-content">
+<p>IEBUPDTE is used to update PDS. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is use of SPACE parameter in DD statement? </label>
+<div class="toggle-content">
+<p>The SPACE parameter specifies the space required for the dataset in the DASD (Direct Access Storage Disk). Syntax &minus; SPACE = (spcunits, (pri, sec, dir), RLSE) </p>
+</div>
+</section>
+<section class="toggle">
+<label>A SET statement is used to define commonly used symbolic across job steps or procedures. It initializes the previous values in the symbolic names. It has to be defined before the first use of the symbolic names in the JCL. State whether true or false? </label>
+<div class="toggle-content">
+<p>This statement is true.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/jcl/jcl_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/jcl/pdf/jcl_interview_questions.pdf" title="JCL Interview Questions - tutorialspoint" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/jcl/jcl_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">jcl_questions_answers.htm</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/jcl/jcl_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/jcl/jcl_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/jcl/jcl_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/jcl/jcl_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/jcl/jcl_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/jcl/jcl_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

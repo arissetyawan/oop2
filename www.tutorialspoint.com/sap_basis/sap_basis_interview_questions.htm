@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP Basis Interview Questions - TutorialsPoint</title>
+<meta name="description" content="SAP Basis Interview Questions - Learn SAP Basis in simple and easy steps starting from basic to advanced concepts with examples including Overview, Installation of SAP GUI, GUI Selection, System Landscape and Architecture, Hardware and Software Installation, NW System, NW Architecture, Sap Client Administration, User Activities, Number of Login Attempts, Job Processing, Unscheduling a Background Job, Monitoring a Background Job, Deleting a Background Job, Managing Transports, Managing Transport Routes, Patch Management, Importing A Queue, Kernel Upgrade and Patching, System Monitoring, Remote Function Call, RFC Between SAP ECC and HANA, New Dimensional Product, Interview Questions." />
+<meta name="keywords" content="SAP Basis, Tutorial, Overview, Installation of SAP GUI, GUI Selection, System Landscape and Architecture, Hardware and Software Installation, NW System, NW Architecture, Sap Client Administration, User Activities, Number of Login Attempts, Job Processing, Unscheduling a Background Job, Monitoring a Background Job, Deleting a Background Job, Managing Transports, Managing Transport Routes, Patch Management, Importing A Queue, Kernel Upgrade and Patching, System Monitoring, Remote Function Call, RFC Between SAP ECC and HANA, New Dimensional Product, Interview Questions." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #018579 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #018579 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #018579 !important;}
+.submenu-item{ border-bottom: 2px solid #018579 !important; border-top: 2px solid #018579 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#018579; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_basis/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_basis/images/sap-basis-mini-logo.jpg" alt="SAP Basis Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/sap_basis_online_training/index.asp" target="_blank"><img src="/sap_basis/images/sap-basis-video-tutorials.jpg" alt="SAP Basis Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Basis Tutorial</li>
+<li><a href="/sap_basis/index.htm">SAP Basis - Home</a></li>
+<li><a href="/sap_basis/sap_basis_overview.htm">SAP Basis - Overview</a></li>
+<li><a href="/sap_basis/sap_basis_installation_of_sap_gui.htm">SAP Basis - Installation of SAP GUI</a></li>
+<li><a href="/sap_basis/sap_basis_gui_selection.htm">SAP Basis - GUI Selection</a></li>
+<li><a href="/sap_basis/sap_basis_system_landscape_architecture.htm">System Landscape &amp; Architecture</a></li>
+<li><a href="/sap_basis/sap_basis_hardware_software_installation.htm">Hardware &amp; Software Installation</a></li>
+<li><a href="/sap_basis/sap_basis_nw_system.htm">SAP Basis - NW System</a></li>
+<li><a href="/sap_basis/sap_basis_nw_architecture.htm">SAP Basis - NW Architecture</a></li>
+<li><a href="/sap_basis/sap_basis_sap_client_administration.htm">SAP Basis - SAP Client Administration</a></li>
+<li><a href="/sap_basis/sap_basis_user_activities.htm">SAP Basis - User Activities</a></li>
+<li><a href="/sap_basis/sap_basis_number_of_login_attempts.htm">Number of Login Attempts</a></li>
+<li><a href="/sap_basis/sap_basis_job_processing.htm">SAP Basis - Job Processing</a></li>
+<li><a href="/sap_basis/sap_basis_unscheduling_a_background_job.htm">Unscheduling a Background Job</a></li>
+<li><a href="/sap_basis/sap_basis_monitoring_a_background_job.htm">Monitoring a Background Job</a></li>
+<li><a href="/sap_basis/sap_basis_deleting_a_background_job.htm">Deleting a Background Job</a></li>
+<li><a href="/sap_basis/sap_basis_managing_transports.htm">SAP Basis - Managing Transports</a></li>
+<li><a href="/sap_basis/sap_basis_managing_transport_routes.htm">Managing Transport Routes</a></li>
+<li><a href="/sap_basis/sap_basis_patch_management.htm">SAP Basis - Patch Management</a></li>
+<li><a href="/sap_basis/sap_basis_importing_a_queue.htm">SAP Basis - Importing A Queue</a></li>
+<li><a href="/sap_basis/sap_basis_kernel_upgrade_patching.htm">Kernel Upgrade &amp; Patching</a></li>
+<li><a href="/sap_basis/sap_basis_system_monitoring.htm">SAP Basis - System Monitoring</a></li>
+<li><a href="/sap_basis/sap_basis_remote_function_call.htm">SAP Basis - Remote Function Call</a></li>
+<li><a href="/sap_basis/sap_basis_rfc_between_ecc_and_hana.htm">RFC Between ECC &amp; HANA</a></li>
+<li><a href="/sap_basis/sap_basis_new_dimensional_product.htm">SAP Basis - New Dimensional Product</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Basis Useful Resources</li>
+<li><a href="/sap_basis/sap_basis_questions_answers.htm">SAP Basis - Questions Answers</a></li>
+<li><a href="/sap_basis/sap_basis_quick_guide.htm">SAP Basis - Quick Guide</a></li>
+<li><a href="/sap_basis/sap_basis_useful_resources.htm">SAP Basis - Useful Resources</a></li>
+<li><a href="/sap_basis/sap_basis_discussion.htm">SAP Basis - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP Basis Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>SAP Basis Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>SAP Basis</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label>What are the key responsibilities of SAP Basis Administrator?</label>
+<div class="toggle-content">
+<p>The key responsibilities are &minus;</p>
+<ul class="list">
+<li><p>System installation and configuration.</p></li>
+<li><p>Load balancing on servers.</p></li>
+<li><p>Performance management of different components.</p></li>
+<li><p>Managing interfaces and integration with servers.</p></li>
+<li><p>Managing servers and different services.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What is the current version of SAP GUI? How do you install it?</label>
+<div class="toggle-content">
+<p>SAP GUI 7.4, the latest version for Windows was released in October, 2014. It supports various features like — it is by default installed with NWBC 5.0 and SAP GUI and GUI shortcuts are launched through NWBC.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which SAP GUI type is suitable for different kind of users? How do you decide?</label>
+<div class="toggle-content">
+<p><b>When users are working mostly in the SAP system</b></p>
+<p>SAP GUI for Windows or SAP GUI for Java is recommended.</p>
+<p><b>When users are ABAP developers</b></p>
+<p>For ABAP developers, SAP GUI for Windows is recommended.</p>
+<p><b>When users use operating systems other than Microsoft</b></p>
+<p>It is recommended that they use SAP GUI for Java and HTML or they can use SAP GUI for Windows on a remote server</p>
+<p><b>For integrating Dynpro transactions to the Portal</b></p>
+<p>The use of SAP GUI for HTML is recommended. This allows you to integrate classic Dynpro-based applications into the portal easily.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you maintain roles in the SAP system?</label>
+<div class="toggle-content">
+<p>To maintain roles in the SAP system, we use transaction code — PFCG</p>
+</div>
+</section>
+<section class="toggle">
+<label>Why do we create instances in SAP system? How are these instances configured?</label>
+<div class="toggle-content">
+<p>SAP instance is defined when you install and configure a SAP system. These are used to refer to memory, processors and other resources in the system. SAP instance allows users to login to the SAP system and share the same resources.</p>
+<p>A SAP instance is managed by CCMS and is used by users to login.</p>
+<p>A SAP system can consist of one or more instances — you can set up a SAP system with a single instance with only one CCMS or you can configure a system with two or more separate instances in client/server environment.</p>
+<p>We need to consider the following points to configure a SAP instance &minus;</p>
+<ul class="list">
+<li><p>You need to define separate directories for UNIX, AS/400, or Microsoft Windows NT server on which the instance is to be run.</p></li>
+<li><p>You can use a shared file system.</p></li>
+<li><p>For each instance, there are entries created in operating system configuration files (/etc/services, /etc/sapconfig…).</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>Explain the architecture of SAP system with different layers. What is the use of Gateway?</label>
+<div class="toggle-content">
+<p>Presentation layer communicates with the application server to perform all the processing. This is known as the brain of a SAP system.</p>
+<p>An application server consists of multiple instances and communicates with the database layer of the three-tier architecture.</p>
+<p>Bottom layer is called the database layer. This is responsible to store all the data. Database of SAP system is kept on a separate server for performance and security reason.</p>
+<p>The Presentation layer consists of different components for ABAP and JAVA that enables the communication and processing of data in SAP system. The key components at Presentation layer also includes — Gateway. This is used to manage communication between SAP system and external systems.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Suppose you have to integrate SAP ECC 6.0 to AWS cloud. How can you achieve this?</label>
+<div class="toggle-content">
+<p>You have to make use of SAP Cloud Appliance Library (CAL). This will help you to directly push SAP ECC software to your cloud environment by entering the Security key.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you check the installed software components and product versions on SAP system?</label>
+<div class="toggle-content">
+<p>Go to SAP system data &#8594; Click on component magnifying glass.</p>
+<p>The following two options will be displayed &minus;</p>
+<ul class="list">
+<li>Installed Software Component Versions</li>
+<li>Installed Product Versions</li>
+</ul>
+<p>Under installed software component, you can see all the software installed, support package, service pack, description etc. If you want to check the details of each component, you can select the component and go to the details tab as shown above.</p>
+<p>Go to Installed Product Versions; it will show you the version of the installed SAP NetWeaver.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is client administration in SAP system? Why do we use multiple clients in SAP system?</label>
+<div class="toggle-content">
+<p>A client is used in SAP system for multiple login on a single instance. You can create multiple clients on a single instance. It also provides data security as one user with one client can’t see the data of the other user with another client and also there is no need to install the software again.</p>
+<p>The following are the advantages of client administration in SAP system &minus;</p>
+<ul class="list">
+<li><p>Using SAP Clients, the same resources can be shared between multiple users.</p></li>
+<li><p>It helps you to manage SAP system landscape as you can create multiple clients for DEV, QA and PROD team.</p></li>
+<li><p>It allows you to share the SAP system with a large number of users.</p></li>
+<li><p>We have standard clients in SAP system</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What are the default clients in SAP system? How can you create a new client in SAP system?</label>
+<div class="toggle-content">
+<p>SAP system comes with the following three standard clients &minus;</p>
+<p><b>000</b> &minus; This is called the master client and is available when you install R/3 system.</p>
+<p><b>001</b> &minus; This is a copy of 000 and it comes with a test company. Generally, this client is used to create new clients.</p>
+<p><b>066</b> &minus; This is called the SAP Early watch. This is used for diagnostic scans and monitoring service in the SAP system.</p>
+<p>Following are the steps to create a New Client in SAP &minus;</p>
+<ul class="list">
+<li><p>To create a new client in SAP system, use transaction code — SCC4</p></li>
+<li><p>To create a new client, enter the following details after clicking on New Entries &minus;</p>
+<ul class="list">
+<li>Client number and name</li>
+<li>City</li>
+<li>Currency, Roles</li>
+</ul></li>
+<li><p>Enter your client-specific data and set permission for the clients as per your requirement and click on save.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>How can you create a new user in SAP system? How do you assign roles to new users?</label>
+<div class="toggle-content">
+<p>You can create multiple users with different access rights in SAP system. Follow these steps to create a new user &minus;</p>
+<p><b>Step 1</b> &minus; Use transaction code — SU01</p>
+<p><b>Step 2</b> &minus; Enter the username you want to create, click on the Create icon.</p>
+<p><b>Step 3</b> &minus; You will be redirected to the Next Tab — the Address tab wherein, you have to enter details like First name, Last name, Phone number, email id, etc.</p>
+<p><b>Step 4</b> &minus; You will further be directed to another Tab — the Logon Data tab wherein,
+<ul class="list">
+<li>You have to enter the user type under Logon data tab.</li>
+<li>Type the first login password – New Password and Repeat Password</li>
+</ul></p>
+<p><b>Step 5</b> &minus; You will now be directed to the Roles tab wherein, you have to assign the roles to the user</p>
+<p><b>Step 6</b> &minus; Now, the next tab is the Profiles tab wherein, you have to assign the Profiles to user.</p>
+<p><b>Step 7</b> &minus;Click on Save and you will get a confirmation.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different user types in SAP system that an admin can use while creating a new user?</label>
+<div class="toggle-content">
+<p>The following are the five different types of user types &minus;</p>
+<ul class="list">
+<li><p>Dialog user — This user is used for interactive system access from GUI.</p></li>
+<li><p>System user — This user is used for background processing and communication within a system.</p></li>
+<li><p>Communication user — This user is used for external RFC calls.</p></li>
+<li><p>Service user — This user is created for a larger and anonymous group of users.</p></li>
+<li><p>Reference user — These are reference users with no logon possible, non-person related users that allow the assignment of additional authorizations.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>Is it possible to lock users in SAP system? What are the different ways to lock/unlock users?</label>
+<div class="toggle-content">
+<p>The different ways to lock/unlock users are &minus;</p>
+<ul class="list">
+<li>Manually/Forcefully</li>
+<li>Automatically</li>
+</ul>
+<p><b>Manually or Forcefully</b></p>
+<p>You can lock a user forcefully/automatically using the following transaction codes &minus;</p>
+<ul class="list">
+<li>Transaction- SU01 for single user</li>
+<li>Transaction –SU10 for multiple users</li>
+</ul></div>
+</section>
+<section class="toggle">
+<label>How can you define login policy for users in SAP system?</label>
+<div class="toggle-content">
+<p>You can set the number of incorrect login attempts and then system can end the session or can also lock the user account if parameter value is set by Administrator. There are two types of parameters used &minus;</p>
+<p><b>Static</b> &minus; This parameter doesn’t apply immediately and the system needs a Restart for this.</p>
+<p><b>Dynamic</b> &minus; This parameter can be applied directly and the system does not need a Restart.</p>
+<p>To set the value of parameters, use transaction code — RZ11s</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different login and password parameters that can be applied in SAP system?</label>
+<div class="toggle-content">
+<p>To set the number of failed attempts, use parameter — <b>login/fails_to_session_end</b>.</p>
+<p>Likewise, you have other parameters such as <b>login/fails_to_session_end, login/fails_to_user_lock</b></p>
+<p>The following are the password policy parameters &minus;</p>
+<ul class="list">
+<li>login/min_password_lng</li>
+<li>login/password_expiration_time</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>How do you maintain password selection for users? What are the different parameters that can be used for this and which table maintains these details?</label>
+<div class="toggle-content">
+<p>Passwords are maintained in table USR40 and transaction code — SM30 is used for this purpose.</p>
+<p>There are two wildcard characters &minus;</p>
+<ul class="list">
+<li>?- stands for a single character</li>
+<li>*- stands for a sequence of any combination characters of any length.</li>
+</ul>
+<p>If you select 123* in table USR40, it means that any password that begins with the sequence "123." is prohibited.</p>
+<p>If you enter *123*, it prohibits any password that contains the sequence "123."</p>
+<p>If you select AB?, it indicates that all passwords that begin with "AB" and an additional character are not allowed. For example, "ABB", "ABF", etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the categories to execute SAP Background jobs?</label>
+<div class="toggle-content">
+<p><b>Class A (High Priority)</b> &minus; This is used for urgent or critical tasks. These tasks must be scheduled with class A priority job. Class A job reserves one or more background work processes.</p>
+<p><b>Class B (Medium Priority)</b> &minus; These jobs are executed after the completion of Class A high priority jobs.</p>
+<p><b>Class C (Low Priority)</b> &minus; These jobs run once class A and class B jobs are completed.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different options available for scheduling a background job? What start conditions type can be used?</label>
+<div class="toggle-content">
+<p>To schedule a background job you must specify the conditions that will trigger the job to start.</p>
+<p>The different types of start condition you want to use are &minus;</p>
+<ul class="list">
+<li>Immediate</li>
+<li>Date/Time</li>
+<li>After Job</li>
+<li>After Event</li>
+<li>At Operation Mode</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different types of job status? Can you unschedule an active job?</label>
+<div class="toggle-content">
+<p>The different types of status are - Scheduled, Released, Ready, Active, Finished, Cancelled</p>
+<p>You can’t unschedule a job if it is active. You need to wait for the completion of the job to unscheduled it.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the use of commit value while deleting jobs in SAP system?</label>
+<div class="toggle-content">
+<p>Commit value is proportional to program performance. If the commit value is high, then job deletion will run faster. Recommended value is &gt;= 1000.</p>
+</div>
+</section>
+<section class="toggle">
+<label>In Transport Management System (TMS), which file is used to store TMS configuration and is used by domains for checking configuration?</label>
+<div class="toggle-content">
+<p>DOMAIN.CFG file is created under usr/sap/trans/bin directory which stores TMS configuration and is used by systems and domains for checking existing configurations.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is a Transport Request in TMS? What are the different types of Transport Requests that can be created in a SAP system?</label>
+<div class="toggle-content">
+<p>A Transport Request contains number of changes to be implemented in the development system. It consists of the type of change, purpose, change category, target system and other details.</p>
+<p>Transport Requests are named in a standard format — &lt;SID&gt;K&lt;Number&gt;</p>
+<p>For example, in &lt;SID&gt;K&lt;Number&gt; &minus;</p>
+<ul class="list">
+<li>SID represents System ID</li>
+<li>K stands for fixed keyword/alphabet</li>
+<li>Number can be anything from a range starting with 900001</li>
+</ul>
+<p>There are two type of request types that can be created in SAP system &minus;</p>
+<p><b>Workbench Request</b> &minus; This request type contains repository and cross-client customizing objects. Workbench requests are used to make changes to the ABAP workbench objects.</p>
+<p><b>Customizing Request</b> &minus; This request type contains objects that belong to client-specific customizing. These requests are created in system automatically when a user performs customize setting and a target system is automatically assigned as per the transport layer.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the use of transport logs in TMS system? What are the different log types and record value in the log files?</label>
+<div class="toggle-content">
+<p>There are two types of logs that are available in Transport Management System</p>
+<p><b>Transport Logs</b> &minus; This keeps track of transport log files which have been moved in a transport request.</p>
+<p><b>Action Log</b> &minus; This includes the details of action logs that have been performed in a Transport Request. This also includes exports, import, etc.</p>
+<p>One of the important functions provided by the logs are the following return codes &minus;</p>
+<ul class="list">
+<li><p>0 — This value represents that export was successful.</p></li>
+<li><p>4 — This value represents that a warning was issued and objects were transported successfully.</p></li>
+<li><p>8 — This represents that a warning was issued and at least one object could not be transported.</p></li>
+<li><p>12 or higher — This value represents an error in Transport Request and this normally does not result because of objects in TR and probably occurs because of system failure.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>Which transport directory is used to implement support package and add-ons?</label>
+<div class="toggle-content">
+<p>Transport directory /usr/sap/trans should have enough space.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the use of Kernel in SAP system? How do you check the current Kernel version in SAP system?</label>
+<div class="toggle-content">
+<p>Kernel is an executable program that exists between SAP Applications and operating system. It consists of executable program under the path — "/sapmnt/&lt;SID&gt;/exe" for UNIX and \usr\sap\SID\SYS\exe\run Windows. It starts and stops application services such as message server, dispatcher, etc.</p>
+<p>In Kernel upgrade, new .exec files replace old executable files in SAP system. To check the current version, use Transaction SM51 and go to Release Notes.</p>
+<p>To check the status, go to System &#8594; Status tab &#8594; Other Kernel info</p>
+</div>
+</section>
+
+<section class="toggle">
+<label>What are the key activities that you perform as part of SAP Basis support?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Job Processing and Scheduling</li>
+<li>User Management</li>
+<li>SAP system configuration and Client Administration</li>
+<li>Installation and Patch Upgrade</li>
+<li>Installation and Patch Upgrade</li>
+<li>Managing interfaces and integration with servers</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>How do you check the users logs in your system and how many sessions each user is generating?</label>
+<div class="toggle-content"> 
+<p><b>SM04:</b></p>
+<p>To check number of users are logged into the system and in which client and how many session each user is generated and in each session what transaction is being executed.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you maintain roles in SAP system?</label>
+<div class="toggle-content"> 
+<p><b>PFCG:</b></p>
+<p>This is used to maintain roles in SAP system.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is SAP GUI?</label>
+<div class="toggle-content"> 
+<p>SAP GUI is known as client tool which is used to access remote central server and runs on different operating systems like Microsoft Windows, UNIX, Mac, etc. This is used to manage and access SAP applications like SAP ECC and SAP Business Intelligence system.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Do you know the different supported platforms for SAP GUI?</label>
+<div class="toggle-content"> 
+<p>SAP GUI for the Windows environment</p>
+<p>SAP GUI for the Java(TM) environment</p>
+<p>SAP GUI for HTML / Internet Transaction Server (ITS)</p>
+</div>
+</section>
+<section class="toggle">
+<label>Are you aware of Blue Crystal design of SAP GUI?</label>
+<div class="toggle-content"> 
+<p>SAP Blue Crystal is a new visual design theme which succeeds Corbu. It provides a consistent design that allows users to seamlessly experience SAP GUI and NWBC elements. It is the standard theme of Fiori applications and comes with a new color palette and icons which are better scalable.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is SAP Market place?</label>
+<div class="toggle-content"> 
+<p>To download SAP Products. Service.sap.com to login to SAP Market Place</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the difference between Sandbox, Development box and Production server?</label>
+<div class="toggle-content"> 
+<p><b>Sandbox server</b></p>
+<p>When a project is implemented, at the initial stages a sandbox server is used where all the customization, configuration is performed.</p>
+<p><b>Development Server</b></p>
+<p>Next is to save the configuration in development server and saved in workbench requests and this has to be transported to Production server.</p>
+<p><b>Production Server</b></p>
+<p>You can consider it as last or most refined stage where the work is done when project is in production/go live. All the changes that are requires by client are performed in DEV environment and later and the request is transported to production.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you create an instance?</label>
+<div class="toggle-content"> 
+<p>To create an instance, you should first define an operation mode. To create an instance, go to CCMS &gt; Configuration or use Transaction code RZ04.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different components in SAP system architecture?</label>
+<div class="toggle-content"> 
+<p>Presentation layer communicates with the application server to perform all the processing and which is known as brains of an SAP system. </p>
+<p>An application server consists of multiple instances and communicates with the database layer of the three-tier architecture.</p>
+<p>Bottom layer is called database layer which is responsible to keep all the data. Database of SAP system is kept on a separate server for performance and security reason.</p>
+<p>At Presentation layer you consist of different components for ABAP and JAVA that enables the communication and processing of data in SAP system. Key components at Presentation layer includes &minus;</p>
+<p><b>Message Server</b></p>
+<p>This is used to manage communication between distributed Dispatchers in ABAP system.</p>
+<p><b>Message Server</b></p>
+<p>This is used to manage server processes and JAVA dispatchers. It is used to manage communication within JRE.</p>
+<p><b>Dispatcher Queue</b></p>
+<p>This is used to store multiple work process types.</p>
+<p><b>Dispatcher</b></p>
+<p>It is used to distribute the requests to the work processes.</p>
+<p><b>Memory Pipes</b></p>
+<p>This is used to manage communication between ICM and ABAP work processes.</p>
+<p><b>Enqueue Server</b></p>
+<p>This is used to handle logical locks set by the executed Java application program.</p>
+<p><b>Java Dispatcher</b></p>
+<p>JAVA dispatcher is responsible to receive the client requests via presentation layer and forward to the server process.</p>
+<p><b>Gateway</b></p>
+<p>It is used to manage communication between SAP system and external systems.</p>
+<p><b>ABAP Work processes</b></p>
+<p>It is used to execute dialog steps in R/3 applications separately.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Where do you download trail version of SAP ECC, what is SAP CAL?</label>
+<div class="toggle-content"> 
+<p>You can download SAP ECC 6.0 free trial from SAP Market place. It is also possible to integrate SAP ECC 6.0 trial using SAP Cloud Appliance Library ACL to AWS or other cloud environment service provider by providing user public cloud key.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is SAP NetWeaver?</label>
+<div class="toggle-content"> 
+<p>SAP NetWeaver is known as open technology software component that provides you a platform to run critical business applications and integration between people, processes and information. It allows the composition, provisioning, and management of SAP and non-SAP applications across a heterogeneous software environment.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Do you have an idea about SAP NetWeaver architecture?</label>
+<div class="toggle-content"> 
+<p>SAP NetWeaver is one of central component of entire SAP software stack and provides you a platform for other components and JAVA and ABAP applications.</p>
+<p>SAP Application server consists of multiple several application server instances and also database servers. With use of dialog instance, it also contains message server and an enqueue server.</p>
+<p><b>Internal Communication Manager</b></p>
+<p>It is used to process both client and server web requests. It supports protocol – HTTP, HTTPS, SMTP</p>
+<p><b>Dispatcher</b></p>
+<p>Dispatcher is used to distribute the user request to different work processes. If all the work processes are busy, requests are stored in Dispatcher queue.</p>
+<p><b>Work Processes</b></p>
+<p>These are used to execute Java or ABAP programs.</p>
+<p><b>SAP Gateway</b></p>
+<p>This provides RFC interface between SAP instances.</p>
+<p><b>Message Server</b></p>
+<p>Message Server</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is SAP NetWeaver Administrator tool?</label>
+<div class="toggle-content"> 
+<p>SAP NetWeaver Administrator (NWA) is a Web-based tool that allows you to perform configuration, advanced administration, monitoring, troubleshooting, and diagnosing a SAP NetWeaver system.</p>
+<p>You can use NWA tool in these working modes &minus;</p>
+<ul class="list">
+<li>Online</li>
+<li>Local and remote</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What do you understand by SAP Client administration?</label>
+<div class="toggle-content"> 
+<p>A client is used in SAP system for multiple login on single instance. You can create multiple clients on a single instance. It also provides data security as one user will client can’t see data of other user and also there is no need to install the software again.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the benefits of using different clients in SAP system?</label>
+<div class="toggle-content">
+<ul class="list">
+<li><p>Using SAP Clients, you can share the same resources between multiple users.</p></li>
+<li><p>It helps you to manage SAP system landscape as you can create multiple clients for DEV, QA and PROD team.</p></li>
+<li><p>It allows you to share the SAP system within large number of users.</p></li>
+<li><p>Standard Clients in SAP system.</p></li>
+<li><p>You can create clients in SAP system from 000-999.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>When your database size is large, how you can perform client copy in SAP landscape?</label>
+<div class="toggle-content"> 
+<p>It is always recommended to use import/export option for client copy when database size is large.</p>
+<p>Steps to export a client &minus;</p>
+<p>Log on to Target system and create an entry for new target client using Transaction SCC4. To perform export for transferring data files to target system import buffer use Transaction SCC8.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is password policy?</label>
+<div class="toggle-content"> 
+<p>It is also possible to define password policy for users in SAP system. This includes &minus;</p>
+<ul class="list">
+<li>User has to set minimum password length</li>
+<li>Password expire policy</li>
+<li>Password complexity, etc.</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What do you understand by executing background jobs in SAP system?</label>
+<div class="toggle-content"> 
+<p>Background jobs are jobs in SAP system that run in the background without effecting normal operations in the system. Background jobs are used to reduce manual effort and to automate the process. They can run in the background without any user input and can be scheduled to run when system load is low.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What should be the job status to make it run?</label>
+<div class="toggle-content"> 
+<p>Released</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you access Job Overview screen?</label>
+<div class="toggle-content"> 
+<p>Transaction Code: SM37</p>
+<p>Use &ast; in job name column and select the status to see all the jobs created by this user. Also enter the date range as per the requirement &rarr; Execute</p>
+</div>
+</section>
+<section class="toggle">
+<label>What do you understand by Transport Management in SAP Basis?</label>
+<div class="toggle-content"> 
+<p>TMS is one of the key component in SAP system and used to control the new requests, to monitor the changes- who has implemented the changes, defining and configuring system landscape in SAP environment.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different components in Transport Management system?</label>
+<div class="toggle-content"> 
+<p><b>Change and Transport Organizer CTO</b></p>
+<p>Transaction: SE01</p>
+<p>This is used to manage, configure the changes in SAP repository and other objects. This provides you a central environment for development and configuration projects.</p>
+<p><b>Transport Management System</b></p>
+<p>This is used to manage, control and copy development objects and for customization to perform in SAP system landscape using transport routes configured with RFC Connections. This includes exporting the objects from one SAP system and importing to target system.</p>
+<p><b>Tools</b></p>
+<p>Tools are part of SAP Kernel and are used to manage R3 trans and transport control program.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How to add a system to Transport domain?</label>
+<div class="toggle-content"> 
+<p>Log on to SAP system that you want to add to system, use client 000 and start transaction STMS. If system is not added, TMS will check configuration file DOMAIN.CFG and will ask to join the domain. Click on -Select the proposal and save. System will remain in ‘Waiting’ status initially.</p>
+<p>To complete the task &rarr; login to Domain Controller System &rarr; Transaction STMS &rarr; Go to Overview &rarr; Systems.</p>
+<p>You can see new system that will be available. Go to SAP System &rarr; Approve</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are Transport routes? What are the different Transport routes type in SAP Basis?</label>
+<div class="toggle-content"> 
+<p>Transport routes are defined as routes that are defined by SAP Administrator to transmit the changes between different SAP systems.</p>
+<p>You can define two types of transport routes &minus;</p>
+<ul class="list">
+<li>Consolidation (From DEV to QAS) – Transport Layers are used</li>
+<li>Delivery (From QAS to PRD) – Transport Layers not required</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>Where do you check Transport request logs?</label>
+<div class="toggle-content"> 
+<p>You can also check the logs once the transport request is completed. To check the logs, Transaction SE01 &rarr; GoTo &rarr; Transport Logs</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the use of Patches in SAP system? Could you name few common patch types?</label>
+<div class="toggle-content"> 
+<p>In SAP system, when a bug is found you have to use patches to fix the bug. There are different types of patches that can be used in SAP system. All patches start with SAPK followed by patch type.</p>
+<p>ABAP (SAPKA620XXXX)</p>
+<p>ABAP (SAPKA620XXXX)</p>
+<p>ABAP (SAPKA620XXXX)</p>
+<p>ABAP (SAPKA620XXXX)</p>
+</div>
+</section>
+<section class="toggle">
+<label>In what sequence patches should be applied in SAP system?</label>
+<div class="toggle-content"> 
+<p>Patches are also called support packs and they should be applied in this sequence &minus;</p>
+<p>BASIS (SAPKB620XXXX)</p>
+<p>ABAP (SAPKA620XXXX)</p>
+<p>ABAP (SAPKA620XXXX)</p>
+<p>APPLICATIONS (SAPKH470XXXX)</p>
+</div>
+</section>
+<section class="toggle">
+<label>Where do you download Support Package and Stack update?</label>
+<div class="toggle-content"> 
+<p>You can download support package from SAP Service Market place. Open the link- service.sap.com and login with your SID.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you perform proactive monitoring of Application servers, CPU Utilization, Database space, monitoring log files?</label>
+<div class="toggle-content"> 
+<p>System monitoring involves proactive monitoring of Application servers, CPU Utilization, Database space, monitoring log files, etc.</p>
+<p>System monitoring also includes &minus;</p>
+<ul class="list">
+<li>Batch Jobs monitoring</li>
+<li>Batch Jobs monitoring</li>
+<li>Monitoring Application Users</li>
+<li>Spool Request Monitoring</li>
+<li>Print Requests</li>
+</ul>
+<p>To monitor SAP system, use Transaction SM51</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is RFC connection?</label>
+<div class="toggle-content"> 
+<p>To communicate between SAP systems, there is a need to define a mechanism. One of the most common way is to define Remote function Call RFC connection between two systems. By creating a trusted RFC connection between two, it allows you to create trusted-trusting relationship between systems and you can communicate and exchange information and data.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the different types of Trusted RFC connections in SAP system?</label>
+<div class="toggle-content"> 
+<p><b>Type 3</b></p>
+<p>This connection type is used to specify connection between ABAP systems. As mentioned in next article, you need to mention host name and IP address of source system and also the logon information. This is applicable for both type of RFCs, between ABAP systems and external calls to ABAP systems.</p>
+<p><b>Type I</b></p>
+<p>It is used to specify ABAP systems connected to the same data base as the current system. </p>
+<p><b>Type T</b></p>
+<p>It is defined as connection for destinations to external programs that use the RFC API to receive RFCs. This can be activated using start or registration.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How do you create Trusted RFC connection in ABAP system, Explain?</label>
+<div class="toggle-content"> 
+<p>Creating a Trusted RFC Connection &minus;</p>
+<p>On your source SAP system AA1 you want to setup a trusted RFC towards target system BB1. When it is done it would mean that when you are logged onto AA1 and your user has enough authorization in BB1, you can use the RFC connection and logon to BB1 without having to re-enter user and password.</p>
+<p>Using RFC trusted/trusting relationship between two SAP systems, RFC from a trusted system to a trusting system, password is no required for logging on to the trusting system.</p>
+<p>Open SAP ECC system using SAP logon. Enter transaction number sm59 &rarr; this is transaction number to create a new Trusted RFC connection.</p>
+</div>
+</section>
+<h2>What is Next?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">sap_basis_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_basis/sap_basis_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_basis/sap_basis_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_basis/sap_basis_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_basis/sap_basis_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_basis/sap_basis_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_basis/sap_basis_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

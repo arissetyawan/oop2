@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>DB2 - Database Security</title>
+<meta name="description" content="DB2 - Database Security - Learn DB2 Concepts in simple and easy steps starting from their overview and then covering, introduction to db2, db2 server installation, db2 instance, databases, buffer pools, table spaces, storage groups, schemas, data type, tables, alias, constraints, indexes, triggers, sequences, views, db2 with xml, backup and recovery, database security, roles, ldap etc." />
+<meta name="keywords" content="DB2 Bufferpools, introduction to db2, db2 server installation, db2 instance, databases, buffer pools, table spaces, storage groups, schemas, data type, tables, alias, constraints, indexes, triggers, sequences, views, db2 with xml, backup and recovery, database security, roles, ldap etc." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #16a017 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #16a017 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #16a017 !important;}
+.submenu-item{ border-bottom: 2px solid #16a017 !important; border-top: 2px solid #16a017 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#16a017; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/db2/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/db2/images/db2-mini-logo.jpg" alt="DB2 Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/db2_online_training/index.asp" target="_blank"><img src="/db2/images/db2-video-tutorials.jpg" alt="DB2 Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">DB2 Tutorial</li>
+<li><a  href="/db2/index.htm">Home</a></li>
+<li><a  href="/db2/db2_introduction.htm">DB2 - Introduction</a></li>
+<li><a  href="/db2/db2_server_installation.htm">DB2 - Server Installation</a></li>
+<li><a  href="/db2/db2_instance.htm">DB2 - Instance</a></li>
+<li><a  href="/db2/db2_databases.htm">DB2 - Databases</a></li>
+<li><a  href="/db2/db2_bufferpools.htm">DB2 - Bufferpools</a></li>
+<li><a  href="/db2/db2_tablespaces.htm">DB2 - Tablespaces</a></li>
+<li><a  href="/db2/db2_storagegroups.htm">DB2 - Storagegroups</a></li>
+<li><a  href="/db2/db2_schemas.htm">DB2 - Schemas</a></li>
+<li><a  href="/db2/db2_data_type.htm">DB2 - Data Types</a></li>
+<li><a  href="/db2/db2_tables.htm">DB2 - Tables</a></li>
+<li><a  href="/db2/db2_alias.htm">DB2 - Alias</a></li>
+<li><a  href="/db2/db2_constraints.htm">DB2 - Constraints</a></li>
+<li><a  href="/db2/db2_indexes.htm">DB2 - Indexes</a></li>
+<li><a  href="/db2/db2_triggers.htm">DB2 - Triggers</a></li>
+<li><a  href="/db2/db2_sequences.htm">DB2 - Sequences</a></li>
+<li><a  href="/db2/db2_views.htm">DB2 - Views</a></li>
+<li><a  href="/db2/db2_with_xml.htm">DB2 with XML</a></li>
+<li><a  href="/db2/db2_backup_and_recovery.htm">DB2 - Backup and Recovery</a></li>
+<li><a  href="/db2/db2_database_security.htm">DB2 - Database Security</a></li>
+<li><a  href="/db2/db2_roles.htm">DB2 - Roles</a></li>
+<li><a  href="/db2/db2_ldap.htm">DB2 - LDAP</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DB2 Useful Resources</li>
+<li><a href="/db2/db2_questions_answers.htm">DB2 - Questions and Answers</a></li>
+<li><a href="/db2/db2_quick_guide.htm">DB2 - Quick Guide</a></li>
+<li><a href="/db2/db2_useful_resources.htm">DB2 - Useful Resources</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>DB2 - Database Security</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/db2/db2_backup_and_recovery.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/db2/db2_roles.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr>
+<p>This chapter describes database security.</p>
+<h2>Introduction</h2>
+<p>DB2 database and functions can be managed by two different modes of security controls:</p>
+<ol class="list">
+<li>Authentication</li>
+<li>Authorization</li>
+</ol>
+<h3>Authentication</h3>
+<p>Authentication is the process of confirming that a user logs in only in accordance with the rights to perform the activities he is authorized to perform. User authentication can be performed at operating system level or database level itself. By using authentication tools for biometrics such as retina and figure prints are in use to keep the database from hackers or malicious users.</p>
+<p>The database security can be managed from outside the db2 database system. Here are some type of security authentication process:</p>
+<ul class="list">
+<li>Based on Operating System authentications.</li>
+<li>Lightweight Directory Access Protocol (LDAP)</li>
+</ul>
+<p>For DB2, the security service is a part of operating system as a separate product. For Authentication, it requires two different credentials, those are userid or username, and password.</p>
+<h3>Authorization</h3>
+<p>You can access the DB2 Database and its functionality within the DB2 database system, which is managed by the DB2 Database manager. Authorization is a process managed by the DB2 Database manager. The manager obtains information about the current authenticated user, that indicates which database operation the user can perform or access.</p>
+<p>Here are different ways of permissions available for authorization:</p>
+<p><b>Primary permission</b>: Grants the authorization ID directly.</p>
+<p><b>Secondary permission</b>: Grants to the groups and roles if the user is a member</p>
+<p><b>Public permission</b>: Grants to all users publicly.</p>
+<p><b>Context-sensitive permission</b>: Grants to the trusted context role.</p>
+<p>Authorization can be given to users based on the categories below:</p>
+<ul class="list">
+<li>System-level authorization</li>
+<li>System administrator [SYSADM]</li>
+<li>System Control [SYSCTRL]</li>
+<li>System maintenance [SYSMAINT]</li>
+<li>System monitor [SYSMON]</li>
+</ul>
+<p>Authorities provide of control over instance-level functionality. Authority provide to group privileges, to control maintenance and authority operations. For instance, database and database objects.</p>
+<ul>
+<li>Database-level authorization</li>
+<li>Security Administrator [SECADM]</li>
+<li>Database Administrator [DBADM]</li>
+<li>Access Control [ACCESSCTRL]</li>
+<li>Data access [DATAACCESS]</li>
+<li>SQL administrator. [SQLADM]</li>
+<li>Workload management administrator [WLMADM]</li>
+<li>Explain [EXPLAIN]</li>
+</ul>
+<p>Authorities provide controls within the database. Other authorities for database include with LDAD and CONNECT.</p>
+<ul class="list">
+<li><b>Object-Level Authorization</b>: Object-Level authorization involves verifying privileges when an operation is performed on an object.</li>
+<li><b>Content-based Authorization</b>: User can have read and write access to individual rows and columns on a particular table using Label-based access Control [LBAC].</li>
+</ul>
+<p>DB2 tables and configuration files are used to record the permissions associated with authorization names. When a user tries to access the data, the recorded permissions verify the following permissions:</p>
+<ul class="list">
+<li>Authorization name of the user</li>
+<li>Which group belongs to the user</li>
+<li>Which roles are granted directly to the user or indirectly to a group</li>
+<li>Permissions acquired through a trusted context.</li>
+</ul>
+<p>While working with the SQL statements, the DB2 authorization model considers the combination of the following permissions:</p>
+<ul class="list">
+<li>Permissions granted to the primary authorization ID associated with the SQL statements.</li>
+<li>Secondary authorization IDs associated with the SQL statements.</li>
+<li>Granted to PUBLIC</li>
+<li>Granted to the trusted context role.</li>
+</ul>
+<h2>Instance level authorities</h2>
+<p>Let us discuss some instance related authorities.</p>
+<h3>System administration authority (SYSADM)</h3>
+<p>It is highest level administrative authority at the instance-level.  Users with SYSADM authority can execute some databases and database manager commands within the instance. Users with SYSADM authority can perform the following operations:</p>
+<ul>
+<li>Upgrade a Database</li>
+<li>Restore a Database</li>
+<li>Update Database manager configuration file.</li>
+</ul>
+<h3>System control authority (SYSCTRL)</h3>
+<p>It is the highest level in System control authority. It provides to perform maintenance and utility operations against the database manager instance and its databases. These operations can affect system resources, but they do not allow direct access to data in the database.</p>
+<p>Users with SYSCTRL authority can perform the following actions:</p>
+<ul class="list">
+<li>Updating the database, Node, or Distributed Connect Service (DCS) directory</li>
+<li>Forcing users off the system-level</li>
+<li>Creating or Dropping a database-level</li>
+<li>Creating, altering, or dropping a table space</li>
+<li>Using any table space</li>
+<li>Restoring Database</li>
+</ul>
+<h3>System maintenance authority (SYSMAINT)</h3>
+<p>It is a second level of system control authority.  It provides to perform maintenance and utility operations against the database manager instance and its databases. These operations affect the system resources without allowing direct access to data in the database. This authority is designed for users to maintain databases within a database manager instance that contains sensitive data.</p>
+<p>Only Users with SYSMAINT or higher level system authorities can perform the following tasks:</p>
+<ul class="list">
+<li>Taking backup</li>
+<li>Restoring the backup</li>
+<li>Roll forward recovery</li>
+<li>Starting or stopping instance</li>
+<li>Restoring tablespaces</li>
+<li>Executing db2trc command</li>
+<li>Taking system monitor snapshots in case of an Instance level user or a database level user.</li>
+</ul>
+<p>A user with SYSMAINT can perform the following tasks:</p>
+<ul class="list">
+<li>Query the state of a tablespace</li>
+<li>Updating log history files</li>
+<li>Reorganizing of tables</li>
+<li>Using RUNSTATS (Collection catalog statistics)</li>
+</ul>
+<h3>System monitor authority (SYSMON)</h3>
+<p>With this authority, the user can monitor or take snapshots of database manager instance or its database. SYSMON authority enables the user to run the following tasks:</p>
+<ul class="list">
+<li>GET DATABASE MANAGER MONITOR SWITCHES</li>
+<li>GET MONITOR SWITCHES</li>
+<li>GET SNAPSHOT</li>
+<li>LIST
+<ul class="list">
+<li>LIST ACTIVE DATABASES</li>
+<li>LIST APPLICATIONS</li>
+<li>LIST DATABASE PARTITION GROUPS</li>
+<li>LIST DCS APPLICATIONS</li>
+<li>LIST PACKAGES</li>
+<li>LIST TABLES</li>
+<li>LIST TABLESPACE CONTAINERS</li>
+<li>LIST TABLESPACES</li>
+<li>LIST UTITLITIES</li>
+</ul>
+</li>
+<li>RESET MONITOR</li>
+<li>UPDATE MONITOR SWITCHES</li>
+</ul>
+<h2>Database authorities</h2>
+<p>Each database authority holds the authorization ID to perform some action on the database. These database authorities are different from privileges. Here is the list of some database authorities:</p>
+<p><b>ACCESSCTRL</b>: allows to grant and revoke all object privileges and database authorities.</p>
+<p><b>BINDADD</b>: Allows to create a new package in the database.</p>
+<p><b>CONNECT</b>: Allows to connect to the database.</p>
+<p><b>CREATETAB</b>: Allows to create new tables in the database.</p>
+<p><b>CREATE_EXTERNAL_ROUTINE</b>: Allows to create a procedure to be used by applications and the users of the databases.</p>
+<p><b>DATAACCESS</b>: Allows to access data stored in the database tables.</p>
+<p><b>DBADM</b>: Act as a database administrator. It gives all other database authorities except ACCESSCTRL, DATAACCESS, and SECADM.</p>
+<p><b>EXPLAIN</b>: Allows to explain query plans without requiring them to hold the privileges to access the data in the tables.</p>
+<p><b>IMPLICIT_SCHEMA</b>: Allows a user to create a schema implicitly by creating an object using a CREATE statement.</p>
+<p><b>LOAD</b>: Allows to load data into table.</p>
+<p><b>QUIESCE_CONNECT</b>: Allows to access the database while it is quiesce (temporarily disabled).</p>
+<p><b>SECADM</b>: Allows to act as a security administrator for the database.</p>
+<p><b>SQLADM</b>: Allows to monitor and tune SQL statements.</p>
+<p><b>WLMADM</b>: Allows to act as a workload administrator</p>
+<h2>Privileges</h2>
+<h3>SETSESSIONUSER</h3>
+<p>Authorization ID privileges involve actions on authorization IDs. There is only one privilege, called the SETSESSIONUSER privilege.  It can be granted to user or a group and it allows to session user to switch identities to any of the authorization IDs on which the privileges are granted. This privilege is granted by user SECADM authority.</p>
+<h3>Schema privileges</h3>
+<p>This privileges involve actions on schema in the database. The owner of the schema has all the permissions to manipulate the schema objects like tables, views, indexes, packages, data types, functions, triggers, procedures and aliases. A user, a group, a role, or PUBLIC can be granted any user of the following privileges:</p>
+<ul class="list">
+<li><b>CREATEIN</b>: allows to create objects within the schema</li>
+<li><b>ALTERIN</b>: allows to modify objects within the schema.</li>
+</ul>
+<h3>DROPIN</h3>
+<p>This allows to delete the objects within the schema.</p>
+<h2>Tablespace privileges</h2>
+<p>These privileges involve actions on the tablespaces in the database. User can be granted the USE privilege for the tablespaces. The privileges then allow them to create tables within tablespaces. The privilege owner can grant the USE privilege with the command WITH GRANT OPTION on the tablespace when tablespace is created. And SECADM or ACCESSCTRL authorities have the permissions to USE privileges on the tablespace.</p>
+<h2>Table and view privileges</h2>
+<p>The user must have CONNECT authority on the database to be able to use table and view privileges.  The privileges for tables and views are as given below:</p>
+<h3>CONTROL</h3>
+<p>It provides all the privileges for a table or a view including drop and grant, revoke individual table privileges to the user.</p>
+<h3>ALTER</h3>
+<p>It allows user to modify a table.</p>
+<h3>DELETE</h3>
+<p>It allows the user to delete rows from the table or view.</p>
+<h3>INDEX</h3>
+<p> It allows the user to insert a row into table or view. It can also run import utility.</p>
+<h3>REFERENCES</h3>
+<p>It allows the users to create and drop a foreign key.</p>
+<h3>SELECT</h3>
+<p>It allows the user to retrieve rows from a table or view.</p>
+<h3>UPDATE</h3>
+<p>It allows the user to change entries in a table, view.</p>
+<h2>Package privileges</h2>
+<p>User must have CONNECT authority to the database. Package is a database object that contains the information of database manager to access data in the most efficient way for a particular application.</p>
+<h3>CONTROL</h3>
+<p>It provides the user with privileges of rebinding, dropping or executing packages. A user with this privileges is granted to BIND and EXECUTE privileges.</p>
+<h3>BIND</h3>
+<p>It allows the user to bind or rebind that package.</p>
+<h3>EXECUTE</h3>
+<p>Allows to execute a package.</p>
+<h2>Index privileges</h2>
+<p>This privilege automatically receives CONTROL privilege on the index.</p>
+<h2>Sequence privileges</h2>
+<p>Sequence automatically receives the USAGE and ALTER privileges on the sequence.</p>
+<h2>Routine privileges</h2>
+<p>It involves the action of routines such as functions, procedures, and methods within a database.</p>
+<hr />
+<div class="pre-btn">
+<a href="/db2/db2_backup_and_recovery.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/db2/pdf/db2_database_security.pdf" title="DB2 - Database Security" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/db2/db2_roles.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/db2/db2_database_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/db2/db2_database_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/db2/db2_database_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/db2/db2_database_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/db2/db2_database_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/db2/db2_database_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

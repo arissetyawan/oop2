@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Java 8 Quick Guide</title>
+<meta name="description" content="Java 8 Quick Guide - Learn Java 8 in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Lambda Expressions, Method Reference, Functional Interfaces, Default methods, Streams, Optional Class, Nashorn JavaScript Engine, New Date Time API, Base64." />
+<meta name="keywords" content="Java 8, Tutorial, Overview, Environment Setup, Lambda Expressions, Method Reference, Functional Interfaces, Default methods, Streams, Optional Class, Nashorn JavaScript Engine, New Date Time API, Base64." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #0C6AC4 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #0C6AC4 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #0C6AC4 !important;}
+.submenu-item{ border-bottom: 2px solid #0C6AC4 !important; border-top: 2px solid #0C6AC4 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#0C6AC4; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/java8/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+  vertical-align:middle !important;
+  text-align:center !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/java8/images/java-8-mini-logo.jpg" alt="Java 8 Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Java 8 Tutorial</li>
+<li><a href="/java8/index.htm">Java 8 - Home</a></li>
+<li><a href="/java8/java8_overview.htm">Java 8 - Overview</a></li>
+<li><a href="/java8/java8_environment.htm">Java 8 - Environment Setup</a></li>
+<li><a href="/java8/java8_lambda_expressions.htm">Java 8 - Lambda Expressions</a></li>
+<li><a href="/java8/java8_method_references.htm">Java 8 - Method References</a></li>
+<li><a href="/java8/java8_functional_interfaces.htm">Java 8 - Functional Interfaces</a></li>
+<li><a href="/java8/java8_default_methods.htm">Java 8 - Default Methods</a></li>
+<li><a href="/java8/java8_streams.htm">Java 8 - Streams</a></li>
+<li><a href="/java8/java8_optional_class.htm">Java 8 - Optional Class</a></li>
+<li><a href="/java8/java8_nashorn_java_script.htm">Java 8 - Nashorn JavaScript</a></li>
+<li><a href="/java8/java8_datetime_api.htm">Java 8 - New Date/Time API</a></li>
+<li><a href="/java8/java8_base64.htm">Java 8 - Base64</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Java 8 Useful Resources</li>
+<li><a href="/java8/java8_questions_answers.htm">Java 8 - Questions and Answers</a></li>
+<li><a href="/java8/java8_quick_guide.htm">Java 8 - Quick Guide</a></li>
+<li><a href="/java8/java8_useful_resources.htm">Java 8 - Useful Resources</a></li>
+<li><a href="/java8/java8_discussion.htm">Java 8 - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Java 8 - Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/java8/java8_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/java8/java8_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Java 8 - Overview</h1>
+<p>JAVA 8 is a major feature release of JAVA programming language development. Its initial version was released on 18 March 2014. With the Java 8 release, Java provided supports for functional programming, new JavaScript engine, new APIs for date time manipulation, new streaming API, etc.</p>
+<h2>New Features</h2>
+<ul class="list">
+<li><p><b>Lambda expression</b> &minus; Adds functional processing capability to Java.</p></li>
+<li><p><b>Method references</b> &minus; Referencing functions by their names instead of invoking them directly. Using functions as parameter.</p></li>
+<li><p><b>Default method</b> &minus; Interface to have default method implementation.</p></li>
+<li><p><b>New tools</b> &minus; New compiler tools and utilities are added like ‘jdeps’ to figure out dependencies.</p></li>
+<li><p><b>Stream API</b> &minus; New stream API to facilitate pipeline processing.</p></li>
+<li><p><b>Date Time API</b> &minus; Improved date time API.</p></li>
+<li><p><b>Optional</b> &minus; Emphasis on best practices to handle null values properly.</p></li>
+<li><p><b>Nashorn, JavaScript Engine</b> &minus; A Java-based engine to execute JavaScript code.</p></li>
+</ul>
+<p>Consider the following code snippet.</p>
+<a href="http://tpcg.io/bzDpFz" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.Collections;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+   
+      List&lt;String&gt; names1 = new ArrayList&lt;String&gt;();
+      names1.add("Mahesh ");
+      names1.add("Suresh ");
+      names1.add("Ramesh ");
+      names1.add("Naresh ");
+      names1.add("Kalpesh ");
+		
+      List&lt;String&gt; names2 = new ArrayList&lt;String&gt;();
+      names2.add("Mahesh ");
+      names2.add("Suresh ");
+      names2.add("Ramesh ");
+      names2.add("Naresh ");
+      names2.add("Kalpesh ");
+		
+      Java8Tester tester = new Java8Tester();
+      System.out.println("Sort using Java 7 syntax: ");
+		
+      tester.sortUsingJava7(names1);
+      System.out.println(names1);
+      System.out.println("Sort using Java 8 syntax: ");
+		
+      tester.sortUsingJava8(names2);
+      System.out.println(names2);
+   }
+   
+   //<b>sort using java 7</b>
+   private void sortUsingJava7(List&lt;String&gt; names) {   
+      Collections.sort(names, new Comparator&lt;String&gt;() {
+         @Override
+         public int compare(String s1, String s2) {
+            return s1.compareTo(s2);
+         }
+      });
+   }
+   
+   //<b>sort using java 8</b>
+   private void sortUsingJava8(List&lt;String&gt; names) {
+      Collections.sort(names, (s1, s2) -&gt; s1.compareTo(s2));
+   }
+}
+</pre>
+<p>Run the program to get the following result.</p>
+<pre class="result notranslate">
+Sort using Java 7 syntax:
+[ Kalpesh Mahesh Naresh Ramesh Suresh ]
+Sort using Java 8 syntax:
+[ Kalpesh Mahesh Naresh Ramesh Suresh ]
+</pre>
+<p>Here the <b>sortUsingJava8()</b> method uses sort function with a lambda expression as parameter to get the sorting criteria.</p>
+<h1>Java 8 - Environment Setup</h1>
+<h2>Local Environment Setup</h2>
+<p>If you want to set up your own environment for Java programming language, then this section guides you through the whole process. Please follow the steps given below to set up your Java environment.</p>
+<p>Java SE can be downloaded for free from the following link &minus;</p>
+<p><a rel="nofollow" href="https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank">https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html</a></p>
+<p>You download a version based on your operating system.</p>
+<p>Follow the instructions to download Java, and run the <b>.exe</b> to install Java on your machine. Once you have installed Java on your machine, you would need to set environment variables to point to correct installation directories.</p>
+<h3>Setting Up the Path for Windows 2000/XP</h3>
+<p>Assuming you have installed Java in c:\Program Files\java\jdk directory &minus;</p>
+<ul class="list">
+<li><p>Right-click on 'My Computer' and select 'Properties'.</p></li>
+<li><p>Click on the 'Environment variables' button under the 'Advanced' tab.</p></li>
+<li><p>Now, alter the 'Path' variable so that it also contains the path to the Java executable. For example, if the path is currently set to 'C:\WINDOWS\SYSTEM32', then change your path to read 'C:\WINDOWS\SYSTEM32;c:\Program Files\java\jdk\bin'.</p></li>
+</ul>
+<h3>Setting Up the Path for Windows 95/98/ME</h3>
+<p>Assuming you have installed Java in c:\Program Files\java\jdk directory &minus;</p>
+<ul class="list">
+<li><p>Edit the 'C:\autoexec.bat' file and add the following line at the end &minus;</p>
+<p>SET PATH=%PATH%;C:\Program Files\java\jdk\bin</p></li>
+</ul>
+<h3>Setting Up the Path for Linux, UNIX, Solaris, FreeBSD</h3>
+<p>Environment variable PATH should be set to point to where the Java binaries have been installed. Refer to your shell documentation if you have trouble doing this.</p>
+<p>For example, if you use bash as your shell, then you would add the following line at the end of your '.bashrc: export PATH=/path/to/java:$PATH'</p>
+<h2>Popular Java Editors</h2>
+<p>To write Java programs, you need a text editor. There are even more sophisticated IDEs available in the market. But for now, you can consider one of the following &minus;</p>
+<ul class="list">
+<li><p><b>Notepad</b> &minus; On Windows machine, you can use any simple text editor like Notepad (recommended for this tutorial) or TextPad.</p></li>
+<li><p><b>Netbeans</b> &minus; It is a Java IDE that is open-source and free. It can be downloaded from <a rel="nofollow" href="https://netbeans.org/index.html" target="_blank">https://netbeans.org/index.html</a>.</p></li>
+<li><p><b>Eclipse</b> &minus; It is also a Java IDE developed by the Eclipse open-source community and can be downloaded from <a rel="nofollow" href="https://www.eclipse.org/" target="_blank">https://www.eclipse.org/</a>.</p></li>
+</ul>
+<h1>Java 8 - Lambda Expressions</h1>
+<p>Lambda expressions are introduced in Java 8 and are touted to be the biggest feature of Java 8. Lambda expression facilitates functional programming, and simplifies the development a lot.</p>
+<h2>Syntax</h2>
+<p>A lambda expression is characterized by the following syntax.</p>
+<pre class="result notranslate">
+parameter -&gt; expression body
+</pre>
+<p>Following are the important characteristics of a lambda expression.</p>
+<ul class="list">
+<li><p><b>Optional type declaration</b> &minus; No need to declare the type of a parameter. The compiler can inference the same from the value of the parameter.</p></li>
+<li><p><b>Optional parenthesis around parameter</b> &minus; No need to declare a single parameter in parenthesis. For multiple parameters, parentheses are required.</p></li>
+<li><p><b>Optional curly braces</b> &minus; No need to use curly braces in expression body if the body contains a single statement.</p></li>
+<li><p><b>Optional return keyword</b> &minus; The compiler automatically returns the value if the body has a single expression to return the value. Curly braces are required to indicate that expression returns a value.</p></li>
+</ul>
+<h2>Lambda Expressions Example</h2>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/UV2lea" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester tester = new Java8Tester();
+		
+      //with type declaration
+      MathOperation addition = (int a, int b) -&gt; a + b;
+		
+      //with out type declaration
+      MathOperation subtraction = (a, b) -&gt; a - b;
+		
+      //with return statement along with curly braces
+      MathOperation multiplication = (int a, int b) -&gt; { return a * b; };
+		
+      //without return statement and without curly braces
+      MathOperation division = (int a, int b) -&gt; a / b;
+		
+      System.out.println("10 + 5 = " + tester.operate(10, 5, addition));
+      System.out.println("10 - 5 = " + tester.operate(10, 5, subtraction));
+      System.out.println("10 x 5 = " + tester.operate(10, 5, multiplication));
+      System.out.println("10 / 5 = " + tester.operate(10, 5, division));
+		
+      //without parenthesis
+      GreetingService greetService1 = message -&gt;
+      System.out.println("Hello " + message);
+		
+      //with parenthesis
+      GreetingService greetService2 = (message) -&gt;
+      System.out.println("Hello " + message);
+		
+      greetService1.sayMessage("Mahesh");
+      greetService2.sayMessage("Suresh");
+   }
+	
+   interface MathOperation {
+      int operation(int a, int b);
+   }
+	
+   interface GreetingService {
+      void sayMessage(String message);
+   }
+	
+   private int operate(int a, int b, MathOperation mathOperation) {
+      return mathOperation.operation(a, b);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+10 + 5 = 15
+10 - 5 = 5
+10 x 5 = 50
+10 / 5 = 2
+Hello Mahesh
+Hello Suresh
+</pre>
+<p>Following are the important points to be considered in the above example.</p>
+<ul class="list">
+<li><p>Lambda expressions are used primarily to define inline implementation of a functional interface, i.e., an interface with a single method only. In the above example, we've used various types of lambda expressions to define the operation method of MathOperation interface. Then we have defined the implementation of sayMessage of GreetingService.</p></li>
+<li><p>Lambda expression eliminates the need of anonymous class and gives a very simple yet powerful functional programming capability to Java.</p></li>
+</ul>
+<h2>Scope</h2>
+<p>Using lambda expression, you can refer to any final variable or effectively final variable (which is assigned only once). Lambda expression throws a compilation error, if a variable is assigned a value the second time.</p>
+<h3>Scope Example</h3>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<p><b>Java8Tester.java</b></p>
+<a href="http://tpcg.io/fb3D2b" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+public class Java8Tester {
+
+   final static String salutation = "Hello! ";
+   
+   public static void main(String args[]) {
+      GreetingService greetService1 = message -&gt; 
+      System.out.println(salutation + message);
+      greetService1.sayMessage("Mahesh");
+   }
+	
+   interface GreetingService {
+      void sayMessage(String message);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Hello! Mahesh
+</pre>
+<h1>Java 8 - Method References</h1>
+<p>Method references help to point to methods by their names. A method reference is described using "::" symbol. A method reference can be used to point the following types of methods &minus;</p>
+<ul class="list">
+<li>Static methods</li>
+<li>Instance methods</li>
+<li>Constructors using new operator (TreeSet::new)</li>
+</ul>
+<h2>Method Reference Example</h2>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/PTHs2z" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.List;
+import java.util.ArrayList;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      List names = new ArrayList();
+		
+      names.add("Mahesh");
+      names.add("Suresh");
+      names.add("Ramesh");
+      names.add("Naresh");
+      names.add("Kalpesh");
+		
+      names.forEach(System.out::println);
+   }
+}
+</pre>
+<p>Here we have passed System.out::println method as a static method reference.</p>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Mahesh
+Suresh
+Ramesh
+Naresh
+Kalpesh
+</pre>
+<h1>Java 8 - Functional Interfaces</h1>
+<p>Functional interfaces have a single functionality to exhibit. For example, a Comparable interface with a single method ‘compareTo’ is used for comparison purpose. Java 8 has defined a lot of functional interfaces to be used extensively in lambda expressions. Following is the list of functional interfaces defined in java.util.Function package.</p>
+<section class="toggle">
+<label>Given below is the list of interfaces in Java8.</label>
+<div class="toggle-content">
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Interface &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>BiConsumer&lt;T,U&gt;</b></p>
+<p>Represents an operation that accepts two input arguments, and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>BiFunction&lt;T,U,R&gt;</b></p>
+<p>Represents a function that accepts two arguments and produces a result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>BinaryOperator&lt;T&gt;</b></p>
+<p>Represents an operation upon two operands of the same type, producing a result of the same type as the operands.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>BiPredicate&lt;T,U&gt;</b></p>
+<p>Represents a predicate (Boolean-valued function) of two arguments.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>BooleanSupplier</b></p>
+<p>Represents a supplier of Boolean-valued results.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>Consumer&lt;T&gt;</b></p>
+<p>Represents an operation that accepts a single input argument and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>DoubleBinaryOperator</b></p>
+<p>Represents an operation upon two double-valued operands and producing a double-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>DoubleConsumer</b></p>
+<p>Represents an operation that accepts a single double-valued argument and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>DoubleFunction&lt;R&gt;</b></p>
+<p>Represents a function that accepts a double-valued argument and produces a result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>DoublePredicate</b></p>
+<p>Represents a predicate (Boolean-valued function) of one double-valued argument.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>DoubleSupplier</b></p>
+<p>Represents a supplier of double-valued results.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><p><b>DoubleToIntFunction</b></p>
+<p>Represents a function that accepts a double-valued argument and produces an int-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><p><b>DoubleToLongFunction</b></p>
+<p>Represents a function that accepts a double-valued argument and produces a long-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td><p><b>DoubleUnaryOperator</b></p>
+<p>Represents an operation on a single double-valued operand that produces a double-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><p><b>Function&lt;T,R&gt;</b></p>
+<p>Represents a function that accepts one argument and produces a result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td><p><b>IntBinaryOperator</b></p>
+<p>Represents an operation upon two int-valued operands and produces an int-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">17</td>
+<td><p><b>IntConsumer</b></p>
+<p>Represents an operation that accepts a single int-valued argument and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">18</td>
+<td><p><b>IntFunction&lt;R&gt;</b></p>
+<p>Represents a function that accepts an int-valued argument and produces a result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">19</td>
+<td><p><b>IntPredicate</b></p>
+<p>Represents a predicate (Boolean-valued function) of one int-valued argument.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">20</td>
+<td><p><b>IntSupplier</b></p>
+<p>Represents a supplier of int-valued results.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">21</td>
+<td><p><b>IntToDoubleFunction</b></p>
+<p>Represents a function that accepts an int-valued argument and produces a double-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">22</td>
+<td><p><b>IntToLongFunction</b></p>
+<p>Represents a function that accepts an int-valued argument and produces a long-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">23</td>
+<td><p><b>IntUnaryOperator</b></p>
+<p>Represents an operation on a single int-valued operand that produces an int-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">24</td>
+<td><p><b>LongBinaryOperator</b></p>
+<p>Represents an operation upon two long-valued operands and produces a long-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">25</td>
+<td><p><b>LongConsumer</b></p>
+<p>Represents an operation that accepts a single long-valued argument and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">26</td>
+<td><p><b>LongFunction&lt;R&gt;</b></p>
+<p>Represents a function that accepts a long-valued argument and produces a result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">27</td>
+<td><p><b>LongPredicate</b></p>
+<p>Represents a predicate (Boolean-valued function) of one long-valued argument.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">28</td>
+<td><p><b>LongSupplier</b></p>
+<p>Represents a supplier of long-valued results.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">29</td>
+<td><p><b>LongToDoubleFunction</b></p>
+<p>Represents a function that accepts a long-valued argument and produces a double-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">30</td>
+<td><p><b>LongToIntFunction</b></p>
+<p>Represents a function that accepts a long-valued argument and produces an int-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">31</td>
+<td><p><b>LongUnaryOperator</b></p>
+<p>Represents an operation on a single long-valued operand that produces a long-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">32</td>
+<td><p><b>ObjDoubleConsumer&lt;T&gt;</b></p>
+<p>Represents an operation that accepts an object-valued and a double-valued argument, and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">33</td>
+<td><p><b>ObjIntConsumer&lt;T&gt;</b></p>
+<p>Represents an operation that accepts an object-valued and an int-valued argument, and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">34</td>
+<td><p><b>ObjLongConsumer&lt;T&gt;</b></p>
+<p>Represents an operation that accepts an object-valued and a long-valued argument, and returns no result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">35</td>
+<td><p><b>Predicate&lt;T&gt;</b></p>
+<p>Represents a predicate (Boolean-valued function) of one argument.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">36</td>
+<td><p><b>Supplier&lt;T&gt;</b></p>
+<p>Represents a supplier of results.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">37</td>
+<td><p><b>ToDoubleBiFunction&lt;T,U&gt;</b></p>
+<p>Represents a function that accepts two arguments and produces a double-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">38</td>
+<td><p><b>ToDoubleFunction&lt;T&gt;</b></p>
+<p>Represents a function that produces a double-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">39</td>
+<td><p><b>ToIntBiFunction&lt;T,U&gt;</b></p>
+<p>Represents a function that accepts two arguments and produces an int-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">40</td>
+<td><p><b>ToIntFunction&lt;T&gt;</b></p>
+<p>Represents a function that produces an int-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">41</td>
+<td><p><b>ToLongBiFunction&lt;T,U&gt;</b></p>
+<p>Represents a function that accepts two arguments and produces a long-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">42</td>
+<td><p><b>ToLongFunction&lt;T&gt;</b></p>
+<p>Represents a function that produces a long-valued result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">43</td>
+<td><p><b>UnaryOperator&lt;T&gt;</b></p>
+<p>Represents an operation on a single operand that produces a result of the same type as its operand.</p>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<h2>Functional Interface Example</h2>
+<p>Predicate &lt;T&gt; interface is a functional interface with a method test(Object) to return a Boolean value. This interface signifies that an object is tested to be true or false.</p>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/FYuNAz" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      List&lt;Integer&gt; list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+		
+      // Predicate&lt;Integer&gt; predicate = n -&gt; true
+      // n is passed as parameter to test method of Predicate interface
+      // test method will always return true no matter what value n has.
+		
+      System.out.println("Print all numbers:");
+		
+      //pass n as parameter
+      eval(list, n-&gt;true);
+		
+      // Predicate&lt;Integer&gt; predicate1 = n -&gt; n%2 == 0
+      // n is passed as parameter to test method of Predicate interface
+      // test method will return true if n%2 comes to be zero
+		
+      System.out.println("Print even numbers:");
+      eval(list, n-&gt; n%2 == 0 );
+		
+      // Predicate&lt;Integer&gt; predicate2 = n -&gt; n &gt; 3
+      // n is passed as parameter to test method of Predicate interface
+      // test method will return true if n is greater than 3.
+		
+      System.out.println("Print numbers greater than 3:");
+      eval(list, n-&gt; n &gt; 3 );
+   }
+	
+   public static void eval(List&lt;Integer&gt; list, Predicate&lt;Integer&gt; predicate) {
+
+      for(Integer n: list) {
+
+         if(predicate.test(n)) {
+            System.out.println(n + " ");
+         }
+      }
+   }
+}
+</pre>
+<p>Here we've passed Predicate interface, which takes a single input and returns Boolean.</p>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Print all numbers:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Print even numbers:
+2
+4
+6
+8
+Print numbers greater than 3:
+4
+5
+6
+7
+8
+9
+</pre>
+<h1>Java 8 - Default Methods</h1>
+<p>Java 8 introduces a new concept of default method implementation in interfaces. This capability is added for backward compatibility so that old interfaces can be used to leverage the lambda expression capability of Java 8.</p>
+<p>For example, ‘List’ or ‘Collection’ interfaces do not have ‘forEach’ method declaration. Thus, adding such method will simply break the collection framework implementations. Java 8 introduces default method so that List/Collection interface can have a default implementation of forEach method, and the class implementing these interfaces need not implement the same.</p>
+<h2>Syntax</h2>
+<pre class="result notranslate">
+public interface vehicle {
+
+   default void print() {
+      System.out.println("I am a vehicle!");
+   }
+}
+</pre>
+<h2>Multiple Defaults</h2>
+<p>With default functions in interfaces, there is a possibility that a class is implementing two interfaces with same default methods. The following code explains how this ambiguity can be resolved.</p>
+<pre class="prettyprint notranslate">
+public interface vehicle {
+
+   default void print() {
+      System.out.println("I am a vehicle!");
+   }
+}
+
+public interface fourWheeler {
+
+   default void print() {
+      System.out.println("I am a four wheeler!");
+   }
+}
+</pre>
+<p>First solution is to create an own method that overrides the default implementation.</p>
+<pre class="prettyprint notranslate">
+public class car implements vehicle, fourWheeler {
+
+   public void print() {
+      System.out.println("I am a four wheeler car vehicle!");
+   }
+}
+</pre>
+<p>Second solution is to call the default method of the specified interface using super.</p>
+<pre class="prettyprint notranslate">
+public class car implements vehicle, fourWheeler {
+
+   default void print() {
+      vehicle.super.print();
+   }
+}
+</pre>
+<h2>Static Default Methods</h2>
+<p>An interface can also have static helper methods from Java 8 onwards.</p>
+<pre class="prettyprint notranslate">
+public interface vehicle {
+
+   default void print() {
+      System.out.println("I am a vehicle!");
+   }
+	
+   static void blowHorn() {
+      System.out.println("Blowing horn!!!");
+   }
+}
+</pre>
+<h2>Default Method Example</h2>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/xYtZNn" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Vehicle vehicle = new Car();
+      vehicle.print();
+   }
+}
+
+interface Vehicle {
+
+   default void print() {
+      System.out.println("I am a vehicle!");
+   }
+	
+   static void blowHorn() {
+      System.out.println("Blowing horn!!!");
+   }
+}
+
+interface FourWheeler {
+
+   default void print() {
+      System.out.println("I am a four wheeler!");
+   }
+}
+
+class Car implements Vehicle, FourWheeler {
+
+   public void print() {
+      Vehicle.super.print();
+      FourWheeler.super.print();
+      Vehicle.blowHorn();
+      System.out.println("I am a car!");
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+I am a vehicle!
+I am a four wheeler!
+Blowing horn!!!
+I am a car!
+</pre>
+<h1>Java 8 - Streams</h1>
+<p>Stream is a new abstract layer introduced in Java 8. Using stream, you can process data in a declarative way similar to SQL statements. For example, consider the following SQL statement.</p>
+<pre class="prettyprint notranslate">
+SELECT max(salary), employee_id, employee_name FROM Employee
+</pre>
+<p>The above SQL expression automatically returns the maximum salaried employee's details, without doing any computation on the developer's end. Using collections framework in Java, a developer has to use loops and make repeated checks. Another concern is efficiency; as multi-core processors are available at ease, a Java developer has to write parallel code processing that can be pretty error-prone.</p>
+<p>To resolve such issues, Java 8 introduced the concept of stream that lets the developer to process data declaratively and leverage multicore architecture without the need to write any specific code for it.</p>
+<h2>What is Stream?</h2>
+<p>Stream represents a sequence of objects from a source, which supports aggregate operations. Following are the characteristics of a Stream &minus;</p>
+<ul class="list">
+<li><p><b>Sequence of elements</b> &minus; A stream provides a set of elements of specific type in a sequential manner. A stream gets/computes elements on demand. It never stores the elements.</p></li>
+<li><p><b>Source</b> &minus; Stream takes Collections, Arrays, or I/O resources as input source.</p></li>
+<li><p><b>Aggregate operations</b> &minus; Stream supports aggregate operations like filter, map, limit, reduce, find, match, and so on.</p></li>
+<li><p><b>Pipelining</b> &minus; Most of the stream operations return stream itself so that their result can be pipelined. These operations are called intermediate operations and their function is to take input, process them, and return output to the target. collect() method is a terminal operation which is normally present at the end of the pipelining operation to mark the end of the stream.</p></li>
+<li><p><b>Automatic iterations</b> &minus; Stream operations do the iterations internally over the source elements provided, in contrast to Collections where explicit iteration is required.</p></li>
+</ul>
+<h2>Generating Streams</h2>
+<p>With Java 8, Collection interface has two methods to generate a Stream.</p>
+<ul class="list">
+<li><p><b>stream()</b> &minus; Returns a sequential stream considering collection as its source.</p></li>
+<li><p><b>parallelStream()</b> &minus; Returns a parallel Stream considering collection as its source.</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+List&lt;String&gt; strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+List&lt;String&gt; filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());
+</pre>
+<h2>forEach</h2>
+<p>Stream has provided a new method ‘forEach’ to iterate each element of the stream. The following code segment shows how to print 10 random numbers using forEach.</p>
+<pre class="prettyprint notranslate">
+Random random = new Random();
+random.ints().limit(10).forEach(System.out::println);
+</pre>
+<h2>map</h2>
+<p>The ‘map’ method is used to map each element to its corresponding result. The following code segment prints unique squares of numbers using map.</p>
+<pre class="prettyprint notranslate">
+List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+
+//get list of unique squares
+List&lt;Integer&gt; squaresList = numbers.stream().map( i -&gt; i*i).distinct().collect(Collectors.toList());
+</pre>
+<h2>filter</h2>
+<p>The ‘filter’ method is used to eliminate elements based on a criteria. The following code segment prints a count of empty strings using filter.</p>
+<pre class="prettyprint notranslate">
+List&lt;String&gt;strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+
+//get count of empty string
+int count = strings.stream().filter(string -&gt; string.isEmpty()).count();
+</pre>
+<h2>limit</h2>
+<p>The ‘limit’ method is used to reduce the size of the stream. The following code segment shows how to print 10 random numbers using limit.</p>
+<pre class="prettyprint notranslate">
+Random random = new Random();
+random.ints().limit(10).forEach(System.out::println);
+</pre>
+<h2>sorted</h2>
+<p>The ‘sorted’ method is used to sort the stream. The following code segment shows how to print 10 random numbers in a sorted order.</p>
+<pre class="prettyprint notranslate">
+Random random = new Random();
+random.ints().limit(10).sorted().forEach(System.out::println);
+</pre>
+<h2>Parallel Processing</h2>
+<p>parallelStream is the alternative of stream for parallel processing. Take a look at the following code segment that prints a count of empty strings using parallelStream.</p>
+<pre class="prettyprint notranslate">
+List&lt;String&gt; strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+
+//get count of empty string
+int count = strings.parallelStream().filter(string -&gt; string.isEmpty()).count();
+</pre>
+<p>It is very easy to switch between sequential and parallel streams.</p>
+<h2>Collectors</h2>
+<p>Collectors are used to combine the result of processing on the elements of a stream. Collectors can be used to return a list or a string.</p>
+<pre class="prettyprint notranslate">
+List&lt;String&gt;strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+List&lt;String&gt; filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());
+
+System.out.println("Filtered List: " + filtered);
+String mergedString = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(", "));
+System.out.println("Merged String: " + mergedString);
+</pre>
+<h2>Statistics</h2>
+<p>With Java 8, statistics collectors are introduced to calculate all statistics when stream processing is being done.</p>
+<pre class="prettyprint notranslate">
+List numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+
+IntSummaryStatistics stats = integers.stream().mapToInt((x) -&gt; x).summaryStatistics();
+
+System.out.println("Highest number in List : " + stats.getMax());
+System.out.println("Lowest number in List : " + stats.getMin());
+System.out.println("Sum of all numbers : " + stats.getSum());
+System.out.println("Average of all numbers : " + stats.getAverage());
+</pre>
+<h2>Stream Example</h2>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/QjtS4D" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.Map;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      System.out.println("Using Java 7: ");
+		
+      // Count empty strings
+      List&lt;String&gt; strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+      System.out.println("List: " +strings);
+      long count = getCountEmptyStringUsingJava7(strings);
+		
+      System.out.println("Empty Strings: " + count);
+      count = getCountLength3UsingJava7(strings);
+		
+      System.out.println("Strings of length 3: " + count);
+		
+      //Eliminate empty string
+      List&lt;String&gt; filtered = deleteEmptyStringsUsingJava7(strings);
+      System.out.println("Filtered List: " + filtered);
+		
+      //Eliminate empty string and join using comma.
+      String mergedString = getMergedStringUsingJava7(strings,", ");
+      System.out.println("Merged String: " + mergedString);
+      List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+		
+      //get list of square of distinct numbers
+      List&lt;Integer&gt; squaresList = getSquares(numbers);
+      System.out.println("Squares List: " + squaresList);
+      List&lt;Integer&gt; integers = Arrays.asList(1,2,13,4,15,6,17,8,19);
+		
+      System.out.println("List: " +integers);
+      System.out.println("Highest number in List : " + getMax(integers));
+      System.out.println("Lowest number in List : " + getMin(integers));
+      System.out.println("Sum of all numbers : " + getSum(integers));
+      System.out.println("Average of all numbers : " + getAverage(integers));
+      System.out.println("Random Numbers: ");
+		
+      //print ten random numbers
+      Random random = new Random();
+		
+      for(int i = 0; i &lt; 10; i++) {
+         System.out.println(random.nextInt());
+      }
+		
+      System.out.println("Using Java 8: ");
+      System.out.println("List: " +strings);
+		
+      count = strings.stream().filter(string-&gt;string.isEmpty()).count();
+      System.out.println("Empty Strings: " + count);
+		
+      count = strings.stream().filter(string -&gt; string.length() == 3).count();
+      System.out.println("Strings of length 3: " + count);
+		
+      filtered = strings.stream().filter(string -&gt;!string.isEmpty()).collect(Collectors.toList());
+      System.out.println("Filtered List: " + filtered);
+		
+      mergedString = strings.stream().filter(string -&gt;!string.isEmpty()).collect(Collectors.joining(", "));
+      System.out.println("Merged String: " + mergedString);
+		
+      squaresList = numbers.stream().map( i -&gt;i*i).distinct().collect(Collectors.toList());
+      System.out.println("Squares List: " + squaresList);
+      System.out.println("List: " +integers);
+		
+      IntSummaryStatistics stats = integers.stream().mapToInt((x) -&gt;x).summaryStatistics();
+		
+      System.out.println("Highest number in List : " + stats.getMax());
+      System.out.println("Lowest number in List : " + stats.getMin());
+      System.out.println("Sum of all numbers : " + stats.getSum());
+      System.out.println("Average of all numbers : " + stats.getAverage());
+      System.out.println("Random Numbers: ");
+		
+      random.ints().limit(10).sorted().forEach(System.out::println);
+		
+      //parallel processing
+      count = strings.parallelStream().filter(string -&gt; string.isEmpty()).count();
+      System.out.println("Empty Strings: " + count);
+   }
+	
+   private static int getCountEmptyStringUsingJava7(List&lt;String&gt; strings) {
+      int count = 0;
+
+      for(String string: strings) {
+		
+         if(string.isEmpty()) {
+            count++;
+         }
+      }
+      return count;
+   }
+	
+   private static int getCountLength3UsingJava7(List&lt;String&gt; strings) {
+      int count = 0;
+		
+      for(String string: strings) {
+		
+         if(string.length() == 3) {
+            count++;
+         }
+      }
+      return count;
+   }
+	
+   private static List&lt;String&gt; deleteEmptyStringsUsingJava7(List&lt;String&gt; strings) {
+      List&lt;String&gt; filteredList = new ArrayList&lt;String&gt;();
+		
+      for(String string: strings) {
+		
+         if(!string.isEmpty()) {
+             filteredList.add(string);
+         }
+      }
+      return filteredList;
+   }
+	
+   private static String getMergedStringUsingJava7(List&lt;String&gt; strings, String separator) {
+      StringBuilder stringBuilder = new StringBuilder();
+		
+      for(String string: strings) {
+		
+         if(!string.isEmpty()) {
+            stringBuilder.append(string);
+            stringBuilder.append(separator);
+         }
+      }
+      String mergedString = stringBuilder.toString();
+      return mergedString.substring(0, mergedString.length()-2);
+   }
+	
+   private static List&lt;Integer&gt; getSquares(List&lt;Integer&gt; numbers) {
+      List&lt;Integer&gt; squaresList = new ArrayList&lt;Integer&gt;();
+		
+      for(Integer number: numbers) {
+         Integer square = new Integer(number.intValue() * number.intValue());
+			
+         if(!squaresList.contains(square)) {
+            squaresList.add(square);
+         }
+      }
+      return squaresList;
+   }
+	
+   private static int getMax(List&lt;Integer&gt; numbers) {
+      int max = numbers.get(0);
+		
+      for(int i = 1;i &lt; numbers.size();i++) {
+		
+         Integer number = numbers.get(i);
+			
+         if(number.intValue() &gt; max) {
+            max = number.intValue();
+         }
+      }
+      return max;
+   }
+	
+   private static int getMin(List&lt;Integer&gt; numbers) {
+      int min = numbers.get(0);
+		
+      for(int i= 1;i &lt; numbers.size();i++) {
+         Integer number = numbers.get(i);
+		
+         if(number.intValue() &lt; min) {
+            min = number.intValue();
+         }
+      }
+      return min;
+   }
+	
+   private static int getSum(List numbers) {
+      int sum = (int)(numbers.get(0));
+		
+      for(int i = 1;i &lt; numbers.size();i++) {
+         sum += (int)numbers.get(i);
+      }
+      return sum;
+   }
+	
+   private static int getAverage(List&lt;Integer&gt; numbers) {
+      return getSum(numbers) / numbers.size();
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following result &minus;</p>
+<pre class="result notranslate">
+Using Java 7:
+List: [abc, , bc, efg, abcd, , jkl]
+Empty Strings: 2
+Strings of length 3: 3
+Filtered List: [abc, bc, efg, abcd, jkl]
+Merged String: abc, bc, efg, abcd, jkl
+Squares List: [9, 4, 49, 25]
+List: [1, 2, 13, 4, 15, 6, 17, 8, 19]
+Highest number in List : 19
+Lowest number in List : 1
+Sum of all numbers : 85
+Average of all numbers : 9
+Random Numbers:
+-1279735475
+903418352
+-1133928044
+-1571118911
+628530462
+18407523
+-881538250
+-718932165
+270259229
+421676854
+Using Java 8:
+List: [abc, , bc, efg, abcd, , jkl]
+Empty Strings: 2
+Strings of length 3: 3
+Filtered List: [abc, bc, efg, abcd, jkl]
+Merged String: abc, bc, efg, abcd, jkl
+Squares List: [9, 4, 49, 25]
+List: [1, 2, 13, 4, 15, 6, 17, 8, 19]
+Highest number in List : 19
+Lowest number in List : 1
+Sum of all numbers : 85
+Average of all numbers : 9.444444444444445
+Random Numbers:
+-1009474951
+-551240647
+-2484714
+181614550
+933444268
+1227850416
+1579250773
+1627454872
+1683033687
+1798939493
+Empty Strings: 2
+</pre>
+<h1>Java 8 - Optional Class</h1>
+<p>Optional is a container object used to contain not-null objects. Optional object is used to represent null with absent value. This class has various utility methods to facilitate code to handle values as ‘available’ or ‘not available’ instead of checking null values. It is introduced in Java 8 and is similar to what Optional is in Guava.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>java.util.Optional&lt;T&gt;</b> class &minus;</p>
+<pre class="result notranslate">
+public final class Optional&lt;T&gt; extends Object
+</pre>
+<h2>Class Method</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>static &lt;T&gt; Optional&lt;T&gt; empty()</b></p>
+<p>Returns an empty Optional instance.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>boolean equals(Object obj)</b></p>
+<p>Indicates whether some other object is "equal to" this Optional.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>Optional&lt;T&gt; filter(Predicate&lt;? super &lt;T&gt; predicate)</b></p>
+<p>If a value is present and the value matches a given predicate, it returns an Optional describing the value, otherwise returns an empty Optional.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>&lt;U&gt; Optional&lt;U&gt; flatMap(Function&lt;? super T,Optional&lt;U&gt;> mapper)</b></p>
+<p>If a value is present, it applies the provided Optional-bearing mapping function to it, returns that result, otherwise returns an empty Optional.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>T get()</b></p>
+<p>If a value is present in this Optional, returns the value, otherwise throws NoSuchElementException.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>int hashCode()</b></p>
+<p>Returns the hash code value of the present value, if any, or 0 (zero) if no value is present.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>void ifPresent(Consumer&lt;? super T&gt; consumer)</b></p>
+<p>If a value is present, it invokes the specified consumer with the value, otherwise does nothing.</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>boolean isPresent()</b></p>
+<p>Returns true if there is a value present, otherwise false.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>&lt;U&gt;Optional&lt;U&gt; map(Function&lt;? super T,? extends U&gt; mapper)</b></p>
+<p>If a value is present, applies the provided mapping function to it, and if the result is non-null, returns an Optional describing the result.</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>static &lt;T&gt; Optional&lt;T&gt; of(T value)</b></p>
+<p>Returns an Optional with the specified present non-null value.</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>static &lt;T&gt; Optional&lt;T&gt; ofNullable(T value)</b></p>
+<p>Returns an Optional describing the specified value, if non-null, otherwise returns an empty Optional.</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><p><b>T orElse(T other)</b></p>
+<p>Returns the value if present, otherwise returns other.</p></td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><p><b>T orElseGet(Supplier&lt;? extends T&gt; other)</b></p>
+<p>Returns the value if present, otherwise invokes other and returns the result of that invocation.</p></td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td><p><b>&lt;X extends Throwable&gt; T orElseThrow(Supplier&lt;? extends X&gt; exceptionSupplier)</b></p></p>
+<p>Returns the contained value, if present, otherwise throws an exception to be created by the provided supplier.</p></td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><p><b>String toString()</b></p>
+<p>Returns a non-empty string representation of this Optional suitable for debugging.</p></td>
+</tr>
+</table>
+<p>This class inherits methods from the following class &minus;</p>
+<ul class="list">
+<li>java.lang.Object</li>
+</ul>
+<h2>Optional Example</h2>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/JDp7pW" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.Optional;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8Tester = new Java8Tester();
+      Integer value1 = null;
+      Integer value2 = new Integer(10);
+		
+      //Optional.ofNullable - allows passed parameter to be null.
+      Optional&lt;Integer&gt; a = Optional.ofNullable(value1);
+		
+      //Optional.of - throws NullPointerException if passed parameter is null
+      Optional&lt;Integer&gt; b = Optional.of(value2);
+      System.out.println(java8Tester.sum(a,b));
+   }
+	
+   public Integer sum(Optional&lt;Integer&gt; a, Optional&lt;Integer&gt; b) {
+      //Optional.isPresent - checks the value is present or not
+		
+      System.out.println("First parameter is present: " + a.isPresent());
+      System.out.println("Second parameter is present: " + b.isPresent());
+		
+      //Optional.orElse - returns the value if present otherwise returns
+      //the default value passed.
+      Integer value1 = a.orElse(new Integer(0));
+		
+      //Optional.get - gets the value, value should be present
+      Integer value2 = b.get();
+      return value1 + value2;
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+First parameter is present: false
+Second parameter is present: true
+10
+</pre>
+<h1>Java 8 - Nashorn JavaScript</h1>
+<p>With Java 8, Nashorn, a much improved javascript engine is introduced, to replace the existing Rhino. Nashorn provides 2 to 10 times better performance, as it directly compiles the code in memory and passes the bytecode to JVM. Nashorn uses invoke dynamics feature, introduced in Java 7 to improve performance.</p>
+<h2>jjs</h2>
+<p>For Nashorn engine, JAVA 8 introduces a new command line tool, <b>jjs,</b> to execute javascript codes at console.</p>
+<h3>Interpreting js File</h3>
+<p>Create and save the file <b>sample.js</b> in c:\&gt; JAVA folder.</p>
+<h3>sample.js</h3>
+<pre class="prettyprint notranslate">
+print('Hello World!');
+</pre>
+<p>Open console and use the following command.</p>
+<pre class="result notranslate">
+C:\JAVA&gt;jjs sample.js
+</pre>
+<p>It will produce the following output:</p>
+<pre class="result notranslate">
+Hello World!
+</pre>
+<h3>jjs in Interactive Mode</h3>
+<p>Open the console and use the following command.</p>
+<pre class="result notranslate">
+C:\JAVA&gt;jjs
+jjs&gt; print("Hello, World!")
+Hello, World!
+jjs&gt; quit()
+&gt;&gt;
+</pre>
+<h3>Pass Arguments</h3>
+<p>Open the console and use the following command.</p>
+<pre class="result notranslate">
+C:\JAVA&gt; jjs -- a b c
+jjs&gt; print('letters: ' +arguments.join(", "))
+letters: a, b, c
+jjs&gt;
+</pre>
+<h2>Calling JavaScript from Java</h2>
+<p>Using ScriptEngineManager, JavaScript code can be called and interpreted in Java.</p>
+<h3>Example</h3>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/9wGcC5" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
+      ScriptEngine nashorn = scriptEngineManager.getEngineByName("nashorn");
+		
+      String name = "Mahesh";
+      Integer result = null;
+      
+      try {
+         nashorn.eval("print('" + name + "')");
+         result = (Integer) nashorn.eval("10 + 2");
+         
+      } catch(ScriptException e) {
+         System.out.println("Error executing script: "+ e.getMessage());
+      }
+      System.out.println(result.toString());
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following result &minus;</p>
+<pre class="result notranslate">
+Mahesh
+12
+</pre>
+<h2>Calling Java from JavaScript</h2>
+<p>The following example explains how to import and use Java classes in java script.</p>
+<p>Create and save <b>sample.js</b> in c:\&gt; JAVA folder.</p>
+<h3>sample.js</h3>
+<pre class="prettyprint notranslate">
+var BigDecimal = Java.type('java.math.BigDecimal');
+
+function calculate(amount, percentage) {
+
+   var result = new BigDecimal(amount).multiply(new BigDecimal(percentage)).divide(
+      new BigDecimal("100"), 2, BigDecimal.ROUND_HALF_EVEN);
+   
+   return result.toPlainString();
+}
+var result = calculate(568000000000000000023,13.9);
+print(result);
+</pre>
+<p>Open the console and use the following command.</p>
+<pre class="result notranslate">
+C:\JAVA&gt;jjs sample.js
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+78952000000000000003.20
+</pre>
+<h1>Java 8 - New Date/Time API</h1>
+<p>With Java 8, a new Date-Time API is introduced to cover the following drawbacks of old date-time API.</p>
+<ul class="list">
+<li><p><b>Not thread safe</b> &minus; java.util.Date is not thread safe, thus developers have to deal with concurrency issue while using date. The new date-time API is immutable and does not have setter methods.</p></li>
+<li><p><b>Poor design</b> &minus; Default Date starts from 1900, month starts from 1, and day starts from 0, so no uniformity. The old API had less direct methods for date operations. The new API provides numerous utility methods for such operations.</p></li>
+<li><p><b>Difficult time zone handling</b> &minus; Developers had to write a lot of code to deal with timezone issues. The new API has been developed keeping domain-specific design in mind.</p></li>
+</ul>
+<p>Java 8 introduces a new date-time API under the package java.time. Following are some of the important classes introduced in java.time package.</p>
+<ul class="list">
+<li><p><b>Local</b> &minus; Simplified date-time API with no complexity of timezone handling.</p></li>
+<li><p><b>Zoned</b> &minus; Specialized date-time API to deal with various timezones.</p></li>
+</ul>
+<h2>Local Date-Time API</h2>
+<p>LocalDate/LocalTime and LocalDateTime classes simplify the development where timezones are not required. Let's see them in action.</p>
+<p>Create the following java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/aVBwKs" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.Month;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testLocalDateTime();
+   }
+	
+   public void testLocalDateTime() {
+      // Get the current date and time
+      LocalDateTime currentTime = LocalDateTime.now();
+      System.out.println("Current DateTime: " + currentTime);
+		
+      LocalDate date1 = currentTime.toLocalDate();
+      System.out.println("date1: " + date1);
+		
+      Month month = currentTime.getMonth();
+      int day = currentTime.getDayOfMonth();
+      int seconds = currentTime.getSecond();
+		
+      System.out.println("Month: " + month +"day: " + day +"seconds: " + seconds);
+		
+      LocalDateTime date2 = currentTime.withDayOfMonth(10).withYear(2012);
+      System.out.println("date2: " + date2);
+		
+      //12 december 2014
+      LocalDate date3 = LocalDate.of(2014, Month.DECEMBER, 12);
+      System.out.println("date3: " + date3);
+		
+      //22 hour 15 minutes
+      LocalTime date4 = LocalTime.of(22, 15);
+      System.out.println("date4: " + date4);
+		
+      //parse a string
+      LocalTime date5 = LocalTime.parse("20:15:30");
+      System.out.println("date5: " + date5);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Current DateTime: 2014-12-09T11:00:45.457
+date1: 2014-12-09
+Month: DECEMBERday: 9seconds: 45
+date2: 2012-12-10T11:00:45.457
+date3: 2014-12-12
+date4: 22:15
+date5: 20:15:30
+</pre>
+<h2>Zoned Date-Time API</h2>
+<p>Zoned date-time API is to be used when time zone is to be considered. Let us see them in action.</p>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/w7GOcM" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.time.ZonedDateTime;
+import java.time.ZoneId;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testZonedDateTime();
+   }
+	
+   public void testZonedDateTime() {
+      // Get the current date and time
+      ZonedDateTime date1 = ZonedDateTime.parse("2007-12-03T10:15:30+05:30[Asia/Karachi]");
+      System.out.println("date1: " + date1);
+		
+      ZoneId id = ZoneId.of("Europe/Paris");
+      System.out.println("ZoneId: " + id);
+		
+      ZoneId currentZone = ZoneId.systemDefault();
+      System.out.println("CurrentZone: " + currentZone);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+date1: 2007-12-03T10:15:30+05:00[Asia/Karachi]
+ZoneId: Europe/Paris
+CurrentZone: Etc/UTC
+</pre>
+<h2>Chrono Units Enum</h2>
+<p>java.time.temporal.ChronoUnit enum is added in Java 8 to replace the integer values used in old API to represent day, month, etc. Let us see them in action.</p>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/XKUcBz" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testChromoUnits();
+   }
+	
+   public void testChromoUnits() {
+      //Get the current date
+      LocalDate today = LocalDate.now();
+      System.out.println("Current date: " + today);
+		
+      //add 1 week to the current date
+      LocalDate nextWeek = today.plus(1, ChronoUnit.WEEKS);
+      System.out.println("Next week: " + nextWeek);
+		
+      //add 1 month to the current date
+      LocalDate nextMonth = today.plus(1, ChronoUnit.MONTHS);
+      System.out.println("Next month: " + nextMonth);
+		
+      //add 1 year to the current date
+      LocalDate nextYear = today.plus(1, ChronoUnit.YEARS);
+      System.out.println("Next year: " + nextYear);
+		
+      //add 10 years to the current date
+      LocalDate nextDecade = today.plus(1, ChronoUnit.DECADES);
+      System.out.println("Date after ten year: " + nextDecade);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following result &minus;</p>
+<pre class="result notranslate">
+Current date: 2014-12-10
+Next week: 2014-12-17
+Next month: 2015-01-10
+Next year: 2015-12-10
+Date after ten year: 2024-12-10
+</pre>
+<h2>Period and Duration</h2>
+<p>With Java 8, two specialized classes are introduced to deal with the time differences.</p>
+<ul class="list">
+<li><p><b>Period</b> &minus; It deals with date based amount of time.</p></li>
+<li><p><b>Duration</b> &minus; It deals with time based amount of time.</p></li>
+</ul>
+<p>Let us see them in action.</p>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/HA5mgU" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.time.temporal.ChronoUnit;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Duration;
+import java.time.Period;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testPeriod();
+      java8tester.testDuration();
+   }
+	
+   public void testPeriod() {
+      //Get the current date
+      LocalDate date1 = LocalDate.now();
+      System.out.println("Current date: " + date1);
+		
+      //add 1 month to the current date
+      LocalDate date2 = date1.plus(1, ChronoUnit.MONTHS);
+      System.out.println("Next month: " + date2);
+      
+      Period period = Period.between(date2, date1);
+      System.out.println("Period: " + period);
+   }
+	
+   public void testDuration() {
+      LocalTime time1 = LocalTime.now();
+      Duration twoHours = Duration.ofHours(2);
+		
+      LocalTime time2 = time1.plus(twoHours);
+      Duration duration = Duration.between(time1, time2);
+		
+      System.out.println("Duration: " + duration);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Current date: 2014-12-10
+Next month: 2015-01-10
+Period: P-1M
+Duration: PT2H
+</pre>
+<h2>Temporal Adjusters</h2>
+<p>TemporalAdjuster is used to perform the date mathematics. For example, get the "Second Saturday of the Month" or "Next Tuesday". Let us see them in action.</p>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/zFQf9A" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.time.DayOfWeek;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testAdjusters();
+   }
+	
+   public void testAdjusters() {
+      //Get the current date
+      LocalDate date1 = LocalDate.now();
+      System.out.println("Current date: " + date1);
+		
+      //get the next tuesday
+      LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+      System.out.println("Next Tuesday on : " + nextTuesday);
+		
+      //get the second saturday of next month
+      LocalDate firstInYear = LocalDate.of(date1.getYear(),date1.getMonth(), 1);
+      LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(
+         DayOfWeek.SATURDAY)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+      System.out.println("Second Saturday on : " + secondSaturday);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following result &minus;</p>
+<pre class="result notranslate">
+Current date: 2014-12-10
+Next Tuesday on : 2014-12-16
+Second Saturday on : 2014-12-13
+</pre>
+<h2>Backward Compatibility</h2>
+<p>A toInstant() method is added to the original Date and Calendar objects, which can be used to convert them to the new Date-Time API. Use an ofInstant(Insant,ZoneId) method to get a LocalDateTime or ZonedDateTime object. Let us see them in action.</p>
+<p>Create the following Java program using any editor of your choice in, say, C:\&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/sj76TE" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+
+import java.util.Date;
+
+import java.time.Instant;
+import java.time.ZoneId;
+
+public class Java8Tester {
+
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testBackwardCompatability();
+   }
+	
+   public void testBackwardCompatability() {
+      //Get the current date
+      Date currentDate = new Date();
+      System.out.println("Current date: " + currentDate);
+		
+      //Get the instant of current date in terms of milliseconds
+      Instant now = currentDate.toInstant();
+      ZoneId currentZone = ZoneId.systemDefault();
+		
+      LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
+      System.out.println("Local date: " + localDateTime);
+		
+      ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
+      System.out.println("Zoned date: " + zonedDateTime);
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Current date: Wed Dec 10 05:44:06 UTC 2014
+Local date: 2014-12-10T05:44:06.635
+Zoned date: 2014-12-10T05:44:06.635Z[Etc/UTC]
+</pre>
+<h1>Java 8 - Base64</h1>
+<p>With Java 8, Base64 has finally got its due. Java 8 now has inbuilt encoder and decoder for Base64 encoding. In Java 8, we can use three types of Base64 encoding.</p>
+<ul class="list">
+<li><p><b>Simple</b> &minus; Output is mapped to a set of characters lying in A-Za-z0-9+/. The encoder does not add any line feed in output, and the decoder rejects any character other than A-Za-z0-9+/.</p></li>
+<li><p><b>URL</b> &minus; Output is mapped to set of characters lying in A-Za-z0-9+_. Output is URL and filename safe.</p></li>
+<li><p><b>MIME</b> &minus; Output is mapped to MIME friendly format. Output is represented in lines of no more than 76 characters each, and uses a carriage return '\r' followed by a linefeed '\n' as the line separator. No line separator is present to the end of the encoded output.</p></li>
+</ul>
+<h2>Nested Classes</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Nested class &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>static class Base64.Decoder</b></p>
+<p>This class implements a decoder for decoding byte data using the Base64 encoding scheme as specified in RFC 4648 and RFC 2045.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>static class Base64.Encoder</b></p>
+<p>This class implements an encoder for encoding byte data using the Base64 encoding scheme as specified in RFC 4648 and RFC 2045.</p></td>
+</tr>
+</table>
+<h2>Methods</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method Name &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>static Base64.Decoder getDecoder()</b></p>
+<p>Returns a Base64.Decoder that decodes using the Basic type base64 encoding scheme.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>static Base64.Encoder getEncoder()</b></p>
+<p>Returns a Base64.Encoder that encodes using the Basic type base64 encoding scheme.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>static Base64.Decoder getMimeDecoder()</b></p>
+<p>Returns a Base64.Decoder that decodes using the MIME type base64 decoding scheme.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>static Base64.Encoder getMimeEncoder()</b></p>
+<p>Returns a Base64.Encoder that encodes using the MIME type base64 encoding scheme.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>static Base64.Encoder getMimeEncoder(int lineLength, byte[] lineSeparator)</b></p>
+<p>Returns a Base64.Encoder that encodes using the MIME type base64 encoding scheme with specified line length and line separators.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>static Base64.Decoder getUrlDecoder()</b></p>
+<p>Returns a Base64.Decoder that decodes using the URL and Filename safe type base64 encoding scheme.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>static Base64.Encoder getUrlEncoder()</b></p>
+<p>Returns a Base64.Encoder that encodes using the URL and Filename safe type base64 encoding scheme.</p></td>
+</tr>
+</table>
+<h2>Methods Inherited</h2>
+<p>This class inherits methods from the following class &minus;</p>
+<ul class="list">
+<li>java.lang.Object</li>
+</ul>
+<h2>Base64 Example</h2>
+<p>Create the following Java program using any editor of your choice in say C:/&gt; JAVA.</p>
+<h3>Java8Tester.java</h3>
+<a href="http://tpcg.io/KVabSJ" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.Base64;
+import java.util.UUID;
+import java.io.UnsupportedEncodingException;
+
+public class HelloWorld {
+
+   public static void main(String args[]) {
+
+      try {
+		
+         // Encode using basic encoder
+         String base64encodedString = Base64.getEncoder().encodeToString(
+            "TutorialsPoint?java8".getBytes("utf-8"));
+         System.out.println("Base64 Encoded String (Basic) :" + base64encodedString);
+		
+         // Decode
+         byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);
+		
+         System.out.println("Original String: " + new String(base64decodedBytes, "utf-8"));
+         base64encodedString = Base64.getUrlEncoder().encodeToString(
+            "TutorialsPoint?java8".getBytes("utf-8"));
+         System.out.println("Base64 Encoded String (URL) :" + base64encodedString);
+		
+         StringBuilder stringBuilder = new StringBuilder();
+		
+         for (int i = 0; i &lt; 10; ++i) {
+            stringBuilder.append(UUID.randomUUID().toString());
+         }
+		
+         byte[] mimeBytes = stringBuilder.toString().getBytes("utf-8");
+         String mimeEncodedString = Base64.getMimeEncoder().encodeToString(mimeBytes);
+         System.out.println("Base64 Encoded String (MIME) :" + mimeEncodedString);
+
+      } catch(UnsupportedEncodingException e) {
+         System.out.println("Error :" + e.getMessage());
+      }
+   }
+}
+</pre>
+<h3>Verify the Result</h3>
+<p>Compile the class using <b>javac</b> compiler as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;javac Java8Tester.java
+</pre>
+<p>Now run the Java8Tester as follows &minus;</p>
+<pre class="result notranslate">
+C:\JAVA&gt;java Java8Tester
+</pre>
+<p>It should produce the following output &minus;</p>
+<pre class="result notranslate">
+Base64 Encoded String (Basic) :VHV0b3JpYWxzUG9pbnQ/amF2YTg=
+Original String: TutorialsPoint?java8
+Base64 Encoded String (URL) :VHV0b3JpYWxzUG9pbnQ_amF2YTg=
+Base64 Encoded String (MIME) :YmU3NWY2ODktNGM5YS00ODlmLWI2MTUtZTVkOTk2YzQ1Njk1Y2EwZTg2OTEtMmRiZC00YTQ1LWJl
+NTctMTI1MWUwMTk0ZWQyNDE0NDAwYjgtYTYxOS00NDY5LTllYTctNjc1YzE3YWJhZTk1MTQ2MDQz
+NDItOTAyOC00ZWI0LThlOTYtZWU5YzcwNWQyYzVhMTQxMWRjYTMtY2MwNi00MzU0LTg0MTgtNGQ1
+MDkwYjdiMzg2ZTY0OWU5MmUtZmNkYS00YWEwLTg0MjQtYThiOTQxNDQ2YzhhNTVhYWExZjItNjU2
+Mi00YmM4LTk2ZGYtMDE4YmY5ZDZhMjkwMzM3MWUzNDMtMmQ3MS00MDczLWI0Y2UtMTQxODE0MGU5
+YjdmYTVlODUxYzItN2NmOS00N2UyLWIyODQtMThlMWVkYTY4M2Q1YjE3YTMyYmItZjllMS00MTFk
+LWJiM2UtM2JhYzUxYzI5OWI4
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/java8/java8_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/java8/java8_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/java8/java8_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/java8/java8_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/java8/java8_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/java8/java8_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/java8/java8_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/java8/java8_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

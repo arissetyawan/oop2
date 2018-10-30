@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>JAVA XML Interview Questions</title>
+<meta name="description" content="Java XML Interview Questions - Learn JAVA XML in simple and easy steps starting from basic to advanced concepts with examples including Overview, JAVA XML Parsers, DOM Parser, Parse XML Document, Query XML Document, Create XML Document, Modify XML Document, SAX Parser, JDOM XML Parser, StAX Parser, XPath Parser, DOM4J Parser, XSLT, JAXB." />
+<meta name="keywords" content="JAVA XML Parsers, DOM Parser, Parse XML Document, Query XML Document, Create XML Document, Modify XML Document, SAX Parser, JDOM XML Parser, StAX Parser, XPath Parser, DOM4J Parser, XSLT, JAXB." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #0072bc !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #0072bc url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #0072bc !important;}
+.submenu-item{ border-bottom: 2px solid #0072bc !important; border-top: 2px solid #0072bc !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#0072bc; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/java_xml/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/java_xml/images/javaxml-mini-logo.jpg" alt="Java XML Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Java XML Tutorial</li>
+<li><a href="/java_xml/index.htm">Java XML Home</a></li>
+<li><a href="/java_xml/java_xml_overview.htm">Java XML Overview</a></li>
+<li><a href="/java_xml/java_xml_parsers.htm">Java XML Parsers</a></li>
+<li class="heading">Java DOM Parser</li>
+<li><a href="/java_xml/java_dom_parser.htm">Java DOM Parser</a></li>
+<li><a href="/java_xml/java_dom_parse_document.htm">Parse XML Document</a></li>
+<li><a href="/java_xml/java_dom_query_document.htm">Query XML Document</a></li>
+<li><a href="/java_xml/java_dom_create_document.htm">Create XML Document</a></li>
+<li><a href="/java_xml/java_dom_modify_document.htm">Modify XML Document</a></li>
+<li class="heading">Java SAX Parser</li>
+<li><a href="/java_xml/java_sax_parser.htm">Java SAX Parser</a></li>
+<li><a href="/java_xml/java_sax_parse_document.htm">Parse XML Document</a></li>
+<li><a href="/java_xml/java_sax_query_document.htm">Query XML Document</a></li>
+<li><a href="/java_xml/java_sax_create_document.htm">Create XML Document</a></li>
+<li><a href="/java_xml/java_sax_modify_document.htm">Modify XML Document</a></li>
+<li class="heading">JDOM XML Parser</li>
+<li><a href="/java_xml/java_jdom_parser.htm">JDOM XML Parser</a></li>
+<li><a href="/java_xml/java_jdom_parse_document.htm">Parse XML Document</a></li>
+<li><a href="/java_xml/java_jdom_query_document.htm">Query XML Document</a></li>
+<li><a href="/java_xml/java_jdom_create_document.htm">Create XML Document</a></li>
+<li><a href="/java_xml/java_jdom_modify_document.htm">Modify XML Document</a></li>
+<li class="heading">Java StAX Parser</li>
+<li><a href="/java_xml/java_stax_parser.htm">Java StAX Parser</a></li>
+<li><a href="/java_xml/java_stax_parse_document.htm">Parse XML Document</a></li>
+<li><a href="/java_xml/java_stax_query_document.htm">Query XML Document</a></li>
+<li><a href="/java_xml/java_stax_create_document.htm">Create XML Document</a></li>
+<li><a href="/java_xml/java_stax_modify_document.htm">Modify XML Document</a></li>
+<li class="heading">Java XPath Parser</li>
+<li><a href="/java_xml/java_xpath_parser.htm">Java XPath Parser</a></li>
+<li><a href="/java_xml/java_xpath_parse_document.htm">Parse XML Document</a></li>
+<li><a href="/java_xml/java_xpath_query_document.htm">Query XML Document</a></li>
+<li><a href="/java_xml/java_xpath_create_document.htm">Create XML Document</a></li>
+<li><a href="/java_xml/java_xpath_modify_document.htm">Modify XML Document</a></li>
+<li class="heading">Java DOM4J Parser</li>
+<li><a href="/java_xml/java_dom4j_parser.htm">Java DOM4J Parser</a></li>
+<li><a href="/java_xml/java_dom4j_parse_document.htm">Parse XML Document</a></li>
+<li><a href="/java_xml/java_dom4j_query_document.htm">Query XML Document</a></li>
+<li><a href="/java_xml/java_dom4j_create_document.htm">Create XML Document</a></li>
+<li><a href="/java_xml/java_dom4j_modify_document.htm">Modify XML Document</a></li>
+<li class="heading">Java XML Useful Resources</li>
+<li><a href="/java_xml/java_xml_questions_answers.htm">Java XML - Questions and Answers</a></li>
+<li><a href="/java_xml/java_xml_quick_guide.htm">Java XML - Quick Guide</a></li>
+<li><a href="/java_xml/java_xml_useful_resources.htm">Java XML - Useful Resources</a></li>
+<li><a href="/java_xml/java_xml_discussion.htm">Java XML - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>JAVA XML - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/java_xml/java_xml_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/java_xml/java_xml_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>JAVA based XML Parsing Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>JAVA based XML Parsing</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label> What XML stands for? </label>
+<div class="toggle-content">
+<p> XML stands for Extensible Markup Language.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of using XML? </label>
+<div class="toggle-content">
+<p>Following are the advantages that XML provides &minus;</p>
+<ul class="list">
+<li><p><b>Technology agnostic</b> - Being plain text, XML is technology independent. It can be used by any technology for data storage and transmission purpose.</p></li>
+<li><p><b>Human readable</b>- XML uses simple text format. It is human readable and understandable.</p></li>
+<li><p><b>Extensible</b> - in XML, custom tags can be created and used very easily.</p></li>
+<li><p><b>Allow Validation</b> - Using XSD, DTD and XML structure can be validated easily.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the disadvantages of using XML? </label>
+<div class="toggle-content">
+<p>Following are the disadvantages of XML usage &minus;</p>
+<ul class="list">
+<li><p><b>Redundant Syntax</b> - Normally XML file contains lot of repeatitive terms.</p></li>
+<li><p><b>Verbose</b>-Being a verbose language, XML file size increases the transmission and storage costs.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is XML Parsing? </label>
+<div class="toggle-content">
+<p> Parsing XML refers to going through XML document to access data or to modify data in one or other way.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is XML Parser? </label>
+<div class="toggle-content">
+<p>XML Parser provides way how to access or modify data present in an XML document. Java provides multiple options to parse XML document.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the parsers which are commonly used to parse XML documents. </label>
+<div class="toggle-content">
+<p>Following are various types of parsers which are commonly used to parse XML documents &minus;</p>
+<ul class="list">
+<li><p><b>Dom Parser</b> - Parses the document by loading the complete contents of the document and creating its complete hiearchical tree in memory.</p></li>
+<li><p><b>SAX Parser</b> - Parses the document on event based triggers. Does not load the complete document into the memory.</p></li>
+<li><p><b>JDOM Parser</b> - Parses the document in similar fashion to DOM parser but in more easier way.</p></li>
+<li><p><b>StAX Parser</b> - Parses the document in similar fashion to SAX parser but in more efficient way.</p></li>
+<li><p><b>XPath Parser</b> - Parses the XML based on expression and is used extensively in conjuction with XSLT.</p></li>
+<li><p><b>DOM4J Parser</b> - A java library to parse XML, XPath and XSLT using Java Collections Framework , provides support for DOM, SAX and JAXP.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What DOM stands for? </label>
+<div class="toggle-content">
+<p> DOM stands for Document Object Model.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is DOM? </label>
+<div class="toggle-content">
+<p> DOM stands for Document Object Model and it is an official recommendation of the World Wide Web Consortium (W3C). It defines an interface that enables programs to access and update the style, structure,and contents of XML documents. XML parsers that support the DOM implement that interface.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When to use a DOM Parser? </label>
+<div class="toggle-content">
+<p>You should use a DOM parser when &minus;</p>
+<ul class="list">
+<li><p>You need to know a lot about the structure of a document</p></li>
+<li><p>You need to move parts of the document around (you might want to sort certain elements, for example)</p></li>
+<li><p>You need to use the information in the document more than once</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What DOM Parser returns? </label>
+<div class="toggle-content">
+<p>When you parse an XML document with a DOM parser, you get back a tree structure that contains all of the elements of your document. The DOM provides a variety of functions you can use to examine the contents and structure of the document. </p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of DOM Parsing? </label>
+<div class="toggle-content">
+<p>The DOM is a common interface for manipulating document structures. One of its design goals is that Java code written for one DOM-compliant parser should run on any other DOM-compliant parser without changes.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the key components/interfaces of DOM Parsing? </label>
+<div class="toggle-content">
+<p>The DOM defines several Java interfaces. Here are the most common interfaces &minus;</p>
+<ul class="list">
+<li><p><b>Node</b> - The base datatype of the DOM.</p></li>
+<li><p><b>Element</b> - The vast majority of the objects you'll deal with are Elements.</p></li>
+<li><p><b>Attr</b> Represents an attribute of an element.</p></li>
+<li><p><b>Text</b> The actual content of an Element or Attr.</p></li>
+<li><p><b>Document</b> Represents the entire XML document. A Document object is often referred to as a DOM tree.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the important DOM parsing methods. </label>
+<div class="toggle-content">
+<p>When you are working with the DOM, there are several methods you'll use often &minus;</p>
+<ul class="list">
+<li><p><b>Document.getDocumentElement()</b> - Returns the root element of the document.</p></li>
+<li><p><b>Node.getFirstChild()</b> - Returns the first child of a given Node.</p></li>
+<li><p><b>Node.getLastChild()</b> - Returns the last child of a given Node.</p></li>
+<li><p><b>Node.getNextSibling()</b> - These methods return the next sibling of a given Node.</p></li> 
+<li><p><b>Node.getPreviousSibling()</b> - These methods return the previous sibling of a given Node.</p></li> 
+<li><p><b>Node.getAttribute(attrName)</b> - For a given Node, returns the attribute with the requested name.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Can we create an XML document using DOM parser? </label>
+<div class="toggle-content">
+<p>Yes! Using DOM parser, we can parse, modify or create a XML document. </p>
+</div>
+</section>
+<section class="toggle">
+<label> What SAX stands for? </label>
+<div class="toggle-content">
+<p>SAX stands for Simple API for XML.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a SAX Parser? </label>
+<div class="toggle-content">
+<p>SAX Parser is an event-based parser for xml documents.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How a SAX Parser works? </label>
+<div class="toggle-content">
+<p>SAX (the Simple API for XML) is an event-based parser for xml documents.Unlike a DOM parser, a SAX parser creates no parse tree. SAX is a streaming interface for XML, which means that applications using SAX receive event notifications about the XML document being processed an element, and attribute, at a time in sequential order starting at the top of the document, and ending with the closing of the ROOT element.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When to use a SAX Parser? </label>
+<div class="toggle-content">
+<p>You should use a SAX parser when &minus;</p>
+<ul class="list">
+<li><p>You can process the XML document in a linear fashion from the top down</p></li>
+<li><p>The document is not deeply nested</p></li>
+<li><p>You are processing a very large XML document whose DOM tree would consume too much memory.Typical DOM implementations use ten bytes of memory to represent one byte of XML</p></li>
+<li><p>The problem to be solved involves only part of the XML document</p></li><p></p>
+<li><p>Data is available as soon  as it  is seen  by the  parser, so SAX works  well for  an XML document  that  arrives over a stream</p></li><p></p>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the disadvantages of SAX Parsing? </label>
+<div class="toggle-content">
+<ul class="list">
+<li><p>We have no random access to an XML document since it is processed in a forward-only manner</p></li> 
+<li><p>If  you  need  to keep  track  of data the  parser has  seen  or change  the  order  of items,  you  must write the  code  and store  the  data on your own</p></li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the important SAX parsing methods. </label>
+<div class="toggle-content">
+<p>ContentHandler Interface specifies the callback methods that the SAX parser uses to notify an application program of the components of the XML document that it has seen.</p>
+<ul class="list">
+<li><p><b>void  startDocument()</b> - Called at the  beginning  of a  document.</p></li>
+<li><p><b>void  endDocument()</b> - Called at the  end  of a  document.</p></li>
+<li><p><b>void  startElement(String uri, String localName, String qName,  Attributes atts)</b> - Called at the  beginning of an element.</p></li>
+<li><p><b>void  endElement(String  uri, String localName,String qName)</b> - Called at the end of an element.</p></li>
+<li><p><b>void  characters(char[] ch, int start, int length)</b> - Called when character data is encountered.</p></li>
+<li><p><b>void  ignorableWhitespace( char[] ch, int start, int length)</b> - Called when a DTD is present and ignorable whitespace is encountered.</p></li>
+<li><p><b>void  processingInstruction(String target, String  data)</b> - Called when a processing instruction is recognized.</p></li>
+<li><p><b>void  setDocumentLocator(Locator locator))</b> - Provides a Locator that can be used to identify positions in the document.</p></li>
+<li><p><b>void  skippedEntity(String name)</b> - Called when an unresolved entity is encountered.</p></li>
+<li><p><b>void  startPrefixMapping(String prefix, String uri)</b> - Called when a new namespace mapping is defined.</p></li>
+<li><p><b>void  endPrefixMapping(String prefix)</b> - Called when  a namespace definition ends its scope.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name some methods for processing the attributes connected to an element in SAX parsing.</label>
+<div class="toggle-content">
+<p> Attributes Interface specifies methods for processing the attributes connected to an element.</p>
+<ul class="list">
+<li><p><b>int  getLength()</b> - Returns number  of attributes.</p></li>
+<li><p><b>String  getQName(int  index)</b></p></li>
+<li><p><b>String  getValue(int  index)</b></p></li>
+<li><p><b>String  getValue(String qname)</b></p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Can we create an XML document using SAX parser? </label>
+<div class="toggle-content">
+<p> No! Using SAX parser, we can only parse or modify a XML document. </p>
+</div>
+</section>
+<section class="toggle">
+<label> What is JDOM Parser? </label>
+<div class="toggle-content">
+<p>JDOM is an open source, java based library to parse XML document and it is typically java developer friendly API.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the benefits of JDOM parser? </label>
+<div class="toggle-content">
+<p> It is java optimized, it uses java collection like List and Arrays. It works with DOM and SAX APIs and combines the best of the two. It is of low memory footprint and is nearly as fast as SAX.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When to use a JDOM Parser? </label>
+<div class="toggle-content">
+<p>You should use a JDOM parser when &minus;</p>
+<ul class="list">
+<li><p>You need to know a lot about the structure of a document.</p></li>
+<li><p>You need to move parts of the document around (you might want to sort certain elements, for example).</p></li>
+<li><p>You need to use the information in the document more than once.</p></li>
+<li><p>You are a java developer and want to leverage java optimized parsing of XML.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of JDOM parser? </label>
+<div class="toggle-content">
+<p> When you parse an XML document with a JDOM parser, you get the flexibility to get back a tree structure that contains all of the elements of your document without impacting the memory footprint of the application. The JDOM provides a variety of utility functions you can use to examine the contents and structure of the document in case document is well structured and its structure is known.</p>
+<p>JDOM gives java developers flexibility and easy maintainablity of xml parsing code. It is light weight and quick API.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the important JDOM classes. </label>
+<div class="toggle-content">
+<p>The JDOM defines several Java classes. Here are the most common classes &minus;</p>
+<ul class="list">
+<li><p><b>Document</b> - Represents the entire XML document. A Document object is often referred to as a DOM tree.</p></li>
+<li><p><b>Element</b> - Represents an XML element. Element object has methods to manipulate its child elements,its text, attributes and namespaces.</p></li>
+<li><p><b>Attribute</b> Represents an attribute of an element. Attribute has method to get and set the value of attribute. It has parent and attribute type.</p></li>
+<li><p><b>Text</b> Represents the text of XML tag.</p></li>
+<li><p><b>Comment</b> Represents the comments in a XML document.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the important JDOM methods. </label>
+<div class="toggle-content">
+<p>When you are working with the JDOM, there are several methods you'll use often &minus;</p>
+<ul class="list">
+<li><p><b>SAXBuilder.build(xmlSource)</b> - Build the JDOM document from the xml source.</p></li>
+<li><p><b>Document.getRootElement()</b> - Get the root element of the XML.</p></li>
+<li><p><b>Element.getName()</b> - Get the name of the XML node.</p></li>
+<li><p><b>Element.getChildren()</b> - Get all the direct child nodes of an element.</p></li> 
+<li><p><b>Node.getChildren(Name)</b> - Get all the direct child nodes with a given name. </p></li> 
+<li><p><b>Node.getChild(Name)</b> - Get first child node with given name.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Can we create an XML document using JDOM parser? </label>
+<div class="toggle-content">
+<p> Yes! Using JDOM parser, we can parse, modify and create a XML document. </p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a StAX Parser? </label>
+<div class="toggle-content">
+<p>StAX is a JAVA based API to parse XML document in a similar way as SAX parser does but StAX is a PULL API where as SAX is a PUSH API. It means in case of StAX parser, client application need to ask StAX parser to get information from XML whenever it needs but in case of SAX parser, client application is required to get information when SAX parser notifies the client application that information is available.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can we create an XML document using StAX parser? </label>
+<div class="toggle-content">
+<p> Yes! Using StAX parser, we can parse, modify and create a XML document. </p>
+</div>
+</section>
+<section class="toggle">
+<label> Is StAX parser a PULL API? </label>
+<div class="toggle-content">
+<p> Yes! StAX is a PULL API. </p>
+</div>
+</section>
+<section class="toggle">
+<label> When you should use a StAX parser? </label>
+<div class="toggle-content">
+<p>You should use a StAX parser when &minus;</p>
+<ul class="list">
+<li><p>You can process the XML document in a linear fashion from the top down.</p></li>
+<li><p>The document is not deeply nested.</p></li>
+<li><p>You are processing a very large XML document whose DOM tree would consume too much memory. Typical DOM implementations use ten bytes of memory to represent one byte of XML.</p></li>
+<li><p>The problem to be solved involves only part of the XML document.</p></li> 
+<li><p>Data is available as soon  as it  is seen  by the  parser, so StAX works  well for  an XML document  that  arrives over a stream.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the disadvantages of StAX parser? </label>
+<div class="toggle-content">
+<ul class="list">
+<li><p>We have no random access to an XML document since it is processed in a forward-only manner</p></li> 
+<li><p>If  you  need  to keep  track  of data the  parser has  seen  or change  the  order  of items,  you  must write the  code  and store  the  data on your own</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain XMLEventReader Class of StAX parser. </label>
+<div class="toggle-content">
+<p>This class provide iterator of events which can be used to iterate over events as they occur while parsing the XML document.</p>
+<ul class="list">
+<li><p><b>StartElement asStartElement()</b> - used to retrieve value and attributes of element.</p></li>
+<li><p><b>EndElement asEndElement()</b> - called at the  end  of a  element.</p></li>
+<li><p><b>Characters asCharacters()</b> - can be used to obtain characters such a CDATA, whitespace etc.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain XMLEventWriter Class of StAX parser. </label>
+<div class="toggle-content">
+<p>This interface specifies methods for creating an event.</p>
+<ul class="list">
+<li><p><b>add(Event event)</b> - Add event containing elements to XML.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain XMLStreamReader Class of StAX parser. </label>
+<div class="toggle-content">
+<p>This class provide iterator of events which can be used to iterate over events as they occur while parsing the XML document</p>
+<ul class="list">
+<li><p><b>int next()</b> - used to retrieve next event.</p></li>
+<li><p><b>boolean hasNext()</b> - used to check further events exists or not</p></li>
+<li><p><b>String getText()</b> - used to get text of an element</p></li>
+<li><p><b>String getLocalName()</b> - used to get name of an element</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain XMLStreamWriter Class of StAX parser. </label>
+<div class="toggle-content">
+<p>This interface specifies methods for creating an event.</p>
+<ul class="list">
+<li><p><b>writeStartElement(String localName)</b> - Add start element of given name.</p></li>
+<li><p><b>writeEndElement(String localName)</b> -  Add end element of given name.</p></li>
+<li><p><b>writeAttribute(String localName, String value)</b> - Write attribute to an element.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is XPath? </label>
+<div class="toggle-content">
+<p>The XPath is an official recommendation of the World Wide Web Consortium (W3C). It defines a language to find information in an XML file. It is used to traverse elements and attributes of an XML document. XPath provides various type of expressions which can be used to enquire relevant information from the XML document.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the key components of XPath? </label>
+<div class="toggle-content">
+<p>Following are the key components of XPath &minus;</p>
+<ul class="list">
+<li><p><b>Structure Definitions</b> - XPath defines the parts of an XML document like element, attribute, text, namespace, processing-instruction, comment, and document nodes.</p></li>
+<li><p><b>Path Expressions</b> XPath provides powerful path expressions select nodes or list of nodes in XML documents.</p></li>
+<li><p><b>Standard Functions</b>XPath provides a rich library of standard functions for manipulation of string values, numeric values, date and time comparison, node and QName manipulation, sequence manipulation, Boolean values etc.</p></li>
+<li><p><b>Major part of XSLT</b>XPath is one of the major element in XSLT standard and is must have knowledge in order to work with XSLT documents.</p></li>
+<li><p><b>W3C recommendation</b>XPath is official recommendation of World Wide Web Consortium (W3C). </p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is predicate in XPath? </label>
+<div class="toggle-content">
+<p>Predicate are used to find specific node or a node containing specific value and are defined using [...] .</p>
+<table class="src">
+<tbody><tr><th>Expression</th><th>Result</th></tr>
+<tr><td>/class/student[1]</td><td>Selects the first student element that is the child of the class element.</td></tr>
+<tr><td>/class/student[last()]</td><td>Selects the last student element that is the child of the class element.</td></tr>
+<tr><td>/class/student[last()-1]</td><td>Selects the last but one student element that is the child of the class element.</td></tr>
+<tr><td>//student[@rollno='493']</td><td>Selects all the student elements that have an attribute named rollno with a value of '493'</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="toggle">
+<label> What is path expression in XPath? </label>
+<div class="toggle-content">
+<p>XPath uses a path expression to select node or list of nodes from an xml document. Following is the list of useful paths and expression to select any node/ list of nodes from an xml document.</p>
+<table class="src">
+<tbody><tr><th>Expression</th><th>Description</th></tr>
+<tr><td>node-name</td><td>Select all nodes with the given name "nodename"</td></tr>
+<tr><td>/</td><td>Selection starts from the root node</td></tr>
+<tr><td>//</td><td>Selection starts from the current node that match the selection</td></tr>
+<tr><td>.</td><td>Selects the current node</td></tr>
+<tr><td>..</td><td>Selects the parent of the current node</td></tr>
+<tr><td>@</td><td>Selects attributes</td></tr>
+<tr><td>student</td><td>Example &minus; Selects all nodes with the name "student"</td></tr>
+<tr><td>class/student</td><td>Example:	Selects all student elements that are children of class</td></tr>
+<tr><td>//student</td><td>Selects all student elements no matter where they are in the document</td></tr>
+</tbody></table>
+</div>
+</section>
+<section class="toggle">
+<label> Can we create an XML document using XPath parser? </label>
+<div class="toggle-content">
+<p> No! XPath parser is used to to navigate XML Document only. It is better to use DOM parser for creating XML.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is DOM4J Parser? </label>
+<div class="toggle-content">
+<p>DOM4J is an open source, java based library to parse XML document and it is highly flexible, high-performance, and memory-efficient API. It is java optimized, it uses java collection like List and Arrays. It works with DOM, SAX, XPath and XSLT. It can parse large XML document with very low memory footprint.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When to use a DOM4J Parser? </label>
+<div class="toggle-content">
+<p>You should use a DOM4J parser when &minus;</p>
+<ul class="list">
+<li><p>You need to know a lot about the structure of a document</p></li>
+<li><p>You need to move parts of the document around (you might want to sort certain elements, for example)</p></li>
+<li><p>You need to use the information in the document more than once</p></li>
+<li><p>You are a java developer and want to leverage java optimized parsing of XML.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> When are the benefits of using a DOM4J Parser? </label>
+<div class="toggle-content">
+<p>When you parse an XML document with a DOM4J parser, you get the flexibility to get back a tree structure that contains all of the elements of your document without impacting the memory footprint of the application. The DOM4J provides a variety of utility functions you can use to examine the contents and structure of the document in case document is well structured and its structure is known. DOM4J uses XPath expression to navigate through the XML document.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When are the advantages of using a DOM4J Parser? </label>
+<div class="toggle-content">
+<p>DOM4J gives java developers flexibility and easy maintainablity of xml parsing code. It is light weight and quick API.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the important DOM4J classes.</label>
+<div class="toggle-content">
+<p>The DOM4J defines several Java classes. Here are the most common classes &minus;</p>
+<ul class="list">
+<li><p><b>Document</b> - Represents the entire XML document. A Document object is often referred to as a DOM tree.</p></li>
+<li><p><b>Element</b> - Represents an XML element. Element object has methods to manipulate its child elements,its text, attributes and namespaces.</p></li>
+<li><p><b>Attribute</b> Represents an attribute of an element. Attribute has method to get and set the value of attribute. It has parent and attribute type.</p></li>
+<li><p><b>Node</b> Represents Element, Attribute or ProcessingInstruction</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the important DOM4J methods. </label>
+<div class="toggle-content">
+<p>When you are working with the DOM4J, there are several methods you'll use often &minus;</p>
+<ul class="list">
+<li><p><b>SAXReader.read(xmlSource)()</b> - Build the DOM4J document from the xml source.</p></li>
+<li><p><b>Document.getRootElement()</b> - Get the root element of the XML.</p></li>
+<li><p><b>Element.node(index)</b> - Get the XML node at particular index in the element.</p></li>
+<li><p><b>Element.attributes()</b> - Get all the attributes of an element.</p></li> 
+<li><p><b>Node.valueOf(@Name)</b> - Get the value of an attribute with given name of the element. </p></li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Can we create an XML document using DOM4J parser? </label>
+<div class="toggle-content">
+<p> Yes! Using DOM4J parser, we can parse, modify and create a XML document.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/java_xml/java_xml_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/java_xml/java_xml_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">java_xml_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/java_xml/java_xml_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/java_xml/java_xml_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/java_xml/java_xml_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/java_xml/java_xml_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/java_xml/java_xml_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/java_xml/java_xml_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

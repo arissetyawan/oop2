@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Entity Framework Fluent API</title>
+<meta name="description" content="Entity Framework Fluent API - Learn Entity Framework starting from Overview, Architecture, Environment Setup, Database Setup, Data Model, DbContext, Types, Relationships, Lifecycle, Code First Approach, Model First Approach, Database First Approach, DEV Approaches, Database Operations, Concurrency, Transaction, Views, Index, Stored Procedures, Disconnected Entities, Table-Valued Function, Native SQL, Enum Support, Asynchronous Query, Persistence, Projection Queries, Command Logging, Command Interception, Spatial Data Type, Inheritance, Migration, Eager, Lazy, Explicit Loading, Validation, Track Changes, Colored Entities, First Example, Data Annotations, Fluent API, Seed Database, Code First Migration, Multiple DbContext, Nested Entity Types." />
+<meta name="keywords" content="Entity Framework, Tutorial, Overview, Architecture, Environment Setup, Database Setup, Data Model, DbContext, Types, Relationships, Lifecycle, Code First Approach, Model First Approach, Database First Approach, DEV Approaches, Database Operations, Concurrency, Transaction, Views, Index, Stored Procedures, Disconnected Entities, Table-Valued Function, Native SQL, Enum Support, Asynchronous Query, Persistence, Projection Queries, Command Logging, Command Interception, Spatial Data Type, Inheritance, Migration, Eager, Lazy, Explicit Loading, Validation, Track Changes, Colored Entities, First Example, Data Annotations, Fluent API, Seed Database, Code First Migration, Multiple DbContext, Nested Entity Types." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #036db0 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #036db0 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #036db0 !important;}
+.submenu-item{ border-bottom: 2px solid #036db0 !important; border-top: 2px solid #036db0 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#036db0; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/entity_framework/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/entity_framework/images/entity-framework-mini-logo.jpg" alt="Entity Framework Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Entity Framework Tutorial</li>
+<li><a href="/entity_framework/index.htm">Entity Framework - Home</a></li>
+<li><a href="/entity_framework/entity_framework_overview.htm">Entity Framework - Overview</a></li>
+<li><a href="/entity_framework/entity_framework_architecture.htm">Entity Framework - Architecture</a></li>
+<li><a href="/entity_framework/entity_framework_environment_setup.htm">Entity F - Environment Setup</a></li>
+<li><a href="/entity_framework/entity_framework_database_setup.htm">Entity Framework - Database Setup</a></li>
+<li><a href="/entity_framework/entity_framework_data_model.htm">Entity Framework - Data Model</a></li>
+<li><a href="/entity_framework/entity_framework_dbcontext.htm">Entity Framework - DbContext</a></li>
+<li><a href="/entity_framework/entity_framework_types.htm">Entity Framework - Types</a></li>
+<li><a href="/entity_framework/entity_framework_relationships.htm">Entity Framework - Relationships</a></li>
+<li><a href="/entity_framework/entity_framework_lifecycle.htm">Entity Framework - Lifecycle</a></li>
+<li><a href="/entity_framework/entity_code_first_approach.htm">Entity F - Code First Approach</a></li>
+<li><a href="/entity_framework/entity_model_first_approach.htm">Entity F - Model First Approach</a></li>
+<li><a href="/entity_framework/entity_database_first_approach.htm">Entity F - Database First Approach</a></li>
+<li><a href="/entity_framework/entity_framework_dev_approaches.htm">Entity Framework - DEV Approaches</a></li>
+<li><a href="/entity_framework/entity_framework_database_operations.htm">Entity F - Database Operations</a></li>
+<li><a href="/entity_framework/entity_framework_concurrency.htm">Entity Framework - Concurrency</a></li>
+<li><a href="/entity_framework/entity_framework_transaction.htm">Entity Framework - Transaction</a></li>
+<li><a href="/entity_framework/entity_framework_views.htm">Entity Framework - Views</a></li>
+<li><a href="/entity_framework/entity_framework_index.htm">Entity Framework - Index</a></li>
+<li><a href="/entity_framework/entity_framework_stored_procedures.htm">Entity F - Stored Procedures</a></li>
+<li><a href="/entity_framework/entity_framework_disconnected_entities.htm">Entity F - Disconnected Entities</a></li>
+<li><a href="/entity_framework/entity_table_valued_function.htm">Entity F - Table-Valued Function</a></li>
+<li><a href="/entity_framework/entity_framework_native_sql.htm">Entity Framework - Native SQL</a></li>
+<li><a href="/entity_framework/entity_framework_enum_support.htm">Entity Framework - Enum Support</a></li>
+<li><a href="/entity_framework/entity_framework_asynchronous_query.htm">Entity F - Asynchronous Query</a></li>
+<li><a href="/entity_framework/entity_framework_persistence.htm">Entity Framework - Persistence</a></li>
+<li><a href="/entity_framework/entity_framework_projection_queries.htm">Entity F - Projection Queries</a></li>
+<li><a href="/entity_framework/entity_framework_command_logging.htm">Entity F - Command Logging</a></li>
+<li><a href="/entity_framework/entity_framework_command_interception.htm">Entity F - Command Interception</a></li>
+<li><a href="/entity_framework/entity_framework_spatial_data_type.htm">Entity Framework - Spatial Data Type</a></li>
+<li><a href="/entity_framework/entity_framework_inheritance.htm">Entity Framework - Inheritance</a></li>
+<li><a href="/entity_framework/entity_framework_migration.htm">Entity Framework - Migration</a></li>
+<li><a href="/entity_framework/entity_framework_eager_loading.htm">Entity Framework - Eager Loading</a></li>
+<li><a href="/entity_framework/entity_framework_lazy_loading.htm">Entity Framework - Lazy Loading</a></li>
+<li><a href="/entity_framework/entity_framework_explicit_loading.htm">Entity Framework - Explicit Loading</a></li>
+<li><a href="/entity_framework/entity_framework_validation.htm">Entity Framework - Validation</a></li>
+<li><a href="/entity_framework/entity_framework_track_changes.htm">Entity Framework - Track Changes</a></li>
+<li><a href="/entity_framework/entity_framework_colored_entities.htm">Entity Framework - Colored Entities</a></li>
+<li><a href="/entity_framework/entity_framework_code_first_approach.htm">Entity F - Code First Approach</a></li>
+<li><a href="/entity_framework/entity_framework_first_example.htm">Entity Framework - First Example</a></li>
+<li><a href="/entity_framework/entity_framework_data_annotations.htm">Entity Framework - Data Annotations</a></li>
+<li><a href="/entity_framework/entity_framework_fluent_api.htm">Entity Framework - Fluent API</a></li>
+<li><a href="/entity_framework/entity_framework_seed_database.htm">Entity Framework - Seed Database</a></li>
+<li><a href="/entity_framework/entity_framework_code_first_migration.htm">Entity F - Code First Migration</a></li>
+<li><a href="/entity_framework/entity_framework_multiple_dbcontext.htm">Entity F - Multiple DbContext</a></li>
+<li><a href="/entity_framework/entity_framework_nested_entity_types.htm">Entity F - Nested Entity Types</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Entity Framework Resources</li>
+<li><a href="/entity_framework/entity_framework_quick_guide.htm">Entity Framework - Quick Guide</a></li>
+<li><a href="/entity_framework/entity_framework_useful_resources.htm">Entity Framework - Useful Resources</a></li>
+<li><a href="/entity_framework/entity_framework_discussion.htm">Entity Framework - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Entity Framework - Fluent API</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/entity_framework/entity_framework_data_annotations.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/entity_framework/entity_framework_seed_database.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Fluent API is an advanced way of specifying model configuration that covers everything that data annotations can do in addition to some more advanced configuration not possible with data annotations. Data annotations and the fluent API can be used together, but Code First gives precedence to Fluent API &gt; data annotations &gt; default conventions.</p>
+<ul class="list">
+<li><p>Fluent API is another way to configure your domain classes.</p></li>
+<li><p>The Code First Fluent API is most commonly accessed by overriding the OnModelCreating method on your derived DbContext.</p></li>
+<li><p>Fluent API provides more functionality for configuration than DataAnnotations. Fluent API supports the following types of mappings.</p></li>
+</ul>
+<p>In this chapter, we will continue with the simple example which contains Student, Course and Enrollment classes and one context class with MyContext name as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+using System.Data.Entity; 
+using System.Linq; 
+using System.Text;
+using System.Threading.Tasks;  
+
+namespace EFCodeFirstDemo {
+
+   class Program {
+      static void Main(string[] args) {}
+   }
+   
+   public enum Grade {
+      A, B, C, D, F
+   }
+
+   public class Enrollment {
+      public int EnrollmentID { get; set; }
+      public int CourseID { get; set; }
+      public int StudentID { get; set; }
+      public Grade? Grade { get; set; }
+		
+      public virtual Course Course { get; set; }
+      public virtual Student Student { get; set; }
+   }
+
+   public class Student {
+      public int ID { get; set; }
+      public string LastName { get; set; }
+      public string FirstMidName { get; set; }
+		
+      public DateTime EnrollmentDate { get; set; }
+		
+      public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+   }
+
+   public class Course {
+      public int CourseID { get; set; }
+      public string Title { get; set; }
+      public int Credits { get; set; }
+		
+      public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+   }
+
+   public class MyContext : DbContext {
+      public virtual DbSet&lt;Course&gt; Courses { get; set; }
+      public virtual DbSet&lt;Enrollment&gt; Enrollments { get; set; }
+      public virtual DbSet&lt;Student&gt; Students { get; set; }
+   }
+
+}	  
+</pre>
+<p>To access Fluent API you need to override the OnModelCreating method in DbContext. Let’s take a look at a simple example in which we will rename the column name in student table from FirstMidName to FirstName as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+public class MyContext : DbContext {
+
+   protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+      modelBuilder.Entity&lt;Student&gt;().Property(s &#8658; s.FirstMidName)
+      .HasColumnName("FirstName");}
+
+      public virtual DbSet&lt;Course&gt; Courses { get; set; }
+      public virtual DbSet&lt;Enrollment&gt; Enrollments { get; set; }
+      public virtual DbSet&lt;Student&gt; Students { get; set; }
+}
+</pre>
+<p>DbModelBuilder is used to map CLR classes to a database schema. It is the main class and on which you can configure all your domain classes. This code centric approach to building an Entity Data Model (EDM) is known as Code First.</p>
+<p>Fluent API provides a number of important methods to configure entities and its properties to override various Code First conventions. Below are some of them.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:13%;">Sr. No.</th>
+<th style="text-align:center;">Method Name &amp; Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><p><b>ComplexType&lt;TComplexType&gt;</b></p>
+<p>Registers a type as a complex type in the model and returns an object that can be used to configure the complex type. This method can be called multiple times for the same type to perform multiple lines of configuration.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td><p><b>Entity&lt;TEntityType&gt;</b></p>
+<p>Registers an entity type as part of the model and returns an object that can be used to configure the entity. This method can be called multiple times for the same entity to perform multiple lines of configuration.</p></td>
+</tr>
+<tr>
+<td>3</td>
+<td><p><b>HasKey&lt;TKey&gt;</b></p>
+<p>Configures the primary key property(s) for this entity type.</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td><p><b>HasMany&lt;TTargetEntity&gt;</b></p>
+<p>Configures a many relationship from this entity type.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td><p><b>HasOptional&lt;TTargetEntity&gt;</b></p>
+<p>Configures an optional relationship from this entity type. Instances of the entity type will be able to be saved to the database without this relationship being specified. The foreign key in the database will be nullable.</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td><p><b>HasRequired&lt;TTargetEntity&gt;</b></p>
+<p>Configures a required relationship from this entity type. Instances of the entity type will not be able to be saved to the database unless this relationship is specified. The foreign key in the database will be non-nullable.</p></td>
+</tr>
+<tr>
+<td>7</td>
+<td><p><b>Ignore&lt;TProperty&gt;</b></p>
+<p>Excludes a property from the model so that it will not be mapped to the database. (Inherited from StructuralTypeConfiguration&lt;TStructuralType&gt;)</p></td>
+</tr>
+<tr>
+<td>8</td>
+<td><p><b>Property&lt;T&gt;</b></p>
+<p>Configures a struct property that is defined on this type. (Inherited from StructuralTypeConfiguration&lt;TStructuralType&gt;)</p></td>
+</tr>
+<tr>
+<td>9</td>
+<td><p><b>ToTable(String)</b></p>
+<p>Configures the table name that this entity type is mapped to.</p></td>
+</tr>
+</table>
+<p>Fluent API lets you configure your entities or their properties, whether you want to change something about how they map to the database or how they relate to one another. There's a huge variety of mappings and modeling that you can impact using the configurations. Following are the main types of mapping which Fluent API supports &minus;</p>
+<ul class="list">
+<li>Entity Mapping</li>
+<li>Properties Mapping</li>
+</ul>
+<h2>Entity Mapping</h2>
+<p>Entity mapping is just some simple mappings that will impact Entity Framework's understanding of how the classes are mapped to the databases. All these we discussed in data annotations and here we will see how to achieve the same things using Fluent API.</p>
+<ul class="list">
+<li><p>So rather than going into the domain classes to add these configurations, we can do this inside of the context.</p></li>
+<li><p>The first thing is to override the OnModelCreating method, which gives the modelBuilder to work with.</p></li>
+</ul>
+<h2>Default Schema</h2>
+<p>The default schema is dbo when the database is generated. You can use the HasDefaultSchema method on DbModelBuilder to specify the database schema to use for all tables, stored procedures, etc.</p>
+<p>Let’s take a look at the following example in which admin schema is applied.</p>
+<pre class="prettyprint notranslate">
+public class MyContext : DbContext {
+   public MyContext() : base("name = MyContextDB") {}
+
+   protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+      //Configure default schema
+      modelBuilder.HasDefaultSchema("Admin");
+   }
+	
+   public virtual DbSet&lt;Course&gt; Courses { get; set; }
+   public virtual DbSet&lt;Enrollment&gt; Enrollments { get; set; }
+   public virtual DbSet&lt;Student&gt; Students { get; set; }
+}
+</pre>
+<h2>Map Entity to Table</h2>
+<p>With default convention, Code First will create the database tables with the name of DbSet properties in the context class such as Courses, Enrollments and Students. But if you want different table names then you can override this convention and can provide a different table name than the DbSet properties, as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   //Map entity to table
+   modelBuilder.Entity&lt;Student&gt;().ToTable("StudentData");
+   modelBuilder.Entity&lt;Course&gt;().ToTable("CourseDetail");
+   modelBuilder.Entity&lt;Enrollment&gt;().ToTable("EnrollmentInfo");
+}
+</pre>
+<p>When the database is generated, you will see the tables name as specified in the OnModelCreating method.</p>
+<img src="/entity_framework/images/onmodel_method.jpg" alt="OnModel Method" />
+<h2>Entity Splitting (Map Entity to Multiple Table)</h2>
+<p>Entity Splitting lets you combine data coming from multiple tables into a single class and it can only be used with tables that have a one-to-one relationship between them. Let’s take a look at the following example in which Student information is mapped into two tables.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   //Map entity to table
+   modelBuilder.Entity&lt;Student&gt;().Map(sd &#8658; {
+      sd.Properties(p &#8658; new { p.ID, p.FirstMidName, p.LastName });
+      sd.ToTable("StudentData");
+   })
+
+   .Map(si &#8658; {
+      si.Properties(p &#8658; new { p.ID, p.EnrollmentDate });
+      si.ToTable("StudentEnrollmentInfo");
+   });
+
+   modelBuilder.Entity&lt;Course&gt;().ToTable("CourseDetail");
+   modelBuilder.Entity&lt;Enrollment&gt;().ToTable("EnrollmentInfo");
+}
+</pre>
+<p>In the above code, you can see that Student entity is split into the following two tables by mapping some properties to StudentData table and some properties to StudentEnrollmentInfo table using Map method.</p>
+<ul class="list">
+<li><p><b>StudentData</b> &minus; Contains Student FirstMidName and Last Name.</p></li>
+<li><p><b>StudentEnrollmentInfo</b> &minus; Contains EnrollmentDate.</p></li>
+</ul>
+<p>When the database is generated you see the following tables in your database as shown in the following image.</p>
+<img src="/entity_framework/images/entity_splitting.jpg" alt="Entity Splitting" />
+<h2>Properties Mapping</h2>
+<p>The Property method is used to configure attributes for each property belonging to an entity or complex type. The Property method is used to obtain a configuration object for a given property. You can also map and configure the properties of your domain classes using Fluent API.</p>
+<h2>Configuring a Primary Key</h2>
+<p>The default convention for primary keys are &minus;</p>
+<ul class="list">
+<li>Class defines a property whose name is “ID” or “Id”</li>
+<li>Class name followed by “ID” or “Id”</li>
+</ul>
+<p>If your class doesn’t follow the default conventions for primary key as shown in the following code of Student class &minus;</p>
+<pre class="prettyprint notranslate">
+public class Student {
+   public int StdntID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>Then to explicitly set a property to be a primary key, you can use the HasKey method as shown in the following code &minus;</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+	
+   // Configure Primary Key
+   modelBuilder.Entity&lt;Student&gt;().HasKey&lt;int&gt;(s &#8658; s.StdntID); 
+}
+</pre>
+<h2>Configure Column</h2>
+<p>In Entity Framework, by default Code First will create a column for a property with the same name, order, and datatype. But you can also override this convention, as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   //Configure EnrollmentDate Column
+   modelBuilder.Entity&lt;Student&gt;().Property(p &#8658; p.EnrollmentDate)
+	
+   .HasColumnName("EnDate")
+   .HasColumnType("DateTime")
+   .HasColumnOrder(2);
+}
+</pre>
+<h2>Configure MaxLength Property</h2>
+<p>In the following example, the Course Title property should be no longer than 24 characters. When the user specifies value longer than 24 characters, then the user will get a DbEntityValidationException exception.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+   modelBuilder.Entity&lt;Course&gt;().Property(p &#8658; p.Title).HasMaxLength(24);
+}
+</pre>
+<h2>Configure Null or NotNull Property</h2>
+<p>In the following example, the Course Title property is required so IsRequired method is used to create NotNull column. Similarly, Student EnrollmentDate is optional so we will be using IsOptional method to allow a null value in this column as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+   modelBuilder.Entity&lt;Course&gt;().Property(p &#8658; p.Title).IsRequired();
+   modelBuilder.Entity&lt;Student&gt;().Property(p &#8658; p.EnrollmentDate).IsOptional();
+	
+   //modelBuilder.Entity&lt;Student&gt;().Property(s &#8658; s.FirstMidName)
+   //.HasColumnName("FirstName"); 
+}
+</pre>
+<h2>Configuring Relationships</h2>
+<p>A relationship, in the context of databases, is a situation that exists between two relational database tables, when one table has a foreign key that references the primary key of the other table. When working with Code First, you define your model by defining your domain CLR classes. By default, the Entity Framework uses the Code First conventions to map your classes to the database schema.</p>
+<ul class="list">
+<li><p>If you use the Code First naming conventions, in most cases you can rely on Code First to set up relationships between your tables based on the foreign keys and navigation properties.</p></li>
+<li><p>If they don't meet up with those conventions, there are also configurations you can use to impact relationships between classes and how those relationships are realized in the database when you're adding configurations in Code First.</p></li>
+<li><p>Some of them are available in the data annotations and you can apply some even more complicated ones with a Fluent API.</p></li>
+</ul>
+<h2>Configure One-to-One Relationship</h2>
+<p>When you define a one-to-one relationship in your model, you use a reference navigation property in each class. In database, both tables can have only one record on either side of the relationship. Each primary key value relates to only one record (or no records) in the related table.</p>
+<ul class="list">
+<li><p>A one-to-one relationship is created if both of the related columns are primary keys or have unique constraints.</p></li>
+<li><p>In a one-to-one relationship, the primary key acts additionally as a foreign key and there is no separate foreign key column for either table.</p></li>
+<li><p>This type of relationship is not common because most information related in this way would all be in one table.</p></li>
+</ul>
+<p>Let’s take a look at the following example where we will add another class into our model to create a one-to-one relationship.</p>
+<pre class="prettyprint notranslate">
+public class Student {
+   public int ID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual StudentLogIn StudentLogIn { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+
+public class StudentLogIn {
+   [Key, ForeignKey("Student")]
+   public int ID { get; set; }
+   public string EmailID { get; set; }
+   public string Password { get; set; }
+	
+   public virtual Student Student { get; set; }
+}
+</pre>
+<p>As you can see in the above code that Key and ForeignKey attributes are used for ID property in StudentLogIn class, in order to mark it as Primary Key as well as Foreign Key.</p>
+<p>To configure one-to-zero or one relationship between Student and StudentLogIn using Fluent API, you need to override OnModelCreating method as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   // Configure ID as PK for StudentLogIn
+   modelBuilder.Entity&lt;StudentLogIn&gt;()
+   .HasKey(s &#8658; s.ID);
+
+   // Configure ID as FK for StudentLogIn
+   modelBuilder.Entity&lt;Student&gt;()
+   
+   .HasOptional(s &#8658; s.StudentLogIn) //StudentLogIn is optional
+   .WithRequired(t &#8658; t.Student); // Create inverse relationship
+}
+</pre>
+<p>In most cases, the Entity Framework can infer which type is the dependent and which is the principal in a relationship. However, when both ends of the relationship are required or both sides are optional the Entity Framework cannot identify the dependent and the principal. When both ends of the relationship are required, you can use HasRequired as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   // Configure ID as PK for StudentLogIn
+   modelBuilder.Entity&lt;StudentLogIn&gt;()
+   .HasKey(s &#8658; s.ID);
+
+   // Configure ID as FK for StudentLogIn
+   modelBuilder.Entity&lt;Student&gt;()
+   .HasRequired(r &#8658; r.Student)
+   .WithOptional(s &#8658; s.StudentLogIn);  
+}
+</pre>
+<p>When the database is generated you will see that relationship is created as shown in the following image.</p>
+<img src="/entity_framework/images/created_relationship.jpg" alt="Created Relationship" />
+<h2>Configure One-to-Many Relationship</h2>
+<p>The primary key table contains only one record that relates to none, one, or many records in the related table. This is the most commonly used type of relationship.</p>
+<ul class="list">
+<li><p>In this type of relationship, a row in table A can have many matching rows in table B, but a row in table B can have only one matching row in table A.</p></li>
+<li><p>The foreign key is defined on the table that represents the many end of the relationship.</p></li>
+<li><p>For example, in the above diagram Student and Enrollment tables have one-tomany relationship, each student may have many enrollments, but each enrollment belongs to only one student.</p></li>
+</ul>
+<p>Below are the Student and Enrollment which has one-to-many relationship, but the foreign key in Enrollment table is not following the default Code First conventions.</p>
+<pre class="prettyprint notranslate">
+public class Enrollment {
+   public int EnrollmentID { get; set; }
+   public int CourseID { get; set; }
+	
+   //StdntID is not following code first conventions name
+   public int StdntID { get; set; }
+   public Grade? Grade { get; set; }
+	
+   public virtual Course Course { get; set; }
+   public virtual Student Student { get; set; }
+}
+
+public class Student {
+   public int ID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual StudentLogIn StudentLogIn { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>In this case, to configure one-to-many relationship using Fluent API, you need to use HasForeignKey method as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   //Configure FK for one-to-many relationship
+   modelBuilder.Entity&lt;Enrollment&gt;()
+
+   .HasRequired&lt;Student&gt;(s &#8658; s.Student)
+   .WithMany(t &#8658; t.Enrollments)
+   .HasForeignKey(u &#8658; u.StdntID);  
+}
+</pre>
+<p>When the database is generated you will see that the relationship is created as shown in the following image.</p>
+<img src="/entity_framework/images/hasrequired_method.jpg" alt="HasRequired Method" />
+<p>In the above example, the HasRequired method specifies that the Student navigation property must be Null. So you must assign Student with Enrollment entity every time you add or update Enrollment. To handle this we need to use HasOptional method instead of HasRequired method.</p>
+<h2>Configure Many-to-Many Relationship</h2>
+<p>Each record in both tables can relate to any number of records (or no records) in the other table.</p>
+<ul class="list">
+<li><p>You can create such a relationship by defining a third table, called a junction table, whose primary key consists of the foreign keys from both table A and table B.</p></li>
+<li><p>For example, the Student table and the Course table have many-to-many relationship.</p></li>
+</ul>
+<p>Following are the Student and Course classes in which Student and Course has many-tomany relationship, because both classes have navigation properties Students and Courses that are collections. In other words, one entity has another entity collection.</p>
+<pre class="prettyprint notranslate">
+public class Student {
+   public int ID { get; set; }
+   public string LastName { get; set; }
+   public string FirstMidName { get; set; }
+   public DateTime EnrollmentDate { get; set; }
+	
+   public virtual ICollection&lt;Course&gt; Courses { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+
+public class Course {
+   public int CourseID { get; set; }
+   public string Title { get; set; }
+   public int Credits { get; set; }
+	
+   public virtual ICollection&lt;Student&gt; Students { get; set; }
+   public virtual ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+</pre>
+<p>To configure many-to-many relationship between Student and Course, you can use Fluent API as shown in the following code.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   // Configure many-to-many relationship
+   modelBuilder.Entity&lt;Student&gt;()
+   .HasMany(s &#8658; s.Courses) 
+   .WithMany(s &#8658; s.Students);
+}
+</pre>
+<p>The default Code First conventions are used to create a join table when database is generated. As a result, the StudentCourses table is created with Course_CourseID and Student_ID columns as shown in the following image.</p>
+<img src="/entity_framework/images/join_table.jpg" alt="Join Table" />
+<p>If you want to specify the join table name and the names of the columns in the table you need to do additional configuration by using the Map method.</p>
+<pre class="prettyprint notranslate">
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
+   //Configure default schema
+   modelBuilder.HasDefaultSchema("Admin");
+
+   // Configure many-to-many relationship 
+   modelBuilder.Entity&lt;Student&gt;()
+
+   .HasMany(s &#8658; s.Courses)
+   .WithMany(s &#8658; s.Students)
+   
+   .Map(m &#8658; {
+      m.ToTable("StudentCoursesTable");
+      m.MapLeftKey("StudentID");
+      m.MapRightKey("CourseID");
+   }); 
+}
+</pre>
+<p>You can see when the database is generated, the table and columns name are created as specified in the above code.</p>
+<img src="/entity_framework/images/join_table.jpg" alt="Join Table" />
+<p>We recommend that you execute the above example in a step-by-step manner for better understanding.</p>
+<hr />
+<div class="pre-btn">
+<a href="/entity_framework/entity_framework_data_annotations.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/entity_framework/entity_framework_seed_database.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/entity_framework/entity_framework_fluent_api.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/entity_framework/entity_framework_fluent_api.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/entity_framework/entity_framework_fluent_api.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/entity_framework/entity_framework_fluent_api.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/entity_framework/entity_framework_fluent_api.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/entity_framework/entity_framework_fluent_api.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

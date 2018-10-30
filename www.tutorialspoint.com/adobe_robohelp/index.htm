@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Adobe RoboHelp Tutorial</title>
+<meta name="description" content="Adobe RoboHelp Tutorial for Beginners - Learn Adobe RoboHelp in simple and easy steps starting from basic to advanced concepts with examples ." />
+<meta name="keywords" content="Adobe RoboHelp, Tutorial, Overview, New Features, Server, Workspace Overview, Working with Tabs, Pods, Environments, Keyboard Shortcuts." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #1b585d !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #1b585d url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #1b585d !important;}
+.submenu-item{ border-bottom: 2px solid #1b585d !important; border-top: 2px solid #1b585d !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#1b585d; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/adobe_robohelp/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<script type="text/javascript">
+$(window).load(function () {
+   //var heightX = $('a[href="/adobe_robohelp/adobe_robohelp_overview.htm"]').offset().top ;
+   var heightY = $('a[href="/adobe_robohelp/index.htm"]').offset().top ;
+   $("#scroller").scrollTop( heightY - heightX + 15);
+});
+</script> 
+<div class="mini-logo">
+<img src="/adobe_robohelp/images/adobe-robohelp-mini-logo.jpg" alt="Adobe RoboHelp Tutorial" />
+</div> 
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Adobe RoboHelp Tutorial</li>
+</ul>
+<div id="sidebar">
+<div id="scroller">
+<ul class="nav nav-list primary left-menu" >
+<li><a href="/adobe_robohelp/index.htm">Adobe RoboHelp - Home</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_overview.htm">Adobe RoboHelp - Overview</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_new_features.htm">Adobe RoboHelp - New Features</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_server.htm">Adobe RoboHelp - Server</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_workspace_overview.htm">Workspace Overview</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_tabs.htm">Working with Tabs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_pods.htm">Working with Pods</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_environments.htm">Environments</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_keyboard_shortcuts.htm">Keyboard Shortcuts</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_general_settings.htm">General Settings</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_overview_of_projects.htm">Overview of Projects</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_managing_projects.htm">Creating &amp; Managing Projects</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_opening_project.htm">Opening a Project</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_configuring_project_settings.htm">Configuring Project Settings</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_defining_chapter_layout.htm">Defining a Chapter Layout</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_project_files.htm">Managing Project Files</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_project_folders.htm">Managing Project Folders</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_multilingual_authoring.htm">Multilingual Authoring</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_importing_pdf_files.htm">Importing PDF Files</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_importing_linking_ms_word_docs.htm">Importing &amp; Linking MS Word Docs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_converting_word_styles.htm">Converting Word Styles</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_importing_dita_map_xml_files.htm">Importing DITA Map &amp; XML Files</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_importing_winhelp_files.htm">Importing WinHelp Files</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_version_control.htm">Version Control</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_reports.htm">Working with Reports</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_generating_customizing_reports.htm">Generating &amp; Customizing Reports</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_saving_opening_topics.htm">Creating, Saving &amp; Opening Topics</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_authoring_topics_in_xhtml.htm">Authoring Topics in XHTML</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_working_on_master_pages.htm">Creating &amp; Working on Master Pages</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_topics.htm">Managing Topics</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_spell_check_find_replace.htm">Spell Check, Find &amp; Replace</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_ensuring_w3c_compliance.htm">Ensuring W3C compliance</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_editing.htm">Editing</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_formatting_characters.htm">Formatting Characters</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_formatting_paragraphs.htm">Formatting Paragraphs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_borders_backgrounds_sounds.htm">Borders, Backgrounds &amp; Sounds</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_tables.htm">Working with Tables</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_lists.htm">Working with Lists</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_editing_variables.htm">Creating &amp; Editing Variables</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_media_rules_attributes_in_styles.htm">Media Rules &amp; Attributes in Styles</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_style_sheets.htm">Managing Style Sheets</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_styling_for_style_sheets.htm">Styling for Style Sheets</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_table_styles.htm">Creating Table Styles</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_list_styles.htm">Creating List Styles</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_html_styles.htm">Creating HTML Styles</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_editing_styles_in_css.htm">Editing Styles in CSS</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_and_printing_toc.htm">Creating &amp; Printing ToC</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_editing_tocs.htm">Editing ToCs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_tocs.htm">Managing ToCs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_multiple_tocs.htm">Working With Multiple ToCs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_indexes_keywords.htm">Creating Indexes &amp; Keywords</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_editing_index_keywords.htm">Editing Index Keywords</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_indexes.htm">Managing Indexes</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_automatic_indexing.htm">Automatic Indexing</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_multiple_indexes.htm">Creating Multiple Indexes</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_customizing_adding_toc_and_index_controls.htm">Customizing, Adding ToC &amp; Index Controls</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_glossaries.htm">Glossaries</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_text_links_for_navigation.htm">Creating Text Links for Navigation</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_creating_editing_bookmarks.htm">Creating &amp; Editing Bookmarks</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_linking_images_multimedia.htm">Linking Images &amp; Multimedia</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_linking_external_sources.htm">Linking External Sources</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_maintaining_repairing_links.htm">Maintaining &amp; Repairing Links</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_link_controls.htm">Link Controls</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_textonly_popups.htm">Working With Text-Only Pop-Ups</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_create_edit_browse_sequences.htm">Create &amp; Edit Browse Sequences</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_output_search.htm">Output Search</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_optimize_configure_search.htm">Optimize &amp; Configure Search</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_external_content_search.htm">External Content Search</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_images.htm">Working With Images</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_import_adobe_captivate_demos.htm">Import Adobe Captivate Demos</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_adding_removing_multimedia.htm">Adding &amp; Removing Multimedia</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_adding_dhtml_effects.htm">Adding DHTML Effects</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_dhtml_triggers_targets.htm">DHTML Triggers &amp; Targets</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_marquees.htm">Marquees</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_html_comments.htm">HTML Comments</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_working_with_iframes.htm">Working With iFrames</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_conditional_text.htm">Conditional Text</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_context_sensitive_help.htm">Context-Sensitive Help</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_map_ids.htm">Managing Map IDs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_dynamic_editing_of_cst.htm">Dynamic Editing of CST</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_developer_information.htm">Developer Information</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_whats_this_help.htm">What’s This? Help</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_single_source_layouts.htm">Single-Source Layouts</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_generate_ducc.htm">Generate DUCC</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_generate_output_for_ms_sharepoint.htm">Generate Output for MS SharePoint</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_multiscreen_layouts.htm">Multiscreen Layouts</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_ms_html_javahelp_and_oracle_help_layouts.htm">MS HTML, JavaHelp &amp; Oracle Help Layouts</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_epub_kindle_book_outputs.htm">EPUB &amp; Kindle Book Outputs</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_review_collaboration.htm">Review &amp; Collaboration</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_managing_shared_resources.htm">Managing Shared Resources</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_activex_controls.htm">ActiveX Controls</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_forms_frames.htm">Forms &amp; Frames</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_html_help_controls.htm">HTML Help Controls</a></li>
+</ul>
+</div>
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Adobe RoboHelp Resources</li>
+<li><a href="/adobe_robohelp/adobe_robohelp_quick_guide.htm">Adobe RoboHelp - Quick Guide</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_useful_resources.htm">Adobe RoboHelp - Resources</a></li>
+<li><a href="/adobe_robohelp/adobe_robohelp_discussion.htm">Adobe RoboHelp - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<div class="cover">
+<img class="img-responsive" src="/adobe_robohelp/images/adobe-robohelp.jpg" alt="Adobe RoboHelp Tutorial" />
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/index.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/adobe_robohelp/adobe_robohelp_overview.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Adobe RoboHelp Tutorial</h1>
+<div class="center-aligned tutorial-menu">
+<form action="/job_search.php" method="POST">
+<input type="hidden" name="search_string" value="Adobe RoboHelp" />
+<button type="button" class="btn btn-default btn-sm btn-buy-tutorial"><i class="icon  icon-file-pdf-o"></i><a href="/adobe_robohelp/adobe_robohelp_pdf_version.htm"> PDF Version</a></button>
+<button type="button" class="btn btn-default btn-sm btn-quick-guide"><i class="icon  icon-book"></i><a href="/adobe_robohelp/adobe_robohelp_quick_guide.htm"> Quick Guide</a></button>
+<button type="button" class="btn btn-default btn-sm btn-extra-links"><i class="icon  icon-external-link"></i> <a href="/adobe_robohelp/adobe_robohelp_useful_resources.htm"> Resources</a></button>
+<button type="submit" class="btn btn-default btn-sm btn-job-search"><i class="icon  icon-suitcase"></i> Job Search</button>
+<button type="button" class="btn btn-default btn-sm btn-job-search"><i class="fa  fa-wechat"></i><a href="/adobe_robohelp/adobe_robohelp_discussion.htm"> Discussion</a></button>
+</form>
+</div>
+<p>This is a tutorial on Adobe RoboHelp 2017. Adobe RoboHelp is a <b>Help Authoring Tool (HAT)</b> that allows you to create help systems, e-learning content and knowledge bases. The latest version of RoboHelp is packed with features, which allows you to create Responsive HTML5 layouts that work on any device size. This tutorial will help the readers in understanding the basics of the program and enable to create help files or documentation for various technical communications.</p>
+<h1>Audience</h1>
+<p>Adobe RoboHelp is used by industry professionals looking to create great technical content for their end-users. As such, it does require some knowledge of HTML and other web technologies. Some advanced features such as creation of custom dialog boxes require programming knowledge in Visual Basic, C/C++, Java or JavaScript.</p>
+<p>However, newer versions make it easy for anyone to get started without having to write a line of code. Therefore, users of all experience levels can follow this tutorial.</p>
+<h1>Prerequisites</h1>
+<p>The reader should have proficient knowledge of navigating your way around the Windows OS (Windows 7 or later) along with good technical knowledge of the software for which the readers are going to prepare the documentation.</p>
+<p>Adobe RoboHelp is part of the <b>Technical Communication Suite</b> (TCS). You can purchase a subscription to TCS, which will also give you access to tools such as <b>FrameMaker, Captivate, Acrobat</b> and <b>Presenter</b>. If you are interested only in RoboHelp, the reader should purchase a separate license, which can be either an individual license, a perpetual license as part of the Cumulative Licensing Program (CLP), perpetual license as part of the Transactional Licensing Program (TLP) or an Enterprise Term License Agreement (ETLA).</p>
+<p>Prices and licensing options can be checked on the following link – <a target="_blank" rel="nofollow" href="https://www.adobe.com/products/robohelp/buying-guide.html">http://www.adobe.com/products/robohelp/buying-guide.html</a>. The reader can also download a fully functional 30-day trial version to test out the software from the following link – <a target="_blank" rel="nofollow" href="https://www.adobe.com/products/robohelp/download-trial/try.html#">https://www.adobe.com/products/robohelp/download-trial/try.html#</a>.</p>
+<hr />
+<div class="pre-btn">
+<a href="/index.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/adobe_robohelp/adobe_robohelp_overview.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/adobe_robohelp/index.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/adobe_robohelp/index.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/adobe_robohelp/index.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/adobe_robohelp/index.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/adobe_robohelp/index.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/adobe_robohelp/index.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

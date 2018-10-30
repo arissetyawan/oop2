@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP Webi Interview Questions - TutorialsPoint</title>
+<meta name="description" content="SAP Webi Interview Questions - Learn SAP Webi starting from Overview, BI Launchpad, BI Preferences, Application Modes, Creating Documents, Editing and Opening Documents, Sending Documents, Managing Reports, Using Queries, Queries Using Universe, Queries Using Bex, Queries Using Analysis View, Query Filters, Query Filter Types, Ranking Data, Working With Reports, Breaks, Sorts, Charts, Conditional Formatting, Filtering Report Data, Input Controls, Formulas and Variables, Drill Options in Reports, Sharing Reports, Merge Dimension." />
+<meta name="keywords" content="SAP Webi, Tutorial, Overview, BI Launchpad, BI Preferences, Application Modes, Creating Documents, Editing and Opening Documents, Sending Documents, Managing Reports, Using Queries, Queries Using Universe, Queries Using Bex, Queries Using Analysis View, Query Filters, Query Filter Types, Ranking Data, Working With Reports, Breaks, Sorts, Charts, Conditional Formatting, Filtering Report Data, Input Controls, Formulas and Variables, Drill Options in Reports, Sharing Reports, Merge Dimension." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #036db0 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #036db0 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #036db0 !important;}
+.submenu-item{ border-bottom: 2px solid #036db0 !important; border-top: 2px solid #036db0 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#036db0; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_webi/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_webi/images/sap-webi-mini-logo.jpg" alt="SAP Webi Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/sap_webi_online_training/index.asp" target="_blank"><img src="/sap_webi/images/sap-webi-video-tutorials.jpg" alt="SAP Webi Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Webi Tutorial</li>
+<li><a href="/sap_webi/index.htm">SAP Webi - Home</a></li>
+<li><a href="/sap_webi/sap_webi_overview.htm">SAP Webi - Overview</a></li>
+<li><a href="/sap_webi/sap_webi_bi_launchpad.htm">SAP Webi - BI Launchpad</a></li>
+<li><a href="/sap_webi/sap_webi_bi_preferences.htm">SAP Webi - BI Preferences</a></li>
+<li><a href="/sap_webi/sap_webi_application_modes.htm">SAP Webi - Application Modes</a></li>
+<li><a href="/sap_webi/sap_webi_creating_documents.htm">SAP Webi - Creating Documents</a></li>
+<li><a href="/sap_webi/sap_webi_editing_opening_documents.htm">Editing &amp; Opening Documents</a></li>
+<li><a href="/sap_webi/sap_web_intelligence_sending_documents.htm">Web Intelligence Sending Documents</a></li>
+<li><a href="/sap_webi/sap_webi_managing_reports.htm">SAP Webi - Managing Reports</a></li>
+<li><a href="/sap_webi/sap_webi_using_queries.htm">SAP Webi - Using Queries</a></li>
+<li><a href="/sap_webi/sap_webi_queries_using_universe.htm">SAP Webi - Queries Using Universe</a></li>
+<li><a href="/sap_webi/sap_webi_queries_using_bex.htm">SAP Webi - Queries Using Bex</a></li>
+<li><a href="/sap_webi/sap_webi_queries_using_analysis_view.htm">Queries Using Analysis View</a></li>
+<li><a href="/sap_webi/sap_webi_query_filters.htm">SAP Webi - Query Filters</a></li>
+<li><a href="/sap_webi/sap_webi_query_filter_types.htm">SAP Webi - Query Filter Types</a></li>
+<li><a href="/sap_webi/sap_webi_ranking_data.htm">SAP Webi - Ranking Data</a></li>
+<li><a href="/sap_webi/sap_webi_working_with_reports.htm">SAP Webi - Working With Reports</a></li>
+<li><a href="/sap_webi/sap_webi_breaks.htm">SAP Webi - Breaks</a></li>
+<li><a href="/sap_webi/sap_webi_sorts.htm">SAP Webi - Sorts</a></li>
+<li><a href="/sap_webi/sap_webi_charts.htm">SAP Webi - Charts</a></li>
+<li><a href="/sap_webi/sap_webi_conditional_formatting.htm">SAP Webi - Conditional Formatting</a></li>
+<li><a href="/sap_webi/sap_webi_filtering_report_data.htm">SAP Webi - Filtering Report Data</a></li>
+<li><a href="/sap_webi/sap_webi_input_controls.htm">SAP Webi - Input Controls</a></li>
+<li><a href="/sap_webi/sap_webi_formulas_variables.htm">SAP Webi - Formulas and Variables</a></li>
+<li><a href="/sap_webi/sap_webi_drill_options_reports.htm">SAP Webi - Drill Options in Reports</a></li>
+<li><a href="/sap_webi/sap_webi_sharing_reports.htm">SAP Webi - Sharing Reports</a></li>
+<li><a href="/sap_webi/sap_webi_merge_dimension.htm">SAP Webi - Merge Dimension</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Webi Useful Resources</li>
+<li><a href="/sap_webi/sap_webi_questions_answers.htm">SAP Webi - Questions Answers</a></li>
+<li><a href="/sap_webi/sap_webi_quick_guide.htm">SAP Webi - Quick Guide</a></li>
+<li><a href="/sap_webi/sap_webi_useful_resources.htm">SAP Webi - Useful Resources</a></li>
+<li><a href="/sap_webi/sap_webi_discussion.htm">SAP Webi - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP Webi Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/sap_webi/sap_webi_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_webi/sap_webi_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>SAP Webi Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>SAP Webi</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What are the different versions of Business Objects that you have worked on?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>BO XI R1</li>
+<li>BO XI R2</li>
+<li>BO XI R3</li>
+<li>BO XI R3.1</li>
+<li>BO XI R3.2</li>
+</ul>
+<p>In year 2011, BO XI 4.0 was introduced and latest version of the tool is SAP BO 4.2.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the key differences between BOXI R3 and SAP BO 4.x?</label>
+<div class="toggle-content">
+<p>Deski is not available in BO 4.x</p>
+<p>IDT is introduced to support multiple data sources</p>
+<p>Import Wizard is no longer available in BO 4.x</p>
+<p>Bo 4.x is 6 layered architecture as compared to BOXI R3 5 layer architecture.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you migrate Deski to Webi reports in Business Objects?</label>
+<div class="toggle-content">
+<p>Using Report Conversion Tool</p>
+</div>
+</section>
+<section class="toggle">
+<label> To publish a Webi report created on the top of Universe in BO repository, it should be created on which connection?</label>
+<div class="toggle-content">
+<p>Secured connection published to Repository</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the differences between Personal, Shared and Secured connections?</label>
+<div class="toggle-content">
+<p>A Personal connection is created by one user and cannot be used by other users. The connection details are stored in PDAC.LSI file.</p>
+<p>A shared connection can be used by other users through a shared server. The connection details are stored in SDAC.LSI file in the Business Objects installation folder. However one cannot set rights and securities on objects in a shared connection. Neither can a Universe to exported to repository using a shared connection.</p>
+<p>A secured connection overcomes these limitations. Through it rights can be set on objects and documents. Universes can be exported to the central repository only through a secured connection. The connection parameters in this case are saved in the CMS.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is BI Launchpad?</label>
+<div class="toggle-content">
+<p>BI Launchpad is a Java or HTML based interface of Business Objects tool to perform analytical reporting and data analysis. You can set the preference for your BI Launchpad which determines which tool interface is launched via Launchpad.</p>
+<p>Using Web or Internet Application to access WebI interface via BI Launchpad, you can perform the below tasks &minus;</p>
+<p>Create, edit and refresh all the reports in Web Intelligence.</p>
+<p>Create and edit all the queries in no data source (Universes) but not BEx queries in Web application.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Explain the architecture of Web Intelligence tool?</label>
+<div class="toggle-content">
+<p>It is three layered architecture &minus;</p>
+<p>Database layer - This layer defines multiple SAP and non-SAP data sources.</p>
+<p>Semantic Layer - This layer defines multidimensional data model.</p>
+<p>Presentation Layer - This layer defines where data is presented to end users.</p>
+<p>Various data sources can be used to create analytical and ad-hoc reports</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different application modes that can be used in a Web Intelligence tool?</label>
+<div class="toggle-content">
+<p>There are three different application modes that can be used to build the queries, create documents and to analyze the reports. When you open an existing reports below modes are available &minus;</p>
+<ul class="list">
+<li>Data Application Mode</li>
+<li>Reading</li>
+<li>Design</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> To add, delete objects in a report, applying conditional formatting, applying formulas in report, creating variables, you should open Webi document in which of the following mode?</label>
+<div class="toggle-content">
+<p>Design mode with Data</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different data sources that you can use to create a new Webi document?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>Universe</li>
+<li>Flat files in .csv or .xls format</li>
+<li>BEx queries</li>
+<li>Analysis View</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the extension of a Webi document?</label>
+<div class="toggle-content">
+<p>.wid file</p>
+</div>
+</section>
+<section class="toggle">
+<label> You have few report created in older versions of Web Intelligence 3.1 and want to upgrade to 4.x, which tool you should use?</label>
+<div class="toggle-content">
+<p>Using Upgrade Management Tool UMT</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the extension of Universes created in Information Design Tool and UDT?</label>
+<div class="toggle-content">
+<p>.unx- File created with Information Design Tool</p>
+<p>.unv- File created in Universe Design Tool</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Query panel?</label>
+<div class="toggle-content">
+<p>You can select from list of available objects as per your access permissions. You may not be able to use few of the objects cos of permission.</p>
+<p>In query panel, you have Universe outline in left pane and Result objects, query filters, data preview panels in main pane.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which connection you can use to import all OLAP functionalities from an InfoCube in SAP BW?</label>
+<div class="toggle-content">
+<p>BICS Business Intelligence Consumer Service. BICS connectivity is the recommended way for BI tools to connect to Business Explorer (BEx) queries on the SAP NetWeaver BW server.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different save as formats supported for a Webi report?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>WID</li>
+<li>PDF</li>
+<li>Excel</li>
+<li>Excel 2007</li>
+<li>CSV Achieve</li>
+<li>TXT File</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are classes and subclasses?</label>
+<div class="toggle-content">
+<p>Classes are used to group similar objects in a report. A class can contain one or more subclasses.</p>
+<p>Subclasses contains further subcategory of objects in upper level of a class.</p>
+<p>Classes are used to organize objects in some logical manner. While creating queries on Universe you can find the information on objects that you have to use in query.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between members and named set in hierarchies?</label>
+<div class="toggle-content">
+<p>Members are defined at different level of hierarchies in a data source.</p>
+<p><b>Example</b></p>
+<p>Consider a Geography hierarchy contain members – “India” at country level and “Haryana” at State level.</p>
+<p>You can also include individual members in query from hierarchy if you don’t want to add all the members. Named set can be used to define set of members.</p>
+<p>A named set is defined as named expression and results a set of members. You can define named set at Universe level or a relational or OLAP database level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Where do you define hierarchies to use in Webi report?</label>
+<div class="toggle-content">
+<p>Universe level</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you use InfoCubes in SAP BW to connect to Webi document?</label>
+<div class="toggle-content">
+<p>You can create Webi documents based on BEx (business Exchange Queries) created by BEx Query Designer which is based on Info Cube in SAP BW system. You can connect to a BEx query in WebI with use of BICS BI consumer service connection. You need not to create Universe for BEx queries and all attributes, hierarchies, dimensions and measures are automatically mapped in WebI document.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you connect to SQL server to create a Universe to use in a Webi report?</label>
+<div class="toggle-content">
+<p>Using a Relational connection created in Universe Designer</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the query filters?</label>
+<div class="toggle-content">
+<p>Query filters are used to limit the rows returned in a WebI document. Query filters allow you to hide the data that you don’t want to show to specific people and also limit the size of .wid document. When you run a query, it only returns the rows that meet the query filter definition.</p>
+<p>Below are the key features used in Query filter &minus;</p>
+<p>You can retrieve data as per specific business requirement.</p>
+<p>You can hide the data that you don’t want specific users to see in a WebI document.</p>
+<p>Limit the size of WebI document of network and hence provides performance optimization.</p>
+<p><b>Example</b> &minus; Being an Area Sales Manager for NY, you want to see margin values for your region and Sales universe contains data from all the regions in United State. Also you only want to see data from the stores in NY where sales margin is greater than 100K USD in 2<sup>nd</sup> Quarter Q2 2015.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between query and report filters?</label>
+<div class="toggle-content">
+<p>Query filters are applied in Query Panel and they are used to limit the number of rows from data sources and to return the same in document.</p>
+<p>Report filters are applied at report level on reports, tables, charts, etc. These filters are not used to limit the data retrieval from the data source and only hide certain values at report level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why do we use Prompts? Where do we apply Prompts to use in Webi report?</label>
+<div class="toggle-content">
+<p>Prompt is defined as special filter for users which allows them to enter a value every time data is refreshed in the document.</p>
+<p>Using prompts, you have multiple users viewing one document to display different sub set of data in database. Prompts allow you to retrieve the data from database and reduce the time.</p>
+<p>Prompts are created in Query Panel</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is context and how they are created?</label>
+<div class="toggle-content">
+<p>Context defines a particular join path between tables or a specific group of joins for a particular query. Any objects created on a table column which belong to specific contexts is naturally compatible with all other objects from same contexts.</p>
+<p>Contexts may be created using detect contexts feature or manually. They are generally created based on logical calculation and business requirements, hence the detect context method is not very effective. To manually create a context Go to Insert Context, give the context name and select the joins that should be present in the context. For a universe contexts should be created in a way that all joins(except shortcut joins) fall in at least one context.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Aggregate awareness function? Why do we use it?</label>
+<div class="toggle-content">
+<p>Aggregate awareness function is used in scenarios where we have same fact tables in different grains. Using this function we can define only one object for the measures in the fact tables.</p>
+<p>aggregate_aware(highest_level,lower level)</p>
+<p>We also need to define dimensions for associated granularities and define their incompatibilities with the corresponding facts through the aggregate navigation. This is accesses through Tools &rarr; Aggregate Navigation.</p>
+<p><b>Use</b></p>
+<p>They are used to enhance the performance reports by utilizing arrogate tables available at database and are applied at Universe level as function.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of subquery? </label>
+<div class="toggle-content">
+<p>Subqueries provides you a more flexible option to filter the data as compared to an ordinary query filter. Using Subqueries you can limit the values returned with a WHERE clause. You can also compare the values of objects in a subquery with the other objects.</p>
+<p>Using Subqueries, you can implement complex logic to limit the size of data which are not possible to apply with simple query filters.</p>
+<p>They are used in Query panel.</p>
+</div>
+</section>
+<section class="toggle">
+<label> In Query panel, you can’t see ranking option enabled, what could be the reason?</label>
+<div class="toggle-content">
+<p>Database ranking is done by editing the script generated by query. If you database doesn’t support ranking, then option to create ranking will not highlight in query panel.</p>
+<p>Also note that Ranking can’t be created on hierarchical data.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by hierarchical data?</label>
+<div class="toggle-content">
+<p>Hierarchical data is defined a data with Parent-child relationship and you can analyze the data at different levels of hierarchy.</p>
+<p>All the measures that are associated with hierarchical data are aggregated as per object level in hierarchy.</p>
+<p><b>Example</b></p>
+<p>Consider a Geography hierarchy, you have Country India and State defined as Delhi. Now if you use this geographical hierarchy in report and want to analyze Number of Units sold at each level for different categories, then hierarchies allow you to use Aggregation at country level and if you drill down to state level, for each state too.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between Break and Sections?</label>
+<div class="toggle-content">
+<p>Section breakup the data into multiple cells that are called Section headers and Each Section header contains a value for dimension and data corresponding to dimension value.</p>
+<p>Break is used divides the data up into one block and each column carries dimension, attributes and measures and these values are repeated for each other row values in the block.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is query stripping?</label>
+<div class="toggle-content">
+<p>Query stripping feature optimizes the query to fetch only DATA which will be directly or indirectly rendered or displayed to the User, thus decreasing the response time and faster display of the report for the user. This feature is only available for OLAP universes, and it will be greyed out when using any RDBMS universe. It is used in Query panel.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different chart type in Webi tool?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>Bar</li>
+<li>Box</li>
+<li>Column</li>
+<li>Line</li>
+<li>Map</li>
+<li>Radar</li>
+<li>Pie</li>
+<li>Waterfall</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain the difference between Query filter, Report filter and block filter?</label>
+<div class="toggle-content">
+<p>A query filter limits the data returned from the database.</p>
+<p>A block filter allows selected data to display in a single block and hides the other data.</p>
+<p>A report filter allows selected data to display in a page and hides the other data. The report filter applies to all data blocks on the page.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When you synchronize two queries from different data sources, what rules must you respect?</label>
+<div class="toggle-content">
+<p><b>Respect the following rules</b></p>
+<p>Object names can differ.</p>
+<p>The data type for the merged objects must be the same.</p>
+<p>Data must have the same case because the data provider is case-sensitive.</p>
+<p>You can only synchronize on dimensions.</p>
+<p>You can only display measures with synchronized dimensions. When you use them for another purpose, duplicate values appear.</p>
+</div>
+</section>
+<section class="toggle">
+<label> You use the MINUS operator to combine queries, what would be the result?</label>
+<div class="toggle-content">
+<p>All records that match the first query condition and not the second condition.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Conditional formatting in Webi report?</label>
+<div class="toggle-content">
+<p>Conditional Formatting is used to highlight some specific values in the report. If you want you can show specific low or high values with some specific colors. Conditional formatting can be applied to below elements &minus;</p>
+<ul class="list">
+<li>Rows in horizon tables</li>
+<li>Columns in Vertical tables</li>
+<li>Cells in forms and cross tables</li>
+<li>Sections</li>
+<li>Free Holding Cells</li>
+</ul>
+<p>Condition formatting can be used to make these formatting changes &minus;</p>
+<ul class="list">
+<li>Text Color</li>
+<li>Size and Style</li>
+<li>Cell Border</li>
+<li>Color</li>
+<li>Size and Style</li>
+<li>Cell backgrounds</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How you can add multiple query filters in Query panel?</label>
+<div class="toggle-content">
+<p>By using AND/OR operators</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different Report filters operators?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>Equal To</li>
+<li>Not Equal To</li>
+<li>Different From Operator</li>
+<li>Greater Than</li>
+<li>Greater Than or Equal To</li>
+<li>Less Than</li>
+<li>Less Than or Equal To</li>
+<li>Between</li>
+<li>Not Between</li>
+<li>In List</li>
+<li>Not In List</li>
+<li>Is Null</li>
+<li>Is Not Null</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> You want to use queries from different data sources in a Webi document. How you can use this?</label>
+<div class="toggle-content">
+<p>Using Query Merge. This option allows you to merge the data from different data sources. Assume that you have created Query 1 and Query 2 in Query Panel. When you combine both the queries in a single WebI report, objects from both the queries are shown in list of available objects.</p>
+</div>
+</section>
+<section class="toggle">
+<label> You want to add a new column in the report based on an existing fact value. How you can add this functionality?</label>
+<div class="toggle-content">
+<p>Using New Variable</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is an input context?</label>
+<div class="toggle-content">
+<p>The input context is the list of dimensions that are included in the calculation itself.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is use of string concatenation?</label>
+<div class="toggle-content">
+<p>Lastname&plus; “, “ &plus; Firstname</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Nofilter() function?</label>
+<div class="toggle-content">
+<p>To override a report filter or a ranking</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create a hyperlink in the Web Intelligence Interactive panel?</label>
+<div class="toggle-content">
+<p>By using Create Hyperlink dialog box</p>
+</div>
+</section>
+<section class="toggle">
+<label> To allow sync between two queries in Query merger, you use a new variable to add it to report. What re properties that you need to define to enable sync?</label>
+<div class="toggle-content">
+<p>Enter the Variable name, Qualification as “Detail” and it will add a new field Associate Dimension. In Associate dimension, select the unique object from the same query.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you connect SAP HANA database to Webi document?</label>
+<div class="toggle-content">
+<p>To use HANA tables for report creation, Use Universe Designer to create Universe using a Relational connection to HANA database.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you attach a Webi document in mail?</label>
+<div class="toggle-content">
+<p>Yes, by using send by email attachment option</p>
+</div>
+</section>
+<section class="toggle">
+<label> You have saved a Webi Report .wid file and send it to other user to make changes. He is not able to open it and getting access error. How you can resolve this?</label>
+<div class="toggle-content">
+<p>When you use Save as option, on right side you get many options – Refresh on open, Permanent Regional formatting, Save for all users, Remove document Security.</p>
+<p>Select Save for all users’ option while saving the report.</p>
+</div>
+</section>
+<section class="toggle">
+<label> In a Webi report, you want to add Radio buttons for end users to quickly view and analyze the data. Which of the Webi feature support this?</label>
+<div class="toggle-content">
+<p>Input Controls</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by input controls? Can we use input controls on Geography and Time hierarchy?</label>
+<div class="toggle-content">
+<p>Input controls are used to filter and analyze the report data. You define input controls using text boxes and radio buttons. Input controls are associated with report elements like tables and section headers and use control to apply filter on report elements.</p>
+<p>When you select a value of an input control, it filters the values in report element that is associated with input control by selected value.</p>
+<p>Input Controls can also be used on hierarchical data.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/sap_webi/sap_webi_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_webi/sap_webi_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">sap_webi_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_webi/sap_webi_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_webi/sap_webi_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_webi/sap_webi_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_webi/sap_webi_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_webi/sap_webi_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_webi/sap_webi_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

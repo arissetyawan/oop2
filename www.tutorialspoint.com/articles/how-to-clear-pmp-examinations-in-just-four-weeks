@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>How to Clear PMP Examinations in Just Four Weeks!</title>
+<meta name="description" content="How to Clear PMP Examinations in Just Four Weeks! - Let’s discuss the tips for clearing the PMP Exam within 4 weeks. These tips are applicable for working professionals who take the Classroom 35-Hour Contact program and who cannot afford&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">How to Clear PMP Examinations in Just Four Weeks!</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img src="https://www.tutorialspoint.com/articles/wp-content/uploads/userphoto/2734.thumbnail.jpg" alt="Raja Suman" width="47" height="48" class="photo" /></span>
+<a href="https://www.tutorialspoint.com/articles/author/rajasuman" title="Posts by Raja Suman" rel="author">Raja Suman</a>, Posted on   July 25, 2017, filed in: <a href="https://www.tutorialspoint.com/articles/category/education-2" rel="category tag">Education</a>, <a href="https://www.tutorialspoint.com/articles/category/information-technology" rel="category tag">Information Technology</a>, <a href="https://www.tutorialspoint.com/articles/category/management" rel="category tag">Management</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p>Let’s discuss the tips for clearing the PMP Exam within 4 weeks. These tips are applicable for working professionals who take the Classroom 35-Hour Contact program and who cannot afford to apply for leave for the preparation. The aspirants who prefer to take the online contact program also can benefit from the given tips where applicable.</p>
+<p><img class="size-full wp-image-25689 alignleft" style="float: left; margin: 0px 15px 0px 0px;" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/COG001.png" alt="" width="200" height="200" />You should allocate 2 hours during the weekdays and 8 hours during the weekends (Saturday, Sunday) exclusively for the Exam preparation. The aspirants must ensure that they spend at least this much of time for exam preparation along with their normal work during this period. It is advisable not to give a long gap between the contact class and the Exam as they tend to forget the concepts and definitions taught in the class as days pass by and also will lose the motivation to take the exam. The best policy here is– “<em><strong>Strike the iron when it is hot</strong>.</em>”</p>
+<h3></h3>
+<h3>First Week:</h3>
+<p>Selection of the <a href="http://www.greycampus.com/pmp-training-instructor-led" target="_blank" rel="noopener noreferrer">PMP training provider</a> for the 35 hours contact program is very important. It is preferable to opt for a REP training institute. Take the help of your friends / colleagues having fruitful experience with the training institute to finalize.</p>
+<p><img class="size-full wp-image-25686 alignright" style="float: right; margin: 0px 0px 0px 15px;" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/2829384.jpg" alt="" width="200" height="200" />During the first week, before attending the class, get a hard copy of the study material from the institute and go through it once or twice to get familiarized with terminology and the concepts to improve your understanding in the class. During the class hours, take notes in the hard copy of the study material, whenever you get a lot of additional information from the instructor. Utilize the time given by instructor to for attempt the end of chapter tests sincerely. Try to get the justification behind correct answers.</p>
+<h3>Second Week:</h3>
+<p><img class="size-full wp-image-25690 alignleft" style="float: left; margin: 0px 15px 0px 0px;" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/Corporate-Training.jpg" alt="" width="200" height="200" />During the second week, go through the study material and notes for the chapters covered by the instructor thoroughly and mark your doubts to be cleared with the instructor. Take help from your friends colleagues for selecting any extra reading material / books.</p>
+<p>Do not try any reading material on your own as it leads to confusion. Attempt the end of chapter tests from the chapters covered by the instructor in these books and go through the justification of correct answers carefully. If you get consistently above 80% correct answers in these tests, you are ready.</p>
+<h3>Third Week:</h3>
+<p><img class="size-full wp-image-25687 alignright" style="float: right; margin: 0px 0px 0px 15px;" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/career-advancement.jpg" alt="" width="200" height="200" />During the third week, follow the same procedure for the chapters covered during the second week end. Do extensive studies on all the subjects. By the third week end you will be thorough with all the chapters. Go through the PMBoK once; if you have time, you must get well-familiarized with the Glossary part of this PMBoK.</p>
+<p>PMBoK is the acronym for the full name “Project Management Body of Knowledge”, and is a book that defines the standard guidelines in project management, and sets the terminology and common vocabulary. The PMBOK Guide is published by PMI.</p>
+<h3>Fourth Week:</h3>
+<p><img class="size-full wp-image-25688 alignleft" style="float: left; margin: 0px 15px 0px 0px;" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/certification.jpg" alt="" width="200" height="200" />During the fourth week, take at least two mock exams given by the institute. You can take a single exam in two parts in two days. Go through the justification of the correct answers carefully and fine-tune the understanding of the concepts by reading the material. If you get more that 80% in these two mock tests, you are set.</p>
+<p>On the 4th Saturday, take 2 full mock tests on the same day to test your endurance and concentration. Try to get above 80% in these 2 tests consistently. Do a light revision on Inputs, Tools &amp; Techniques and Outputs) formulae and definitions.</p>
+<h3>Tips for the Exam Day:</h3>
+<p><img class="size-full wp-image-25694 alignright" style="float: right; margin: 0px 0px 0px 15px;" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/62edca4277c7eafa215511b9a3532a05.jpg" alt="" width="200" height="200" />Be calm on the exam day. Don’t panic even if you have to leave around 5-6 questions continuously, just mark them for later review. Don’t get bogged down facing tough questions for long as this will lead to time pressure at the end and you will not have time to answer the easy questions in the end of the paper.</p>
+<p>After 45 minutes you may feel that your mind is clogged with PMBoK definitions and concepts and you may not be able to concentrate. Just take deep breathes for about 1-2 minutes to remove these clogs and relax for another 2-3 minutes.</p>
+<p><strong><em>Happy Learning!</em></strong></p>
+<blockquote><p><em>Annamalai C is a PMP trainer &amp; Lean Six sigma consultant, a Ceramic Engineer from IIT-BHU, certified PMP (Project Management Professional) with 8 years’ experience in an ITES/KPO as Head of Quality, a certified Six Sigma Master Black Belt having 17 years’ experience in Production and 5 years in Quality Function in Ferrite Manufacturing units. For more on PMP training, please visit: <a href="http://www.greycampus.com/pmp-training-instructor-led" target="_blank" rel="noopener noreferrer">http://www.greycampus.com/pmp-training-instructor-led</a></em></p></blockquote>
+	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> <a href="https://www.tutorialspoint.com/articles/12-really-easy-and-smart-ways-to-speed-up-your-home-wi-fi" rel="prev">&laquo; Previous</a></div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/why-training-doesnt-help-your-organization" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/how-to-clear-pmp-examinations-in-just-four-weeks','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/how-to-clear-pmp-examinations-in-just-four-weeks','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/how-to-clear-pmp-examinations-in-just-four-weeks&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/how-to-clear-pmp-examinations-in-just-four-weeks','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/how-to-clear-pmp-examinations-in-just-four-weeks&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/how-to-clear-pmp-examinations-in-just-four-weeks&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

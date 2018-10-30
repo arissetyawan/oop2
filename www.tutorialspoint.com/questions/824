@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>The Best Technical Questions And Answers</title>
+<meta name="Description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals"/>
+<meta name="Keywords" content="Technical, Questions,  Answers, Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="The Best Technical Questions And Answers" />
+<meta name="twitter:description" property="og:description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+
+<div class="mui-container container-top">   
+<!-- center column content -->
+   
+<div class="mui-col-md-8">
+<div id="question_index_id">      
+<div class="question_section">                                   
+   <div class="qa_widget">                                
+   <!-- /60931893/Native_QnA -->
+   <div id='div-gpt-ad-1532956972128-0'>
+   <script>
+   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+   </script>
+   </div>
+   </div>                    
+</div>
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Q3MxNGllZGZycXlpcFhzWjNKWS9udz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Q3MxNGllZGZycXlpcFhzWjNKWS9udz09" data-aid="V1pNZUJLK3JyMmZGSDdVdUliV0FWQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Q3MxNGllZGZycXlpcFhzWjNKWS9udz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Q3MxNGllZGZycXlpcFhzWjNKWS9udz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivV1pNZUJLK3JyMmZGSDdVdUliV0FWQT09" data-qtitle=Data-Replication-from-SAP-PO-to-SQL-Server data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Data-Replication-from-SAP-PO-to-SQL-Server" target='_blank'> Data Replication from SAP PO to SQL Server</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Q3MxNGllZGZycXlpcFhzWjNKWS9udz09">
+</div>            <div class="qa_description">
+            
+ I want data replication from SAP PO to SQL Server. Data replication will be executed using SQL Server Agent. What is best way to replicate data using SAP PO? 
+            </div>
+            <div class="qa_comments" id="comments_Q3MxNGllZGZycXlpcFhzWjNKWS9udz09" style="display:none;">
+            <div id="comments_list_Q3MxNGllZGZycXlpcFhzWjNKWS9udz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Note that SAP PO is not a data source but middleware so it doesn&rsquo;t contain any data. You can extract data from SQL Server using JDBC.SAP PI/XI enables you to set up cross system communication and integration and allows you to connect SAP and non-SAP systems based on different programming ... <a href="https://www.tutorialspoint.com/Data-Replication-from-SAP-PO-to-SQL-Server#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeQ3MxNGllZGZycXlpcFhzWjNKWS9udz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='V1pNZUJLK3JyMmZGSDdVdUliV0FWQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Q3MxNGllZGZycXlpcFhzWjNKWS9udz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='V1pNZUJLK3JyMmZGSDdVdUliV0FWQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='V1pNZUJLK3JyMmZGSDdVdUliV0FWQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_V1pNZUJLK3JyMmZGSDdVdUliV0FWQT09" style="display:none;">
+<div id="comments_list_V1pNZUJLK3JyMmZGSDdVdUliV0FWQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09" data-aid="VDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivVDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09" data-qtitle=error-invalid-schema-name-even-if-schema-is-present-in-the-database-in-sap-hana data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/error-invalid-schema-name-even-if-schema-is-present-in-the-database-in-sap-hana" target='_blank'> Error: &quot;invalid schema name&quot; even if schema is present in the database in SAP HANA</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09">
+</div>            <div class="qa_description">
+            
+I am connecting to HANA database from a JAVA application using JDBC driver. I am getting an error: "invalid schema name" even if schema is present in the database. 
+SQL query is executing fine .....             </div>
+            <div class="qa_comments" id="comments_Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09" style="display:none;">
+            <div id="comments_list_Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>I think you need to mention database name in JDBC URL while connecting to the database. Try following &minus;  String server = "servername.domain.com"; String instance = "03"; String database = "TEST"; String dbUsername = "USERNAME"; String dbPassword = "xxxxxx"; String jdbcUrl = "jdbc:sap://" + server + ":3" + instance ... <a href="https://www.tutorialspoint.com/error-invalid-schema-name-even-if-schema-is-present-in-the-database-in-sap-hana#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeY1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='VDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Y1g3UUtlZW1Sby8vL2tjU3N1cW8yZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='VDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='VDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_VDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09" style="display:none;">
+<div id="comments_list_VDVXMHRTeEw2WkJMYnh2MXBxSTFDZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="eEVvQmVEYkN0MWVOOFFZemU4RVNadz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="eEVvQmVEYkN0MWVOOFFZemU4RVNadz09" data-aid="VjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="eEVvQmVEYkN0MWVOOFFZemU4RVNadz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="eEVvQmVEYkN0MWVOOFFZemU4RVNadz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivVjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09" data-qtitle=Adding-a-BCC-recipient-in-Infoview-publication data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Adding-a-BCC-recipient-in-Infoview-publication" target='_blank'> Adding a BCC recipient in Infoview publication</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_eEVvQmVEYkN0MWVOOFFZemU4RVNadz09">
+</div>            <div class="qa_description">
+            
+ I am creating a publication in InfoView to send a Business Objects reports in Webi format to recipient list. I can pass a &ldquo;To and &ldquo;CC&rdquo; field but not able to pass BCC field as.....             </div>
+            <div class="qa_comments" id="comments_eEVvQmVEYkN0MWVOOFFZemU4RVNadz09" style="display:none;">
+            <div id="comments_list_eEVvQmVEYkN0MWVOOFFZemU4RVNadz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>I am not sure if you are running latest BO server or running older version of BOXI service. BCC option is available in later version of Business Objects. Refer SAP Note: 1369269 - Unable to Schedule reports through BCC Symptom &minus; 'BCC" option not available while scheduling reports to email. ... <a href="https://www.tutorialspoint.com/Adding-a-BCC-recipient-in-Infoview-publication#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeeEVvQmVEYkN0MWVOOFFZemU4RVNadz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='VjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="eEVvQmVEYkN0MWVOOFFZemU4RVNadz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='VjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='VjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_VjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09" style="display:none;">
+<div id="comments_list_VjM0NHh4SHAzaVMxSTN5Rk52MC9GUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09" data-aid="V1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivV1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09" data-qtitle=Uploading-an-excel-file-in-Web-Dynpro-for-ABAP data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Uploading-an-excel-file-in-Web-Dynpro-for-ABAP" target='_blank'> Uploading an excel file in Web Dynpro for ABAP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09">
+</div>            <div class="qa_description">
+            
+ I am uploading an excel file in Web Dynpro for ABAP and it comes in number format instead of date. How this can be resolved? 
+            </div>
+            <div class="qa_comments" id="comments_dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09" style="display:none;">
+            <div id="comments_list_dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Note that an Excel stores data in number format and to display in date format, you have to show it format as a date.
+You can also try using this formula: TEXT(31421,"YYYY-mm-dd") and the date should display correctly.
+
+</p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qedDVHc1k2K1kvcExuM3BQZDFNUU1wZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='V1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="dDVHc1k2K1kvcExuM3BQZDFNUU1wZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='V1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='V1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_V1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09" style="display:none;">
+<div id="comments_list_V1VRbzNhNWNmK0FUVXJlYzB1cHJoQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09" data-aid="NTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivNTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09" data-qtitle=Why-do-we-use-jQuery-over-JavaScript data-utitle=David-Meador>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Why-do-we-use-jQuery-over-JavaScript" target='_blank'> Why do we use jQuery over JavaScript?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09">
+</div>            <div class="qa_description">
+            
+ I have worked on JavaScript before, and heard about the usage of jQuery. Why developers prefer jQuery over JavaScript? What are the benefits of using jQuery over JavaScript for the same proper.....             </div>
+            <div class="qa_comments" id="comments_cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09" style="display:none;">
+            <div id="comments_list_cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/David-Meador" title="David Meador"><img src='https://www.tutorialspoint.com/assets/profiles/13351/profile/60_165994-1512670078.jpg' alt='David Meador' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/David-Meador" title="David Meador">David Meador</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>jQuery is a JavaScript library, so it operates on top of JavaScript. It cannot exist on its own, so you can't use one over the other. You can use just JavaScript or JavaScript and jQuery. jQuery was introduced to make development with JavaScript easier. It will reduce the development time. ... <a href="https://www.tutorialspoint.com/Why-do-we-use-jQuery-over-JavaScript#David-Meador"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qecjFLNWZMbUhHam5GdWkyTEI1NzU4QT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='NTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="cjFLNWZMbUhHam5GdWkyTEI1NzU4QT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='NTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='NTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_NTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09" style="display:none;">
+<div id="comments_list_NTRHaTY4bnE1V0k2T0k0NFQwWVl5UT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09" data-aid="eVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDiveVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09" data-qtitle=Creating-a-Dashboard-from-Webi-Report data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Creating-a-Dashboard-from-Webi-Report" target='_blank'> Creating a Dashboard from Webi Report</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09">
+</div>            <div class="qa_description">
+            
+ I have to create a SAP Business Objects dashboard from a Web Intelligence report. How I can do this? Any direct link is available over internet? 
+            </div>
+            <div class="qa_comments" id="comments_NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09" style="display:none;">
+            <div id="comments_list_NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Yes, you can use Webi report in Dashboard using Web Service URL. You can use that URL in dashboard. To get URL, you need to select table in Webi report -&gt; Right click Publish.
+
+
+</p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeNkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='eVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="NkZWRHNVRnkvbVhwK2l6d0JzUG4wQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='eVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>1 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='eVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_eVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09" style="display:none;">
+<div id="comments_list_eVB2SkNpQ3dHc0o5QTV3L0FieHFNQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09" data-aid="ZXpVaTNsYzlUVmZlSGU1YldRelNBZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivZXpVaTNsYzlUVmZlSGU1YldRelNBZz09" data-qtitle=Not-able-to-delete-Server-Intelligence-Agent-SIA-in-CMS data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Not-able-to-delete-Server-Intelligence-Agent-SIA-in-CMS" target='_blank'> Not able to delete Server Intelligence Agent SIA in CMS</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09">
+</div>            <div class="qa_description">
+            
+ I want to delete below service in CCM box. I tried selecting this and clicking on delete &ldquo;X&rdquo; button I get an error message:  &ldquo;Failed to locate a node with name BIAPPPROD11 in.....             </div>
+            <div class="qa_comments" id="comments_R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09" style="display:none;">
+            <div id="comments_list_R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>I think you can delete it from Windows Services.  You can use below steps to delete this service. Open Central Configuration manager (CCM) and stop the Server Intelligence Agent (SIA) to be deleted.  Next is to go to Windows Start &gt; Run and type in "services. MSc" without ... <a href="https://www.tutorialspoint.com/Not-able-to-delete-Server-Intelligence-Agent-SIA-in-CMS#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeR3ZjM2hMOElaYmpVKzhCWiswaFUxZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='ZXpVaTNsYzlUVmZlSGU1YldRelNBZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="R3ZjM2hMOElaYmpVKzhCWiswaFUxZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='ZXpVaTNsYzlUVmZlSGU1YldRelNBZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='ZXpVaTNsYzlUVmZlSGU1YldRelNBZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_ZXpVaTNsYzlUVmZlSGU1YldRelNBZz09" style="display:none;">
+<div id="comments_list_ZXpVaTNsYzlUVmZlSGU1YldRelNBZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">
+   <div class="qa_widget">
+      <!-- /60931893/tutorial_top -->
+      <div id='div-gpt-ad-1532153686945-4' class='topgooglead'>
+         <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532153686945-4'); });
+         </script>
+      </div>
+   </div>
+</div><div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="NWNrRTduS21mRzhuaURSM0c4bWYxdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="NWNrRTduS21mRzhuaURSM0c4bWYxdz09" data-aid="UXBtalEvenBBeC96Qit0aGhzOHBtZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="NWNrRTduS21mRzhuaURSM0c4bWYxdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="NWNrRTduS21mRzhuaURSM0c4bWYxdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivUXBtalEvenBBeC96Qit0aGhzOHBtZz09" data-qtitle=Checking-SAP-Business-One-installation-programmatically data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Checking-SAP-Business-One-installation-programmatically" target='_blank'> Checking SAP Business One installation programmatically</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_NWNrRTduS21mRzhuaURSM0c4bWYxdz09">
+</div>            <div class="qa_description">
+            
+ I want to check if SAP Business One is installed using a program. I have a WinForm application that connects to SAP Business One SDK. Is there a way to check? 
+            </div>
+            <div class="qa_comments" id="comments_NWNrRTduS21mRzhuaURSM0c4bWYxdz09" style="display:none;">
+            <div id="comments_list_NWNrRTduS21mRzhuaURSM0c4bWYxdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>You can check SAP Business One installation using below code:  Public Function isSapBusinesOneClientInstalled() As Boolean    Try       SAP Business One Application       Dim type As Type = Type.GetTypeFromCLSID(New Guid("632F4591-AA62-4219-8FB6-22BCF5F60088"))       Dim ... <a href="https://www.tutorialspoint.com/Checking-SAP-Business-One-installation-programmatically#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeNWNrRTduS21mRzhuaURSM0c4bWYxdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='UXBtalEvenBBeC96Qit0aGhzOHBtZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="NWNrRTduS21mRzhuaURSM0c4bWYxdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='UXBtalEvenBBeC96Qit0aGhzOHBtZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='UXBtalEvenBBeC96Qit0aGhzOHBtZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_UXBtalEvenBBeC96Qit0aGhzOHBtZz09" style="display:none;">
+<div id="comments_list_UXBtalEvenBBeC96Qit0aGhzOHBtZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09" data-aid="SUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivSUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09" data-qtitle=modifying-or-executing-sap-jobs-using-net-connector data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/modifying-or-executing-sap-jobs-using-net-connector" target='_blank'> Modifying or Executing SAP jobs using .NET Connector</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09">
+</div>            <div class="qa_description">
+            
+There are few scheduled jobs in SAP system and I want to execute or modify the timings of execution of these jobs via .NET Connector. 
+I know how to connect to SAP system using .NET 
+Is it poss.....             </div>
+            <div class="qa_comments" id="comments_WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09" style="display:none;">
+            <div id="comments_list_WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>In SAP system, you have an external BAPI that can be called to manage SAP jobs, check this FM: "BAPI_XBP_JOB". You can use BAPI_XBP_JOB* function modules to create/schedule a job to run the query. For more details, you can refer below link &minus; BAPI_XBP_JOB There are various FM&rsquo;s that can ... <a href="https://www.tutorialspoint.com/modifying-or-executing-sap-jobs-using-net-connector#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeWU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='SUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="WU1pdU13YTVGMmsrTzB5Y0I5b1dTdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='SUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='SUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_SUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09" style="display:none;">
+<div id="comments_list_SUg4WFkrWVk0SW5EMUNpdE9IaDM5Zz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09" data-aid="aVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivaVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09" data-qtitle=How-to-link-jQuery-from-Google-CDN data-utitle=David-Meador>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-link-jQuery-from-Google-CDN" target='_blank'> How to link jQuery from Google CDN?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09">
+</div>            <div class="qa_description">
+            
+ I have set jQuery on local machine, but it&rsquo;s cumbersome. I want to use CDN for the same purpose for faster loading of web page. Environment can be set for jQuery using Microsoft or Googl.....             </div>
+            <div class="qa_comments" id="comments_VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09" style="display:none;">
+            <div id="comments_list_VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/David-Meador" title="David Meador"><img src='https://www.tutorialspoint.com/assets/profiles/13351/profile/60_165994-1512670078.jpg' alt='David Meador' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/David-Meador" title="David Meador">David Meador</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>To link jQuery from Google CDN, add the following in the srcattribute of the scripttag. https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js Here, we are using Google CDN version of the library. You can try to run the following code to learn how to use Google CDN to link jQuery. Example Live Demo  &lt;html&gt;  ... <a href="https://www.tutorialspoint.com/How-to-link-jQuery-from-Google-CDN#David-Meador"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeVnV3RTh5bnVOc1pzRVV1cURxRmR5QT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='aVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="VnV3RTh5bnVOc1pzRVV1cURxRmR5QT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='aVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='aVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_aVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09" style="display:none;">
+<div id="comments_list_aVJMUWcyRVU1dk5mYU1CWUlNZG9KUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="bHVVeDFXVHcySFgybXFKU0xyUzR0dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="bHVVeDFXVHcySFgybXFKU0xyUzR0dz09" data-aid="bFd0b09MZFNVbnpFQzRERnFTM1hFZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="bHVVeDFXVHcySFgybXFKU0xyUzR0dz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="bHVVeDFXVHcySFgybXFKU0xyUzR0dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivbFd0b09MZFNVbnpFQzRERnFTM1hFZz09" data-qtitle=Joining-cobk-and-coep-table-using-Inner-join-taking-too-long data-utitle=SAP-Expert>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Joining-cobk-and-coep-table-using-Inner-join-taking-too-long" target='_blank'> Joining cobk and coep table using Inner join taking too long</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_bHVVeDFXVHcySFgybXFKU0xyUzR0dz09">
+</div>            <div class="qa_description">
+            
+ I am placing an Inner join on cobk and coep table to get data in an internal table but it is taking too long. I also tried to get data from db view COVP but it is also taking long time. SELECT.....             </div>
+            <div class="qa_comments" id="comments_bHVVeDFXVHcySFgybXFKU0xyUzR0dz09" style="display:none;">
+            <div id="comments_list_bHVVeDFXVHcySFgybXFKU0xyUzR0dz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert"><img src='https://www.tutorialspoint.com/questions/images/user_icon.png' alt='SAP Expert' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/SAP-Expert" title="SAP Expert">SAP Expert</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 5th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>You can make use of T-Code: SE11 to check what indexes are available for table COEPFor one COEP record that you have the (now) 5 criteria for, navigate to T-Code: SE16 pass the selections and run to check how long it takes.To improve performance, you can also create an additional ... <a href="https://www.tutorialspoint.com/Joining-cobk-and-coep-table-using-Inner-join-taking-too-long#SAP-Expert"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qebHVVeDFXVHcySFgybXFKU0xyUzR0dz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='bFd0b09MZFNVbnpFQzRERnFTM1hFZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="bHVVeDFXVHcySFgybXFKU0xyUzR0dz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='bFd0b09MZFNVbnpFQzRERnFTM1hFZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='bFd0b09MZFNVbnpFQzRERnFTM1hFZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_bFd0b09MZFNVbnpFQzRERnFTM1hFZz09" style="display:none;">
+<div id="comments_list_bFd0b09MZFNVbnpFQzRERnFTM1hFZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09" data-aid="UitLRUlDTGh5TFJqcVExSVFKMjV6dz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivUitLRUlDTGh5TFJqcVExSVFKMjV6dz09" data-qtitle=How-do-we-create-multiline-comments-in-Python data-utitle=Pythonic>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-do-we-create-multiline-comments-in-Python" target='_blank'> How do we create multiline comments in Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09">
+</div>            <div class="qa_description">
+            
+ How do we create multiline comments in Python? What syntax is used in Python do comment a block of statements in a Python script? 
+            </div>
+            <div class="qa_comments" id="comments_ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09" style="display:none;">
+            <div id="comments_list_ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Pythonic" title="Pythonic"><img src='https://www.tutorialspoint.com/assets/profiles/15007/profile/60_156531-1514381552.jpg' alt='Pythonic' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Pythonic" title="Pythonic">Pythonic</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 22nd Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Comment is a piece of text in a computer program that is meant to be a programmer-readable explanation or annotation in the source code and not ignored by compiler/interpreter. In Python script, the symbol # indicates start of comment line. C like block comment (/* .. */) is not available ... <a href="https://www.tutorialspoint.com/How-do-we-create-multiline-comments-in-Python#Pythonic"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='UitLRUlDTGh5TFJqcVExSVFKMjV6dz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="ZWRlWDZybXlrZ1hKcjNlK3R3Nmh6dz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='UitLRUlDTGh5TFJqcVExSVFKMjV6dz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='UitLRUlDTGh5TFJqcVExSVFKMjV6dz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_UitLRUlDTGh5TFJqcVExSVFKMjV6dz09" style="display:none;">
+<div id="comments_list_UitLRUlDTGh5TFJqcVExSVFKMjV6dz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09" data-aid="ZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09" data-qtitle=How-to-Check-Leap-Year-using-Python data-utitle=Jayashree>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-Check-Leap-Year-using-Python" target='_blank'> How  to Check Leap Year using Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09">
+</div>            <div class="qa_description">
+            
+ How &nbsp;to Check Leap Year using Python?&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb.....             </div>
+            <div class="qa_comments" id="comments_VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09" style="display:none;">
+            <div id="comments_list_VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Jayashree" title="Jayashree"><img src='https://www.tutorialspoint.com/assets/profiles/15002/profile/60_183575-1514465925.jpg' alt='Jayashree' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Jayashree" title="Jayashree">Jayashree</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 27th Feb, 2018            </div>
+            <div class="clear"></div>
+            <p>Leap year comes after every four years. For normal year, if it is divisible by four, it is called leap year, whereas for century year, it should be divisible by 400. The following Python program shows whether the year is leap or notyr=int(input('enter year')) if yr%100==0: #century year     ... <a href="https://www.tutorialspoint.com/How-to-Check-Leap-Year-using-Python#Jayashree"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeVTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='ZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="VTRZYzVKOHJSRmdzN1lvaW4ydFVIZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='ZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='ZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_ZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09" style="display:none;">
+<div id="comments_list_ZFFEK0hzWmduZDV3MW9sWmhZRlhEdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09" data-aid="TnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivTnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09" data-qtitle=How-to-extract-subset-of-key-value-pairs-from-Python-dictionary-object data-utitle=Jayashree>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-extract-subset-of-key-value-pairs-from-Python-dictionary-object" target='_blank'> How to extract subset of key-value pairs from Python dictionary object?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09">
+</div>            <div class="qa_description">
+            
+ How to extract subset of key-value pairs from Python dictionary object?&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &n.....             </div>
+            <div class="qa_comments" id="comments_R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09" style="display:none;">
+            <div id="comments_list_R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Jayashree" title="Jayashree"><img src='https://www.tutorialspoint.com/assets/profiles/15002/profile/60_183575-1514465925.jpg' alt='Jayashree' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Jayashree" title="Jayashree">Jayashree</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 28th Feb, 2018            </div>
+            <div class="clear"></div>
+            <p>Use dictionary comprehension technique.We have dictionary object having name and percentage of students>>> marks = { 'Ravi': 45.23, 'Amar': 62.78, 'Ishan': 20.55, 'Hema': 67.20, 'Balu': 90.75 }To obtain dictionary of name and marks of students with percentage>50>>> passed = { key:value for key, value in marks.items() if value > 50 ... <a href="https://www.tutorialspoint.com/How-to-extract-subset-of-key-value-pairs-from-Python-dictionary-object#Jayashree"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeR05OUzBhd1dNL2FUeGFWWVFNQjFxdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='TnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="R05OUzBhd1dNL2FUeGFWWVFNQjFxdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='TnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='TnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_TnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09" style="display:none;">
+<div id="comments_list_TnhUUWZ2QjZTSzBzZ3ZjaTNYd2tvdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09" data-aid="L2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivL2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09" data-qtitle=How-to-create-a-Python-dictionary-from-text-file data-utitle=Jayashree>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-create-a-Python-dictionary-from-text-file" target='_blank'> How to create a  Python dictionary from text file?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09">
+</div>            <div class="qa_description">
+            
+ How to create a &nbsp;Python dictionary from text file?&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbs.....             </div>
+            <div class="qa_comments" id="comments_OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09" style="display:none;">
+            <div id="comments_list_OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Jayashree" title="Jayashree"><img src='https://www.tutorialspoint.com/assets/profiles/15002/profile/60_183575-1514465925.jpg' alt='Jayashree' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Jayashree" title="Jayashree">Jayashree</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 28th Feb, 2018            </div>
+            <div class="clear"></div>
+            <p>Assuming a following text file (dict.txt) is present1 aaa2 bbb3 cccFollowing Python code reads the file using open() function. Each line as string is split at space character. First component is used as key and second as valued = {} with open("dict.txt") as f: for line in f:     ... <a href="https://www.tutorialspoint.com/How-to-create-a-Python-dictionary-from-text-file#Jayashree"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeOXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='L2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="OXI1MGZBU0tMK3lqcFg5RjFuZnhzZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='L2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='L2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_L2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09" style="display:none;">
+<div id="comments_list_L2hKZDUvbVYrODBjYkNUQ1lKQnZmQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+  
+</div>      
+<div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+   <div class="pages">
+      <a href="https://www.tutorialspoint.com/questions/823"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 825" href="https://www.tutorialspoint.com/questions/1">1</a>  ... <a class="number" title="Go to page 819 of 825" href="https://www.tutorialspoint.com/questions/819">819</a> <a class="number" title="Go to page 820 of 825" href="https://www.tutorialspoint.com/questions/820">820</a> <a class="number" title="Go to page 821 of 825" href="https://www.tutorialspoint.com/questions/821">821</a> <a class="number" title="Go to page 822 of 825" href="https://www.tutorialspoint.com/questions/822">822</a> <a class="number" title="Go to page 823 of 825" href="https://www.tutorialspoint.com/questions/823">823</a> <a title="Go to page 824 of 825" class="current number" href="https://www.tutorialspoint.com/questions/824">824</a> <a class="number" title="Go to page 825 of 825" href="https://www.tutorialspoint.com/questions/825">825</a> <a  href="https://www.tutorialspoint.com/questions/825" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+   </div>
+</div>
+<div class="clear"></div>
+<div class="bottomgooglead qa_widget align-center">
+   <div class="bottomadtag">Advertisements</div>
+      <script><!--
+      var width = 580;
+      var height = 400;
+      var format = "580x400_as";
+      if( window.innerWidth < 468 ){
+         width = 300;
+         height = 250;
+         format = "300x250_as";
+      }
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = width;
+      google_ad_height = height;
+      google_ad_format = format;
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</div> 
+<div class="loader_bg" id="loader_image">
+<img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+</div>
+
+<!-- end of center column content -->   
+
+<div class="mui-col-md-4">    
+<!-- right column content -->      
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/questions/index.php?page=824','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=824','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=824&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=824&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=824&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/questions/index.php?page=824&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="">
+      <button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+   </div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad">Advertisements</div>
+      <div class="rightgooglead">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      google_ad_format = "300x250_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      google_ad_format = "300x600_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "ca-pub-2537027957187252";
+      /* Right Side Ad */
+      google_ad_slot = "right_side_ad";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+    
+   <div id="contribution_menu"></div>
+   <div class="clear"></div>    
+      <div class="left_nav_header left_top_margin"><i class="fa fa-question-circle"></i> Unanswered Questions     
+      <a href="https://www.tutorialspoint.com/questions/unanswered.php" class="qa_pop_btn qa_pop_save"><i class="fa fa-plus"></i> View All</a>
+   </div>
+   <div id="latest_questions"></div>      
+   
+</div>
+
+<script>
+   $(document).ready(function () {
+      getRightMenu();
+      function getRightMenu(){
+         $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetRightMenu.php",
+            method: "POST",
+            success: function (data) {
+            $('#contribution_menu').html(data);
+            }
+         });
+      }
+            getLatestQuestions();
+         function getLatestQuestions() {
+            $.ajax({
+               url: baseurl + "questions/ajax/ajaxGetLatestQuestions.php",
+               method: "POST",
+               success: function (data) {
+               $('#latest_questions').html(data);
+               }
+            });
+         }
+          });
+</script> 
+</div>
+<!-- end of right column content -->   
+</div>
+<!-- End of Body Content -->
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>VB.Net Web Programming</title>
+<meta name="description" content="VB.Net Web Programming - Learn VB.Net Programming in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment setup, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Arrays, Strings, Subs, File Handling, Exception Handling, Basic Controls, Dialog Boxes, Advanced Forms, Event Handling, Classes, Objects, Web Programming, Database Access, Excel Sheet and XML Processing." />
+<meta name="keywords" content="VB.Net, Tutorial, Beginners, Programming, Environment setup, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Arrays, Strings, Subs, File Handling, Exception Handling, Basic Controls, Dialog Boxes, Advanced Forms, Event Handling, Classes, Objects, Web Programming, Database Access, Excel Sheet and XML Processing." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #2c6ed5 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #2c6ed5 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #2c6ed5 !important;}
+.submenu-item{ border-bottom: 2px solid #2c6ed5 !important; border-top: 2px solid #2c6ed5 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#2c6ed5; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/vb.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/vb.net/images/vb.net-mini-logo.jpg" alt="VB.Net Programming Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VB.Net Basic Tutorial</li>
+<li><a href="/vb.net/index.htm">VB.Net - Home</a></li>
+<li><a href="/vb.net/vb.net_overview.htm">VB.Net - Overview</a></li>
+<li><a href="/vb.net/vb.net_environment_setup.htm">VB.Net - Environment Setup</a></li>
+<li><a href="/vb.net/vb.net_program_structure.htm">VB.Net - Program Structure</a></li>
+<li><a href="/vb.net/vb.net_basic_syntax.htm">VB.Net - Basic Syntax</a></li>
+<li><a href="/vb.net/vb.net_data_types.htm">VB.Net - Data Types</a></li>
+<li><a href="/vb.net/vb.net_variables.htm">VB.Net - Variables</a></li>
+<li><a href="/vb.net/vb.net_constants.htm">VB.Net - Constants</a></li>
+<li><a href="/vb.net/vb.net_modifiers.htm">VB.Net - Modifiers</a></li>
+<li><a href="/vb.net/vb.net_statements.htm">VB.Net - Statements</a></li>
+<li><a href="/vb.net/vb.net_directives.htm">VB.Net - Directives</a></li>
+<li><a href="/vb.net/vb.net_operators.htm">VB.Net - Operators</a></li>
+<li><a href="/vb.net/vb.net_decision_making.htm">VB.Net - Decision Making</a></li>
+<li><a href="/vb.net/vb.net_loops.htm">VB.Net - Loops</a></li>
+<li><a href="/vb.net/vb.net_strings.htm">VB.Net - Strings</a></li>
+<li><a href="/vb.net/vb.net_date_time.htm">VB.Net - Date &amp; Time</a></li>
+<li><a href="/vb.net/vb.net_arrays.htm">VB.Net - Arrays</a></li>
+<li><a href="/vb.net/vb.net_collections.htm">VB.Net - Collections</a></li>
+<li><a href="/vb.net/vb.net_functions.htm">VB.Net - Functions</a></li>
+<li><a href="/vb.net/vb.net_subs.htm">VB.Net - Subs</a></li>
+<li><a href="/vb.net/vb.net_classes_objects.htm">VB.Net - Classes &amp; Objects</a></li>
+<li><a href="/vb.net/vb.net_exception_handling.htm">VB.Net - Exception Handling</a></li>
+<li><a href="/vb.net/vb.net_file_handling.htm">VB.Net - File Handling</a></li>
+<li><a href="/vb.net/vb.net_basic_controls.htm">VB.Net - Basic Controls</a></li>
+<li><a href="/vb.net/vb.net_dialog_boxes.htm">VB.Net - Dialog Boxes</a></li>
+<li><a href="/vb.net/vb.net_advanced_forms.htm">VB.Net - Advanced Forms</a></li>
+<li><a href="/vb.net/vb.net_event_handling.htm">VB.Net - Event Handling</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VB.Net Advanced Tutorial</li>
+<li><a href="/vb.net/vb.net_regular_expressions.htm">VB.Net - Regular Expressions</a></li>
+<li><a href="/vb.net/vb.net_database_access.htm">VB.Net - Database Access</a></li>
+<li><a href="/vb.net/vb.net_excel_sheet.htm">VB.Net - Excel Sheet</a></li>
+<li><a href="/vb.net/vb.net_send_email.htm">VB.Net - Send Email</a></li>
+<li><a href="/vb.net/vb.net_xml_processing.htm">VB.Net - XML Processing</a></li>
+<li><a href="/vb.net/vb.net_web_programming.htm">VB.Net - Web Programming</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VB.Net Useful Resources</li>
+<li><a href="/vb.net/vb.net_quick_guide.htm">VB.Net - Quick Guide</a></li>
+<li><a href="/vb.net/vb.net_useful_resources.htm">VB.Net - Useful Resources</a></li>
+<li><a href="/vb.net/vb.net_discussion.htm">VB.Net - Discussion</a></li>
+
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>VB.Net - Web Programming</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/vb.net/vb.net_xml_processing.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/vb.net/vb.net_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>A dynamic web application consists of either or both of the following two types of programs &minus;</p>
+<ul class="list">
+<li><p><b>Server-side scripting</b> &minus; these are programs executed on a web server, written using server-side scripting languages like ASP (Active Server Pages) or JSP (Java Server Pages).</p></li>
+<li><p><b>Client-side scripting</b> &minus; these are programs executed on the browser, written using scripting languages like JavaScript, VBScript, etc.</p></li>
+</ul>
+<p>ASP.Net is the .Net version of ASP, introduced by Microsoft, for creating dynamic web pages by using server-side scripts. ASP.Net applications are compiled codes written using the extensible and reusable components or objects present in .Net framework. These codes can use the entire hierarchy of classes in .Net framework.</p>
+<p>The ASP.Net application codes could be written in either of the following languages &minus;</p>
+<ul class="list">
+<li><p>Visual Basic .Net</p></li>
+<li><p>C#</p></li>
+<li><p>Jscript</p></li>
+<li><p>J#</p></li>
+</ul>
+<p>In this chapter, we will give a very brief introduction to writing ASP.Net applications using VB.Net. For detailed discussion, please consult the <a href="/asp.net/index.htm">ASP.Net Tutorial.</a></p>
+<h2>ASP.Net Built-in Objects</h2>
+<p>ASP.Net has some built-in objects that run on a web server. These objects have methods, properties and collections that are used in application development.</p> 
+<p>The following table lists the ASP.Net built-in objects with a brief description &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:5%;">Sr.No.</th>
+<th style="text-align:center;">Object &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>Application</b></p>
+<p>Describes the methods, properties, and collections of the object that stores information related to the entire Web application, including variables and objects that exist for the lifetime of the application.</p>
+<p>You use this object to store and retrieve information to be shared among all users of an application. For example, you can use an Application object to create an e-commerce page.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>Request</b></p>
+<p>Describes the methods, properties, and collections of the object that stores information related to the HTTP request. This includes forms, cookies, server variables, and certificate data.</p>
+<p>You use this object to access the information sent in a request from a browser to the server. For example, you can use a Request object to access information entered by a user in an HTML form.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>Response</b></p>
+<p>Describes the methods, properties, and collections of the object that stores information related to the server's response. This includes displaying content, manipulating headers, setting locales, and redirecting requests.</p>
+<p>You use this object to send information to the browser. For example, you use a Response object to send output from your scripts to a browser.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>Server</b></p>
+<p>Describes the methods and properties of the object that provides methods for various server tasks. With these methods you can execute code, get error conditions, encode text strings, create objects for use by the Web page, and map physical paths.</p>
+<p>You use this object to access various utility functions on the server. For example, you may use the Server object to set a time out for a script.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>Session</b></p>
+<p>Describes the methods, properties, and collections of the object that stores information related to the user's session, including variables and objects that exist for the lifetime of the session.</p>
+<p>You use this object to store and retrieve information about particular user sessions. For example, you can use Session object to keep information about the user and his preference and keep track of pending operations.</p>
+</td>
+</tr>
+</table>
+<h2>ASP.Net Programming Model</h2>
+<p>ASP.Net provides two types of programming models &minus;</p>
+<ul class="list">
+<li><p><b>Web Forms</b> &minus; this enables you to create the user interface and the application logic that would be applied to various components of the user interface.</p></li>
+<li><p><b>WCF Services</b> &minus; this enables you to remote access some server-side functionalities.</p></li>
+</ul>
+<p>For this chapter, you need to use Visual Studio Web Developer, which is free. The IDE is almost same as you have already used for creating the Windows Applications.</p>
+<img src="/vb.net/images/vb.net_web_programming_ide.jpg" alt="VS Web Developer IDE"/>
+<h2>Web Forms</h2>
+<p>Web forms consists of &minus;</p>
+<ul class="list">
+<li><p>User interface</p></li>
+<li><p>Application logic</p></li>
+</ul>
+<p>User interface consists of static HTML or XML elements and ASP.Net server controls. When you create a web application, HTML or XML elements and server controls are stored in a file with <b>.aspx</b> extension. This file is also called the page file.</p>
+<p>The application logic consists of code applied to the user interface elements in the page. You write this code in any of .Net language like, VB.Net, or C#. The following figure shows a Web Form in Design view &minus;</p>
+<img src="/vb.net/images/vb.net_web_form.jpg" alt="Web Form "/>
+<h2>Example</h2>
+<p>Let us create a new web site with a web form, which will show the current date and time, when a user clicks a button. Take the following steps &minus;</p>
+<ul class="list">
+<li><p>Select File &rarr; New &rarr; Web Site. The New Web Site Dialog Box appears.</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_web_form1.jpg" alt="Web Form Example"/>
+<ul class="list">
+<li><p>Select the ASP.Net Empty Web Site templates. Type a name for the web site and select a location for saving the files.</p></li>
+<li><p>You need to add a Default page to the site. Right click the web site name in the Solution Explorer and select Add New Item option from the context menu. The Add New Item dialog box is displayed &minus;</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_web_form2.jpg" alt="Web Form Example"/>
+<ul class="list">
+<li><p>Select Web Form option and provide a name for the default page. We have kept it as Default.aspx. Click the Add button.</p></li>
+<li><p>The Default page is shown in Source view</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_web_form3.jpg" alt="Web Form Example"/>
+<ul class="list">
+<li><p>Set the title for the Default web page by adding a value to the &lt;Title&gt; tag of the page, in the Source view &minus;</p></li>
+<!--<pre class="prettyprint notranslate">
+<head runat="server">
+    <title>Tutorials Point</title>
+</head>
+</pre>-->
+<li><p>To add controls on the web page, go to the design view. Add three labels, a text box and a button on the form.</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_web_form4.jpg" alt="Web Form Example"/>
+<ul class="list">
+<li><p>Double-click the button and add the following code to the Click event of the button &minus;</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+Protected Sub Button1_Click(sender As Object, e As EventArgs) _
+Handles Button1.Click
+   Label2.Visible = True
+   Label2.Text = "Welcome to Tutorials Point: " + TextBox1.Text
+   Label3.Text = "You visited us at: " + DateTime.Now.ToString()
+End Sub
+</pre>
+<p>When the above code is executed and run using Start button available at the Microsoft Visual Studio tool bar, the following page opens in the browser &minus;</p>
+<img src="/vb.net/images/vb.net_web_form5.jpg" alt="Web Form Example"/>
+<p>Enter your name and click on the Submit button &minus;</p>
+<img src="/vb.net/images/vb.net_web_form6.jpg" alt="Web Form Example"/>
+<h2>Web Services</h2>
+<p>A web service is a web application, which is basically a class consisting of methods that could be used by other applications. It also follows a code-behind architecture like the ASP.Net web pages, although it does not have an user interface.</p>
+<p>The previous versions of .Net Framework used this concept of ASP.Net Web Service, which had .asmx file extension. However, from .Net Framework 4.0 onwards, the Windows Communication Foundation (WCF) technology has evolved as the new successor of Web Services, .Net Remoting and some other related technologies. It has rather clubbed all these technologies together. In the next section, we will provide a brief introduction to Windows Communication Foundation(WCF).</p>
+<p>If you are using previous versions of .Net Framework, you can still create traditional web services. Please consult <a href="/asp.net/asp.net_web_services.htm">ASP.Net - Web Services</a> tutorial for detailed description.</p>
+<h2>Windows Communication Foundation</h2>
+<p>Windows Communication Foundation or WCF provides an API for creating distributed service-oriented applications, known as WCF Services.</p>
+<p>Like Web services, WCF services also enable communication between applications. However, unlike web services, the communication here is not limited to HTTP only. WCF can be configured to be used over HTTP, TCP, IPC, and Message Queues. Another strong point in favour of WCF is, it provides support for duplex communication, whereas with web services we could achieve simplex communication only.</p>
+<p>From beginners' point of view, writing a WCF service is not altogether so different from writing a Web Service. To keep the things simple, we will see how to &minus;</p>
+<ul class="list">
+<li><p>Create a WCF Service</p></li>
+<li><p>Create a Service Contract and define the operations</p></li>
+<li><p>Implement the contract</p></li>
+<li><p>Test the Service</p></li>
+<li><p>Utilize the Service</p></li>
+</ul>
+<h2>Example</h2>
+<p>To understand the concept let us create a simplistic service that will provide stock price information. The clients can query about the name and price of a stock based on the stock symbol. To keep this example simple, the values are hardcoded in a two-dimensional array. This service will have two methods &minus;</p>
+<ul class="list">
+<li><p>GetPrice Method &minus; it will return the price of a stock, based on the symbol provided.</p></li>
+<li><p>GetName Method &minus; it will return the name of the stock, based on the symbol provided.</p></li>
+</ul>
+<h3>Creating a WCF Service</h3>
+<p>Take the following steps &minus;</p>
+<ul class="list">
+<li><p>Open VS Express for Web 2012</p></li>
+<li><p>Select New Web Site to open the New Web Site dialog box.</p></li>
+<li><p>Select WCF Service template from list of templates &minus;</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_wcf_service1.jpg" alt="Creating a WCF Service"/>
+<ul class="list">
+<li><p>Select File System from the Web location drop-down list.</p></li>
+<li><p>Provide a name and location for the WCF Service and click OK.</p></li>
+<li><p>A new WCF Service is created.</p></li>
+</ul>
+<h3>Creating a Service Contract and Defining the Operations</h3>
+<p>A service contract defines the operation that a service performs. In the WCF Service application, you will find two files automatically created in the App_Code folder in the Solution Explorer</p>
+<ul class="list">
+<li><p>IService.vb &minus; this will have the service contract; in simpler words, it will have the interface for the service, with the definitions of methods the service will provide, which you will implement in your service.</p></li>
+<li><p>Service.vb &minus; this will implement the service contract.</p>
+</li>
+</ul>
+<img src="/vb.net/images/vb.net_wcf_service2.jpg"  alt="WCF Service Example" />
+<ul class="list">
+<li><p>Replace the code of the IService.vb file with the given code &minus;</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+Public Interface IService
+   &lt;OperationContract()&gt;
+   Function GetPrice(ByVal symbol As String) As Double
+
+   &lt;OperationContract()&gt;
+   Function GetName(ByVal symbol As String) As String
+End Interface
+</pre>
+<h3>Implementing the Contract</h3>
+<p>In the Service.vb file, you will find a class named <b>Service</b> which will implement the Service Contract defined in the <b>IService</b> interface.</p>
+<p>Replace the code of IService.vb with the following code &minus;</p>
+<pre class="prettyprint notranslate">
+' NOTE: You can use the "Rename" command on the context menu to change the class name "Service" in code, svc and config file together.
+Public Class Service
+   Implements IService
+   Public Sub New()
+   End Sub
+   Dim stocks As String(,) =
+   {
+      {"RELIND", "Reliance Industries", "1060.15"},
+      {"ICICI", "ICICI Bank", "911.55"},
+      {"JSW", "JSW Steel", "1201.25"},
+      {"WIPRO", "Wipro Limited", "1194.65"},
+      {"SATYAM", "Satyam Computers", "91.10"}
+   }
+
+   Public Function GetPrice(ByVal symbol As String) As Double _
+   Implements IService.GetPrice
+
+      Dim i As Integer
+      'it takes the symbol as parameter and returns price
+      For i = 0 To i = stocks.GetLength(0) - 1
+
+         If (String.Compare(symbol, stocks(i, 0)) = 0) Then
+            Return Convert.ToDouble(stocks(i, 2))
+         End If
+      Next i
+      Return 0
+   End Function
+
+   Public Function GetName(ByVal symbol As String) As String _
+   Implements IService.GetName
+
+      ' It takes the symbol as parameter and 
+      ' returns name of the stock
+      Dim i As Integer
+      For i = 0 To i = stocks.GetLength(0) - 1
+
+         If (String.Compare(symbol, stocks(i, 0)) = 0) Then
+            Return stocks(i, 1)
+         End If
+      Next i
+      Return "Stock Not Found"
+   End Function
+End Class
+</pre>
+<h3>Testing the Service</h3>
+<p>To run the WCF Service, so created, select the Debug &rarr; Start Debugging option from the menu bar. The output would be &minus;</p>
+<img src="/vb.net/images/vb.net_wcf_service_testing1.jpg" alt="WCF Service Testing"/>
+<p>For testing the service operations, double click the name of the operation from the tree on the left pane. A new tab will appear on the right pane.</p>
+<p>Enter the value of parameters in the Request area of the right pane and click the 'Invoke' button.</p>
+<p>The following diagram displays the result of testing the <b>GetPrice</b> operation &minus;</p>
+<img src="/vb.net/images/vb.net_wcf_service_testing2.jpg" alt="WCF Service Testing"/>
+<p>The following diagram displays the result of testing the <b>GetName</b> operation &minus;</p>
+<img src="/vb.net/images/vb.net_wcf_service_testing3.jpg" alt="WCF Service Testing"/>
+<h3>Utilizing the Service</h3>
+<p>Let us add a default page, a ASP.NET web form in the same solution from which we will be using the WCF Service we have just created.</p>
+<p>Take the following steps &minus;</p>
+<ul class="list">
+<li><p>Right click on the solution name in the Solution Explorer and add a new web form to the solution. It will be named Default.aspx.</p></li>
+<li><p>Add two labels, a text box and a button on the form.</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_wcf_service_utilization1.jpg" alt="WCF Service Utilization"/>
+<ul class="list">
+<li><p>We need to add a service reference to the WCF service we just created. Right click the website in the Solution Explorer and select Add Service Reference option. This opens the Add Service Reference Dialog box.</p></li>
+<li><p>Enter the URL(location) of the Service in the Address text box and click the Go button. It creates a service reference with the default name <b>ServiceReference1</b>. Click the OK button.</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_wcf_service_utilization2.jpg" alt="Add Service Reference"/>
+<p>Adding the reference does two jobs for your project &minus;</p>
+<ul class="list">
+<li><p>Creates the Address and Binding for the service in the web.config file.</p></li>
+<li><p>Creates a proxy class to access the service.</p></li>
+<li><p>Double click the Get Price button in the form, to enter the following code snippet on its Click event &minus;</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+Partial Class _Default
+   Inherits System.Web.UI.Page
+
+   Protected Sub Button1_Click(sender As Object, e As EventArgs) _
+   Handles Button1.Click
+      Dim ser As ServiceReference1.ServiceClient = _ 
+      New ServiceReference1.ServiceClient
+      Label2.Text = ser.GetPrice(TextBox1.Text).ToString()
+   End Sub
+End Class
+</pre>
+<ul class="list">
+<li><p>When the above code is executed and run using Start button available at the Microsoft Visual Studio tool bar, the following page opens in the browser &minus;</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_wcf_service_utilization3.jpg"  alt="WCF Service Utilization"/>
+<ul class="list">
+<li><p>Enter a symbol and click the Get Price button to get the hard-coded price &minus;</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_wcf_service_utilization4.jpg" alt="WCF Service Utilization"/>
+<hr />
+<div class="pre-btn">
+<a href="/vb.net/vb.net_xml_processing.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/vb.net/vb.net_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/vb.net/vb.net_web_programming.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/vb.net/vb.net_web_programming.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/vb.net/vb.net_web_programming.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/vb.net/vb.net_web_programming.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/vb.net/vb.net_web_programming.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/vb.net/vb.net_web_programming.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

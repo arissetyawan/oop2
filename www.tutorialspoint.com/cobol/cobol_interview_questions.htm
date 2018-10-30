@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>COBOL Interview Questions - tutorialspoint</title>
+<meta name="description" content="COBOL Interview Questions - Learn Cobol in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Program Structure, Basic Syntax, Data Types, Basic Verbs, Data Layout, Condition Statements, Loop Statements, String Handling, Table Processing, File Handling, File Organization, File Access Mode, File Handling Verbs, Subroutines, Internal Sort, Database Interface, Interview Questions." />
+<meta name="keywords" content="COBOL, Tutorial, Learning, Overview, Environment, Setup, Program Structure, Basic Syntax, Data Types, Verbs, Data Layout, Condition Statements, Loop Statements, String Handling, Table Processing, File Handling, Organization, Access Mode, Handling Verbs, Subroutines, Internal Sort, Database Interface, Interview Questions." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #053e52 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #053e52 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #053e52 !important;}
+.submenu-item{ border-bottom: 2px solid #053e52 !important; border-top: 2px solid #053e52 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#053e52; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/cobol/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/cobol/images/cobol-mini-logo.jpg" alt="COBOL Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/cobol_online_training/index.asp" target="_blank"><img src="/cobol/images/cobol-video-tutorials.jpg" alt="COBOL Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">COBOL Tutorial</li>
+<li><a href="/cobol/index.htm">COBOL - Home</a></li>
+<li><a href="/cobol/cobol_overview.htm">COBOL - Overview</a></li>
+<li><a href="/cobol/cobol_environment_setup.htm">COBOL - Environment Setup</a></li>
+<li><a href="/cobol/cobol_program_structure.htm">COBOL - Program Structure</a></li>
+<li><a href="/cobol/cobol_basic_syntax.htm">COBOL - Basic Syntax</a></li>
+<li><a href="/cobol/cobol_data_types.htm">COBOL - Data Types</a></li>
+<li><a href="/cobol/cobol_basic_verbs.htm">COBOL - Basic Verbs</a></li>
+<li><a href="/cobol/cobol_data_layout.htm">COBOL - Data Layout</a></li>
+<li><a href="/cobol/cobol_condition_statements.htm">COBOL - Conditional Statements</a></li>
+<li><a href="/cobol/cobol_loop_statements.htm">COBOL - Loop Statements</a></li>
+<li><a href="/cobol/cobol_string_handling.htm">COBOL - String Handling</a></li>
+<li><a href="/cobol/cobol_table_processing.htm">COBOL - Table Processing</a></li>
+<li><a href="/cobol/cobol_file_handling.htm">COBOL - File Handling</a></li>
+<li><a href="/cobol/cobol_file_organization.htm">COBOL - File Organization</a></li>
+<li><a href="/cobol/cobol_file_access_mode.htm">COBOL - File Access Mode</a></li>
+<li><a href="/cobol/cobol_file_handling_verbs.htm">COBOL - File Handling Verbs</a></li>
+<li><a href="/cobol/cobol_subroutines.htm">COBOL - Subroutines</a></li>
+<li><a href="/cobol/cobol_internal_sort.htm">COBOL - Internal Sort</a></li>
+<li><a href="/cobol/cobol_database_interface.htm">COBOL - Database Interface</a></li>
+<!--<li><a href="/cobol/cobol_interview_questions.htm">COBOL - Interview Questions</a></li>-->
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">COBOL Useful Resources</li>
+<li><a href="/cobol/cobol_questions_answers.htm">COBOL - Questions and Answers</a></li>
+<li><a href="/cobol/cobol_quick_guide.htm">COBOL - Quick Guide</a></li>
+<li><a href="/cobol/cobol_useful_resources.htm">COBOL - Useful Resources</a></li>
+<li><a href="/cobol/cobol_discussion.htm">COBOL - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>COBOL Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/cobol/cobol_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/cobol/cobol_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>COBOL Interview Questions</b> have been designed especially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>COBOL Programming Language</b>. As per my experience, good interviewers hardly plan to ask any particular question during your interview. Normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What do you know about COBOL?</label>
+<div class="toggle-content">
+<p>COBOL stands for Common Business-Oriented Language. The US Department of Defense, in a conference, formed CODASYL (Conference on Data Systems Language) to develop a language for meeting business data processing needs which is now known as COBOL.</p>
+</div>
+</section>
+<section class="toggle">
+<label> List some features of COBOL.</label>
+<div class="toggle-content">
+<p>COBOL is a standard language that can be compiled and executed on various machines. It is ideally suited for business-oriented applications as it can handle huge volumes of data. It provides numerous debugging and testing tools. COBOL is a structured language; it has different divisions, so it is easy to debug.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name the divisions in a COBOL program.</label>
+<div class="toggle-content">
+<p>Identification Division, Environment Division, Data Division, and Procedure Division.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different data types available in COBOL?</label>
+<div class="toggle-content">
+<p>Alpha-numeric (X), Alphabetic (A), and Numeric (9).</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is 'IS NUMERIC' clause?</label>
+<div class="toggle-content">
+<p>IS NUMERIC clause is used to check if any item is numeric or not. It returns TRUE when the item against which it is used contains only numbers (0 to 9). The item can be positive or negative.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are 66 and 88 level used for?</label>
+<div class="toggle-content">
+<p>Level 66 is used for RENAMES clause and Level 88 is used for condition names.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between subscript and index?</label>
+<div class="toggle-content">
+<p>Subscript is the occurrence in an array. Index is the displacement  from the beginning of an array.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between SEARCH and SEARCH ALL?</label>
+<div class="toggle-content">
+<p>SEARCH is a serial search, whereas SEARCH ALL is a binary search. A table must be in sorted order before using SEARCH ALL.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between performing a SECTION and a PARAGRAPH?</label>
+<div class="toggle-content">
+<p>Performing a SECTION will cause all the paragraphs that are a part of the section to be performed. Performing a PARAGRAPH will cause only a particular paragraph to be performed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a scope terminator?</label>
+<div class="toggle-content">
+<p>Scope terminator is used to mark the end of a verb. Example: IF and END-IF.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the file opening modes in COBOL?</label>
+<div class="toggle-content">
+<p>File opening modes in COBOL include: INPUT, OUTPUT, I-O, and EXTEND.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the maximum size of a numeric field we can define in COBOL?</label>
+<div class="toggle-content">
+<p>The maximum size of a numeric field is PIC 9(18).</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between CONTINUE and NEXT SENTENCE?</label>
+<div class="toggle-content">
+<p>CONTINUE transfers the control to the next statement after the scope terminator. NEXT SENTENCE transfers the control to the statement after the first period is encountered.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why we cannot define an Occurs clause at 01 level?</label>
+<div class="toggle-content">
+<p>01 is of the record level. We repeat the fields within a record, not the record itself. So an Occurs clause can not be used at 01 level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the mode in which you will OPEN a file for writing?</label>
+<div class="toggle-content">
+<p>To write into a file, the file has to be opened in either OUTPUT or EXTEND mode.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Call By Content and Call By Reference?</label>
+<div class="toggle-content">
+<p>The parameters passed in a Call By Content are protected from modification by the called program. In Call By Reference, parameters can be modified by the called program.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a linkage section?</label>
+<div class="toggle-content">
+<p>The linkage section is a part of a called program that 'links' or maps to data items in the calling program's working storage.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What will happen if you code GO BACK instead of STOP RUN in a stand alone COBOL program?</label>
+<div class="toggle-content">
+<p>The program will go in an infinite loop.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How is sign stored in a COMP-3 field?</label>
+<div class="toggle-content">
+<p>It is stored in the last nibble.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between comp and comp-3?</label>
+<div class="toggle-content">
+<p>Comp is a binary usage, while comp-3 indicates packed decimal.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Identification Division?</label>
+<div class="toggle-content">
+<p>Identification Division is used for documentation purpose.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between static call and dynamic call?</label>
+<div class="toggle-content">
+<p>In static call, the called program is a standalone program, it is an executable program. During runtime, we can call it in our called program. As about dynamic call, the called program is not an executable program; it can be executed through the called program only.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Redefines clause?</label>
+<div class="toggle-content">
+<p>Redefines clause is used to allow the same storage allocation to be referenced by different data names.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the Purpose of Pointer Phrase in STRING command?</label>
+<div class="toggle-content">
+<p>The Purpose of Pointer phrase is to specify the leftmost position within the receiving field where the first transferred character will be stored.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is 77 level used for?</label>
+<div class="toggle-content">
+<p>It is an elementary level item which cannot be subdivided.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is binary search?</label>
+<div class="toggle-content">
+<p>Compare the item to be searched with the item at the centre. If it matches fine; else repeat the process with the left half or the right half depending on where the item lies.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of EVALUATE statement?</label>
+<div class="toggle-content">
+<p>Evaluate is like a case statement and can be used to replace nested Ifs. No break is required as the control comes out as soon as a match is found.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can I redefine an X(10) field with a field of X(20)?</label>
+<div class="toggle-content">
+<p>Yes, as Redefines causes both fields to start at the same location.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is COMP-1 and COMP-2?</label>
+<div class="toggle-content">
+<p>COMP-1 is single precision floating point that uses 4 bytes. COMP-2 is double precision floating point that uses 8 bytes.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the function of Accept Verb?</label>
+<div class="toggle-content">
+<p>Accept Verb is used to get data such as date, time, and day from the operating system or directly from the user. If a program is accepting data from the user, then it needs to be passed through the JCL.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Compute Statement?</label>
+<div class="toggle-content">
+<p>Compute statement is used to write arithmetic expressions in COBOL. This is a replacement for Add, Subtract, Multiply, and Divide.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you define the files referred to in a subroutine program?</label>
+<div class="toggle-content">
+<p>Supply the DD cards in JCL just as you would for files referred to in the main program.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What divisions, sections and paragraphs are mandatory in a COBOL program?</label>
+<div class="toggle-content">
+<p>Identification Division and Program-Id paragraph are mandatory in a COBOL program.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Where does AREA B in COBOL start from?</label>
+<div class="toggle-content">
+<p>Area B starts from 12 to 72 column.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Where does the FILE-CONTROL paragraph appear?</label>
+<div class="toggle-content">
+<p>It appears in the Input-Ouput Section in the Environment Division.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Perform With Test After and Perform With Test Before?</label>
+<div class="toggle-content">
+<p>If TEST BEFORE is specified, the condition is tested at the beginning of each repeated execution of the specified PERFORM range. If TEST AFTER is specified, the condition is tested at the end of each repeated execution of the PERFORM range. The range is executed at least once in TEST AFTER.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is LOCAL-STORAGE SECTION?</label>
+<div class="toggle-content">
+<p>Local-Storage is allocated each time a program is called and will be deallocated when the program stops via an EXIT PROGRAM, GOBACK, or STOP RUN. It is defined in the DATA DIVISION after the WORKING-STORAGE SECTION.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the access modes of START statement?</label>
+<div class="toggle-content">
+<p>Access modes are SEQUENTIAL or DYNAMIC for the start statement.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between PIC 9.99 and PIC9v99?</label>
+<div class="toggle-content">
+<p>PIC 9.99 is a four position field that actually contains a decimal point whereas PIC 9v99 is a three position numeric field with assumed decimal position.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can a Search be done on a table with or without Index?</label>
+<div class="toggle-content">
+<p>No, the table must be indexed to search on a table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why is it necessary to open a file in I-O mode for REWRITE?</label>
+<div class="toggle-content">
+<p>Before REWRITE is performed, the record must be opened and read from the file. Therefore, the file must be opened in I-O mode for rewrite functionality.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are literals?</label>
+<div class="toggle-content">
+<p>A literal is a data item that consists value by itself. It cannot be referred by a name. They are constant data items.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What will happen if you code GO BACK instead of STOP RUN in a stand alone COBOL program?</label>
+<div class="toggle-content">
+<p>A Stop run ends the unit of work and returns control to the operating system whereas GOBACK returns control to calling program. So if we code GO BACK instead of Stop Run, it will go in infinite loop.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the mode in which you will OPEN a file for writing?</label>
+<div class="toggle-content">
+<p>To write into a file, the file has to be opened in either OUTPUT or EXTEND mode.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Where does the FILE-CONTROL paragraph appear?</label>
+<div class="toggle-content">
+<p>FILE-CONTROL paragraph appears in the Input-Ouput Section in the Environment Division which provides information of external data sets used in the program.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the length of PIC 9.999?</label>
+<div class="toggle-content">
+<p>Length of PIC 9.999 is 5 as '.' takes 1 byte. So total 1 byte for '.' and 4 bytes for 9.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which cobol verb is used for updating a file?</label>
+<div class="toggle-content">
+<p>Rewrite verb is used to update the records. File should be opened in I-O mode for rewrite operations. It can be used only after a successful Read operation. Rewrite verb overwrites the last record read.</p>
+</div>
+</section>
+<section class="toggle">
+<label>If 123 value is moved to a PP999 PIC clause, then what is edited value taken? </label>
+<div class="toggle-content">
+<p>.00123 edited value will be taken. P is assumed decimal scaling position which is used to specify the location of an assumed decimal point when the point is not within the number that appears in the data item. .PIC PP999 means that numeric data item is of 3 characters and there are 5 positions after the decimal point.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Where can we specify OCCURS clause?</label>
+<div class="toggle-content">
+<p>In array declaration, we can specify occurs clause on Elementary item as well as on Group item also.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How many bytes does a S9(7) SIGN TRAILING SEPARATE field occupy?</label>
+<div class="toggle-content">
+<p>9(7) will take 7 bytes and 1 byte for SIGN TRAILING SEPARATE, so total 8 bytes it will take.</p>
+</div>
+</section>
+<h2>What is Next?</h2>
+<p>Further, you can go through the examples which you have practised with the subject and make sure you are able to speak confidently on them. If you are fresher, then the interviewer does not expect you to answer very complex questions, rather you have to make your basics very strong.</p>
+<p>It really doesn't matter much if you could not answer a few questions, but it matters how you answered, the ones that you did. So just be confident during your interview. We at tutorialspoint wish you all the very best.</p>
+<hr />
+<div class="pre-btn">
+<a href="/cobol/cobol_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/cobol/cobol_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">cobol_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/cobol/cobol_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/cobol/cobol_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/cobol/cobol_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/cobol/cobol_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/cobol/cobol_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/cobol/cobol_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

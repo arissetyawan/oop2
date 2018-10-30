@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>Angularjs Programming Examples</title>
+<meta name="Description" content="Angularjs Programming Examples - Learn Angularjs programming language with online examples. Practice Programming Code Examples online. Compile and Execute Angularjs Code Online. Live demo examples for Angularjs Programming Code."/>
+<meta name="Keywords" content="Angularjs, Programming, Examples, Coding, Live, Demo, Pratice, Compile, Execute" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="Angularjs Programming Examples" />
+<meta name="twitter:description" property="og:description" content="Angularjs Programming Examples - Learn Angularjs programming language with online examples. Practice Programming Code Examples online. Compile and Execute Angularjs Code Online. Live demo examples for Angularjs Programming Code." />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<style>
+.embed-box{z-index:999; background:#fff; margin:-8px 0px 0px 0px; padding:10px; font-size:13px; line-height:20px; right:4px; width:185px;float:right;}
+.qa_widget h2{margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; border-bottom:0px solid #ccc!important;}
+.rightgooglead{top:5px;}
+.qa_widget .qa_links{margin:5px 0px 5px 0px; float:left;}
+.left_navv li{background:url(https://www.tutorialspoint.com/images/list-icon.png) no-repeat 2% 60%; padding:7px 10px 7px 26px;}
+pre.prettyprint {max-height:350px;}
+#right_menu_extra{width:300px;}
+h2 a{ color:#333; }
+</style>
+<div class="mui-container container-top">   
+    <div class="">    
+        <!-- center column content -->
+         <div class="">    
+            <div class="mui-col-md-8">
+                <div id="divIndexQuestions">  
+                    <div class="question_section">    
+                     <div class="qa_widget">                                
+                     <!-- /60931893/Native_QnA -->
+                     <div id='div-gpt-ad-1532956972128-0'>
+                     <script>
+                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+                     </script>
+                     </div>
+                     </div>                    
+                  </div>
+                                            <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/PGGMOf/angular-material-sidenav'>Angular Material SideNav</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('sideNavController', sideNavController);
+
+         function sideNavController ($scope, $mdSidenav) {
+            $scope.openLeftMenu = function() {
+               $mdSidenav('left').toggle();
+            };
+             
+            $scope.openRightMenu = function() {
+               $mdSidenav('right').toggle();
+            };
+         }	  
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;sideNavContainer&quot; ng-controller = &quot;sideNavController as ctrl&quot;
+         layout = &quot;row&quot; ng-cloak&gt;
+         &lt;md-sidenav md-component-id = &quot;left&quot; class = &quot;md-sidenav-left&quot;&gt;
+            Welcome to TutorialsPoint.Com&lt;/md-sidenav&gt;
+         
+         &lt;md-content&gt;           
+            &lt;md-button ng-click = &quot;openLeftMenu()&quot;&gt;Open Left Menu&lt;/md-button&gt;
+            &lt;md-button ng-click = &quot;openRightMenu()&quot;&gt;Open Right Menu&lt;/md-button&gt;
+         &lt;/md-content&gt;
+         
+         &lt;md-sidenav md-component-id = &quot;right&quot; class = &quot;md-sidenav-right&quot;&gt;
+            &lt;md-button href = &quot;http://google.com&quot;&gt;Google&lt;/md-button&gt;
+         &lt;/md-sidenav&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/PGGMOf" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/PGGMOf" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/QhQy3G/angular-material-grids'>Angular Material Grids</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('gridController', gridController);
+
+         function gridController ($scope) {
+            var COLORS = [
+               '#ffebee', '#ffcdd2', '#ef9a9a', '#e57373', '#ef5350', '#f44336',
+               '#e53935', '#d32f2f', '#c62828', '#b71c1c', '#ff8a80', '#ff5252',
+               '#ff1744', '#d50000', '#f8bbd0', '#f48fb1', '#f06292', '#ec407a',
+               '#e91e63', '#d81b60', '#c2185b', '#ad1457', '#880e4f', '#ff80ab',
+               '#ff4081', '#f50057', '#c51162', '#e1bee7', '#ce93d8', '#ba68c8',
+               '#ab47bc', '#9c27b0', '#8e24aa', '#7b1fa2', '#4a148c', '#ea80fc',
+               '#e040fb', '#d500f9', '#aa00ff', '#ede7f6', '#d1c4e9', '#b39ddb',
+               '#9575cd', '#7e57c2', '#673ab7', '#5e35b1', '#4527a0', '#311b92',
+               '#b388ff', '#7c4dff', '#651fff', '#6200ea', '#c5cae9', '#9fa8da',
+               '#7986cb', '#5c6bc0', '#3f51b5', '#3949ab', '#303f9f', '#283593',
+               '#1a237e', '#8c9eff', '#536dfe', '#3d5afe', '#304ffe', '#e3f2fd',
+               '#bbdefb', '#90caf9', '#64b5f6', '#42a5f5', '#2196f3', '#1e88e5',
+               '#1976d2', '#1565c0', '#0d47a1', '#82b1ff', '#448aff', '#2979ff',
+               '#2962ff', '#b3e5fc', '#81d4fa', '#4fc3f7', '#29b6f6', '#03a9f4',
+               '#039be5', '#0288d1', '#0277bd', '#01579b', '#80d8ff', '#40c4ff',
+               '#00b0ff', '#0091ea', '#e0f7fa', '#b2ebf2', '#80deea', '#4dd0e1',
+               '#26c6da', '#00bcd4', '#00acc1', '#0097a7', '#00838f', '#006064',
+               '#84ffff', '#18ffff', '#00e5ff', '#00b8d4', '#e0f2f1', '#b2dfdb',
+               '#80cbc4', '#4db6ac', '#26a69a', '#009688', '#00897b', '#00796b',
+               '#00695c', '#a7ffeb', '#64ffda', '#1de9b6', '#00bfa5', '#e8f5e9',
+               '#c8e6c9', '#a5d6a7', '#81c784', '#66bb6a', '#4caf50', '#43a047',
+               '#388e3c', '#2e7d32', '#1b5e20', '#b9f6ca', '#69f0ae', '#00e676',
+               '#00c853', '#f1f8e9', '#dcedc8', '#c5e1a5', '#aed581', '#9ccc65',
+               '#8bc34a', '#7cb342', '#689f38', '#558b2f', '#33691e', '#ccff90',
+               '#b2ff59', '#76ff03', '#64dd17', '#f9fbe7', '#f0f4c3', '#e6ee9c',
+               '#dce775', '#d4e157', '#cddc39', '#c0ca33', '#afb42b', '#9e9d24',
+               '#827717', '#f4ff81', '#eeff41', '#c6ff00', '#aeea00', '#fffde7',
+               '#fff9c4', '#fff59d', '#fff176', '#ffee58', '#ffeb3b', '#fdd835',
+               '#fbc02d', '#f9a825', '#f57f17', '#ffff8d', '#ffff00', '#ffea00',
+               '#ffd600', '#fff8e1', '#ffecb3', '#ffe082', '#ffd54f', '#ffca28',
+               '#ffc107', '#ffb300', '#ffa000', '#ff8f00', '#ff6f00', '#ffe57f',
+               '#ffd740', '#ffc400', '#ffab00', '#fff3e0', '#ffe0b2', '#ffcc80',
+               '#ffb74d', '#ffa726', '#ff9800', '#fb8c00', '#f57c00', '#ef6c00',
+               '#e65100', '#ffd180', '#ffab40', '#ff9100', '#ff6d00', '#fbe9e7',
+               '#ffccbc', '#ffab91', '#ff8a65', '#ff7043', '#ff5722', '#f4511e',
+               '#e64a19', '#d84315', '#bf360c', '#ff9e80', '#ff6e40', '#ff3d00',
+               '#dd2c00', '#d7ccc8', '#bcaaa4', '#795548', '#d7ccc8', '#bcaaa4',
+               '#8d6e63', '#eceff1', '#cfd8dc', '#b0bec5', '#90a4ae', '#78909c',
+               '#607d8b', '#546e7a', '#cfd8dc', '#b0bec5', '#78909c'
+            ];
+            
+            this.colorTiles = (function() {
+               var tiles = [];
+               for (var i = 0; i &lt; 46; i++) {
+                  tiles.push ({
+                     color: randomColor(),
+                     colspan: randomSpan(),
+                     rowspan: randomSpan()
+                  });
+               }
+               return tiles;
+            })();
+            
+            function randomColor() {
+               return COLORS[Math.floor(Math.random() * COLORS.length)];
+            }
+            
+            function randomSpan() {
+               var r = Math.random();
+               if (r &lt; 0.8) {
+                  return 1;
+               } else if (r &lt; 0.9) {
+                  return 2;
+               } else {
+                  return 3;
+               }
+            }      
+         }                 
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;gridContainer&quot; ng-controller = &quot;gridController as ctrl&quot; ng-cloak&gt;
+         &lt;md-content layout-padding&gt;
+            &lt;md-grid-list
+               md-cols-gt-md = &quot;12&quot; md-cols-sm = &quot;3&quot; md-cols-md = &quot;8&quot;
+               md-row-height-gt-md = &quot;1:1&quot; md-row-height = &quot;4:3&quot;
+               md-gutter-gt-md = &quot;16px&quot; md-gutter-gt-sm = &quot;8px&quot; md-gutter = &quot;4px&quot;&gt;
+               
+               &lt;md-grid-tile
+                  ng-repeat = &quot;tile in ctrl.colorTiles&quot;
+                  ng-style = &quot;{
+                     'background': tile.color
+                  }&quot;
+                  md-colspan-gt-sm = &quot;{{tile.colspan}}&quot;
+                  md-rowspan-gt-sm = &quot;{{tile.rowspan}}&quot;&gt;
+               &lt;/md-grid-tile&gt;
+               
+            &lt;/md-grid-list&gt;
+         &lt;/md-content&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/QhQy3G" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/QhQy3G" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/j4P0Dx/angular-material-icons'>Angular Material Icons</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      &lt;style&gt;
+         .iconDemo .glyph {
+            border-bottom: 1px dotted #ccc;
+            padding: 10px 0 20px;
+            margin-bottom: 20px; 
+         }
+         
+         .iconDemo .preview-glyphs {
+            display: flex;
+            flex-direction: row; 
+         }
+         
+         .iconDemo .step {
+            flex-grow: 1;
+            line-height: 0.5; 
+         }
+         
+         .iconDemo .material-icons.md-18 {
+            font-size: 18px; 
+         }
+         
+         .iconDemo .material-icons.md-24 {
+            font-size: 24px; 
+         }
+         
+         .iconDemo .material-icons.md-36 {
+            font-size: 36px; 
+         }
+         
+         .iconDemo .material-icons.md-48 {
+            font-size: 48px; 
+         }
+         
+         .iconDemo .material-icons.md-dark {
+            color: rgba(0, 0, 0, 0.54); 
+         }
+         
+         .iconDemo .material-icons.md-dark.md-inactive {
+            color: rgba(0, 0, 0, 0.26); 
+         }
+         
+         .iconDemo .material-icons.md-light {
+            color: white; 
+         }
+         
+         .iconDemo .material-icons.md-light.md-inactive {
+            color: rgba(255, 255, 255, 0.3); 
+         }
+      &lt;/style&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('iconController', iconController);
+
+         function iconController ($scope) {
+            var iconData = [
+               {name: 'accessibility'  , color: &quot;#777&quot; },
+               {name: 'question_answer', color: &quot;rgb(89, 226, 168)&quot; },
+               {name: 'backup'         , color: &quot;#A00&quot; },
+               {name: 'email'          , color: &quot;#00A&quot; }
+            ];
+            
+            $scope.fonts = [].concat(iconData);            
+            $scope.sizes = [
+               {size:&quot;md-18&quot;,padding:0},
+               {size:&quot;md-24&quot;,padding:2},
+               {size:&quot;md-36&quot;,padding:6},
+               {size:&quot;md-48&quot;,padding:10}
+            ];
+         }                 
+      &lt;/script&gt;     	  
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;iconContainer&quot; class = &quot;iconDemo&quot;
+         ng-controller = &quot;iconController as ctrl&quot; ng-cloak&gt;
+         &lt;div class = &quot;glyph&quot; ng-repeat = &quot;font in fonts&quot; layout = &quot;row&quot;&gt;
+            &lt;div ng-repeat = &quot;it in sizes&quot; flex layout-align = &quot;center center&quot;
+               style = &quot;text-align: center;&quot; layout = &quot;column&quot;&gt;
+            &lt;div flex&gt;&lt;/div&gt;
+               &lt;div class = &quot;preview-glyphs&quot;&gt;
+                  &lt;md-icon ng-style = &quot;{color: font.color}&quot;
+                     aria-label = &quot;{{ font.name }}&quot;
+                     class = &quot;material-icons step&quot;
+                     ng-class = &quot;it.size&quot;&gt;
+                     {{ font.name }}
+                  &lt;/md-icon&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/j4P0Dx" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/j4P0Dx" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/ztVlaD/angular-material-inputs'>Angular Material Inputs</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      &lt;style&gt;
+        
+      &lt;/style&gt;
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('inputController', inputController);
+
+         function inputController ($scope) {
+            $scope.project = {
+               comments: 'Comments',    
+            };
+         }                 
+      &lt;/script&gt;     	  
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;inputContainer&quot; class = &quot;inputDemo&quot;
+         ng-controller = &quot;inputController as ctrl&quot; ng-cloak&gt;
+         &lt;md-content layout-padding&gt;
+            &lt;form name = &quot;projectForm&quot;&gt;
+               
+               &lt;md-input-container class = &quot;md-block&quot;&gt;
+                  &lt;label&gt;User Name&lt;/label&gt;
+                  &lt;input required name = &quot;userName&quot; ng-model = &quot;project.userName&quot;&gt;
+                  &lt;div ng-messages = &quot;projectForm.userName.$error&quot;&gt;
+                     &lt;div ng-message = &quot;required&quot;&gt;This is required.&lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/md-input-container&gt;
+               
+               &lt;md-input-container class = &quot;md-block&quot;&gt;
+                  &lt;label&gt;Email&lt;/label&gt;
+                  &lt;input required type = &quot;email&quot; name = &quot;userEmail&quot;
+                     ng-model = &quot;project.userEmail&quot;
+                     minlength = &quot;10&quot; maxlength = &quot;100&quot; ng-pattern = &quot;/^.+@.+\..+$/&quot; /&gt;
+                  &lt;div ng-messages = &quot;projectForm.userEmail.$error&quot; role = &quot;alert&quot;&gt;
+                     &lt;div ng-message-exp = &quot;['required', 'minlength', 'maxlength',
+                        'pattern']&quot;&gt;
+                        Your email must be between 10 and 100 characters long and should
+                        be a valid email address.
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/md-input-container&gt;
+               
+               &lt;md-input-container class = &quot;md-block&quot;&gt;
+                  &lt;label&gt;Comments&lt;/label&gt;
+                  &lt;input md-maxlength = &quot;300&quot; required name = &quot;comments&quot;
+                     ng-model = &quot;project.comments&quot;&gt;
+                  &lt;div ng-messages = &quot;projectForm.comments.$error&quot;&gt;
+                     &lt;div ng-message = &quot;required&quot;&gt;This is required.&lt;/div&gt;
+                     &lt;div ng-message = &quot;md-maxlength&quot;&gt;The comments has to be less
+                        than 300 characters long.&lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/md-input-container&gt;
+               
+            &lt;/form&gt;
+         &lt;/md-content&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/ztVlaD" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/ztVlaD" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/P4Nr5I/angular-material-flex-directive'>Angular Material Flex Directive</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      
+      &lt;style&gt;
+         .box {         
+            color:white;
+            padding:10px;
+            text-align:center;
+            border-style: inset;
+         }
+         
+         .green {
+            background:green;
+         }
+         
+         .blue {
+            background:blue;
+         }
+      &lt;/style&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('layoutController', layoutController);
+
+         function layoutController ($scope) {            
+         }	  
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;layoutContainer&quot; ng-controller = &quot;layoutController as ctrl&quot;
+         layout = &quot;row&quot; style = &quot;height:100px;&quot; ng-cloak layout-wrap&gt;
+         &lt;div flex = &quot;30&quot; class = &quot;green box&quot;&gt;
+            [flex = &quot;30&quot;]
+         &lt;/div&gt;
+         
+         &lt;div flex = &quot;45&quot; class = &quot;blue box&quot;&gt;
+            [flex = &quot;45&quot;]
+         &lt;/div&gt;
+         
+         &lt;div flex = &quot;25&quot; class = &quot;green box&quot;&gt;
+            [flex = &quot;25&quot;]
+         &lt;/div&gt;
+         
+         &lt;div flex = &quot;33&quot; class = &quot;green box&quot;&gt;
+            [flex = &quot;33&quot;]
+         &lt;/div&gt;
+         
+         &lt;div flex = &quot;66&quot; class = &quot;blue box&quot;&gt;
+            [flex = &quot;66&quot;]
+         &lt;/div&gt;
+         
+         &lt;div flex = &quot;50&quot; class = &quot;blue box&quot;&gt;
+            [flex = &quot;50&quot;]
+         &lt;/div&gt;
+         
+         &lt;div flex class = &quot;green box&quot;&gt;
+            [flex]
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/P4Nr5I" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/P4Nr5I" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/yDIXwD/angular-material-layouts'>Angular Material Layouts</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      &lt;style&gt;
+         .box {         
+            color:white;
+            padding:10px;
+            text-align:center;
+            border-style: inset;
+         }
+         
+         .green {
+            background:green;
+         }
+         
+         .blue {
+            background:blue;
+         }
+      &lt;/style&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('layoutController', layoutController);
+
+         function layoutController ($scope) {            
+         }	  
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;layoutContainer&quot; ng-controller = &quot;layoutController as ctrl&quot;
+         style = &quot;height:100px;&quot; ng-cloak&gt;
+         &lt;div layout = &quot;row&quot; layout-xs = &quot;column&quot;&gt;
+            &lt;div flex class = &quot;green box&quot;&gt;Row 1: Item 1&lt;/div&gt;
+            &lt;div flex = &quot;20&quot; class = &quot;blue box&quot;&gt;Row 1: Item 2&lt;/div&gt;
+         &lt;/div&gt;
+         
+         &lt;div layout = &quot;column&quot; layout-xs = &quot;column&quot;&gt;
+            &lt;div flex = &quot;33&quot; class = &quot;green box&quot;&gt;Column 1: item 1&lt;/div&gt;
+            &lt;div flex = &quot;66&quot; class = &quot;blue box&quot;&gt;Column 1: item 2&lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/yDIXwD" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/yDIXwD" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/wJcURT/angular-material-contact-chips'>Angular Material Contact Chips</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('contactsChipController', contactsChipController);
+
+         function contactsChipController ($scope) {
+            var self = this;
+            self.querySearch = querySearch;
+            self.allContacts = loadContacts();
+            self.contacts = [self.allContacts[0]];
+            self.filterSelected = true;
+            
+            function querySearch (query) {
+               var results = query ?
+               self.allContacts.filter(createFilterFor(query)) : [];
+               return results;
+            }
+
+            function createFilterFor(query) {
+               var lowercaseQuery = angular.lowercase(query);
+               return function filterFn(contact) {
+                  return (contact._lowername.indexOf(lowercaseQuery) != -1);;
+               };
+            }
+            
+            function loadContacts() {
+               var contacts = [
+                  'Roberto Karlos',
+                  'Bob Crestor',
+                  'Nigel Rick',
+                  'Narayana Garner',
+                  'Anita Gros',
+                  'Megan Smith',
+                  'Tsvetko Metzger',
+                  'Hector Simek',
+                  'James Roody'
+               ];
+               
+               return contacts.map(function (c, index) {
+                  var cParts = c.split(' ');
+                  var contact = {
+                     name: c,
+                     email: cParts[0][0].toLowerCase() + '.' + cParts[1].toLowerCase()
+                        + '@example.com',
+                     image: 'http://lorempixel.com/50/50/people?' + index
+                  };
+                  contact._lowername = contact.name.toLowerCase();
+                  return contact;
+               });
+            }
+         }                 
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div ng-controller = &quot;contactsChipController as ctrl&quot; layout = &quot;column&quot;
+         ng-cloak&gt;
+         &lt;md-content class = &quot;md-padding autocomplete&quot; layout = &quot;column&quot;&gt;
+            &lt;md-contact-chips
+               ng-model = &quot;ctrl.contacts&quot;
+               md-contacts = &quot;ctrl.querySearch($query)&quot;
+               md-contact-name = &quot;name&quot;
+               md-contact-image = &quot;image&quot;
+               md-contact-email = &quot;email&quot;
+               md-require-match = &quot;true&quot;
+               md-highlight-flags = &quot;i&quot;
+               filter-selected = &quot;ctrl.filterSelected&quot;
+               placeholder = &quot;To&quot;&gt;
+            &lt;/md-contact-chips&gt;
+            
+            &lt;md-list class = &quot;fixedRows&quot;&gt;
+               &lt;md-subheader class = &quot;md-no-sticky&quot;&gt;Contacts&lt;/md-subheader&gt;
+               &lt;md-list-item class = &quot;md-2-line contact-item&quot;
+                  ng-repeat = &quot;(index, contact) in ctrl.allContacts&quot;
+                  ng-if = &quot;ctrl.contacts.indexOf(contact) &lt; 0&quot;&gt;
+                  &lt;img ng-src = &quot;{{contact.image}}&quot; class = &quot;md-avatar&quot;
+                     alt = &quot;{{contact.name}}&quot; /&gt;
+                  &lt;div class = &quot;md-list-item-text compact&quot;&gt;
+                     &lt;h3&gt;{{contact.name}}&lt;/h3&gt;
+                     &lt;p&gt;{{contact.email}}&lt;/p&gt;
+                  &lt;/div&gt;
+               &lt;/md-list-item&gt;
+               
+               &lt;md-list-item class = &quot;md-2-line contact-item selected&quot;
+                  ng-repeat = &quot;(index, contact) in ctrl.contacts&quot;&gt;
+                  &lt;img ng-src = &quot;{{contact.image}}&quot; class = &quot;md-avatar&quot;
+                     alt = &quot;{{contact.name}}&quot; /&gt;
+                  &lt;div class = &quot;md-list-item-text compact&quot;&gt;
+                     &lt;h3&gt;{{contact.name}}&lt;/h3&gt;
+                     &lt;p&gt;{{contact.email}}&lt;/p&gt;
+                  &lt;/div&gt;
+               &lt;/md-list-item&gt;
+               
+            &lt;/md-list&gt;
+         &lt;/md-content&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/wJcURT" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/wJcURT" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/lPi6Ks/angular-material-chips'>Angular Material Chips</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      
+      &lt;style&gt;
+         .closeButton {
+            position: relative;
+            height: 24px;
+            width: 24px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 3px;
+            transition: background 0.15s linear;
+            display: block; 
+         }
+      &lt;/style&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('chipController', chipController);
+
+         function chipController ($scope) {
+            var self = this;
+            self.readonly = false;
+            
+            // Lists of fruit names and Vegetable objects
+            self.fruitNames = ['Apple', 'Banana', 'Orange'];
+            self.roFruitNames = angular.copy(self.fruitNames);
+            self.tags = [];
+            
+            self.vegObjs = [
+               {
+                  'name' : 'Broccoli',
+                  'type' : 'Brassica'
+               },
+               {
+                  'name' : 'Cabbage',
+                  'type' : 'Brassica'
+               },
+               {
+                  'name' : 'Carrot',
+                  'type' : 'Umbelliferous'
+               }
+            ];
+            
+            self.newVeg = function(chip) {
+               return {
+                  name: chip,
+                  type: 'unknown'
+               };
+            };
+         }          
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div ng-controller = &quot;chipController as ctrl&quot; layout = &quot;column&quot; ng-cloak&gt;
+         &lt;md-chips ng-model = &quot;ctrl.fruitNames&quot; readonly = &quot;ctrl.readonly&quot;&gt;
+            &lt;/md-chips&gt;
+         
+         &lt;md-chips class = &quot;custom-chips&quot; ng-model = &quot;ctrl.vegObjs&quot;
+            readonly = &quot;ctrl.readonly&quot; md-transform-chip = &quot;ctrl.newVeg($chip)&quot;&gt;
+            &lt;md-chip-template&gt;
+               &lt;span&gt;
+                  &lt;strong&gt;[{{$index}}] {{$chip.name}}&lt;/strong&gt;
+                  &lt;em&gt;({{$chip.type}})&lt;/em&gt;
+               &lt;/span&gt;
+            &lt;/md-chip-template&gt;
+         
+            &lt;button md-chip-remove class = &quot;md-primary closeButton&quot;&gt;
+               &lt;md-icon md-svg-icon = &quot;md-close&quot;&gt;&lt;/md-icon&gt;
+            &lt;/button&gt;
+         &lt;/md-chips&gt;
+         
+         &lt;br/&gt;
+         &lt;md-checkbox ng-model = &quot;ctrl.readonly&quot;&gt;Readonly&lt;/md-checkbox&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/lPi6Ks" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/lPi6Ks" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/uMzD7y/angular-material-tooltips'>Angular Material Tooltips</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('tooltipController', tooltipController);
+           
+         function tooltipController ($scope) { 
+            $scope.demo = {
+               showTooltip : false,
+               tooltipDirection : ''
+            };
+         }	  
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;tooltipContainer&quot; ng-controller = &quot;tooltipController as ctrl&quot;
+         layout = &quot;column&quot; style = &quot;width:200px;margin-left: 100px; margin-right: 20px&quot;
+         ng-cloak&gt;
+         &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+         
+         &lt;md-button class = &quot;md-raised md-primary&quot;&gt;Hello
+            &lt;md-tooltip md-visible = &quot;demo.showTooltip&quot; 
+            md-direction = &quot;{{demo.tooltipDirection}}&quot;&gt;Hello World!&lt;/md-tooltip&gt;
+         &lt;/md-button&gt;
+         
+         &lt;p&gt;Tool Tip Direction &lt;/p&gt;
+         
+         &lt;md-radio-group ng-model = &quot;demo.tooltipDirection&quot; &gt;
+            &lt;md-radio-button value = &quot;left&quot;&gt;Left &lt;/md-radio-button&gt;
+            &lt;md-radio-button value = &quot;top&quot;&gt;Top&lt;/md-radio-button&gt;
+            &lt;md-radio-button value = &quot;bottom&quot;  class = &quot;md-primary&quot;&gt;
+               Bottom&lt;/md-radio-button&gt;
+            &lt;md-radio-button value = &quot;right&quot;&gt;Right&lt;/md-radio-button&gt;
+         &lt;/md-radio-group&gt;
+         
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/uMzD7y" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/uMzD7y" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/QF9PED/angular-material-toolbars'>Angular Material Toolbars</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/angularjs_programming_examples/'><span>angularjs</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;html lang = &quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;link rel = &quot;stylesheet&quot;
+         href = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css&quot;&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      
+      &lt;script language = &quot;javascript&quot;&gt;
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('toolbarController', toolbarController);
+           
+         function toolbarController ($scope) { 
+            var self = this;            
+            self.allContacts = loadContacts();
+            self.contacts = [self.allContacts[0]];
+                        
+            function loadContacts() {
+               var contacts = [
+                  'Roberto Karlos',
+                  'Bob Crestor',
+                  'Nigel Rick',
+                  'Narayana Garner'                  
+               ];
+               
+               return contacts.map(function (c, index) {
+                  var cParts = c.split(' ');
+                  
+                  var contact = {
+                     name: c,
+                     email: cParts[0][0].toLowerCase() + '.' + cParts[1].toLowerCase()
+                        + '@example.com',
+                     image: 'http://lorempixel.com/50/50/people?' + index
+                  };
+                  
+                  contact._lowername = contact.name.toLowerCase();
+                  return contact;
+               });
+            } 
+         }	  
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body ng-app = &quot;firstApplication&quot;&gt; 
+      &lt;div id = &quot;toolbarContainer&quot; ng-controller = &quot;toolbarController as ctrl&quot;
+         layout = &quot;column&quot; ng-cloak&gt;
+         &lt;md-content&gt;
+            &lt;md-toolbar md-scroll-shrink&gt;
+               &lt;div class = &quot;md-toolbar-tools&quot;&gt;
+                  &lt;md-button class = &quot;md-icon-button&quot; aria-label = &quot;Settings&quot;&gt;
+                     &lt;md-icon class = &quot;material-icons&quot;&gt;menu&lt;/md-icon&gt;
+                  &lt;/md-button&gt;
+                  
+                  &lt;h2&gt;
+                     &lt;span&gt;Contacts&lt;/span&gt;
+                  &lt;/h2&gt;
+                  
+                  &lt;span flex&gt;&lt;/span&gt;
+                  &lt;md-button class = &quot;md-icon-button&quot; aria-label = &quot;More&quot;&gt;
+                     &lt;md-icon class = &quot;material-icons&quot;&gt;more_vert&lt;/md-icon&gt;
+                  &lt;/md-button&gt;
+               &lt;/div&gt;
+            &lt;/md-toolbar&gt;
+            
+            &lt;md-list&gt;
+               &lt;md-subheader class = &quot;md-no-sticky&quot;&gt;Contacts&lt;/md-subheader&gt;
+               &lt;md-list-item class = &quot;md-2-line contact-item&quot;
+                  ng-repeat = &quot;(index, contact) in ctrl.allContacts&quot;
+                  ng-if = &quot;ctrl.contacts.indexOf(contact) &lt; 0&quot;&gt;
+                  &lt;img ng-src = &quot;{{contact.image}}&quot; class = &quot;md-avatar&quot;
+                     alt = &quot;{{contact.name}}&quot; /&gt;
+                  
+                  &lt;div class = &quot;md-list-item-text compact&quot;&gt;
+                     &lt;h3&gt;{{contact.name}}&lt;/h3&gt;
+                     &lt;p&gt;{{contact.email}}&lt;/p&gt;
+                  &lt;/div&gt;
+                  
+                  &lt;md-divider ng-if = &quot;!$last&quot;&gt;&lt;/md-divider&gt;
+               &lt;/md-list-item&gt;
+            &lt;/md-list&gt;
+            
+            &lt;md-list&gt;
+               &lt;md-subheader class = &quot;md-no-sticky&quot;&gt;Contacts (With Insets)&lt;/md-subheader&gt;
+               &lt;md-list-item class = &quot;md-2-line contact-item&quot;
+                  ng-repeat = &quot;(index, contact) in ctrl.allContacts&quot;
+                  ng-if = &quot;ctrl.contacts.indexOf(contact) &lt; 0&quot;&gt;
+                  &lt;img ng-src = &quot;{{contact.image}}&quot; class = &quot;md-avatar&quot;
+                     alt = &quot;{{contact.name}}&quot; /&gt;
+                  &lt;div class = &quot;md-list-item-text compact&quot;&gt;
+                     &lt;h3&gt;{{contact.name}}&lt;/h3&gt;
+                     &lt;p&gt;{{contact.email}}&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;md-divider md-inset ng-if = &quot;!$last&quot;&gt;&lt;/md-divider&gt;
+               &lt;/md-list-item&gt;
+            &lt;/md-list&gt;
+            
+         &lt;/md-content&gt;	 
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/QF9PED" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/QF9PED" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                          
+                    <div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+                        <div class="pages">
+                            <a href="/angularjs_programming_examples/1"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 5" href="/angularjs_programming_examples/1">1</a> <a title="Go to page 2 of 5" class="current number" href="/angularjs_programming_examples/2">2</a> <a class="number" title="Go to page 3 of 5" href="/angularjs_programming_examples/3">3</a> <a class="number" title="Go to page 4 of 5" href="/angularjs_programming_examples/4">4</a> <a class="number" title="Go to page 5 of 5" href="/angularjs_programming_examples/5">5</a> <a  href="/angularjs_programming_examples/3" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bottomgooglead qa_widget align-center">
+                        <div class="bottomadtag">Advertisements</div>
+                        <script type="text/javascript"><!--
+                           var width = 580;
+                           var height = 400;
+                           var format = "580x400_as";
+                           if( window.innerWidth < 468 ){
+                               width = 300;
+                               height = 250;
+                               format = "300x250_as";
+                            }
+                            google_ad_client = "pub-7133395778201029";
+                            google_ad_width = width;
+                            google_ad_height = height;
+                            google_ad_format = format;
+                            google_ad_type = "image";
+                            google_ad_channel ="";
+                                 //-->
+                  </script>
+                  <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+               </div>
+                        </div> 
+               <div class="loader_bg" id="divLoader">
+                   <img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+               </div>
+            </div>
+         </div> 
+
+<!-- end of center column content -->   
+<div class="mui-col-md-4">    
+<div id="right_menu_extra">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/angularjs_programming_examples/','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/angularjs_programming_examples/','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/angularjs_programming_examples/&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/angularjs_programming_examples/&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/angularjs_programming_examples/&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/angularjs_programming_examples/&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="rightgooglead">
+      <script type="text/javascript"><!--
+         google_ad_client = "pub-7133395778201029";
+         google_ad_width = 300;
+         google_ad_height = 250;
+         google_ad_format = "300x250_as";
+         google_ad_type = "image";
+         google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+   </div>
+   <div class="rightgooglead extra">
+      <script type="text/javascript"><!--
+         google_ad_client = "ca-pub-2537027957187252";
+         google_ad_width = 300;
+         google_ad_height = 600;
+         google_ad_format = "300x600_as";
+         google_ad_type = "image";
+         google_ad_channel ="";
+         //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+   </div>
+   <div class="rightgooglead extra">
+      <script type="text/javascript"><!--
+         google_ad_client = "ca-pub-2537027957187252";
+         /* Right Side Ad */
+         google_ad_slot = "right_side_ad";
+         google_ad_width = 300;
+         google_ad_height = 250;
+         //-->
+      </script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+   </div>   
+<div id="divRightMenu">
+<div class="left_nav_header">
+<i class="fa-cubes"></i> Programming Examples            
+</div> 
+<ul class="left_navv">  
+<li><a href="/angularjs_programming_examples/"><i class="fa-check-square-o"></i>Angularjs Programming Examples</a></li>
+<li><a href="/asm_programming_examples/"><i class="fa-check-square-o"></i>ASM Programming Examples</a></li>
+<li><a href="/bootstrap_programming_examples/"><i class="fa-check-square-o"></i>Bootstrap Programming Examples</a></li>
+<li><a href="/c_programming_examples/"><i class="fa-check-square-o"></i>C Programming Examples</a></li>
+<li><a href="/cpp_programming_examples/"><i class="fa-check-square-o"></i>C++ Programming Examples</a></li>
+<li><a href="/clojure_programming_examples/"><i class="fa-check-square-o"></i>Clojure Programming Examples</a></li>
+<li><a href="/cobol_programming_examples/"><i class="fa-check-square-o"></i>Cobol Programming Examples</a></li>
+<li><a href="/csharp_programming_examples/"><i class="fa-check-square-o"></i>CSharp Programming Examples</a></li>
+<li><a href="/css_programming_examples/"><i class="fa-check-square-o"></i>CSS Programming Examples</a></li>
+<li><a href="/d_programming_examples/"><i class="fa-check-square-o"></i>D Programming Examples</a></li>
+<li><a href="/d3js_programming_examples/"><i class="fa-check-square-o"></i>D3JS Programming Examples</a></li>
+<li><a href="/dart_programming_examples/"><i class="fa-check-square-o"></i>Dart Programming Examples</a></li>
+<li><a href="/elixir_programming_examples/"><i class="fa-check-square-o"></i>Elixir Programming Examples</a></li>
+<li><a href="/erlang_programming_examples/"><i class="fa-check-square-o"></i>Erlang Programming Examples</a></li>
+<li><a href="/fortran_programming_examples/"><i class="fa-check-square-o"></i>Fortran Programming Examples</a></li>
+<li><a href="/fsharp_programming_examples/"><i class="fa-check-square-o"></i>FSharp Programming Examples</a></li>
+<li><a href="/golang_programming_examples/"><i class="fa-check-square-o"></i>Golang Programming Examples</a></li>
+<li><a href="/groovy_programming_examples/"><i class="fa-check-square-o"></i>Groovy Programming Examples</a></li>
+<li><a href="/haskell_programming_examples/"><i class="fa-check-square-o"></i>Haskell Programming Examples</a></li>
+<li><a href="/html_programming_examples/"><i class="fa-check-square-o"></i>HTML Programming Examples</a></li>
+<li><a href="/java_programming_examples/"><i class="fa-check-square-o"></i>Java Programming Examples</a></li>
+<li><a href="/java8_programming_examples/"><i class="fa-check-square-o"></i>Java8 Programming Examples</a></li>
+<li><a href="/javascript_programming_examples/"><i class="fa-check-square-o"></i>Javascript Programming Examples</a></li>
+<li><a href="/jquery_programming_examples/"><i class="fa-check-square-o"></i>jQuery Programming Examples</a></li>
+<li><a href="/jqueryui_programming_examples/"><i class="fa-check-square-o"></i>jQueryUI Programming Examples</a></li>
+<li><a href="/jython_programming_examples/"><i class="fa-check-square-o"></i>Jython Programming Examples</a></li>
+<li><a href="/kotlin_programming_examples/"><i class="fa-check-square-o"></i>Kotlin Programming Examples</a></li>
+<li><a href="/lisp_programming_examples/"><i class="fa-check-square-o"></i>LISP Programming Examples</a></li>
+<li><a href="/lolcode_programming_examples/"><i class="fa-check-square-o"></i>LOLCODE Programming Examples</a></li>
+<li><a href="/lua_programming_examples/"><i class="fa-check-square-o"></i>LUA Programming Examples</a></li>
+<li><a href="/mathml_programming_examples/"><i class="fa-check-square-o"></i>MathML Programming Examples</a></li>
+<li><a href="/node_programming_examples/"><i class="fa-check-square-o"></i>Node Programming Examples</a></li>
+<li><a href="/objective_c_programming_examples/"><i class="fa-check-square-o"></i>Objective C Programming Examples</a></li>
+<li><a href="/octave_programming_examples/"><i class="fa-check-square-o"></i>Octave Programming Examples</a></li>
+<li><a href="/pascal_programming_examples/"><i class="fa-check-square-o"></i>Pascal Programming Examples</a></li>
+<li><a href="/perl_programming_examples/"><i class="fa-check-square-o"></i>Perl Programming Examples</a></li>
+<li><a href="/php_programming_examples/"><i class="fa-check-square-o"></i>PHP Programming Examples</a></li>
+<li><a href="/phpweb_programming_examples/"><i class="fa-check-square-o"></i>PHPWeb Programming Examples</a></li>
+<li><a href="/python_programming_examples/"><i class="fa-check-square-o"></i>Python Programming Examples</a></li>
+<li><a href="/python3_programming_examples/"><i class="fa-check-square-o"></i>Python3 Programming Examples</a></li>
+<li><a href="/rexx_programming_examples/"><i class="fa-check-square-o"></i>Rexx Programming Examples</a></li>
+<li><a href="/rscript_programming_examples/"><i class="fa-check-square-o"></i>RScript Programming Examples</a></li>
+<li><a href="/ruby_programming_examples/"><i class="fa-check-square-o"></i>Ruby Programming Examples</a></li>
+<li><a href="/scala_programming_examples/"><i class="fa-check-square-o"></i>Scala Programming Examples</a></li>
+<li><a href="/swift_programming_examples/"><i class="fa-check-square-o"></i>Swift Programming Examples</a></li>
+<li><a href="/tcl_programming_examples/"><i class="fa-check-square-o"></i>TCL Programming Examples</a></li>
+<li><a href="/vb.net_programming_examples/"><i class="fa-check-square-o"></i>VB.net Programming Examples</a></li>
+</ul> 
+</div>
+      
+</div>
+</div>
+                
+                <!-- end of right column content -->   
+            </div>
+        </div>
+    </div>
+    <!-- End of Body Content -->
+	<script>
+	$(document).ready(function(){
+		$('.btnEmbed').click(function(e){
+			e.stopPropagation();
+			e.preventDefault();
+			$('.divEmbed').hide();
+			$(this).next().show();
+		});
+		$('.divEmbed').click(function(e){
+			e.stopPropagation();
+		});
+		$(document).click(function(e){
+			$('.divEmbed').hide();
+		});
+	});
+	</script>
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Publishing Android Application</title>
+<meta name="description" content="Publishing Android Application - Learn Android Programming and how to develop android mobile phone and ipad applications starting from Environment setup, application components, activity lifecycle, service lifecycle, application architecture, publishing application, debugging applications, handling events, layouts, menus, user interface controls, styles and themes, handling rotation, fonts management, send email, data storage, managing media, send sms, phone calls." />
+<meta name="keywords" content="Android, programming, tutorial, beginners, develop, mobile phone, Environment Setup, Application Components, Activity Lifecycle, Service Lifecycle, Application Architecture, Publishing Application, Debugging Applications, Handling Events, Layouts, User Interface Controls, Styles and Themes, Handling Rotation, data storage, managing media, Send Email, Send SMS, Phone Calls." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #a5c63b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #a5c63b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #a5c63b !important;}
+.submenu-item{ border-bottom: 2px solid #a5c63b !important; border-top: 2px solid #a5c63b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#a5c63b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/android/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/android/images/android-mini-logo.jpg" alt="Android Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/android_online_training/index.asp" target="_blank"><img src="/android/images/android-video-tutorials.jpg" alt="Android Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Basics</li>
+<li><a target="_top" href="/android/index.htm">Android - Home</a></li>
+<li><a target="_top" href="/android/android_overview.htm">Android - Overview</a></li>
+<li><a target="_top" href="/android/android_environment_setup.htm">Android - Environment Setup</a></li>
+<li><a target="_top" href="/android/android_architecture.htm">Android - Architecture</a></li>
+<li><a target="_top" href="/android/android_application_components.htm">Android - Application Components</a></li>
+<li><a target="_top" href="/android/android_hello_world_example.htm">Android - Hello World Example</a></li>
+<li><a target="_top" href="/android/android_resources.htm">Android - Resources</a></li>
+<li><a target="_top" href="/android/android_acitivities.htm">Android - Activities</a></li>
+<li><a target="_top" href="/android/android_services.htm">Android - Services</a></li>
+<li><a target="_top" href="/android/android_broadcast_receivers.htm">Android - Broadcast Receivers</a></li>
+<li><a target="_top" href="/android/android_content_providers.htm">Android - Content Providers</a></li>
+<li><a target="_top" href="/android/android_fragments.htm">Android - Fragments</a></li>
+<li><a target="_top" href="/android/android_intents_filters.htm">Android - Intents/Filters</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android - User Interface</li>
+<li><a target="_top" href="/android/android_user_interface_layouts.htm">Android - UI Layouts</a></li>
+<li><a target="_top" href="/android/android_user_interface_controls.htm">Android - UI Controls</a></li>
+<li><a target="_top" href="/android/android_event_handling.htm">Android - Event Handling</a></li>
+<li><a target="_top" href="/android/android_styles_and_themes.htm">Android - Styles and Themes</a></li>
+<li><a target="_top" href="/android/android_custom_components.htm">Android - Custom Components</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Advanced Concepts</li>
+<li><a target="_top" href="/android/android_drag_and_drop.htm">Android - Drag and Drop</a></li>
+<li><a target="_top" href="/android/android_notifications.htm">Android - Notifications</a></li>
+<li><a target="_top" href="/android/android_location_based_services.htm">Location Based Services</a></li>
+<li><a target="_top" href="/android/android_sending_email.htm">Android - Sending Email</a></li>
+<li><a target="_top" href="/android/android_sending_sms.htm">Android - Sending SMS</a></li>
+<li><a target="_top" href="/android/android_phone_calls.htm">Android - Phone Calls</a></li>
+<li><a target="_top" href="/android/android_publishing_application.htm">Publishing Android Application</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Useful Examples</li>
+<li><a target="_top" href="/android/android_alert_dialoges.htm">Android - Alert Dialoges</a>
+<li><a target="_top" href="/android/android_animations.htm">Android - Animations</a>
+<li><a target="_top" href="/android/android_audio_capture.htm">Android - Audio Capture</a>
+<li><a target="_top" href="/android/android_audiomanager.htm">Android - AudioManager</a>
+<li><a target="_top" href="/android/android_auto_complete.htm">Android - Auto Complete</a>
+<li><a target="_top" href="/android/android_best_practices.htm">Android - Best Practices</a>
+<li><a target="_top" href="/android/android_bluetooth.htm">Android - Bluetooth</a>
+<li><a target="_top" href="/android/android_camera.htm">Android - Camera</a>
+<li><a target="_top" href="/android/android_clipboard.htm">Android - Clipboard</a>
+<li><a target="_top" href="/android/android_custom_fonts.htm">Android - Custom Fonts</a>
+<li><a target="_top" href="/android/android_data_backup.htm">Android - Data Backup</a>
+<li><a target="_top" href="/android/android_developer_tools.htm">Android - Developer Tools</a>
+<li><a target="_top" href="/android/android_emulator.htm">Android - Emulator</a>
+<li><a target="_top" href="/android/android_facebook_integration.htm">Android - Facebook Integration</a>
+<li><a target="_top" href="/android/android_gestures.htm">Android - Gestures</a>
+<li><a target="_top" href="/android/android_google_maps.htm">Android - Google Maps</a>
+<li><a target="_top" href="/android/android_image_effects.htm">Android - Image Effects</a>
+<li><a target="_top" href="/android/android_imageswitcher.htm">Android - ImageSwitcher</a>
+<li><a target="_top" href="/android/android_internal_storage.htm">Android - Internal Storage</a>
+<li><a target="_top" href="/android/android_jetplayer.htm">Android - JetPlayer</a>
+<li><a target="_top" href="/android/android_json_parser.htm">Android - JSON Parser</a>
+<li><a target="_top" href="/android/android_linkedin_integration.htm">Android - Linkedin Integration</a>
+<li><a target="_top" href="/android/android_loading_spinner.htm">Android - Loading Spinner</a>
+<li><a target="_top" href="/android/android_localization.htm">Android - Localization</a>
+<li><a target="_top" href="/android/android_login_screen.htm">Android - Login Screen</a>
+<li><a target="_top" href="/android/android_mediaplayer.htm">Android - MediaPlayer</a>
+<li><a target="_top" href="/android/android_multitouch.htm">Android - Multitouch</a>
+<li><a target="_top" href="/android/android_navigation.htm">Android - Navigation</a>
+<li><a target="_top" href="/android/android_network_connection.htm">Android - Network Connection</a>
+<li><a target="_top" href="/android/android_nfc_guide.htm">Android - NFC Guide</a>
+<li><a target="_top" href="/android/android_php_mysql.htm">Android - PHP/MySQL</a>
+<li><a target="_top" href="/android/android_progress_circle.htm">Android - Progress Circle</a>
+<li><a target="_top" href="/android/android_progressbar.htm">Android - ProgressBar</a>
+<li><a target="_top" href="/android/android_push_notification.htm">Android - Push Notification</a>
+<li><a target="_top" href="/android/android_renderscript.htm">Android - RenderScript</a>
+<li><a target="_top" href="/android/android_rss_reader.htm">Android - RSS Reader</a>
+<li><a target="_top" href="/android/android_screen_cast.htm">Android - Screen Cast</a>
+<li><a target="_top" href="/android/android_sdk_manager.htm">Android - SDK Manager</a>
+<li><a target="_top" href="/android/android_sensors.htm">Android - Sensors</a>
+<li><a target="_top" href="/android/android_session_management.htm">Android - Session Management</a>
+<li><a target="_top" href="/android/android_shared_preferences.htm">Android - Shared Preferences</a>
+<li><a target="_top" href="/android/android_sip_protocol.htm">Android - SIP Protocol</a>
+<li><a target="_top" href="/android/android_spelling_checker.htm">Android - Spelling Checker</a>
+<li><a target="_top" href="/android/android_sqlite_database.htm">Android - SQLite Database</a>
+<li><a target="_top" href="/android/android_support_library.htm">Android - Support Library</a>
+<li><a target="_top" href="/android/android_testing.htm">Android - Testing</a>
+<li><a target="_top" href="/android/android_text_to_speech.htm">Android - Text to Speech</a>
+<li><a target="_top" href="/android/android_textureview.htm">Android - TextureView</a>
+<li><a target="_top" href="/android/android_twitter_integration.htm">Android - Twitter Integration</a>
+<li><a target="_top" href="/android/android_ui_design.htm">Android - UI Design</a>
+<li><a target="_top" href="/android/android_ui_patterns.htm">Android - UI Patterns</a>
+<li><a target="_top" href="/android/android_ui_testing.htm">Android - UI Testing</a>
+<li><a target="_top" href="/android/android_webview_layout.htm">Android - WebView Layout</a>
+<li><a target="_top" href="/android/android_wi_fi.htm">Android - Wi-Fi</a>
+<li><a target="_top" href="/android/android_widgets.htm">Android - Widgets</a>
+<li><a target="_top" href="/android/android_xml_parsers.htm">Android - XML Parsers</a>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Android Useful Resources</li>
+<li><a target="_top" href="/android/android_questions_answers.htm">Android - Questions and Answers</a></li>
+<!--<li><a target="_top" href="/android/android_quick_guide.htm">Android - Quick Guide</a></li>-->
+<li><a target="_top" href="/android/android_useful_resources.htm">Android - Useful Resources</a></li>
+<li><a target="_top" href="/android/android_discussion.htm">Android - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Publishing Android Application</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/android/android_phone_calls.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/android/android_alert_dialoges.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Android application publishing is a process that makes your Android applications available to users. Infect, publishing is the last phase of the Android application development process.</p>
+<img src="/android/images/publish.jpg" alt="Publish"/>
+<h4 align="center">Android development life cycle</h4>
+<p>Once you developed and fully tested your Android Application, you can start selling or distributing free using Google Play (A famous Android marketplace). You can also release your applications by sending them directly to users or by letting users download them from your own website.</p>
+<p>You can check a detailed publishing process at Android official website, but  this tutorial will take you through simple steps to launch your application on Google Play. Here is a simplified check list which will help you in launching your Android application &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th class="fivepct">Step</th>
+<th>Activity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<b>Regression Testing</b> Before you publish your application, you need to make sure that its meeting the basic quality expectations for all Android apps, on all of the devices that you are targeting. So perform all the required testing on different devices including phone and tablets.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><b>Application Rating</b> When you will publish your application at Google Play, you will have to specify a content rating for your app, which informs Google Play users of its maturity level. Currently available ratings are (a) Everyone (b) Low maturity (c) Medium maturity (d) High maturity.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><b>Targeted Regions</b> Google Play lets you control what countries and territories where your application will be sold. Accordingly you must take care of setting up time zone, localization or any other specific requirement as per the targeted region.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+<b>Application Size</b> Currently, the maximum size for an APK published on Google Play is 50 MB. If your app exceeds that size, or if you want to offer a secondary download, you can use APK Expansion Files, which Google Play will host for free on its server infrastructure and automatically handle the download to devices.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><b>SDK and Screen Compatibility</b> It is important to make sure that your app is designed to run properly on the Android platform versions and device screen sizes that you want to target.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><b>Application Pricing</b> Deciding whether you app will be free or paid is important because, on Google Play, free app's must remain free. If you want to sell your application then you will have to specify its price in different currencies.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><b>Promotional Content</b> It is a good marketing practice to supply a variety of high-quality graphic assets to showcase your app or brand. After you publish, these appear on your product details page, in store listings and search results, and elsewhere.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><b>Build and Upload release-ready APK</b> The release-ready APK is what you you will upload to the Developer Console and distribute to users. You can check complete detail on how to create a release-ready version of your app: <a href="https://developer.android.com/tools/publishing/preparing.html" target="_blank" rel="nofollow">Preparing for Release</a>. </td></tr>
+<tr>
+<td>9</td>
+<td>
+<b>Finalize Application Detail</b> Google Play gives you a variety of ways to promote your app and engage with users on your product details page, from colourful graphics, screen shots, and videos to localized descriptions, release details, and links to your other apps. So you can decorate your application page and provide as much as clear crisp detail you can provide.</td>
+</tr>
+</table>
+<h2>Export Android Application Process</h2>
+<img src="/android/images/android_application_process.jpg" alt="Android Application Process"/>
+<h4 align="center">Apk development process</h4>
+<p>Before exporting the apps, you must some of tools</p>
+<ul class="list">
+<li><p><b>Dx tools</b>(Dalvik executable tools ): It going to convert <b>.class file</b> to <b>.dex file</b>. it has useful for memory optimization and reduce the boot-up speed time</p></li> 
+<li><p><b>AAPT</b>(Android assistance packaging tool):it has useful to convert <b>.Dex file </b>to<b>.Apk</b></p></li>
+<li><p><b>APK</b>(Android packaging kit): The final stage of deployment process is called as .apk.</p></li>
+</ul>
+<p>You will need to export your application as an APK (Android Package) file before you upload it Google Play marketplace.</p>
+<p>To export an application, just open that application project in Android studio and select <b>Build &rarr; Generate Signed APK</b> from your Android studio and follow the simple steps to export your application &minus;</p>
+<img src="/android/images/generate_signed_apk.jpg" alt="Generate Signed APK" />
+<p>Next select, <b>Generate Signed APK</b> option as shown in the above screen shot and then click it so that you get following screen where you will choose <b>Create new keystore</b> to store your application.</p>
+<img src="/android/images/generate_signed_apk1.jpg" alt="Generate Signed APK" />
+<p>Enter your key store path,key store password,key alias and key password to protect your application and click on <b>Next</b> button once again. It will display following screen to let you create an application &minus;</p>
+<img src="/android/images/generate_signed_apk2.jpg" alt="Generate Signed APK" />
+<p>Once you filled up all the information,like app destination,build type and flavours click <b>finish</b> button While creating an application it will show as below</p>
+<img src="/android/images/creating_application.jpg" alt="Creating Application" />
+<p>Finally, it will generate your Android Application as APK formate File which will be uploaded at Google Play marketplace.</p>
+<h2>Google Play Registration</h2>
+<p>The most important step  is to register with Google Play using <a href="https://play.google.com/apps/publish/" target="_blank" rel="nofollow">Google Play Marketplace</a>. You can use your existing google ID if you have any otherwise you can create a new Google ID and then register with the marketplace. You will have following screen to accept terms and condition.</p>
+<img src="/android/images/android_marketplace_tnc.jpg" alt="Android Market Place Terms and Conditions" />
+<p>You can use <b>Continue to payment</b> button to proceed to make a payment of $25 as a registration fee and finally to complete your account detail.</p>
+<p>Once you are a registered user at Google Play, you can upload <b>release-ready APK</b> for your application and finally you will complete application detail using application detail page as mentioned in step 9 of the above mentioned checklist.</p>
+<h2>Signing Your App Manually</h2>
+<p>You do not need Android Studio to sign your app. You can sign your app from the command line using standard tools from the Android SDK and the JDK. To sign an app in release mode from the command line &minus;</p>
+<ul class="list">
+<li>Generate a private key using keytool</li>
+</ul>
+<pre class="prettyprint notranslate">
+$ keytool -genkey -v -keystore my-release-key.keystore
+-alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+</pre>
+<ul class="list">
+<li><p>Compile your app in release mode to obtain an unsigned APK</p></li>
+<li><p>Sign your app with your private key using <a href="https://docs.oracle.com/javase/6/docs/technotes/tools/windows/jarsigner.html">jarsigner</a></p></li>
+</ul>
+<pre class="prettyprint notranslate">
+$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1
+-keystore my-release-key.keystore my_application.apk alias_name
+</pre>
+<ul class="list">
+<li>Verify that your APK is signed. For example &minus;</li>
+</ul>
+<pre class="prettyprint notranslate">
+$ jarsigner -verify -verbose -certs my_application.apk
+</pre>
+<ul class="list">
+<li><p>Align the final APK package using <a href="https://developer.android.com/tools/help/zipalign.html">zipalign.</a></p></li>
+</ul>
+<pre class="prettyprint notranslate">
+$ zipalign -v 4 your_project_name-unaligned.apk your_project_name.apk
+</pre>
+<h2>Some of App markets</h2>
+<ul id="books">
+<li><a href="https://play.google.com/store"><img src="http://www.technologytell.com/gadgets/files/2013/04/Google-Play.jpg" width="170" height="200" border="0">
+</a><h4 align="center">Google play</h4></li>
+<li><a href="http://www.phoload.com/"><img src="http://androidmarkets.com/wp-content/uploads/2015/02/phoload-logo.png" width="170" height="200" border="0"/></a><h4 align="center">phoload</h4></li>
+<li><a href="https://m.aptoide.com/installer"><img src="http://androidmarkets.com/wp-content/uploads/2012/02/logotipo-e1424956156930.png" width="170" height="200" border="0"/>
+</a><h4 align="center">APTOiDE</h4></li>
+<li><a href="https://www.amazon.com/mobile-apps/b?node=2350149011"><img src="http://g-ec2.images-amazon.com/images/G/31/img14/anywhere/amazon-logo-500500._V327001990_.jpg" width="170" height="200" border="0"/>
+</a><h4 align="center">Amazon AppStore</h4></li>
+<li><a href="https://www.1mobile.com/"><img src="https://lh3.googleusercontent.com/-oNuVxoLNDPU/AAAAAAAAAAI/AAAAAAAAD5s/1CjuWGBFbD0/photo.jpg" width="170" height="200" border="0"/></a><h4 align="center">1mobile</h4></li>
+<li><a href="http://www.insydemarket.com/"><img src="http://ai-i1.infcdn.net/icons_siandroid/jpg/300/2207/2207586.jpg" width="170" height="200" border="0"/>
+</a><h4 align="center">Insyde Market</h4></li>
+<li><a href="https://store.yandex.com/"><img src="http://media2.giga.de/2014/02/20131113-0743341.jpg" width="170" height="200" border="0"/>
+</a><h4 align="center">Yandex store</h4></li>
+<li><a href="https://f-droid.org/"><img src="http://hqtips.com/wp-content/uploads/2013/08/F-Droid.gif" width="170" height="200" border="0"></a><h4 align="center"/>F-Droid</h4></li>
+<li><a href="https://www.samsung.com/in/apps/mobile/galaxyapps/?redirectionId=http://apps.samsung.com/mercury/main/getMain.as"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRO2ffTrcu_cLabZu4aeDLSUGgtdrtQ15jEoqyQGk_v5B_S9omN" width="170" height="180" border="0"/>
+</a><h4 align="center">Samsung Galaxy AppStore</h4></li>
+</ul>
+<hr />
+<div class="pre-btn">
+<a href="/android/android_phone_calls.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/android/android_alert_dialoges.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/android/android_publishing_application.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/android/android_publishing_application.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/android/android_publishing_application.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/android/android_publishing_application.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/android/android_publishing_application.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/android/android_publishing_application.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

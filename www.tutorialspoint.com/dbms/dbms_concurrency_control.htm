@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>DBMS Concurrency Control</title>
+<meta name="description" content="DBMS Concurrency Control - Learn DBMS in simple and easy steps starting from its overview, Architecture, data models, data schemas, data independence, ED Diagram, Generalization, Aggregation, Codd's Rules, Relational Data Model, Relational Algebra, Database Design, Normalization, Database Joins, Database Storage, Database File System, Indexing, Hashing, Transaction, Concurrency Control, Deadlock, Backup and Recovery." />
+<meta name="keywords" content="DBMS, Tutorial, Network Architecture, Overview, Architecture, data models, data schemas, data independence, ED Diagram, Generalization, Aggregation, Codd's Rules, Relational Data Model, Relational Algebra, Database Design, Normalization, Database Joins, Database Storage, Database File System, Indexing, Hashing, Transaction, Concurrency Control, Deadlock, Backup and Recovery." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #fbb42b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fbb42b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fbb42b !important;}
+.submenu-item{ border-bottom: 2px solid #fbb42b !important; border-top: 2px solid #fbb42b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#fbb42b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/dbms/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/dbms/images/dbms-mini-logo.jpg" alt="DBMS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DBMS Tutorial</li>
+<li><a target="_top" href="/dbms/index.htm">DBMS - Home</a></li>
+<li><a target="_top" href="/dbms/dbms_overview.htm">DBMS - Overview</a></li>
+<li><a target="_top" href="/dbms/dbms_architecture.htm">DBMS - Architecture</a></li>
+<li><a target="_top" href="/dbms/dbms_data_models.htm">DBMS - Data Models</a></li>
+<li><a target="_top" href="/dbms/dbms_data_schemas.htm">DBMS - Data Schemas</a></li>
+<li><a target="_top" href="/dbms/dbms_data_independence.htm">DBMS - Data Independence</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Entity Relationship Model</li>
+<li><a target="_top" href="/dbms/er_model_basic_concepts.htm">DBMS - ER Model Basic Concepts</a></li>
+<li><a target="_top" href="/dbms/er_diagram_representation.htm">DBMS - ER Diagram Representation</a></li>
+<li><a target="_top" href="/dbms/dbms_generalization_aggregation.htm">DBMS - Generalization, Aggregation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Relational Model</li>
+<li><a target="_top" href="/dbms/dbms_codds_rules.htm">DBMS - Codd's Rules</a></li>
+<li><a target="_top" href="/dbms/relational_data_model.htm">DBMS - Relational Data Model</a></li>
+<li><a target="_top" href="/dbms/relational_algebra.htm">DBMS - Relational Algebra</a></li>
+<li><a target="_top" href="/dbms/er_model_to_relational_model.htm">DBMS - ER to Relational Model</a></li>
+<li><a target="_top" href="/dbms/sql_overview.htm">DBMS- SQL Overview</a></li>
+</ul>                                                                
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Relational Database Design</li>
+<li><a target="_top" href="/dbms/database_normalization.htm">DBMS - Database Normalization</a></li>
+<li><a target="_top" href="/dbms/database_joins.htm">DBMS - Database Joins</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Storage and File Structure </li>
+<li><a target="_top" href="/dbms/dbms_storage_system.htm">DBMS - Storage System</a></li>
+<li><a target="_top" href="/dbms/dbms_file_structure.htm">DBMS - File Structure</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Indexing and Hashing</li>
+<li><a target="_top" href="/dbms/dbms_indexing.htm">DBMS - Indexing</a></li>
+<li><a target="_top" href="/dbms/dbms_hashing.htm">DBMS - Hashing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Transaction And Concurrency</li>
+<li><a target="_top" href="/dbms/dbms_transaction.htm">DBMS - Transaction</a></li>
+<li><a target="_top" href="/dbms/dbms_concurrency_control.htm">DBMS - Concurrency Control</a></li>
+<li><a target="_top" href="/dbms/dbms_deadlock.htm">DBMS - Deadlock</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Backup and Recovery</li>
+<li><a target="_top" href="/dbms/dbms_data_backup.htm">DBMS - Data Backup</a></li>
+<li><a target="_top" href="/dbms/dbms_data_recovery.htm">DBMS - Data Recovery</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DBMS Useful Resources</li>
+<li><a target="_top" href="/dbms/dbms_quick_guide.htm">DBMS - Quick Guide</a></li>
+<li><a target="_top" href="/dbms/dbms_useful_resources.htm">DBMS - Useful Resources</a></li>
+<li><a target="_top" href="/dbms/dbms_discussion.htm">DBMS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>DBMS - Concurrency Control</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/dbms/dbms_transaction.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/dbms/dbms_deadlock.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In a multiprogramming environment where multiple transactions can be executed simultaneously, it is highly important to control the concurrency of transactions. We have concurrency control protocols to ensure atomicity, isolation, and serializability of concurrent transactions. Concurrency control protocols can be broadly divided into two categories &minus;</p>
+<ul class="list">
+<li>Lock based protocols</li>
+<li>Time stamp based protocols</li>
+</ul>
+<h2>Lock-based Protocols</h2>
+<p>Database systems equipped with lock-based protocols use a mechanism by which any transaction cannot read or write data until it acquires an appropriate lock on it. Locks are of two kinds &minus;</p>
+<ul class="list">  
+<li><p><b>Binary Locks</b> &minus; A lock on a data item can be in two states; it is either locked or unlocked.</p></li>
+<li><p><b>Shared/exclusive</b> &minus; This type of locking mechanism differentiates the locks based on their uses. If a lock is acquired on a data item to perform a write operation, it is an exclusive lock. Allowing more than one transaction to write on the same data item would lead the database into an inconsistent state. Read locks are shared because no data value is being changed.</p></li>
+</ul>
+<p>There are four types of lock protocols available &minus;</p>
+<h3>Simplistic Lock Protocol</h3>
+<p>Simplistic lock-based protocols allow transactions to obtain a lock on every object before a 'write' operation is performed. Transactions may unlock the data item after completing the ‘write’ operation.</p>
+<h3>Pre-claiming Lock Protocol</h3>
+<p>Pre-claiming protocols evaluate their operations and create a list of data items on which they need locks. Before initiating an execution, the transaction requests the system for all the locks it needs beforehand. If all the locks are granted, the transaction executes and releases all the locks when all its operations are over. If all the locks are not granted, the transaction rolls back and waits until all the locks are granted.</p>
+<img src="/dbms/images/pre_claiming.png" alt="Pre-claiming" />
+<h3>Two-Phase Locking 2PL</h3>
+<p>This locking protocol divides the execution phase of a transaction into three parts. In the first part, when the transaction starts executing, it seeks permission for the locks it requires. The second part is where the transaction acquires all the locks. As soon as the transaction releases its first lock, the third phase starts. In this phase, the transaction cannot demand any new locks; it only releases the acquired locks.</p>
+<img src="/dbms/images/2PL.png" alt="Two Phase Locking" />
+<p>Two-phase locking has two phases, one is <b>growing</b>, where all the locks are being acquired by the transaction; and the second phase is shrinking, where the locks held by the transaction are being released.</p>
+<p>To claim an exclusive (write) lock, a transaction must first acquire a shared (read) lock and then upgrade it to an exclusive lock.</p>
+<h3>Strict Two-Phase Locking</h3>
+<p>The first phase of Strict-2PL is same as 2PL. After acquiring all the locks in the first phase, the transaction continues to execute normally. But in contrast to 2PL, Strict-2PL does not release a lock after using it. Strict-2PL holds all the locks until the commit point and releases all the locks at a time.</p>
+<img src="/dbms/images/strict_2PL.png" alt="Strict Two Phase Locking" />
+<p>Strict-2PL does not have cascading abort as 2PL does.</p>
+<h2>Timestamp-based Protocols</h2>
+<p>The most commonly used concurrency protocol is the timestamp based protocol. This protocol uses either system time or logical counter as a timestamp.</p>
+<p>Lock-based protocols manage the order between the conflicting pairs among transactions at the time of execution, whereas timestamp-based protocols start working as soon as a transaction is created.</p>
+<p>Every transaction has a timestamp associated with it, and the ordering is determined by the age of the transaction. A transaction created at 0002 clock time would be older than all other transactions that come after it. For example, any transaction 'y' entering the system at 0004 is two seconds younger and the priority would be given to the older one.</p>
+<p>In addition, every data item is given the latest read and write-timestamp. This lets the system know when the last ‘read and write’ operation was performed on the data item.</p>
+<h2>Timestamp Ordering Protocol</h2>
+<p>The timestamp-ordering protocol ensures serializability among transactions in their conflicting read and write operations. This is the responsibility of the protocol system that the conflicting pair of tasks should be executed according to the timestamp values of the transactions.</p>
+<ul class="list">
+<li>The timestamp of transaction T<sub><small>i</small></sub> is denoted as TS(T<sub><small>i</small></sub>).</li>
+<li>Read time-stamp of data-item X is denoted by R-timestamp(X).</li>
+<li>Write time-stamp of data-item X is denoted by W-timestamp(X).</li>
+</ul>
+<p>Timestamp ordering protocol works as follows &minus;</p>
+<ul class="list">
+<li><p><b>If a transaction Ti issues a read(X) operation &minus;</b></p></li>
+<ul class="list">
+<li>If TS(Ti) &lt; W-timestamp(X)
+<ul class="list">
+<li>Operation rejected.</li>
+</ul>
+</li>
+<li>If TS(Ti) >= W-timestamp(X)
+<ul class="list">
+<li>Operation executed.</li>
+</ul>
+</li>
+<li>All data-item timestamps updated.</li>
+</ul>
+<li><p><b>If a transaction Ti issues a write(X) operation &minus;</b></p></li>
+<ul class="list">
+<li>If TS(Ti) &lt; R-timestamp(X)</li>
+<ul class="list">
+<li>Operation rejected.</li>
+</ul>
+<li>If TS(Ti) &lt; W-timestamp(X)</li>
+<ul class="list">
+<li>Operation rejected and Ti rolled back.</li>
+</ul>
+<li>Otherwise, operation executed.</li>
+</ul>
+</ul>
+<h3>Thomas' Write Rule</h3>
+<p>This rule states if TS(Ti) &lt; W-timestamp(X), then the operation is rejected and T<sub><small>i</small></sub> is rolled back.</p>
+<p>Time-stamp ordering rules can be modified to make the schedule view serializable.</p>
+<p>Instead of making T<sub><small>i</small></sub> rolled back, the 'write' operation itself is ignored.</p>
+<hr />
+<div class="pre-btn">
+<a href="/dbms/dbms_transaction.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/dbms/pdf/dbms_concurrency_control.pdf" title="DBMS Concurrency Control" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/dbms/dbms_deadlock.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/dbms/dbms_concurrency_control.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/dbms/dbms_concurrency_control.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/dbms/dbms_concurrency_control.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/dbms/dbms_concurrency_control.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/dbms/dbms_concurrency_control.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/dbms/dbms_concurrency_control.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

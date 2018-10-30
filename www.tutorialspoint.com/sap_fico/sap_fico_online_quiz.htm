@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP FICO Online Quiz - TutorialsPoint</title>
+<meta name="description" content="SAP FICO Online Quiz - Learn SAP FICO in simple and easy steps starting from Overview, Submodules, Company Basics, Business Area, Functional Area etc." />
+<meta name="keywords" content="SAP FICO, Tutorial, Learning, Beginners, Overview, Submodules, Company Basics, Business Area, Functional Area, Credit Control, General Ledger." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #1c397f !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #1c397f url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #1c397f !important;}
+.submenu-item{ border-bottom: 2px solid #1c397f !important; border-top: 2px solid #1c397f !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#1c397f; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_fico/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_fico/images/sap-fico-mini-logo.jpg" alt="SAP FICO Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP FICO Tutorial</li>
+<li><a href="/sap_fico/index.htm">SAP FICO - Home</a></li>
+<li><a href="/sap_fico/sap_fi_overview.htm">SAP FI - Overview</a></li>
+<li><a href="/sap_fico/sap_fi_submodules.htm">SAP FI - Submodules</a></li>
+<li><a href="/sap_fico/sap_fi_company_basics.htm">SAP FI - Company Basics</a></li>
+<li><a href="/sap_fico/sap_fi_define_business_area.htm">SAP FI - Define Business Area</a></li>
+<li><a href="/sap_fico/sap_fi_define_functional_area.htm">SAP FI - Define Functional Area</a></li>
+<li><a href="/sap_fico/sap_define_credit_control.htm">SAP FI - Define Credit Control</a></li>
+<li><a href="/sap_fico/sap_fi_general_ledger.htm">SAP FI - General Ledger</a></li>
+<li><a href="/sap_fico/sap_fi_coa_group.htm">SAP FI - COA Group</a></li>
+<li><a href="/sap_fico/sap_fi_retained_earnings_account.htm">SAP FI - Retained Earnings Account</a></li>
+<li><a href="/sap_fico/sap_fi_gl_account.htm">SAP FI - G/L Account</a></li>
+<li><a href="/sap_fico/sap_fi_block_gl_account.htm">SAP FI - Block G/L Account</a></li>
+<li><a href="/sap_fico/sap_fi_delete_gl_account.htm">SAP FI - Deleting G/L Accounts</a></li>
+<li><a href="/sap_fico/sap_fi_financial_statement_version.htm">SAP FI - Financial Statement Version</a></li>
+<li><a href="/sap_fico/sap_fi_journal_entry_posting.htm">SAP FI - Journal Entry Posting</a></li>
+<li><a href="/sap_fico/sap_fi_fiscal_year_variant.htm">SAP FI - Fiscal Year Variant</a></li>
+<li><a href="/sap_fico/sap_fi_posting_period_variant.htm">SAP FI - Posting Period Variant</a></li>
+<li><a href="/sap_fico/sap_fi_field_status_variant.htm">SAP FI - Field Status Variant</a></li>
+<li><a href="/sap_fico/sap_fi_field_status_group.htm">SAP FI - Field Status Group</a></li>
+<li><a href="/sap_fico/sap_fi_define_posting_keys.htm">SAP FI - Define Posting Keys</a></li>
+<li><a href="/sap_fico/sap_fi_define_document_type.htm">SAP FI - Define Document Type</a></li>
+<li><a href="/sap_fico/sap_fi_document_number_ranges.htm">SAP FI - Document Number Ranges</a></li>
+<li><a href="/sap_fico/sap_fi_post_with_reference.htm">SAP FI - Post with Reference</a></li>
+<li><a href="/sap_fico/sap_fi_hold_gl_document_posting.htm">SAP FI - Hold a G/L Document Posting</a></li>
+<li><a href="/sap_fico/sap_fi_park_gl_document_posting.htm">SAP FI - Park a G/L Document Posting</a></li>
+<li><a href="/sap_fico/sap_fi_gl_reporting.htm">SAP FI - G/L Reporting</a></li>
+<li><a href="/sap_fico/sap_fi_accounts_receivable.htm">SAP FI - Accounts Receivable</a></li>
+<li><a href="/sap_fico/sap_fi_customer_master_data.htm">SAP FI - Customer Master Data</a></li>
+<li><a href="/sap_fico/sap_fi_block_customer.htm">SAP FI - Block a Customer</a></li>
+<li><a href="/sap_fico/sap_fi_delete_customer.htm">SAP FI - Delete a Customer</a></li>
+<li><a href="/sap_fico/sap_fi_customer_account_group.htm">SAP FI - Customer Account Group</a></li>
+<li><a href="/sap_fico/sap_fi_onetime_customer_master.htm">SAP FI - One-Time Customer Master</a></li>
+<li><a href="/sap_fico/sap_fi_post_sales_invoice.htm">SAP FI - Post a Sales Invoice</a></li>
+<li><a href="/sap_fico/sap_fi_document_reversal.htm">SAP FI - Document Reversal</a></li>
+<li><a href="/sap_fico/sap_fi_sales_returns.htm">SAP FI - Sales Returns</a></li>
+<li><a href="/sap_fico/sap_fi_post_incoming_payment.htm">SAP FI - Post Incoming Payment</a></li>
+<li><a href="/sap_fico/sap_fi_foreign_currency_invoice.htm">SAP FI - Foreign Currency Invoice</a></li>
+<li><a href="/sap_fico/sap_fi_incoming_partial_payments.htm">SAP FI - Incoming Partial Payments</a></li>
+<li><a href="/sap_fico/sap_fi_reset_ar_cleared_items.htm">SAP FI - Reset AR Cleared Items</a></li>
+<li><a href="/sap_fico/sap_fi_credit_control.htm">SAP FI - Credit Control</a></li>
+<li><a href="/sap_fico/sap_fi_accounts_payable.htm">SAP FI - Accounts Payable</a></li>
+<li><a href="/sap_fico/sap_fi_create_vendor.htm">SAP FI - Create a Vendor</a></li>
+<li><a href="/sap_fico/sap_fi_create_vendor_account_group.htm">SAP FI - Create Vendor Acct Group</a></li>
+<li><a href="/sap_fico/sap_fi_display_changed_fields.htm">SAP FI - Display Changed Fields</a></li>
+<li><a href="/sap_fico/sap_fi_block_vendor.htm">SAP FI - Block a Vendor</a></li>
+<li><a href="/sap_fico/sap_fi_delete_vendor.htm">SAP FI - Delete a Vendor</a></li>
+<li><a href="/sap_fico/sap_fi_onetime_vendor.htm">SAP FI - One-Time Vendor</a></li>
+<li><a href="/sap_fico/sap_fi_post_purchase_invoice.htm">SAP FI - Post Purchase Invoice</a></li>
+<li><a href="/sap_fico/sap_fi_purchases_returns.htm">SAP FI - Purchases Returns</a></li>
+<li><a href="/sap_fico/sap_fi_post_outgoing_vendor_payment.htm">Post Outgoing Vendor Payment</a></li>
+<li><a href="/sap_fico/sap_foreign_currency_invoice.htm">SAP FI - Foreign Currency Invoice</a></li>
+<li><a href="/sap_fico/sap_fi_withholding_tax_vendor_invoice.htm">Withholding Tax in vendor invoice</a></li>
+<li><a href="/sap_fico/sap_fi_outgoing_partial_payments.htm">SAP FI - Outgoing Partial Payments</a></li>
+<li><a href="/sap_fico/sap_fi_reset_ap_cleared_items.htm">SAP FI - Reset AP Cleared Items</a></li>
+<li><a href="/sap_fico/sap_fi_automatic_payment_run.htm">SAP FI - Automatic Payment Run</a></li>
+<li><a href="/sap_fico/sap_fi_posting_rounding_differences.htm">SAP FI - Posting Rounding Differences</a></li>
+<li><a href="/sap_fico/sap_fi_month_end_closing.htm">SAP FI - Month End Closing</a></li>
+<li><a href="/sap_fico/sap_fi_dunning.htm">SAP FI - Dunning</a></li>
+<li><a href="/sap_fico/sap_fi_exchange_rates.htm">SAP FI - Exchange Rates</a></li>
+<li><a href="/sap_fico/sap_tables_fi_module.htm">SAP FI - Tables in Module</a></li>
+<li><a href="/sap_fico/sap_fi_ar_invoice_processes.htm">SAP FI - AR Invoice Processes</a></li>
+<li><a href="/sap_fico/sap_fi_ar_account_analysis.htm">SAP FI - AR Account Analysis</a></li>
+<li><a href="/sap_fico/sap_fi_ar_reporting.htm">SAP FI - AR Reporting</a></li>
+<li><a href="/sap_fico/sap_fi_aa_overview.htm">SAP FI - AA Overview</a></li>
+<li><a href="/sap_fico/sap_fi_aa_asset_explorer.htm">SAP FI - AA Asset Explorer</a></li>
+<li><a href="/sap_fico/sap_fi_cash_management.htm">SAP FI - Cash Management</a></li>
+<li><a href="/sap_fico/sap_co_overview.htm">SAP CO - Overview</a></li>
+<li><a href="/sap_fico/sap_co_submodules.htm">SAP CO - Submodules</a></li>
+<li><a href="/sap_fico/sap_co_cost_center.htm">SAP CO - Cost Center</a></li>
+<li><a href="/sap_fico/sap_co_create_cost_center.htm">SAP CO - Create Cost Center</a></li>
+<li><a href="/sap_fico/sap_co_post_to_cost_center.htm">SAP CO – Post to a Cost Center</a></li>
+<li><a href="/sap_fico/sap_co_internal_orders.htm">SAP CO - Internal Orders</a></li>
+<li><a href="/sap_fico/sap_co_settlement_io.htm">SAP CO - Settlement of IO</a></li>
+<li><a href="/sap_fico/sap_co_profit_center.htm">SAP CO - Profit Center</a></li>
+<li><a href="/sap_fico/sap_co_postings_to_profit_center.htm">SAP CO - Postings to Profit Center</a></li>
+<li><a href="/sap_fico/sap_co_profit_center_standard_hierarchy.htm">Profit Center Standard Hierarchy</a></li>
+<li><a href="/sap_fico/sap_co_cost_to_profit_center.htm">Assigning Cost to Profit Centers</a></li>
+<li><a href="/sap_fico/sap_co_materials_profit_center.htm">Assigning Materials to Profit Center</a></li>
+<li><a href="/sap_fico/sap_co_tables_module.htm">SAP CO - Tables in Module</a></li>
+<li><a href="/sap_fico/sap_co_product_costing.htm">SAP CO - Product Costing</a></li>
+<li><a href="/sap_fico/sap_co_profitability_analysis.htm">SAP CO - Profitability Analysis</a></li>
+<li><a href="/sap_fico/sap_co_planning_methods.htm">SAP CO - Planning Methods</a></li>
+<li><a href="/sap_fico/sap_fi_integration.htm">SAP FI - Integration</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP FICO Useful Resources</li>
+<li><a href="/sap_fico/sap_fico_questions_answers.htm">SAP FICO - Questions Answers</a></li>
+<li><a href="/sap_fico/sap_fico_quick_guide.htm">SAP FICO - Quick Guide</a></li>
+<li><a href="/sap_fico/sap_fico_useful_resources.htm">SAP FICO - Useful Resources</a></li>
+<li><a href="/sap_fico/sap_fico_discussion.htm">SAP FICO - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP FICO Online Quiz</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_fico/sap_fico_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_fico/sap_fico_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Following quiz provides Multiple Choice Questions (MCQs) related to <b>SAP FICO</b>. You will have to read all the given answers and click over the correct answer. If you are not sure about the answer then you can check the answer using <b>Show Answer</b> button. You can use <b>Next Quiz</b> button to check new set of questions in the quiz.</p>
+<img src="/images/questions_and_answers.png" alt="Questions and Answers" />
+
+<div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 1</span> - Which of the following statement is correct about Account Receivable and payables?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - It contains all the transaction details of a company. It acts as primary record to maintain all accounting details.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - It includes the detail of amount that is paid by customer and the amount that is paid by company to the vendors.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - It deals with all the fixed asset of the company and provides all the transaction details about fixed assets.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - It is used to manage all the travel expenses of a company. It involves all the travels request, their planning and expenses involved in all requested trips.</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>This includes the detail of amount that is paid by customer and the amount that is paid by company to the vendors. In other words AP includes all the vendor transactions and AR includes all the customer transactions.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 2</span> - Which of the following can be used to carry forward P/L account balances?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Automatically using single retained earning accounts</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Automatically using multiple retained earning accounts</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Using period end processing via single retained earning account</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Using period end processing via multiple retained earning account</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : D</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 3</span> - Which of the following system is responsible for configuration of STMS?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - QA system</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SAP Landscape</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> -  Domain Controller</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Production System</a></p>
+</div>
+<div class="A" id='A14'>
+<h3>Answer : C</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 4</span> - In Field status group, field is available in screen, but it's grayed out, you cannot fill anything in here. This is known as &minus;</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Suppress</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Optional</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Require</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Display</a></p>
+</div>
+<div class="A" id='A18'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p><b>Suppress</b> &minus; The field is hidden in screen</p>
+<p><b>Optional</b> &minus; The field is available in screen, you can keep it blank or fill it.</p>
+<p><b>Require</b> &minus; The field is available in screen, and you have to fill it.</p>
+<p><b>Display</b> &minus; The field is available in screen, but it's grayed out, you cannot fill anything in here.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 5</span> - An Accountant has an authority to post documents to a maximum amount $4000, now he has to feed a document with an amount of $6000 for which he does not have the authority. Which of the following options allows an accountant to save the document but the amount is not posted in the G/L accounts?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Park a G/L Document Posting</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Hold a G/L Document Posting</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Post with Reference</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A25'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>This allows to review the document later reviewed by higher authority Personnel who has appropriate posting amount authorization. Once approved, the document is posted in G/L accounts.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q27">
+<p><span>Q 6</span> - While archiving customer master records that you no longer need, which of the following deletion flag you can set?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - All Area</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Selected Company code</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Selected Sales area</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - B and C</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of the above</a></p>
+</div>
+<div class="A" id='A27'>
+<h3>Answer : E</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('27')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q32">
+<p><span>Q 7</span> - There is a customer with an outstanding amount of 1500 and makes a payment of 500 then there will two separate open items of 1500 Debit and 500 Credit in FI system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Posting Incoming Payments</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Foreign currency invoice</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Incoming Partial Payments</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Incorrect payment invoices</a></p>
+</div>
+<div class="A" id='A32'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>In SAP FI, you can also post partial payments from customer. These partial payments are posted as separate open items.</p>
+<p>Customer can see clearly what all invoice has been issued to customer and what payments he has made. But it keeps the multiple open items, until the invoice is fully paid/ cleared.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('32')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q36">
+<p><span>Q 8</span> - In SAP FI, you can post a vendor invoice in foreign currency so you can do currency analysis. If you post in FI, you can directly post back date invoices?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A36'>
+<h3>Answer : A</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('36')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q44">
+<p><span>Q 9</span> - Which of the following documents is/are not covered by dunning system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Open A/R invoices, including invoices that are partially credited or partially paid</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Invoices that include installments</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - A/R credit memos</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Open and close posting periods</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - Incoming payments that are not based on invoices</a></p>
+</div>
+<div class="A" id='A44'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The dunning system covers below documents &minus;</p>
+<ul class="list">
+<li>Open A/R invoices, including invoices that are partially credited or partially paid</li>
+<li>Invoices that include installments</li>
+<li>A/R credit memos</li>
+<li>Incoming payments that are not based on invoices</li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('44')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q50">
+<p><span>Q 10</span> - Which of the following is not a submodule of SAP controlling system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Cost Center Accounting</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Product Cost Controlling</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Activity-Based-Accounting</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Cash Flow Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - Internal Orders</a></p>
+</div>
+<div class="A" id='A50'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Following are key submodules of SAP controlling system &minus;</p>
+<ul class="list">
+<li>Cost Element Accounting</li>
+<li>Cost Center Accounting</li>
+<li>Activity-Based-Accounting</li>
+<li>Internal Orders</li>
+</ul>
+<p>Product Cost Controlling &minus;</p>
+<ul class="list">
+<li>Profitability Analysis</li>
+<li>Profit Center Accounting</li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('50')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><hr />
+<div class="pre-btn">
+<a href="/sap_fico/sap_fico_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_fico/sap_fico_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams.js"></script>
+<div class="parent-file">sap_fico_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_fico/sap_fico_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_fico/sap_fico_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_fico/sap_fico_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_fico/sap_fico_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_fico/sap_fico_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_fico/sap_fico_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

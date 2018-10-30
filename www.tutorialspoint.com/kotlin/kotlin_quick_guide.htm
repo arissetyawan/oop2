@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Kotlin Quick Guide</title>
+<meta name="description" content="Kotlin Quick Guide - Learn Kotlin in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Architecture, Basic Types, Control Flow, Class and Object, Constructors, Inheritance, Interface, Visibility Control, Extension, Data Classes, Sealed Class, Generics, Delegation, Functions, Destructuring Declarations, Exception Handling." />
+<meta name="keywords" content="Kotlin, Tutorial, Learning, Overview, Environment Setup, Architecture, Basic Types, Control Flow, Class and Object, Constructors, Inheritance, Interface, Visibility Control, Extension, Data Classes, Sealed Class, Generics, Delegation, Functions, Destructuring Declarations, Exception Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #de33a3 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #de33a3 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #de33a3 !important;}
+.submenu-item{ border-bottom: 2px solid #de33a3 !important; border-top: 2px solid #de33a3 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#de33a3; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/kotlin/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/kotlin/images/kotlin-mini-logo.jpg" alt="Kotlin Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Kotlin Tutorial</li>
+<li><a href="/kotlin/index.htm">Kotlin - Home</a></li>
+<li><a href="/kotlin/kotlin_overview.htm">Kotlin - Overview</a></li>
+<li><a href="/kotlin/kotlin_environment_setup.htm">Kotlin - Environment Setup</a></li>
+<li><a href="/kotlin/kotlin_architecture.htm">Kotlin - Architecture</a></li>
+<li><a href="/kotlin/kotlin_basic_types.htm">Kotlin - Basic Types</a></li>
+<li><a href="/kotlin/kotlin_control_flow.htm">Kotlin - Control Flow</a></li>
+<li><a href="/kotlin/kotlin_class_and_object.htm">Kotlin - Class &amp; Object</a></li>
+<li><a href="/kotlin/kotlin_constructors.htm">Kotlin - Constructors</a></li>
+<li><a href="/kotlin/kotlin_inheritance.htm">Kotlin - Inheritance</a></li>
+<li><a href="/kotlin/kotlin_interface.htm">Kotlin - Interface</a></li>
+<li><a href="/kotlin/kotlin_visibility_control.htm">Kotlin - Visibility Control</a></li>
+<li><a href="/kotlin/kotlin_extension.htm">Kotlin - Extension</a></li>
+<li><a href="/kotlin/kotlin_data_classes.htm">Kotlin - Data Classes</a></li>
+<li><a href="/kotlin/kotlin_sealed_class.htm">Kotlin - Sealed Class</a></li>
+<li><a href="/kotlin/kotlin_generics.htm">Kotlin - Generics</a></li>
+<li><a href="/kotlin/kotlin_delegation.htm">Kotlin - Delegation</a></li>
+<li><a href="/kotlin/kotlin_functions.htm">Kotlin - Functions</a></li>
+<li><a href="/kotlin/kotlin_destructuring_declarations.htm">Kotlin - Destructuring Declarations</a></li>
+<li><a href="/kotlin/kotlin_exception_handling.htm">Kotlin - Exception Handling</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Kotlin Useful Resources</li>
+<li><a href="/kotlin/kotlin_quick_guide.htm">Kotlin - Quick Guide</a></li>
+<li><a href="/kotlin/kotlin_useful_resources.htm">Kotlin - Useful Resources</a></li>
+<li><a href="/kotlin/kotlin_discussion.htm">Kotlin - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Kotlin - Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/kotlin/kotlin_exception_handling.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/kotlin/kotlin_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Kotlin - Overview</h1>
+<p>Kotlin is a new open source programming language like Java, JavaScript, etc. It is a high level strongly statically typed language that combines functional and technical part in a same place. Currently, Kotlin targets Java and JavaScript. It runs on JVM.</p>
+<p>Kotlin is influenced by other programming languages such as Java, Scala, Groovy, Gosu, etc. The syntax of Kotlin may not be exactly similar to JAVA, however, internally Kotlin is reliant on the existing Java Class library to produce wonderful results for the programmers. Kotlin provides interoperability, code safety, and clarity to the developers around the world.</p>
+<h2>Advantages and Disadvantages</h2>
+<p>Following are some of the advantages of using Kotlin for your application development.</p>
+<p><b>Easy Language</b> &minus; Kotlin is a functional language and very easy to learn. The syntax is pretty much similar to Java, hence it is very easy to remember. Kotlin is more expressive, which makes your code more readable and understandable.</p>
+<p><b>Concise</b> &minus; Kotlin is based on JVM and it is a functional language. Thus, it reduce lots of boiler plate code used in other programming languages.</p>
+<p><b>Runtime and Performance</b> &minus; Better performance and small runtime.</p>
+<p><b>Interoperability</b> &minus; Kotlin is mature enough to build an interoperable application in a less complex manner.</p>
+<p><b>Brand New</b> &minus; Kotlin is a brand new language that gives developers a fresh start. It is not a replacement of Java, though it is developed over JVM. It is accepted as the first official language of android development. Kotlin can be defined as - Kotlin = JAVA + extra updated new features.</p>
+<p>Following are some of the disadvantages of Kotlin.</p>
+<p><b>Namespace declaration</b> &minus; Kotlin allows developers to declare the functions at the top level. However, whenever the same function is declared in many places of your application, then it is hard to understand which function is being called.</p>
+<p><b>No Static Declaration</b> &minus; Kotlin does not have usual static handling modifier like Java, which can cause some problem to the conventional Java developer.</p>
+<h1>Kotlin - Environment Setup</h1>
+<p>However, if you still want to use Kotlin offline in your local system, then you need to execute the following steps to configure your local workspace.</p>
+<p><b>Step 1</b> &minus; Java 8 installation.</p>
+<p>Kotlin runs on JVM, hence. it is really necessary to use JDK 8 for your local Kotlin development. Please refer to the official website of <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="nofollow">oracle</a> to download and install JDK 8 or an above version. You might have to set the environment variable for JAVA such that it can work properly. To verify your installation in Windows operating system, hit “java –version” in the command prompt and as an output it will show you the java version installed in your system.</p>
+<p><b>Step 2</b> &minus; IDE installation.</p>
+<p>There are a number of IDE available over the internet. You can use any of your choice. You can find the download link of different IDE in the following table.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;vertical-align:middle;">IDE Name</th>
+<th style="text-align:center;vertical-align:middle;">Installation Link</th>
+</tr>
+<tr>
+<td>NetBeans</td>
+<td><a href="https://netbeans.org/downloads/" target="_blank" rel="nofollow">https://netbeans.org/downloads/</a></td>
+</tr>
+<tr>
+<td>Eclipse</td>
+<td><a href="https://www.eclipse.org/downloads/" target="_blank" rel="nofollow">https://www.eclipse.org/downloads/</a></td>
+</tr>
+<tr>
+<td style="vertical-align:middle;">Intellij</td>
+<td><a href="https://www.jetbrains.com/idea/download/#section = windows" target="_blank" rel="nofollow">https://www.jetbrains.com/idea/download/#section = windows</a></td>
+</tr>
+</table>
+<p>It is always recommended to use the recent software version to drag out maximum facility from it.</p>
+<p><b>Step 3</b> &minus; Configuring Eclipse.</p>
+<p>Open Eclipse and go to “Eclipse Market Place”. You will find the following screen.</p>
+<img src="/kotlin/images/eclipse_market_place.jpg" alt="Eclipse Market Place" />
+<p>Search for Kotlin in the search box and install the same in your local system. It might take some time depending on the internet speed. You may have to restart your Eclipse, once it is successfully installed.</p>
+<p><b>Step 4</b> &minus; Kotlin Project.</p>
+<p>Once Eclipse is successfully restarted and Kotlin is installed, you will be able to create a Kotlin project on the fly. Go to <b>File &rarr; New &rarr; Others</b> and select “Kotlin project” from the list.</p>
+<img src="/kotlin/images/kotlin_project.jpg" alt="Kotlin project" />
+<p>Once the project setup is done, you can create a Kotlin file under “SRC” folder. Left-click on the “Src” folder and hit “new”. You will get an option for Kotlin file, otherwise you may have to search from the “others”. Once the new file is created, your project directory will be look like the following.</p>
+<img src="/kotlin/images/hello.jpg" alt="Hello" />
+<p>Your development environment is ready now. Go ahead and add the following piece of code in the “Hello.kt” file.</p>
+<a href="http://tpcg.io/g0ZgRc" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   println("Hello, World!")
+}
+</pre>
+<p>Run it as a Kotlin application and see the output in the console as shown in the following screenshot. For better understanding and availability, we will be using our coding ground tool.</p>
+<pre class="result notranslate">
+Hello, World!
+</pre>
+<h1>Kotlin - Architecture</h1>
+<p>Kotlin is a programming language and has its own architecture to allocate memory and produce a quality output to the end user. Following are the different scenarios where Kotlin compiler will work differently, whenever it is targeting different other kind of languages such as Java and JavaScript.</p>
+<p>Kotlin compiler creates a byte code and that byte code can run on the JVM, which is exactly equal to the byte code generated by the Java <b>.class</b> file. Whenever two byte coded file runs on the JVM, they can communicate with each other and this is how an interoperable feature is established in Kotlin for Java.</p>
+<img src="/kotlin/images/architecture.jpg" alt="Architecture" />
+<p>Whenever Kotlin targets JavaScript, the Kotlin compiler converts the <b>.kt</b> file into ES5.1 and generates a compatible code for JavaScript. Kotlin compiler is capable of creating platform basis compatible codes via LLVM.</p>
+<h1>Kotlin - Basic Types</h1>
+<p>In this chapter, we will learn about the basic data types available in Kotlin programming language.</p>
+<h2>Numbers</h2>
+<p>The representation of numbers in Kotlin is pretty similar to Java, however, Kotlin does not allow internal conversion of different data types. Following table lists different variable lengths for different numbers.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">Type</th>
+<th style="text-align:center;">Size</th>
+</tr>
+<tr>
+<td>Double</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Short</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Byte</td>
+<td>8</td>
+</tr>
+</table>
+<p>In the following example, we will see how Kotlin works with different data types. Please enter the following set of code in our coding ground.</p>
+<a href="http://tpcg.io/I5PPPE" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val a: Int = 10000
+   val d: Double = 100.00
+   val f: Float = 100.00f
+   val l: Long = 1000000004
+   val s: Short = 10
+   val b: Byte = 1
+   
+   println("Your Int Value is "+a);
+   println("Your Double  Value is "+d);
+   println("Your Float Value is "+f);
+   println("Your Long Value is "+l);
+   println("Your Short Value is "+s);
+   println("Your Byte Value is "+b);
+}
+</pre>
+<p>When you run the above piece of code in the coding ground, it will generate the following output in the web console.</p>
+<pre class="result notranslate">
+Your Int Value is 10000
+Your Double  Value is 100.0
+Your Float Value is 100.0
+Your Long Value is 1000000004
+Your Short Value is 10
+Your Byte Value is 1
+</pre>
+<h2>Characters</h2>
+<p>Kotlin represents character using <b>char</b>. Character should be declared in a single quote like <b>‘c’</b>. Please enter the following code in our coding ground and see how Kotlin interprets the character variable. Character variable cannot be declared like number variables. Kotlin variable can be declared in two ways - one using <b>“var”</b> and another using <b>“val”</b>.</p>
+<a href="http://tpcg.io/lpsUjc" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val letter: Char    // defining a variable 
+   letter = 'A'        // Assigning a value to it 
+   println("$letter")
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser output window.</p>
+<pre class="result notranslate">
+A
+</pre>
+<h2>Boolean</h2>
+<p>Boolean is very simple like other programming languages. We have only two values for Boolean – either true or false. In the following example, we will see how Kotlin interprets Boolean.</p>
+<a href="http://tpcg.io/9G1XRI" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val letter: Boolean   // defining a variable 
+   letter = true         // Assinging a value to it 
+   println("Your character value is "+"$letter")
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Your character value is true
+</pre>
+<h2>Strings</h2>
+<p>Strings are character arrays. Like Java, they are immutable in nature. We have two kinds of string available in Kotlin - one is called <b>raw String</b> and another is called <b>escaped String</b>. In the following example, we will make use of these strings.</p>
+<a href="http://tpcg.io/tEKb3N" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var rawString :String  = "I am Raw String!"
+   val escapedString : String  = "I am escaped String!\n"
+   
+   println("Hello!"+escapedString)
+   println("Hey!!"+rawString)   
+}
+</pre>
+<p>The above example of escaped String allows to provide extra line space after the first print statement. Following will be the output in the browser.</p>
+<pre class="result notranslate">
+Hello!I am escaped String!
+
+Hey!!I am Raw String!
+</pre>
+<h2>Arrays</h2>
+<p>Arrays are a collection of homogeneous data. Like Java, Kotlin supports arrays of different data types. In the following example, we will make use of different arrays.</p>
+<a href="http://tpcg.io/25n2pM" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val numbers: IntArray = intArrayOf(1, 2, 3, 4, 5)
+   println("Hey!! I am array Example"+numbers[2])
+}
+</pre>
+<p>The above piece of code yields the following output. The indexing of the array is similar to other programming languages. Here, we are searching for a second index, whose value is “3”.</p>
+<pre class="result notranslate">
+Hey!! I am array Example3
+</pre>
+<h2>Collections</h2>
+<p>Collection is a very important part of the data structure, which makes the software development easy for engineers. Kotlin has two types of collection - one is <b>immutable collection</b> (which means lists, maps and sets that cannot be editable) and another is <b>mutable collection</b> (this type of collection is editable). It is very important to keep in mind the type of collection used in your application, as Kotlin system does not represent any specific difference in them.</p>
+<a href="http://tpcg.io/KP2TE4" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) { 
+   val numbers: MutableList&lt;Int&gt; = mutableListOf(1, 2, 3) //mutable List 
+   val readOnlyView: List&lt;Int&gt; = numbers                  // immutable list 
+   println("my mutable list--"+numbers)        // prints "[1, 2, 3]" 
+   numbers.add(4) 
+   println("my mutable list after addition --"+numbers)        // prints "[1, 2, 3, 4]" 
+   println(readOnlyView)     
+   readOnlyView.clear()    // &rArr; does not compile  
+// gives error  
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser. It gives an error when we try to clear the mutable list of collection.</p>
+<pre class="result notranslate">
+main.kt:9:18: error: unresolved reference: clear
+   readOnlyView.clear()    // -&gt; does not compile  
+                 ^
+</pre>
+<p>In collection, Kotlin provides some useful methods such as <b>first(), last(), filter()</b>, etc. All these methods are self-descriptive and easy to implement. Moreover, Kotlin follows the same structure such as Java while implementing collection. You are free to implement any collection of your choice such as Map and Set.</p>
+<p>In the following example, we have implemented Map and Set using different built-in methods.</p>
+<a href="http://tpcg.io/yBYfCH" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val items = listOf(1, 2, 3, 4)
+   println("First Element of our list----"+items.first())
+   println("Last Element of our list----"+items.last())
+   println("Even Numbers of our List----"+items.
+      filter { it % 2 = = 0 })   // returns [2, 4]
+   
+   val readWriteMap = hashMapOf("foo" to 1, "bar" to 2)
+   println(readWriteMap["foo"])  // prints "1"
+   
+   val strings = hashSetOf("a", "b", "c", "c")
+   println("My Set Values are"+strings)
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+First Element of our list----1
+Last Element of our list----4
+Even Numbers of our List----[2, 4]
+1
+My Set Values are[a, b, c]
+</pre>
+<h2>Ranges</h2>
+<p>Ranges is another unique characteristic of Kotlin. Like Haskell, it provides an operator that  helps you iterate through a range. Internally, it is implemented using <b>rangeTo()</b> and its operator form is <b>(..)</b>.</p>
+<p>In the following example, we will see how Kotlin interprets this range operator.</p>
+<a href="http://tpcg.io/nwkSIY" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val i:Int  = 2
+   for (j in 1..4) 
+   print(j) // prints "1234"
+   
+   if (i in 1..10) { // equivalent of 1 &lt; = i &amp;&amp; i &lt; = 10
+      println("we found your number --"+i)
+   }
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+1234we found your number --2
+</pre>
+<h1>Kotlin - Control Flow</h1>
+<p>In the previous chapter we have learned about different types of data types available in Kotlin system. In this chapter, we will discuss different types of control flow mechanism available in the Kotlin.</p>
+<h2>If - Else</h2>
+<p>Kotlin is a functional language hence like every functional language in Kotlin <b>“if”</b> is an expression, it is not a keyword. The expression <b>“if”</b> will return a value whenever necessary. Like other programming language, <b>“if-else”</b> block is used as an initial conditional checking operator. In the following example, we will compare two variables and provide the required output accordingly.</p>
+<a href="http://tpcg.io/3zdnlU" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val a:Int = 5
+   val b:Int = 2
+   var max: Int
+   
+   if (a &gt; b) {
+      max = a
+   } else {
+      max = b
+   }
+   print("Maximum of a or b is " +max)
+ 
+   // As expression 
+   // val max = if (a &gt; b) a else b
+}
+</pre>
+<p>The above piece of code yields the following output as a result in the browser. Our example also contains another line of code, which depicts how to use <b>“If”</b> statement as an expression.</p>
+<pre class="result notranslate">
+Maximum of a or b is 5
+</pre>
+<h2>Use of When</h2>
+<p>If you are familiar with other programming languages, then you might have heard of the term switch statement, which is basically a conditional operator when multiple conditions can be applied on a particular variable. <b>“when”</b> operator matches the variable value against the branch conditions. If it is satisfying the branch condition then it will execute the statement inside that scope. In the following example, we will learn more about “when” in Kotlin.</p>
+<a href="http://tpcg.io/lXxWhy" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val x:Int = 5
+   when (x) {
+      1 -&gt; print("x = = 1")
+      2 -&gt; print("x = = 2")
+      
+      else -&gt; { // Note the block
+         print("x is neither 1 nor 2")
+      }
+   }
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+x is neither 1 nor 2
+</pre>
+<p>In the above example, Kotlin compiler matches the value of <b>x</b> with the given branches. If it is not matching any of the branches, then it will execute the else part. Practically, when is equivalent to multiple if block. Kotlin provides another flexibility to the developer, where the developer can provide multiple checks in the same line by providing “,” inside the checks. Let us modify the above example as follows.</p>
+<a href="http://tpcg.io/8MFLuU" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val x:Int = 5
+   when (x) {
+      1,2 -&gt; print(" Value of X either 1,2")
+      
+      else -&gt; { // Note the block
+         print("x is neither 1 nor 2")
+      }
+   }
+}
+</pre>
+<p>Run the same in the browser, which will yield the following output in the browser.</p>
+<pre class="result notranslate">
+x is neither 1 nor 2
+</pre>
+<h2>For Loop</h2>
+<p>Loop is such an invention that provides the flexibility to iterate through any kind of data structure. Like other programming languages, Kotlin also provides many kinds of Looping methodology, however, among them <b>“For”</b> is the most successful one. The implementation and use of For loop is conceptually similar to Java for loop. The following example shows how we can use the same in real-life examples.</p>
+<a href="http://tpcg.io/4Nqvh1" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val items = listOf(1, 2, 3, 4)
+   for (i in items) println("values of the array"+i)
+}
+</pre>
+<p>In the above piece of code, we have declared one list named as “items” and using for loop we are iterating through that defined list and printing its value in the browser. Following is the output.</p>
+<pre class="result notranslate">
+values of the array1
+values of the array2
+values of the array3
+values of the array4
+</pre>
+<p>Following is another example of code, where we are using some library function to make our development work easier than ever before.</p>
+<a href="http://tpcg.io/MSOn9d" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val items = listOf(1, 22, 83, 4)
+   
+   for ((index, value) in items.withIndex()) {
+      println("the element at $index is $value")
+   }
+}
+</pre>
+<p>Once we compile and execute the above piece of code in our coding ground, it will yield the following output in the browser.</p>
+<pre class="result notranslate">
+the element at 0 is 1
+the element at 1 is 22
+the element at 2 is 83
+the element at 3 is 4
+</pre>
+<h2>While Loop and Do-While Loop</h2>
+<p>While and Do-While work exactly in a similar way like they do in other programming languages. The only difference between these two loops is, in case of Do-while loop the condition will be tested at the end of the loop. The following example shows the usage of the <b>While loop</b>.</p>
+<a href="http://tpcg.io/XR720M" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var x:Int = 0
+   println("Example of While Loop--")
+   
+   while(x&lt; = 10) {
+      println(x)
+      x++
+   } 
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+Example of While Loop--
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+<p>Kotlin also has another loop called Do-While loop, where the loop body will be executed once, only then the condition will be checked. The following example shows the usage of the <b>Do-while loop</b>.</p>
+<a href="http://tpcg.io/An8NB9" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var x:Int = 0
+   do {
+      x = x + 10
+      println("I am inside Do block---"+x)
+   } while(x &lt;= 50)
+}
+</pre>
+<p>The above piece of code yields the following output in the browser. In the above code, Kotlin compiler will execute the DO block, then it will go for condition checking in while block.</p>
+<pre class="result notranslate">
+I am inside Do block---10
+I am inside Do block---20
+I am inside Do block---30
+I am inside Do block---40
+I am inside Do block---50
+I am inside Do block---60
+</pre>
+<h2>Use of Return, Break, Continue</h2>
+<p>If you are familiar with any programming language, then you must have an idea of different keywords that help us implement good control flow in the application. Following are the different keywords that can be used to control the loops or any other types of control flow.</p>
+<p><b>Return</b> &minus; Return is a keyword that returns some value to the calling function from the called function. In the following example, we will implement this scenario using our Kotlin coding ground.</p>
+<a href="http://tpcg.io/WMgiYj" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var x:Int = 10
+   println("The value of X is--"+doubleMe(x))
+}
+fun doubleMe(x:Int):Int {
+   return 2*x;
+}
+</pre>
+<p>In the above piece of code, we are calling another function and multiplying the input with 2, and returning the resultant value to the called function that is our main function. Kotlin defines the function in a different manner that we will look at in a subsequent chapter. For now, it is enough to understand that the above code will generate the following output in the browser.</p>
+<pre class="result notranslate">
+The value of X is--20
+</pre>
+<p><b>Continue &amp; Break</b> &minus; Continue and break are the most vital part of a logical problem. The “break” keyword terminates the controller flow if some condition has failed and “continue” does the opposite. All this operation happens with immediate visibility. Kotlin is smarter than other programming languages, wherein the developer can apply more than one label as visibility. The following piece of code shows how we are implementing this label in Kotlin.</p>
+<a href="http://tpcg.io/TdGTLL" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   println("Example of Break and Continue")
+   myLabel@ for(x in 1..10) { // appling the custom label
+      if(x = = 5) {
+         println("I am inside if block with value"+x+"\n-- hence it will close the operation")
+         break@myLabel //specifing the label
+      } else {
+         println("I am inside else block with value"+x)
+         continue@myLabel
+      }
+   }
+}
+</pre>
+<p>The above piece of code yields the following output in the browser.</p>
+<pre class="result notranslate">
+Example of Break and Continue
+I am inside else block with value1
+I am inside else block with value2
+I am inside else block with value3
+I am inside else block with value4
+I am inside if block with value5
+-- hence it will close the operation
+</pre>
+<p>As you can see, the controller continues the loop, until and unless the value of <b>x</b> is 5. Once the value of <b>x</b> reaches 5, it starts executing the if block and once the break statement is reached, the entire control flow terminates the program execution.</p>
+<h1>Kotlin - Class &amp; Object</h1>
+<p>In this chapter, we will learn the basics of Object-Oriented Programming (OOP) using Kotlin. We will learn about class and its object and how to play with that object. By definition of OOP, a class is a blueprint of a runtime entity and object is its state, which includes both its behavior and state. In Kotlin, class declaration consists of a class header and a class body surrounded by curly braces, similar to Java.</p>
+<pre class="prettyprint notranslate">
+Class myClass { // class Header 
+
+   // class Body
+}
+</pre>
+<p>Like Java, Kotlin also allows to create several objects of a class and you are free to include its class members and functions. We can control the visibility of the class members variables using different keywords that we will learn in Chapter 10 – Visibility Control. In the following example, we will create one class and its object through which we will access different data members of that class.</p>
+<a href="http://tpcg.io/ELlghV" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+class myClass {
+   // property (data member)
+   private var name: String = "Tutorials.point"
+   
+   // member function
+   fun printMe() {
+      print("You are at the best Learning website Named-"+name)
+   }
+}
+fun main(args: Array&lt;String&gt;) {
+   val obj = myClass() // create obj object of myClass class
+   obj.printMe()
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser, where we are calling printMe() of myClass using its own object.</p>
+<pre class="result notranslate">
+You are at the best Learning website Named- Tutorials.point
+</pre>
+<h2>Nested Class</h2>
+<p>By definition, when a class has been created inside another class, then it is called as a nested class. In Kotlin, nested class is by default static, hence, it can be accessed without creating any object of that class. In the following example, we will see how Kotlin interprets our nested class.</p>
+<a href="http://tpcg.io/t9AO3z" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val demo = Outer.Nested().foo() // calling nested class method
+   print(demo)
+}
+class Outer {
+   class Nested {
+      fun foo() = "Welcome to The TutorialsPoint.com"
+   }
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Welcome to The TutorialsPoint.com
+</pre>
+<h2>Inner Class</h2>
+<p>When a nested class is marked as a “inner”, then it will be called as an Inner class. An inner class can be accessed by the data member of the outer class. In the following example, we will be accessing the data member of the outer class.</p>
+<a href="http://tpcg.io/hn6PZL" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val demo = Outer().Nested().foo() // calling nested class method
+   print(demo)
+}
+class Outer {
+   private val welcomeMessage: String = "Welcome to the TutorialsPoint.com"
+   inner class Nested {
+      fun foo() = welcomeMessage
+   }
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser, where we are calling the nested class using the default constructor provided by Kotlin compilers at the time of compiling.</p>
+<pre class="result notranslate">
+Welcome to the TutorialsPoint.com
+</pre>
+<h2>Anonymous Inner Class</h2>
+<p>Anonymous inner class is a pretty good concept that makes the life of a programmer very easy. Whenever we are implementing an interface, the concept of anonymous inner block comes into picture. The concept of creating an object of interface using runtime object reference is known as anonymous class. In the following example, we will create an interface and we will create an object of that interface using Anonymous Inner class mechanism.</p>
+<a href="http://tpcg.io/ZFFPmP" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var programmer :Human = object:Human // creating an instance of the interface {
+      override fun think() { // overriding the think method
+         print("I am an example of Anonymous Inner Class ")
+      }
+   }
+   programmer.think()
+}
+interface Human {
+   fun think()
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+I am an example of Anonymous Inner Class 
+</pre>
+<h2>Type Aliases</h2>
+<p>Type aliases are a property of Kotlin compiler. It provides the flexibility of creating a new name of an existing type, it does not create a new type. If the type name is too long, you can easily introduce a shorter name and use the same for future usage. Type aliases is really helpful for complex type. In the latest version, Kotlin revoked the support for type aliases, however, if you are using an old version of Kotlin you may have use it like the following &minus;</p>
+<pre class="prettyprint notranslate">
+typealias NodeSet = Set&lt;Network.Node&gt;
+typealias FileTable&lt;K&gt; = MutableMap&lt;K, MutableList&lt;File&gt;&gt;
+</pre>
+<h1>Kotlin - Constructors</h1>
+<p>In this chapter, we will learn about constructors in Kotlin. Kotlin has two types of constructor - one is the <b>primary constructor</b> and the other is the <b>secondary constructor</b>. One Kotlin class can have one primary constructor, and one or more secondary constructor. Java constructor initializes the member variables, however, in Kotlin the primary constructor initializes the class, whereas the secondary constructor helps to include some extra logic while initializing the same. The primary constructor can be declared at class header level as shown in the following example.</p>
+<pre class="prettyprint notranslate">
+class Person(val firstName: String, var age: Int) {
+   // class body
+}
+</pre>
+<p>In the above example, we have declared the primary constructor inside the parenthesis. Among the two fields, first name is read-only as it is declared as “val”, while the field age can be edited. In the following example, we will use the primary constructor.</p>
+<a href="http://tpcg.io/CYXIGw" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val person1 = Person("TutorialsPoint.com", 15)
+   println("First Name = ${person1.firstName}")
+   println("Age = ${person1.age}")
+}
+class Person(val firstName: String, var age: Int) {
+}
+</pre>
+<p>The above piece of code will automatically initialize the two variables and provide the following output in the browser.</p>
+<pre class="result notranslate">
+First Name = TutorialsPoint.com
+Age = 15
+</pre>
+<p>As mentioned earlier, Kotlin allows to create one or more secondary constructors for your class. This secondary constructor is created using the “constructor” keyword. It is required whenever you want to create more than one constructor in Kotlin or whenever you want to include more logic in the primary constructor and you cannot do that because the primary constructor may be called by some other class. Take a look at the following example, where we have created a secondary constructor and are using the above example to implement the same.</p>
+<a href="http://tpcg.io/1Hll8l" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val HUman = HUman("TutorialsPoint.com", 25)
+   print("${HUman.message}"+"${HUman.firstName}"+
+      "Welcome to the example of Secondary  constructor, Your Age is-${HUman.age}")
+}
+class HUman(val firstName: String, var age: Int) {
+   val message:String  = "Hey!!!"
+	constructor(name : String , age :Int ,message :String):this(name,age) {
+   }
+}
+</pre>
+<p><b>Note</b> &minus; Any number of secondary constructors can be created, however, all of those constructors should call the primary constructor directly or indirectly.</p>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Hey!!! TutorialsPoint.comWelcome to the example of Secondary  constructor, Your Age is- 25
+</pre>
+<h1>Kotlin - Inheritance</h1>
+<p>In this chapter, we will learn about inheritance. By definition, we all know that inheritance means accruing some properties of the mother class into the child class. In Kotlin, the base class is named as “Any”, which is the super class of the ‘any’ default class declared in Kotlin. Like all other OOPS, Kotlin also provides this functionality using one keyword known as <b>“:”</b>.</p>
+<p>Everything in Kotlin is by default final, hence, we need to use the keyword “open” in front of the class declaration to make it allowable to inherit. Take a look at the following example of inheritance.</p>
+<a href="http://tpcg.io/CHmsZk" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.Arrays
+
+open class ABC {
+   fun think () {
+      print("Hey!! i am thiking ")
+   }
+}
+class BCD: ABC(){ // inheritence happend using default constructor 
+}
+
+fun main(args: Array&lt;String&gt;) {
+   var  a = BCD()
+   a.think()
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Hey!! i am thiking 
+</pre>
+<p>Now, what if we want to override the think() method in the child class. Then, we need to consider the following example where we are creating two classes and override one of its function into the child class.</p>
+<a href="http://tpcg.io/KouOmB" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import java.util.Arrays
+
+open class ABC {
+   open fun think () {
+      print("Hey!! i am thinking ")
+   }
+}
+class BCD: ABC() { // inheritance happens using default constructor 
+   override fun think() {
+      print("I Am from Child")
+   }
+}
+fun main(args: Array&lt;String&gt;) {
+   var  a = BCD()
+   a.think()
+}
+</pre> 
+<p>The above piece of code will call the child class inherited method and it will yield the following output in the browser. Like Java, Kotlin too doesn’t allow multiple inheritances.</p>
+<pre class="result notranslate">
+I Am from Child 
+</pre>
+<h1>Kotlin - Interface</h1>
+<p>In this chapter, we will learn about the interface in Kotlin. In Kotlin, the interface works exactly similar to Java 8, which means they can contain method implementation as well as abstract methods declaration. An interface can be implemented by a class in order to use its defined functionality. We have already introduced an example with an interface in Chapter 6 - section “anonymous inner class”. In this chapter, we will learn more about it. The keyword “interface” is used to define an interface in Kotlin as shown in the following piece of code.</p>
+<pre class="prettyprint notranslate">
+interface ExampleInterface {
+   var myVar: String     // abstract property
+   fun absMethod()       // abstract method
+   fun sayHello() = "Hello there" // method with default implementation
+}
+</pre>
+<p>In the above example, we have created one interface named as “ExampleInterface” and inside that we have a couple of abstract properties and methods all together. Look at the function named “sayHello()”, which is an implemented method.</p>
+<p>In the following example, we will be implementing the above interface in a class.</p>
+<a href="http://tpcg.io/YAgTFO" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+interface ExampleInterface  {
+   var myVar: Int            // abstract property
+   fun absMethod():String    // abstract method
+   
+   fun hello() {
+      println("Hello there, Welcome to TutorialsPoint.Com!")
+   }
+}
+class InterfaceImp : ExampleInterface {
+   override var myVar: Int = 25
+   override fun absMethod() = "Happy Learning "
+}
+fun main(args: Array&lt;String&gt;) {
+   val obj = InterfaceImp()
+   println("My Variable Value is = ${obj.myVar}")
+   print("Calling hello(): ")
+   obj.hello()
+   
+   print("Message from the Website-- ")
+   println(obj.absMethod())
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Calling hello(): Hello there, Welcome to TutorialsPoint.Com!
+Message from the Website-- Happy Learning 
+</pre>
+<p>As mentioned earlier, Kotlin doesn’t support multiple inheritances, however, the same thing can be achieved by implementing more than two interfaces at a time.</p>
+<p>In the following example, we will create two interfaces and later we will implement both the interfaces into a class.</p>
+<a href="http://tpcg.io/jTlQDB" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+interface A {
+   fun printMe() {
+      println(" method of interface A")
+   }
+}
+interface B  {
+   fun printMeToo() {
+      println("I am another Method from interface B")
+   }
+}
+
+// implements two interfaces A and B
+class multipleInterfaceExample: A, B
+
+fun main(args: Array&lt;String&gt;) {
+   val obj = multipleInterfaceExample()
+   obj.printMe()
+   obj.printMeToo()
+}
+</pre>
+<p>In the above example, we have created two sample interfaces A, B and in the class named “multipleInterfaceExample” we have implemented two interfaces declared earlier. The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+method of interface A
+I am another Method from interface B
+</pre>
+<h1>Kotlin - Visibility Control</h1>
+<p>In this chapter, we will learn about different modifiers available in Kotlin language. <b>Access modifier</b> is used to restrict the usage of the variables, methods and class used in the application. Like other OOP programming language, this modifier is applicable at multiple places such as in the class header or method declaration. There are four access modifiers available in Kotlin.</p>
+<h2>Private</h2>
+<p>The classes, methods, and packages can be declared with a private modifier. Once anything is declared as private, then it will be accessible within its immediate scope. For instance, a private package can be accessible within that specific file. A private class or interface can be accessible only by its data members, etc.</p>
+<pre class="prettyprint notranslate">
+private class privateExample {
+   private val i = 1
+   private val doSomething() {
+   }
+}
+</pre>
+<p>In the above example, the class <b>“privateExample”</b> and the variable i both can be accessible only in the same Kotlin file, where its mentioned as they all are declared as private in the declaration block.</p>
+<h2>Protected</h2>
+<p>Protected is another access modifier for Kotlin, which is currently not available for top level declaration like any package cannot be protected. A protected class or interface is visible to its subclass only.</p>
+<pre class="prettyprint notranslate">
+class A() {
+   protected val i = 1
+}
+class B : A() {
+   fun getValue() : Int {
+      return i
+   }
+}
+</pre>
+<p>In the above example, the variable <b>“i”</b> is declared as protected, hence, it is only visible to its subclass.</p>
+<h2>Internal</h2>
+<p>Internal is a newly added modifier introduced in Kotlin. If anything is marked as internal, then that specific field will be in the internal field. An Internal package is visible only inside the module under which it is implemented. An internal class interface is visible only by other class present inside the same package or the module. In the following example, we will see how to implement an internal method.</p>
+<pre class="prettyprint notranslate">
+class internalExample {
+   internal val i = 1
+   internal fun doSomething() {
+   }
+}
+</pre>
+<p>In the above example, the method named “doSomething” and the variable is mentioned as internal, hence, these two fields can be accessible only inside the package under which it is declared.</p>
+<h2>Public</h2>
+<p>Public modifier is accessible from anywhere in the project workspace. If no access modifier is specified, then by default it will be in the public scope. In all our previous examples, we have not mentioned any modifier, hence, all of them are in the public scope. Following is an example to understand more on how to declare a public variable or method.</p>
+<pre class="prettyprint notranslate">
+class publicExample {
+   val i = 1
+   fun doSomething() {
+   }
+}
+</pre>
+<p>In the above example, we have not mentioned any modifier, thus all these methods and variables are by default public.</p>
+<h1>Kotlin - Extension</h1>
+<p>In this chapter, we will learn about another new feature of Kotlin named “Extension”. Using extension, we will be able to add or remove some method functionality even without inheriting or modifying them. Extensions are resolved statistically. It does not actually modify the existing class, but it creates a callable function that can be called with a dot operation.</p>
+<h2>Function Extension</h2>
+<p>In function extension, Kotlin allows to define a method outside of the main class. In the following example, we will see how the extension is implemented at the functional level.</p>
+<a href="http://tpcg.io/gVg3WW" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+class Alien {
+   var skills : String = "null"
+	
+   fun printMySkills() {
+      print(skills)
+   }		
+}
+fun main(args: Array&lt;String&gt;) {
+   var  a1 = Alien()
+   a1.skills = "JAVA"
+   //a1.printMySkills()
+	
+   var  a2 = Alien()
+   a2.skills = "SQL"
+   //a2.printMySkills()
+	
+   var  a3 = Alien()
+   a3.skills = a1.addMySkills(a2)
+   a3.printMySkills()
+}
+fun Alien.addMySkills(a:Alien):String{
+   var a4 = Alien()
+   a4.skills = this.skills + " " +a.skills
+   return a4.skills
+}
+</pre>
+<p>In the above example, we don’t have any method inside “Alien” class named as “addMySkills()”, however, we still are implementing the same method somewhere else outside of the class, This is the magic of extension.</p>
+<p>The above piece of code will generate the following output in the browser.</p>
+<pre class="result notranslate">
+JAVA SQL
+</pre>
+<h2>Object Extension</h2>
+<p>Kotlin provides another mechanism to implement static functionality of Java. This can be achieved using the keyword “companion object”. Using this mechanism, we can create an object of a class inside a factory method and later we can just call that method using the reference of the class name. In the following example, we will  create a “companion object”.</p>
+<a href="http://tpcg.io/ARdnQp" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   println("Heyyy!!!"+A.show())
+}
+class A {
+   companion object {
+      fun show():String {
+         return("You are learning Kotlin from TutorialsPoint.com")
+      }
+   }
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Heyyy!!! You are learning Kotlin from TutorialsPoint.com
+</pre>
+<p>The above example seems like static in Java, however, in real-time we are creating an object as a member variable of that same class. This is why it is also included under extension property and can be alternatively called as an object extension. You are basically extending the object of the same class to use some of the member functions.</p>
+<h1>Kotlin - Data Classes</h1>
+<p>In this chapter, we will learn more about Data classes of Kotlin programming language. A class can be marked as a Data class whenever it is marked as ”data”. This type of class can be used to hold the basic data apart. Other than this, it does not provide any other functionality.</p>
+<p>All the data classes need to have one primary constructor and all the primary constructor should have at least one parameter. Whenever a class is marked as data, we can use some of the inbuilt function of that data class such as “toString()”,”hashCode()”, etc. Any data class cannot have a modifier like abstract and open or internal. Data class can be extended to other classes too. In the following example, we will create one data class.</p>
+<a href="http://tpcg.io/FAhheY" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val book: Book = Book("Kotlin", "TutorialPoint.com", 5)
+   println("Name of the Book is--"+book.name) // "Kotlin"
+   println("Puclisher Name--"+book.publisher) // "TutorialPoint.com"
+   println("Review of the book is--"+book.reviewScore) // 5
+   book.reviewScore = 7
+   println("Printing all the info all together--"+book.toString()) 
+   //using inbuilt function of the data class 
+   
+   println("Example of the hashCode function--"+book.hashCode())
+}
+
+data class Book(val name: String, val publisher: String, var reviewScore: Int)
+</pre>
+<p>The above piece of code will yield the following output in the browser, where we have created one data class to hold some of the data, and from the main function we have accessed all of its data members.</p>
+<pre class="result notranslate">
+Name of the Book is--"Kotlin"
+Puclisher Name--"TutorialPoint.com"
+Review of the book is--5
+Printing all the info all together--(name-Kotlin, publisher-TutorialPoint.com, reviewScore-7)
+Example of the hashCode function---1753517245
+</pre>
+<h1>Kotlin - Sealed Class</h1>
+<p>In this chapter, we will learn about another class type called “Sealed” class. This type of class is used to represent a restricted class hierarchy. Sealed allows the developers to maintain a data type of a predefined type. To make a sealed class, we need to use the keyword “sealed” as a modifier of that class. A sealed class can have its own subclass but all those subclasses need to be declared inside the same Kotlin file along with the sealed class. In the following example, we will see how to use a sealed class.</p>
+<a href="http://tpcg.io/iCfSyw" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+sealed class MyExample {
+   class OP1 : MyExample() // MyExmaple class can be of two types only
+   class OP2 : MyExample()
+}
+fun main(args: Array&lt;String&gt;) {
+   val obj: MyExample = MyExample.OP2() 
+   
+   val output = when (obj) { // defining the object of the class depending on the inuputs 
+      is MyExample.OP1 -&gt; "Option One has been chosen"
+      is MyExample.OP2 -&gt; "option Two has been chosen"
+   }
+   
+   println(output)
+}
+</pre>
+<p>In the above example, we have one sealed class named “MyExample”, which can be of two types only - one is “OP1” and another one is “OP2”. In the main class, we are creating an object in our class and assigning its type at runtime. Now, as this “MyExample” class is sealed, we can apply the “when ” clause at runtime to implement the final output.</p>
+<p>In sealed class, we need not use any unnecessary “else” statement to complex out the code. The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+option Two has been chosen
+</pre>
+<h1>Kotlin - Generics</h1>
+<p>Like Java, Kotlin provides higher order of variable typing called as Generics. In this chapter, we will learn how Kotlin implements Generics and how as a developer we can use those functionalities provided inside the generics library. Implementation wise, generics is pretty similar to Java but Kotlin developer has introduced two new keywords <b>“out”</b> and <b>“in”</b> to make Kotlin codes more readable and easy for the developer.</p>
+<p>In Kotlin, a class and a type are totally different concepts. As per the example, List is a class in Kotlin, whereas List&lt;String&gt; is a type in Kotlin. The following example depicts how generics is implemented in Kotlin.</p>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val integer: Int = 1
+   val number: Number = integer
+   print(number)
+}
+</pre>
+<p>In the above code, we have declared one “integer” and later we have assigned that variable to a number variable. This is possible because “Int” is a subclass of Number class, hence the type conversion happens automatically at runtime and produces the output as “1”.</p>
+<p>Let us learn something more about generics in Kotlin. It is better to go for generic data type whenever we are not sure about the data type we are going to use in the application. Generally, in Kotlin generics is defined by <b>&lt;T&gt;</b> where “T” stands for template, which can be determined dynamically by Kotlin complier. In the following example, we will see how to use generic data types in Kotlin programming language.</p>
+<a href="http://tpcg.io/edI3jn" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var objet = genericsExample&lt;String&gt;("JAVA")
+   var objet1 = genericsExample&lt;Int&gt;(10)
+}
+class genericsExample&lt;T&gt;(input:T) {
+   init {
+      println("I am getting called with the value "+input)
+   }
+}
+</pre>
+<p>In the above piece of code, we are creating one class with generic return type, which is represented as <b>&lt;T&gt;</b>. Take a look at the main method, where we have dynamically defined its value at the run by proving the value type, while creating the object of this class. This is how generics is interpreted by Kotlin compiler. We will get the following output in the browser, once we run this code in our coding ground.</p>
+<pre class="result notranslate">
+I am getting called with the value JAVA
+I am getting called with the value 10
+</pre>
+<p>When we want to assign the generic type to any of its super type, then we need to use “out” keyword, and when we want to assign the generic type to any of its sub-type, then we need to use “in” keyword. In the following example, we will use “out” keyword. Similarly, you can try using “in” keyword.</p>
+<a href="http://tpcg.io/HWRSvq" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   var objet1 = genericsExample&lt;Int&gt;(10)
+   var object2 = genericsExample&lt;Double&gt;(10.00)
+   println(objet1)
+   println(object2)
+}
+class genericsExample&lt;out T&gt;(input:T) {
+   init {
+      println("I am getting called with the value "+input)
+   }
+}
+</pre>
+<p>The above code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+I am getting called with the value 10
+I am getting called with the value 10.0
+genericsExample@28d93b30
+genericsExample@1b6d3586
+</pre>
+<h1>Kotlin - Delegation</h1>
+<p>Kotlin supports <b>“delegation”</b> design pattern by introducing a new keyword <b>“by”</b>. Using this keyword or delegation methodology, Kotlin allows the derived class to access all the implemented public methods of an interface through a specific object. The following example demonstrates how this happens in Kotlin.</p>
+<a href="http://tpcg.io/Efl9AY" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+interface Base {
+   fun printMe() //abstract method
+}
+class BaseImpl(val x: Int) : Base {
+   override fun printMe() { println(x) }   //implementation of the method
+}
+class Derived(b: Base) : Base by b  // delegating the public method on the object b
+
+fun main(args: Array&lt;String&gt;) {
+   val b = BaseImpl(10)
+   Derived(b).printMe() // prints 10 :: accessing the printMe() method 
+}
+</pre>
+<p>In the example, we have one interface “Base” with its abstract method named “printme()”. In the BaseImpl class, we are implementing this “printme()” and later from another class we are using this implementation using “by” keyword.</p>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+10
+</pre>
+<h2>Property Delegation</h2>
+<p>In the previous section, we have learned about the delegation design pattern using “by” keyword. In this section, we will learn about delegation of properties using some standard methods mentioned in Kotlin library.</p>
+<p>Delegation means passing the responsibility to another class or method. When a property is already declared in some places, then we should reuse the same code to initialize them. In the following examples, we will use some standard delegation methodology provided by Kotlin and some standard library function while implementing delegation in our examples.</p>
+<h3>Using Lazy()</h3>
+<p>Lazy is a lambda function which takes a property as an input and in return gives an instance of <b>Lazy&lt;T&gt;</b>, where &lt;T&gt; is basically the type of the properties it is using. Let us take a look at the following to understand how it works.</p>
+<a href="http://tpcg.io/kDj8lx" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+val myVar: String by lazy {
+   "Hello"
+}
+fun main(args: Array&lt;String&gt;) {
+   println(myVar +" My dear friend")
+}
+</pre>
+<p>In the above piece of code, we are passing a variable “myVar” to the Lazy function, which in return assigns the value to its object and returns the same to the main function. Following is the output in the browser.</p>
+<pre class="result notranslate">
+Hello My dear friend
+</pre>
+<h3>Delegetion.Observable()</h3>
+<p>Observable() takes two arguments to initialize the object and returns the same to the called function. In the following example, we will see how to use Observable() method in order to implement delegation.</p>
+<a href="http://tpcg.io/xeiAIF" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+import kotlin.properties.Delegates
+class User {
+   var name: String by Delegates.observable("Welcome to Tutorialspoint.com") {
+      prop, old, new -&gt;
+      println("$old -&gt; $new")
+   }
+}
+fun main(args: Array&lt;String&gt;) {
+   val user = User()
+   user.name = "first"
+   user.name = "second"
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+first -&gt; second
+</pre>
+<p>In general, the syntax is the expression after the “by” keyword is delegated. The <b>get()</b> and <b>set()</b> methods of the variable <b>p</b> will be delegated to its <b>getValue()</b> and <b>setValue()</b> methods defined in the Delegate class.</p>
+<pre class="prettyprint notranslate">
+class Example {
+   var p: String by Delegate()
+}
+</pre>
+<p>For the above piece of code, following is the delegate class that we need to generate in order to assign the value in the variable <b>p</b>.</p>
+<pre class="prettyprint notranslate">
+class Delegate {
+   operator fun getValue(thisRef: Any?, property: KProperty&lt;*&gt;): String {
+      return "$thisRef, thank you for delegating '${property.name}' to me!"
+   }
+   operator fun setValue(thisRef: Any?, property: KProperty&lt;*&gt;, value: String) {
+      println("$value has been assigned to '${property.name} in $thisRef.'")
+   }
+}
+</pre>
+<p>While reading, getValue() method will be called and while setting the variable setValue() method will be called.</p>
+<h1>Kotlin - Functions</h1>
+<p>Kotlin is a statically typed language, hence, functions play a great role in it. We are pretty familiar with function, as we are using function throughout the examples. Function is declared with the keyword “fun”. Like any other OOP, it also needs a return type and an option argument list.</p>
+<p>In the following example, we are defining a function called MyFunction and from the main function we are calling this function and passing some argument.</p>
+<a href="http://tpcg.io/dSVwaG" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   println(MyFunction("tutorialsPoint.com"))
+}
+fun MyFunction(x: String): String {
+   var c:String  = "Hey!! Welcome To ---"
+   return (c+x)
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+Hey!! Welcome To ---tutorialsPoint.com
+</pre>
+<p>The function should be declared as follows &minus;</p>
+<pre class="prettyprint notranslate">
+fun &lt;nameOfFunction&gt;(&lt;argument&gt;:&lt;argumentType&gt;):&lt;ReturnType&gt;
+</pre>
+<p>Following are some of the different types of function available in Kotlin.</p>
+<h2>Lambda Function</h2>
+<p>Lambda is a high level function that drastically reduces the boiler plate code while declaring a function and defining the same. Kotlin allows you to define your own lambda. In Kotlin, you can declare your lambda and pass that lambda to a function.</p>
+<p>Take a look at the following example.</p>
+<a href="http://tpcg.io/REU23H" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val mylambda :(String)-&gt;Unit  = {s:String-&gt;print(s)}
+   val v:String = "TutorialsPoint.com"
+   mylambda(v)
+}
+</pre>
+<p>In the above code, we have created our own lambda known as “mylambda” and we have passed one variable to this lambda, which is of type String and contains a value “TutorialsPoint.com”.</p>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+TutorialsPoint.com
+</pre>
+<h2>Inline Function</h2>
+<p>The above example shows the basic of the lambda expression that we can use in Kotlin application. Now, we can pass a lambda to another function to get our output which makes the calling function an inline function.</p>
+<p>Take a look at the following example.</p>
+<a href="http://tpcg.io/JfmM0d" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val mylambda:(String)-&gt;Unit  = {s:String-&gt;print(s)}
+   val v:String = "TutorialsPoint.com"
+   myFun(v,mylambda) //passing lambda as a parameter of another function 
+}
+fun myFun(a :String, action: (String)-&gt;Unit) { //passing lambda 
+   print("Heyyy!!!")
+   action(a)// call to lambda function
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser. Using inline function, we have passed a lambda as a parameter. Any other function can be made an inline function using the “inline” keyword.</p>
+<pre class="result notranslate">
+Heyyy!!!TutorialsPoint.com
+</pre>
+<h1>Kotlin - Destructuring Declarations</h1>
+<p>Kotlin contains many features of other programming languages. It allows you to declare multiple variables at once. This technique is called Destructuring declaration.</p>
+<p>Following is the basic syntax of the destructuring declaration.</p>
+<pre class="result notranslate">
+val (name, age) = person
+</pre>
+<p>In the above syntax, we have created an object and defined all of them together in a single statement. Later, we can use them as follows.</p>
+<pre class="prettyprint notranslate">
+println(name)
+println(age)
+</pre>
+<p>Now, let us see how we can use the same in our real-life application. Consider the following example where we are creating one Student class with some attributes and later we will be using them to print the object values.</p>
+<a href="http://tpcg.io/T8eRWW" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   val s = Student("TutorialsPoint.com","Kotlin")
+   val (name,subject) = s
+   println("You are learning "+subject+" from "+name)
+}
+data class Student( val a :String,val b: String ){
+   var name:String = a
+   var subject:String = b
+}
+</pre>
+<p>The above piece of code will yield the following output in the browser.</p>
+<pre class="result notranslate">
+You are learning Kotlin from TutorialsPoint.com
+</pre>
+<h1>Kotlin - Exception Handling</h1>
+<p>Exception handling is a very important part of a programming language. This technique restricts our application from generating the wrong output at runtime. In this chapter, we will learn how to handle runtime exception in Kotlin. The exceptions in Kotlin is pretty similar to the exceptions in Java. All the exceptions are descendants of the “Throwable” class. Following example shows how to use exception handling technique in Kotlin.</p>
+<!--<a href="http://tpcg.io/UZv9mL" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>-->
+<pre class="prettyprint notranslate">
+fun main(args: Array&lt;String&gt;) {
+   try {
+      val myVar:Int = 12;
+      val v:String = "Tutorialspoint.com";
+      v.toInt();
+   } catch(e:Exception) {
+      e.printStackTrace();
+   } finally {
+      println("Exception Handeling in Kotlin");
+   }
+}
+</pre>
+<p>In the above piece of code, we have declared a String and later tied that string into the integer, which is actually a runtime exception. Hence, we will get the following output in the browser.</p>
+<pre class="result notranslate">
+val myVar:Int = 12;
+Exception Handeling in Kotlin
+</pre>
+<p><b>Note</b> &minus; Like Java, Kotlin also executes the finally block after executing the catch block.</p>
+<hr />
+<div class="pre-btn">
+<a href="/kotlin/kotlin_exception_handling.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/kotlin/kotlin_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/kotlin/kotlin_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/kotlin/kotlin_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/kotlin/kotlin_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/kotlin/kotlin_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/kotlin/kotlin_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/kotlin/kotlin_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

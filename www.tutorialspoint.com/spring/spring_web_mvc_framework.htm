@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Spring MVC Framework</title>
+<meta name="description" content="Spring MVC Framework - Learn Java Spring Framework version 4.1.6 in simple and easy steps starting from basic to advanced concepts with examples including Overview, Architecture, environment setup, Hello World Example, inversion of control (IoC), dependency injection, bean definition, scopes, bean life cycle, Post Processors, definition inheritance, dependency injection,  inner beans, injecting collection, autowiring, Annotation, Java based configuration, event handling, custom events, different modules, aspect oriented programming (AOP), database access (JDBC), Transaction Management, Web MVC framework, logging with Log4j, Web Flow, Exception handling, EJB integration and Sending email, Spring Interview Questions, Answers, Quiz and Online Mock Test." />
+<meta name="keywords" content="Free, Spring, Tutorials, beginners, Framework, Web Flow,  Reference, Manual, Guide, transaction, Management, Overview, Architecture, environment setup, Hello World Example, inversion of control (IoC), dependency injection, bean definition, scopes, bean life cycle, Post Processors, definition inheritance, dependency injection,  inner beans, injecting collection, autowiring, Annotation, Java based configuration, event handling, custom events, different modules, aspect oriented programming (AOP), database access (JDBC), Web MVC framework, logging with Log4j, Exception handling, EJB integration and Sending email, Spring Interview Questions, Answers, Quiz and Online Mock Test." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #387b2c !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #387b2c url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #387b2c !important;}
+.submenu-item{ border-bottom: 2px solid #387b2c !important; border-top: 2px solid #387b2c !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#387b2c; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/spring/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align: center !important;
+   vertical-align: middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/spring/images/spring-mini-logo.jpg" alt="Spring Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Spring Core Basics</li>
+<li><a href="/spring/index.htm">Spring - Home</a></li>
+<li><a href="/spring/spring_overview.htm">Spring - Overview</a></li>
+<li><a href="/spring/spring_architecture.htm">Spring - Architecture</a></li>
+<li><a href="/spring/spring_environment_setup.htm">Spring - Environment Setup</a></li>
+<li><a href="/spring/spring_hello_world_example.htm">Spring - Hello World Example</a></li>
+<li><a href="/spring/spring_ioc_containers.htm">Spring - IoC Containers</a></li>
+<li><a href="/spring/spring_bean_definition.htm">Spring - Bean Definition</a></li>
+<li><a href="/spring/spring_bean_scopes.htm">Spring - Bean Scopes</a></li>
+<li><a href="/spring/spring_bean_life_cycle.htm">Spring - Bean Life Cycle</a></li>
+<li><a href="/spring/spring_bean_post_processors.htm">Spring - Bean Post Processors</a></li>
+<li><a href="/spring/spring_bean_definition_inheritance.htm">Spring - Bean Definition Inheritance</a></li>
+<li><a href="/spring/spring_dependency_injection.htm">Spring - Dependency Injection</a></li>
+<li><a href="/spring/spring_injecting_inner_beans.htm">Spring - Injecting Inner Beans</a></li>
+<li><a href="/spring/spring_injecting_collection.htm">Spring - Injecting Collection</a></li>
+<li><a href="/spring/spring_beans_autowiring.htm">Spring - Beans Auto-Wiring</a></li>
+<li><a href="/spring/spring_annotation_based_configuration.htm">Annotation Based Configuration</a></li>
+<li><a href="/spring/spring_java_based_configuration.htm">Spring - Java Based Configuration</a></li>
+<li><a href="/spring/event_handling_in_spring.htm">Spring - Event Handling in Spring</a></li>
+<li><a href="/spring/custom_events_in_spring.htm">Spring - Custom Events in Spring</a></li>
+<li><a href="/spring/aop_with_spring.htm">Spring - AOP with Spring Framework</a></li>
+<li><a href="/spring/spring_jdbc_framework.htm">Spring - JDBC Framework</a></li>
+<li><a href="/spring/spring_transaction_management.htm">Spring - Transaction Management</a></li>
+<li><a href="/spring/spring_web_mvc_framework.htm">Spring - Web MVC Framework</a></li>
+<li><a href="/spring/logging_with_log4j.htm">Spring - Logging with Log4J</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Spring Questions and Answers</li>
+<li><a href="/spring/spring_questions_answers.htm">Spring - Questions and Answers</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Spring Useful Resources</li>
+<li><a href="/spring/spring_quick_guide.htm">Spring - Quick Guide</a></li>
+<li><a href="/spring/spring_useful_resources.htm">Spring - Useful Resources</a></li>
+<li><a href="/spring/spring_discussion.htm">Spring - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Spring - MVC Framework</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/spring/spring_transaction_management.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/spring/logging_with_log4j.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>The Spring Web MVC framework provides Model-View-Controller (MVC) architecture and ready components that can be used to develop flexible and loosely coupled web applications. The MVC pattern results in separating the different aspects of the application (input logic, business logic, and UI logic), while providing a loose coupling between these elements.</p>
+<ul class="list">
+<li><p>The <b>Model</b> encapsulates the application data and in general they will consist of POJO.</p></li>
+<li><p>The <b>View</b> is responsible for rendering the model data and in general it generates HTML output that the client's browser can interpret.</p></li>
+<li><p>The <b>Controller</b> is responsible for processing user requests and building an appropriate model and passes it to the view for rendering.</p></li>
+</ul>
+<h2>The DispatcherServlet</h2>
+<p>The Spring Web model-view-controller (MVC) framework is designed around a <i>DispatcherServlet</i> that handles all the HTTP requests and responses. The request processing workflow of the Spring Web MVC <i>DispatcherServlet</i> is illustrated in the following diagram &minus;</p>
+<img src="/spring/images/spring_dispatcherservlet.png" alt="Spring DispatcherServlet" />
+<p>Following is the sequence of events corresponding to an incoming HTTP request to <i>DispatcherServlet</i> &minus;</p>
+<ul class="list">
+<li><p>After receiving an HTTP request, <i>DispatcherServlet</i> consults the <i>HandlerMapping</i>  to call the appropriate <i>Controller</i>. </p></li>
+<li><p>The <i>Controller</i> takes the request and calls the appropriate service methods based on used GET or POST method. The service method will set model data based on defined business logic and returns view name to the <i>DispatcherServlet</i>.</p></li>
+<li><p>The <i>DispatcherServlet</i> will take help from <i>ViewResolver</i> to pickup the defined view for the request.</p></li>
+<li><p>Once view is finalized, The <i>DispatcherServlet</i> passes the model data to the view  which is finally rendered on the browser.</p></li>
+</ul>
+<p>All the above-mentioned components, i.e. HandlerMapping, Controller, and ViewResolver are parts of <i>WebApplicationContext</i> w which is an extension of the plain<i>ApplicationContext</i> with some extra features necessary for web applications.</p>
+<h2>Required Configuration</h2>
+<p>You need to map requests that you want the <i>DispatcherServlet</i> to handle, by using a URL mapping in the <b>web.xml</b> file. The following is an example to show declaration and mapping for <b>HelloWeb</b> <i>DispatcherServlet</i> example &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;web-app id = "WebApp_ID" version = "2.4"
+   xmlns = "http://java.sun.com/xml/ns/j2ee" 
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://java.sun.com/xml/ns/j2ee 
+   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"&gt;
+    
+   &lt;display-name&gt;Spring MVC Application&lt;/display-name&gt;
+   
+   &lt;servlet&gt;
+      &lt;servlet-name&gt;HelloWeb&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;
+         org.springframework.web.servlet.DispatcherServlet
+      &lt;/servlet-class&gt;
+      &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+   &lt;/servlet&gt;
+
+   &lt;servlet-mapping&gt;
+      &lt;servlet-name&gt;HelloWeb&lt;/servlet-name&gt;
+      &lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;
+   &lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;
+</pre>
+<p>The <b>web.xml</b> file will be kept in the WebContent/WEB-INF directory of your web application. Upon initialization of <b>HelloWeb</b> DispatcherServlet, the framework will try to load the application context from a file named <b>[servlet-name]-servlet.xml</b> located in the application's WebContent/WEB-INFdirectory. In this case, our file will be <b>HelloWebservlet.xml</b>.</p>
+<p>Next, &lt;servlet-mapping&gt; tag indicates what URLs will be handled by which DispatcherServlet. Here all the HTTP requests ending with <b>.jsp</b> will be handled by the <b>HelloWeb</b> DispatcherServlet.</p>
+<p>If you do not want to go with default filename as <i>[servlet-name]-servlet.xml</i> and default location as <i>WebContent/WEB-INF</i>, you can customize this file name and location by adding the servlet listener <i>ContextLoaderListener</i> in your web.xml file as follows &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;web-app...&gt;
+
+   &lt;!-------- <i>DispatcherServlet</i> definition goes here-----&gt;
+   ....
+   &lt;context-param&gt;
+      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+      &lt;param-value&gt;/WEB-INF/HelloWeb-servlet.xml&lt;/param-value&gt;
+   &lt;/context-param&gt;
+
+   &lt;listener&gt;
+      &lt;listener-class&gt;
+         org.springframework.web.context.ContextLoaderListener
+      &lt;/listener-class&gt;
+   &lt;/listener&gt;
+   
+&lt;/web-app&gt;
+</pre>
+<p>Now, let us check the required configuration for <b>HelloWeb-servlet.xml</b> file, placed in your web application's <i>WebContent/WEB-INF</i> directory &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd"&gt;
+
+   &lt;context:component-scan base-package = "com.tutorialspoint" /&gt;
+
+   &lt;bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;
+      &lt;property name = "prefix" value = "/WEB-INF/jsp/" /&gt;
+      &lt;property name = "suffix" value = ".jsp" /&gt;
+   &lt;/bean&gt;
+
+&lt;/beans&gt;
+</pre>
+<p>Following are the important points about <b>HelloWeb-servlet.xml</b> file &minus;</p>
+<ul class="list">
+<li><p>The <i>[servlet-name]-servlet.xml</i> file will be used to create the beans defined, overriding the definitions of any beans defined with the same name in the global scope.</p></li>
+<li><p>The <i>&lt;context:component-scan...&gt;</i> tag will be use to activate Spring MVC annotation scanning capability which allows to make use of annotations like @Controller and @RequestMapping etc.</p></li>
+<li><p>The  <i>InternalResourceViewResolver</i> will have rules defined to resolve the view names. As per the above defined rule, a logical view named <b>hello</b> is delegated to a view implementation located at <i>/WEB-INF/jsp/hello.jsp</i> .</p></li>
+</ul>
+<p>The following section will show you how to create your actual components, i.e., Controller, Model, and View.</p>
+<h2>Defining a Controller</h2>
+<p>The DispatcherServlet delegates the request to the controllers to execute the functionality specific to it. The <b>@Controller</b>annotation indicates that a particular class serves the role of a controller. The <b>@RequestMapping</b> annotation is used to map a URL to either an entire class or a particular handler method.</p>
+<pre class="prettyprint notranslate">
+@Controller
+@RequestMapping("/hello")
+public class HelloController { 
+   @RequestMapping(method = RequestMethod.GET)
+   public String printHello(ModelMap model) {
+      model.addAttribute("message", "Hello Spring MVC Framework!");
+      return "hello";
+   }
+}
+</pre>
+<p>The <b>@Controller</b> annotation defines the class as a Spring MVC controller. Here, the first usage of <b>@RequestMapping</b> indicates that all handling methods on this controller are relative to the <b>/hello</b> path. Next annotation<b>@RequestMapping(method = RequestMethod.GET)</b> is used to declare theprintHello() method as the controller's default service method to handle HTTP GET request. You can define another method to handle any POST request at the same URL.</p>
+<p>You can write the above controller in another form where you can add additional attributes in  <i>@RequestMapping</i> as follows &minus;</p>
+<pre class="prettyprint notranslate">
+@Controller
+public class HelloController {
+   @RequestMapping(value = "/hello", method = RequestMethod.GET)
+   public String printHello(ModelMap model) {
+      model.addAttribute("message", "Hello Spring MVC Framework!");
+      return "hello";
+   }
+}
+</pre>
+<p>The <b>value</b> attribute indicates the URL to which the handler method is mapped and the <b>method</b> attribute defines the service method to handle HTTP GET request. The following important points are to be noted about the controller defined above &minus;</p>
+<ul class="list">
+<li><p>You will define required business logic inside a service method. You can call another method inside this method as per requirement.</p></li>
+<li><p>Based on the business logic defined, you will create a model within this method. You can use setter different model attributes and these attributes will be accessed by the view to present the final result. This example creates a model with its attribute "message".</p></li>
+<li><p>A defined service method can return a String, which contains the name of the <b>view</b> to be used to render the model. This example returns "hello" as logical view name.</p></li>
+</ul>
+<h2>Creating JSP Views</h2>
+<p>Spring MVC supports many types of views for different presentation technologies. These include - JSPs, HTML, PDF, Excel worksheets, XML, Velocity templates, XSLT, JSON, Atom and RSS feeds, JasperReports, etc. But most commonly we use JSP templates written with JSTL.</p> 
+<p>Let us write a simple <b>hello</b> view in /WEB-INF/hello/hello.jsp &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Hello Spring MVC&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;h2&gt;${message}&lt;/h2&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Here <b>${message}</b> is the attribute which we have set up inside the Controller. You can have multiple attributes to be displayed inside your view.</p>
+<h2>Spring Web MVC Framework Examples</h2>
+<p>Based on the above concepts, let us check few important examples which will help you in building your Spring Web Applications &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No.</th>
+<th style="text-align:center">Example &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><a href="/spring/spring_mvc_hello_world_example.htm">Spring MVC Hello World Example</a>
+<p>This example will explain how to write a simple Spring Web Hello World application.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><a href="/spring/spring_mvc_form_handling_example.htm">Spring MVC Form Handling Example</a>
+<p>This example will explain how to write a Spring Web application using HTML forms to submit the data to the controller and display a processed result.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><a href="/spring/spring_page_redirection_example.htm">Spring Page Redirection Example</a>
+<p>Learn how to use page redirection functionality in Spring MVC Framework.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><a href="/spring/spring_static_pages_example.htm">Spring Static Pages Example</a>
+<p>Learn how to access static pages along with dynamic pages in Spring MVC Framework.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><a href="/spring/spring_exception_handling_example.htm">Spring Exception Handling Example</a>
+<p>Learn how to handle exceptions in Spring MVC Framework.</p>
+</td>
+</tr>
+</table>
+<hr />
+<div class="pre-btn">
+<a href="/spring/spring_transaction_management.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/spring/logging_with_log4j.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Data Structures Algorithms Mock Test - TutorialsPoint</title>
+<meta name="description" content="Data Structures Algorithms Mock Test - Learn Data Structures and Algorithm using c, C++ and Java in simple and easy steps starting from basic to advanced concepts with examples including Algorithm, Data Structures, Array, Linked List, Doubly Linked List, Circular List, Stack, Parsing Expression, Queue, Priority queue, Tree, Binary Search Tree, B+, AVL, Spanning, Tower of Hanoi, Hash Table, Heap, Graph, Search techniques, Sorting techniques, Recursion." />
+<meta name="keywords" content="Algorithm, Data Structures, Array, Linked List, Doubly Linked List, Circular List, Stack, Parsing Expression, Queue, Priority queue, Tree, Binary Search Tree, B+, AVL, Spanning, Tower of Hanoi, Hash Table, Heap, Graph, Search techniques, Sorting techniques, Recursion." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #cd3300 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #cd3300 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #cd3300 !important;}
+.submenu-item{ border-bottom: 2px solid #cd3300 !important; border-top: 2px solid #cd3300 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#cd3300; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/data_structures_algorithms/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/data_structures_algorithms/images/data-structure-mini-logo.jpg" alt="Data Structures & Algorithms Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Data Structures &amp; Algorithms</li>
+<li><a href="/data_structures_algorithms/index.htm">DSA - Home</a></li>
+<li><a href="/data_structures_algorithms/data_structure_overview.htm">DSA - Overview</a></li>
+<li><a href="/data_structures_algorithms/data_structure_environment.htm">DSA - Environment Setup</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Algorithm</li>   
+<li><a href="/data_structures_algorithms/algorithms_basics.htm">DSA - Algorithms Basics</a></li>
+<li><a href="/data_structures_algorithms/asymptotic_analysis.htm">DSA - Asymptotic Analysis</a></li>
+<li><a href="/data_structures_algorithms/greedy_algorithms.htm">DSA - Greedy Algorithms</a></li>
+<li><a href="/data_structures_algorithms/divide_and_conquer.htm">DSA - Divide and Conquer</a></li>
+<li><a href="/data_structures_algorithms/dynamic_programming.htm">DSA - Dynamic Programming</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Data Structures</li>
+<li><a href="/data_structures_algorithms/data_structures_basics.htm">DSA - Data Structure Basics</a></li>
+<li><a href="/data_structures_algorithms/array_data_structure.htm">DSA - Array Data Structure</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Linked Lists</a></li>
+<li><a href="/data_structures_algorithms/linked_list_algorithms.htm">DSA - Linked List Basics</a></li>
+<li><a href="/data_structures_algorithms/doubly_linked_list_algorithm.htm">DSA - Doubly Linked List</a></li>
+<li><a href="/data_structures_algorithms/circular_linked_list_algorithm.htm">DSA - Circular Linked List</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Stack &amp; Queue</li>
+<li><a href="/data_structures_algorithms/stack_algorithm.htm">DSA - Stack</a></li>
+<li><a href="/data_structures_algorithms/expression_parsing.htm">DSA - Expression Parsing</a></li>
+<li><a href="/data_structures_algorithms/dsa_queue.htm">DSA - Queue</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Searching Techniques</li>
+<!--<li style="background:yellow;"><a href="/data_structures_algorithms/searching_algorithms.htm">DSA - Searching Algorithms</a></li>-->
+<li><a href="/data_structures_algorithms/linear_search_algorithm.htm">DSA - Linear Search</a></li>
+<li><a href="/data_structures_algorithms/binary_search_algorithm.htm">DSA - Binary Search</a></li>
+<li><a href="/data_structures_algorithms/interpolation_search_algorithm.htm">DSA - Interpolation Search</a></li>
+<li><a href="/data_structures_algorithms/hash_data_structure.htm">DSA - Hash Table</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Sorting Techniques</li>
+<li><a href="/data_structures_algorithms/sorting_algorithms.htm">DSA - Sorting Algorithms</a></li>
+<li><a href="/data_structures_algorithms/bubble_sort_algorithm.htm">DSA - Bubble Sort</a></li>
+<li><a href="/data_structures_algorithms/insertion_sort_algorithm.htm">DSA - Insertion Sort</a></li>
+<li><a href="/data_structures_algorithms/selection_sort_algorithm.htm">DSA - Selection Sort</a></li>
+<li><a href="/data_structures_algorithms/merge_sort_algorithm.htm">DSA - Merge Sort</a></li>
+<li><a href="/data_structures_algorithms/shell_sort_algorithm.htm">DSA - Shell Sort</a></li>
+<li><a href="/data_structures_algorithms/quick_sort_algorithm.htm">DSA - Quick Sort</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Graph Data Structure</li>
+<li><a href="/data_structures_algorithms/graph_data_structure.htm">DSA - Graph Data Structure</a></li>
+<li><a href="/data_structures_algorithms/depth_first_traversal.htm">DSA - Depth First Traversal</a></li>
+<li><a href="/data_structures_algorithms/breadth_first_traversal.htm">DSA - Breadth First Traversal</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Tree Data Structure</li>
+<li><a href="/data_structures_algorithms/tree_data_structure.htm">DSA - Tree Data Structure</a></li>
+<li><a href="/data_structures_algorithms/tree_traversal.htm">DSA - Tree Traversal</a></li>
+<li><a href="/data_structures_algorithms/binary_search_tree.htm">DSA - Binary Search Tree</a></li>
+<li><a href="/data_structures_algorithms/avl_tree_algorithm.htm">DSA - AVL Tree</a></li>
+<li><a href="/data_structures_algorithms/spanning_tree.htm">DSA - Spanning Tree</a></li>
+<li><a href="/data_structures_algorithms/heap_data_structure.htm">DSA - Heap</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Recursion</li>
+<li><a href="/data_structures_algorithms/recursion_basics.htm">DSA - Recursion Basics</a></li>
+<li><a href="/data_structures_algorithms/tower_of_hanoi.htm">DSA - Tower of Hanoi</a></li>
+<li><a href="/data_structures_algorithms/fibonacci_series.htm">DSA - Fibonacci Series</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DSA Useful Resources</li>
+<li><a href="/data_structures_algorithms/data_structures_algorithms_questions_answers.htm">DSA - Questions and Answers</a></li>
+<li><a href="/data_structures_algorithms/dsa_quick_guide.htm">DSA - Quick Guide</a></li>
+<li><a href="/data_structures_algorithms/dsa_useful_resources.htm">DSA - Useful Resources</a></li>
+<li><a href="/data_structures_algorithms/dsa_discussion.htm">DSA - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Data Structures Algorithms Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/data_structures_algorithms/data_structures_algorithms_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/data_structures_algorithms/data_structures_algorithms_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>Data Structures Algorithms</b>. You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/data_structures_algorithms/data_structures_algorithms_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/data_structures_algorithms/data_structures_algorithms_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/data_structures_algorithms/data_structures_algorithms_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/data_structures_algorithms/data_structures_algorithms_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>Data Structures Algorithms Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - What is the worst case time complexity of linear search algorithm?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - &Omicron;(1)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - &Omicron;(n)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - &Omicron;(log n)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - &Omicron;(n<sup>2</sup>)</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Linear search scans sequentially to find the target value.  The best case is &Omicron;(1) and average and worst case is &Omicron;(n).  Worst case is when data is not in the list, and it has to scan all n elements.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - What is the worst case run-time complexity of binary search algorithm?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - &Omicron;(n<sup>2</sup>)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - &Omicron;(n<sup>log n</sup>)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - &Omicron;(n<sup>3</sup>)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - &Omicron;(n)</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>In the worst case, binary search will be left or right intended, making it compare all the n values.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following usees FIFO method</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Queue</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Stack</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Hash Table</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Binary Search Tree</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Queue maintains two pointers &minus; front and rear.  In queue data structure, the item inserted first will always be removed first, hence FIFO! </p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - A complete graph can have </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - n<sup>2</sup> spanning trees</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - n<sup>n - 2</sup> spanning trees</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - n<sup>n + 1</sup> spanning trees</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - n<sup>n</sup> spanning trees</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>At maximum, a complete graph can have n<sup>n - 1</sup> spanning trees. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Which one of the below is not divide and conquer approach?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Insertion Sort</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Merge Sort</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Shell Sort</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Heap Sort</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Among the options, only Merge sort divides the list in sub-list, sorts and then merges them together </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - Prefix notation is alsow known as</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Reverse Polish Notation</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Reverse Notation</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Polish Reverse Notation</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Polish Notation</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Polish Notation</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - In order traversal of binary search tree will produce &minus;</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - unsorted list</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - reverse of input</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - sorted list</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Binary search tree yields a sorted list when traversed in-order.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - In a min-heap:</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - parent nodes have values greater than or equal to their childs</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - parent nodes have values less than or equal to their childs</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - both statements are true</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - both statements are wrong</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>In a min heap, parents always have lesser or equal values than that of their childs.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - A procedure that calls itself is called</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - illegal call</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - reverse polish</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - recursive</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>In recursion, a procedure calls itself, either directly or by calling a procedure which in turn calls it.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - For a binary search algorithm to work, it is necessary that the array (list) must be </p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - sorted</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - unsorted</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - in a heap</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - popped out of stack</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>As binary search divides the list and selects a the sub-list to extend search based on comparison of values, it becomes necessary that the array (list) must be in sorted form. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - push() and pop() functions are found in </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - queues</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - lists</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - stacks</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - trees</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Stack uses push() to insert an item in stack, and pop() to remove the top item from stack.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Queue data structure works on</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - LIFO</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - FIFO</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - FILO</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>In queue, data item inserted first, will be available first and data item inserted last will be available in the last. FIFO stands for First In First Out and is a correct answer.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - Maximum number of nodes in a binary tree with height k, where root is height 0, is </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 2<sup><i>k</i></sup> &minus; 1</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - 2<sup><i>k+1</i></sup> &minus; 1</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 2<sup><i>k-1</i></sup> + 1</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 2<sup><i>k</i></sup> &minus; 1</a></p>
+</div>
+<div class="A" id='A13'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>If the root node is at height 0, then a binary tree can have at max 2<sup><i>k+1</i></sup> &minus; 1 nodes.</p><p> For example: a binary tree of height 1, can have maximum 2<sup><i>1+1</i></sup> &minus; 1 = 3 nodes.</p>
+<pre class="result notranslate">
+   r    --------- 0
+  / \
+ L   R  --------- 1
+</pre>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> - Which one of the below mentioned is linear data structure &minus;</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Queue</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Stack</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> -  Arrays</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A14'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>All mentioned data structures are linear in nature.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - What data structure is used for depth first traversal of a graph?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - queue</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - stack</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - list</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above</a></p>
+</div>
+<div class="A" id='A15'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Stack is used for depth first traversal whereas queue is used for breadth first traversal</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - What data structure is used for breadth first traversal of a graph?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - queue</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - stack</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - list</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - none of the above</a></p>
+</div>
+<div class="A" id='A16'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Queue is used for breadth first traversal whereas stack is used for depth first traversal.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - What data structure can be used to check if a syntax has balanced paranthesis ?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - queue</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - tree</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - list</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - stack</a></p>
+</div>
+<div class="A" id='A17'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Stack uses LIFO method which is good for checking matching paranthesis.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - Postfix expression is just a reverse of prefix expression.</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A18'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Expression notations are not reverse (or so) of each other, rather operators used in the expression have different arrangements.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - Stack is used for</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - CPU Resource Allocation</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Breadth First Traversal</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Recursion</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A19'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Recursive procedures use stacks to execute the result of last executed procedural call.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> - A circular linked list can be used for </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Stack</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Queue</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both Stack &amp; Queue</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Neither Stack or Queue</a></p>
+</div>
+<div class="A" id='A20'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Both stack and queue data structure can be represented by circular linked-list.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> - A linked-list is a dynamic structure</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - true</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - false</a></p>
+</div>
+<div class="A" id='A21'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>A linked-list is dynamic structure, it can shrink and expand as required by the program.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - Minimum number of moves required to solve a <i>Tower of Hanoi</i> puzzle is</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 2<sup>n<sup>2</sup></sup></a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 2<sup>n-1</sup></a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 2<sup>n</sup> - 1</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 2n - 1</a></p>
+</div>
+<div class="A" id='A22'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Minimum number of moves required to solve a Tower of Hanoi puzzle is 2<sup>n</sup> - 1.  Where n is the number of disks.  If the number of disks is 3, then minimum number of moves required are 2<sup>3</sup> - 1 = 7</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> - Which of the following is an example of dynamic programming approach?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Fibonacci Series</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Tower of Hanoi</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Dijkstra Shortest Path</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A23'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>All mentioned use dynamic programming approach.  Before solving the in-hand sub-problem, dynamic algorithm will try to examine the results of previously solved sub-problems. The solutions of sub-problems are combined in order to achieve the best solution.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> - The following formula will produce 
+<pre class="result notranslate">
+F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub>
+</pre>   
+</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Armstrong Number</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Fibonacci Series</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Euler Number</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Prime Number</a></p>
+</div>
+<div class="A" id='A24'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Fibonacci Series generates subsequent number by adding two previous numbers.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> - Minimum number of queues required for priority queue implementation?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 5</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 4</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 3</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - 2</a></p>
+</div>
+<div class="A" id='A25'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Minimum number of queues required for priority queue implementation is two.  One for storing actual data and one for storing priorities.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>D</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/data_structures_algorithms/data_structures_algorithms_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/data_structures_algorithms/pdf/data_structures_algorithms_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/data_structures_algorithms/data_structures_algorithms_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">data_structures_algorithms_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

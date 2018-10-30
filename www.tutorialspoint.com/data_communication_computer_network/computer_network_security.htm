@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>DCN Computer Network Security</title>
+<meta name="description" content="DCN Computer Network Security - Learn Data Communication &amp; Computer Network in simple and easy steps starting from their overview and then covering Network Architecture, Network topologies, Network Models, Physical Layer, Digital Transmission, Transmission media, Wireless Transmission, Analog Transmission, Multiplexing, Switching, Data Link Layer, Error detection and Correction, Data Link Control & Protocols, Network Layer, Network Addressing, Routing, Transport Layer, Transmission Control Protocol (TCP), Application Layer with DNS, SMTP, FTP, POP, HTTP." />
+<meta name="keywords" content="Data Communication, Computer Network, Tutorial, Network Architecture, Network topologies, Network Models, Physical Layer, Digital Transmission, Transmission media, Wireless Transmission, Analog Transmission, Multiplexing, Switching, Data Link Layer, Error detection and Correction, Data Link Control, Protocols, Network Layer, Network Addressing, Routing, Transport Layer, Transmission, control, protocol (TCP), Application Layer with DNS, SMTP, FTP, POP, HTTP." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #2bb2b0 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #2bb2b0 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #2bb2b0 !important;}
+.submenu-item{ border-bottom: 2px solid #2bb2b0 !important; border-top: 2px solid #2bb2b0 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#2bb2b0; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/data_communication_computer_network/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/data_communication_computer_network/images/dcn-mini-logo.jpg" alt="Data Communication and Computer Network" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">DCN Tutorial</li>
+<li><a target="_top" href="/data_communication_computer_network/index.htm">Data Comm &amp; Networks Home</a></li>
+<li><a target="_top" href="/data_communication_computer_network/data_communication_computer_network_overview.htm">DCN -  Overview</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_types.htm">DCN - Computer Network Types</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_lan_technologies.htm">DCN - Network LAN Technologies</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_topologies.htm">DCN - Computer Network Topologies</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_models.htm">DCN - Computer Network Models</a></li>
+<li><a target="_top" href="/data_communication_computer_network/computer_network_security.htm">DCN - Computer Network Security</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Physical Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/physical_layer_introduction.htm">DCN - Physical Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/digital_transmission.htm">DCN - Digital Transmission</a></li>
+<li><a target="_top" href="/data_communication_computer_network/analog_transmission.htm">DCN - Analog Transmission</a></li>
+<li><a target="_top" href="/data_communication_computer_network/transmission_media.htm">DCN - Transmission media</a></li>
+<li><a target="_top" href="/data_communication_computer_network/wireless_transmission.htm">DCN - Wireless Transmission</a></li>
+<li><a target="_top" href="/data_communication_computer_network/physical_layer_multiplexing.htm">DCN - Multiplexing</a></li>
+<li><a target="_top" href="/data_communication_computer_network/physical_layer_switching.htm">DCN - Network Switching</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Data Link Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/data_link_layer_introduction.htm">DCN - Data Link Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/error_detection_and_correction.htm">DCN - Error detection and Correction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/data_link_control_and_protocols.htm">DCN - Data Link Control &amp; Protocols</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Network Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/network_layer_introduction.htm">DCN - Network Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_addressing.htm">DCN - Network Addressing</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_layer_routing.htm">DCN - Routing</a></li>
+<li><a target="_top" href="/data_communication_computer_network/internetworking.htm">DCN - Internetworking</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_layer_protocols.htm">DCN - Network Layer Protocols</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Transport Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/transport_layer_introduction.htm">DCN - Transport Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/transmission_control_protocol.htm">DCN - Transmission Control Protocol</a></li>
+<li><a target="_top" href="/data_communication_computer_network/user_datagram_protocol.htm">DCN - User Datagram Protocol</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Application Layer</li>
+<li><a target="_top" href="/data_communication_computer_network/application_layer_introduction.htm">DCN - Application Layer Introduction</a></li>
+<li><a target="_top" href="/data_communication_computer_network/client_server_model.htm">DCN - Client-Server Model</a></li>
+<li><a target="_top" href="/data_communication_computer_network/application_protocols.htm">DCN - Application Protocols</a></li>
+<li><a target="_top" href="/data_communication_computer_network/network_services.htm">DCN - Network Services</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DCN Useful Resources</li>
+<li><a target="_top" href="/data_communication_computer_network/dcn_quick_guide.htm">DCN - Quick Guide</a></li>
+<li><a target="_top" href="/data_communication_computer_network/dcn_useful_resources.htm">DCN - Useful Resources</a></li>
+<li><a target="_top" href="/data_communication_computer_network/dcn_discussion.htm">DCN - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>DCN - Computer Network Security</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/data_communication_computer_network/computer_network_models.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/data_communication_computer_network/physical_layer_introduction.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>During initial days of internet, its use was limited to military and universities for research and development purpose.  Later when all networks merged together and formed internet, the data useds to travel through public transit network.Common people may send the data that can be highly sensitive such as their bank credentials, username and passwords, personal documents, online shopping details, or confidential documents.</p>
+<p>All security threats are intentional i.e. they occur only if intentionally triggered.  Security threats can be divided into the following categories:</p>
+<ul class="list">
+<li><p><b>Interruption</b><p>
+<p>Interruption is a security threat in which availability of resources is attacked.  For example, a user is unable to access its web-server or the web-server is hijacked.</p></li>
+<li><p><b>Privacy-Breach</b><p>
+<p>In this threat, the privacy of a user is compromised.  Someone, who is not the authorized person is accessing or intercepting data sent or received by the original authenticated user.</p></li>
+<li><p><b>Integrity</b><p>
+<p>This type of threat includes any alteration or modification in the original context of communication.  The attacker intercepts and receives the data sent by the sender and the attacker then either modifies or generates false data and sends to the receiver.  The receiver receives the data assuming that it is being sent by the original Sender.</p></li>
+<li><p><b>Authenticity</b><p>
+<p>This threat occurs when an attacker or a security violator, poses as a genuine person and accesses the resources or communicates with other genuine users.</p></li>
+</ul>
+<p>No technique in the present world can provide 100% security.  But steps can be taken to secure data while it travels in unsecured network or internet.  The most widely used technique is Cryptography.</p>
+<img src="/data_communication_computer_network/images/cryptography.jpg" alt="Cryptography"/>
+<p>Cryptography is a technique to encrypt the plain-text data which makes it difficult to understand and interpret.  There are several cryptographic algorithms available present day as described below:</p>
+<ul class="list">
+<li><p>Secret Key</p></li>
+<li><p>Public Key</p></li>
+<li><p>Message Digest</p></li>
+</ul>
+<h2>Secret Key Encryption</h2>
+<p>Both sender and receiver have one secret key.  This secret key is used to encrypt the data at sender’s end.  After the data is encrypted, it is sent on the public domain to the receiver.  Because the receiver knows and has the Secret Key, the encrypted data packets can easily be decrypted.</p>
+<p>Example of secret key encryption is Data Encryption Standard (DES). In Secret Key encryption, it is required to have a separate key for each host on the network making it difficult to manage.</p>
+<h2>Public Key Encryption</h2>
+<p>In this encryption system, every user has its own Secret Key and it is not in the shared domain.  The secret key is never revealed on public domain.  Along with secret key, every user has its own but public key.  Public key is always made public and is used by Senders to encrypt the data.  When the user receives the encrypted data, he can easily decrypt it by using its own Secret Key.</p>
+<p>Example of public key encryption is Rivest-Shamir-Adleman (RSA).</p>
+<h2>Message Digest</h2>
+<p>In this method, actual data is not sent, instead a hash value is calculated and sent.  The other end user, computes its own hash value and compares with the one just received.If both hash values are matched, then it is accepted otherwise rejected.</p>
+<p>Example of Message Digest is MD5 hashing.  It is mostly used in authentication where user password is cross checked with the one saved on the server.</p>
+<hr />
+<div class="pre-btn">
+<a href="/data_communication_computer_network/computer_network_models.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/data_communication_computer_network/pdf/computer_network_security.pdf" title="DCN Computer Network Security" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/data_communication_computer_network/physical_layer_introduction.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/data_communication_computer_network/computer_network_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/data_communication_computer_network/computer_network_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/data_communication_computer_network/computer_network_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/data_communication_computer_network/computer_network_security.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/data_communication_computer_network/computer_network_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/data_communication_computer_network/computer_network_security.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

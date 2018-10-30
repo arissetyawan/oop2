@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>ASP.NET - Data Binding</title>
+<meta name="description" content="ASP.NET Data Binding - Free ASP.NET Tutorials, Reference Manual, and Quick Guide for Beginners. Learn ASP.NET starting from Environment Setup, Basic Controls, Directives, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel control, LINQ, Database Access, Security, Debugging, Error Handling, Configuration and Deployment." />
+<meta name="keywords" content="Free, ASP.NET, Tutorial, Reference, Manual, Guide, Beginners, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel, control, LINQ, Database Access, Security, Debugging, Error, Handling, Configuration, Deployment." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #147dc2 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #147dc2 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #147dc2 !important;}
+.submenu-item{ border-bottom: 2px solid #147dc2 !important; border-top: 2px solid #147dc2 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#147dc2; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/asp.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/asp.net/images/asp.net-mini-logo.jpg" alt="ASP.NET Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">ASP.NET Tutorial</li>
+<li><a target="_top" href="/asp.net/index.htm">ASP.NET - Home</a></li>
+<li><a target="_top" href="/asp.net/asp.net_introduction.htm">ASP.NET - Introduction</a></li>
+<li><a target="_top" href="/asp.net/asp.net_environment_setup.htm">ASP.NET - Environment</a></li>
+<li><a target="_top" href="/asp.net/asp.net_life_cycle.htm">ASP.NET - Life Cycle</a></li>
+<li><a target="_top" href="/asp.net/asp.net_first_example.htm">ASP.NET - First Example</a></li>
+<li><a target="_top" href="/asp.net/asp.net_event_handling.htm">ASP.NET - Event Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_side.htm">ASP.NET - Server Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_controls.htm">ASP.NET - Server Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_html_server.htm">ASP.NET - HTML Server</a></li>
+<li><a target="_top" href="/asp.net/asp.net_client_side.htm">ASP.NET - Client Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_basic_controls.htm">ASP.NET - Basic Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_directives.htm">ASP.NET - Directives</a></li>
+<li><a target="_top" href="/asp.net/asp.net_managing_state.htm">ASP.NET - Managing State</a></li>
+<li><a target="_top" href="/asp.net/asp.net_validators.htm">ASP.NET - Validators</a></li>
+<li><a target="_top" href="/asp.net/asp.net_database_access.htm">ASP.NET - Database Access</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ado_net.htm">ASP.NET - ADO.net</a></li>
+<li><a target="_top" href="/asp.net/asp.net_file_uploading.htm">ASP.NET - File Uploading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ad_rotator.htm">ASP.NET - Ad Rotator</a></li>
+<li><a target="_top" href="/asp.net/asp.net_calenders.htm">ASP.NET - Calendars</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_views.htm">ASP.NET - Multi Views</a></li>
+<li><a target="_top" href="/asp.net/asp.net_panel_controls.htm">ASP.NET - Panel Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ajax_control.htm">ASP.NET - AJAX Control</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_sources.htm">ASP.NET - Data Sources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_binding.htm">ASP.NET - Data Binding</a></li>
+<li><a target="_top" href="/asp.net/asp.net_custom_controls.htm">ASP.NET - Custom Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_personalization.htm">ASP.NET - Personalization</a></li>
+<li><a target="_top" href="/asp.net/asp.net_error_handling.htm">ASP.NET - Error Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_debugging.htm">ASP.NET - Debugging</a></li>
+<li><a target="_top" href="/asp.net/asp.net_linq.htm">ASP.NET - LINQ</a></li>
+<li><a target="_top" href="/asp.net/asp.net_security.htm">ASP.NET - Security</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_caching.htm">ASP.NET - Data Caching</a></li>
+<li><a target="_top" href="/asp.net/asp.net_web_services.htm">ASP.NET - Web Services</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_threading.htm">ASP.NET - Multi Threading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_configuration.htm">ASP.NET - Configuration</a></li>
+<li><a target="_top" href="/asp.net/asp.net_deployment.htm">ASP.NET - Deployment</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">ASP.NET Resources</li>
+<li><a target="_top" href="/asp.net/asp.net_quick_guide.htm">ASP.NET - Quick Guide</a></li>
+<li><a target="_top" href="/asp.net/asp.net_useful_resources.htm">ASP.NET - Useful Resources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_discussion.htm">ASP.NET - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>ASP.NET - Data Binding</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_data_sources.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_custom_controls.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Every ASP.NET web form control inherits the DataBind method from its parent Control class, which gives it an inherent capability to bind data to at least one of its properties. This is known as <b>simple data binding</b> or <b>inline data binding</b>.</p>
+<p>Simple data binding involves attaching any collection (item collection) which implements the IEnumerable interface, or the DataSet and DataTable classes to the DataSource property of the control.</p>
+<p>On the other hand, some controls can bind records, lists, or columns of data into their structure through a DataSource control. These controls derive from the BaseDataBoundControl class. This is called <b>declarative data binding</b>.</p>
+<p>The data source controls help the data-bound controls implement functionalities such as, sorting, paging, and editing data collections.</p>
+<p>The BaseDataBoundControl is an abstract class, which is inherited by two more abstract classes:</p>
+<ul class="list">
+<li>DataBoundControl</li>
+<li>HierarchicalDataBoundControl</li>
+</ul>
+<p>The abstract class DataBoundControl is again inherited by two more abstract classes:</p>
+<ul class="list">
+<li>ListControl</li>
+<li>CompositeDataBoundControl</li>
+</ul>
+<p>The controls capable of simple data binding are derived from the ListControl abstract class and these controls are:</p>
+<ul class="list">
+<li>BulletedList</li>
+<li>CheckBoxList</li>
+<li>DropDownList</li>
+<li>ListBox</li>
+<li>RadioButtonList</li>
+</ul>
+<p>The controls capable of declarative data binding (a more complex data binding) are derived from the abstract class CompositeDataBoundControl. These controls are:</p>
+<ul class="list">
+<li>DetailsView</li>
+<li>FormView</li>
+<li>GridView</li>
+<li>RecordList</li>
+</ul>
+<h2>Simple Data Binding</h2>
+<p>Simple data binding involves the read-only selection lists. These controls can bind to an array list or fields from a database. Selection lists takes two values from the database or the data source; one value is displayed by the list and the other is considered as the value corresponding to the display.</p>
+<p>Let us take up a small example to understand the concept. Create a web site with a bulleted list and a SqlDataSource control on it. Configure the data source control to retrieve two values from your database (we use the same DotNetReferences table as in the previous chapter).</p>
+<p>Choosing a data source for the bulleted list control involves:</p>
+<ul class="list">
+<li>Selecting the data source control</li>
+<li>Selecting a field to display, which is called the data field</li>
+<li>Selecting a field for the value</li>
+</ul>
+<img src="/asp.net/images/choose_data_source.jpg" alt="Choose Data Source" />
+<p>When the application is executed, check that the entire title column is bound to the bulleted list and displayed.</p>
+<img src="/asp.net/images/choose_data_source2.jpg" alt="Choose Data Source2" />
+<h2>Declarative Data Binding</h2>
+<p>We have already used declarative data binding in the previous tutorial using GridView control. The other composite data bound controls capable of displaying and manipulating data in a tabular manner are the DetailsView, FormView, and RecordList control.</p>
+<p>In the next tutorial, we will look into the technology for handling database, i.e, ADO.NET.</p>
+<p>However, the data binding involves the following objects:</p>
+<ul class="list">
+<li><p>A dataset that stores the data retrieved from the database.</p></li>
+<li><p>The data provider, which retrieves data from the database by using a command over a connection.</p></li>
+<li><p>The data adapter that issues the select statement stored in the command object; it is also capable of update the data in a database by issuing Insert, Delete, and Update statements.</p></li>
+</ul>
+<p>Relation between the data binding objects:</p>
+<img src="/asp.net/images/declarative_data_binding.jpg" alt="Declarative Data Binding" />
+<h3>Example</h3>
+<p>Let us take the following steps:</p>
+<p><b>Step (1)</b> : Create a new website. Add a class named booklist by right clicking on the solution name in the Solution Explorer and choosing the item 'Class' from the 'Add Item' dialog box. Name it as booklist.cs.</p>
+<pre class="prettyprint notranslate">
+using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+using System.Xml.Linq;
+
+namespace databinding
+{
+   public class booklist
+   {
+      protected String bookname;
+      protected String authorname;
+      public booklist(String bname, String aname)
+      {
+         this.bookname = bname;
+         this.authorname = aname;
+
+      }
+      
+      public String Book
+      {
+         get
+         {
+            return this.bookname;
+         }
+         set
+         {
+            this.bookname = value;
+         }
+      }
+      
+      public String Author
+      {
+         get
+         {
+            return this.authorname;
+         }
+         set
+         {
+            this.authorname = value;
+         }
+      }
+   }
+}
+</pre>
+<p><b>Step (2)</b> : Add four list controls on the page a list box control, a radio button list, a check box list, and a drop down list and four labels along with these list controls. The page should look like this in design view:</p>
+<img src="/asp.net/images/list_box_control.jpg" alt="List box control" />
+<p>The source file should look as the following:</p>
+<pre class="prettyprint notranslate">
+&lt;form id="form1" runat="server"&gt;
+   &lt;div&gt;
+   
+      &lt;table style="width: 559px"&gt;
+         &lt;tr&gt;
+            &lt;td style="width: 228px; height: 157px;"&gt;
+               &lt;asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" 
+                  OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"&gt;
+               &lt;/asp:ListBox&gt;
+            &lt;/td&gt;
+
+            &lt;td style="height: 157px"&gt;
+               &lt;asp:DropDownList ID="DropDownList1" runat="server" 
+                  AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"&gt;
+               &lt;/asp:DropDownList&gt;
+            &lt;/td&gt;             
+         &lt;/tr&gt;
+
+         &lt;tr&gt;
+            &lt;td style="width: 228px; height: 40px;"&gt;
+               &lt;asp:Label ID="lbllistbox" runat="server"&gt;&lt;/asp:Label&gt;
+            &lt;/td&gt;
+
+            &lt;td style="height: 40px"&gt;
+               &lt;asp:Label ID="lbldrpdown" runat="server"&gt;
+               &lt;/asp:Label&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+
+         &lt;tr&gt;
+            &lt;td style="width: 228px; height: 21px"&gt;
+            &lt;/td&gt;
+
+            &lt;td style="height: 21px"&gt;
+            &lt;/td&gt;              
+         &lt;/tr&gt;
+
+         &lt;tr&gt;
+            &lt;td style="width: 228px; height: 21px"&gt;
+               &lt;asp:RadioButtonList ID="RadioButtonList1" runat="server"
+                  AutoPostBack="True"  OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged"&gt;
+               &lt;/asp:RadioButtonList&gt;
+            &lt;/td&gt;
+
+            &lt;td style="height: 21px"&gt;
+               &lt;asp:CheckBoxList ID="CheckBoxList1" runat="server" 
+                  AutoPostBack="True" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged"&gt;
+               &lt;/asp:CheckBoxList&gt;
+            &lt;/td&gt;                
+         &lt;/tr&gt;
+
+         &lt;tr&gt;
+            &lt;td style="width: 228px; height: 21px"&gt;
+               &lt;asp:Label ID="lblrdlist" runat="server"&gt;
+               &lt;/asp:Label&gt;
+            &lt;/td&gt;
+
+            &lt;td style="height: 21px"&gt;
+               &lt;asp:Label ID="lblchklist" runat="server"&gt;
+               &lt;/asp:Label&gt;
+            &lt;/td&gt;           
+         &lt;/tr&gt;
+      &lt;/table&gt;      
+      
+   &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<p><b>Step (3)</b> : Finally, write the following code behind routines of the application:</p>
+<pre class="prettyprint notranslate">
+public partial class _Default : System.Web.UI.Page
+{
+   protected void Page_Load(object sender, EventArgs e)
+   {
+      IList bklist = createbooklist();
+      
+      if (!this.IsPostBack)
+      {
+         this.ListBox1.DataSource = bklist;
+         this.ListBox1.DataTextField = "Book";
+         this.ListBox1.DataValueField = "Author";
+         
+         this.DropDownList1.DataSource = bklist;
+         this.DropDownList1.DataTextField = "Book";
+         this.DropDownList1.DataValueField = "Author";
+         
+         this.RadioButtonList1.DataSource = bklist;
+         this.RadioButtonList1.DataTextField = "Book";
+         this.RadioButtonList1.DataValueField = "Author";
+         
+         this.CheckBoxList1.DataSource = bklist;
+         this.CheckBoxList1.DataTextField = "Book";
+         this.CheckBoxList1.DataValueField = "Author";
+         
+         this.DataBind();
+      }
+   }
+   
+   protected IList createbooklist()
+   {
+      ArrayList allbooks = new ArrayList();
+      booklist bl;
+      
+      bl = new booklist("UNIX CONCEPTS", "SUMITABHA DAS");
+      allbooks.Add(bl);
+      
+      bl = new booklist("PROGRAMMING IN C", "RICHI KERNIGHAN");
+      allbooks.Add(bl);
+      
+      bl = new booklist("DATA STRUCTURE", "TANENBAUM");
+      allbooks.Add(bl);
+      
+      bl = new booklist("NETWORKING CONCEPTS", "FOROUZAN");
+      allbooks.Add(bl);
+      
+      bl = new booklist("PROGRAMMING IN C++", "B. STROUSTROUP");
+      allbooks.Add(bl);
+      
+      bl = new booklist("ADVANCED JAVA", "SUMITABHA DAS");
+      allbooks.Add(bl);
+      
+      return allbooks;
+   }
+   
+   protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+   {
+      this.lbllistbox.Text = this.ListBox1.SelectedValue;
+   }
+   
+   protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+   {
+      this.lbldrpdown.Text = this.DropDownList1.SelectedValue;
+   }
+   
+   protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+   {
+      this.lblrdlist.Text = this.RadioButtonList1.SelectedValue;
+   }
+   
+   protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
+   {
+      this.lblchklist.Text = this.CheckBoxList1.SelectedValue;
+   }
+}
+</pre>
+<p>Observe the following:</p>
+<ul class="list">
+<li><p>The booklist class has two properties: bookname and authorname.</p></li>
+<li><p>The createbooklist method is a user defined method that creates an array of booklist objects named allbooks.</p></li>
+<li><p>The Page_Load event handler ensures that a list of books is created. The list is of IList type, which implements the IEnumerable interface and capable of being bound to the list controls. The page load event handler binds the IList object 'bklist' with the list controls. The bookname property is to be displayed and the authorname property is considered as the value.</p></li>
+<li><p>When the page is run, if the user selects a book, its name is selected and displayed by the list controls whereas the corresponding labels display the author name, which is the corresponding value for the selected index of the list control.</p></li>
+</ul>
+<img src="/asp.net/images/data_binding_result.jpg" alt="Data Binding Results" />
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_data_sources.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/asp.net/pdf/asp.net_data_binding.pdf" title="ASP.NET - Data Binding" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_custom_controls.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/asp.net/asp.net_data_binding.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_data_binding.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_data_binding.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/asp.net/asp.net_data_binding.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_data_binding.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_data_binding.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

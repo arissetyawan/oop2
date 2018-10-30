@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Sending Emails using PHP</title>
+<meta name="Description" content="Sending Emails using PHP - A simple and short PHP tutorial and complete reference manual for all built-in PHP functions. This tutorial is designed for beginners to advanced developers. You will learn PHP Built-in Function, Predefined Variables Examples, Object Oriented PHP, Numbers, Scalars, Arrays, Hash File I/O, IF, ELSEIF, Do, While Loops, Operators, Regular Expressions, GET, POST, Subroutines, Coding Standard, Modules, File Management, Socket Communication, Reference, Special Variables, Syntax Overview, Form Validation, Advanced PHP, Library, Web Design, PayPal Integration, MySQL Login, Ajax Search, Ajax XML Parser, Ajax Auto Complete Search, Ajax RSS Feed Example, XML Introduction, Simple XML, Simple XML GET, SAX Parser Example, DOM Parser Example, Frame Works, Core php vs frame works php, Design Patterns." />
+<meta name="Keywords" content="Learning, PHP, Programming, Language, Built-in Function, Library, Web Design, Object Oriented PHP, PHP Variables, Scalars, Arrays, Hash, File I/O, Looping, Regular Expressions, Subroutines, Coding Standard, Writing Modules, File Management, Socket, Examples, Reference, Special Variables, Syntax Overview, Advanced PHP, Tutorial, Tutorials, Operators, GET, POST, Predefined, Form Validation, PayPal Integration, MySQL Login, Ajax Search, Ajax XML Parser, Ajax Auto Complete Search, Ajax RSS Feed Example, XML Introduction, Simple XML, Simple XML GET, SAX Parser Example, DOM Parser Example, Frame Works, Core php vs frame works php, Design Patterns." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #017572 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #017572 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #017572 !important;}
+.submenu-item{ border-bottom: 2px solid #017572 !important; border-top: 2px solid #017572 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#017572; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/php/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+.ts{
+   vertical-align:middle !important;
+   text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/php/images/php-mini-logo.jpg" alt="PHP Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/php_online_training/index.asp" target="_blank"><img src="/php/images/php-video-tutorials.jpg" alt="PHP Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP Tutorial</li>
+<li><a href="/php/index.htm">PHP - Home</a></li>
+<li><a href="/php/php_introduction.htm">PHP - Introduction</a></li>
+<li><a href="/php/php_environment.htm">PHP - Environment Setup</a></li>
+<li><a href="/php/php_syntax_overview.htm">PHP - Syntax Overview</a></li>
+<li><a href="/php/php_variable_types.htm">PHP - Variable Types</a></li>
+<li><a href="/php/php_constants.htm">PHP - Constants</a></li>
+<li><a href="/php/php_operator_types.htm">PHP - Operator Types</a></li>
+<li><a href="/php/php_decision_making.htm">PHP - Decision Making</a></li>
+<li><a href="/php/php_loop_types.htm">PHP - Loop Types </a></li>
+<li><a href="/php/php_arrays.htm">PHP - Arrays</a></li>
+<li><a href="/php/php_strings.htm">PHP - Strings</a></li>
+<li><a href="/php/php_web_concepts.htm">PHP - Web Concepts</a></li>
+<li><a href="/php/php_get_post.htm">PHP - GET &amp; POST</a></li>
+<li><a href="/php/php_file_inclusion.htm">PHP - File Inclusion</a></li>
+<li><a href="/php/php_files.htm">PHP - Files &amp; I/O</a></li>
+<li><a href="/php/php_functions.htm">PHP - Functions</a></li>
+<li><a href="/php/php_cookies.htm">PHP - Cookies</a></li>
+<li><a href="/php/php_sessions.htm">PHP - Sessions</a></li>
+<li><a href="/php/php_sending_emails.htm">PHP - Sending Emails</a></li>
+<li><a href="/php/php_file_uploading.htm">PHP - File Uploading</a></li>
+<li><a href="/php/php_coding_standard.htm">PHP - Coding Standard</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Advanced PHP</li>
+<li><a href="/php/php_predefined_variables.htm">PHP - Predefined Variables</a></li>
+<li><a href="/php/php_regular_expression.htm">PHP - Regular Expression</a></li>
+<li><a href="/php/php_error_handling.htm">PHP - Error Handling</a></li>
+<li><a href="/php/php_bugs_debugging.htm">PHP - Bugs Debugging</a></li>
+<li><a href="/php/php_date_and_time.htm">PHP - Date &amp; Time</a></li>
+<li><a href="/php/php_and_mysql.htm">PHP &amp; MySQL</a></li>
+<li><a href="/php/php_and_ajax.htm">PHP &amp; AJAX</a></li>
+<li><a href="/php/php_and_xml.htm">PHP &amp; XML</a></li>
+<li><a href="/php/php_object_oriented.htm">PHP - Object Oriented</a></li>
+<li><a href="/php/php_for_c_developers.htm">PHP - For C Developers</a></li>
+<li><a href="/php/php_for_perl_developers.htm">PHP - For PERL Developers</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP Form Examples</li>
+<li><a href="/php/php_form_introduction.htm">PHP - Form Introduction</a></li>
+<li><a href="/php/php_validation_example.htm">PHP - Validation Example</a></li>
+<li><a href="/php/php_complete_form.htm">PHP - Complete Form</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP login Examples</li>
+<li><a href="/php/php_login_example.htm">PHP - Login Example</a></li>
+<li><a href="/php/php_facebook_login.htm">PHP - Facebook Login</a></li>
+<li><a href="/php/php_paypal_integration.htm">PHP - Paypal Integration</a></li>
+<li><a href="/php/php_mysql_login.htm">PHP - MySQL Login</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP AJAX Examples</li>
+<li><a href="/php/php_ajax_search.htm">PHP - AJAX Search</a></li>
+<li><a href="/php/php_ajax_xml_parser.htm">PHP - AJAX XML Parser</a></li>
+<li><a href="/php/php_ajax_autocomplete_search.htm">PHP - AJAX Auto Complete Search</a></li>
+<li><a href="/php/ajax_rss_feed_example.htm">PHP - AJAX RSS Feed Example</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP XML Example</li>
+<li><a href="/php/php_xml_introduction.htm">PHP - XML Introduction</a></li>
+<li><a href="/php/php_simple_xml.htm">PHP - Simple XML</a></li>
+<li><a href="/php/php_simple_xml_get.htm">PHP - Simple XML GET</a></li>
+<li><a href="/php/php_sax_parser_example.htm">PHP - SAX Parser Example</a></li>
+<li><a href="/php/php_dom_parser_example.htm">PHP - DOM Parser Example</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP Frame Works</li>
+<li><a href="/php/php_frame_works.htm">PHP - Frame Works</a></li>
+<li><a href="/php/php_core_vs_frameworks.htm">PHP - Core PHP vs Frame Works</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP Design Patterns</li>
+<li><a href="/php/php_design_patterns.htm">PHP - Design Patterns</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP Function Reference</li>
+<li><a href="/php/php_function_reference.htm">PHP - Built-In Functions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">PHP Useful Resources</li>
+<li><a href="/php/php_questions_answers.htm">PHP - Questions &amp; Answers</a></li>
+<li><a href="/php/php_useful_resources.htm">PHP - Useful Resources</a></li>
+<li><a href="/php/php_discussion.htm">PHP - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>PHP - Sending Emails using PHP</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/php/php_sessions.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/php/php_file_uploading.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>PHP must be configured correctly in the <b>php.ini</b> file with the details of how your system sends email. Open php.ini file available in <b>/etc/</b> directory and find the section headed <b>[mail function]</b>.</p>
+<p>Windows users should ensure that two directives are supplied. The first is called SMTP that defines your email server address. The second is called sendmail_from which defines your own email address.</p>
+<p>The configuration for Windows should look something like this &minus;</p>
+<pre class="result notranslate">
+[mail function]
+; For Win32 only.
+SMTP = smtp.secureserver.net
+
+; For win32 only
+sendmail_from = webmaster@tutorialspoint.com
+</pre> 
+<p>Linux users simply need to let PHP know the location of their <b>sendmail</b> application. The path and any desired switches should be specified to the sendmail_path directive.</p>
+<p>The configuration for Linux should look something like this &minus;</p>
+<pre class="result notranslate">
+[mail function]
+; For Win32 only.
+SMTP = 
+
+; For win32 only
+sendmail_from = 
+
+; For Unix only
+sendmail_path = /usr/sbin/sendmail -t -i
+</pre> 
+<p>Now you are ready to go &minus;</p>
+<h2>Sending plain text email</h2>
+<p>PHP makes use of <b>mail()</b> function to send an email. This function requires three mandatory arguments that specify the recipient's email address, the subject of the the message and the actual message additionally there are other two optional parameters.</p>
+<pre class="prettyprint notranslate">
+mail( to, subject, message, headers, parameters );
+</pre> 
+<p>Here is the description for each parameters.</p>
+<table class="table table-bordered">
+<tr>
+<th class="ts">Sr.No</th>
+<th  class="ts">Parameter &amp; Description</th>
+</tr>
+<tr>
+<td  class="ts">1</td>
+<td><p><b>to</b></p>
+<p>Required. Specifies the receiver / receivers of the email</p></td>
+</tr>
+<tr>
+<td  class="ts">2</td>
+<td><p><b>subject</b></p>
+<p>Required. Specifies the subject of the email. This parameter cannot contain any newline characters</p></td>
+</tr>
+<tr>
+<td  class="ts">3</td>
+<td><p><b>message</b></p>
+<p>Required. Defines the message to be sent. Each line should be separated with a LF (\n). Lines should not exceed 70 characters</p></td>
+</tr>
+<tr>
+<td  class="ts">4</td>
+<td><p><b>headers</b></p>
+<p>Optional. Specifies additional headers, like From, Cc, and Bcc. The additional headers should be separated with a CRLF (\r\n)</p></td>
+</tr>
+<tr>
+<td  class="ts">5</td>
+<td><p><b>parameters</b></p>
+<p>Optional. Specifies an additional parameter to the send mail program</p></td>
+</tr>
+</table>
+<p>As soon as the mail function is called PHP will attempt to send the email then it will return true if successful or false if it is failed.</p>
+<p>Multiple recipients can be specified as the first argument to the mail() function in a comma separated list.</p>
+<h2>Sending HTML email</h2>
+<p>When you send a text message using PHP then all the content will be treated as simple text. Even if you will include HTML tags in a text message, it will be displayed as simple text and HTML tags will not be formatted according to HTML syntax. But PHP provides option to send an HTML message as actual HTML message.</p>
+<p>While sending an email message you can specify a Mime version, content type and character set to send an HTML email.</p>
+<h3>Example</h3>
+<p>Following example will send an HTML email message to xyz@somedomain.com copying it to afgh@somedomain.com. You can code this program in such a way that it should receive all content from the user and then it should send an email.</p>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Sending HTML email using PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         $to = "xyz@somedomain.com";
+         $subject = "This is subject";
+         
+         $message = "&lt;b&gt;This is HTML message.&lt;/b&gt;";
+         $message .= "&lt;h1&gt;This is headline.&lt;/h1&gt;";
+         
+         $header = "From:abc@somedomain.com \r\n";
+         $header .= "Cc:afgh@somedomain.com \r\n";
+         $header .= "MIME-Version: 1.0\r\n";
+         $header .= "Content-type: text/html\r\n";
+         
+         $retval = mail ($to,$subject,$message,$header);
+         
+         if( $retval == true ) {
+            echo "Message sent successfully...";
+         }else {
+            echo "Message could not be sent...";
+         }
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<h2>Sending attachments with email</h2>
+<p>To send an email with mixed content requires to set <b>Content-type</b> header to <b>multipart/mixed</b>. Then text and attachment sections can be specified within <b>boundaries</b>.</p>
+<p>A boundary is started with two hyphens followed by a unique number which can not appear in the message part of the email. A PHP function <b>md5()</b> is used to create a 32 digit hexadecimal number to create unique number. A final boundary denoting the email's final section must also end with two hyphens.</p>
+<pre class="prettyprint notranslate">
+&lt;?php
+   // request variables // important
+   $from = $_REQUEST["from"];
+   $emaila = $_REQUEST["emaila"];
+   $filea = $_REQUEST["filea"];
+   
+   if ($filea) {
+      function mail_attachment ($from , $to, $subject, $message, $attachment){
+         $fileatt = $attachment; // Path to the file
+         $fileatt_type = "application/octet-stream"; // File Type 
+         
+         $start = strrpos($attachment, '/') == -1 ? 
+            strrpos($attachment, '//') : strrpos($attachment, '/')+1;
+				
+         $fileatt_name = substr($attachment, $start, 
+            strlen($attachment)); // Filename that will be used for the 
+            file as the attachment 
+         
+         $email_from = $from; // Who the email is from
+         $subject = "New Attachment Message";
+         
+         $email_subject =  $subject; // The Subject of the email 
+         $email_txt = $message; // Message that the email has in it 
+         $email_to = $to; // Who the email is to
+         
+         $headers = "From: ".$email_from;
+         $file = fopen($fileatt,'rb'); 
+         $data = fread($file,filesize($fileatt)); 
+         fclose($file); 
+         
+         $msg_txt="\n\n You have recieved a new attachment message from $from";
+         $semi_rand = md5(time()); 
+         $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
+         $headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . "
+            boundary=\"{$mime_boundary}\"";
+         
+         $email_txt .= $msg_txt;
+			
+         $email_message .= "This is a multi-part message in MIME format.\n\n" . 
+            "--{$mime_boundary}\n" . "Content-Type:text/html; 
+            charset = \"iso-8859-1\"\n" . "Content-Transfer-Encoding: 7bit\n\n" . 
+            $email_txt . "\n\n";
+				
+         $data = chunk_split(base64_encode($data));
+         
+         $email_message .= "--{$mime_boundary}\n" . "Content-Type: {$fileatt_type};\n" .
+            " name = \"{$fileatt_name}\"\n" . //"Content-Disposition: attachment;\n" . 
+            //" filename = \"{$fileatt_name}\"\n" . "Content-Transfer-Encoding: 
+            base64\n\n" . $data . "\n\n" . "--{$mime_boundary}--\n";
+				
+         $ok = mail($email_to, $email_subject, $email_message, $headers);
+         
+         if($ok) {
+            echo "File Sent Successfully.";
+            unlink($attachment); // delete a file after attachment sent.
+         }else {
+            die("Sorry but the email could not be sent. Please go back and try again!");
+         }
+      }
+      move_uploaded_file($_FILES["filea"]["tmp_name"],
+         'temp/'.basename($_FILES['filea']['name']));
+			
+      mail_attachment("$from", "youremailaddress@gmail.com", 
+         "subject", "message", ("temp/".$_FILES["filea"]["name"]));
+   }
+?&gt;
+
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script language = "javascript" type = "text/javascript"&gt;
+         function CheckData45() {
+            with(document.filepost) {
+               if(filea.value ! = "") {
+                  document.getElementById('one').innerText = 
+                     "Attaching File ... Please Wait";
+               }
+            }
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      
+      &lt;table width = "100%" height = "100%" border = "0" 
+         cellpadding = "0" cellspacing = "0"&gt;
+         &lt;tr&gt;
+            &lt;td align = "center"&gt;
+               &lt;form name = "filepost" method = "post" 
+                  action = "file.php" enctype = "multipart/form-data" id = "file"&gt;
+                  
+                  &lt;table width = "300" border = "0" cellspacing = "0" 
+                     cellpadding = "0"&gt;
+							
+                     &lt;tr valign = "bottom"&gt;
+                        &lt;td height = "20"&gt;Your Name:&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td&gt;&lt;input name = "from" type = "text" 
+                           id = "from" size = "30"&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr valign = "bottom"&gt;
+                        &lt;td height = "20"&gt;Your Email Address:&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td class = "frmtxt2"&gt;&lt;input name = "emaila"
+                           type = "text" id = "emaila" size = "30"&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td height = "20" valign = "bottom"&gt;Attach File:&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr valign = "bottom"&gt;
+                        &lt;td valign = "bottom"&gt;&lt;input name = "filea" 
+                           type = "file" id = "filea" size = "16"&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td height = "40" valign = "middle"&gt;&lt;input 
+                           name = "Reset2" type = "reset" id = "Reset2" value = "Reset"&gt;
+                        &lt;input name = "Submit2" type = "submit" 
+                           value = "Submit" onClick = "return CheckData45()"&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                  &lt;/table&gt;
+                  
+               &lt;/form&gt;
+               
+               &lt;center&gt;
+                  &lt;table width = "400"&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td id = "one"&gt;
+                        &lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                  &lt;/table&gt;
+               &lt;/center&gt;
+               
+            &lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+<hr />
+<div class="pre-btn">
+<a href="/php/php_sessions.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/php/php_file_uploading.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/php/php_sending_emails.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/php/php_sending_emails.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/php/php_sending_emails.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/php/php_sending_emails.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/php/php_sending_emails.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/php/php_sending_emails.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

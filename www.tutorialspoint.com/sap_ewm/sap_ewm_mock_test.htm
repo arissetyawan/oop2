@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP EWM Mock Test - Questions Set From 1 to 25</title>
+<meta name="description" content="SAP EWM Mock Test Questions Set From 1 to 25 - Learn SAP EWM in simple and easy steps starting from basic to advanced concepts with examples including Overview, Organization Units, Master Data, Structure Elements, Work Center, Warehouse Process Types, Selling and Receiving Goods, Maintaining Serial Numbers, Value Added Services, Direct Goods Issue Process, Storage Control, Deconsolidation, Pick, Pack, and Pass of Goods, Replenishment, Physical Inventory, Slotting, Labor Management, Production Supply, Expected Good Receipts, Cross Docking, RF Framework, Warehouse Monitoring, Inbound and Outbound Delivery." />
+<meta name="keywords" content="SAP EWM, Tutorial, Overview, Organization Units, Master Data, Structure Elements, Work Center, Warehouse Process Types, Selling and Receiving Goods, Maintaining Serial Numbers, Value Added Services, Direct Goods Issue Process, Storage Control, Deconsolidation, Pick, Pack, and Pass of Goods, Replenishment, Physical Inventory, Slotting, Labor Management, Production Supply, Expected Good Receipts, Cross Docking, RF Framework, Warehouse Monitoring, Inbound and Outbound Delivery." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #1b5ab9 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #1b5ab9 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #1b5ab9 !important;}
+.submenu-item{ border-bottom: 2px solid #1b5ab9 !important; border-top: 2px solid #1b5ab9 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#1b5ab9; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_ewm/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_ewm/images/sap-ewm-mini-logo.jpg" alt="SAP EWM Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP EWM Tutorial</li>
+<li><a href="/sap_ewm/index.htm">SAP EWM - Home</a></li>
+<li><a href="/sap_ewm/sap_ewm_overview.htm">SAP EWM - Overview</a></li>
+<li><a href="/sap_ewm/sap_ewm_organization_units.htm">SAP EWM - Organization Units</a></li>
+<li><a href="/sap_ewm/sap_ewm_master_data.htm">SAP EWM - Master Data</a></li>
+<li><a href="/sap_ewm/sap_ewm_structure_elements.htm">SAP EWM - Structure Elements</a></li>
+<li><a href="/sap_ewm/sap_ewm_work_center.htm">SAP EWM - Work Center</a></li>
+<li><a href="/sap_ewm/sap_ewm_warehouse_process_types.htm">Warehouse Process Types</a></li>
+<li><a href="/sap_ewm/sap_ewm_selling_and_receiving_goods.htm">Selling and Receiving Goods</a></li>
+<li><a href="/sap_ewm/sap_ewm_maintaining_serial_numbers.htm">Maintaining Serial Numbers</a></li>
+<li><a href="/sap_ewm/sap_ewm_value_added_services.htm">SAP EWM - Value Added Services</a></li>
+<li><a href="/sap_ewm/sap_ewm_direct_goods_issue_process.htm">Direct Goods Issue Process</a></li>
+<li><a href="/sap_ewm/sap_ewm_storage_control.htm">SAP EWM - Storage Control</a></li>
+<li><a href="/sap_ewm/sap_ewm_deconsolidation.htm">SAP EWM - Deconsolidation</a></li>
+<li><a href="/sap_ewm/sap_ewm_pick_pack_and_pass_goods.htm">Pick, Pack, and Pass of Goods</a></li>
+<li><a href="/sap_ewm/sap_ewm_replenishment.htm">SAP EWM - Replenishment</a></li>
+<li><a href="/sap_ewm/sap_ewm_physical_inventory.htm">SAP EWM - Physical Inventory</a></li>
+<li><a href="/sap_ewm/sap_ewm_slotting.htm">SAP EWM - Slotting</a></li>
+<li><a href="/sap_ewm/sap_ewm_labor_management.htm">SAP EWM - Labor Management</a></li>
+<li><a href="/sap_ewm/sap_ewm_production_supply.htm">SAP EWM - Production Supply</a></li>
+<li><a href="/sap_ewm/sap_ewm_expected_good_receipts.htm">SAP EWM - Expected Good Receipts</a></li>
+<li><a href="/sap_ewm/sap_ewm_cross_docking.htm">SAP EWM - Cross Docking</a></li>
+<li><a href="/sap_ewm/sap_ewm_rf_framework.htm">SAP EWM - RF Framework</a></li>
+<li><a href="/sap_ewm/sap_ewm_warehouse_monitoring.htm">SAP EWM - Warehouse Monitoring</a></li>
+<li><a href="/sap_ewm/sap_ewm_inbound_and_outbound_delivery.htm">Inbound and Outbound Delivery</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP EWM Useful Resources</li>
+<li><a href="/sap_ewm/sap_ewm_questions_answers.htm">SAP EWM - Questions Answers</a></li>
+<li><a href="/sap_ewm/sap_ewm_quick_guide.htm">SAP EWM - Quick Guide</a></li>
+<li><a href="/sap_ewm/sap_ewm_useful_resources.htm">SAP EWM - Useful Resources</a></li>
+<li><a href="/sap_ewm/sap_ewm_discussion.htm">SAP EWM - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP EWM Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_ewm/sap_ewm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_ewm/sap_ewm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>SAP EWM</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/sap_ewm/sap_ewm_mock_test.htm?min=1&max=12"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/sap_ewm/sap_ewm_mock_test.htm?min=13&max=24"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/sap_ewm/sap_ewm_mock_test.htm?min=25&max=37"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/sap_ewm/sap_ewm_mock_test.htm?min=38&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>SAP EWM Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - SAP Extended Warehouse Management is pat of?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP Customer Relationship Management CRM</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - SAP Supply Chain Management SCM</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SAP Business Intelligence</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SAP Sales and Distribution</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>SAP EWM is part of SAP Supply chain management like Warehouse management system but provides more robust and advance features to manage key activities in Warehouse.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Which of the following feature is provided by EWM as compared to SAP WM system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Picking</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Put Away</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - RF Framework</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>SAP Extended Warehouse Management EWM is similar to Warehouse management but it provides more features like picking, put away, RF framework, Warehouse structure and more flexible options to manage warehouse functions.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following is used to transfer master data maintained in ERP system like customer, material and vendor which are available in ERP system are transferred to EWM system?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Core Interface CIF</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Plant</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Storage bin</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Core interface is one of the common method for communication between SAP SCM system and SAP Advanced Planning and Optimization APO. Master data maintained in ERP system like customer, material and vendor which are available in ERP system are transferred to EWM system use Core Interface CIF communication.</p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which of the following transaction is used to Maintain Inbound Delivery in EWM system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - /SCWM/PRDO</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - /SCWM/PRDI</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - /SCWM/RFUI</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - /SCWM/MON</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : B</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Which of the following is a type of Storage Section?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Fast Moving</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Open Storage</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Picking</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p><b>Storage Section</b></p>
+<p>This is part of storage type and represents a group of bins with same characteristics. Commonly used storage sections are fast moving or slow moving items, etc.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - The quantity of goods in storage bin is represented by Quant. The quant is used for managing inventory in storage bin?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p> 
+</div>
+<div class="A" id='A6'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - Which of the following is used to perform activities like picking, put away or a physical inventory?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Storage Bin</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Activity Areas</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Storage Section</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p><b>Activity Areas</b></p>
+<p>Storage bins are further categorized in activity area. It includes activities like picking, put away or a physical inventory. As per activity, you can assign same storage bin to multiple activity areas.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - A Warehouse consists of which of the following elements in hierarchical structure?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Warehouse Number </a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Storage Type</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Storage Section</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Activity Area</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of the above</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>Warehouse consists of following elements in hierarchical structure:</p>
+<ul class="list">
+<li>Warehouse Number</li>
+<li>Storage Type</li>
+<li>Storage Section</li>
+<li>Storage bin</li>
+<li>Activity Area</li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Which of the following is smallest unit in Warehouse?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Warehouse Number</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Storage Type</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Storage Bin</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Storage Section</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>The highest unit in a Warehouse is Warehouse number and smallest unit is a storage bin. Storage bin tells the exact location of a product in a warehouse.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following area of Storage type is used where products are labeled, identified or cross checked during goods receipt process?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Pick Point</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Identification Point</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Work Center</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Yards</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p><b>Identification Point</b></p>
+<p>An area where products are labeled, identified or cross checked during goods receipt process.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Work center in a Warehouse is used for which of the following processes?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Packing</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Deconsolidation</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Counting</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : D</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Which of the following Transaction is used to create a Storage bin?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - /SCWM/LS01</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - /SCWM/PRDI</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - /SCWM/RFUI</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - /SCWM/MON</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : A</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>E</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>A</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/sap_ewm/sap_ewm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/sap_ewm/pdf/sap_ewm_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_ewm/sap_ewm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">sap_ewm_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_ewm/sap_ewm_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_ewm/sap_ewm_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_ewm/sap_ewm_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_ewm/sap_ewm_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_ewm/sap_ewm_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_ewm/sap_ewm_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

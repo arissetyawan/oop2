@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>DBMS Transaction</title>
+<meta name="description" content="DBMS Transaction - Learn DBMS in simple and easy steps starting from its overview, Architecture, data models, data schemas, data independence, ED Diagram, Generalization, Aggregation, Codd's Rules, Relational Data Model, Relational Algebra, Database Design, Normalization, Database Joins, Database Storage, Database File System, Indexing, Hashing, Transaction, Concurrency Control, Deadlock, Backup and Recovery." />
+<meta name="keywords" content="DBMS, Tutorial, Network Architecture, Overview, Architecture, data models, data schemas, data independence, ED Diagram, Generalization, Aggregation, Codd's Rules, Relational Data Model, Relational Algebra, Database Design, Normalization, Database Joins, Database Storage, Database File System, Indexing, Hashing, Transaction, Concurrency Control, Deadlock, Backup and Recovery." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #fbb42b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fbb42b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fbb42b !important;}
+.submenu-item{ border-bottom: 2px solid #fbb42b !important; border-top: 2px solid #fbb42b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#fbb42b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/dbms/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/dbms/images/dbms-mini-logo.jpg" alt="DBMS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DBMS Tutorial</li>
+<li><a target="_top" href="/dbms/index.htm">DBMS - Home</a></li>
+<li><a target="_top" href="/dbms/dbms_overview.htm">DBMS - Overview</a></li>
+<li><a target="_top" href="/dbms/dbms_architecture.htm">DBMS - Architecture</a></li>
+<li><a target="_top" href="/dbms/dbms_data_models.htm">DBMS - Data Models</a></li>
+<li><a target="_top" href="/dbms/dbms_data_schemas.htm">DBMS - Data Schemas</a></li>
+<li><a target="_top" href="/dbms/dbms_data_independence.htm">DBMS - Data Independence</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Entity Relationship Model</li>
+<li><a target="_top" href="/dbms/er_model_basic_concepts.htm">DBMS - ER Model Basic Concepts</a></li>
+<li><a target="_top" href="/dbms/er_diagram_representation.htm">DBMS - ER Diagram Representation</a></li>
+<li><a target="_top" href="/dbms/dbms_generalization_aggregation.htm">DBMS - Generalization, Aggregation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Relational Model</li>
+<li><a target="_top" href="/dbms/dbms_codds_rules.htm">DBMS - Codd's Rules</a></li>
+<li><a target="_top" href="/dbms/relational_data_model.htm">DBMS - Relational Data Model</a></li>
+<li><a target="_top" href="/dbms/relational_algebra.htm">DBMS - Relational Algebra</a></li>
+<li><a target="_top" href="/dbms/er_model_to_relational_model.htm">DBMS - ER to Relational Model</a></li>
+<li><a target="_top" href="/dbms/sql_overview.htm">DBMS- SQL Overview</a></li>
+</ul>                                                                
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Relational Database Design</li>
+<li><a target="_top" href="/dbms/database_normalization.htm">DBMS - Database Normalization</a></li>
+<li><a target="_top" href="/dbms/database_joins.htm">DBMS - Database Joins</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Storage and File Structure </li>
+<li><a target="_top" href="/dbms/dbms_storage_system.htm">DBMS - Storage System</a></li>
+<li><a target="_top" href="/dbms/dbms_file_structure.htm">DBMS - File Structure</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Indexing and Hashing</li>
+<li><a target="_top" href="/dbms/dbms_indexing.htm">DBMS - Indexing</a></li>
+<li><a target="_top" href="/dbms/dbms_hashing.htm">DBMS - Hashing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Transaction And Concurrency</li>
+<li><a target="_top" href="/dbms/dbms_transaction.htm">DBMS - Transaction</a></li>
+<li><a target="_top" href="/dbms/dbms_concurrency_control.htm">DBMS - Concurrency Control</a></li>
+<li><a target="_top" href="/dbms/dbms_deadlock.htm">DBMS - Deadlock</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Backup and Recovery</li>
+<li><a target="_top" href="/dbms/dbms_data_backup.htm">DBMS - Data Backup</a></li>
+<li><a target="_top" href="/dbms/dbms_data_recovery.htm">DBMS - Data Recovery</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DBMS Useful Resources</li>
+<li><a target="_top" href="/dbms/dbms_quick_guide.htm">DBMS - Quick Guide</a></li>
+<li><a target="_top" href="/dbms/dbms_useful_resources.htm">DBMS - Useful Resources</a></li>
+<li><a target="_top" href="/dbms/dbms_discussion.htm">DBMS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>DBMS - Transaction</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/dbms/dbms_hashing.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/dbms/dbms_concurrency_control.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>A transaction can be defined as a group of tasks. A single task is the minimum processing unit which cannot be divided further.</p>
+<p>Let’s take an example of a simple transaction. Suppose a bank employee transfers Rs 500 from A's account to B's account. This very simple and small transaction involves several low-level tasks.</p>
+<p><b>A’s Account</b></p>
+<pre class="result notranslate">
+Open_Account(A)
+Old_Balance = A.balance
+New_Balance = Old_Balance - 500
+A.balance = New_Balance
+Close_Account(A)
+</pre>
+<p><b>B’s Account</b></p>
+<pre class="result notranslate">
+Open_Account(B)
+Old_Balance = B.balance
+New_Balance = Old_Balance + 500
+B.balance = New_Balance
+Close_Account(B)
+</pre>
+<h2>ACID Properties</h2>
+<p>A transaction is a very small unit of a program and it may contain several lowlevel tasks. A transaction in a database system must maintain <b>A</b>tomicity, <b>C</b>onsistency, <b>I</b>solation, and <b>D</b>urability &minus; commonly known as ACID properties &minus; in order to ensure accuracy, completeness, and data integrity.</p>
+<ul class="list">
+<li><p><b>Atomicity</b> &minus; This property states that a transaction must be treated as an atomic unit, that is, either all of its operations are executed or none. There must be no state in a database where a transaction is left partially completed. States should be defined either before the execution of the transaction or after the execution/abortion/failure of the transaction.</p></li>
+<li><p><b>Consistency</b> &minus; The database must remain in a consistent state after any transaction. No transaction should have any adverse effect on the data residing in the database. If the database was in a consistent state before the execution of a transaction, it must remain consistent after the execution of the transaction as well.</p></li>
+<li><p><b>Durability</b> &minus; The database should be durable enough to hold all its latest updates even if the system fails or restarts. If a transaction updates a chunk of data in a database and commits, then the database will hold the modified data. If a transaction commits but the system fails before the data could be written on to the disk, then that data will be updated once the system springs back into action.</p></li>
+<li><p><b>Isolation</b> &minus; In a database system where more than one transaction are being executed simultaneously and in parallel, the property of isolation states that all the transactions will be carried out and executed as if it is the only transaction in the system. No transaction will affect the existence of any other transaction.</p></li>
+</ul>
+<h2>Serializability</h2>
+<p>When multiple transactions are being executed by the operating system in a multiprogramming environment, there are possibilities that instructions of one transactions are interleaved with some other transaction.</p>
+<ul class="list">
+<li><p><b>Schedule</b> &minus; A chronological execution sequence of a transaction is called a schedule. A schedule can have many transactions in it, each comprising of a number of instructions/tasks.</p></li>
+<li><p><b>Serial Schedule</b> &minus; It is a schedule in which transactions are aligned in such a way that one transaction is executed first. When the first transaction completes its cycle, then the next transaction is executed. Transactions are ordered one after the other. This type of schedule is called a serial schedule, as transactions are executed in a serial manner.</p></li>
+</ul>
+<p>In a multi-transaction environment, serial schedules are considered as a benchmark. The execution sequence of an instruction in a transaction cannot be changed, but two transactions can have their instructions executed in a random fashion. This execution does no harm if two transactions are mutually independent and working on different segments of data; but in case these two transactions are working on the same data, then the results may vary. This ever-varying result may bring the database to an inconsistent state.</p>
+<p>To resolve this problem, we allow parallel execution of a transaction schedule, if its transactions are either serializable or have some equivalence relation among them.</p>
+<h2>Equivalence Schedules</h2>
+<p>An equivalence schedule can be of the following types &minus;</p>
+<h3>Result Equivalence</h3>
+<p>If two schedules produce the same result after execution, they are said to be result equivalent. They may yield the same result for some value and different results for another set of values. That's why this equivalence is not generally considered significant.</p>
+<h3>View Equivalence</h3>
+<p>Two schedules would be view equivalence if the transactions in both the schedules perform similar actions in a similar manner.</p>
+<p>For example &minus;</p>
+<ul class="list">
+<li><p>If T reads the initial data in S1, then it also reads the initial data in S2.</p></li>
+<li><p>If T reads the value written by J in S1, then it also reads the value written by J in S2.</p></li>
+<li><p>If T performs the final write on the data value in S1, then it also performs the final write on the data value in S2.</p></li>
+</ul>
+<h3>Conflict Equivalence</h3>
+<p>Two schedules would be conflicting if they have the following properties &minus;</p>
+<ul class="list">
+<li>Both belong to separate transactions.</li>
+<li>Both accesses the same data item.</li>
+<li>At least one of them is "write" operation.</li>
+</ul>
+<p>Two schedules having multiple transactions with conflicting operations are said to be conflict equivalent if and only if &minus;</p>
+<ul class="list">
+<li>Both the schedules contain the same set of Transactions.</li>
+<li>The order of conflicting pairs of operation is maintained in both the schedules.</li>
+</ul>
+<p><b>Note</b> &minus; View equivalent schedules are view serializable and conflict equivalent schedules are conflict serializable. All conflict serializable schedules are view serializable too.</p>
+<h2>States of Transactions</h2>
+<p>A transaction in a database can be in one of the following states &minus;</p>
+<img src="/dbms/images/transaction_states.png" alt="Transaction States" />
+<ul class="list">
+<li><p><b>Active</b> &minus; In this state, the transaction is being executed. This is the initial state of every transaction.</p></li>
+<li><p><b>Partially Committed</b> &minus; When a transaction executes its final operation, it is said to be in a partially committed state.</p></li>
+<li><p><b>Failed</b> &minus; A transaction is said to be in a failed state if any of the checks made by the database recovery system fails. A failed transaction can no longer proceed further.</p></li>
+<li><p><b>Aborted</b> &minus; If any of the checks fails and the transaction has reached a failed state, then the recovery manager rolls back all its write operations on the database to bring the database back to its original state where it was prior to the execution of the transaction. Transactions in this state are called aborted. The database recovery module can select one of the two operations after a transaction aborts &minus;</p>
+<ul class="list">
+<li>Re-start the transaction</li>
+<li>Kill the transaction</li>
+</ul>
+</li>
+<li><p><b>Committed</b> &minus; If a transaction executes all its operations successfully, it is said to be committed. All its effects are now permanently established on the database system.</p></li>
+</ul>
+<hr />
+<div class="pre-btn">
+<a href="/dbms/dbms_hashing.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/dbms/pdf/dbms_transaction.pdf" title="DBMS Transaction" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/dbms/dbms_concurrency_control.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/dbms/dbms_transaction.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/dbms/dbms_transaction.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/dbms/dbms_transaction.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/dbms/dbms_transaction.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/dbms/dbms_transaction.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/dbms/dbms_transaction.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

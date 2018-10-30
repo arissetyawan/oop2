@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>HBase Interview Questions - tutorialspoint</title>
+<meta name="description" content="HBase Interview Questions - Learn HBase in simple and easy steps using this beginner's tutorial containing basic to advanced knowledge starting from HBase Overview, Architecture, Installation, Shell, General Commands, Admin API, Create Table, Listing Table, Disabling a Table, Enabling a Table, Describe and Alter, Exists, Drop a Table, Shutting Down, Client API, Create Data, Update Data, Read Data, Delete Data, Scan, HBase And Truncate, Security." />
+<meta name="keywords" content="HBase Overview, Architecture, Installation, Shell, General Commands, Admin API, Create Table, Listing Table, Disabling a Table, Enabling a Table, Describe and Alter, Exists, Drop a Table, Shutting Down, Client API, Create Data, Update Data, Read Data, Delete Data, Scan, HBase And Truncate, Security." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #ba160d !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #ba160d url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #ba160d !important;}
+.submenu-item{ border-bottom: 2px solid #ba160d !important; border-top: 2px solid #ba160d !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#ba160d; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/hbase/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/hbase/images/hbase-mini-logo.jpg" alt="HBase Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">HBase Tutorial</li>
+<li><a target="_top" href="/hbase/index.htm">HBase - Home</a></li>
+<li><a target="_top" href="/hbase/hbase_overview.htm">HBase - Overview</a></li>
+<li><a target="_top" href="/hbase/hbase_architecture.htm">HBase - Architecture</a></li>
+<li><a target="_top" href="/hbase/hbase_installation.htm">HBase - Installation</a></li>
+<li><a target="_top" href="/hbase/hbase_shell.htm">HBase - Shell</a></li>
+<li><a target="_top" href="/hbase/hbase_general_commands.htm">HBase - General Commands</a></li>
+<li><a target="_top" href="/hbase/hbase_admin_api.htm">HBase - Admin API</a></li>
+<li><a target="_top" href="/hbase/hbase_create_table.htm">HBase - Create Table</a></li>
+<li><a target="_top" href="/hbase/hbase_listing_table.htm">HBase - Listing Table</a></li>
+<li><a target="_top" href="/hbase/hbase_disabling_table.htm">HBase - Disabling a Table</a></li>
+<li><a target="_top" href="/hbase/hbase_enabling_table.htm">HBase - Enabling a Table</a></li>
+<li><a target="_top" href="/hbase/hbase_describe_and_alter.htm">HBase - Describe &amp; Alter</a></li>
+<li><a target="_top" href="/hbase/hbase_exists.htm">HBase - Exists</a></li>
+<li><a target="_top" href="/hbase/hbase_drop_table.htm">HBase - Drop a Table</a></li>
+<li><a target="_top" href="/hbase/hbase_shutting_down.htm">HBase - Shutting Down</a></li>
+<li><a target="_top" href="/hbase/hbase_client_api.htm">HBase - Client API</a></li>
+<li><a target="_top" href="/hbase/hbase_create_data.htm">HBase - Create Data</a></li>
+<li><a target="_top" href="/hbase/hbase_update_data.htm">HBase - Update Data</a></li>
+<li><a target="_top" href="/hbase/hbase_read_data.htm">HBase - Read Data</a></li>
+<li><a target="_top" href="/hbase/hbase_delete_data.htm">HBase - Delete Data</a></li>
+<li><a target="_top" href="/hbase/hbase_scan.htm">HBase - Scan</a></li>
+<li><a target="_top" href="/hbase/hbase_count_truncate.htm">HBase - Count &amp; Truncate</a></li>
+<li><a target="_top" href="/hbase/hbase_security.htm">HBase - Security</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">HBase Resources</li>
+<li><a target="_top" href="/hbase/hbase_questions_answers.htm">HBase - Questions and Answers</a></li>
+<li><a target="_top" href="/hbase/hbase_quick_guide.htm">HBase - Quick Guide</a></li>
+<li><a target="_top" href="/hbase/hbase_useful_resources.htm">HBase - Useful Resources</a></li>
+<li><a target="_top" href="/hbase/hbase_discussion.htm">HBase - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>HBase Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/hbase/hbase_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/hbase/hbase_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>HBase Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>HBase</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What are the different commands used in Hbase operations?</label>
+<div class="toggle-content">
+<p>There are 5 atomic commands which carry out different operations by Hbase.</p>
+<p>Get, Put, Delete, Scan and Increment.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to connect to Hbase?</label>
+<div class="toggle-content">
+<p>A connection to Hbase is established through Hbase Shell which is a Java API.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the role of Master server in Hbase?</label>
+<div class="toggle-content">
+<p>The Master server assigns regions to region servers and handles load balancing in the cluster.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the role of Zookeeper in Hbase?</label>
+<div class="toggle-content">
+<p>The zookeeper maintains configuration information, provides distributed synchronization, and also maintains the communication between clients and region servers.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When do we need to disable a table in Hbase?</label>
+<div class="toggle-content">
+<p>In Hbase a table is disabled to allow it to be modified or change its settings. .When a table is disabled it cannot be accessed through the scan command.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Give a command to check if a table is disabled.</label>
+<div class="toggle-content">
+<p>Hbase &gt; is_disabled “table name”</p>
+</div>
+</section>
+<section class="toggle">
+<label> What does the following table do?<p></p>
+<p>hbase &gt; disable_all 'p.*'</p></label>
+<div class="toggle-content">
+<p>The command will disable all the table starting with the letter p</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different types of filters used in Hbase?</label>
+<div class="toggle-content">
+<p>Filters are used to get specific data form a Hbase table rather than all the records.</p>
+<p>They are of the following types.</p>
+<ul class="list">
+<li>Column Value Filter</li>
+<li>Column Value comparators</li>
+<li>KeyValue Metadata filters.</li>
+<li>RowKey filters.</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name three disadvantages Hbase has as compared to RDBMS?</label>
+<div class="toggle-content">
+<ul class="list">
+<li><p>Hbase does not have in-built authentication/permission mechanism</p></li>
+<li><p>The indexes can be created only on a key column, but in RDBMS it can be done in any column.</p></li>
+<li><p>With one HMaster node there is a  single point of failure.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are catalog tables in Hbase?</label>
+<div class="toggle-content">
+<p>The catalog tables in Hbase maintain the metadata information. They are named as &minus;ROOT&minus; and .META. The &minus;ROOT&minus; table stores information about location of .META&gt; table and the .META&gt; table holds information about all regions and their locations.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is Hbase a scale out or scale up process?</label>
+<div class="toggle-content">
+<p>Hbase runs on top of Hadoop which is a distributed system. Haddop can only scale uo as and when required by adding more machines on the fly. So Hbase is a scale out process.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the step in writing something into  Hbase by a client?</label>
+<div class="toggle-content">
+<p>In Hbase the client does not write directly into the HFile. The client first writes to WAL(Write Access Log), which then is accessed by Memstore. The Memstore Flushes the data into permanent  memory from time to time.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is compaction in Hbase?</label>
+<div class="toggle-content">
+<p>As more and more data is written to Hbase, many HFiles get created. Compaction is the process of merging these HFiles to one file and after the merged file is created successfully, discard the old file.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different compaction types in Hbase?</label>
+<div class="toggle-content">
+<p>There are two types of compaction. Major and Minor compaction. In minor compaction, the adjacent small HFiles are merged to create a single HFile without removing the  deleted HFiles. Files to be merged are chosen randomly.</p>
+<p>In Major compaction, all the HFiles of a column are emerged and a single HFiles is created. The delted HFiles are discarded and it is generally triggered manually.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between the commands delete column and delete family?</label>
+<div class="toggle-content">
+<p>The Delete column command deletes all versions of a column but the delete family deletes all columns of a particular family.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a cell in Hbase?</label>
+<div class="toggle-content">
+<p>A cell in Hbase is the smallest unit of a Hbase table which holds a piece of data in the form of a tuple{row,column,version}</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the role of the class HColumnDescriptor in Hbase?</label>
+<div class="toggle-content">
+<p>This class is used to store  information about a column family such as the number of versions, compression settings, etc. It is used as input when creating a table or adding a column.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the lower bound of versions in Hbase?</label>
+<div class="toggle-content">
+<p>The lower bound of versions indicates the minimum number of versions to be stored in Hbase for a column. For example If the value is set to 3 then three latest version wil be maintained and the older ones will be removed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is TTL (Time to live) in Hbase?</label>
+<div class="toggle-content">
+<p>TTL is a data retention technique using which the version of a cell can be preserved till a specific time period.Once that timestamp is reached the specific version will be removed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Does Hbase support table joins?</label>
+<div class="toggle-content">
+<p>Hbase does not support table jons. But using a mapreduce job we can specify join queries to retrieve data from multiple Hbase tables.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a rowkey in Hbase?</label>
+<div class="toggle-content">
+<p>Each row in Hbase is identified by a unique byte of array called row key.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the two ways in which you can access data from Hbase?</label>
+<div class="toggle-content">
+<p>The data in Hbase can be accessed in two ways.</p>
+<ul class="list">
+<li><p>Using the rowkey and table scan for a range of row key values.</p></li>
+<li><p>Using mapreduce in a batch manner.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the two types of table design approach in Hbase?</label>
+<div class="toggle-content">
+<p>They are &minus; (i) Short and Wide (ii) Tall and Thin</p>
+</div>
+</section>
+<section class="toggle">
+<label> In which scenario should we consider creating a short and wide Hbase table?</label>
+<div class="toggle-content">
+<p>The short and wide table design is considered when there is</p>
+<ul class="list">
+<li><p>There is a small number of columns</p></li>
+<li><p>There is a large number of rows</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> In Which scenario should we consider a Tall-thin table design?</label>
+<div class="toggle-content">
+<p> The tall and thin table design is considered when there is</p>
+<ul class="list">
+<li><p>There is a large number of columns</p></li>
+<li><p>There is a small number of rows</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Give a command to store 4 versions in a table rather than the default 3.</label>
+<div class="toggle-content">
+<p>hbase &gt; alter 'tablename', {NAME =&gt; 'ColFamily', VERSIONS =&gt; 4}</p>
+</div>
+</section>
+<section class="toggle">
+<label> What does the following command do?<p></p>
+<pre class="prettyprint notranslate">
+hbase &gt; alter 'tablename', {NAME =&gt; 'colFamily', METHOD =&gt; 'delete'}
+</pre></label>
+<div class="toggle-content">
+<p>This command deletes the column family form the table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Give the commands to add a new column family “(newcolfamily”) to a table (“tablename”) which has a existing column family(“oldcolfamily”).</label>
+<div class="toggle-content">
+<pre class="prettyprint notranslate"> 
+Hbase &gt; disable ‘tablename’
+Hbase &gt; alter ‘tablename’ {NAME =&gt; ‘oldcolfamily’,NAME=&gt;’newcolfamily’}
+Habse &gt; enable ‘tablename’
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is the Hbase shell command to only 10 records form a table?</label>
+<div class="toggle-content">
+<pre class="prettyprint notranslate"> 
+scan 'tablename', {LIMIT=&gt;10,
+STARTROW=&gt;"start_row",
+STOPROW=&gt;"stop_row"}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What does the following command do?<p></p><p>major_compact 'tablename'</p></label>
+<div class="toggle-content">
+<p>Run a major compaction on the table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How does Hbase support Bulk data loading?</label>
+<div class="toggle-content">
+<p>There are two main steps to do a data bulk load in Hbase.</p>
+<ul class="list">
+<li><p>Generate Hbase data file(StoreFile) using a custom mapreduce job) from the data source. The StoreFile is created in Hbase internal format which can be efficiently loaded.</p></li>
+<li><p>The prepared file is imported using another tool like comletebulkload to import data into a running cluster. Each file gets loaded to one specific region.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How does Hbase provide high availability?</label>
+<div class="toggle-content">
+<p>Hbase uses a feature called region replication. In this feature  for each region of a table, there will be multiple replicas that are opened in different RegionServers. The Load Balancer ensures that the region replicas are not co-hosted in the same region servers.</p>
+</div>
+</section>
+<section class="toggle">
+<label> what is HMaster?</label>
+<div class="toggle-content">
+<p>The Hmaster is the Master server responsible for monitoring all RegionServer instances in the cluster and it is the interface for all metadata changes. In a distributed cluster, it runs on the Namenode.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is HRegionServer in Hbase?</label>
+<div class="toggle-content">
+<p>HRegionServer is the RegionServer implementation. It is responsible for serving and managing regions. In a distributed cluster, a RegionServer runs on a DataNode.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different Block Caches in Hbase?</label>
+<div class="toggle-content">
+<p>HBase provides two different BlockCache implementations: the default on-heap LruBlockCache and the BucketCache, which is (usually) off-heap.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How does WAL help when a RegionServer crashes?</label>
+<div class="toggle-content">
+<p>The Write Ahead Log (WAL) records all changes to data in HBase, to file-based storage. if a RegionServer crashes or becomes unavailable before the MemStore is flushed, the WAL ensures that the changes to the data can be replayed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why MultiWAL is needed?</label>
+<div class="toggle-content">
+<p>With a single WAL per RegionServer, the RegionServer must write to the WAL serially, because HDFS files must be sequential. This causes the WAL to be a performance bottleneck.</p>
+</div>
+</section>
+<section class="toggle">
+<label> In Hbase what is log splitting?</label>
+<div class="toggle-content">
+<p>When a region is edited, the edits in the WAL file which belong to that region need to be replayed. Therefore, edits in the WAL file must be grouped by region so that particular sets can be replayed to regenerate the data in a particular region. The process of grouping the WAL edits by region is called log splitting.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you disable WAL? What is the benefit?</label>
+<div class="toggle-content">
+<p>WAL can be disabled to improve performance bottleneck.</p>
+<p>This is done by calling the Hbase client field Mutation.writeToWAL(false).</p>
+</div>
+</section>
+<section class="toggle">
+<label> When do we do manula Region splitting?</label>
+<div class="toggle-content">
+<p>The manual region splitting is done we have an unexpected hotspot in your table because of many clients querying the same table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Hbase Store?</label>
+<div class="toggle-content">
+<p>A Habse Store hosts a MemStore and 0 or more StoreFiles (HFiles). A Store corresponds to a column family for a table for a given region.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which file in Hbase is designed after the SSTable file of BigTable?</label>
+<div class="toggle-content">
+<p>The HFile in Habse which stores the Actual data(not metadata) is designed after the SSTable file of BigTable.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why do we pre-create empty regions?</label>
+<div class="toggle-content">
+<p>Tables in HBase are initially created with one region by default. Then for bulk imports, all clients will write to the same region until it is large enough to split and become distributed across the cluster. So empty regions are created to make this process faster.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is hotspotting in Hbase?</label>
+<div class="toggle-content">
+<p>Hotspotting is asituation when a large amount of client traffic is directed at one node, or only a few nodes, of a cluster. This traffic may represent reads, writes, or other operations. This traffic overwhelms the single machine responsible for hosting that region, causing performance degradation and potentially leading to region unavailability.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the approaches to avoid hotspotting?</label>
+<div class="toggle-content">
+<p>Hotspotting can be avoided or minimized by distributing the rowkeys across multiple regions. The different techniques to do this is salting and Hashing.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why should we try to minimize the row name and column name sizes in Hbase?</label>
+<div class="toggle-content">
+<p>In Hbase values are always freighted with their coordinates; as a cell value passes through the system, it’ll be accompanied by its row, column name, and timestamp. If the rows and column names are large, especially compared to the size of the cell value, then indices that are kept on HBase storefiles (StoreFile (HFile)) to facilitate random access may end up occupying large chunks of the HBase allotted RAM than the data itself  because the cell value coordinates are large.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the scope of a rowkey in Habse?</label>
+<div class="toggle-content">
+<p>Rowkeys are scoped to ColumnFamilies. The same rowkey could exist in each ColumnFamily that exists in a table without collision.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the information stored in hbase:meta table?</label>
+<div class="toggle-content">
+<p>The Hbase:meta tables stores details of region in the system in the following format.</p>
+<p>info:regioninfo (serialized HRegionInfo instance for this region)</p>
+<p>info:server (server:port of the RegionServer containing this region)</p>
+<p>info:serverstartcode (start-time of the RegionServer process containing this region)</p>
+</div>
+</section><section class="toggle">
+<label> What is a Namespace in Hbase?</label>
+<div class="toggle-content">
+<p>A Namespace is a logical grouping of tables . It is similar to a database object in a Relational database system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do we get the complete list of columns that exist in a column Family?</label>
+<div class="toggle-content">
+<p>The complete list of columns in a column family can be obtained only querying all the rows for that column family.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When the records are fetched form a Hbase tables, in which order are the sorted?</label>
+<div class="toggle-content">
+<p>The records fetched form Hbase are always sorted in the order of rowkey-&gt; column Family-&gt; column qualifier-&gt; tiestamp.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/hbase/hbase_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/hbase/pdf/hbase_interview_questions.pdf" title="HBase Interview Questions - tutorialspoint" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/hbase/hbase_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">hbase_questions_answers.htm</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/hbase/hbase_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/hbase/hbase_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/hbase/hbase_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/hbase/hbase_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/hbase/hbase_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/hbase/hbase_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

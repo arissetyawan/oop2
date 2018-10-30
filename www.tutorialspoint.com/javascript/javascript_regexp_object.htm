@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>JavaScript The Regular Expressions and RegExp Object</title>
+<meta name="description" content="JavaScript The Regular Expressions and RegExp Object - Learn Javascript in simple and easy steps. A beginner's tutorial containing complete knowledge of Javascript Syntax Objects Embedding with HTML Validations Cookies Regular Expressions Literals Variables Loops Conditions." />
+<meta name="keywords" content="Javascript, Tutorials, Learning, Beginners, Javascript Basics, Scripting Language, Javascript Tutorials, Functions, Objects, Usage." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(javascript/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #f8ba24 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #f8ba24 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #f8ba24 !important;}
+.submenu-item{ border-bottom: 2px solid #f8ba24 !important; border-top: 2px solid #f8ba24 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#f8ba24; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/javascript/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/javascript/images/javascript-mini-logo.jpg" alt="Javascript Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/javascript_online_training/index.asp" target="_blank"><img src="/javascript/images/javascript-video-tutorials.jpg" alt="JavaScript Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Javascript Basics Tutorial</li>
+<li><a href="/javascript/index.htm">Javascript - Home</a></li>
+<li><a href="/javascript/javascript_overview.htm">Javascript - Overview</a></li>
+<li><a href="/javascript/javascript_syntax.htm">Javascript - Syntax</a></li>
+<li><a href="/javascript/javascript_enabling.htm">Javascript - Enabling</a></li>
+<li><a href="/javascript/javascript_placement.htm">Javascript - Placement</a></li>
+<li><a href="/javascript/javascript_variables.htm">Javascript - Variables</a></li>
+<li><a href="/javascript/javascript_operators.htm">Javascript - Operators</a></li>
+<li><a href="/javascript/javascript_ifelse.htm">Javascript - If...Else</a></li>
+<li><a href="/javascript/javascript_switch_case.htm">Javascript - Switch Case</a></li>
+<li><a href="/javascript/javascript_while_loop.htm">Javascript - While Loop</a></li>
+<li><a href="/javascript/javascript_for_loop.htm">Javascript - For Loop</a></li>
+<li><a href="/javascript/javascript_forin_loop.htm">Javascript - For...in</a></li>
+<li><a href="/javascript/javascript_loop_control.htm">Javascript - Loop Control</a></li>
+<li><a href="/javascript/javascript_functions.htm">Javascript - Functions</a></li>
+<li><a href="/javascript/javascript_events.htm">Javascript - Events</a></li>
+<li><a href="/javascript/javascript_cookies.htm">Javascript - Cookies</a></li>
+<li><a href="/javascript/javascript_page_redirect.htm">Javascript - Page Redirect</a></li>
+<li><a href="/javascript/javascript_dialog_boxes.htm">Javascript - Dialog Boxes</a></li>
+<li><a href="/javascript/javascript_void_keyword.htm">Javascript - Void Keyword</a></li>
+<li><a href="/javascript/javascript_page_printing.htm">Javascript - Page Printing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">JavaScript Objects</li>
+<li><a href="/javascript/javascript_objects.htm">Javascript - Objects</a></li>
+<li><a href="/javascript/javascript_number_object.htm">Javascript - Number</a></li>
+<li><a href="/javascript/javascript_boolean_object.htm">Javascript - Boolean</a></li>
+<li><a href="/javascript/javascript_strings_object.htm">Javascript - Strings</a></li>
+<li><a href="/javascript/javascript_arrays_object.htm">Javascript - Arrays</a></li>
+<li><a href="/javascript/javascript_date_object.htm">Javascript - Date</a></li>
+<li><a href="/javascript/javascript_math_object.htm">Javascript - Math</a></li>
+<li><a href="/javascript/javascript_regexp_object.htm">Javascript - RegExp</a></li>
+<li><a href="/javascript/javascript_html_dom.htm">Javascript - HTML DOM</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">JavaScript Advanced</li>
+<li><a href="/javascript/javascript_error_handling.htm">Javascript - Error Handling</a></li>
+<li><a href="/javascript/javascript_form_validations.htm">Javascript - Validations</a></li>
+<li><a href="/javascript/javascript_animation.htm">Javascript - Animation</a></li>
+<li><a href="/javascript/javascript_multimedia.htm">Javascript - Multimedia</a></li>
+<li><a href="/javascript/javascript_debugging.htm">Javascript - Debugging</a></li>
+<li><a href="/javascript/javascript_image_map.htm">Javascript - Image Map</a></li>
+<li><a href="/javascript/javascript_browsers_handling.htm">Javascript - Browsers</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">IMS DB Resources</li>
+<li><a href="/javascript/javascript_questions_answers.htm">Javascript - Questions And Answers</a></li>
+<li><a href="/javascript/javascript_quick_guide.htm">Javascript - Quick Guide</a></li>
+<li><a href="/javascript/javascript_builtin_functions.htm">Javascript - Functions</a></li>
+<li><a href="/javascript/javascript_resources.htm">Javascript - Resources</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Regular Expressions and RegExp Object</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/javascript/javascript_math_object.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/javascript/javascript_html_dom.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>A regular expression is an object that describes a pattern of characters.</p>
+<p>The JavaScript <b>RegExp</b> class represents regular expressions, and both String and <b>RegExp</b> define methods that use regular expressions to perform powerful pattern-matching and search-and-replace functions on text.</p>
+<h3>Syntax</h3>
+<p>A regular expression could be defined with the <b>RegExp ()</b> constructor, as follows &minus;</p>
+<pre class="prettyprint notranslate">
+var pattern = new RegExp(pattern, attributes);
+
+or simply
+
+var pattern = /pattern/attributes;
+</pre>
+<p>Here is the description of the parameters &minus;</p>
+<ul class="list">
+<li><p><b>pattern</b> &minus; A string that specifies the pattern of the regular expression or another regular expression.</p></li>
+<li><p><b>attributes</b> &minus; An optional string containing any of the "g", "i", and "m" attributes that specify global, case-insensitive, and multiline matches, respectively.</p></li>
+</ul>
+<h2>Brackets</h2>
+<p>Brackets ([]) have a special meaning when used in the context of regular expressions. They are used to find a range of characters.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Expression &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>[...]</b></p>
+<p>Any one character between the brackets.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>[^...]</b></p>
+<p>Any one character not between the brackets.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>[0-9]</b></p>
+<p>It matches any decimal digit from 0 through 9.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>[a-z]</b></p>
+<p>It matches any character from lowercase a through lowercase z.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>[A-Z]</b></p>
+<p>It matches any character from uppercase A through uppercase Z.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>[a-Z]</b></p>
+<p>It matches any character from lowercase a through uppercase Z.</p></td>
+</tr>
+</table>
+<p>The ranges shown above are general; you could also use the range [0-3] to match any decimal digit ranging from 0 through 3, or the range [b-v] to match any lowercase character ranging from <b>b</b> through <b>v</b>.</p>
+<h2>Quantifiers</h2>
+<p>The frequency or position of bracketed character sequences and single characters can be denoted by a special character. Each special character has a specific connotation. The +, *, ?, and $ flags all follow a character sequence.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Expression &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>p+</b></p>
+<p>It matches any string containing one or more p's.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>p*</b></p>
+<p>It matches any string containing zero or more p's.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>p?</b></p>
+<p>It matches any string containing at most one p.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>p{N}</b></p>
+<p>It matches any string containing a sequence of <b>N</b> p's</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>p{2,3}</b></p>
+<p>It matches any string containing a sequence of two or three p's.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>p{2, }</b></p>
+<p>It matches any string containing a sequence of at least two p's.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>p$</b></p>
+<p>It  matches any string with p at the end of it.</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>^p</b></p>
+<p>It matches any string with p at the beginning of it.</p></td>
+</tr>
+</table>
+<h3>Examples</h3>
+<p>Following examples explain more about matching characters.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Expression &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>[^a-zA-Z]</b></p>
+<p>It matches any string not containing any of the characters ranging from <b>a</b> through <b>z</b> and <b>A</b> through Z.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>p.p</b></p>
+<p>It matches any string containing <b>p,</b> followed by any character, in turn followed by another <b>p</b>.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>^.{2}$</b></p>
+<p>It matches any string containing exactly two characters.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>&lt;b&gt;(.*)&lt;/b&gt;</b></p>
+<p>It matches any string enclosed within &lt;b&gt; and &lt;/b&gt;.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>p(hp)*</b></p>
+<p>It matches any string containing a <b>p</b> followed by zero or more instances of the sequence <b>hp</b>.</p></td>
+</tr>
+</table>
+<h2>Literal characters</h2>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Character &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>Alphanumeric</b></p>
+<p>Itself</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>\0</b></p>
+<p>The NUL character (\u0000)</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>\t</b></p>
+<p>Tab (\u0009</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>\n</b></p>
+<p>Newline (\u000A)</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>\v</b></p>
+<p>Vertical tab (\u000B)</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>\f</b></p>
+<p>Form feed (\u000C)</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>\r</b></p>
+<p>Carriage return (\u000D)</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>\xnn</b></p>
+<p>The Latin character specified by the hexadecimal number nn; for example, \x0A is the same as \n</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>\uxxxx</b></p>
+<p>The Unicode character specified by the hexadecimal number xxxx; for example, \u0009 is the same as \t</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>\cX</b></p>
+<p>The control character ^X; for example, \cJ is equivalent to the newline character \n</p></td>
+</tr>
+</table>
+<h2>Metacharacters</h2>
+<p>A metacharacter is simply an alphabetical character preceded by a backslash that acts to give the combination a special meaning.</p>
+<p>For instance, you can search for a large sum of money using the '\d' metacharacter: <b>/([\d]+)000/</b>, Here <b>\d</b> will search for any string of numerical character.</p>
+<p>The following table lists a set of metacharacters which can be used in PERL Style Regular Expressions.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:10%">Sr.No</th>		
+<th style="text-align:center;">Character &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>.</b></p>              
+<p>a single character</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>\s</b></p>            
+<p>a whitespace character (space, tab, newline)</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>\S</b></p>             
+<p>non-whitespace character</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>\d</b></p>             
+<p>a digit (0-9)</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>\D</b></p>             
+<p>a non-digit</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>\w</b></p>             
+<p>a word character (a-z, A-Z, 0-9, _)</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>\W</b></p>            
+<p>a non-word character</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>[\b]</b></p>           
+<p>a literal backspace (special case).</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>[aeiou]</b></p>        
+<p>matches a single character in the given set</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>[^aeiou]</b></p>       
+<p>matches a single character outside the given set</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>(foo|bar|baz)</b></p>  
+<p>matches any of the alternatives specified</p></td>
+</tr>
+</table>
+<h2>Modifiers</h2>
+<p>Several modifiers are available that can simplify the way you work with <b>regexps,</b> like case sensitivity, searching in multiple lines, etc.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Modifier &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>i</b></p>
+<p>Perform case-insensitive matching.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>m</b></p>
+<p>Specifies that if the string has newline or carriage return characters, the ^ and $ operators will now match against a newline boundary, instead of a string boundary</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>g</b></p>
+<p>Performs a global matchthat is, find all matches rather than stopping after the first match.</p></td>
+</tr>
+</table>
+<h2>RegExp Properties</h2>
+<p>Here is a list of the properties associated with RegExp and their description.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Property &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><a href="/javascript/regexp_constructor.htm">constructor</a>
+<p>Specifies the function that creates an object's prototype.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><a href="/javascript/regexp_global.htm">global</a>
+<p>Specifies if the "g" modifier is set.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><a href="/javascript/regexp_ignorecase.htm">ignoreCase</a>
+<p>Specifies if the "i" modifier is set.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><a href="/javascript/regexp_lastindex.htm">lastIndex</a>
+<p>The index at which to start the next match.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><a href="/javascript/regexp_multiline.htm">multiline</a>
+<p>Specifies if the "m" modifier is set.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><a href="/javascript/regexp_source.htm">source</a>
+<p>The text of the pattern.</p></td>
+</tr>
+</table>
+<p>In the following sections, we will have a few examples to demonstrate the usage of RegExp properties.</p>
+<h2>RegExp Methods</h2>
+<p>Here is a list of the methods associated with RegExp along with their description.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><a href="/javascript/regexp_exec.htm">exec()</a>
+<p>Executes a search for a match in its string parameter.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><a href="/javascript/regexp_test.htm">test()</a>
+<p>Tests for a match in its string parameter.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><a href="/javascript/regexp_tosource.htm">toSource()</a>
+<p>Returns an object literal representing the specified object; you can use this value to create a new object.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><a href="/javascript/regexp_tostring.htm">toString()</a>
+<p>Returns a string representing the specified object.</p></td>
+</tr>
+</table>
+<p>In the following sections, we will have a few examples to demonstrate the usage of RegExp methods.</p>
+<hr />
+<div class="pre-btn">
+<a href="/javascript/javascript_math_object.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/javascript/pdf/javascript_regexp_object.pdf" title="JavaScript The Regular Expressions and RegExp Object" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/javascript/javascript_html_dom.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script src="/theme/js/jquery.colorbox-min.js"></script>
+<script>
+   var tryit = new $.TryIt('javascript/try_javascript.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

@@ -1,0 +1,819 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>QlikView Interview Questions</title>
+<meta name="description" content="QlikView Interview Questions - Learn QlikView in simple and easy steps using this beginner's tutorial containing basic to advanced knowledge starting from Introduction, Installation, QlikView Data Loading, QlikView Report Interface, QlikView Data Transformation, QlikView Data Model, QlikView Data Analysis, and important resoruces." />
+<meta name="keywords" content="QlikView, Introduction, Installation,  Data, Loading, Report, Interface, transformation, Model,  Analysis, resoruces." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #6eb43f !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #6eb43f url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #6eb43f !important;}
+.submenu-item{ border-bottom: 2px solid #6eb43f !important; border-top: 2px solid #6eb43f !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#6eb43f; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/qlikview/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/qlikview/images/qlikview-mini-logo.jpg" alt="Qlikview Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Qlikview Tutorial</li>
+<li><a href="/qlikview/index.htm">QlikView - Home</a></li>
+<li><a href="/qlikview/qlikview_overview.htm">QlikView - Overview</a></li>
+<li><a href="/qlikview/qlikview_installation.htm">QlikView - Desktop Installation</a></li>
+<li><a href="/qlikview/qlikview_architecture.htm">QlikView - Architecture</a></li>
+<li><a href="/qlikview/qlikview_navigation.htm">QlikView - Navigation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">QlikView Data Loading</li>
+<li><a href="/qlikview/qlikview_excel_file.htm">QlikView - Excel file</a></li>
+<li><a href="/qlikview/qlikview_delimited_file.htm">QlikView - Delimited file </a></li>
+<li><a href="/qlikview/qlikview_xml_file.htm">QlikView - XML file</a></li>
+<li><a href="/qlikview/qlikview_web_file.htm">QlikView - Web file</a></li>
+<li><a href="/qlikview/qlikview_database.htm">QlikView - Database</a></li>
+<li><a href="/qlikview/qlikview_inline_data.htm">QlikView - Inline Data</a></li>
+<li><a href="/qlikview/qlikview_resident_load.htm">QlikView - Resident Load</a></li>
+<li><a href="/qlikview/qlikview_preceding_load.htm">QlikView - Preceding Load</a></li>
+<li><a href="/qlikview/qlikview_incremental_load.htm">QlikView - Incremental Load</a></li>
+<li><a href="/qlikview/qlikview_data_files_qvd.htm">QlikView - Data - files(QVD)</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">QlikView Report Interface</li>
+<li><a href="/qlikview/qlikview_sheet_objects.htm">QlikView - Sheet and Objects</a></li>
+<li><a href="/qlikview/qlikview_scripting.htm">QlikView - Scripting</a></li>
+<li><a href="/qlikview/qlikview_functions.htm">Qlikview - Functions</a></li>
+<li><a href="/qlikview/qlikview_intervalmatch.htm">QlikView - IntervalMatch</a></li>
+<li><a href="/qlikview/qlikview_aggregate_functions.htm">QlikView - Aggregate Functions</a></li>
+<li><a href="/qlikview/qlikview_match_function.htm">QlikView - Match Function</a></li>
+<li><a href="/qlikview/qlikview_rank_function.htm">QlikView - Rank Function</a></li>
+<li><a href="/qlikview/qlikview_peek_function.htm">QlikView - Peek Function</a></li>
+<li><a href="/qlikview/qlikview_rangesum_function.htm">QlikView - RangeSum Function</a></li>
+<li><a href="/qlikview/qlikview_documents.htm">QlikView - Documents</a></li>
+<li><a href="/qlikview/qlikview_list_box.htm">QlikView - List Box</a></li>
+<li><a href="/qlikview/qlikview_multi_box.htm">QlikView - Multi Box</a></li>
+<li><a href="/qlikview/qlikview_text_object.htm">QlikView - Text Object</a></li>
+<li><a href="/qlikview/qlikview_bar_chart.htm">QlikView - Bar Chart</a></li>
+<li><a href="/qlikview/qlikview_pie_chart.htm">QlikView - Pie Chart</a></li>
+<li><a href="/qlikview/qlikview_dashboard.htm">QlikView - Dashboard</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">QlikView Data Transformation</li>
+<li><a href="/qlikview/qlikview_data_transformation.htm">QlikView - Transformation Wizard</a></li>
+<li><a href="/qlikview/qlikview_fill_function.htm">QlikView - Fill Function</a></li>
+<li><a href="/qlikview/qlikview_column_manipulation.htm">QlikView - Column Manipulation</a></li>
+<li><a href="/qlikview/qlikview_rotating_tables.htm">QlikView - Rotating Tables</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">QlikView Data Model</li>
+<li><a href="/qlikview/qlikview_dimensions_measures.htm">QlikView - Dimensions &amp; measures</a></li>
+<li><a href="/qlikview/qlikview_star_schema.htm">QlikView - Star Schema</a></li>
+<li><a href="/qlikview/qlikview_synthetic_key.htm">QlikView - Synthetic Key</a></li>
+<li><a href="/qlikview/qlikview_generating_data.htm">QlikView - Generating Data</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">QlikView Data Analysis</li>
+<li><a href="/qlikview/qlikview_cross_tables.htm">QlikView - Cross Tables</a></li>
+<li><a href="/qlikview/qlikview_straight_tables.htm">QlikView - Straight Tables</a></li>
+<li><a href="/qlikview/qlikview_pivot_tables.htm">QlikView - Pivot Tables</a></li>
+<li><a href="/qlikview/qlikview_set_analysis.htm">QlikView - Set Analysis</a></li>
+<li><a href="/qlikview/qlikview_joins.htm">QlikView - Joins</a></li>
+<li><a href="/qlikview/qlikview_keeps.htm">QlikView - Keeps</a></li>
+<li><a href="/qlikview/qlikview_concatenation.htm">QlikView - Concatenation</a></li>
+<li><a href="/qlikview/qlikview_master_calendar.htm">QlikView - Master Calendar</a></li>
+<li><a href="/qlikview/qlikview_mapping_tables.htm">QlikView - Mapping Tables</a></li>
+<li><a href="/qlikview/qlikview_circular_reference.htm">QlikView - Circular Reference</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Qlikview Useful Resources</li>
+<li><a href="/qlikview/qlikview_interview_questions.htm">Qlikview - Questions/Answers</a></li>
+<li><a href="/qlikview/qlikview_quick_guide.htm">Qlikview -  Quick Guide</a></li>
+<li><a href="/qlikview/qlikview_useful_resources.htm">Qlikview - Useful Resources</a></li>
+<li><a href="/qlikview/qlikview_discussion.htm">Qlikview - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>QlikView - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/qlikview/qlikview_circular_reference.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/qlikview/qlikview_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these QlikView Interview Questions have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of R programming. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label>What are the unique features of QlikView?</label>
+<div class="toggle-content">
+<p>(a)Data Association is maintained automatically.
+(b) The structure, data and calculations of a report are all held in the memory (RAM) of the server.
+(c) Data is compressed to 10% of its original size.
+(d) Visual relationship using colors.
+</p>
+</div>
+</section>
+ 
+ 
+<section class="toggle">
+<label>What is Incremental Load?</label>
+<div class="toggle-content">
+<p>The concept of loading only the new or changed records from the source into the QlikView document is called Incremental Load.</p>
+</div>
+</section>
+ 
+
+<section class="toggle">
+<label>How you connect QlikView to Database?  </label>
+<div class="toggle-content">
+<p>QlikView can connect to data base using ODBC connection created for the database.</p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is Dashboard? </label>
+<div class="toggle-content">
+<p> A dashboard is a QlikView document which shows many matrices together and the values in the sheet objects can change dynamically upon selection of certain value in one of the Sheet Objects.  </p>
+</div>
+</section>
+
+
+
+
+
+<section class="toggle">
+<label> Why do we need a Master Calendar?  </label>
+<div class="toggle-content">
+<p> The Master calendar is required when we want to create some additional date values which are not already captured in the data that is being analyzed. For example finding the quarter to which a given date falls etc. </p>
+</div>
+</section>
+
+
+
+
+
+<section class="toggle">
+<label> What is Aggr Function?  </label>
+<div class="toggle-content">
+<p> AGGR statement function produces a virtual table, with one expression and grouped by one or more dimensions. The result of this virtual table can then be used  by a further outer aggregation function(s).  </p>
+</div>
+</section>
+
+<section class="toggle">
+<label> What is a star schema?  </label>
+<div class="toggle-content">
+<p>A Star schema is a data model in which one fact table is connected to multiple dimension tables though foreign keys  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is the difference between Join and Keep?  </label>
+<div class="toggle-content">
+<p> In case of keep both the datasets are available in QlikView's memory while in join the load statements produce only one data set from which you have to choose the columns. Also there is no concept of outer keep where as we have outer join available in case of joins.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What is Synthetic key, is it good or bad to have?  </label>
+<div class="toggle-content">
+<p> QlikView creates a synthetic key when two or more column between tables are same. It does not impact the data or performance but it indicates a flaw in the data model design.</p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label>Difference between Join and Concatenate?   </label>
+<div class="toggle-content">
+<p> Join gives the resulting records from two tables as records containing columns form both tables.  But Concatenate only appends the rows from one table with another.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What are Circular loops in QlikView?   </label>
+<div class="toggle-content">
+<p> A circular loop is created when the relationship between two tables can be established both directly and through another third table.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What does MonthStart  function do?  </label>
+<div class="toggle-content">
+<p> Returns a value corresponding to a timestamp with the first millisecond of the first date of the month containing date.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What does Autogenerate Function do? </label>
+<div class="toggle-content">
+<p> This function auto generates values between a given range of numbers.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What is a pivot table in QlikView? </label>
+<div class="toggle-content">
+<p> Pivot Tables are used to present sum of values across many dimensions available in the data. For example showing the total sales figure for both the months and quarters in a years.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label>What are the 6 chart types available in QlikView? </label>
+<div class="toggle-content">
+<p>Bar Chart, Pie Chart, Line Chart, Gauge Chart, Pivot table, Straight table. </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> Can QlikView extract data from website? How? </label>
+<div class="toggle-content">
+<p> Yes. In QlikView script editor we have the option to extract data form a web file by giving the URL as the input. </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What is the use of Promote/Demote options in a Table Box property?  </label>
+<div class="toggle-content">
+<p>It allows you to rearrange the columns in the Table box which is displayed in the Sheet. </p>
+</div>
+</section>
+
+<section class="toggle">
+<label>What are the three options available under the Rotate table functionality for data transformation? </label>
+<div class="toggle-content">
+<p> Rotate Left, Rotate Right and Transpose. </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What are the parameters required by a Crosstable Wizard to create a cross table?  </label>
+<div class="toggle-content">
+<p> There are three fields required to create a cross table. Qualifier field, Attribute Field and Data Field.
+  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>What does Partial Reload do?  </label>
+<div class="toggle-content">
+<p> It Executes the current load script, including all script commands, such as
+Drop Table and reloads data to the active QlikView document.
+However, only those tables whose load and select statements are preceded
+by the Replace or Add  prefix are reloaded.
+  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>How can we see the table structures of data loaded to QlikView’s memory?  </label>
+<div class="toggle-content">
+<p> By using the Table Viewer Option under file menu we can see the Tables and their relationships.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>What is the use of  - Export Sheet layout?  </label>
+<div class="toggle-content">
+<p> When we want to preserve the layout of a sheet to be used again, we export the sheet layout which creates a XML file without any data.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is Webview Mode?  </label>
+<div class="toggle-content">
+<p> The WebView mode uses the internal web browser in QlikView to display the document layout as an AJAX page.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What is a selection indicator in QlikView Document? </label>
+<div class="toggle-content">
+<p> A selection indicator is used to indicate the type of association between the data present in different sheet objects. A green dot indicates selected values, blue dot indicates locked values and red dot indicates de-selected values in AND mode.  </p>
+</div>
+</section>
+
+<section class="toggle">
+<label>What does *bi* in text search mean?  </label>
+<div class="toggle-content">
+<p> It searches for any string that contains bi.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is Fuzzy search in QlikView? </label>
+<div class="toggle-content">
+<p> Fuzzy search finds all the values according to their degree of resemblance to the search string. Which means, even if the spelling does not match character by character, those results will also be shown.   </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is a Bookmark in QlikView?  </label>
+<div class="toggle-content">
+<p> A bookmark in QlikView captures the selections in all states defined in a QlikView document. It can be saved and accessed later.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>What is a user bookmark and a shared server bookmark? </label>
+<div class="toggle-content">
+<p> The User bookmark is saved in the user computer while the shared server bookmark is saved in the server and accessible to all the allowed users. </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What are the different ways in which the QlikView Alerts can be triggered? </label>
+<div class="toggle-content">
+<p>  The alerts can be triggered in three ways. (a) Automatically when there is a change in data
+(b) Manually from a internal macro
+(c) External program running QlikView API.
+ </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>What are the two ways to insert Load statements into script editor?  </label>
+<div class="toggle-content">
+<p> (a) Form File (b) Inline  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> When do we need to use the option “Force 32 Bit”?  </label>
+<div class="toggle-content">
+<p>  When connecting to a database using ODBC, if the data source only provides 32-bit driver we use this option.  </p>
+</div>
+</section>
+
+<section class="toggle">
+<label>What is a hidden script in QlikView?  </label>
+<div class="toggle-content">
+<p> A Hidden script is a part of the script that executes before the execution of normal script and it is protected by a password. </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is Information density in QlikView table Viewer?  </label>
+<div class="toggle-content">
+<p>It is a ratio between the numbers of records with not null values to the total number of records.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is Subset Ratio? </label>
+<div class="toggle-content">
+<p>  It is ratio between numbers of distinct values found in the table as compared to total number of distinct values in the field whose subset ratio is required. </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>What are the default column names in Inline data load?  </label>
+<div class="toggle-content">
+<p>The default field names when inline data is inserted is – F1,F2,F3 etc. This can be edited.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is the difference between QVX and QVD files?  </label>
+<div class="toggle-content">
+<p> The QVD file is a proprietary and optimized for minimum transformations inside QlikView but the QVX file has a open file format which shows both the table structure and the table data in it. </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is Garbage option in the Data Transform wizard? </label>
+<div class="toggle-content">
+<p> The Garbage option is used to mark and delete the data that is not required or that is jumbled and not useful.  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What feature does the Fill Tab in data transform wizard provide? </label>
+<div class="toggle-content">
+<p> The fill feature is used to fill in empty cells with values from adjacent cells.  </p>
+</div>
+</section>
+
+<section class="toggle">
+<label> How can we split the data in a table vertically or horizontally?  </label>
+<div class="toggle-content">
+<p> The data in a table can be split by using the unwrap transformation.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>What is Context cell Expansion in QlikView?  </label>
+<div class="toggle-content">
+<p> Context cell expansion is used to expand the contents of one cell into several cells in the table.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> What is a binary statement in QlikView?  </label>
+<div class="toggle-content">
+<p>The binary statement is used load the access and data parts of a QlikView document. It does not load the layout information of the document.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label>Can we store a sound file in a QlikView document?  </label>
+<div class="toggle-content">
+<p> Yes we can. We can store an external file (audio/video etc.) using Bundle prefix in the QlikView document.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> Can we concatenate two tables with different number of fields in QlikView?  </label>
+<div class="toggle-content">
+<p> Yes. Using concatenate function.  </p>
+</div>
+</section>
+
+
+<section class="toggle">
+<label> How can we drop some fields from the memory during script execution?  </label>
+<div class="toggle-content">
+<p>We can use the statement Drop field A;  </p>
+</div>
+</section>
+
+
+
+<section class="toggle">
+<label> What is the use of the function IntervalMatch?  </label>
+<div class="toggle-content">
+<p> The IntervalMatch prefix to a Load  or Select (SQL) statement is used for linking
+discrete numeric values to one or more numeric intervals.
+  </p>
+</div>
+</section>
+
+<section class="toggle">
+<label> What is a Mapping Table?  </label>
+<div class="toggle-content">
+<p> The mapping table is a temporary table to provide a mapping of values forms one column in first table to another column in the second table. It has only two columns and it is dropped after script execution.  </p>
+</div>
+</section>
+<section class="toggle">
+<label> What does NoConcatenate do?  </label>
+<div class="toggle-content">
+<p>  The Noconcatenate function forces two tables with identical fields to be treated as two separate internal tables.  </p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between NullAsValue and NullAsNull?  </label>
+<div class="toggle-content">
+<p>  NullAsValue allows linking of data which are null but NullAsNull treats the null values as missing values and does not allow any linking between such values.  </p>
+</div>
+</section>
+<section class="toggle">
+<label> How can we get the number of statements which have caused errors during a script execution?  </label>
+<div class="toggle-content">
+<p>  Using of ScriptErrorCount system variable.  </p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the value of X in the following code? 
+<pre class="prettyprint notranslate">
+set VAL=’$1*$2’;
+Let X = $(VAL(6,4,9));
+</pre>
+ </label>
+<div class="toggle-content">
+<p>  24  </p>
+</div>
+</section>
+<hr />
+<div class="pre-btn">
+<a href="/qlikview/qlikview_circular_reference.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/qlikview/qlikview_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/qlikview/qlikview_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/qlikview/qlikview_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/qlikview/qlikview_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/qlikview/qlikview_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/qlikview/qlikview_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/qlikview/qlikview_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,763 @@
+ <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Java Math class with Methods - Javatpoint</title><link rel="SHORTCUT ICON" href="/images/logo/icon.png" />
+<link rel="stylesheet" type="text/css" href="/link.css"/>
+<meta name="keywords" content="java, math, abs, min, max, avg, round, ceil, floor, pow, sqrt, sin, cos, tan, exp"/><meta name="description" content="Java Math class with methods with Examples on abs(), min(), max(), avg(), round(), ceil(), floor(), pow(), sqrt(), sin(), cos(), tan(), exp() etc."/><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="https://www.javatpoint.com/java-math" />
+<meta property="og:title" content="Java Math class with Methods - Javatpoint" /><meta property="og:description" content="Java Math class with methods with Examples on abs(), min(), max(), avg(), round(), ceil(), floor(), pow(), sqrt(), sin(), cos(), tan(), exp() etc." />
+<meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta name="twitter:title" property="og:title" content="Java Math class with Methods - Javatpoint" /><meta name="twitter:description" property="og:description" content="Java Math class with methods with Examples on abs(), min(), max(), avg(), round(), ceil(), floor(), pow(), sqrt(), sin(), cos(), tan(), exp() etc." /><meta property="og:url" content="https://www.javatpoint.com/java-math" /><meta property="og:site_name" content="www.javatpoint.com" /><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@pagejavatpoint"/><meta name="twitter:domain" content="www.javatpoint.com"/><meta name="twitter:creator" content="@pagejavatpoint"/>
+<script  id="feedify_webscript" >
+var feedify = feedify || {};
+window.feedify_options={fedify_url:"https://feedify.net/"};
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src = feedify_options.fedify_url+'getjs/feedbackembad-min-1.0.js';
+document.getElementsByTagName('head')[0].appendChild(s);
+</script>
+<link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+</head> 
+<body onload="highlightlink()"> 
+<!-- /13406045/javatpoint_cmda -->
+<div id='div-gpt-ad-1512468834310-0' style='height:1px; width:1px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512468834310-0'); });
+</script>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
+<div id="page" style="margin:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><table style="width:100%;margin-bottom:5px">
+    <tr>
+        <td>
+            <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px">
+                <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo" /></a>
+            </div>
+            <div style="float:left;width:60%;">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                
+            </div>
+            
+        </td>
+    </tr>
+        <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>-->
+
+</table> </div>
+<div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"/></span>
+<span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+
+</div>
+<div style="margin:0px;padding:0px;clear:both">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+<!--<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint"/><input type="hidden" name="sitesearch" value="www.javatpoint.com"/></form>-->
+
+</div>
+</div>
+<div id="link" style="clear:both"> <div id="smoothmenu1" class="ddsmoothmenu">
+<ul>
+<li><a href="https://www.javatpoint.com">Home</a></li>
+<li><a href="java-tutorial" class="selected">Java</a></li>
+<li><a href="c-programming-language-tutorial">C</a></li>
+<li><a href="cpp-tutorial">C++</a></li>
+<li><a href="c-sharp-tutorial">C#</a></li>
+<li><a href="servlet-tutorial">Servlet</a></li>
+<li><a href="jsp-tutorial">JSP</a></li>
+<li><a href="ejb-tutorial">EJB</a></li>
+<li><a href="struts-2-tutorial">Struts2</a></li>
+<li><a href="java-mail-api-tutorial">Mail</a></li>
+<li><a href="hibernate-tutorial">Hibernate</a></li>
+<li><a href="spring-tutorial">Spring</a></li>
+<li><a href="android-tutorial">Android</a></li>
+<li><a href="design-patterns-in-java">Design P</a></li>
+<li><a href="examaccess">Quiz</a></li>
+<li><a href="free-java-projects">Projects</a></li>
+<li><a href="corejava-interview-questions">Interview Q</a>
+<li><a href="comment.jsp">Comment</a>
+<li><a href="forum">Forum</a>
+<li><a href="training">Training</a>
+</li>
+</ul>
+<br style="clear: left" />
+</div>
+</div>
+<div class="mobilemenu" style="clear:both"> 
+<script async
+src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cm_300x250_Mob_14/9 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:300px;height:250px"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="7014272519"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="menu">
+<a target="_blank" href="http://training.javatpoint.com/java-training.jsp" class="training">Java Training</a> 
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Tutorial</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="java-tutorial" >What is Java</a>
+<a href="history-of-java" >History of Java </a>
+<a href="features-of-java" >Features of Java </a>
+<a href="cpp-vs-java" >C++ vs Java </a>
+<a href="simple-program-of-java" >Hello Java Program</a>
+<a href="internal-details-of-hello-java-program" >Program Internal</a>
+<a href="how-to-set-path-in-java" >How to set path? </a>
+<a href="difference-between-jdk-jre-and-jvm">JDK, JRE and JVM </a>
+<a href="internal-details-of-jvm" >Internal Details of JVM </a>
+<a href="java-variables">Java Variables</a>
+<a href="java-data-types">Java Data Types</a>
+<a href="unicode-system-in-java" >Unicode System </a>
+<!--<a href="typepromotion-and-typecasting">TypePromotion and TypeCasting </a>-->
+<a href="operators-in-java">Operators </a>
+</div>
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Control Statements</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="java-if-else">Java If-else</a>
+<a href="java-switch">Java Switch</a>
+<a href="java-for-loop">Java For Loop</a>
+<a href="java-while-loop">Java While Loop</a>
+<a href="java-do-while-loop">Java Do While Loop</a>
+<a href="java-break">Java Break</a>
+<a href="java-continue">Java Continue</a>
+<a href="java-comments">Java Comments</a>
+<a href="java-programs">Java Programs </a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Object Class</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="java-oops-concepts" class="l1">Java OOPs Concepts</a>
+<a href="java-naming-conventions" class="l1">Naming Convention</a>
+<a href="object-and-class-in-java" class="l1">Object and Class</a>
+<a href="java-constructor" class="l1">Constructor</a>
+<a href="static-keyword-in-java" class="l1">static keyword </a>
+<a href="this-keyword" class="l1">this keyword</a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Inheritance</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="inheritance-in-java" class="l1">Inheritance(IS-A)</a>
+<a href="aggregation-in-java" class="l1">Aggregation(HAS-A)</a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Polymorphism</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="method-overloading-in-java" class="l1">Method Overloading</a>
+<a href="method-overriding-in-java" class="l1">Method Overriding</a>
+<a href="covariant-return-type" class="l1">Covariant Return Type</a>
+<a href="super-keyword" class="l1">super keyword</a>
+<a href="instance-initializer-block" class="l1">Instance Initializer block</a>
+<a href="final-keyword" class="l1">final keyword</a>
+<a href="runtime-polymorphism-in-java" class="l1">Runtime Polymorphism</a>
+<a href="static-binding-and-dynamic-binding" class="l1">Dynamic Binding</a>
+<a href="downcasting-with-instanceof-operator" class="l1">instanceof operator</a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Abstraction</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="abstract-class-in-java" class="l1">Abstract class</a>
+<a href="interface-in-java" class="l1">Interface</a>
+<a href="difference-between-abstract-class-and-interface" class="l1">Abstract vs Interface</a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Encapsulation</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="package" class="l1">Package</a>
+<a href="access-modifiers" class="l1">Access Modifiers</a>
+<a href="encapsulation" class="l1">Encapsulation</a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java Array</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="array-in-java" class="l1">Java Array</a>
+</div>
+
+<div class="leftmenu2" >
+<h2 class="spanh2"><span class="spanh2">Java OOPs Misc</span></h2>
+</div>
+
+<div class="leftmenu" >
+<a href="object-class" class="l1">Object class </a>
+<a href="object-cloning" class="l1">Object Cloning</a>
+<a href="java-math" class="l1">Math class </a>
+<a href="wrapper-class-in-java" class="l1">Wrapper Class</a>
+<a href="recursion-in-java" class="l1">Java Recursion</a>
+<a href="call-by-value-and-call-by-reference-in-java" class="l1">Call By Value </a>
+<a href="strictfp-keyword" class="l1">strictfp keyword</a>
+<a href="creating-api-document" class="l1">javadoc tool</a>
+<a href="command-line-argument" class="l1">Command Line Arg</a>
+<a href="difference-between-object-and-class" class="l1">Object vs Class</a>
+<a href="method-overloading-vs-method-overriding-in-java" class="l1">Overloading vs Overriding</a>
+</div>
+<div class="leftmenu2" >
+<a href="java-string"><span>Java String</span></a>
+<a href="java-regex"><span>Java Regex</span></a>
+<a href="exception-handling-in-java"><span>Exception Handling</span></a>
+<a href="java-inner-class"><span>Java Inner classes</span></a>
+<a href="multithreading-in-java"><span>Java Multithreading</span></a>
+<a href="java-io"><span>Java I/O</span></a>
+<a href="java-networking"><span>Java Networking</span></a>
+<a href="java-awt"><span>Java AWT &amp; Events</span></a>
+<a href="java-swing"><span>Java Swing</span></a>
+<a href="javafx-tutorial"><span>JavaFX</span></a>
+<a href="java-applet"><span>Java Applet</span></a>
+<a href="java-reflection"><span>Java Reflection</span></a>
+<a href="java-date"><span>Java Date</span></a>
+<a href="java-string-to-int"><span>Java Conversion</span></a>
+<a href="collections-in-java"><span>Java Collection</span></a>
+<a href="java-jdbc"><span>Java JDBC</span></a>
+<a href="New-features-in-java" ><span>Java New Features</span></a>
+<a href="RMI"><span>RMI</span></a>
+<a href="internationalization-in-java"><span>Internationalization</span></a>
+<a href="corejava-interview-questions"><span>Interview Questions</span></a>
+</div>
+<img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"/>
+<br/>
+<div id="leftad" style="margin-left:20px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javatpointleft -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="4476401222"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="onlycontent">
+<div class="onlycontentad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord"
+style="display:inline-block"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="onlycontentinner">
+<div id="city">
+<table>
+<tr><td>
+
+<div id="bottomnextup">
+<a class="next" href="wrapper-class-in-java">next &rarr;</a>
+<a class="next" href="java-math">&larr; prev</a>
+</div>
+
+<h1 class="h1">Java Math class</h1>
+<p>Java Math class provides several methods to work on math calculations like min(), max(), avg(), sin(), cos(), tan(), round(), ceil(), floor(), abs() etc.</p>
+<p>Unlike some of the StrictMath class numeric methods, all implementations of the equivalent
+function of Math class can't define to return the bit-for-bit same results. This relaxation permits
+implementation with better-performance where strict reproducibility is not required.</p>
+<p>If the size is int or long and the results overflow the range of value, the methods
+addExact(), subtractExact(), multiplyExact(), and toIntExact() throw an ArithmeticException.</p>
+<p>For other arithmetic operations like increment, decrement, divide, absolute value, and negation
+overflow occur only with a specific minimum or maximum value. It should be checked against
+the maximum and minimum value as appropriate.</p>
+<h2 class="h2">Example 1</h2>
+<div class="codeblock"><textarea name="code" class="java">
+public class JavaMathExample1  
+{  
+    public static void main(String[] args)   
+    {  
+        double x = 28;  
+        double y = 4;  
+        
+        // return the maximum of two numbers
+        System.out.println("Maximum number of x and y is: " +Math.max(x, y)); 
+        
+        // return the square root of y 
+        System.out.println("Square root of y is: " + Math.sqrt(y)); 
+        
+        //returns 28 power of 4 i.e. 28*28*28*28  
+        System.out.println("Power of x and y is: " + Math.pow(x, y));    
+
+        // return the logarithm of given value     
+        System.out.println("Logarithm of x is: " + Math.log(x)); 
+        System.out.println("Logarithm of y is: " + Math.log(y));
+        
+        // return the logarithm of given value when base is 10    
+        System.out.println("log10 of x is: " + Math.log10(x)); 
+        System.out.println("log10 of y is: " + Math.log10(y));  
+        
+        // return the log of x + 1
+        System.out.println("log1p of x is: " +Math.log1p(x));  
+
+        // return a power of 2  
+        System.out.println("exp of a is: " +Math.exp(x));  
+        
+        // return (a power of 2)-1
+        System.out.println("expm1 of a is: " +Math.expm1(x));
+    }  
+}  
+</textarea></div>
+<span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=JavaMathExample1" target="_blank">Test it Now</a></span>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Maximum number of x and y is: 28.0
+Square root of y is: 2.0
+Power of x and y is: 614656.0
+Logarithm of x is: 3.332204510175204
+Logarithm of y is: 1.3862943611198906
+log10 of x is: 1.4471580313422192
+log10 of y is: 0.6020599913279624
+log1p of x is: 3.367295829986474
+exp of a is: 1.446257064291475E12
+expm1 of a is: 1.446257064290475E12
+</pre></div>
+<h2 class="h2">Example 2</h2>
+<div class="codeblock"><textarea name="code" class="java">
+public class JavaMathExample2  
+{  
+    public static void main(String[] args)   
+    {  
+        double a = 30;  
+        
+        // converting values to radian  
+        double b = Math.toRadians(a); 
+        
+        // return the trigonometric sine of a    
+        System.out.println("Sine value of a is: " +Math.sin(a));  
+        
+        // return the trigonometric cosine value of a
+        System.out.println("Cosine value of a is: " +Math.cos(a));
+        
+        // return the trigonometric tangent value of a
+        System.out.println("Tangent value of a is: " +Math.tan(a));
+        
+        // return the trigonometric arc sine of a    
+        System.out.println("Sine value of a is: " +Math.asin(a));  
+        
+        // return the trigonometric arc cosine value of a
+        System.out.println("Cosine value of a is: " +Math.acos(a));
+        
+        // return the trigonometric arc tangent value of a
+        System.out.println("Tangent value of a is: " +Math.atan(a));
+
+        // return the hyperbolic sine of a    
+        System.out.println("Sine value of a is: " +Math.sinh(a));  
+        
+        // return the hyperbolic cosine value of a
+        System.out.println("Cosine value of a is: " +Math.cosh(a));
+        
+        // return the hyperbolic tangent value of a
+        System.out.println("Tangent value of a is: " +Math.tanh(a));
+    }  
+}  
+</textarea></div>
+<span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=JavaMathExample2" target="_blank">Test it Now</a></span>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Sine value of a is: -0.9880316240928618
+Cosine value of a is: 0.15425144988758405
+Tangent value of a is: -6.405331196646276
+Sine value of a is: NaN
+Cosine value of a is: NaN
+Tangent value of a is: 1.5374753309166493
+Sine value of a is: 5.343237290762231E12
+Cosine value of a is: 5.343237290762231E12
+Tangent value of a is: 1.0
+</pre></div>
+<h2 class="h2">Java Math Methods</h2>
+<p>The <strong>java.lang.Math</strong> class contains various methods for performing basic numeric operations such as the logarithm, cube root, and trigonometric functions etc. The various java math methods are as follows:</p>
+<h2 class="h2">Basic Math methods</h2>
+<table class="alt">
+<tr>
+	<th>Method</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td><a href="java-math-abs-method">Math.abs()</a></td>
+	<td>It will return the Absolute value of the given value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-max-method">Math.max()</a></td>
+	<td>It returns the Largest of two values.</td>
+</tr>
+<tr>
+	<td><a href="java-math-min-method">Math.min()</a></td>
+	<td>It is used to return the Smallest of two values.</td>
+</tr>
+<tr>
+	<td><a href="java-math-round-method">Math.round()</a></td>
+	<td>It is used to round of the decimal numbers to the nearest value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-sqrt-method">Math.sqrt()</a></td>
+	<td>It is used to return the square root of a number.</td>
+</tr>
+<tr>
+	<td><a href="java-math-cbrt-method">Math.cbrt()</a></td>
+	<td>It is used to return the cube root of a number.</td>
+</tr>
+<tr>
+	<td><a href="java-math-pow-method">Math.pow()</a></td>
+	<td>It returns the value of first argument raised to the power to second argument.</td>
+</tr>
+<tr>
+	<td><a href="java-math-signum-method">Math.signum()</a></td>
+	<td>It is used to find the sign of a given value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-ceil-method">Math.ceil()</a></td>
+	<td>It is used to find the smallest integer value that is greater than or equal to the argument or mathematical integer.</td>
+</tr>
+<tr>
+	<td><a href="java-math-copysign-method">Math.copySign()</a></td>
+	<td>It is used to find the Absolute value of first argument along with sign specified in second argument.</td>
+</tr>
+<tr>
+	<td><a href="java-math-nextafter-method">Math.nextAfter()</a></td>
+	<td>It is used to return the floating-point number adjacent to the first argument in the direction of the second argument.</td>
+</tr>
+<tr>
+	<td><a href="java-math-nextup-method">Math.nextUp()</a></td>
+	<td>It returns the floating-point value adjacent to d in the direction of positive infinity.</td>
+</tr>
+<tr>
+	<td><a href="java-math-nextdown-method">Math.nextDown()</a></td>
+	<td>It returns the floating-point value adjacent to d in the direction of negative infinity.</td>
+</tr>
+<tr>
+	<td><a href="java-math-floor-method">Math.floor()</a></td>
+	<td>It is used to find the largest integer value which is less than or equal to the argument and is equal to the mathematical integer of a double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-floordiv-method">Math.floorDiv()</a></td>
+	<td>It is used to find the largest integer value that is less than or equal to the algebraic quotient.</td>
+</tr>
+<tr>
+	<td><a href="java-math-random-method">Math.random()</a></td>
+	<td>It returns a double value with a positive sign, greater than or equal to 0.0 and less than 1.0.</td>
+</tr>
+<tr>
+	<td><a href="java-math-rint-method">Math.rint()</a></td>
+	<td>It returns the double value that is closest to the given argument and equal to mathematical integer.</td>
+</tr>
+<tr>
+	<td><a href="java-math-hypot-method">Math.hypot()</a></td>
+	<td>It returns sqrt(x<sup>2</sup> +y<sup>2</sup>) without intermediate overflow or underflow.</td>
+</tr>
+<tr>
+	<td><a href="java-math-ulp-method">Math.ulp()</a></td>
+	<td>It returns the size of an ulp of the argument.</td>
+</tr>
+<tr>
+	<td><a href="java-math-getexponent-method">Math.getExponent()</a></td>
+	<td>It is used to return the unbiased exponent used in the representation of a value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-ieeeremainder-method">Math.IEEEremainder()</a></td>
+	<td>It is used to calculate the remainder operation on two arguments as prescribed by the IEEE 754 standard and returns value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-addexact-method">Math.addExact()</a></td>
+	<td>It is used to return the sum of its arguments, throwing an exception if the result overflows an int or long.</td>
+</tr>
+<tr>
+	<td><a href="java-math-subtractexact-method">Math.subtractExact()</a></td>
+	<td>It returns the difference of the arguments, throwing an exception if the result overflows an int.</td>
+</tr>
+<tr>
+	<td><a href="java-math-multiplyexact-method">Math.multiplyExact()</a></td>
+	<td>It is used to return the product of the arguments, throwing an exception if the result overflows an int or long.</td>
+</tr>
+<tr>
+	<td><a href="java-math-incrementexact-method">Math.incrementExact()</a></td>
+	<td>It returns the argument incremented by one, throwing an exception if the result overflows an int.</td>
+</tr>
+<tr>
+	<td><a href="java-math-decrementexact-method">Math.decrementExact()</a></td>
+	<td>It is used to return the argument decremented by one, throwing an exception if the result overflows an int or long.</td>
+</tr>
+<tr>
+	<td><a href="java-math-negateexact-method">Math.negateExact()</a></td>
+	<td>It is used to return the negation of the argument, throwing an exception if the result overflows an int or long.</td>
+</tr>
+<tr>
+	<td><a href="java-math-tointexact-method">Math.toIntExact()</a></td>
+	<td>It returns the value of the long argument, throwing an exception if the value overflows an int.</td>
+</tr>
+</table>
+
+<h2 class="h2">Logarithmic Math Methods </h2>
+<table class="alt">
+<tr>
+	<th>Method</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td><a href="java-math-log-method">Math.log()</a></td>
+	<td>It returns the natural logarithm of a double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-log10-method">Math.log10()</a></td>
+	<td>It is used to return the base 10 logarithm of a double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-log1p-method">Math.log1p()</a></td>
+	<td>It returns the natural logarithm of the sum of the argument and 1.</td>
+</tr>
+<tr>
+	<td><a href="java-math-exp-method">Math.exp()</a></td>
+	<td>It returns E raised to the power of a double value, where E is Euler's number and it is approximately equal to 2.71828.</td>
+</tr>
+<tr>
+	<td><a href="java-math-expm1-method">Math.expm1()</a></td>
+	<td>It is used to calculate the power of E and subtract one from it.</td>
+</tr>
+</table>
+
+<h2 class="h2">Trigonometric Math Methods </h2>
+<table class="alt">
+<tr>
+	<th>Method</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td><a href="java-math-sin-method">Math.sin()</a></td>
+	<td>It is used to return the trigonometric Sine value of a Given double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-cos-method">Math.cos()</a></td>
+	<td>It is used to return the trigonometric Cosine value of a Given double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-tan-method">Math.tan()</a></td>
+	<td>It is used to return the trigonometric Tangent value of a Given double value.</td>
+</tr>
+<tr>
+	<td><a href="/java-math-asin-method">Math.asin()</a></td>
+	<td>It is used to return the trigonometric Arc Sine value of a Given double value</td>
+</tr>
+<tr>
+	<td><a href="java-math-acos-method">Math.acos()</a></td>
+	<td>It is used to return the trigonometric Arc Cosine value of a Given double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-atan-method">Math.atan()</a></td>
+	<td>It is used to return the trigonometric Arc Tangent value of a Given double value.</td>
+</tr>
+</table>
+
+<h2 class="h2">Hyperbolic Math Methods</h2>
+<table class="alt">
+<tr>
+	<th>Method</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td><a href="java-math-sinh-method">Math.sinh()</a></td>
+	<td>It is used to return the trigonometric Hyperbolic Cosine value of a Given double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-cosh-method">Math.cosh()</a></td>
+	<td>It is used to return the trigonometric Hyperbolic Sine value of a Given double value.</td>
+</tr>
+<tr>
+	<td><a href="java-math-tanh-method">Math.tanh()</a></td>
+	<td>It is used to return the trigonometric Hyperbolic Tangent value of a Given double value.</td>
+</tr>
+</table>
+
+<h2 class="h2">Angular Math Methods</h2>
+<table class="alt">
+<tr>
+	<th>Method</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td><a href="java-math-todegrees-method">Math.toDegrees</a></td>
+	<td>It is used to convert the specified Radians angle to equivalent angle measured in Degrees.</td>
+</tr>
+<tr>
+	<td><a href="java-math-toradians-method">Math.toRadians</a></td>
+	<td>It is used to convert the specified Degrees angle to equivalent angle measured in Radians.</td>
+</tr>
+</table>
+
+<br>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="wrapper-class-in-java">Wrapper class in Java</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+
+<div id="bottomnext">
+<a style="float:left" class="next" href="java-math">&larr; prev</a>
+<a style="float:right" class="next" href="wrapper-class-in-java">next &rarr;</a>
+</div>
+
+<br/><br/>
+</td></tr>
+</table>
+</div>
+<!-- contribute start-->
+
+<!-- contribute end-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="7776236568"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2 class="h2">Please Share</h2>
+<a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/java-math"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"/></a>
+<a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/java-math"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"/></a>
+<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://www.javatpoint.com/java-math"><img src="https://www.javatpoint.com/images/google-plus32.png" alt="google plus"/></a>
+<a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/java-math"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"/></a>
+<!--<a rel="nofollow" title="Tumblr" target="_blank" href="https://www.tumblr.com/share/link?url=https://www.javatpoint.com/java-math"><img src="https://www.javatpoint.com/images/tumblr32.png" alt="tumbler"/></a>-->
+
+<!-- latest tutorials start -->
+<h2 class="h2">Learn Latest Tutorials</h2>
+<div class="firsthomecontent">
+                        <a href="https://www.javatpoint.com/selenium-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/selenium/images/selenium-home.jpg" alt="Selenium tutorial" />
+                                <p>Selenium</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/control-system-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/control-system/images/control-system-home.jpg" alt="Control Systems tutorial" />
+                                <p>Control System</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/rust-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/rust/images/rust-home.jpg" alt="Rust Programming tutorial" />
+                                <p>Rust</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/intellij-idea-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/intellij-idea/images/intellij-idea-home.png" alt="Intellij Idea tutorial" />
+                                <p>Intellij</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/dbms-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/dbms/images/dbms-home.jpg" alt="DBMS tutorial" />
+                                <p>DBMS</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/aptitude/quantitative">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Quantitative Aptitude tutorial" />
+                                <p>Aptitude</p>
+                            </div>
+                        </a>
+</div>
+
+</div>
+
+
+<br><br/><div class="mobilemenu" style="clear:both">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins class="adsbygoogle"     style="display:block"     data-ad-client="ca-pub-4699858549023382"     data-ad-slot="8222866318"     data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br/><br/>
+
+
+</div>
+<div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br/><br/>
+</div>
+<br/>
+<div id="footer" style="clear:both;width:100%">
+
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>--><div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p><ul class="points"> <li>Website Designing</li><li>Website Development</li><li>Java Development</li><li>PHP Development</li><li>WordPress</li><li>Graphic Designing</li><li>Logo</li><li>Digital Marketing</li><li>On Page and Off Page SEO</li><li>PPC</li><li>Content Development</li><li>Corporate Training</li><li>Classroom and Online Training</li><li>Data Entry</li></ul> <p style="padding-bottom:60px"></p></div><div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p></div><!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a><a rel="nofollow" href="http://www.hindi-typing.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/><p>Hindi-Typing</p></div></a></marquee></div>--><script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script><div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://www.javatpoint.com/images/social/rss1.png" alt="RSS Feed"/></a> <a target="_blank"  rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://www.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"/></a> <a  rel="nofollow" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://www.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"/></a> <a target="_blank" rel="nofollow" href="https://plus.google.com/u/0/+javatpoint"><img src="https://www.javatpoint.com/images/social/google1.png" alt="Google Page"/></a> <a target="_blank" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://www.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"/></a> <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://www.javatpoint.com/images/youtube32.png" alt="YouTube"/></a> <a target="_blank" rel="nofollow" href="https://javatpoint.blogspot.com"><img src="https://www.javatpoint.com/images/social/blog.png" alt="Blog Page"/></a> </div><footer class="footer1"><div class="column4"><h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a></div><div class="column4"><h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow" target="_blank" href="http://www.hindi-typing.com">Hindi-typing.com</a><a rel="nofollow" target="_blank" href="http://www.shayaree.com">Shayaree.com</a><a rel="nofollow" target="_blank" href="https://www.wordcountee.com">Wordcountee.com</a><a rel="nofollow" target="_blank" href="https://www.charactercountee.com">Charactercountee.com</a><a rel="nofollow" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a></div><div class="column4"><h3>Our Services</h3><p>Website Development</p><p>Android Development</p><p>Website Designing</p><p>Digital Marketing</p><p>Summer Training</p><p>Industrial Training</p><p>College Campus Training</p></div><div class="column4"><h3>Contact</h3><p>Address: G-13, 2nd Floor, Sec-3</p><p>Noida, UP, 201301, India</p><p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a></div></footer><footer class="footer2"><p>&copy; Copyright 2011-2018 www.javatpoint.com. All rights reserved. <a rel="nofollow" target="_blank" href="https://www.sssit.org">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p></footer>
+</div></div></div>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4699858549023382",
+          enable_page_level_ads: true
+     });
+</script>
+
+<script src="/js/shcoreandbrush.js"></script><script> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+</body> </html> 

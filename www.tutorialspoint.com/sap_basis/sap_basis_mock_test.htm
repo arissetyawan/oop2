@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP Basis Mock Test - TutorialsPoint</title>
+<meta name="description" content="SAP Basis Mock Test - Learn SAP Basis in simple and easy steps starting from basic to advanced concepts with examples including Overview, Installation of SAP GUI, GUI Selection, System Landscape and Architecture, Hardware and Software Installation, NW System, NW Architecture, Sap Client Administration, User Activities, Number of Login Attempts, Job Processing, Unscheduling a Background Job, Monitoring a Background Job, Deleting a Background Job, Managing Transports, Managing Transport Routes, Patch Management, Importing A Queue, Kernel Upgrade and Patching, System Monitoring, Remote Function Call, RFC Between SAP ECC and HANA, New Dimensional Product, Interview Questions." />
+<meta name="keywords" content="SAP Basis, Tutorial, Overview, Installation of SAP GUI, GUI Selection, System Landscape and Architecture, Hardware and Software Installation, NW System, NW Architecture, Sap Client Administration, User Activities, Number of Login Attempts, Job Processing, Unscheduling a Background Job, Monitoring a Background Job, Deleting a Background Job, Managing Transports, Managing Transport Routes, Patch Management, Importing A Queue, Kernel Upgrade and Patching, System Monitoring, Remote Function Call, RFC Between SAP ECC and HANA, New Dimensional Product, Interview Questions." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #018579 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #018579 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #018579 !important;}
+.submenu-item{ border-bottom: 2px solid #018579 !important; border-top: 2px solid #018579 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#018579; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_basis/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_basis/images/sap-basis-mini-logo.jpg" alt="SAP Basis Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/sap_basis_online_training/index.asp" target="_blank"><img src="/sap_basis/images/sap-basis-video-tutorials.jpg" alt="SAP Basis Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Basis Tutorial</li>
+<li><a href="/sap_basis/index.htm">SAP Basis - Home</a></li>
+<li><a href="/sap_basis/sap_basis_overview.htm">SAP Basis - Overview</a></li>
+<li><a href="/sap_basis/sap_basis_installation_of_sap_gui.htm">SAP Basis - Installation of SAP GUI</a></li>
+<li><a href="/sap_basis/sap_basis_gui_selection.htm">SAP Basis - GUI Selection</a></li>
+<li><a href="/sap_basis/sap_basis_system_landscape_architecture.htm">System Landscape &amp; Architecture</a></li>
+<li><a href="/sap_basis/sap_basis_hardware_software_installation.htm">Hardware &amp; Software Installation</a></li>
+<li><a href="/sap_basis/sap_basis_nw_system.htm">SAP Basis - NW System</a></li>
+<li><a href="/sap_basis/sap_basis_nw_architecture.htm">SAP Basis - NW Architecture</a></li>
+<li><a href="/sap_basis/sap_basis_sap_client_administration.htm">SAP Basis - SAP Client Administration</a></li>
+<li><a href="/sap_basis/sap_basis_user_activities.htm">SAP Basis - User Activities</a></li>
+<li><a href="/sap_basis/sap_basis_number_of_login_attempts.htm">Number of Login Attempts</a></li>
+<li><a href="/sap_basis/sap_basis_job_processing.htm">SAP Basis - Job Processing</a></li>
+<li><a href="/sap_basis/sap_basis_unscheduling_a_background_job.htm">Unscheduling a Background Job</a></li>
+<li><a href="/sap_basis/sap_basis_monitoring_a_background_job.htm">Monitoring a Background Job</a></li>
+<li><a href="/sap_basis/sap_basis_deleting_a_background_job.htm">Deleting a Background Job</a></li>
+<li><a href="/sap_basis/sap_basis_managing_transports.htm">SAP Basis - Managing Transports</a></li>
+<li><a href="/sap_basis/sap_basis_managing_transport_routes.htm">Managing Transport Routes</a></li>
+<li><a href="/sap_basis/sap_basis_patch_management.htm">SAP Basis - Patch Management</a></li>
+<li><a href="/sap_basis/sap_basis_importing_a_queue.htm">SAP Basis - Importing A Queue</a></li>
+<li><a href="/sap_basis/sap_basis_kernel_upgrade_patching.htm">Kernel Upgrade &amp; Patching</a></li>
+<li><a href="/sap_basis/sap_basis_system_monitoring.htm">SAP Basis - System Monitoring</a></li>
+<li><a href="/sap_basis/sap_basis_remote_function_call.htm">SAP Basis - Remote Function Call</a></li>
+<li><a href="/sap_basis/sap_basis_rfc_between_ecc_and_hana.htm">RFC Between ECC &amp; HANA</a></li>
+<li><a href="/sap_basis/sap_basis_new_dimensional_product.htm">SAP Basis - New Dimensional Product</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Basis Useful Resources</li>
+<li><a href="/sap_basis/sap_basis_questions_answers.htm">SAP Basis - Questions Answers</a></li>
+<li><a href="/sap_basis/sap_basis_quick_guide.htm">SAP Basis - Quick Guide</a></li>
+<li><a href="/sap_basis/sap_basis_useful_resources.htm">SAP Basis - Useful Resources</a></li>
+<li><a href="/sap_basis/sap_basis_discussion.htm">SAP Basis - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP Basis Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>SAP Basis</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/sap_basis/sap_basis_mock_test.htm?min=1&max=12"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/sap_basis/sap_basis_mock_test.htm?min=13&max=24"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/sap_basis/sap_basis_mock_test.htm?min=25&max=37"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/sap_basis/sap_basis_mock_test.htm?min=38&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>SAP Basis Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which of the following is one of the key activity of SAP Basis administrator?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - System installation and Configuration</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Load balancing on servers</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Performance management of different components</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Managing interfaces and integration with servers</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of the above</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : E</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Managing batch job scheduling and replication is part of?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - System Administrator</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Database Administrator</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Transport and Batch job Administrator</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - DDIC Manager</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Transport and Batch job Administrator &minus;</p>
+<ul class="list">
+<li>Managing batch job scheduling and replication</li>
+<li>Manage SAP Control access in system landscape</li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following Transaction code is used to send messages to users who are logged in and new users logging to the client?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SM01</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - SM02</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SM04</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SM13</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - SM37</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p><b>SM02</b></p>
+<p>To send messages to users who are logged in and new users logging to the client</p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which of the following Transaction Code is used to monitor the status of the jobs that are created by a user and for specific dates?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SM01</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SM02</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SM04</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SM13</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - SM37</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p><b>SM37</b></p>
+<p>To monitor the status of the jobs that are created by a user and for specific dates.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - Which of the following version of SAP GUI contains SAP Blue Crystal is a new visual design theme which succeeds Corbu?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - SAP GUI 7.4</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SAP GUI 7.3</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SAP GUI 7.2</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SAP GUI 7.0</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>SAP GUI 7.4 latest version for Windows has been released in October, 2014 and support various features like- it is by default installed with NWBC 5.0 and SAP GUI and GUI shortcuts are launched through NWBC.</p>
+<p><b>Blue Crystal Design</b></p>
+<p>SAP Blue Crystal is a new visual design theme which succeeds Corbu. It provides a consistent design that allows users to seamlessly experience SAP GUI and NWBC elements. It is the standard theme of Fiori applications and comes with a new color palette and icons which are better scalable.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - In SAP system, you can set up a SAP system with a single instance with only one CCMS or you can configure a system with two or more separate instances in client/server environment?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : A</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - In SAP system architecture, which of the following layer communicates with the application server to perform all the processing and which is known as brains of an SAP system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Application Server Layer</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Presentation Layer</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Database Layer</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Presentation layer communicates with the application server to perform all the processing and which is known as brains of an SAP system.</p>
+<p>At Presentation layer you consist of different components for ABAP and JAVA that enables the communication and processing of data in SAP system.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - Which of the following is known as open technology software component that provides you a platform to run critical business applications and integration between people, processes and information?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP Business Warehouse</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - SAP NetWeaver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SAP Fiori Apps</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SAP Data Services</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>SAP NetWeaver is known as open technology software component that provides you a platform to run critical business applications and integration between people, processes and information. It allows the composition, provisioning, and management of SAP and non-SAP applications across a heterogeneous software environment.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - Which of the following component of NW architecture is used to distribute the user request to different work processes. If all the work processes are busy, requests are stored in queue?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP Gateway</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Dispatcher</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Work Processes</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - ICM</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : B</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - In SAP system, you can create multiple clients on a single instance. It also provides data security as one user will client can’t see data of other user and also there is no need to install the software again?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : A</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Which of the following default client is known as SAP Reference client?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - 000</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 001</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 066</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 800</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>000 This is called master client and is available when you install R/3 system.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Which of the following default client in SAP system is used for diagnostic scans and monitoring service in SAP system?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 000</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 001</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 066</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 800</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : C</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>E</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>E</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>C</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/sap_basis/pdf/sap_basis_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_basis/sap_basis_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">sap_basis_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_basis/sap_basis_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_basis/sap_basis_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_basis/sap_basis_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_basis/sap_basis_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_basis/sap_basis_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_basis/sap_basis_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

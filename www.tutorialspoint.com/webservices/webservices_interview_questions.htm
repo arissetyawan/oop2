@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Web Services Interview Questions</title>
+<meta name="description" content="Web Services Interview Questions - Learn Web Services in simple and easy steps starting from basic to advanced concepts with examples including What are Web Services, Why Web Services, Characteristics, XML, Soap, HTTP, Web Services Architecture, Components, Examples, Security Issues, and Available Standards." />
+<meta name="Keywords" content="Web Services, Tutorial, What are Web Services, Why Web Services, Characteristics, XML, Soap, HTTP, Web Services Architecture, Components, Examples, Security Issues, and Available Standards." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #118373 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #118373 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #118373 !important;}
+.submenu-item{ border-bottom: 2px solid #118373 !important; border-top: 2px solid #118373 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#118373; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/webservices/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/webservices/images/web-services-mini-logo.jpg" alt="Web Services Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Learn Web Services</li>
+<li><a href="/webservices/index.htm">Web Services - Home</a></li>
+<li><a href="/webservices/what_are_web_services.htm">What are Web Services?</a></li>
+<li><a href="/webservices/why_web_services.htm">Why Web Services?</a></li>
+<li><a href="/webservices/web_services_characteristics.htm">Web Services - Characteristics</a></li>
+<li><a href="/webservices/web_services_architecture.htm">Web Services - Architecture</a></li>
+<li><a href="/webservices/web_services_components.htm">Web Services - Components</a></li>
+<li><a href="/webservices/web_services_examples.htm">Web Services - Examples</a></li>
+<li><a href="/webservices/web_services_security.htm">Web Services - Security</a></li>
+<li><a href="/webservices/web_services_standard.htm">Web Services - Standards</a></li>
+<li><a href="/webservices/web_services_summary.htm">Web Services - Summary</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Web Services Resources</li>
+<li><a href="/webservices/web_services_questions_answers.htm">WebServices - Questions &amp; Answers</a></li>
+<li><a href="/webservices/web_services_quick_guide.htm">Web Services - Quick Guide</b></a></li>
+<li><a href="/webservices/web_services_resources.htm">Web Services - Useful Resources</a></li>
+<li><a href="/webservices/web_services_discussion.htm">Web Services - Discussion</a></li>
+</ul>
+
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ 
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Web Services - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/webservices/web_services_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/webservices/web_services_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>Web Services Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>Web Services</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label> What are web services?</label>
+<div class="toggle-content">
+<p>Web services are open standard (XML, SOAP, HTTP etc.) based Web applications that interact with other web applications for the purpose of exchanging data. Web Services can convert your existing applications into Web-applications.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the features of web services?</label>
+<div class="toggle-content">
+<p>Following are the features of Web service &minus;</p>
+<ul class="list">
+<li><p>It is available over the Internet or private (intranet) networks.</p></li>
+<li><p>It uses a standardized XML messaging system.</p></li>
+<li><p>It is not tied to any one operating system or programming language.</p></li>
+<li><p>It is self-describing via a common XML grammar.</p></li>
+<li><p>It is discoverable via a simple find mechanism.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What the components of a Web Service?</label>
+<div class="toggle-content">
+<p>The basic web services platform is XML + HTTP. All the standard web services work using the following components &minus;</p>
+<ul class="list">
+<li><p>SOAP (Simple Object Access Protocol)</p></li>
+<li><p>UDDI (Universal Description, Discovery and Integration)</p></li>
+<li><p>WSDL (Web Services Description Language)</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How Does a Web Service Work?</label>
+<div class="toggle-content">
+<p>A web service enables communication among various applications by using open standards such as HTML, XML, WSDL, and SOAP.</p> 
+<p>You can build a Java-based web service on Solaris that is accessible from your Visual Basic program that runs on Windows.</p>
+<p>You can also use C# to build new web services on Windows that can be invoked from your web application that is based on JavaServer Pages (JSP) and runs on Linux.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of XML in a web service?</label>
+<div class="toggle-content">
+<p>A web services takes the help of XML to tag the data, format the data.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of SOAP in a web service?</label>
+<div class="toggle-content">
+<p>A web service takes the help of SOAP to transfer a message.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of WSDL in a web service?</label>
+<div class="toggle-content">
+<p>A web service takes the help of WSDL to describe the availability of service.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the benefits of Web Services?</label>
+<div class="toggle-content">
+<p>Following are the benefits of using web services &minus;</p>
+<ul class="list">
+<li><p><b>Exposing the Existing Function on the network &minus;</b> Web services allows you to expose the functionality of your existing code over the network. Once it is exposed on the network, other application can use the functionality of your program.</p></li>
+<li><p><b>Interoperability &minus;</b> Web services allow various applications to talk to each other and share data and services among themselves.</p></li>
+<li><p><b>Standardized Protocol &minus;</b> Web services use standardized industry standard protocol for the communication. All the four layers (Service Transport, XML Messaging, Service Description, and Service Discovery layers) use well-defined protocols in the web services protocol stack. </p></li>
+<li><p><b>Low Cost of Communication &minus;</b> Web services use SOAP over HTTP protocol, so you can use your existing low-cost internet for implementing web services.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What do you mean by Interoperability of Web Services?</label>
+<div class="toggle-content">
+<p>Web services allow various applications to talk to each other and share data and services among themselves. Other applications can also use the web services. For example, a VB or .NET application can talk to Java web services and vice versa. Web services are used to make the application platform and technology independent.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you mean by loosely coupled architecture of Web services?</label>
+<div class="toggle-content">
+<p>A consumer of a web service is not tied to that web service directly. The web service interface can change over time without compromising the client's ability to interact with the service. A tightly coupled system implies that the client and server logic are closely tied to one another, implying that if one interface changes, the other must be updated. Adopting a loosely coupled architecture tends to make software systems more manageable and allows simpler integration between different systems.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Do Web services supports Remote Procedure Calls(RPCs)?</label>
+<div class="toggle-content">
+<p>Web services allow clients to invoke procedures, functions, and methods on remote objects using an XML-based protocol. Remote procedures expose input and output parameters that a web service must support.</p>
+<p>Component development through Enterprise JavaBeans (EJBs) and .NET Components has increasingly become a part of architectures and enterprise deployments over the past couple of years. Both technologies are distributed and accessible through a variety of RPC mechanisms.</p>
+<p>A web service supports RPC by providing services of its own, equivalent to those of a traditional component, or by translating incoming invocations into an invocation of an EJB or a .NET component.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the behavioral characteristics of web services?</label>
+<div class="toggle-content">
+<p>Web services have the following special behavioral characteristics &minus;</p>
+<ul class="list">
+<li><p><b>XML-Based &minus;</b> Web Services uses XML at data representation and data transportation layers.</p></li>
+<li><p><b>Loosely Coupled &minus;</b> A consumer of a web service is not tied to that web service directly. </p></li>
+<li><p><b>Coarse-Grained &minus;</b> Businesses and the interfaces that they expose should be coarse-grained. Web services technology provides a natural way of defining coarse-grained services that access the right amount of business logic.</p></li>
+<li><p><b>Ability to be Synchronous or Asynchronous &minus;</b> Asynchronous clients retrieve their result at a later point in time, while synchronous clients receive their result when the service has completed. Asynchronous capability is a key factor in enabling loosely coupled systems.</p></li>
+<li><p><b>Supports Remote Procedure Calls(RPCs) &minus;</b> A web service supports RPC by providing services of its own, equivalent to those of a traditional component, or by translating incoming invocations into an invocation of an EJB or a .NET component.</p></li>
+<li><p><b>Supports Document Exchange &minus;</b> Web services support the transparent exchange of documents to facilitate business integration.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the benefits of having XML based WEB services?</label>
+<div class="toggle-content">
+<p>Using XML eliminates any networking, operating system, or platform binding. So Web Services based applications are highly interoperable application at their core level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the benefit of a Web services being loosely coupled?</label>
+<div class="toggle-content">
+<p>The web service interface can change over time without compromising the client's ability to interact with the service. A tightly coupled system implies that the client and server logic are closely tied to one another, implying that if one interface changes, the other must be updated. Adopting a loosely coupled architecture tends to make software systems more manageable and allows simpler integration between different systems.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Synchronicity?</label>
+<div class="toggle-content">
+<p>Synchronicity refers to the binding of the client to the execution of the service. In synchronous invocations, the client blocks and waits for the service to complete its operation before continuing. Asynchronous operations allow a client to invoke a service and then execute other functions.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the core Roles in Web Service architecture?</label>
+<div class="toggle-content">
+<p>There are three major roles within the web service architecture &minus;</p>
+<ul class="list">
+<li><p>Service Provider</p></li>
+<li><p>Service Requestor</p></li>
+<li><p>Service Registry </p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Service Provider in  Web Service architecture?</label>
+<div class="toggle-content">
+<p>This is the provider of the web service. The service provider implements the service and makes it available on the Internet.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Service Requestor in  Web Service architecture?</label>
+<div class="toggle-content">
+<p>This is any consumer of the web service. The requestor utilizes an existing web service by opening a network connection and sending an XML request.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Service Registry in  Web Service architecture?</label>
+<div class="toggle-content">
+<p>This is a logically centralized directory of services. The registry provides a central place where developers can publish new services or find existing ones. It therefore serves as a centralized clearing house for companies and their services.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the core layers in Web Service Protocol Stack?</label>
+<div class="toggle-content">
+<p>The Web Service Protocol Stack is still evolving, but currently has four main layers &minus;</p>
+<ul class="list">
+<li><p>Service Transport</p></li>
+<li><p>XML Messaging</p></li>
+<li><p>Service Description</p></li>
+<li><p>Service Discovery</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Service Transport layer in Web Service Protocol Stack?</label>
+<div class="toggle-content">
+<p>This layer is responsible for transporting messages between applications. Currently, this layer includes Hyper Text Transport Protocol (HTTP), Simple Mail Transfer Protocol (SMTP), File Transfer Protocol (FTP), and newer protocols such as Blocks Extensible Exchange Protocol (BEEP).</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of XML Messaging layer in Web Service Protocol Stack?</label>
+<div class="toggle-content">
+<p>This layer is responsible for encoding messages in a common XML format so that messages can be understood at either end. Currently, this layer includes XML-RPC and SOAP.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Service Description layer in Web Service Protocol Stack?</label>
+<div class="toggle-content">
+<p> 
+A. This layer is responsible for describing the public interface to a specific web service. Currently, service description is handled via the Web Service Description Language (WSDL).</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of Service Discovery layer in Web Service Protocol Stack?</label>
+<div class="toggle-content">
+<p>This layer is responsible for centralizing services into a common registry and providing easy publish/find functionality. Currently, service discovery is handled via Universal Description, Discovery, and Integration (UDDI).</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP stands for?</label>
+<div class="toggle-content">
+<p>HTTP stands for Hyper Text Transfer Protocol.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is HTTP?</label>
+<div class="toggle-content">
+<p>Currently, HTTP is the most popular option for service transport. HTTP is simple, stable, and widely deployed. Furthermore, most firewalls allow HTTP traffic. This allows XML-RPC or SOAP messages to masquerade as HTTP messages.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What BEEP stands for?</label>
+<div class="toggle-content">
+<p>BEEP stands for Blocks Extensible Exchange Protocol.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is BEEP?</label>
+<div class="toggle-content">
+<p>This is a promising alternative to HTTP. BEEP is a new Internet Engineering Task Force (IETF) framework for building new protocols. BEEP is layered directly on TCP and includes a number of built-in features, including an initial handshake protocol, authentication, security, and error handling. Using BEEP, one can create new protocols for a variety of applications, including instant messaging, file transfer, content syndication, and network management.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is XML-RPC?</label>
+<div class="toggle-content">
+<p>XML-RPC is a simple protocol that uses XML messages to perform RPCs.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How request is sent in XML-RPC?</label>
+<div class="toggle-content">
+<p>Requests are encoded in XML and sent via HTTP POST.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How response is sent in XML-RPC?</label>
+<div class="toggle-content">
+<p>XML responses are embedded in the body of the HTTP response.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the features of XML-RPC?</label>
+<div class="toggle-content">
+<p>Following are the features of XML-RPC &minus;</p>
+<ul class="list">
+<li><p>XML-RPC is a simple protocol that uses XML messages to perform RPCs.</p></li>
+<li><p>Requests are encoded in XML and sent via HTTP POST.</p></li>
+<li><p>XML responses are embedded in the body of the HTTP response.</p></li>
+<li><p>XML-RPC is platform-independent.</p></li>
+<li><p>XML-RPC allows diverse applications to communicate.</p></li>
+<li><p>A Java client can speak XML-RPC to a Perl server.</p></li>
+<li><p>XML-RPC is the easiest way to get started with web services.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What SOAP stands for?</label>
+<div class="toggle-content">
+<p>SOAP stands for Simple Access Object Protocol.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is SOAP?</label>
+<div class="toggle-content">
+<p>SOAP is an XML-based protocol for exchanging information between computers.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the features of SOAP?</label>
+<div class="toggle-content">
+<p> Following are the features of SOAP &minus;</p>
+<ul class="list">
+<li><p>SOAP is a communication protocol.</p></li>
+<li><p>SOAP is for communication between applications.</p></li>
+<li><p>SOAP is a format for sending messages.</p></li>
+<li><p>SOAP is designed to communicate via Internet.</p></li>
+<li><p>SOAP is platform independent.</p></li>
+<li><p>SOAP is language independent.</p></li>
+<li><p>SOAP is simple and extensible.</p></li>
+<li><p>SOAP allows you to get around firewalls.</p></li>
+<li><p>SOAP will be developed as a W3C standard.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Is SOAP platform independent?</label>
+<div class="toggle-content">
+<p>Yes!</p>
+</div>
+</section>
+<section class="toggle">
+<label> What WSDL stands for?</label>
+<div class="toggle-content">
+<p>WSDL stands for Web Services Description Language.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is WSDL?</label>
+<div class="toggle-content">
+<p>WSDL is an XML-based language for describing web services and how to access them.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the features of WSDL?</label>
+<div class="toggle-content">
+<p>Following are the features of WSDL &minus;</p>
+<ul class="list">
+<li><p>WSDL was developed jointly by Microsoft and IBM.</p></li>
+<li><p>WSDL is an XML based protocol for information exchange in decentralized and distributed environments.</p></li>
+<li><p>WSDL is the standard format for describing a web service.</p></li>
+<li><p>WSDL definition describes how to access a web service and what operations it will perform.</p></li>
+<li><p>WSDL is a language for describing how to interface with XML-based services.</p></li>
+<li><p>WSDL is an integral part of UDDI, an XML-based worldwide business registry.</p></li>
+<li><p>WSDL is the language that UDDI uses.</p></li>
+<li><p>WSDL is pronounced as 'wiz-dull' and spelled out as 'W-S-D-L'.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What UDDI stands for?</label>
+<div class="toggle-content">
+<p>UDDI stands for Universal Description, Discovery, and Integration.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is UDDI?</label>
+<div class="toggle-content">
+<p>UDDI is an XML-based standard for describing, publishing, and finding web services.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the features of UDDI?</label>
+<div class="toggle-content">
+<p>Following are the features of UDDI &minus;</p>
+<ul class="list">
+<li><p>UDDI is a specification for a distributed registry of web services.</p></li>
+<li><p>UDDI is platform independent, open framework.</p></li>
+<li><p>UDDI can communicate via SOAP, CORBA, and Java RMI Protocol.</p></li>
+<li><p>UDDI uses WSDL to describe interfaces to web services.</p></li>
+<li><p>UDDI is seen with SOAP and WSDL as one of the three foundation standards of web services.</p></li>
+<li><p>UDDI is an open industry initiative enabling businesses to discover each other and define how they interact over the Internet.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the primary security issues with web services?</label>
+<div class="toggle-content">
+<p>There are three specific security issues with web services &minus;</p>
+<ul class="list">
+<li><p>Confidentiality</p></li>
+<li><p>Authentication</p></li>
+<li><p>Network Security</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Which component of Web service describes interfaces to web services?</label>
+<div class="toggle-content">
+<p>UDDI describes interfaces to web services.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which language UDDI uses?</label>
+<div class="toggle-content">
+<p>WSDL is the language that UDDI uses.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is XML-RPC is platform-dependent?</label>
+<div class="toggle-content">
+<p>No! XML-RPC is platform-independent.</p>
+</div>
+</section>
+<section class="toggle">
+<label> If a client sends an XML request to a server, can we ensure that the communication remains confidential?</label>
+<div class="toggle-content">
+<p>Yes! As XML-RPC and SOAP run primarily on top of HTTP and HTTP has support for Secure Socketes Layer (SSL). Communication can be encrypted via SSL.</p>
+</div>
+</section>
+<section class="toggle">
+<label> If a client connects to a web service, how do we identify the user? Is the user authorized to use the service?</label>
+<div class="toggle-content">
+<p>The following options can be considered but there is no clear consensus on a strong authentication scheme.</p>
+<p>HTTP includes built-in support for Basic and Digest authentication, and services can therefore be protected in much the same manner as HTML documents are currently protected.</p>
+<p>SOAP Digital Signature (SOAP-DSIG) leverages public key cryptography to digitally sign SOAP messages. It enables the client or server to validate the identity of the other party. Check it at http://www.w3.org/TR/SOAP-dsig.</p>
+<p>The Organization for the Advancement of Structured Information Standards (OASIS) is working on the Security Assertion Markup Language (SAML). </p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you mean by Web services manageability?</label>
+<div class="toggle-content">
+<p>Web services manageability is defined as a set of capabilities for discovering the existence, availability, health, performance, usage, as well as the control and configuration of a web service within the web services architecture. As web services become pervasive and critical to business operations, the task of managing and implementing them is imperative to the success of business operations.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to handle Network security threats in Web services?</label>
+<div class="toggle-content">
+<p>There are two possible solutions &minus;</p>
+<ul class="list">
+<li><p>Filter out all HTTP POST requests that set their content type to text/xml.</p></li>
+<li><p>Another alternative is to filter the SOAPAction HTTP header attribute. </p></li>
+</ul>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/webservices/web_services_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/webservices/web_services_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">web_services_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/webservices/webservices_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/webservices/webservices_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/webservices/webservices_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/webservices/webservices_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/webservices/webservices_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/webservices/webservices_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

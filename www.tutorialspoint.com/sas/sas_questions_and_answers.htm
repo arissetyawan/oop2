@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAS Interview Questions and Answers</title>
+<meta name="description" content="SAS Interview Questions and Answers - Learn SAS in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment, User Interface, Program Structure, Basic Syntax, Data Sets, Variables, Strings, Arrays, Numeric Functions, Operators, Loops, Decision Making, Functions, Input Methods, Macros, Dates and Times, SQL, Output Delivery System, Simulations, Histograms, Charts, Scatterplots, Boxplots, Arithmetic Mean, Standard Deviation, Frequency Distributions, Crosstabulations, T-tests, Variances, Linear Regression, Bland-Altman Analysis, Chi-Square, Fishers Exact Tests, One-Way Anova, Repeated Measure Analysis, Hypothesis Testing." /> 
+<meta name="keywords" content="SAS, Tutorial, Learning, Beginners, Overview, Environment, User Interface, Program Structure, Basic Syntax, Data Sets, Variables, Strings, Arrays, Numeric Functions, Operators, Loops, Decision Making, Functions, Input Methods, Macros, Dates and Times, SQL, Output Delivery System, Simulations, Histograms, Charts, Scatterplots, Boxplots, Arithmetic Mean, Standard Deviation, Frequency Distributions, Crosstabulations, T-tests, Variances, Linear Regression, Bland-Altman Analysis, Chi-Square, Fishers Exact Tests, One-Way Anova, Repeated Measure Analysis, Hypothesis Testing." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #017DC3 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #017DC3 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #017DC3 !important;}
+.submenu-item{ border-bottom: 2px solid #017DC3 !important; border-top: 2px solid #017DC3 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#017DC3; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sas/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+vertical-align:middle !important;
+text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/sas/images/sas-mini-logo.jpg" alt="SAS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAS Tutorial</li>
+<li><a href="/sas/index.htm">SAS - Home</a></li>
+<li><a href="/sas/sas_overview.htm">SAS - Overview</a></li>
+<li><a href="/sas/sas_environment.htm">SAS - Environment</a></li>
+<li><a href="/sas/sas_user_interface.htm">SAS - User Interface</a></li>
+<li><a href="/sas/sas_program_structure.htm">SAS - Program Structure</a></li>
+<li><a href="/sas/sas_basic_syntax.htm">SAS - Basic Syntax</a></li>
+<li><a href="/sas/sas_data_sets.htm">SAS - Data Sets</a></li>
+<li><a href="/sas/sas_variables.htm">SAS - Variables</a></li>
+<li><a href="/sas/sas_strings.htm">SAS - Strings</a></li>
+<li><a href="/sas/sas_arrays.htm">SAS - Arrays</a></li>
+<li><a href="/sas/sas_numeric_formats.htm">SAS - Numeric Formats</a></li>
+<li><a href="/sas/sas_operators.htm">SAS - Operators</a></li>
+<li><a href="/sas/sas_loops.htm">SAS - Loops</a></li>
+<li><a href="/sas/sas_decision_making.htm">SAS - Decision Making</a></li>
+<li><a href="/sas/sas_functions.htm">SAS - Functions</a></li>
+<li><a href="/sas/sas_input_methods.htm">SAS - Input Methods</a></li>
+<li><a href="/sas/sas_macros.htm">SAS - Macros</a></li>
+<li><a href="/sas/sas_dates_times.htm">SAS - Dates &amp; Times</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAS Data Set Operations</li>
+<li><a href="/sas/sas_read_raw_data.htm">SAS - Read Raw Data</a></li>
+<li><a href="/sas/sas_write_data_sets.htm">SAS - Write Data Sets</a></li>
+<li><a href="/sas/sas_concatenate_data_sets.htm">SAS - Concatenate Data Sets</a></li>
+<li><a href="/sas/sas_merging_data_sets.htm">SAS - Merging Data Sets</a></li>
+<li><a href="/sas/sas_subsetting_data_sets.htm">SAS - Subsetting Data Sets</a></li>
+<li><a href="/sas/sas_sort_data_sets.htm">SAS - Sort Data Sets</a></li>
+<li><a href="/sas/sas_format_data_sets.htm">SAS - Format Data Sets</a></li>
+<li><a href="/sas/sas_sql.htm">SAS - SQL</a></li>
+<li><a href="/sas/sas_output_delivery_system.htm">SAS - Output Delivery System</a></li>
+<li><a href="/sas/sas_simulations.htm">SAS - Simulations</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAS Data Representation</li>
+<li><a href="/sas/sas_histograms.htm">SAS - Histograms</a></li>
+<li><a href="/sas/sas_bar_charts.htm">SAS - Bar Charts</a></li>
+<li><a href="/sas/sas_pie_charts.htm">SAS - Pie Charts</a></li>
+<li><a href="/sas/sas_scatterplots.htm">SAS - Scatterplots</a></li>
+<li><a href="/sas/sas_boxplots.htm">SAS - Boxplots</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAS Basic Statistical Procedure</li>
+<li><a href="/sas/sas_arithmetic_mean.htm">SAS - Arithmetic Mean</a></li>
+<li><a href="/sas/sas_standard_deviation.htm">SAS - Standard Deviation</a></li>
+<li><a href="/sas/sas_frequency_distributions.htm">SAS - Frequency Distributions</a></li>
+<li><a href="/sas/sas_crosstabulations.htm">SAS - Cross Tabulations</a></li>
+<li><a href="/sas/sas_ttests.htm">SAS - T Tests</a></li>
+<li><a href="/sas/sas_correlation_analysis.htm">SAS - Correlation Analysis</a></li>
+<li><a href="/sas/sas_linear_regression.htm">SAS - Linear Regression</a></li>
+<li><a href="/sas/sas_bland_altman_analysis.htm">SAS - Bland-Altman Analysis</a></li>
+<li><a href="/sas/sas_chi_square.htm">SAS - Chi-Square</a></li>
+<li><a href="/sas/sas_fishers_exact_tests.htm">SAS - Fishers Exact Tests</a></li>
+<li><a href="/sas/sas_repeated_measure_analysis.htm">SAS - Repeated Measure Analysis</a></li>
+<li><a href="/sas/sas_one_way_anova.htm">SAS - One-Way Anova</a></li>
+<li><a href="/sas/sas_hypothesis_testing.htm">SAS - Hypothesis Testing</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAS Useful Resources</li>
+<li><a href="/sas/sas_quick_guide.htm">SAS - Quick Guide</a></li>
+<li><a href="/sas/sas_useful_resources.htm">SAS - Useful Resources</a></li>
+<li><a href="/sas/sas_questions_and_answers.htm">SAS - Questions and Answers</a></li>
+<li><a href="/sas/sas_discussion.htm">SAS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAS - Questions and Answers</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sas/sas_useful_resources.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sas/sas_discussion.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these SAS Interview Questions have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of SAS programming. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle"><label>What is the difference between do while and do until?</label><div class="toggle-content">
+<p>The DO WHILE expression is evaluated at the top of the DO loop. If the expression is false the first time it is evaluated, then the DO loop never executes. Whereas DO UNTIL  executes at least once.	</p></div></section>
+<section class="toggle"><label>How many data types are there in SAS?</label><div class="toggle-content">
+<p>Character, Numeric</p></div></section>
+<section class="toggle"><label>How to limit decimal places for variable using PROC MEANS?	</label><div class="toggle-content">
+<p>By using MAXDEC= option</p></div></section>
+<section class="toggle"><label>	What is the difference between PROC MEANS and PROC Summary?	</label><div class="toggle-content">
+<p>The difference between the two procedures is that PROC MEANS produces a report by default. By contrast, to produce a report in PROC SUMMARY, you must include a PRINT option in the PROC SUMMARY statement.</p></div></section>
+<section class="toggle"><label>	How to specify variables to be processed by the FREQ procedure?	</label><div class="toggle-content">
+<p>By using TABLES Statement.</p></div></section>
+<section class="toggle"><label>Purpose of double trailing @@ in Input Statement ?</label><div class="toggle-content">
+<p>The double trailing sign (@@) tells SAS rather than advancing to a new record, hold the current input record for the execution of the next INPUT statement.</p></div></section>
+<section class="toggle"><label>How to include or exclude specific variables in a data set?	</label><div class="toggle-content">
+<p>Using DROP, KEEP Statements and Data set Options.</p></div></section>
+<section class="toggle"><label>What are the default statistics that PROC MEANS produce?</label><div class="toggle-content">
+<p>It produce the default statistics of  MIN, MAX, MEAN and STD DEV.</p></div></section>
+ <section class="toggle"><label>	What is Program Data Vector (PDV)?	</label><div class="toggle-content">
+<p>PDV is a logical area in the memory.PDV is created followed by the creation of input buffer. SAS builds dataset in the PDV area of memory</p></div></section>
+<section class="toggle"><label>What is DATA _NULL_? </label><div class="toggle-content">
+<p>It can also be used to write output without creating a dataset.</p></div></section>
+<section class="toggle"><label>How to remove unique and duplicate values?</label><div class="toggle-content">
+<p>By using PROC SORT with NODUPKEY and NODUP Options.</p></div></section>
+<section class="toggle"><label>What is the difference between NODUP and NODUPKEY Options? 	</label><div class="toggle-content">
+<p>The NODUPKEY option removes duplicate observations where value of a variable listed in BY statement is repeated while NODUP option removes duplicate observations where values in all the variables are repeated (identical observations)</p></div></section>
+<section class="toggle"><label>How to sort in descending order?</label><div class="toggle-content">
+<p>Use DESCENDING keyword in PROC SORT code.</p></div></section>
+<section class="toggle"><label>How to convert a numeric variable to a character variable?</label><div class="toggle-content">
+<p>By  creating a differently-named variable using the PUT function.</p></div></section>
+<section class="toggle"><label>How to convert a character variable to a numeric variable?</label><div class="toggle-content">
+<p>By creating a differently-named variable using the INPUT function.</p></div></section>
+<section class="toggle"><label>What is Difference between SET and MERGE?</label><div class="toggle-content">
+<p>SET concatenates the data sets where as MERGE matches the observations of the data sets	</p></div></section>
+<section class="toggle"><label>What are SYMGET and SYMPUT?</label><div class="toggle-content">
+<p>SYMPUT puts the value from a dataset into a macro variable where as SYMGET gets the value from the macro variable to the dataset.</p></div></section>
+<section class="toggle"><label>Which date function advances a date, time or datetime value by a given interval?</label><div class="toggle-content">
+<p> INTNX function advances a date, time, or datetime value by a given interval, and returns a date, time, or datetime value</p></div></section>
+<section class="toggle"><label>what is the purpose would you use the RETAIN statement?</label><div class="toggle-content">
+<p> A RETAIN statement tells SAS not to set variables to missing when going from the current iteration of the DATA step to the next. Instead, SAS retains the values.</p></div></section>
+<section class="toggle"><label>Difference between %EVAL and %SYSEVALF</label><div class="toggle-content">
+<p>%EVAL cannot perform arithmetic calculations with operands that have the floating point values. It is when the %SYSEVALF function comes into picture.</p></div></section>
+<section class="toggle"><label>what Proc glm does?	</label><div class="toggle-content">
+<p> It performs simple and multiple regression, analysis of variance (ANOVAL), analysis of covariance, multivariate analysis of variance and repeated measure analysis of variance.</p></div></section>
+<section class="toggle"><label>	what is SAS informats?	</label><div class="toggle-content">
+<p>SAS INFORMATS are used to read, or input data from external files known as Flat Files ASCII files, text files or sequential files).The informat will tell SAS on how to read data into SAS variables.	</p></div></section>
+<section class="toggle"><label>What are the parameters of Scan function?</label><div class="toggle-content">
+<p>Scan(argument,n,delimiters)</p></div></section>
+<section class="toggle"><label>Name few SAS functions?</label><div class="toggle-content">
+<p>Scan, Substr, trim, Catx, Index, tranwrd, find, Sum.	</p></div></section>
+<section class="toggle"><label>What is the function of tranwrd function?</label><div class="toggle-content">
+<p>TRANWRD function replaces or removes all occurrences of a pattern of characters within a character string.</p></div></section>
+<section class="toggle"><label>What is Difference between INPUT and INFILE?</label><div class="toggle-content">
+<p>The INFILE statement is used to identify an external file while the INPUT statment is used to describe your variables.</p></div></section>
+<section class="toggle"><label>Difference between Missover and Truncover</label><div class="toggle-content">
+<p>When the MISSOVER option is used on the INFILE statement, the INPUT statement does not jump to the next line when reading a short line. Instead, MISSOVER sets variables to missing	</p></div></section>
+<section class="toggle"><label>How to print observations 4 through 8 from a data set?</label><div class="toggle-content">
+<p>Using the FIRSTOBS = and OBS = statements.</p></div></section>
+<section class="toggle"><label>What is the difference between '+' operator and SUM function? 	</label><div class="toggle-content">
+<p> SUM function returns the sum of non-missing arguments whereas “+” operator returns a missing value if any of the arguments are missing.</p></div></section>
+<section class="toggle"><label>What SUBSTR function does?</label><div class="toggle-content">
+<p>The SUBSTR function is used to extract substring from a character variable.</p></div></section>
+<section class="toggle"><label>	What is difference between CEIL and FLOOR functions?</label><div class="toggle-content">
+<p>The ceil function returns the smallest integer greater than/equal to the argument whereas the floor returns the greatest integer less than/equal to the argument.</p></div></section>
+<section class="toggle"><label>What is the Difference between SCAN and SUBSTR?</label><div class="toggle-content">
+<p>SCAN extracts words within a value that is marked by delimiters. SUBSTR extracts a portion of the value by stating the specific location. It is best used when we know the exact position of the sub string to extract from a character value.</p></div></section>
+<section class="toggle"><label>How to count unique values by a grouping variable?</label><div class="toggle-content">
+<p>Uisng PROC SQL with COUNT(DISTINCT variable_name) to determine the number of unique values for a column.</p></div></section>
+<section class="toggle"><label>How to debug SAS Macros</label><div class="toggle-content">
+<p>There are some system options that can be used to debug SAS Macros:MPRINT, MLOGIC, SYMBOLGEN	</p></div></section>
+<section class="toggle"><label>How to save log in an external file?</label><div class="toggle-content">
+<p>Use PROC PRINTTO</p></div></section>
+<section class="toggle"><label>How Data Step Merge and PROC SQL handle many-to-many relationship?	</label><div class="toggle-content">
+<p>Data Step MERGE does not create a cartesian product incase of a many-to-many relationship. Whereas, Proc SQL produces a cartesian product.</p></div></section>
+<section class="toggle"><label>What is the smallest length for a numeric and character variable respectively ?	</label><div class="toggle-content">
+<p>2 bytes and 1 byte.</p></div></section>
+<section class="toggle"><label>What is the difference between SAS PROCs and the SAS DATA STEP.	</label><div class="toggle-content">
+<p>Procs are sub-routines with a specific purpose in mind and the data step is designed to read in and manipulate data.</p></div></section>
+<section class="toggle"><label>How can you write a SAS data set to a comma delimited file ?	</label><div class="toggle-content">
+<p>PUT (formatted) statement in data step.</p></div></section>
+<section class="toggle"><label>Which SAS statement does not perform automatic conversions in comparisons?</label><div class="toggle-content">
+<p>where statement</p></div></section>
+<section class="toggle"><label>Difference between Input and Put function?</label><div class="toggle-content">
+<p>Input function – Character to numeric conversion- Input(source,informat) and put function –  Numeric to character conversion- put(source,format)</p></div></section>
+<section class="toggle"><label>If a variable contains letters or special characters, can it be numeric data type?	</label><div class="toggle-content">
+<p>No, it must be character data type.</p></div></section>
+<section class="toggle"><label>What can be the size of largest dataset in SAS?</label><div class="toggle-content">
+<p>The number of observations is limited only by computer’s capacity to handle and store them.	</p></div></section>
+<section class="toggle"><label>How to limit decimal places for variable using PROC MEANS?</label><div class="toggle-content">
+<p>By using MAXDEC= option</p></div></section>
+<section class="toggle"><label>What is the difference between CLASS statement and BY statement in proc means?</label><div class="toggle-content">
+<p>BY processing requires that your data already be sorted or indexed in the order of the BY variables.</p></div></section>
+<section class="toggle"><label>How to specify variables to be processed by the FREQ procedure?	</label><div class="toggle-content">
+<p>By using TABLES Statement.</p></div></section>
+<section class="toggle"><label>What would be the denominator value used by the mean function if two out of seven arguments are missing?</label><div class="toggle-content">
+<p>Five</p></div></section>
+<section class="toggle"><label>What is the difference Between Proc Means and Proc Summary?	</label><div class="toggle-content">
+<p>proc means will give descreptive statitstics. By default it will give output in output window.but proc summary will not give output as default.we need give an option print then only it will give the output.</p></div></section>
+<section class="toggle"><label>HOW TO TEST THE DEBUGGING IN SAS?</label><div class="toggle-content">
+<p>Use the Debug clause after '/' in the data statement.</p></div></section>
+<section class="toggle"><label>If reading a variable length file with fixed input, how would you prevent SAS from reading the next record if the last variable didn?t have a value?</label><div class="toggle-content">
+<p>Using the MISSOVER keyword.</p></div></section>
+<hr />
+<div class="pre-btn">
+<a href="/sas/sas_useful_resources.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/sas/sas_discussion.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sas/sas_questions_and_answers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sas/sas_questions_and_answers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sas/sas_questions_and_answers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sas/sas_questions_and_answers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sas/sas_questions_and_answers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sas/sas_questions_and_answers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>The Best Technical Questions And Answers</title>
+<meta name="Description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals"/>
+<meta name="Keywords" content="Technical, Questions,  Answers, Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="The Best Technical Questions And Answers" />
+<meta name="twitter:description" property="og:description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+
+<div class="mui-container container-top">   
+<!-- center column content -->
+   
+<div class="mui-col-md-8">
+<div id="question_index_id">      
+<div class="question_section">                                   
+   <div class="qa_widget">                                
+   <!-- /60931893/Native_QnA -->
+   <div id='div-gpt-ad-1532956972128-0'>
+   <script>
+   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+   </script>
+   </div>
+   </div>                    
+</div>
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09" data-aid="WnZWR05OYURhWTI0K1pjREdwNll3dz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivWnZWR05OYURhWTI0K1pjREdwNll3dz09" data-qtitle=addcslashes-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/addcslashes-function-in-php" target='_blank'> addcslashes() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09" style="display:none;">
+            <div id="comments_list_aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The addcslashes() function returns the string with blackslashes. Note &minus; The addcslashes() function is case-sensitive Syntax  addcslashes(str, characters)  Parameters  str &minus; The string to be escaped characters &minus; The characters or range of characters to be escaped  Return The addcslashes() function returns a string with backslashes ... <a href="https://www.tutorialspoint.com/addcslashes-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeaVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='WnZWR05OYURhWTI0K1pjREdwNll3dz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="aVJaeGF5VWVaTW5xVHVQUXZRdk9nQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='WnZWR05OYURhWTI0K1pjREdwNll3dz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='WnZWR05OYURhWTI0K1pjREdwNll3dz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_WnZWR05OYURhWTI0K1pjREdwNll3dz09" style="display:none;">
+<div id="comments_list_WnZWR05OYURhWTI0K1pjREdwNll3dz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="SzJMQ0NseHZTWTlDb25ranZBcDlJZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="SzJMQ0NseHZTWTlDb25ranZBcDlJZz09" data-aid="bXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="SzJMQ0NseHZTWTlDb25ranZBcDlJZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="SzJMQ0NseHZTWTlDb25ranZBcDlJZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivbXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09" data-qtitle=timezone-open-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-open-function-in-php" target='_blank'> timezone_open() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_SzJMQ0NseHZTWTlDb25ranZBcDlJZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_SzJMQ0NseHZTWTlDb25ranZBcDlJZz09" style="display:none;">
+            <div id="comments_list_SzJMQ0NseHZTWTlDb25ranZBcDlJZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_open() function returns new DateTimeZone object. Syntax  timezone_open(timezone)  Parameters  timezone &minus; Time zone identifier as full name (e.g. Europe/Prague) or abbreviation (e.g. CET).  Return The timezone_open()function returns the DateTimeZone object on success, and FALSE on failure. The following is an example &minus;   Example ... <a href="https://www.tutorialspoint.com/timezone-open-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeSzJMQ0NseHZTWTlDb25ranZBcDlJZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='bXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="SzJMQ0NseHZTWTlDb25ranZBcDlJZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='bXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='bXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_bXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09" style="display:none;">
+<div id="comments_list_bXJFSGxGanJ3Y3pRdEJBaFBacDRpdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09" data-aid="QndlSkRJR3Y1ODhZWUthZjhKS1JIZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivQndlSkRJR3Y1ODhZWUthZjhKS1JIZz09" data-qtitle=timezone-name-get-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-name-get-function-in-php" target='_blank'> timezone_name_get() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09" style="display:none;">
+            <div id="comments_list_NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_name_get() function returns the name of the timezone. Syntax  timezone_name_get(obj)  Parameters  obj &minus; A DateTimeZone object.  Return The timezone_name_get() function returns array on success or FALSE on failure. The following is an example &minus;   Example  Live Demo  &lt;?php    ... <a href="https://www.tutorialspoint.com/timezone-name-get-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeNFZueDlvNnZUYTdWUGZsQUZlNmdGdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='QndlSkRJR3Y1ODhZWUthZjhKS1JIZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="NFZueDlvNnZUYTdWUGZsQUZlNmdGdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='QndlSkRJR3Y1ODhZWUthZjhKS1JIZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='QndlSkRJR3Y1ODhZWUthZjhKS1JIZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_QndlSkRJR3Y1ODhZWUthZjhKS1JIZz09" style="display:none;">
+<div id="comments_list_QndlSkRJR3Y1ODhZWUthZjhKS1JIZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Slh6RDF4VGZlL0liWGlGNENuTS9PZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Slh6RDF4VGZlL0liWGlGNENuTS9PZz09" data-aid="YXhRNitocjlJcE1xaUYwbUhGOGtsZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Slh6RDF4VGZlL0liWGlGNENuTS9PZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Slh6RDF4VGZlL0liWGlGNENuTS9PZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivYXhRNitocjlJcE1xaUYwbUhGOGtsZz09" data-qtitle=timezone-identifiers-list-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-identifiers-list-function-in-php" target='_blank'> timezone_identifiers_list() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Slh6RDF4VGZlL0liWGlGNENuTS9PZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_Slh6RDF4VGZlL0liWGlGNENuTS9PZz09" style="display:none;">
+            <div id="comments_list_Slh6RDF4VGZlL0liWGlGNENuTS9PZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_identifiers_list() function returns numerically index array with all timezone identifiers. Syntax  timezone_identifiers_list()  Parameters  NA  Return The timezone_identifiers_list() function returns array on success or FALSE on failure. The following is an example &minus;  Example  Live Demo  &lt;?php    $timezone_identifiers = DateTimeZone::listIdentifiers(); ... <a href="https://www.tutorialspoint.com/timezone-identifiers-list-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeSlh6RDF4VGZlL0liWGlGNENuTS9PZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='YXhRNitocjlJcE1xaUYwbUhGOGtsZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Slh6RDF4VGZlL0liWGlGNENuTS9PZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='YXhRNitocjlJcE1xaUYwbUhGOGtsZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='YXhRNitocjlJcE1xaUYwbUhGOGtsZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_YXhRNitocjlJcE1xaUYwbUhGOGtsZz09" style="display:none;">
+<div id="comments_list_YXhRNitocjlJcE1xaUYwbUhGOGtsZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09" data-aid="c2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivc2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09" data-qtitle=time-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/time-function-in-php" target='_blank'> time() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09" style="display:none;">
+            <div id="comments_list_SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The time() function in PHP returns the current time as a Unix timestamp. It returns the current time measured in the number of seconds since the Unix Epoch (January 1 1970 00:00:00 GMT). Syntax  time()  Parameters  NA  Return The time() function returns the current time measured ... <a href="https://www.tutorialspoint.com/time-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeSkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='c2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="SkdiMXRmSWNQWk5EQ3d6MjBQRDgxQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='c2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='c2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_c2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09" style="display:none;">
+<div id="comments_list_c2JWL1RTd3ZkWGhQMzZrM0tqR3hiUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09" data-aid="aStjTDR5bE81c3FHUUhPaHFsOG9QQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivaStjTDR5bE81c3FHUUhPaHFsOG9QQT09" data-qtitle=strptime-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/strptime-function-in-php" target='_blank'> strptime() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09" style="display:none;">
+            <div id="comments_list_OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The strptime() function parses a time/date generated with strftime(). This function returns an array with the date parsed, or FALSE on error. The following parameters are returned in the array.  [tm_sec] − seconds (0-61) [tm_min] − minutes (0-59) [tm_hour] − hour (0-23) [tm_mday] − day of the month (1-31) ... <a href="https://www.tutorialspoint.com/strptime-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeOTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='aStjTDR5bE81c3FHUUhPaHFsOG9QQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="OTY3Q1B3NnM2dGVTbkk3RVF4TW1DZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='aStjTDR5bE81c3FHUUhPaHFsOG9QQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='aStjTDR5bE81c3FHUUhPaHFsOG9QQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_aStjTDR5bE81c3FHUUhPaHFsOG9QQT09" style="display:none;">
+<div id="comments_list_aStjTDR5bE81c3FHUUhPaHFsOG9QQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="azNvL091NU5VcEpKWGJ4cWNaenQyQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="azNvL091NU5VcEpKWGJ4cWNaenQyQT09" data-aid="UGg0Smt2b0NiTGFORVlBS2prNUF6UT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="azNvL091NU5VcEpKWGJ4cWNaenQyQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="azNvL091NU5VcEpKWGJ4cWNaenQyQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivUGg0Smt2b0NiTGFORVlBS2prNUF6UT09" data-qtitle=timezone-offset-get-function-in-php data-utitle=George-John>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-offset-get-function-in-php" target='_blank'> timezone_offset_get() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_azNvL091NU5VcEpKWGJ4cWNaenQyQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_azNvL091NU5VcEpKWGJ4cWNaenQyQT09" style="display:none;">
+            <div id="comments_list_azNvL091NU5VcEpKWGJ4cWNaenQyQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/George-John" title="George John"><img src='https://www.tutorialspoint.com/assets/profiles/13511/profile/60_58410-1512537824.png' alt='George John' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/George-John" title="George John">George John</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_offset_get() function returns the timezone offset from GMT. Syntax  timezone_offset_get(obj, datetime)  Parameters  obj  &minus; Specifies the DateTimeZone object. datetime  &minus; Specifies the DateTime that contains the date/time to compute the offset from.  Return The timezone_offset_get() function returns the time zone offset in seconds ... <a href="https://www.tutorialspoint.com/timezone-offset-get-function-in-php#George-John"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeazNvL091NU5VcEpKWGJ4cWNaenQyQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='UGg0Smt2b0NiTGFORVlBS2prNUF6UT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="azNvL091NU5VcEpKWGJ4cWNaenQyQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='UGg0Smt2b0NiTGFORVlBS2prNUF6UT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='UGg0Smt2b0NiTGFORVlBS2prNUF6UT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_UGg0Smt2b0NiTGFORVlBS2prNUF6UT09" style="display:none;">
+<div id="comments_list_UGg0Smt2b0NiTGFORVlBS2prNUF6UT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">
+   <div class="qa_widget">
+      <!-- /60931893/tutorial_top -->
+      <div id='div-gpt-ad-1532153686945-4' class='topgooglead'>
+         <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532153686945-4'); });
+         </script>
+      </div>
+   </div>
+</div><div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09" data-aid="Y04xWVlBckJXbWFWYit5WU1MM3B0UT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivY04xWVlBckJXbWFWYit5WU1MM3B0UT09" data-qtitle=timezone-name-from-abbr-function-in-php data-utitle=Chandu-Yadav-1>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-name-from-abbr-function-in-php" target='_blank'> timezone_name_from_abbr() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09" style="display:none;">
+            <div id="comments_list_ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Chandu-Yadav-1" title="Chandu yadav"><img src='https://www.tutorialspoint.com/assets/profiles/22330/profile/60_142811-1519038104.jpg' alt='Chandu yadav' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Chandu-Yadav-1" title="Chandu yadav">Chandu yadav</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_name_from_abbr() function returns the timezone name from abbreviation. Syntax  timezone_name_from_abbr(abbr, gmtOffset, is_dst)  Parameters  abbr  &minus; Time zone abbreviation. gmtoffset  &minus; Offset from GMT in seconds. is_dst  &minus; Daylight saving time indicator.  Return The timezone_name_from_abbr() function returns the timezone name from abbreviation. Example ... <a href="https://www.tutorialspoint.com/timezone-name-from-abbr-function-in-php#Chandu-Yadav-1"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='Y04xWVlBckJXbWFWYit5WU1MM3B0UT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="ZkQyMXpBejVmSjBnbXdsYno4dXQ5QT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='Y04xWVlBckJXbWFWYit5WU1MM3B0UT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='Y04xWVlBckJXbWFWYit5WU1MM3B0UT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_Y04xWVlBckJXbWFWYit5WU1MM3B0UT09" style="display:none;">
+<div id="comments_list_Y04xWVlBckJXbWFWYit5WU1MM3B0UT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09" data-aid="bGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivbGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09" data-qtitle=timezone-abbreviations-list-function-in-php data-utitle=Ankith-Reddy>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-abbreviations-list-function-in-php" target='_blank'> timezone_abbreviations_list() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09" style="display:none;">
+            <div id="comments_list_NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Ankith-Reddy" title="Ankith Reddy"><img src='https://www.tutorialspoint.com/assets/profiles/22328/profile/60_142162-1519038074.jpg' alt='Ankith Reddy' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Ankith-Reddy" title="Ankith Reddy">Ankith Reddy</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_abbreviations_list() function returns associative array containing dst, offset and the timezone name Syntax  timezone_abbreviations_list()  Parameters  NA  Return The timezone_abbreviations_list() function returns array on success or FALSE on failure. Example The following is an example &minus;  Live Demo   &lt;?php    $timezone_abbreviations ... <a href="https://www.tutorialspoint.com/timezone-abbreviations-list-function-in-php#Ankith-Reddy"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeNUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='bGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="NUxPSU1GTWdtcS93QzJ4RHV5ZldPQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='bGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='bGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_bGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09" style="display:none;">
+<div id="comments_list_bGNvWG0rSFFIY3pXVkRhb1Fwd2s5QT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="M2pmMTdEcFJDeDNodll3RDBlc2lVdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="M2pmMTdEcFJDeDNodll3RDBlc2lVdz09" data-aid="bHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="M2pmMTdEcFJDeDNodll3RDBlc2lVdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="M2pmMTdEcFJDeDNodll3RDBlc2lVdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivbHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09" data-qtitle=strtotime-function-in-php data-utitle=Maheshwari-Thakur-1>
+            <h2>
+               <a href="https://www.tutorialspoint.com/strtotime-function-in-php" target='_blank'> strtotime() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_M2pmMTdEcFJDeDNodll3RDBlc2lVdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_M2pmMTdEcFJDeDNodll3RDBlc2lVdz09" style="display:none;">
+            <div id="comments_list_M2pmMTdEcFJDeDNodll3RDBlc2lVdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="Maheshwari Thakur"><img src='https://www.tutorialspoint.com/assets/profiles/13574/profile/60_99671-1512545646.jpg' alt='Maheshwari Thakur' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="Maheshwari Thakur">Maheshwari Thakur</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The strtotime() function parses an English textual date or time into a Unix timestamp. It returns a timestamp on success, FALSE otherwise. Previous to PHP 5.1.0, this function would return -1 on failure. Syntax  strtotime(time, now)  Parameters  time  &minus; Specifies the time string to parse. now ... <a href="https://www.tutorialspoint.com/strtotime-function-in-php#Maheshwari-Thakur-1"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeM2pmMTdEcFJDeDNodll3RDBlc2lVdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='bHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="M2pmMTdEcFJDeDNodll3RDBlc2lVdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='bHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='bHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_bHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09" style="display:none;">
+<div id="comments_list_bHI5OHBRaWJ0Z2RMWjNRdm5kRkNUUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="dHZkK29STDlVNkNibHlzclM2S0gvdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="dHZkK29STDlVNkNibHlzclM2S0gvdz09" data-aid="aVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="dHZkK29STDlVNkNibHlzclM2S0gvdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="dHZkK29STDlVNkNibHlzclM2S0gvdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivaVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09" data-qtitle=strftime-function-in-php data-utitle=George-John>
+            <h2>
+               <a href="https://www.tutorialspoint.com/strftime-function-in-php" target='_blank'> strftime() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_dHZkK29STDlVNkNibHlzclM2S0gvdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_dHZkK29STDlVNkNibHlzclM2S0gvdz09" style="display:none;">
+            <div id="comments_list_dHZkK29STDlVNkNibHlzclM2S0gvdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/George-John" title="George John"><img src='https://www.tutorialspoint.com/assets/profiles/13511/profile/60_58410-1512537824.png' alt='George John' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/George-John" title="George John">George John</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The strftime() function formats a local time/date according to locale settings. It returns a string formatted according to the given format string using the given timestamp or the current local time if no timestamp is given. Syntax  strftime(format, timestamp)  Parameters  timestamp  &minus; Specifies a Unix timestamp ... <a href="https://www.tutorialspoint.com/strftime-function-in-php#George-John"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qedHZkK29STDlVNkNibHlzclM2S0gvdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='aVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="dHZkK29STDlVNkNibHlzclM2S0gvdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='aVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='aVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_aVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09" style="display:none;">
+<div id="comments_list_aVRKaEg2T0R5ekRDdDV4NzVQNnRyUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="akgzK0c4eDVRTHY5Ly96WlliazhKdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="akgzK0c4eDVRTHY5Ly96WlliazhKdz09" data-aid="a2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="akgzK0c4eDVRTHY5Ly96WlliazhKdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="akgzK0c4eDVRTHY5Ly96WlliazhKdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDiva2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09" data-qtitle=microtime-function-in-php data-utitle=Chandu-Yadav-1>
+            <h2>
+               <a href="https://www.tutorialspoint.com/microtime-function-in-php" target='_blank'> microtime() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_akgzK0c4eDVRTHY5Ly96WlliazhKdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_akgzK0c4eDVRTHY5Ly96WlliazhKdz09" style="display:none;">
+            <div id="comments_list_akgzK0c4eDVRTHY5Ly96WlliazhKdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Chandu-Yadav-1" title="Chandu yadav"><img src='https://www.tutorialspoint.com/assets/profiles/22330/profile/60_142811-1519038104.jpg' alt='Chandu yadav' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Chandu-Yadav-1" title="Chandu yadav">Chandu yadav</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The microtime() function returns the microseconds for the current time. It returns the current Unix timestamp with microseconds. This function is only available on operating systems that support the gettimeofday() system call. Syntax  microtime(get_as_float)  Parameters  get_as_float  &minus; When called without the optional argument, this function returns ... <a href="https://www.tutorialspoint.com/microtime-function-in-php#Chandu-Yadav-1"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeakgzK0c4eDVRTHY5Ly96WlliazhKdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='a2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="akgzK0c4eDVRTHY5Ly96WlliazhKdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='a2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='a2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_a2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09" style="display:none;">
+<div id="comments_list_a2lkcWJFV1R4VWRiRGNCaXh0THd4Zz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09" data-aid="OGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivOGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09" data-qtitle=idate-function-in-php data-utitle=Ankith-Reddy>
+            <h2>
+               <a href="https://www.tutorialspoint.com/idate-function-in-php" target='_blank'> idate() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09" style="display:none;">
+            <div id="comments_list_WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Ankith-Reddy" title="Ankith Reddy"><img src='https://www.tutorialspoint.com/assets/profiles/22328/profile/60_142162-1519038074.jpg' alt='Ankith Reddy' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Ankith-Reddy" title="Ankith Reddy">Ankith Reddy</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The idate() function formats a local time/date as integer. Syntax  idate(format, timestamp)  Parameters  timestamp &minus; Integer Unix timestamp that defaults to the current local time if a timestamp is not given. In other words, it defaults to the value of time(). format  &minus; It specifies how ... <a href="https://www.tutorialspoint.com/idate-function-in-php#Ankith-Reddy"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeWU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='OGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="WU9IazZKb2YxN2h3Uy9lUXdEeTFIUT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='OGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='OGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_OGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09" style="display:none;">
+<div id="comments_list_OGs3b1EzT0NxdEkvc2NMZkxOcXBvUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09" data-aid="QTFyRU8zK1haQjBUZTNXbm1BK3hVUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivQTFyRU8zK1haQjBUZTNXbm1BK3hVUT09" data-qtitle=gmmktime-function-in-php data-utitle=Maheshwari-Thakur-1>
+            <h2>
+               <a href="https://www.tutorialspoint.com/gmmktime-function-in-php" target='_blank'> gmmktime() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09" style="display:none;">
+            <div id="comments_list_R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="Maheshwari Thakur"><img src='https://www.tutorialspoint.com/assets/profiles/13574/profile/60_99671-1512545646.jpg' alt='Maheshwari Thakur' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="Maheshwari Thakur">Maheshwari Thakur</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The gmmktime() function returns the Unix timestamp for a GMT date. Syntax  gmmktime(hour, minute, second, month, day, year, is_dst);  Parameters  hour  &minus; Specifies the hour. minute  &minus; Specifies the minute second  &minus; Specifies the second month  &minus; Specifies the month day  &minus; ... <a href="https://www.tutorialspoint.com/gmmktime-function-in-php#Maheshwari-Thakur-1"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeR1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='QTFyRU8zK1haQjBUZTNXbm1BK3hVUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="R1dPZ0VIeTFHdjlmSmIxSzVPMXZrdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='QTFyRU8zK1haQjBUZTNXbm1BK3hVUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='QTFyRU8zK1haQjBUZTNXbm1BK3hVUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_QTFyRU8zK1haQjBUZTNXbm1BK3hVUT09" style="display:none;">
+<div id="comments_list_QTFyRU8zK1haQjBUZTNXbm1BK3hVUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09" data-aid="elhHRmp6YXVSSnhJTVJBY1JBek5rUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivelhHRmp6YXVSSnhJTVJBY1JBek5rUT09" data-qtitle=gettimeofday-function-in-php data-utitle=George-John>
+            <h2>
+               <a href="https://www.tutorialspoint.com/gettimeofday-function-in-php" target='_blank'> gettimeofday() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09" style="display:none;">
+            <div id="comments_list_WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/George-John" title="George John"><img src='https://www.tutorialspoint.com/assets/profiles/13511/profile/60_58410-1512537824.png' alt='George John' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/George-John" title="George John">George John</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The gettimeofday() function returns an array that contains current time information. Syntax  gettimeofday(return_float)  Parameters  return_float  &minus; When set to TRUE, a float instead of an array is returned.  Return The gettimeofday() function returns an associative array by default. The following are the returned array keys ... <a href="https://www.tutorialspoint.com/gettimeofday-function-in-php#George-John"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeWjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='elhHRmp6YXVSSnhJTVJBY1JBek5rUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="WjBtSHpibFZaaFJ0V0N5UTRUNlBiZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='elhHRmp6YXVSSnhJTVJBY1JBek5rUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='elhHRmp6YXVSSnhJTVJBY1JBek5rUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_elhHRmp6YXVSSnhJTVJBY1JBek5rUT09" style="display:none;">
+<div id="comments_list_elhHRmp6YXVSSnhJTVJBY1JBek5rUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+  
+</div>      
+<div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+   <div class="pages">
+      <a href="https://www.tutorialspoint.com/questions/9"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 825" href="https://www.tutorialspoint.com/questions/1">1</a>  ... <a class="number" title="Go to page 7 of 825" href="https://www.tutorialspoint.com/questions/7">7</a> <a class="number" title="Go to page 8 of 825" href="https://www.tutorialspoint.com/questions/8">8</a> <a class="number" title="Go to page 9 of 825" href="https://www.tutorialspoint.com/questions/9">9</a> <a title="Go to page 10 of 825" class="current number" href="https://www.tutorialspoint.com/questions/10">10</a> <a class="number" title="Go to page 11 of 825" href="https://www.tutorialspoint.com/questions/11">11</a> <a class="number" title="Go to page 12 of 825" href="https://www.tutorialspoint.com/questions/12">12</a> <a class="number" title="Go to page 13 of 825" href="https://www.tutorialspoint.com/questions/13">13</a>  ... <a class="number" title="Go to page 825 of 825" href="https://www.tutorialspoint.com/questions/825">825</a> <a  href="https://www.tutorialspoint.com/questions/11" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+   </div>
+</div>
+<div class="clear"></div>
+<div class="bottomgooglead qa_widget align-center">
+   <div class="bottomadtag">Advertisements</div>
+      <script><!--
+      var width = 580;
+      var height = 400;
+      var format = "580x400_as";
+      if( window.innerWidth < 468 ){
+         width = 300;
+         height = 250;
+         format = "300x250_as";
+      }
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = width;
+      google_ad_height = height;
+      google_ad_format = format;
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</div> 
+<div class="loader_bg" id="loader_image">
+<img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+</div>
+
+<!-- end of center column content -->   
+
+<div class="mui-col-md-4">    
+<!-- right column content -->      
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/questions/index.php?page=10','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=10','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=10&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=10&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=10&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/questions/index.php?page=10&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="">
+      <button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+   </div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad">Advertisements</div>
+      <div class="rightgooglead">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      google_ad_format = "300x250_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      google_ad_format = "300x600_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "ca-pub-2537027957187252";
+      /* Right Side Ad */
+      google_ad_slot = "right_side_ad";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+    
+   <div id="contribution_menu"></div>
+   <div class="clear"></div>    
+      <div class="left_nav_header left_top_margin"><i class="fa fa-question-circle"></i> Unanswered Questions     
+      <a href="https://www.tutorialspoint.com/questions/unanswered.php" class="qa_pop_btn qa_pop_save"><i class="fa fa-plus"></i> View All</a>
+   </div>
+   <div id="latest_questions"></div>      
+   
+</div>
+
+<script>
+   $(document).ready(function () {
+      getRightMenu();
+      function getRightMenu(){
+         $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetRightMenu.php",
+            method: "POST",
+            success: function (data) {
+            $('#contribution_menu').html(data);
+            }
+         });
+      }
+            getLatestQuestions();
+         function getLatestQuestions() {
+            $.ajax({
+               url: baseurl + "questions/ajax/ajaxGetLatestQuestions.php",
+               method: "POST",
+               success: function (data) {
+               $('#latest_questions').html(data);
+               }
+            });
+         }
+          });
+</script> 
+</div>
+<!-- end of right column content -->   
+</div>
+<!-- End of Body Content -->
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

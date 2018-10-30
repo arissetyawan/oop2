@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>VB.Net Advanced Form</title>
+<meta name="description" content="VB.Net Advanced Form - Learn VB.Net Programming in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment setup, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Arrays, Strings, Subs, File Handling, Exception Handling, Basic Controls, Dialog Boxes, Advanced Forms, Event Handling, Classes, Objects, Web Programming, Database Access, Excel Sheet and XML Processing." />
+<meta name="keywords" content="VB.Net, Tutorial, Beginners, Programming, Environment setup, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Arrays, Strings, Subs, File Handling, Exception Handling, Basic Controls, Dialog Boxes, Advanced Forms, Event Handling, Classes, Objects, Web Programming, Database Access, Excel Sheet and XML Processing." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #2c6ed5 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #2c6ed5 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #2c6ed5 !important;}
+.submenu-item{ border-bottom: 2px solid #2c6ed5 !important; border-top: 2px solid #2c6ed5 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#2c6ed5; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/vb.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/vb.net/images/vb.net-mini-logo.jpg" alt="VB.Net Programming Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VB.Net Basic Tutorial</li>
+<li><a href="/vb.net/index.htm">VB.Net - Home</a></li>
+<li><a href="/vb.net/vb.net_overview.htm">VB.Net - Overview</a></li>
+<li><a href="/vb.net/vb.net_environment_setup.htm">VB.Net - Environment Setup</a></li>
+<li><a href="/vb.net/vb.net_program_structure.htm">VB.Net - Program Structure</a></li>
+<li><a href="/vb.net/vb.net_basic_syntax.htm">VB.Net - Basic Syntax</a></li>
+<li><a href="/vb.net/vb.net_data_types.htm">VB.Net - Data Types</a></li>
+<li><a href="/vb.net/vb.net_variables.htm">VB.Net - Variables</a></li>
+<li><a href="/vb.net/vb.net_constants.htm">VB.Net - Constants</a></li>
+<li><a href="/vb.net/vb.net_modifiers.htm">VB.Net - Modifiers</a></li>
+<li><a href="/vb.net/vb.net_statements.htm">VB.Net - Statements</a></li>
+<li><a href="/vb.net/vb.net_directives.htm">VB.Net - Directives</a></li>
+<li><a href="/vb.net/vb.net_operators.htm">VB.Net - Operators</a></li>
+<li><a href="/vb.net/vb.net_decision_making.htm">VB.Net - Decision Making</a></li>
+<li><a href="/vb.net/vb.net_loops.htm">VB.Net - Loops</a></li>
+<li><a href="/vb.net/vb.net_strings.htm">VB.Net - Strings</a></li>
+<li><a href="/vb.net/vb.net_date_time.htm">VB.Net - Date &amp; Time</a></li>
+<li><a href="/vb.net/vb.net_arrays.htm">VB.Net - Arrays</a></li>
+<li><a href="/vb.net/vb.net_collections.htm">VB.Net - Collections</a></li>
+<li><a href="/vb.net/vb.net_functions.htm">VB.Net - Functions</a></li>
+<li><a href="/vb.net/vb.net_subs.htm">VB.Net - Subs</a></li>
+<li><a href="/vb.net/vb.net_classes_objects.htm">VB.Net - Classes &amp; Objects</a></li>
+<li><a href="/vb.net/vb.net_exception_handling.htm">VB.Net - Exception Handling</a></li>
+<li><a href="/vb.net/vb.net_file_handling.htm">VB.Net - File Handling</a></li>
+<li><a href="/vb.net/vb.net_basic_controls.htm">VB.Net - Basic Controls</a></li>
+<li><a href="/vb.net/vb.net_dialog_boxes.htm">VB.Net - Dialog Boxes</a></li>
+<li><a href="/vb.net/vb.net_advanced_forms.htm">VB.Net - Advanced Forms</a></li>
+<li><a href="/vb.net/vb.net_event_handling.htm">VB.Net - Event Handling</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VB.Net Advanced Tutorial</li>
+<li><a href="/vb.net/vb.net_regular_expressions.htm">VB.Net - Regular Expressions</a></li>
+<li><a href="/vb.net/vb.net_database_access.htm">VB.Net - Database Access</a></li>
+<li><a href="/vb.net/vb.net_excel_sheet.htm">VB.Net - Excel Sheet</a></li>
+<li><a href="/vb.net/vb.net_send_email.htm">VB.Net - Send Email</a></li>
+<li><a href="/vb.net/vb.net_xml_processing.htm">VB.Net - XML Processing</a></li>
+<li><a href="/vb.net/vb.net_web_programming.htm">VB.Net - Web Programming</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">VB.Net Useful Resources</li>
+<li><a href="/vb.net/vb.net_quick_guide.htm">VB.Net - Quick Guide</a></li>
+<li><a href="/vb.net/vb.net_useful_resources.htm">VB.Net - Useful Resources</a></li>
+<li><a href="/vb.net/vb.net_discussion.htm">VB.Net - Discussion</a></li>
+
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>VB.Net - Advanced Form</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/vb.net/vb.net_dialog_boxes.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/vb.net/vb.net_event_handling.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In this chapter, let us study the following concepts &minus;</p>
+<ul class="list">
+<li><p>Adding menus and sub menus in an application</p></li>
+<li><p>Adding the cut, copy and paste functionalities in a form</p></li>
+<li><p>Anchoring and docking controls in a form</p></li>
+<li><p>Modal forms</p></li>
+</ul>
+<h2>Adding Menus and Sub Menus in an Application</h2>
+<p>Traditionally, the <i>Menu</i>, <i>MainMenu</i>, <i>ContextMenu</i>, and <i>MenuItem</i> classes were used for adding menus, sub-menus and context menus in a Windows application.</p>
+<p>Now, the <b>MenuStrip</b>, the <b>ToolStripMenuItem</b>, <b>ToolStripDropDown</b> and <b>ToolStripDropDownMenu</b> controls replace and add functionality to the Menu-related controls of previous versions. However, the old control classes are retained for both backward compatibility and future use.</p>
+<p>Let us create a typical windows main menu bar and sub menus using the old version controls first since these controls are still much used in old applications.</p>
+<p>Following is an example, which shows how we create a menu bar with menu items: File, Edit, View and Project. The File menu has the sub menus New, Open and Save.</p>
+<p>Let's double click on the Form and put the following code in the opened window.</p>
+<pre class="prettyprint notranslate">
+Public Class Form1
+   Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+      'defining the main menu bar
+      Dim mnuBar As New MainMenu()
+      'defining the menu items for the main menu bar
+      Dim myMenuItemFile As New MenuItem("&File")
+      Dim myMenuItemEdit As New MenuItem("&Edit")
+      Dim myMenuItemView As New MenuItem("&View")
+      Dim myMenuItemProject As New MenuItem("&Project")
+
+      'adding the menu items to the main menu bar
+      mnuBar.MenuItems.Add(myMenuItemFile)
+      mnuBar.MenuItems.Add(myMenuItemEdit)
+      mnuBar.MenuItems.Add(myMenuItemView)
+      mnuBar.MenuItems.Add(myMenuItemProject)
+
+     ' defining some sub menus
+      Dim myMenuItemNew As New MenuItem("&New")
+      Dim myMenuItemOpen As New MenuItem("&Open")
+      Dim myMenuItemSave As New MenuItem("&Save")
+
+      'add sub menus to the File menu
+      myMenuItemFile.MenuItems.Add(myMenuItemNew)
+      myMenuItemFile.MenuItems.Add(myMenuItemOpen)
+      myMenuItemFile.MenuItems.Add(myMenuItemSave)
+
+      'add the main menu to the form
+      Me.Menu = mnuBar
+     
+      ' Set the caption bar text of the form.  
+      Me.Text = "tutorialspoint.com"
+   End Sub
+End Class
+</pre>
+<p>When the above code is executed and run using Start button available at the Microsoft Visual Studio tool bar, it will show the following window &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms1.jpg" alt="VB.Net Menu Example"/>
+<p>Windows Forms contain a rich set of classes for creating your own custom menus with modern appearance, look and feel. The <b>MenuStrip</b>, <b>ToolStripMenuItem</b>, <b>ContextMenuStrip</b> controls are used to create menu bars and context menus efficiently.</p>
+<p>Click the following links to check their details &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:9%;">Sr.No.</th>
+<th style="text-align:center;">Control &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><a href="/vb.net/vb.net_menustrip.htm">MenuStrip</a></p>
+<p>It provides a menu system for a form.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><a href="/vb.net/vb.net_toolstrip_menuitem.htm">ToolStripMenuItem</a></p>
+<p>It represents a selectable option displayed on a <b>MenuStrip</b> or <b>ContextMenuStrip</b>. The ToolStripMenuItem control replaces and adds functionality to the MenuItem control of previous versions.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><a href="/vb.net/vb.net_context_menustrip.htm">ContextMenuStrip</a></p>
+<p>It represents a shortcut menu.</p>
+</td>
+</tr>
+</table>
+<h2>Adding the Cut, Copy and Paste Functionalities in a Form</h2>
+<p>The methods exposed by the <b>ClipBoard</b> class are used for adding the cut, copy and paste functionalities in an application. The ClipBoard class provides methods to place data on and retrieve data from the system Clipboard.</p>
+<p>It has the following commonly used methods &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:5%;">Sr.No.</th>
+<th style="text-align:center">Method Name &amp; Description</th></tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>Clear</b></p>
+<p>Removes all data from the Clipboard.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>ContainsData</b></p>
+<p>Indicates whether there is data on the Clipboard that is in the specified format or can be converted to that format.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>ContainsImage</b></p>
+<p>Indicates whether there is data on the Clipboard that is in the Bitmap format or can be converted to that format.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>ContainsText</b></p>
+<p>Indicates whether there is data on the Clipboard in the Text or UnicodeText format, depending on the operating system.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>GetData</b></p>
+<p>Retrieves data from the Clipboard in the specified format.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>GetDataObject</b></p>
+<p>Retrieves the data that is currently on the system Clipboard.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>GetImage</b></p>
+<p>Retrieves an image from the Clipboard.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>GetText</b></p>
+<p>Retrieves text data from the Clipboard in the Text or UnicodeText format, depending on the operating system.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td>
+<p><b>GetText(TextDataFormat)</b></p>
+<p>Retrieves text data from the Clipboard in the format indicated by the specified TextDataFormat value.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td>
+<p><b>SetData</b></p>
+<p>Clears the Clipboard and then adds data in the specified format.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td>
+<p><b>SetText(String)</b></p>
+<p>Clears the Clipboard and then adds text data in the Text or UnicodeText format, depending on the operating system.</p>
+</td>
+</tr>
+</table>
+<p>Following is an example, which shows how we cut, copy and paste data using methods of the Clipboard class. Take the following steps &minus;</p>
+<ul class="list">
+<li><p>Add a rich text box control and three button controls on the form.</p></li>
+<li><p>Change the text property of the buttons to Cut, Copy and Paste, respectively.</p></li>
+<li><p>Double click on the buttons to add the following code in the code editor &minus;</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+Public Class Form1
+   Private Sub Form1_Load(sender As Object, e As EventArgs) _ 
+    Handles MyBase.Load
+      ' Set the caption bar text of the form.  
+      Me.Text = "tutorialspoint.com"
+   End Sub
+   
+   Private Sub Button1_Click(sender As Object, e As EventArgs) _ 
+      Handles Button1.Click
+      Clipboard.SetDataObject(RichTextBox1.SelectedText)
+      RichTextBox1.SelectedText = ""
+   End Sub
+   
+   Private Sub Button2_Click(sender As Object, e As EventArgs) _
+       Handles Button2.Click
+      Clipboard.SetDataObject(RichTextBox1.SelectedText)
+   End Sub
+   
+   Private Sub Button3_Click(sender As Object, e As EventArgs) _
+    Handles Button3.Click
+      Dim iData As IDataObject
+      iData = Clipboard.GetDataObject()
+      If (iData.GetDataPresent(DataFormats.Text)) Then
+         RichTextBox1.SelectedText = iData.GetData(DataFormats.Text)
+      Else
+         RichTextBox1.SelectedText = " "
+      End If
+   End Sub
+End Class
+</pre>
+<p>When the above code is executed and run using <b>Start</b> button available at the Microsoft Visual Studio tool bar, it will show the following window &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms2.jpg" alt="VB.Net Cut, Paste, Copy Example"/>
+<p>Enter some text and check how the buttons work.</p>
+<h2>Anchoring and Docking Controls in a Form</h2>
+<p><b>Anchoring</b> allows you to set an anchor position for a control to the edges of its container control, for example, the form. The <b>Anchor</b> property of the Control class allows you to set values of this property. The Anchor property gets or sets the edges of the container to which a control is bound and determines how a control is resized with its parent.</p>
+<p>When you anchor a control to a form, the control maintains its distance from the edges of the form and its anchored position, when the form is resized.</p>
+<p>You can set the Anchor property values of a control from the Properties window &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms3.jpg" alt="VB.Net Anchoring of Controls"/>
+<p>For example, let us add a Button control on a form and set its anchor property to Bottom, Right. Run this form to see the original position of the Button control with respect to the form.</p>
+<img src="/vb.net/images/vb.net_advanced_forms4.jpg" alt="VB.Net Anchoring Example"/>
+<p>Now, when you stretch the form, the distance between the Button and the bottom right corner of the form remains same.</p>
+<img src="/vb.net/images/vb.net_advanced_forms5.jpg" alt="VB.Net Anchoring Example"/>
+<p><b>Docking</b> of a control means docking it to one of the edges of its container. In docking, the control fills certain area of the container completely.</p>
+<p>The <b>Dock</b> property of the Control class does this. The Dock property gets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.</p>
+<p>You can set the Dock property values of a control from the Properties window &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms6.jpg" alt="VB.Net Docking of Controls"/>
+<p>For example, let us add a Button control on a form and set its Dock property to Bottom. Run this form to see the original position of the Button control with respect to the form.</p>
+<img src="/vb.net/images/vb.net_advanced_forms7.jpg" alt="VB.Net Docking Example"/>
+<p>Now, when you stretch the form, the Button resizes itself with the form.</p>
+<img src="/vb.net/images/vb.net_advanced_forms8.jpg" alt="VB.Net Docking Example"/>
+<h2>Modal Forms</h2>
+<p><b>Modal Forms</b> are those forms that need to be closed or hidden before you can continue working with the rest of the application. All dialog boxes are modal forms. A MessageBox is also a modal form.</p>
+<p>You can call a modal form by two ways &minus;</p>
+<ul class="list">
+<li><p>Calling the <b>ShowDialog</b> method</p></li>
+<li><p>Calling the <b>Show</b> method</p></li>
+</ul>
+<p>Let us take up an example in which we will create a modal form, a dialog box. Take the following steps &minus;</p>
+<ul class="list">
+<li><p>Add a form, Form1 to your application, and add two labels and a button control to Form1</p></li>
+<li><p>Change the text properties of the first label and the button to 'Welcome to Tutorials Point' and 'Enter your Name', respectively. Keep the text properties of the second label as blank.</p>
+<img src="/vb.net/images/vb.net_advanced_forms9.jpg" width="282" height="248" border="0" alt="VB.Net Modal Form Example"/>
+</li>
+<li><p>Add a new Windows Form, Form2, and add two buttons, one label, and a text box to Form2.</p></li>
+<li><p>Change the text properties of the buttons to OK and Cancel, respectively. Change the text properties of the label to 'Enter your name:'.</p></li>
+<li><p>Set the <i>FormBorderStyle</i> property of Form2 to <i>FixedDialog</i>, for giving it a dialog box border.</p></li>
+<li><p>Set the <i>ControlBox</i> property of Form2 to False.</p></li>
+<li><p>Set the <i>ShowInTaskbar</i> property of Form2 to False.</p></li>
+<li><p>Set the <i>DialogResult</i> property of the OK button to OK and the Cancel button to Cancel.</p></li>
+</ul>
+<img src="/vb.net/images/vb.net_advanced_forms10.jpg" alt="VB.Net Modal Form Example"/>
+<p>Add the following code snippets in the Form2_Load method of Form2 &minus;</p>
+<pre class="prettyprint notranslate">
+Private Sub Form2_Load(sender As Object, e As EventArgs) _
+   Handles MyBase.Load
+   AcceptButton = Button1
+   CancelButton = Button2
+End Sub
+</pre>
+<p>Add the following code snippets in the Button1_Click method of Form1 &minus;</p>
+<pre class="prettyprint notranslate">
+Private Sub Button1_Click(sender As Object, e As EventArgs) _
+   Handles Button1.Click
+   Dim frmSecond As Form2 = New Form2()
+   
+   If frmSecond.ShowDialog() = DialogResult.OK Then
+      Label2.Text = frmSecond.TextBox1.Text
+   End If
+End Sub
+</pre>
+<p>When the above code is executed and run using <b>Start</b> button available at the Microsoft Visual Studio tool bar, it will show the following window &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms11.jpg" alt="VB.Net Modal Form Example"/>
+<p>Clicking on the 'Enter your Name' button displays the second form &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms12.jpg" alt="VB.Net Modal Form Example"/>
+<p>Clicking on the OK button takes the control and information back from the modal form to the previous form &minus;</p>
+<img src="/vb.net/images/vb.net_advanced_forms13.jpg" alt="VB.Net Modal Form Example"/>
+<hr />
+<div class="pre-btn">
+<a href="/vb.net/vb.net_dialog_boxes.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/vb.net/vb.net_event_handling.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/vb.net/vb.net_advanced_forms.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/vb.net/vb.net_advanced_forms.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/vb.net/vb.net_advanced_forms.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/vb.net/vb.net_advanced_forms.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/vb.net/vb.net_advanced_forms.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/vb.net/vb.net_advanced_forms.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

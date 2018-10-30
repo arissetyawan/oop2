@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SWING Quick Guide</title>
+<meta name="Description" content="Swing Quick Guide - Learn SWING in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Swing, Graphical User Interface, Swing Controls, Event Handling, Event Classes, Event listener interfaces, Layout Managers, Adapters, Layouts, Menu Classes, Containers." />
+<meta name="Keywords" content="Swing, Overview, Environment Setup, Swing, Graphical User Interface, Swing Controls, Event Handling, Event Classes, Event listener interfaces, Layout Managers, Adapters, Layouts, Menu Classes, Containers." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #507a9b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #507a9b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #507a9b !important;}
+.submenu-item{ border-bottom: 2px solid #507a9b !important; border-top: 2px solid #507a9b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#507a9b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/swing/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/swing/images/swing-mini-logo.jpg" alt="Swing Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">SWING Tutorial</li>
+<li><a href="/swing/index.htm">SWING - Home</a></li>
+<li><a href="/swing/swing_overview.htm">SWING - Overview</a></li>
+<li><a href="/swing/swing_environment.htm">SWING - Environment</a></li>
+<li><a href="/swing/swing_controls.htm">SWING - Controls</a></li>
+<li><a href="/swing/swing_event_handling.htm">SWING - Event Handling</a></li>
+<li><a href="/swing/swing_event_classes.htm">SWING - Event Classes</a></li>
+<li><a href="/swing/swing_event_listeners.htm">SWING - Event Listeners</a></li>
+<li><a href="/swing/swing_event_adapters.htm">SWING - Event Adapters</a></li>
+<li><a href="/swing/swing_layouts.htm">SWING - Layouts</a></li>
+<li><a href="/swing/swing_menu.htm">SWING - Menu</a></li>
+<li><a href="/swing/swing_containers.htm">SWING - Containers</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">SWING Useful Resources</li>
+<li><a href="/swing/swing_quick_guide.htm">SWING - Quick Guide</a></li>
+<li><a href="/swing/swing_useful_resources.htm">SWING - Useful Resources</a></li>
+<li><a href="/swing/swing_discussion.htm">SWING - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SWING - Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/swing/swing_containers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/swing/swing_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>SWING - Overview</h1>
+<p>Swing API is a set of extensible GUI Components to ease the developer's life to create JAVA based Front End/GUI Applications. It is build on top of AWT API and acts as a replacement of AWT API, since it has almost every control corresponding to AWT controls. Swing component follows a Model-View-Controller architecture to fulfill the following criterias.</p>
+<ul class="list">
+<li><p>A single API is to be sufficient to support multiple look and feel.</p></li>
+<li><p>API is to be model driven so that the highest level API is not required to have data.</p></li>
+<li><p>API is to use the Java Bean model so that Builder Tools and IDE can provide better services to the developers for use.</p></li>
+</ul>
+<h2>MVC Architecture</h2>
+<p>Swing API architecture follows loosely based MVC architecture in the following manner.</p>
+<ul class="list">
+<li><p>Model represents component's data.</p></li>
+<li><p>View represents visual representation of the component's data.</p></li>
+<li><p>Controller takes the input from the user on the view and reflects the changes in Component's data.</p></li>
+<li><p>Swing component has Model as a seperate element, while the View and Controller part are clubbed in the User Interface elements. Because of which, Swing has a pluggable look-and-feel architecture.</p></li>
+</ul>
+<h2>Swing Features</h2>
+<ul class="list">
+<li><p><b>Light Weight</b> &minus; Swing components are independent of native Operating System's API as Swing API controls are rendered mostly using pure JAVA code instead of underlying operating system calls.</p></li>
+<li><p><b>Rich Controls</b> &minus; Swing provides a rich set of advanced controls like Tree, TabbedPane, slider, colorpicker, and table controls.</p></li>
+<li><p><b>Highly Customizable</b> &minus; Swing controls can be customized in a very easy way as visual apperance is independent of internal representation.</p></li>
+<li><p><b>Pluggable look-and-feel</b> &minus; SWING based GUI Application look and feel can be changed at run-time, based on available values.</p></li>
+</ul>
+<h1>SWING - Environment Setup</h1>
+<p>This section guides you on how to download and set up Java on your machine. Please use the following steps to set up the environment.</p>
+<p>Java SE is freely available from the link <a target="_blank" rel="nofollow" href="https://java.sun.com/javase/downloads/index_jdk5.jsp" >Download Java</a>. Hence, you can download a version based on your operating system.</p>
+<p>Follow the instructions to download Java and run the <b>.exe</b> to install Java on your machine. Once you have installed Java on your machine, you would need to set the environment variables to point to the correct installation directories.</p>
+<h2>Setting Up the Path for Windows 2000/XP</h2>
+<p>Assuming you have installed Java in <b>c:\Program Files\java\jdk</b> directory &minus;</p>
+<p><b>Step 1</b> &minus; Right-click on 'My Computer' and select 'Properties'.</p>
+<p><b>Step 2</b> &minus; Click the 'Environment variables' button under the 'Advanced' tab.</p>
+<p><b>Step 3</b> &minus; Alter the 'Path' variable so that it also contains the path to the Java executable. Example, if the path is currently set to <b>'C:\WINDOWS\SYSTEM32'</b>, then change your path to read <b>'C:\WINDOWS\SYSTEM32;c:\Program Files\java\jdk\bin'</b>.</p>
+<h2>Setting Up the Path for Windows 95/98/ME</h2>
+<p>Assuming you have installed Java in <b>c:\Program Files\java\jdk</b> directory &minus;</p>
+<p><b>Step 1</b> &minus; Edit the <b>'C:\autoexec.bat'</b> file and add the following line at the end: <b>'SET PATH=%PATH%;C:\Program Files\java\jdk\bin'</b>.</p>
+<h2>Setting Up the Path for Linux, UNIX, Solaris, FreeBSD</h2>
+<p>Environment variable PATH should be set to point to where the Java binaries have been installed. Refer to your Shell documentation if you have trouble doing this.</p>
+<p>Example, if you use <b><i>bash</i></b> as your shell, then you would add the following line to the end <b>'.bashrc: export PATH=/path/to/java:$PATH'</b>.</p>
+<h2>Popular Java Editors</h2>
+<p>To write your Java programs, you will need a text editor. There are even more sophisticated IDE available in the market. But for now, you can consider one of the following &minus;</p>
+<ul class="list">
+<li><p><b>Notepad</b> &minus; On Windows machine, you can use any simple text editor like Notepad (Recommended for this tutorial), TextPad.</p></li>
+<li><p><b>Netbeans</b> &minus; Netbeans is a Java IDE that is open source and free, which can be downloaded from <a target="_blank" rel="nofollow" href="https://netbeans.org/index.html" >https://www.netbeans.org/index.html</a>.</p></li>
+<li><p><b>Eclipse</b> &minus; Eclipse is also a Java IDE developed by the Eclipse open source community and can be downloaded from <a target="_blank" rel="nofollow" href="https://www.eclipse.org/" >https://www.eclipse.org/</a>.</p></li>
+</ul>
+<h1>SWING - Controls</h1>
+<p>Every user interface considers the following three main aspects &minus;</p>
+<ul class="list">
+<li><p><b>UI Elements</b> &minus; These are the core visual elements the user eventually sees and interacts with. GWT provides a huge list of widely used and common elements varying from basic to complex, which we will cover in this tutorial.</p></li>
+<li><p><b>Layouts</b> &minus; They define how UI elements should be organized on the screen and provide a final look and feel to the GUI (Graphical User Interface). This part will be covered in the Layout chapter.</p></li>
+<li><p><b>Behavior</b> &minus; These are the events which occur when the user interacts with UI elements. This part will be covered in the Event Handling chapter.</p></li>
+</ul>
+<img src="/swing/images/swing_class_hierarchy.jpg" alt="UI classes" />
+<p>Every SWING controls inherits properties from the following Component class hiearchy.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">S.No.</th>
+<th style="text-align:center;">Class &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_component.htm">Component</a>
+<p>A Component is the abstract base class for the non menu user-interface controls of SWING. Component represents an object with graphical representation</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_container.htm">Container</a>
+<p>A Container is a component that can contain other SWING components</p>
+</td>
+</tr>
+<tr><td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_jcomponent.htm">JComponent</a>
+<p>A JComponent is a base class for all SWING UI components. In order to use a SWING component that inherits from JComponent, the component must be in a containment hierarchy whose root is a top-level SWING container</p>
+</td>
+</tr>
+</table>
+<h2>SWING UI Elements</h2>
+<p>Following is the list of commonly used controls while designing GUI using SWING.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">S.No.</th>
+<th style="text-align:center;">Class &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_jlabel.htm">JLabel</a>
+<p>A JLabel object is a component for placing text in a container.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_jbutton.htm">JButton</a>
+<p>This class creates a labeled button.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_jcolorchooser.htm">JColorChooser</a>
+<p>A JColorChooser provides a pane of controls designed to allow a user to manipulate and select a color.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td><a href="/swing/swing_jcheckbox.htm">JCheck Box</a>
+<p>A JCheckBox is a graphical component that can be in either an <b>on</b> (true) or <b>off</b> (false) state.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td><a href="/swing/swing_jradiobutton.htm">JRadioButton</a>
+<p>The JRadioButton class is a graphical component that can be in either an <b>on</b> (true) or <b>off</b> (false) state. in a group.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">6</td>
+<td><a href="/swing/swing_jlist.htm">JList</a>
+<p>A JList component presents the user with a scrolling list of text items.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">7</td>
+<td><a href="/swing/swing_jcombobox.htm">JComboBox</a>
+<p>A JComboBox component presents the user with a to show up menu of choices.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">8</td>
+<td><a href="/swing/swing_jtextfield.htm">JTextField</a>
+<p>A JTextField object is a text component that allows for the editing of a single line of text.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">9</td>
+<td><a href="/swing/swing_jpasswordfield.htm">JPasswordField</a>
+<p>A JPasswordField object is a text component specialized for password entry.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">10</td>
+<td><a href="/swing/swing_jtextarea.htm">JTextArea</a>
+<p>A JTextArea object is a text component that allows editing of a multiple lines of text.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">11</td>
+<td><a href="/swing/swing_imageicon.htm">ImageIcon</a>
+<p>A ImageIcon control is an implementation of the Icon interface that paints Icons from Images</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">12</td>
+<td><a href="/swing/swing_jscrollbar.htm">JScrollbar</a>
+<p>A Scrollbar control represents a scroll bar component in order to enable the user to select from range of values.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">13</td>
+<td><a href="/swing/swing_joptionpane.htm">JOptionPane</a>
+<p>JOptionPane provides set of standard dialog boxes that prompt users for a value or informs them of something.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">14</td>
+<td><a href="/swing/swing_jfilechooser.htm">JFileChooser</a>
+<p>A JFileChooser control represents a dialog window from which the user can select a file.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">15</td>
+<td><a href="/swing/swing_jprogressbar.htm">JProgressBar</a>
+<p>As the task progresses towards completion, the progress bar displays the task's percentage of completion.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">16</td>
+<td><a href="/swing/swing_jslider.htm">JSlider</a>
+<p>A JSlider lets the user graphically select a value by sliding a knob within a bounded interval.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">17</td>
+<td><a href="/swing/swing_jspinner.htm">JSpinner</a>
+<p>A JSpinner is a single line input field that lets the user select a number or an object value from an ordered sequence.</p>
+</td>
+</tr>
+</table>
+<h1>SWING - Event Handling</h1>
+<p>In this chapter, you will learn about Events, its types, and also learn how to handle an event. Example is provided at the end of the chapter for better understanding.</p>
+<h2>What is an Event?</h2>
+<p>Change in the state of an object is known as <b>Event</b>, i.e., event describes the change in the state of the source. Events are generated as a result of user interaction with the graphical user interface components. For example, clicking on a button, moving the mouse, entering a character through keyboard, selecting an item from the list, and scrolling the page are the activities that causes an event to occur.</p>
+<h2>Types of Event</h2>
+<p>The events can be broadly classified into two categories &minus;</p>
+<ul class="list">
+<li><p><b>Foreground Events</b> &minus; These events require direct interaction of the user. They are generated as consequences of a person interacting with the graphical components in the Graphical User Interface. For example, clicking on a button, moving the mouse, entering a character through keyboard, selecting an item from list, scrolling the page, etc.</p></li>
+<li><p><b>Background Events</b> &minus; These events require the interaction of the end user. Operating system interrupts, hardware or software failure, timer expiration, and operation completion are some examples of background events.</p></li>
+</ul>
+<h2>What is Event Handling?</h2>
+<p>Event Handling is the mechanism that controls the event and decides what should happen if an event occurs. This mechanism has a code which is known as an event handler, that is executed when an event occurs.</p>
+<p>Java uses the Delegation Event Model to handle the events. This model defines the standard mechanism to generate and handle the events.</p>
+<p>The Delegation Event Model has the following key participants.</p>
+<ul class="list">
+<li><p><b>Source</b> &minus; The source is an object on which the event occurs. Source is responsible for providing information of the occurred event to it's handler. Java provide us with classes for the source object.</p></li>
+<li><p><b>Listener</b> &minus; It is also known as event handler. The listener is responsible for generating a response to an event. From the point of view of Java implementation, the listener is also an object. The listener waits till it receives an event. Once the event is received, the listener processes the event and then returns.</p></li>
+</ul>
+<p>The benefit of this approach is that the user interface logic is completely separated from the logic that generates the event. The user interface element is able to delegate the processing of an event to a separate piece of code.</p>
+<p>In this model, the listener needs to be registered with the source object so that the listener can receive the event notification. This is an efficient way of handling the event because the event notifications are sent only to those listeners who want to receive them.</p>
+<h2>Steps Involved in Event Handling</h2>
+<p><b>Step 1</b> &minus; The user clicks the button and the event is generated.</p>
+<p><b>Step 2</b> &minus; The object of concerned event class is created automatically and information about the source and the event get populated within the same object.</p>
+<p><b>Step 3</b> &minus; Event object is forwarded to the method of the registered listener class.</p>
+<p><b>Step 4</b> &minus; The method is gets executed and returns.</p>
+<h2>Points to Remember About the Listener</h2>
+<ul class="list">
+<li><p>In order to design a listener class, you have to develop some listener interfaces. These Listener interfaces forecast some public abstract callback methods, which must be implemented by the listener class.</p></li>
+<li><p>If you do not implement any of the predefined interfaces, then your class cannot act as a listener class for a source object.</p></li>
+</ul>
+<h2>Callback Methods</h2>
+<p>These are the methods that are provided by API provider and are defined by the application programmer and invoked by the application developer. Here the callback methods represent an event method. In response to an event, java jre will fire callback method. All such callback methods are provided in listener interfaces.</p>
+<p>If a component wants some listener to listen ot its events, the source must register itself to the listener.</p>
+<h2>Event Handling Example</h2>
+<p>Create the following Java program using any editor of your choice in say <b>D:/ &gt; SWING &gt; com &gt; tutorialspoint &gt; gui &gt;</b></p>
+<p><i>SwingControlDemo.java</i></p>
+<pre class="prettyprint notranslate">
+package com.tutorialspoint.gui;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class SwingControlDemo {
+   private JFrame mainFrame;
+   private JLabel headerLabel;
+   private JLabel statusLabel;
+   private JPanel controlPanel;
+
+   public SwingControlDemo(){
+      prepareGUI();
+   }
+   public static void main(String[] args){
+      SwingControlDemo swingControlDemo = new SwingControlDemo();  
+      swingControlDemo.showEventDemo();       
+   }
+   private void prepareGUI(){
+      mainFrame = new JFrame("Java SWING Examples");
+      mainFrame.setSize(400,400);
+      mainFrame.setLayout(new GridLayout(3, 1));
+
+      headerLabel = new JLabel("",JLabel.CENTER );
+      statusLabel = new JLabel("",JLabel.CENTER);        
+      statusLabel.setSize(350,100);
+      
+      mainFrame.addWindowListener(new WindowAdapter() {
+         public void windowClosing(WindowEvent windowEvent){
+            System.exit(0);
+         }        
+      });    
+      controlPanel = new JPanel();
+      controlPanel.setLayout(new FlowLayout());
+
+      mainFrame.add(headerLabel);
+      mainFrame.add(controlPanel);
+      mainFrame.add(statusLabel);
+      mainFrame.setVisible(true);  
+   }
+   private void showEventDemo(){
+      headerLabel.setText("Control in action: Button"); 
+
+      JButton okButton = new JButton("OK");
+      JButton submitButton = new JButton("Submit");
+      JButton cancelButton = new JButton("Cancel");
+
+      okButton.setActionCommand("OK");
+      submitButton.setActionCommand("Submit");
+      cancelButton.setActionCommand("Cancel");
+
+      okButton.addActionListener(new ButtonClickListener()); 
+      submitButton.addActionListener(new ButtonClickListener()); 
+      cancelButton.addActionListener(new ButtonClickListener()); 
+
+      controlPanel.add(okButton);
+      controlPanel.add(submitButton);
+      controlPanel.add(cancelButton);       
+
+      mainFrame.setVisible(true);  
+   }
+   private class ButtonClickListener implements ActionListener{
+      public void actionPerformed(ActionEvent e) {
+         String command = e.getActionCommand();  
+         
+         if( command.equals( "OK" ))  {
+            statusLabel.setText("Ok Button clicked.");
+         } else if( command.equals( "Submit" ) )  {
+            statusLabel.setText("Submit Button clicked."); 
+         } else {
+            statusLabel.setText("Cancel Button clicked.");
+         }  	
+      }		
+   }
+}
+</pre>
+<p>Compile the program using the command prompt. Go to <b>D:/ &gt; SWING</b> and type the following command.</p>
+<pre class="result notranslate">
+D:\AWT&gt;javac com\tutorialspoint\gui\SwingControlDemo.java
+</pre>
+<p>If no error occurs, it means the compilation is successful. Run the program using the following command.</p>
+<pre class="result notranslate">
+D:\AWT>java com.tutorialspoint.gui.SwingControlDemo
+</pre>
+<p>Verify the following output.</p>
+<img src="/swing/images/swing_button.jpg" alt="SWING  Event Handling"/>	
+<h1>SWING - Event Classes</h1>
+<p>Event classes represent the event. Java provides various Event classes, however, only those which are more frequently used will be discussed.</p>
+<h2>EventObject Class</h2>
+<p>It is the root class from which all event state objects shall be derived. All Events are constructed with a reference to the object, the <b>source</b>, that is logically deemed to be the object upon which the Event in question initially occurred upon. This class is defined in <b>java.util</b> package.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>java.util.EventObject</b> class &minus;</p>
+<pre class="result notranslate">
+public class EventObject
+   extends Object
+      implements Serializable
+</pre>
+<h2>Field</h2>
+<p>Following are the fields for <b>java.util.EventObject</b> class &minus;</p>
+<p><b>protected Object source</b> &minus; The object on which the Event initially occurred.</p>
+<h2>Class Constructors</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Constructor &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td>
+<p><b>EventObject(Object source)</b></p>
+<p>Constructs a prototypical Event.</p>
+</td>
+</tr>
+</table>
+<h2>Class Methods</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td>
+<p><b>Object getSource()</b></p>
+<p>The object on which the Event initially occurred.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td>
+<p><b>String toString()</b></p>
+<p>Returns a String representation of this EventObject.</p>
+</td>
+</tr>
+</table>
+<h2>Methods Inherited</h2>
+<p>This class inherits methods from the following class &minus;</p>
+<ul class="list">
+<li>java.lang.Object</li>
+</ul>
+<h2>SWING Event Classes</h2>
+<p>Following is the list of commonly used Event classes.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Class &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_awt_event.htm">AWTEvent</a>
+<p>It is the root event class for all SWING events. This class and its subclasses supercede the original <b>java.awt.Event</b> class.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_action_event.htm">ActionEvent</a>
+<p>The ActionEvent is generated when the button is clicked or the item of a list is double-clicked.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_input_event.htm">InputEvent</a>
+<p>The InputEvent class is the root event class for all component-level input events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td><a href="/swing/swing_key_event.htm">KeyEvent</a>
+<p>On entering the character the Key event is generated.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td><a href="/swing/swing_mouse_event.htm">MouseEvent</a>
+<p>This event indicates a mouse action occurred in a component.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">6</td>
+<td><a href="/swing/swing_window_event.htm">WindowEvent</a>
+<p>The object of this class represents the change in the state of a window.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">7</td>
+<td><a href="/swing/swing_adjustment_event.htm">AdjustmentEvent</a>
+<p>The object of this class represents the adjustment event emitted by Adjustable objects.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">8</td>
+<td><a href="/swing/swing_component_event.htm">ComponentEvent</a>
+<p>The object of this class represents the change in the state of a window.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">9</td>
+<td><a href="/swing/swing_container_event.htm">ContainerEvent</a>
+<p>The object of this class represents the change in the state of a window.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">10</td>
+<td><a href="/swing/swing_mousemotion_event.htm">MouseMotionEvent</a>
+<p>The object of this class represents the change in the state of a window.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">11</td>
+<td><a href="/swing/swing_paint_event.htm">PaintEvent</a>
+<p>The object of this class represents the change in the state of a window.</p>
+</td>
+</tr>
+</table>
+<h1>SWING - Event Listeners</h1>
+<p>Event listeners represent the interfaces responsible to handle events. Java provides various Event listener classes, however, only those which are more frequently used will be discussed. Every method of an event listener method has a single argument as an object which is the subclass of EventObject class. For example, mouse event listener methods will accept instance of MouseEvent, where MouseEvent derives from EventObject.</p>
+<h2>EventListner Interface</h2>
+<p>It is a marker interface which every listener interface has to extend. This class is defined in <b>java.util</b> package.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>java.util.EventListener</b> interface &minus;</p>
+<pre class="result notranslate">
+public interface EventListener
+</pre>
+<h2>SWING Event Listener Interfaces</h2>
+<p>Following is the list of commonly used event listeners.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Class &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_action_listener.htm">ActionListener</a>
+<p>This interface is used for receiving the action events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_component_listener.htm">ComponentListener</a>
+<p>This interface is used for receiving the component events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_item_listener.htm">ItemListener</a>
+<p>This interface is used for receiving the item events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td><a href="/swing/swing_key_listener.htm">KeyListener</a>
+<p>This interface is used for receiving the key events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td><a href="/swing/swing_mouse_listener.htm">MouseListener</a>
+<p>This interface is used for receiving the mouse events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">6</td>
+<td><a href="/swing/swing_window_listener.htm">WindowListener</a>
+<p>This interface is used for receiving the window events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">7</td>
+<td><a href="/swing/swing_adjustment_listener.htm">AdjustmentListener</a>
+<p>This interface is used for receiving the adjustment events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">8</td>
+<td><a href="/swing/swing_container_listener.htm">ContainerListener</a>
+<p>This interface is used for receiving the container events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">9</td>
+<td><a href="/swing/swing_mousemotion_listener.htm">MouseMotionListener</a>
+<p>This interface is used for receiving the mouse motion events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">10</td>
+<td><a href="/swing/swing_focus_listener.htm">FocusListener</a>
+<p>This interface is used for receiving the focus events.</p>
+</td>
+</tr>
+</table>
+<h1>SWING - Event Adapters</h1>
+<p>Adapters are abstract classes for receiving various events. The methods in these classes are empty. These classes exist as convenience for creating listener objects.</p>
+<h2>SWING Adapters</h2>
+<p>Following is the list of commonly used adapters while listening GUI events in SWING.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Adapter &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_focusadapter.htm">FocusAdapter</a>
+<p>An abstract adapter class for receiving focus events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_keyadapter.htm">KeyAdapter</a>
+<p>An abstract adapter class for receiving key events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_mouseadapter.htm">MouseAdapter</a>
+<p>An abstract adapter class for receiving mouse events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td><a href="/swing/swing_mousemotionadapter.htm">MouseMotionAdapter</a>
+<p>An abstract adapter class for receiving mouse motion events.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td><a href="/swing/swing_windowadapter.htm">WindowAdapter</a>
+<p>An abstract adapter class for receiving window events.</p>
+</td>
+</tr>
+</table>
+<h1>SWING - Layouts</h1>
+<p>Layout refers to the arrangement of components within the container. In another way, it could be said that layout is placing the components at a particular position within the container. The task of laying out the controls is done automatically by the Layout Manager.</p>
+<h2>Layout Manager</h2>
+<p>The layout manager automatically positions all the components within the container. Even if  you do not use the layout manager, the components are still positioned by the default layout manager. It is possible to lay out the controls by hand, however, it becomes very difficult because of the following two reasons.</p>
+<ul class="list">
+<li><p>It is very tedious to handle a large number of controls within the container.</p></li>
+<li><p>Usually, the width and height information of a component is not given when we need to arrange them.</p></li>
+</ul>
+<p>Java provides various layout managers to position the controls. Properties like size, shape, and arrangement varies from one layout manager to the other. When the size of the applet or the application window changes, the size, shape, and arrangement of the components also changes in response, i.e. the layout managers adapt to the dimensions of the appletviewer or the application window.</p>
+<p>The layout manager is associated with every Container object. Each layout manager is an object of the class that implements the LayoutManager interface.</p>
+<p>Following are the interfaces defining the functionalities of Layout Managers.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Interface &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_layoutmanager.htm">LayoutManager</a>
+<p>The LayoutManager interface declares those methods which need to be implemented by the class, whose object will act as a layout manager.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_layoutmanager2.htm">LayoutManager2</a>
+<p>The LayoutManager2 is the sub-interface of the LayoutManager. This interface is for those classes that know how to layout containers based on layout constraint object.</p>
+</td>
+</tr>
+</table>
+<h2>AWT Layout Manager Classes</h2>
+<p>Following is the list of commonly used controls while designing GUI using AWT.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th>LayoutManager &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_borderlayout.htm">BorderLayout</a>
+<p>The borderlayout arranges the components to fit in the five regions: east, west, north, south, and center.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_cardlayout.htm">CardLayout</a>
+<p>The CardLayout object treats each component in the container as a card. Only one card is visible at a time.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_flowlayout.htm">FlowLayout</a>
+<p>The FlowLayout is the default layout. It layout the components in a directional flow.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td><a href="/swing/swing_gridlayout.htm">GridLayout</a>
+<p>The GridLayout manages the components in the form of a rectangular grid.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td><a href="/swing/swing_gridbaglayout.htm">GridBagLayout</a>
+<p>This is the most flexible layout manager class. The object of GridBagLayout aligns the component vertically, horizontally, or along their baseline without requiring the components of the same size.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">6</td>
+<td><a href="/swing/swing_grouplayout.htm">GroupLayout</a>
+<p>The GroupLayout hierarchically groups the components in order to position them in a Container.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">7</td>
+<td><a href="/swing/swing_springlayout.htm">SpringLayout</a>
+<p>A SpringLayout positions the children of its associated container according to a set of constraints.</p>
+</td>
+</tr>
+</table>
+<h1>SWING - Menu Classes</h1>
+<p>As we know that every top-level window has a menu bar associated with it. This menu bar consists of various menu choices available to the end user. Further, each choice contains a list of options, which is called drop-down menus. Menu and MenuItem controls are subclass of MenuComponent class.</p>
+<h2>Menu Hierarchy</h2>
+<img src="/swing/images/swing_menuhiearchy.jpg" alt="Swing Menu Hiearchy" />
+<h2>Menu Controls</h2>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th style="text-align:center;">Class &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_jmenubar_control.htm">JMenuBar</a>
+<p>The JMenuBar object is associated with the top-level window.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_jmenuitem_control.htm">JMenuItem</a>
+<p>The items in the menu must belong to the JMenuItem or any of its subclass.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_jmenu_control.htm">JMenu</a>
+<p>The JMenu object is a pull-down menu component which is displayed from the menu bar.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td><a href="/swing/swing_jcheckboxmenuitem_control.htm">JCheckboxMenuItem</a>
+<p>JCheckboxMenuItem is the subclass of JMenuItem.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td><a href="/swing/swing_jradiobuttonmenuitem_control.htm">JRadioButtonMenuItem</a>
+<p>JRadioButtonMenuItem is the subclass of JMenuItem.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">6</td>
+<td><a href="/swing/swing_jpopupmenu_control.htm">JPopupMenu</a>
+<p>JPopupMenu can be dynamically popped up at a specified position within a component.</p>
+</td>
+</tr>
+</table>
+<h1>SWING - Containers</h1>
+<p>Containers are an integral part of SWING GUI components. A container provides a space where a component can be located. A Container in AWT is a component itself and it provides the capability to add a component to itself. Following are certain noticable points to be considered.</p>
+<ul class="list">
+<li><p>Sub classes of Container are called as Container. For example, JPanel, JFrame and JWindow.</p></li>
+<li><p>Container can add only a Component to itself.</p></li>
+<li><p>A default layout is present in each container which can be overridden using <b>setLayout</b> method.</p></li>
+</ul>
+<h2>SWING Containers</h2>
+<p>Following is the list of commonly used containers while designed GUI using SWING.</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:11%">Sr.No.</th>
+<th>Container &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><a href="/swing/swing_jpanel.htm">Panel</a>
+<p>JPanel is the simplest container. It provides space in which any other component can be placed, including other panels.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><a href="/swing/swing_jframe.htm">Frame</a>
+<p>A JFrame is a top-level window with a title and a border.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td><a href="/swing/swing_jwindow.htm">Window</a>
+<p>A JWindow object is a top-level window with no borders and no menubar.</p>
+</td>
+</tr>
+</table>
+<hr />
+<div class="pre-btn">
+<a href="/swing/swing_containers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/swing/swing_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/swing/swing_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/swing/swing_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/swing/swing_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/swing/swing_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/swing/swing_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/swing/swing_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class=ie ie8> <![endif]-->
+<!--[if IE 9]><html class=ie ie9> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Tableau Interview Questions and Answers</title>
+<meta name="description" content="Tableau Interview Questions and Answers, Tableau Overview - Learn Tableau in simple and easy steps starting from its Overview, Environment Setup, Get Started, Navigation, Design Flow, File Types, Data Types, Show Me, Visual Options, Getting Help, Data Terminolo..." />
+<meta name="keywords" content="Tableau, Tutorial, Overview, Environment Setup, Get Started, Navigation, Design Flow, File Types, Data Types, Show Me, Visual Options, Getting Help, Data Terminology, Data Sources, Custom Data View, Extracting Data, Fields..." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #e56c19 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #e56c19 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #e56c19 !important;}
+.submenu-item{ border-bottom: 2px solid #e56c19 !important; border-top: 2px solid #e56c19 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#e56c19; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/tableau/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/tableau/images/tableau-mini-logo.jpg" alt="Tableau Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Tutorial</li>
+<li><a href="/tableau/index.htm">Tableau - Home</a></li>
+<li><a href="/tableau/tableau_overview.htm">Tableau - Overview</a></li>
+<li><a href="/tableau/tableau_environment_setup.htm">Tableau - Environment Setup</a></li>
+<li><a href="/tableau/tableau_get_started.htm">Tableau - Get Started</a></li>
+<li><a href="/tableau/tableau_navigation.htm">Tableau - Navigation</a></li>
+<li><a href="/tableau/tableau_design_flow.htm">Tableau - Design Flow</a></li>
+<li><a href="/tableau/tableau_file_types.htm">Tableau - File Types</a></li>
+<li><a href="/tableau/tableau_data_types.htm">Tableau - Data Types</a></li>
+<li><a href="/tableau/tableau_show_me.htm">Tableau - Show Me</a></li>
+<li><a href="/tableau/tableau_data_terminology.htm">Tableau - Data Terminology</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Data Sources</li>
+<li><a href="/tableau/tableau_data_sources.htm">Tableau - Data Sources</a></li>
+<li><a href="/tableau/tableau_custom_data_view.htm">Tableau - Custom Data View</a></li>
+<li><a href="/tableau/tableau_extracting_data.htm">Tableau - Extracting Data</a></li>
+<li><a href="/tableau/tableau_fields_operations.htm">Tableau - Fields Operations</a></li>
+<li><a href="/tableau/tableau_editing_metadata.htm">Tableau - Editing Metadata</a></li>
+<li><a href="/tableau/tableau_data_joining.htm">Tableau - Data Joining</a></li>
+<li><a href="/tableau/tableau_data_blending.htm">Tableau - Data Blending</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Worksheets</li>
+<li><a href="/tableau/tableau_add_worksheets.htm">Tableau - Add Worksheets</a></li>
+<li><a href="/tableau/tableau_rename_worksheets.htm">Tableau - Rename Worksheet</a></li>
+<li><a href="/tableau/tableau_save_and_delete_worksheet.htm">Tableau - Save &amp; Delete Worksheet</a></li>
+<li><a href="/tableau/tableau_reorder_worksheet.htm">Tableau - Reorder Worksheet</a></li>
+<li><a href="/tableau/tableau_paged_workbook.htm">Tableau - Paged Workbook</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Calculations</li>
+<li><a href="/tableau/tableau_operators.htm">Tableau - Operators</a></li>
+<li><a href="/tableau/tableau_functions.htm">Tableau - Functions</a></li>
+<li><a href="/tableau/tableau_numeric_calculations.htm">Tableau - Numeric Calculations</a></li>
+<li><a href="/tableau/tableau_string_calculations.htm">Tableau - String Calculations</a></li>
+<li><a href="/tableau/tableau_date_calculations.htm">Tableau - Date Calculations</a></li>
+<li><a href="/tableau/tableau_table_calculations.htm">Tableau - Table Calculations</a></li>
+<li><a href="/tableau/tableau_lod_expressions.htm">Tableau - LOD Expressions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Sort &amp; Filters</li>
+<li><a href="/tableau/tableau_basic_sorting.htm">Tableau - Basic Sorting</a></li>
+<li><a href="/tableau/tableau_basic_filtering.htm">Tableau - Basic Filters</a></li>
+<li><a href="/tableau/tableau_quick_filters.htm">Tableau - Quick Filters</a></li>
+<li><a href="/tableau/tableau_context_filters.htm">Tableau - Context Filters</a></li>
+<li><a href="/tableau/tableau_condition_filters.htm">Tableau - Condition Filters</a></li>
+<li><a href="/tableau/tableau_top_filters.htm">Tableau - Top Filters</a></li>
+<li><a href="/tableau/tableau_filter_operations.htm">Tableau - Filter Operations </a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Charts</li>
+<li><a href="/tableau/tableau_bar_chart.htm">Tableau - Bar Chart</a></li>
+<li><a href="/tableau/tableau_line_chart.htm">Tableau - Line Chart</a></li>
+<li><a href="/tableau/tableau_pie_chart.htm">Tableau - Pie Chart</a></li>
+<li><a href="/tableau/tableau_crosstab.htm">Tableau - Crosstab</a></li>
+<li><a href="/tableau/tableau_scatter_plot.htm">Tableau - Scatter Plot</a></li>
+<li><a href="/tableau/tableau_bubble_chart.htm">Tableau - Bubble Chart</a></li>
+<li><a href="/tableau/tableau_bullet_graph.htm">Tableau - Bullet Graph</a></li>
+<li><a href="/tableau/tableau_box_plot.htm">Tableau - Box Plot</a></li>
+<li><a href="/tableau/tableau_tree_map.htm">Tableau - Tree Map</a></li>
+<li><a href="/tableau/tableau_bump_chart.htm">Tableau - Bump Chart</a></li>
+<li><a href="/tableau/tableau_gannt_chart.htm">Tableau - Gantt Chart</a></li>
+<li><a href="/tableau/tableau_histogram.htm">Tableau - Histogram</a></li>
+<li><a href="/tableau/tableau_motion_charts.htm">Tableau - Motion Charts</a></li>
+<li><a href="/tableau/tableau_waterfall_charts.htm">Tableau - Waterfall Charts</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Advanced</li>
+<li><a href="/tableau/tableau_dashboard.htm">Tableau - Dashboard</a></li>
+<li><a href="/tableau/tableau_formatting.htm">Tableau - Formatting</a></li>
+<li><a href="/tableau/tableau_forecasting.htm">Tableau - Forecasting</a></li>
+<li><a href="/tableau/tableau_trend_lines.htm">Tableau - Trend Lines</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Tableau Useful Resources</li>
+<li><a href="/tableau/tableau_questions_and_answers.htm">Tableau - Question Answers</a></li>
+<li><a href="/tableau/tableau_quick_guide.htm">Tableau - Quick Guide</a></li>
+<li><a href="/tableau/tableau_useful_resources.htm">Tableau - Useful Resources</a></li>
+<li><a href="/tableau/tableau_discussion.htm">Tableau - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Tableau - Questions and Answers</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/tableau/tableau_trend_lines.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/tableau/tableau_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these Tableau Interview Questions have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of SAS programming. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle"><label>	what is Tableau?</label><div class="toggle-content">
+<p>Tableau is a business intelligence software that allows anyone to connect to respective data, and then visualize and create interactive, sharable dashboards.</p></div></section>
+<section class="toggle"><label>	What is a data Source page?</label><div class="toggle-content">
+<p>A page where you can set up your data source. The Data Source page generally consists of four main areas: left pane, join area, preview area, and metadata area.</p></div></section>
+<section class="toggle"><label>	what is a extract is Tableau?</label><div class="toggle-content">
+<p>A saved subset of a data source that you can use to improve performance and analyze offline.</p></div></section>
+<section class="toggle"><label>	what is a format pane in Tableau?</label><div class="toggle-content">
+<p>A pane that contains formatting settings that control the entire worksheet, as well as individual fields in the view.</p></div></section>
+<section class="toggle"><label>	What is LOD expression in Tableau?</label><div class="toggle-content">
+<p>A syntax that supports aggregation at dimensionalities other than the view level. With level of detail expressions, you can attach one or more dimensions to any aggregate expression.</p></div></section>
+<section class="toggle"><label>	What is the difference between Quick Filter and Normal filter?</label><div class="toggle-content">
+<p>Normal Filter is used to restrict the data from database based on selected dimension or measure. But Quick Filters are used to give a chance to user for dynamically changing data members at run time.</p></div></section>
+<section class="toggle"><label>	What is Tableau Reader?</label><div class="toggle-content">
+<p>Tableau Reader is a free viewing application that lets anyone read and interact with packaged workbooks created by Tableau Desktop.</p></div></section>
+<section class="toggle"><label>Can we have multiple value selection in parameter?</label><div class="toggle-content">
+<p>No</p></div></section>
+<section class="toggle"><label>	Which join i sused in data blending?</label><div class="toggle-content">
+<p>There won't be any joins as such but we will just give the column references like primary and foreign key relation.</p></div></section>
+<section class="toggle"><label>	What are the possible reasons for slow performance in Tableau?</label><div class="toggle-content">
+<p>More Extracts, filters and depends on data sources.</p></div></section>
+<section class="toggle"><label>	What is the criteria to blend the data from multiple data sources.?</label><div class="toggle-content">
+<p>There should be a common dimension to blend the data source into single worksheet.</p></div></section>
+<section class="toggle"><label>	What is a Dimension?</label><div class="toggle-content">
+<p>Tableau treats any field containing qualitative, categorical information as a dimension. This includes any field with text or dates values.</p></div></section>
+<section class="toggle"><label>	What is a Measure?</label><div class="toggle-content">
+<p>A measure is a field that is a dependent on value of one or more dimensions. Tableau treats any field containing numeric (quantitative) information as a measure.</p></div></section>
+<section class="toggle"><label>	What does the extension .twbx represent in Tableau?</label><div class="toggle-content">
+<p>It is a file which represents Tableau Packaged Workbook, in which the .twb file grouped together with the datasources.</p></div></section>
+<section class="toggle"><label>	What are the types of filters in Tableau?</label><div class="toggle-content">
+<p>Custom Filters ,Context Filters, Normal Filters.</p></div></section>
+<section class="toggle"><label>	What is marks card in Tableau?</label><div class="toggle-content">
+<p>A card to the left of the view where you can drag fields to control mark properties such as type, color, size, shape, label, tooltip, and detail.</p></div></section>
+<section class="toggle"><label>	What are shelves in Tableau?</label><div class="toggle-content">
+<p>They are Named areas to the left and top of the view. You build views by placing fields onto the shelves. Some shelves are available only when you select certain mark types.</p></div></section>
+<section class="toggle"><label>	What is a Tableau workbook?</label><div class="toggle-content">
+<p>It is a  file with a .twb extension that contains one or more worksheets (and possibly also dashboards and stories).</p></div></section>
+<section class="toggle"><label> In Tableau what is a worksheet?</label><div class="toggle-content">
+<p>A sheet where you build views of your data by dragging fields onto shelves.</p></div></section>
+<section class="toggle"><label>	What is an alais in Tableau?</label><div class="toggle-content">
+<p>An alternative name that you can assign to a field or to a dimension member.</p></div></section>
+<section class="toggle"><label>	What is a context filter?</label><div class="toggle-content">
+<p>In a context filter the filter condition is applied first to the data source and then some other filters are applied only to the resulting records.</p></div></section>
+<section class="toggle"><label>	What is Dual Axis?</label><div class="toggle-content">
+<p>You can compare multiple measures using dual axes, which are two independent axes that are layered on top of each other.</p></div></section>
+<section class="toggle"><label>	What is a page shelf in Tableau?</label><div class="toggle-content">
+<p>The Pages shelf is used to control the display of output by choosing the sequence of display.	</p></div></section>
+<section class="toggle"><label>	What are the possible reasons for slow performance in Tableau?	</label><div class="toggle-content">
+<p>More Extracts, filters and depends on data sources.</p></div></section>
+<section class="toggle"><label>	What is table calculation in Tableau?</label><div class="toggle-content">
+<p>These are inbuilt calculations in tableau which we normally use to calculate Percentange chages.</p></div></section>
+<section class="toggle"><label>	What is data blending?</label><div class="toggle-content">
+<p>Data blending is used to blend data from multiple data sources on a single worksheet. The data is joined on common dimensions.</p></div></section>
+<section class="toggle"><label>	Can we have multiple value selection in parameter?</label><div class="toggle-content">
+<p>No</p></div></section>
+<section class="toggle"><label>	What is Connect live?</label><div class="toggle-content">
+<p>It Creates a direct connect to the data source and speed up access.</p></div></section>
+<section class="toggle"><label>	What is Import all data feature in Tableau?</label><div class="toggle-content">
+<p>It Imports the entire data source into Tableau’s fast data engine as an extract and saves it in the workbook.</p></div></section>
+<section class="toggle"><label>	What are parameters and when do you use it?</label><div class="toggle-content">
+<p>Parameters are dynamic values that can replace constant values in calculations.</p></div></section>
+<section class="toggle"><label>	What is TDE file in Tableau?</label><div class="toggle-content">
+<p>It refers to the file that contains data extracted from external sources like MS Excel, MS Access or CSV file.</p></div></section>
+<section class="toggle"><label>	What is a story in Tableau?</label><div class="toggle-content">
+<p>A story is a sheet that contains a sequence of worksheets or dashboards that work together to convey information.</p></div></section>
+<section class="toggle"><label>	What is a Published data source?</label><div class="toggle-content">
+<p>It contains connection information that is independent of any workbook and can be used by multiple workbooks.</p></div></section>
+<section class="toggle"><label>	What is a Embedded data source?</label><div class="toggle-content">
+<p>It contains connection information and is associated with a workbook.</p></div></section>
+<section class="toggle"><label>	when to use Joins versus Blending in Tableau?</label><div class="toggle-content">
+<p>If data resides in a single source,we use Joins but when your data is not in one place blending is used.</p></div></section>
+<section class="toggle"><label>	How to automate reports using Tableau software?</label><div class="toggle-content">
+<p>You need to publish report to tableau server, while publishing you will find one option to schedule reports.You just need to select the time when you want to refresh data.</p></div></section>
+<section class="toggle"><label>	what is Tableau Show me?</label><div class="toggle-content">
+<p>Show Me is used to apply a required view to the existing data in the worksheet. Those views can be a pie chart, scatter plot or a line chart.</p></div></section>
+<section class="toggle"><label>	what is a Tableau data pane?</label><div class="toggle-content">
+<p>A pane on the left side of the workbook that displays the fields of the data sources to which Tableau is connected.</p></div></section>
+<section class="toggle"><label>	What is a calculated field in Tableau?</label><div class="toggle-content">
+<p>A new field that you create by using a formula to modify the existing fields in your data source.	</p></div></section>
+<section class="toggle"><label>	What is  crosstab chart?</label><div class="toggle-content">
+<p>It is a text table view. Use text tables to display the numbers associated with dimension members.	</p></div></section>
+<section class="toggle"><label>	How to check the meatadata of a table?</label><div class="toggle-content">
+<p>In the menu Data -> New connection drag the table to the data pane to view its meatdata.	</p></div></section>
+<section class="toggle"><label>	How to create a column Alias?</label><div class="toggle-content">
+<p>In the menu Data -> New connection open the table metadata and click on the column name to create alias.</p></div></section>
+<section class="toggle"><label>	How to get current date and time?</label><div class="toggle-content">
+<p>Use the NOW() function.	</p></div></section>
+<section class="toggle"><label>	Ho wto check if a data is a of type date?</label><div class="toggle-content">
+<p>BY using the ISDATE() function.</p></div></section>
+<section class="toggle"><label>	GIve an expression to add 4 months to the date  014-03-12? 	</label><div class="toggle-content">
+<p>DATEADD('month', 3, #2014-03-12#) = 2004-07-15 12:00:00 AM</p></div></section>
+<section class="toggle"><label>	What does REPLACE function do in Tableau?</label><div class="toggle-content">
+<p>The REPLACE function searches a given string for a substring and replaces it with replacement string.</p></div></section>
+<section class="toggle"><label>	which function returns the number of items in a group?</label><div class="toggle-content">
+<p>The COUNT() function.</p></div></section>
+<section class="toggle"><label>	Which filter is used to get the top 10 values from a view?</label><div class="toggle-content">
+<p>TOP filter.	</p></div></section>
+<section class="toggle"><label>	What is a Gannt Chart?</label><div class="toggle-content">
+<p>A Gantt chart shows the progress of the value of a task or resource over a period of time. So Gantt chart a time dimension is an essential field.</p></div></section>
+<section class="toggle"><label>	What is Forecasting in Tableau?</label><div class="toggle-content">
+<p>Forecasting is about predicting the future value of a measure. There are many mathematical models for forecasting. Tableau uses the model known as exponential smoothing.</p></div></section>
+<section class="toggle"><label>	What is a Trendline in tableau?</label><div class="toggle-content">
+<p>Trend lines are used to predict the continuation of certain trend of a variable. It also helps to identify the correlation between two variables by observing the trend in both of them simultaneously. 	</p></div></section>
+<hr />
+<div class="pre-btn">
+<a href="/tableau/tableau_trend_lines.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/tableau/tableau_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/tableau/tableau_questions_and_answers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/tableau/tableau_questions_and_answers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/tableau/tableau_questions_and_answers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/tableau/tableau_questions_and_answers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/tableau/tableau_questions_and_answers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/tableau/tableau_questions_and_answers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

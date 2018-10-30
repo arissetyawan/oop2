@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ways To Speed Up Your Android Phone</title>
+<meta name="description" content="Ways To Speed Up Your Android Phone - No one likes a slow running smartphone, but over the time you may have noticed that your once-speedy Android device has slowed down considerably. There are plenty of tips and&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">Ways To Speed Up Your Android Phone</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img src="https://www.tutorialspoint.com/articles/wp-content/uploads/userphoto/2699.thumbnail.jpg" alt="Kalpana Gaur" width="47" height="48" class="photo" /></span>
+<a href="https://www.tutorialspoint.com/articles/author/kalpana-gaur" title="Posts by Kalpana Gaur" rel="author">Kalpana Gaur</a>, Posted on   September 18, 2017, filed in: <a href="https://www.tutorialspoint.com/articles/category/information-technology" rel="category tag">Information Technology</a>, <a href="https://www.tutorialspoint.com/articles/category/mobile-technologies" rel="category tag">Mobile</a>, <a href="https://www.tutorialspoint.com/articles/category/social-media" rel="category tag">Social Media</a>, <a href="https://www.tutorialspoint.com/articles/category/technology" rel="category tag">Technology</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p>No one likes a slow running smartphone, but over the time you may have noticed that your once-speedy Android device has slowed down considerably. There are plenty of tips and tricks to speed up your Android device and make it perform like new. Some of them are:</p>
+<h3>Clear your Cached Data:</h3>
+<p>Android apps are constantly caching small pieces of data which can build up over time in applications that typically affect the performance of the phone and you want to clear an app&#8217;s cached data, either to regain some used space or to try to fix a misbehaving app. To clear cache for all the Android apps in one go, follow these steps:<br />
+1. Head into the Settings menu of phone or tablet by pulling down the notification shade and tapping on the gear icon on the top.<br />
+2. Look for storage and tap on it.<br />
+3. Now tap on Cached Data.<br />
+4. Then the pop-up screen will appear for confirmation.<br />
+5. Tap on OK to completely erase all cached data from the system.</p>
+<p>While clearing the entire system cache can be helpful, sometimes you may not want to delete everything, and instead, if you choose to delete the cache for specific apps only, then Android systems allow this too. In order to delete the cache for specific apps follows these steps:<br />
+1. Go to the Settings menu of your device.<br />
+2. Search for Apps and tap on it.<br />
+3. Here you will find all the apps on your system, tap on the app for which you want to clear the data.<br />
+4. Tap on Clear Cache to wipe the cache data for the specific app only.</p>
+<p>Clearing cached data does not clear other data like logins or saved games, a number of free programs are also available through the Google Play store that can automate the process. Some of the most popular Free Apps for an android phone are App Cache Cleaner and Clean Master.</p>
+<p><b>Disable animations:</b></p>
+<p>One tweak that could speed up your device is disabling animations within the operating system. A hidden settings option in Android will give you access to commands you may have never known existed. These special settings allow you to do a variety of things, but they are meant for advanced users and shouldn&#8217;t be changed unless you know what you are doing.<br />
+1. Navigate to Settings in the app drawer on your phone<br />
+2. Tap About phone.<br />
+3. Tap the Build number 7 times; a message will appear that you have enabled Developer options.<br />
+4. Then Return to Settings and Tap Developer options.<br />
+5. Tap Windows animation scale and select “Animation off”.<br />
+6. Repeat Step 5 with Transition animation scale and Animator duration scale.</p>
+<p>This will disable animations that occur when you open, close, and switch between apps. Although the interface will look less polished, there should be less lag in performance.</p>
+<p><b> Disable Bloatware:</b></p>
+<p>Manufacturers and carriers often load Android phones with their own apps, these preloaded applications are known as bloatware. This bloatware takes up valuable storage space, clutters your list of installed apps, and may even run automatically at startup, draining battery power in the background.<br />
+Uninstalling these preinstalled apps has some downsides and may result in problems or instability, though, and in some cases may block your phone from getting updates. Furthermore, once these apps are gone, you might not be able to get them back. So, instead of uninstalling bloatware, it is recommended to disable or hide these apps. Android has a built-in way to do this, and it should work for most apps:<br />
+1. Open the Settings menu by pulling down the notification shade and tapping the little gear icon<br />
+2. Tap Apps, swipe over to all category and Scroll down until you find a preinstalled app that you want to disable and tap it.<br />
+3. On the app’s info page, there are two buttons at the top: Disable and Force Stop. Once you tap the Disable button, a popup will appear that tells you it may cause errors in other apps. Just Tap “Disable.<br />
+4. After disabling it, you may also want to tap the “Force Stop” and “Clear Data” buttons as well. You’ll see a warning, so ensure you aren’t disabling anything important.</p>
+<p>The above process only disables the useless software. It won’t appear in your app drawer and can’t run in the background, so this helps declutter your phone and save battery power. However, the bloatware apps remain installed on the device, taking up precious storage space. You can find disabled apps at the bottom of the all apps list. Tap a disabled app and tap the Enable button to re-enable it.</p>
+<p><b>Reclaim Drive and SD Card Space:</b></p>
+<p>Most Android devices have two different storage spaces: internal space where apps are stored and SD card where music, photos, and many of apps&#8217; settings are stored. The SD card is easy to clean up—just delete any music, photos, and videos you don&#8217;t need. If you see any folders that look like settings for apps you&#8217;ve removed, you can delete those too. You can even use an app like SD Maid or the Clean Master to clean up all that cruft for you.<br />
+Cleaning up internal storage is also pretty simple: just uninstall unnecessary apps to free up space and, hopefully, speed up your phone a little bit. You can also move the useful apps to your SD card which will free up that internal space and speed up your phone. To do this,<br />
+1. Just head to Settings &gt; Applications &gt; Manage Applications.<br />
+2. Select an app, and tap the &#8220;Move to SD Card&#8221; button to move it. Some apps won&#8217;t have this ability, but you should find that lots of your space-hogging apps have no problem living on your SD card.</p>
+<p>Of course, if you don&#8217;t have an SD card in your phone, you&#8217;ll just have to delete files and uninstall apps if you&#8217;re running out of space. Here’s how to free up space by uninstalling the apps:</p>
+<p>1. Navigate to Settings on your phone. You can find settings in the app drawer.<br />
+2. Tap Apps.<br />
+3. Find an app you wish to uninstall and tap on it. Each app displays the amount of storage it is using the app name so you’ll know how much you are freeing up.<br />
+4. Tap Uninstall and select OK to confirm.<br />
+5. Repeat Step 4 as needed until all unwanted apps are removed.</p>
+<p><b>Remove or Reduce Widgets and Live Wallpapers:</b></p>
+<p>Widgets are an amazing feature of the Android operating system that allows you to see and interact with apps on your home screen without needing to actually launch the app. While these can be helpful for finding information quickly which will save your time. But at the same time, they can consume battery of phone and drag the speed of your entire device down. It’s time to cut back or remove them entirely. Reducing the number of widgets, especially data-intensive ones like Facebook, will help your android phone run more smoothly and last longer. We can remove widgets from the home screen by long-pressing the one you wish to delete and drag it to the top of the screen.<br />
+Just like widgets, another cool Android feature is the option to use live wallpaper as your background. However live wallpapers too will slow down the device and drain the battery faster. That’s why, if possible, use normal wallpaper, and not any kind of live wallpaper. You can also change your wallpaper with a long press on the home screen.<br />
+To remove widgets from the home screen, simply long tap the one which you want to remove and then drag it to the top of the screen.</p>
+<p><b>Optimize Chrome Browser:</b></p>
+<p>With about 90 percent of Android users sticking with the Chrome browser, this feature going to help your mobile web browsing. Chrome for Android can significantly reduce cellular data usage by using proxy servers hosted at Google to optimize website content. Data Saver mode in Chrome for Android allows Google to compress the web pages by around 30 % and up to 50% for video, meaning less data usage and faster browsing. To enable it,<br />
+1. Navigate to the Chrome Browser.<br />
+2. Tap the overflow menu button in the upper-right corner.<br />
+3. Tap Settings.<br />
+4. Tap Data Saver.<br />
+5. Toggle the switch in the upper-right corner.</p>
+<p><b>Give It a Battery Boost:</b></p>
+<p>Lots of Android phones are notorious for sucking battery life quickly. If you haven&#8217;t dug through your settings in awhile, this is a good time to make sure you&#8217;re getting the most out of your battery as possible. This means to lower your screen’s brightness; kill anything you aren’t actively using, the Wi-Fi and Bluetooth off when not in use. Tweak these settings yourself or automate them with a program like Tasker or JuiceDefender for an easy, hassle-free battery life boost.</p>
+<p><b> Get software updates:</b></p>
+<p>To get the best performance from your Android phone or tablet you should make sure you&#8217;re running the latest version of the software &#8211; or at least the latest available to you. Manufacturers and carriers are continually pushing out new software updates to their devices. It is imperative that you be on the latest firmware as these updates usually include security and bug fixes, among other things that will improve the overall stability of your device. To check to see if there is an update available,<br />
+1. Open Android’s Settings, scroll down and then tap About Phone<br />
+2. Choose the &#8220;System updates&#8221; option.</p>
+<p>&#8220;By following these simple tips you could soon have an Android device that runs as good as new.&#8221;</p>
+	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> <a href="https://www.tutorialspoint.com/articles/ransomware-locky-a-new-threat-decoded-and-how-to-protect-yourself" rel="prev">&laquo; Previous</a></div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/what-is-the-foreseeable-future-of-wearable-devices" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/ways-to-speed-up-your-android-phone&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

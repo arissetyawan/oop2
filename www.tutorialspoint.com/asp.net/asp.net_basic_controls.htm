@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>ASP.NET - Basic Controls</title>
+<meta name="description" content="ASP.NET Basic Controls - Free ASP.NET Tutorials, Reference Manual, and Quick Guide for Beginners. Learn ASP.NET starting from Environment Setup, Basic Controls, Directives, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel control, LINQ, Database Access, Security, Debugging, Error Handling, Configuration and Deployment." />
+<meta name="keywords" content="Free, ASP.NET, Tutorial, Reference, Manual, Guide, Beginners, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel, control, LINQ, Database Access, Security, Debugging, Error, Handling, Configuration, Deployment." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #147dc2 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #147dc2 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #147dc2 !important;}
+.submenu-item{ border-bottom: 2px solid #147dc2 !important; border-top: 2px solid #147dc2 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#147dc2; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/asp.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/asp.net/images/asp.net-mini-logo.jpg" alt="ASP.NET Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">ASP.NET Tutorial</li>
+<li><a target="_top" href="/asp.net/index.htm">ASP.NET - Home</a></li>
+<li><a target="_top" href="/asp.net/asp.net_introduction.htm">ASP.NET - Introduction</a></li>
+<li><a target="_top" href="/asp.net/asp.net_environment_setup.htm">ASP.NET - Environment</a></li>
+<li><a target="_top" href="/asp.net/asp.net_life_cycle.htm">ASP.NET - Life Cycle</a></li>
+<li><a target="_top" href="/asp.net/asp.net_first_example.htm">ASP.NET - First Example</a></li>
+<li><a target="_top" href="/asp.net/asp.net_event_handling.htm">ASP.NET - Event Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_side.htm">ASP.NET - Server Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_controls.htm">ASP.NET - Server Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_html_server.htm">ASP.NET - HTML Server</a></li>
+<li><a target="_top" href="/asp.net/asp.net_client_side.htm">ASP.NET - Client Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_basic_controls.htm">ASP.NET - Basic Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_directives.htm">ASP.NET - Directives</a></li>
+<li><a target="_top" href="/asp.net/asp.net_managing_state.htm">ASP.NET - Managing State</a></li>
+<li><a target="_top" href="/asp.net/asp.net_validators.htm">ASP.NET - Validators</a></li>
+<li><a target="_top" href="/asp.net/asp.net_database_access.htm">ASP.NET - Database Access</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ado_net.htm">ASP.NET - ADO.net</a></li>
+<li><a target="_top" href="/asp.net/asp.net_file_uploading.htm">ASP.NET - File Uploading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ad_rotator.htm">ASP.NET - Ad Rotator</a></li>
+<li><a target="_top" href="/asp.net/asp.net_calenders.htm">ASP.NET - Calendars</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_views.htm">ASP.NET - Multi Views</a></li>
+<li><a target="_top" href="/asp.net/asp.net_panel_controls.htm">ASP.NET - Panel Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ajax_control.htm">ASP.NET - AJAX Control</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_sources.htm">ASP.NET - Data Sources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_binding.htm">ASP.NET - Data Binding</a></li>
+<li><a target="_top" href="/asp.net/asp.net_custom_controls.htm">ASP.NET - Custom Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_personalization.htm">ASP.NET - Personalization</a></li>
+<li><a target="_top" href="/asp.net/asp.net_error_handling.htm">ASP.NET - Error Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_debugging.htm">ASP.NET - Debugging</a></li>
+<li><a target="_top" href="/asp.net/asp.net_linq.htm">ASP.NET - LINQ</a></li>
+<li><a target="_top" href="/asp.net/asp.net_security.htm">ASP.NET - Security</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_caching.htm">ASP.NET - Data Caching</a></li>
+<li><a target="_top" href="/asp.net/asp.net_web_services.htm">ASP.NET - Web Services</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_threading.htm">ASP.NET - Multi Threading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_configuration.htm">ASP.NET - Configuration</a></li>
+<li><a target="_top" href="/asp.net/asp.net_deployment.htm">ASP.NET - Deployment</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">ASP.NET Resources</li>
+<li><a target="_top" href="/asp.net/asp.net_quick_guide.htm">ASP.NET - Quick Guide</a></li>
+<li><a target="_top" href="/asp.net/asp.net_useful_resources.htm">ASP.NET - Useful Resources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_discussion.htm">ASP.NET - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>ASP.NET - Basic Controls</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_client_side.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_directives.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In this chapter, we will discuss the basic controls available in ASP.NET.</p>
+<h2>Button Controls</h2>
+<p>ASP.NET provides three types of button control:</p>
+<ul class="list">
+<li><p><b>Button</b> : It displays text within a rectangular area.</p></li>
+<li><p><b>Link Button</b> : It displays text that looks like a hyperlink.</p></li>
+<li><p><b>Image Button</b> : It displays an image.</p></li>
+</ul>
+<p>When a user clicks a button, two events are raised: Click and Command.</p>
+<p>Basic syntax of button control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Click" / &gt;
+</pre>
+<p>Common properties of the button control:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text displayed on the button. This is for button and link button controls only.</td>
+</tr>
+<tr>
+<td>ImageUrl</td>
+<td>For image button control only. The image to be displayed for the button.</td>
+</tr>
+<tr>
+<td>AlternateText</td>
+<td>For image button control only. The text to be displayed if the browser cannot display the image.</td>
+</tr>
+<tr>
+<td>CausesValidation</td>
+<td>Determines whether page validation occurs when a user clicks the button. The default is true.</td>
+</tr>
+<tr>
+<td>CommandName</td>
+<td>A string value that is passed to the command event when a user clicks the button.</td>
+</tr>
+<tr>
+<td>CommandArgument</td>
+<td>A string value that is passed to the command event when a user clicks the button.</td>
+</tr>
+<tr>
+<td>PostBackUrl</td>
+<td>The URL of the page that is requested when the user clicks the button.</td>
+</tr>
+</table>
+<h2>Text Boxes and Labels</h2>
+<p>Text box controls are typically used to accept input from the user. A text box control can accept one or more lines of text depending upon the settings of the TextMode attribute.</p>
+<p>Label controls provide an easy way to display text which can be changed from one execution of a page to the next. If you want to display text that does not change, you use the literal text.</p>
+<p>Basic syntax of text control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:TextBox ID="txtstate" runat="server" &gt;&lt;/asp:TextBox&gt;
+</pre>
+<p>Common Properties of the Text Box and Labels:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>TextMode</td>
+<td>Specifies the type of text box. SingleLine creates a standard text box, MultiLIne creates a text box that accepts more than one line of text and the Password causes the characters that are entered to be masked. The default is SingleLine.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text content of the text box.</td>
+</tr>
+<tr>
+<td>MaxLength</td>
+<td>The maximum number of characters that can be entered into the text box.</td>
+</tr>
+<tr>
+<td>Wrap</td>
+<td>It determines whether or not text wraps automatically for multi-line text box; default is true.</td>
+</tr>
+<tr>
+<td>ReadOnly</td>
+<td>Determines whether the user can change the text in the box; default is false, i.e., the user can not change the text.</td>
+</tr>
+<tr>
+<td>Columns</td>
+<td>The width of the text box in characters. The actual width is determined based on the font that is used for the text entry.</td>
+</tr>
+<tr>
+<td>Rows</td>
+<td>The height of a multi-line text box in lines. The default value is 0, means a single line text box.</td>
+</tr>
+</table>
+<p>The mostly used attribute for a label control is 'Text', which implies the text displayed on the label.</p>
+<h2>Check Boxes and Radio Buttons</h2>
+<p>A check box displays a single option that the user can either check or uncheck and radio buttons present a group of options from which the user can select just one option.</p>
+<p>To create a group of radio buttons, you specify the same name for the GroupName attribute of each radio button in the group. If more than one group is required in a single form, then specify a different group name for each group.</p>
+<p>If you want check box or radio button to be selected when the form is initially displayed, set its Checked attribute to true. If the Checked attribute is set to true for multiple radio buttons in a group, then only the last one is considered as true.</p>
+<p>Basic syntax of check box:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:CheckBox ID= "chkoption" runat= "Server"&gt; 
+&lt;/asp:CheckBox&gt;
+</pre>
+<p>Basic syntax of radio button:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:RadioButton ID= "rdboption" runat= "Server"&gt; 
+&lt;/asp: RadioButton&gt;
+</pre>
+<p>Common properties of check boxes and radio buttons:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text displayed next to the check box or radio button.</td>
+</tr>
+<tr>
+<td>Checked</td>
+<td>Specifies whether it is selected or not, default is false.</td>
+</tr>
+<tr>
+<td>GroupName</td>
+<td>Name of the group the control belongs to.</td>
+</tr>
+</table>
+<h2>List Controls</h2>
+<p>ASP.NET provides the following controls</p>
+<ul class="list">
+<li>Drop-down list,</li>
+<li>List box,</li>
+<li>Radio button list,</li>
+<li>Check box list,</li>
+<li>Bulleted list.</li>
+</ul>
+<p>These control let a user choose from one or more items from the list. List boxes and drop-down lists contain one or more list items. These lists can be loaded either by code or by the ListItemCollection editor.</p>
+<p>Basic syntax of list box control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True"    OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"&gt;
+&lt;/asp:ListBox&gt;
+</pre>
+<p>Basic syntax of drop-down list control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"   OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"&gt;
+&lt;/asp:DropDownList&gt;
+</pre>
+<p>Common properties of list box and drop-down Lists:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Items</td>
+<td>The collection of ListItem objects that represents the items in the control. This property returns an object of type ListItemCollection.</td>
+</tr>
+<tr>
+<td>Rows</td>
+<td>Specifies the number of items displayed in the box. If actual list contains more rows than displayed then a scroll bar is added.</td>
+</tr>
+<tr>
+<td>SelectedIndex</td>
+<td>The index of the currently selected item. If more than one item is selected, then the index of the first selected item. If no item is selected, the value of this property is -1.</td>
+</tr>
+<tr>
+<td>SelectedValue</td>
+<td>The value of the currently selected item. If more than one item is selected, then the value of the first selected item. If no item is selected, the value of this property is an empty string ("").</td>
+</tr>
+<tr>
+<td>SelectionMode</td>
+<td>Indicates whether a list box allows single selections or multiple selections.</td>
+</tr>
+</table>
+<p>Common properties of each list item objects:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text displayed for the item.</td>
+</tr>
+<tr>
+<td>Selected</td>
+<td>Indicates whether the item is selected.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>A string value associated with the item.</td>
+</tr>
+</table>
+<p>It is important to notes that:</p>
+<ul class="list">
+<li><p>To work with the items in a drop-down list or list box, you use the Items property of the control. This property returns a ListItemCollection object which contains all the items of the list.</p></li>
+<li><p>The SelectedIndexChanged event is raised when the user selects a different item from a drop-down list or list box.</p></li>
+</ul>
+<h2>The ListItemCollection</h2>
+<p>The ListItemCollection object is a collection of ListItem objects. Each ListItem object represents one item in the list. Items in a ListItemCollection are numbered from 0.</p>
+<p>When the items into a list box are loaded using strings like:  lstcolor.Items.Add("Blue"), then both the Text and Value properties of the list item are set to the string value you specify. To set it differently you must create a list item object and then add that item to the collection.</p>
+<p>The ListItemCollection Editor is used to add item to a drop-down list or list box. This is used to create a static list of items. To display the collection editor, select edit item from the smart tag menu, or select the control and then click the ellipsis button from the Item property in the properties window.</p>
+<p>Common properties of ListItemCollection:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Item(integer)</td>
+<td>A  ListItem object that represents the item at the specified index.</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>The number of items in the collection.</td>
+</tr>
+</table>
+<p>Common methods of ListItemCollection:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Methods</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Add(string)</td>
+<td>Adds a new item at the end of the collection and assigns the string parameter to the Text property of the item.</td>
+</tr>
+<tr>
+<td>Add(ListItem)</td>
+<td>Adds a new item at the end of the collection.</td>
+</tr>
+<tr>
+<td>Insert(integer, string)</td>
+<td>Inserts an item at the specified index location in the collection, and assigns string parameter to the text property of the item.</td>
+</tr>
+<tr>
+<td>Insert(integer, ListItem)</td>
+<td>Inserts the item at the specified index location in the collection.</td>
+</tr>
+<tr>
+<td>Remove(string)</td>
+<td>Removes the item with the text value same as the string.</td>
+</tr>
+<tr>
+<td>Remove(ListItem)</td>
+<td>Removes the specified item.</td>
+</tr>
+<tr>
+<td>RemoveAt(integer)</td>
+<td>Removes the item at the specified index as the integer.</td>
+</tr>
+<tr>
+<td>Clear</td>
+<td>Removes all the items of the collection.</td>
+</tr>
+<tr>
+<td>FindByValue(string)</td>
+<td>Returns the item whose value is same as the string.</td>
+</tr>
+<tr>
+<td>FindByValue(Text)</td>
+<td>Returns the item whose text is same as the string.</td>
+</tr>
+</table>
+<h2>Radio Button list and Check Box list</h2>
+<p>A radio button list presents a list of mutually exclusive options.  A check box list presents a list of independent options. These controls contain a collection of ListItem objects that could be referred to through the Items property of the control.</p>
+<p>Basic syntax of radio button list:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" 
+   OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged"&gt;
+&lt;/asp:RadioButtonList&gt;
+</pre>
+<p>Basic syntax of check box list:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="True" 
+   OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged"&gt;
+&lt;/asp:CheckBoxList&gt;
+</pre>
+<p>Common properties of check box and radio button lists:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>RepeatLayout</td>
+<td>This attribute specifies whether the table tags or the normal html flow to use while formatting the list when it is rendered. The default is Table.</td>
+</tr>
+<tr>
+<td>RepeatDirection</td>
+<td>It specifies the direction in which the controls to be repeated. The values available are Horizontal and Vertical. Default is Vertical.</td>
+</tr>
+<tr>
+<td>RepeatColumns</td>
+<td>It specifies the number of columns to use when repeating the controls; default is 0.</td>
+</tr>
+</table>
+<h2>Bulleted lists and Numbered lists</h2>
+<p>The bulleted list control creates bulleted lists or numbered lists. These controls contain a collection of ListItem objects that could be referred to through the Items property of the control.</p>
+<p>Basic syntax of a bulleted list:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:BulletedList ID="BulletedList1" runat="server"&gt;
+&lt;/asp:BulletedList&gt;
+</pre>
+<p>Common properties of the bulleted list:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BulletStyle</td>
+<td>This property specifies the style and looks of the bullets, or numbers.</td>
+</tr>
+<tr>
+<td>RepeatDirection</td>
+<td>It specifies the direction in which the controls to be repeated. The values available are Horizontal and Vertical. Default is Vertical.</td>
+</tr>
+<tr>
+<td>RepeatColumns</td>
+<td>It specifies the number of columns to use when repeating the controls; default is 0.</td>
+</tr>
+</table>
+<h2>HyperLink Control</h2>
+<p>The HyperLink control is like the HTML &lt;a&gt; element.</p>
+<p>Basic syntax for a hyperlink control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:HyperLink ID="HyperLink1" runat="server"&gt;
+   HyperLink
+&lt;/asp:HyperLink&gt;
+</pre>
+<p>It has the following important properties:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ImageUrl</td>
+<td>Path of the image to be displayed by the control.</td>
+</tr>
+<tr>
+<td>NavigateUrl</td>
+<td>Target link URL.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text to be displayed as the link.</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>The window or frame which loads the linked page.</td>
+</tr>
+</table>
+<h2>Image Control</h2>
+<p>The image control is used for displaying images on the web page, or some alternative text, if the image is not available.</p>
+<p>Basic syntax for an image control:</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Image ID="Image1" runat="server"&gt;
+</pre>
+<p>It has the following important properties:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AlternateText</td>
+<td>Alternate text to be displayed in absence of the image.</td>
+</tr>
+<tr>
+<td>ImageAlign</td>
+<td>Alignment options for the control.</td>
+</tr>
+<tr>
+<td>ImageUrl</td>
+<td>Path of the image to be displayed by the control.</td>
+</tr>
+</table>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_client_side.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/asp.net/pdf/asp.net_basic_controls.pdf" title="ASP.NET - Basic Controls" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_directives.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/asp.net/asp.net_basic_controls.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_basic_controls.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_basic_controls.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/asp.net/asp.net_basic_controls.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_basic_controls.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_basic_controls.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

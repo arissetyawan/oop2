@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>PL/SQL Interview Questions - tutorialspoint</title>
+<meta name="description" content="PL/SQL Interview Questions - Learn PL/SQL programming in simple and easy steps starting with PL/SQL syntax, Environment Setup, Operators, Transactions, Date and Time, data types, variables, constants, records, conditional statements, iterative statements, cursors, procedures, functions, exception handling, triggers, packages, collections, external procedures, arrays, strings, dbms output." />
+<meta name="keywords" content="PL/SQL, syntax, Environment Setup, Operators, Transactions, Date and Time, data types, variables, constants, records, conditional statements, iterative statements, cursors, procedures, functions, exception handling, triggers, packages, collections, external procedures, arrays, strings, dbms output." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #d02023 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #d02023 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #d02023 !important;}
+.submenu-item{ border-bottom: 2px solid #d02023 !important; border-top: 2px solid #d02023 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#d02023; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/plsql/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/plsql/images/plsql-mini-logo.jpg" alt="PL/SQL Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">PL/SQL Tutorial</li>
+<li><a href="/plsql/index.htm">PL/SQL - Home</a></li>
+<li><a href="/plsql/plsql_overview.htm">PL/SQL - Overview</a></li>
+<li><a href="/plsql/plsql_environment_setup.htm">PL/SQL - Environment</a></li>
+<li><a href="/plsql/plsql_basic_syntax.htm">PL/SQL - Basic Syntax</a></li>
+<li><a href="/plsql/plsql_data_types.htm">PL/SQL - Data Types</a></li>
+<li><a href="/plsql/plsql_variable_types.htm">PL/SQL - Variables</a></li>
+<li><a href="/plsql/plsql_constants.htm">PL/SQL - Constants and Literals</a></li>
+<li><a href="/plsql/plsql_operators.htm">PL/SQL - Operators</a></li>
+<li><a href="/plsql/plsql_conditional_control.htm">PL/SQL - Conditions</a></li>
+<li><a href="/plsql/plsql_loops.htm">PL/SQL - Loops </a></li>
+<li><a href="/plsql/plsql_strings.htm">PL/SQL - Strings</a></li>
+<li><a href="/plsql/plsql_arrays.htm">PL/SQL - Arrays</a></li>
+<li><a href="/plsql/plsql_procedures.htm">PL/SQL - Procedures</a></li>
+<li><a href="/plsql/plsql_functions.htm">PL/SQL - Functions</a></li>
+<li><a href="/plsql/plsql_cursors.htm">PL/SQL - Cursors</a></li>
+<li><a href="/plsql/plsql_records.htm">PL/SQL - Records</a></li>
+<li><a href="/plsql/plsql_exceptions.htm">PL/SQL - Exceptions</a></li>
+<li><a href="/plsql/plsql_triggers.htm">PL/SQL - Triggers</a></li>
+<li><a href="/plsql/plsql_packages.htm">PL/SQL - Packages</a></li>
+<li><a href="/plsql/plsql_collections.htm">PL/SQL - Collections</a></li>
+<li><a href="/plsql/plsql_transactions.htm">PL/SQL - Transactions</a></li>
+<li><a href="/plsql/plsql_date_time.htm">PL/SQL - Date &amp; Time</a></li>
+<li><a href="/plsql/plsql_dbms_output.htm">PL/SQL - DBMS Output</a></li>
+<li><a href="/plsql/plsql_object_oriented.htm">PL/SQL - Object Oriented</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">PL/SQL Useful Resources</li>
+<li><a href="/plsql/plsql_questions_answers.htm">PL/SQL - Questions and Answers</a></li>
+<li><a href="/plsql/plsql_quick_guide.htm">PL/SQL - Quick Guide</a></li>
+<li><a href="/plsql/plsql_useful_resources.htm">PL/SQL - Useful Resources</a></li>
+<li><a href="/plsql/plsql_discussion.htm">PL/SQL - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>PL/SQL Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/plsql/plsql_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/plsql/plsql_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>PL/SQL Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>PL/SQL</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> What is the purpose of the PL/SQL language?</label>
+<div class="toggle-content">
+<p>PL/SQL is an extension of SQL. SQL is non-procedural. PL/SQL is a procedural language designed by oracle to overcome the limitations that exist in SQL.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>Routines written in PL/SQL can be called in Oracle call interface, Java, Pro*C/C++, COBOL etc.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>PL/SQL does not have data types or variables.</p></label>
+<div class="toggle-content">
+<p>False. PL/SQL has all features of a structured programming language including data types, variables, subroutines, modules and procedural constructs.</p>
+</div>
+</section>
+<section class="toggle">
+<label> State few notable characteristics of PL/SQL.</label>
+<div class="toggle-content">
+<ul class="list"> 
+<li><p>Block-structured language.</p></li>
+<li><p>Stored procedures help better sharing of application.</p></li>
+<li><p>Portable to all environments that support Oracle.</p></li>
+<li><p>Integration with the Oracle data dictionary.</p></li>
+</div>
+</section>
+<section class="toggle">
+<label> Name few schema objects that can be created using PL/SQL?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>Stored procedures and functions</li>
+<li>Packages</li>
+<li>Triggers</li>
+<li>Cursors</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> State some features or programming constructs supported by PL/SQL. </label>
+<div class="toggle-content">
+<ul class="list">
+<li>Variables and constants</li>
+<li>Embedded SQL support</li>
+<li>Flow control</li>
+<li>Cursor management</li>
+<li>Exception handling</li>
+<li>Stored procedures and packages</li>
+<li>Triggers</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the three basic sections of a PL/SQL block?</label>
+<div class="toggle-content">
+<ul class="list">
+<li>Declaration section</li>
+<li>Execution section</li>
+<li>Exception section</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is wrong in the following assignment statement?<p>balance = balance + 2000;</p></label>
+<div class="toggle-content">
+<p>Use of wrong assignment operator. The correct syntax is: balance :=  balance + 2000;</p>
+</div>
+</section>
+<section class="toggle">
+<label> Write a single statement that concatenates the words ‘Hello’ and ‘World’ and assign it in a variable named greeting.</label>
+<div class="toggle-content">
+<p>greeting := ‘Hello’ || ‘World’;</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which operator has the highest precedence among the following &minus; <p>AND, NOT, OR?</p></label>
+<div class="toggle-content">
+<p>NOT</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which of the following operator has the lowest precedence among the following &minus;<p>**, OR, NULL ?</p></label>
+<div class="toggle-content">
+<p>OR</p>
+</div>
+</section>
+<section class="toggle">
+<label> What does the colon sign (: ) implies in the following statement?<p>:deficit := balance – loan;</p></label>
+<div class="toggle-content">
+<p>The colon (: )sign implies that the variable  :deficit is an external variable.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of %type data type? Explain with example.</label>
+<div class="toggle-content">
+<p>It assigns a variable the same data type used by the column, for which the variable is created. For example,</p>
+<p>dcode := dept.detpno%type;</p>
+<p>The variable dcode is created with the same data type as that of the deptno column of the dept table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of %rowtype data type? Explain with example.</label>
+<div class="toggle-content">
+<p>It declares a composed variable that is equivalent to the row of a table. After the variable is created, the fields of the table can be accessed, using the name of this variable.</p>
+<h3>For example</h3>
+<p>emptype := emp%rowtype;</p>
+<p>name := emptype.empname;</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a PL/SQL package?</label>
+<div class="toggle-content">
+<p>A package is a file that groups functions, cursors, stored procedures, and variables in one place.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a trigger?</label>
+<div class="toggle-content">
+<p>A trigger is a PL/SQL program that is stored in the database and executed immediately before or after the INSERT, UPDATE, and DELETE commands.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the PL/SQL cursors?</label>
+<div class="toggle-content">
+<p>Oracle uses workspaces to execute the SQL commands. In other words, when Oracle processes a SQL command, it opens an area in the memory called Private SQL Area. A cursor is an identifier for this area. It allows programmers to name this area and access it’s information.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.
+<p>PL/SQL engine is part of Oracle Server.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.
+<p>The BEGIN declaration starts the variable declaration sections of a PL/SQL block.</p></label>
+<div class="toggle-content">
+<p>False. The BEGIN declaration starts the execution section.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>The PL/SQL engine executes the procedural commands and passes the SQL commands for the Oracle server to process.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.
+<p>PL/SQL supports the CREATE command.</p></label>
+<div class="toggle-content">
+<p>False. PL/SQL doesn’t support the data definition commands like CREATE.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is returned by the cursor attribute SQL%ROWCOUNT?</label>
+<div class="toggle-content">
+<p>It returns the number of rows that are processed by a SQL statement.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is returned by the cursor attribute SQL%FOUND?</label>
+<div class="toggle-content">
+<p>It returns the Boolean value TRUE if at least one row was processed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is returned by the cursor attribute SQL%NOTFOUND?</label>
+<div class="toggle-content">
+<p>It returns the Boolean value TRUE if no rows were processed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which command/commands allow iteration a use of loops in a PL/SQL block?</label>
+<div class="toggle-content">
+<p>LOOP command, FOR.. LOOP command, WHILE command.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference in execution of triggers and stored procedures?</label>
+<div class="toggle-content">
+<p>A trigger is automatically executed without any action required by the user, whereas, a stored procedure needs to be explicitly invoked.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the uses of triggers?</label>
+<div class="toggle-content">
+<p>Basically triggers are used to create consistencies, access restriction and implement securities to the database. Triggers are also used for &minus;</p>
+<ul class="list">
+<li><p>Creating validation mechanisms involving searches in multiple tables</p></li>
+<li><p>Creating logs to register the use of a table</p></li>
+<li><p>Update other tables as a result of inclusion or changes in the current table.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.
+<p>Triggers can be associated to a view.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.
+<p>When a trigger is associated to a view, the base table triggers are normally disabled.</p></label>
+<div class="toggle-content">
+<p>False. When a trigger is associated to a view, the base table triggers are normally enabled.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>A trigger can perform the role of a constraint, forcing an integrity rule.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.
+<p>A trigger can execute the COMMIT, ROLLBACK, or SAVEPOINT commands.</p></label>
+<div class="toggle-content">
+<p>A trigger cannot execute the COMMIT, ROLLBACK, or SAVEPOINT commands.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of a WHEN clause in a trigger?</label>
+<div class="toggle-content">
+<p> A WHEN clause specifies the condition that must be true for the trigger to be triggered.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>Statement level triggers are triggered only once.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of the optional argument [OR REPLACE] in a CREATE TRIGGER command?</label>
+<div class="toggle-content">
+<p>The optional argument [OR REPLACE] in a CREATE TRIGGER command re-creates an existing trigger. Using this option allows changing the definition of an existing trigger without having to delete it first.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>INSTEAD OF is a valid option only for triggers in a table.</p></label>
+<div class="toggle-content">
+<p>False. INSTEAD OF is a valid option only for views. INSTEAD OF trigger cannot be specified in a table.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Write a statement to disable a trigger named update_marks.</label>
+<div class="toggle-content">
+<p>ALTER TRIGGER update_marks DISABLE;</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which command is used to delete a trigger?</label>
+<div class="toggle-content">
+<p>DROP TRIGGER command.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which command is used to delete a procedure?</label>
+<div class="toggle-content">
+<p>DROP PROCEDURE command.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between a function and a stored procedure?</label>
+<div class="toggle-content">
+<p>A function returns a value and a stored procedure doesn’t return a value.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you declare a user-defined exception?</label>
+<div class="toggle-content">
+<p>User defined exceptions are declared under the DECLARE section, with the keyword EXCEPTION. Syntax &minus;</p>
+<p>&lt;exception_name&gt; EXCEPTION;</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by explicit cursors?</label>
+<div class="toggle-content">
+<p>Explicit cursors are defined explicitly using the CURSOR statement, with a general syntax &minus;</p>
+<p>CURSOR cursor_name [(parameters)] IS query_expression;</p>
+<p>It allows processing queries that return multiple rows.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the steps that need to be performed to use an explicit cursor? Discuss briefly.</label>
+<div class="toggle-content">
+<p>The steps that need to be performed on explicit cursor are &minus;</p>
+<ul class="list">
+<li><p><b>DECLARE &minus;</b> assigns a name to the cursor and defines the structure of query within it.</p></li>
+<li><p><b>OPEN &minus;</b> executes the query, whereby the rows returned by the query are available for fetching.</p></li>
+<li><p><b>FETCH &minus;</b> assigns values from the current row (cursor position) into specified variables.</p></li>
+<li><p><b>CLOSE &minus;</b> releases the memory space.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> PL/SQL packages usually have two parts. What are these two parts?</label>
+<div class="toggle-content">
+<p>PL/SQL packages have two parts &minus;</p>
+<ul class="list">
+<li><p>Specification part &minus; where the interface to the application are defined.</p></li>
+<li><p>Body part &minus; where the implementation of the specification are defined.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Which command(s) are used for creating PL/SQL packages?</label>
+<div class="toggle-content">
+<p>CREATE PACKAGE command is used for creating the specification part. CREATE PACKAGE BODY command is used for creating the body part.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you refer to the types, objects and subprograms declared within a package?</label>
+<div class="toggle-content">
+<p>The types, objects, and subprograms declared within a package are referred to using the dot notation as &minus;</p>
+<p>package_name.type_name</p>
+<p>package_name.object_name</p>
+<p>package_name.subprogram_name</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>PL/SQL allows subprogram overloading feature within a package.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which command is used to delete a package?</label>
+<div class="toggle-content">
+<p>The DROP PACKAGE command.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between implicit and explicit cursors?</label>
+<div class="toggle-content">
+<p>Oracle implicitly declares a cursor to all the DDL and DML commands that return only one row. For queries returning multiple rows, an explicit cursor is created.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>The %NOTFOUND attribute returns true when the cursor is not created explicitly.</p></label>
+<div class="toggle-content">
+<p>False. The %NOTFOUND attribute returns true when the last row of the cursor is processed and no other row is available.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Say True or False. If False, explain why.<p>The %ROWCOUNT attribute returns the total number of rows returned by the FETCH command.</p></label>
+<div class="toggle-content">
+<p>True.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/plsql/plsql_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/plsql/plsql_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">plsql_questions_answers.htm</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/plsql/plsql_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/plsql/plsql_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/plsql/plsql_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/plsql/plsql_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/plsql/plsql_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/plsql/plsql_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

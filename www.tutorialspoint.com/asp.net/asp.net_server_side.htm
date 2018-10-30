@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>ASP.NET - Server Side</title>
+<meta name="description" content="ASP.NET Server Side - Free ASP.NET Tutorials, Reference Manual, and Quick Guide for Beginners. Learn ASP.NET starting from Environment Setup, Basic Controls, Directives, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel control, LINQ, Database Access, Security, Debugging, Error Handling, Configuration and Deployment." />
+<meta name="keywords" content="Free, ASP.NET, Tutorial, Reference, Manual, Guide, Beginners, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel, control, LINQ, Database Access, Security, Debugging, Error, Handling, Configuration, Deployment." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #147dc2 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #147dc2 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #147dc2 !important;}
+.submenu-item{ border-bottom: 2px solid #147dc2 !important; border-top: 2px solid #147dc2 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#147dc2; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/asp.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/asp.net/images/asp.net-mini-logo.jpg" alt="ASP.NET Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">ASP.NET Tutorial</li>
+<li><a target="_top" href="/asp.net/index.htm">ASP.NET - Home</a></li>
+<li><a target="_top" href="/asp.net/asp.net_introduction.htm">ASP.NET - Introduction</a></li>
+<li><a target="_top" href="/asp.net/asp.net_environment_setup.htm">ASP.NET - Environment</a></li>
+<li><a target="_top" href="/asp.net/asp.net_life_cycle.htm">ASP.NET - Life Cycle</a></li>
+<li><a target="_top" href="/asp.net/asp.net_first_example.htm">ASP.NET - First Example</a></li>
+<li><a target="_top" href="/asp.net/asp.net_event_handling.htm">ASP.NET - Event Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_side.htm">ASP.NET - Server Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_controls.htm">ASP.NET - Server Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_html_server.htm">ASP.NET - HTML Server</a></li>
+<li><a target="_top" href="/asp.net/asp.net_client_side.htm">ASP.NET - Client Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_basic_controls.htm">ASP.NET - Basic Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_directives.htm">ASP.NET - Directives</a></li>
+<li><a target="_top" href="/asp.net/asp.net_managing_state.htm">ASP.NET - Managing State</a></li>
+<li><a target="_top" href="/asp.net/asp.net_validators.htm">ASP.NET - Validators</a></li>
+<li><a target="_top" href="/asp.net/asp.net_database_access.htm">ASP.NET - Database Access</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ado_net.htm">ASP.NET - ADO.net</a></li>
+<li><a target="_top" href="/asp.net/asp.net_file_uploading.htm">ASP.NET - File Uploading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ad_rotator.htm">ASP.NET - Ad Rotator</a></li>
+<li><a target="_top" href="/asp.net/asp.net_calenders.htm">ASP.NET - Calendars</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_views.htm">ASP.NET - Multi Views</a></li>
+<li><a target="_top" href="/asp.net/asp.net_panel_controls.htm">ASP.NET - Panel Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ajax_control.htm">ASP.NET - AJAX Control</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_sources.htm">ASP.NET - Data Sources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_binding.htm">ASP.NET - Data Binding</a></li>
+<li><a target="_top" href="/asp.net/asp.net_custom_controls.htm">ASP.NET - Custom Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_personalization.htm">ASP.NET - Personalization</a></li>
+<li><a target="_top" href="/asp.net/asp.net_error_handling.htm">ASP.NET - Error Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_debugging.htm">ASP.NET - Debugging</a></li>
+<li><a target="_top" href="/asp.net/asp.net_linq.htm">ASP.NET - LINQ</a></li>
+<li><a target="_top" href="/asp.net/asp.net_security.htm">ASP.NET - Security</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_caching.htm">ASP.NET - Data Caching</a></li>
+<li><a target="_top" href="/asp.net/asp.net_web_services.htm">ASP.NET - Web Services</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_threading.htm">ASP.NET - Multi Threading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_configuration.htm">ASP.NET - Configuration</a></li>
+<li><a target="_top" href="/asp.net/asp.net_deployment.htm">ASP.NET - Deployment</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">ASP.NET Resources</li>
+<li><a target="_top" href="/asp.net/asp.net_quick_guide.htm">ASP.NET - Quick Guide</a></li>
+<li><a target="_top" href="/asp.net/asp.net_useful_resources.htm">ASP.NET - Useful Resources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_discussion.htm">ASP.NET - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>ASP.NET - Server Side</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_event_handling.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_server_controls.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>We have studied the page life cycle and how a page contains various controls. The page itself is instantiated as a control object. All web forms are basically instances of the ASP.NET Page class. The page class has the following extremely useful properties that correspond to intrinsic objects:</p>
+<ul class="list">
+<li>Session</li>
+<li>Application</li>
+<li>Cache</li>
+<li>Request</li>
+<li>Response</li>
+<li>Server</li>
+<li>User</li>
+<li>Trace</li>
+</ul>
+<p>We will discuss each of these objects in due time. In this tutorial we will explore the Server object, the Request object, and the Response object.</p>
+<h2>Server Object</h2>
+<p>The Server object in Asp.NET is an instance of the System.Web.HttpServerUtility class. The HttpServerUtility class provides numerous properties and methods to perform various jobs.</p>
+<h3>Properties and Methods of the Server object</h3>
+<p>The methods and properties of the HttpServerUtility class are exposed through the intrinsic Server object provided by ASP.NET.</p>
+<p>The following table provides a list of the properties:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:30%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>MachineName</td>
+<td>Name of server computer</td>
+</tr>
+<tr>
+<td>ScriptTimeOut</td>
+<td>Gets and sets the request time-out value in seconds.</td>
+</tr>
+</table>
+<p>The following table provides a list of some important methods:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>CreateObject(String)</td>
+<td>Creates an instance of the COM object identified by its ProgID (Programmatic ID).</td>
+</tr>
+<tr>
+<td>CreateObject(Type)</td>
+<td>Creates an instance of the COM object identified by its Type.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified Object is equal to the current Object.</td>
+</tr>
+<tr>
+<td>Execute(String)</td>
+<td>Executes the handler for the specified virtual path in the context of the current request.</td>
+</tr>
+<tr>
+<td>Execute(String, Boolean)</td>
+<td>Executes the handler for the specified virtual path in the context of the current request and specifies whether to clear the QueryString and Form collections.</td>
+</tr>
+<tr>
+<td>GetLastError</td>
+<td>Returns the previous exception.</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the Type of the current instance.</td>
+</tr>
+<tr>
+<td>HtmlEncode</td>
+<td>Changes an ordinary string into a string with legal HTML characters.</td>
+</tr>
+<tr>
+<td>HtmlDecode</td>
+<td>Converts an Html string into an ordinary string.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a String that represents the current Object.</td>
+</tr>
+<tr>
+<td>Transfer(String)</td>
+<td>For the current request, terminates execution of the current page and starts execution of a new page by using the specified URL path of the page.</td>
+</tr>
+<tr>
+<td>UrlDecode</td>
+<td>Converts an URL string into an ordinary string.</td>
+</tr>
+<tr>
+<td>UrlEncodeToken</td>
+<td>Works same as UrlEncode, but on a byte array that contains Base64-encoded data.</td>
+</tr>
+<tr>
+<td>UrlDecodeToken</td>
+<td>Works same as UrlDecode, but on a byte array that contains Base64-encoded data.</td>
+</tr>
+<tr>
+<td>MapPath</td>
+<td>Return the physical path that corresponds to a specified virtual file path on the server.</td>
+</tr>
+<tr>
+<td>Transfer</td>
+<td>Transfers execution to another web page in the current application.</td>
+</tr>
+</table>
+<h2>Request Object</h2>
+<p>The request object is an instance of the System.Web.HttpRequest class. It represents the values and properties of the HTTP request that makes the page loading into the browser.</p>
+<p>The information presented by this object is wrapped by the higher level abstractions (the web control model). However, this object helps in checking some information such as the client browser and cookies.</p>
+<h3>Properties and Methods of the Request Object</h3>
+<p>The following table provides some noteworthy properties of the Request object:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AcceptTypes</td>
+<td>Gets a string array of client-supported MIME accept types.</td>
+</tr>
+<tr>
+<td>ApplicationPath</td>
+<td>Gets the ASP.NET application's virtual application root path on the server.</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Gets or sets information about the requesting client's browser capabilities.</td>
+</tr>
+<tr>
+<td>ContentEncoding</td>
+<td>Gets or sets the character set of the entity-body.</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>Specifies the length, in bytes, of content sent by the client.</td>
+</tr>
+<tr>
+<td>ContentType</td>
+<td>Gets or sets the MIME content type of the incoming request.</td>
+</tr>
+<tr>
+<td>Cookies</td>
+<td>Gets a collection of cookies sent by the client.</td>
+</tr>
+<tr>
+<td>FilePath</td>
+<td>Gets the virtual path of the current request.</td>
+</tr>
+<tr>
+<td>Files</td>
+<td>Gets the collection of files uploaded by the client, in multipart MIME format.</td>
+</tr>
+<tr>
+<td>Form</td>
+<td>Gets a collection of form variables.</td>
+</tr>
+<tr>
+<td>Headers</td>
+<td>Gets a collection of HTTP headers.</td>
+</tr>
+<tr>
+<td>HttpMethod</td>
+<td>Gets the HTTP data transfer method (such as GET, POST, or HEAD) used by the client.</td>
+</tr>
+<tr>
+<td>InputStream</td>
+<td>Gets the contents of the incoming HTTP entity body.</td>
+</tr>
+<tr>
+<td>IsSecureConnection</td>
+<td>Gets a value indicating whether the HTTP connection uses secure sockets (that is, HTTPS).</td>
+</tr>
+<tr>
+<td>QueryString</td>
+<td>Gets the collection of HTTP query string variables.</td>
+</tr>
+<tr>
+<td>RawUrl</td>
+<td>Gets the raw URL of the current request.</td>
+</tr>
+<tr>
+<td>RequestType</td>
+<td>Gets or sets the HTTP data transfer method (GET or POST) used by the client.</td>
+</tr>
+<tr>
+<td>ServerVariables</td>
+<td>Gets a collection of Web server variables.</td>
+</tr>
+<tr>
+<td>TotalBytes</td>
+<td>Gets the number of bytes in the current input stream.</td>
+</tr>
+<tr>
+<td>Url</td>
+<td>Gets information about the URL of the current request.</td>
+</tr>
+<tr>
+<td>UrlReferrer</td>
+<td>Gets information about the URL of the client's previous request that is linked to the current URL.</td>
+</tr>
+<tr>
+<td>UserAgent</td>
+<td>Gets the raw user agent string of the client browser.</td>
+</tr>
+<tr>
+<td>UserHostAddress</td>
+<td>Gets the IP host address of the remote client.</td>
+</tr>
+<tr>
+<td>UserHostName</td>
+<td>Gets the DNS name of the remote client.</td>
+</tr>
+<tr>
+<td>UserLanguages</td>
+<td>Gets a sorted string array of client language preferences.</td>
+</tr>
+</table>
+<p>The following table provides a list of some important methods:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BinaryRead</td>
+<td>Performs a binary read of a specified number of bytes from the current input stream.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified object is equal to the current object. (Inherited from object.)</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the Type of the current instance.</td>
+</tr>
+<tr>
+<td>MapImageCoordinates</td>
+<td>Maps an incoming image-field form parameter to appropriate x-coordinate and y-coordinate values.</td>
+</tr>
+<tr>
+<td>MapPath(String)</td>
+<td>Maps the specified virtual path to a physical path.</td>
+</tr>
+<tr>
+<td>SaveAs</td>
+<td>Saves an HTTP request to disk.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a String that represents the current object.</td>
+</tr>
+<tr>
+<td>ValidateInput</td>
+<td>Causes validation to occur for the collections accessed through the Cookies, Form, and QueryString properties.</td>
+</tr>
+</table>
+<h2>Response Object</h2>
+<p>The Response object represents the server's response to the client request. It is an instance of the System.Web.HttpResponse class.</p>
+<p>In ASP.NET, the response object does not play any vital role in sending HTML text to the client, because the server-side controls have nested, object oriented methods for rendering themselves.</p>
+<p>However, the HttpResponse object still provides some important functionalities, like the cookie feature and the Redirect() method. The Response.Redirect() method allows transferring the user to another page, inside as well as outside the application. It requires a round trip.</p>
+<h3>Properties and Methods of the Response Object</h3>
+<p>The following table provides some noteworthy properties of the Response object:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Property</th><th>Description</th>
+</tr>
+<tr>
+<td>Buffer</td>
+<td>Gets or sets a value indicating whether to buffer the output and send it after the complete response is finished processing.</td>
+</tr>
+<tr>
+<td>BufferOutput</td>
+<td>Gets or sets a value indicating whether to buffer the output and send it after the complete page is finished processing.</td>
+</tr>
+<tr>
+<td>Charset</td>
+<td>Gets or sets the HTTP character set of the output stream.</td>
+</tr>
+<tr>
+<td>ContentEncoding</td>
+<td>Gets or sets the HTTP character set of the output stream.</td>
+</tr>
+<tr>
+<td>ContentType</td>
+<td>Gets or sets the HTTP MIME type of the output stream.</td>
+</tr>
+<tr>
+<td>Cookies</td>
+<td>Gets the response cookie collection.</td>
+</tr>
+<tr>
+<td>Expires</td>
+<td>Gets or sets the number of minutes before a page cached on a browser expires.</td>
+</tr>
+<tr>
+<td>ExpiresAbsolute</td>
+<td>Gets or sets the absolute date and time at which to remove cached information from the cache.</td>
+</tr>
+<tr>
+<td>HeaderEncoding</td>
+<td>Gets or sets an encoding object that represents the encoding for the current header output stream.</td>
+</tr>
+<tr>
+<td>Headers</td>
+<td>Gets the collection of response headers.</td>
+</tr>
+<tr>
+<td>IsClientConnected</td>
+<td>Gets a value indicating whether the client is still connected to the server.</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Enables output of text to the outgoing HTTP response stream.</td>
+</tr>
+<tr>
+<td>OutputStream</td>
+<td>Enables binary output to the outgoing HTTP content body.</td>
+</tr>
+<tr>
+<td>RedirectLocation</td>
+<td>Gets or sets the value of the Http Location header.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Sets the status line that is returned to the client.</td>
+</tr>
+<tr>
+<td>StatusCode</td>
+<td>Gets or sets the HTTP status code of the output returned to the client.</td>
+</tr>
+<tr>
+<td>StatusDescription</td>
+<td>Gets or sets the HTTP status string of the output returned to the client.</td>
+</tr>
+<tr>
+<td>SubStatusCode</td>
+<td>Gets or sets a value qualifying the status code of the response.</td>
+</tr>
+<tr>
+<td>SuppressContent</td>
+<td>Gets or sets a value indicating whether to send HTTP content to the client.</td>
+</tr>
+</table>
+<p>The following table provides a list of some important methods:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:35%">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>AddHeader</td>
+<td>Adds an HTTP header to the output stream. AddHeader is provided for compatibility with earlier versions of ASP.</td>
+</tr>
+<tr>
+<td>AppendCookie</td>
+<td>Infrastructure adds an HTTP cookie to the intrinsic cookie collection.</td>
+</tr>
+<tr>
+<td>AppendHeader</td>
+<td>Adds an HTTP header to the output stream.</td>
+</tr>
+<tr>
+<td>AppendToLog</td>
+<td>Adds custom log information to the InterNET Information Services (IIS) log file.</td>
+</tr>
+<tr>
+<td>BinaryWrite</td>
+<td>Writes a string of binary characters to the HTTP output stream.</td>
+</tr>
+<tr>
+<td>ClearContent</td>
+<td>Clears all content output from the buffer stream.</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Closes the socket connection to a client.</td>
+</tr>
+<tr>
+<td>End</td>
+<td>Sends all currently buffered output to the client, stops execution of the page, and raises the EndRequest event.</td>
+</tr>
+<tr>
+<td>Equals(Object)</td>
+<td>Determines whether the specified object is equal to the current object.</td>
+</tr>
+<tr>
+<td>Flush</td>
+<td>Sends all currently buffered output to the client.</td>
+</tr>
+<tr>
+<td>GetType</td>
+<td>Gets the Type of the current instance.</td>
+</tr>
+<tr>
+<td>Pics</td>
+<td>Appends a HTTP PICS-Label header to the output stream.</td>
+</tr>
+<tr>
+<td>Redirect(String)</td>
+<td>Redirects a request to a new URL and specifies the new URL.</td>
+</tr>
+<tr>
+<td>Redirect(String, Boolean)</td>
+<td>Redirects a client to a new URL. Specifies the new URL and whether execution of the current page should terminate.</td>
+</tr>
+<tr>
+<td>SetCookie</td>
+<td>Updates an existing cookie in the cookie collection.</td>
+</tr>
+<tr>
+<td>ToString</td>
+<td>Returns a String that represents the current Object.</td>
+</tr>
+<tr>
+<td>TransmitFile(String)</td>
+<td>Writes the specified file directly to an HTTP response output stream, without buffering it in memory.</td>
+</tr>
+<tr>
+<td>Write(Char)</td>
+<td>Writes a character to an HTTP response output stream.</td>
+</tr>
+<tr>
+<td>Write(Object)</td>
+<td>Writes an object to an HTTP response stream.</td>
+</tr>
+<tr>
+<td>Write(String)</td>
+<td>Writes a string to an HTTP response output stream.</td>
+</tr>
+<tr>
+<td>WriteFile(String)</td>
+<td>Writes the contents of the specified file directly to an HTTP response output stream as a file block.</td>
+</tr>
+<tr>
+<td>WriteFile(String, Boolean)</td>
+<td>Writes the contents of the specified file directly to an HTTP response output stream as a memory block.</td>
+</tr>
+</table>
+<h2>Example</h2>
+<p>The following simple example has a text box control where the user can enter name, a button to send the information to the server, and a label control to display the URL of the client computer.</p>
+<p>The content file:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" 
+   Inherits="server_side._Default" %&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+
+   &lt;head runat="server"&gt;
+      &lt;title&gt;Untitled Page&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form id="form1" runat="server"&gt;
+         &lt;div&gt;
+            
+            Enter your name:
+            &lt;br /&gt;
+            &lt;asp:TextBox ID="TextBox1" runat="server"&gt;&lt;/asp:TextBox&gt;
+            &lt;asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" /&gt;
+            &lt;br /&gt;
+            &lt;asp:Label ID="Label1" runat="server"/&gt;
+
+         &lt;/div&gt;
+      &lt;/form&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre>
+<p>The code behind Button1_Click:</p>
+<pre class="prettyprint notranslate">
+protected void Button1_Click(object sender, EventArgs e) {
+
+   if (!String.IsNullOrEmpty(TextBox1.Text)) {
+   
+      // Access the HttpServerUtility methods through
+      // the intrinsic Server object.
+      Label1.Text = "Welcome, " + Server.HtmlEncode(TextBox1.Text) + ". &lt;br/&gt; The url is " + Server.UrlEncode(Request.Url.ToString())
+   }
+}
+</pre>
+<p>Run the page to see the following result:</p>
+<img src="/asp.net/images/asp.net_server_side.jpg" alt="ASP.NET Server Side" />
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_event_handling.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/asp.net/pdf/asp.net_server_side.pdf" title="ASP.NET - Server Side" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_server_controls.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/asp.net/asp.net_server_side.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_server_side.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_server_side.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/asp.net/asp.net_server_side.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_server_side.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_server_side.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

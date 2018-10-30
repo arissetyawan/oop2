@@ -1,0 +1,497 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>CICS Interview Questions</title>
+<meta name="description" content="CICS Interview Questions - Learn CICS in simple and easy steps starting from CICS Overview, Environment, Basic Terms, Nucleus, Transactions, COBOL Basics, BMS, MAP, Interface Block, Pseudo Programming, Aid Keys, File Handling, Error Handling, Control Operations, Temporary Storage, Intercommunication, Status Codes." />
+<meta name="keywords" content="CICS, Tutorial, Overview, Environment, Basic Terms, Nucleus, Transactions, COBOL Basics, BMS, MAP, Interface Block, Pseudo Programming, Aid Keys, File Handling, Error Handling, Control Operations, Temporary Storage, Intercommunication, Status Codes." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #00a79d !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #00a79d url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #00a79d !important;}
+.submenu-item{ border-bottom: 2px solid #00a79d !important; border-top: 2px solid #00a79d !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#00a79d; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/cics/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/cics/images/cics-mini-logo.jpg" alt="CICS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CICS Tutorial</li>
+<li><a href="/cics/index.htm">CICS - Home</a></li>
+<li><a href="/cics/cics_overview.htm">CICS - Overview</a></li>
+<li><a href="/cics/cics_environment.htm">CICS - Environment</a></li>
+<li><a href="/cics/cics_basic_terms.htm">CICS - Basic Terms</a></li>
+<li><a href="/cics/cics_nucleus.htm">CICS - Nucleus</a></li>
+<li><a href="/cics/cics_transactions.htm">CICS - Transactions</a></li>
+<li><a href="/cics/cics_cobol_basics.htm">CICS - COBOL Basics</a></li>
+<li><a href="/cics/cics_bms.htm">CICS - BMS</a></li>
+<li><a href="/cics/cics_map.htm">CICS - MAP</a></li>
+<li><a href="/cics/cics_interface_block.htm">CICS - Interface Block</a></li>
+<li><a href="/cics/cics_pseudo_programming.htm">CICS - Pseudo Programming</a></li>
+<li><a href="/cics/cics_aid_keys.htm">CICS - Aid Keys</a></li>
+<li><a href="/cics/cics_file_handling.htm">CICS - File Handling</a></li>
+<li><a href="/cics/cics_error_handling.htm">CICS - Error Handling</a></li>
+<li><a href="/cics/cics_control_operations.htm">CICS - Control Operations</a></li>
+<li><a href="/cics/cics_temporary_storage.htm">CICS - Temporary Storage</a></li>
+<li><a href="/cics/cics_intercommunication.htm">CICS - Intercommunication</a></li>
+<li><a href="/cics/cics_status_codes.htm">CICS - Status Codes</a></li>
+<li><a href="/cics/cics_interview_questions.htm">CICS - Interview Questions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">CICS Useful Resources</li>
+<li><a href="/cics/cics_quick_guide.htm">CICS - Quick Guide</a></li>
+<li><a href="/cics/cics_useful_resources.htm">CICS - Useful Resources</a></li>
+<li><a href="/cics/cics_discussion.htm">CICS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>CICS - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/cics/cics_status_codes.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/cics/cics_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>These <b>CICS Interview Questions</b> have been designed especially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>CICS</b>. As per our experience, good interviewers hardly plan to ask any particular question during an interview – normally questions start with some basic concept of the subject and later, they continue based on further discussion and how you answer &minus;</p>
+<section class="toggle">
+<label>What’s the CICS command used to access the current date and time?</label>
+<div class="toggle-content">
+<p>ASKTIME command is used to access current date and time.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>How do you dynamically set the CURSOR position to a specific field?</label>
+<div class="toggle-content">
+<p>MOVE -1 to FIELD + L field. Mention CURSOR option in the SEND command.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>Which command is used to release a record on which exclusive control is gained?</label>
+<div class="toggle-content">
+<p>EXEC CICS UNLOCK END-EXEC.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What are the attribute values of Skipper and Stopper fields?</label>
+<div class="toggle-content">
+<p>For Skipper field, use ASKIP and for stopper field use PROT.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>How do you set the MDT option to ‘ON’ status, even if data is not entered?</label>
+<div class="toggle-content">
+<p>Mention FSET option in DFHMDF or set it dynamically in the program using FIELD+A attribute field.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>Which CICS service transaction is used to gain accessibility to CICS control tables?</label>
+<div class="toggle-content">
+<p>CEDA transaction is used to gain accessibility to control tables.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>Into which table is the terminal id registered?</label>
+<div class="toggle-content">
+<p>Terminal Control Table.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is a mapset?</label>
+<div class="toggle-content">
+<p>Mapset is a collection of maps which are linked edited together to form a load module. It should have a PPT entry. It can have names from 1 to 7 chars.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the function of the CICS translator?</label>
+<div class="toggle-content">
+<p>The CICS translator converts the EXEC CICS commands into call statements for a specific programming language.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What are the differences between an EXEC CICS XCTL and an EXEC CICS LINK command?</label>
+<div class="toggle-content">
+<p>The XCTL command transfers the control to an application program at the same logical level and it does not expect the control back, while the LINK command passes the control to an application program at the next logical level and expects the control back.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is EIB? How it can be used?</label>
+<div class="toggle-content">
+<p>CICS automatically provides some system-related information to each task in a form of EXEC Interface Block (EIB), which is unique to the CICS command level. We can use all the fields of EIB in our application programs right away.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What information can be obtained from the EIBRCODE?</label>
+<div class="toggle-content">
+<p>The EIBRCODE tells the application program if the last CICS command was executed successfully or not.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the effect of including the TRANSID in the EXEC CICS RETURN command?</label>
+<div class="toggle-content">
+<p>The next time the end-user presses an attention key, CICS will start the transaction specified in the TRANSID option.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the function of the EXEC CICS HANDLE CONDITION command?</label>
+<div class="toggle-content">
+<p>To specify the paragraph or program label to which the control is to be passed if the “handle condition” occurs.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the difference between the INTO and the SET option in the EXEC CICS RECEIVE MAP command?</label>
+<div class="toggle-content">
+<p>The INTO option moves the information in the TIOA into the reserved specified area, while the SET option simply returns the address of the TIOA to the specified BLL cell or “address-of” a linkage section.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the function of DFHMDF BMS macro?</label>
+<div class="toggle-content">
+<p>The DFHMDF macro defines fields, literal, and characteristics of a field.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the difference between getting the system time with EIBTIME and ASKTIME command?</label>
+<div class="toggle-content">
+<p>The ASKTIME command is used to request the current date and time. Whereas, the EIBTIME field ha the value at the task initiation time.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the function of the Terminal Control Table?</label>
+<div class="toggle-content">
+<p>The TCT defines the characteristics of each terminal with which CICS can communicate.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is a deadlock?</label>
+<div class="toggle-content">
+<p>A deadlock occurs when a task is waiting for a resource held by another task which, in turn, is waiting for a resources held by the first task.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>Explain the term Multi Region Operation.</label>
+<div class="toggle-content">
+<p>MRO is the mechanism by which different CICS address spaces with in the same CPU can communicate and share resources.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is meant by program reentrance?</label>
+<div class="toggle-content">
+<p>A program is considered reentrant if more than one task can execute the code without interfering with the other tasks execution.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the common work area?</label>
+<div class="toggle-content">
+<p>The common work area is a storage area that can be accessed by any task in a CICS system.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is the meaning and use of the EIBAID field?</label>
+<div class="toggle-content">
+<p>EIBAID is a key field in the execute interface block; it indicates which attention key the user pressed to initiate the task.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>What is BMS?</label>
+<div class="toggle-content">
+<p>BMS stands for Basic Map Support. It allows you to code assembler level programs to define screens.</p> 
+</div>
+</section>
+<h2>What is Next?</h2>
+<p>Further, you can go through the examples which you have practiced with the subject and make sure you are able to speak confidently on them. If you are a fresher, then the interviewer does not expect you to answer very complex questions. Hence you should have a strong hold over the fundamental concepts of the subject.</p>
+<hr />
+<div class="pre-btn">
+<a href="/cics/cics_status_codes.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/cics/cics_quick_guide.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/cics/cics_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/cics/cics_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/cics/cics_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/cics/cics_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/cics/cics_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/cics/cics_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>BBC is Reinventing iPlayer to contend With Netflix and Amazon</title>
+<meta name="description" content="BBC is Reinventing iPlayer to contend With Netflix and Amazon - In today's fast paced life, we hardly get enough time to relax at our home to watch our favorite shows on television. Forget about the weekdays, even many of us&hellip;" />
+<meta name="Keywords" content="Short, articles, tutorials, latest, technologies, simple, easy, steps, specialized, Mobile Computing, Cloud Computing, Open Source, Linux, Microsoft, General IT, Computer Hardware." />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/articles/wp-content/themes/bigfoot/style.css" media="screen" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #316441 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #316441 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #316441 !important;}
+.submenu-item{ border-bottom: 2px solid #316441 !important; border-top: 2px solid #316441 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#316441; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-9 middle-col">
+<div class="post-header"> <h1 class="post-title">BBC is Reinventing iPlayer to contend With Netflix and Amazon</h1>
+<p class="post-date">
+<em id="author_title">
+<span style="display: inline-block;"><img alt='' src='https://secure.gravatar.com/avatar/070dff698c6e5bde57683097e2004229?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/070dff698c6e5bde57683097e2004229?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' /></span>
+<a href="https://www.tutorialspoint.com/articles/author/kmohanty" title="Posts by Kishor Mohanty" rel="author">Kishor Mohanty</a>, Posted on   July 27, 2017, filed in: <a href="https://www.tutorialspoint.com/articles/category/technology" rel="category tag">Technology</a>, <a href="https://www.tutorialspoint.com/articles/category/viral" rel="category tag">Viral</a></em>		    </p> <!--end .post-date-->	    	    </div> <!--end .post-header-->	    	   	<div class="clear"></div>	    		   	
+<div class="entry">	 
+<div class="clearer"></div>
+<br>
+<p style="text-align: justify;"><strong>I</strong>n today&#8217;s fast paced life, we hardly get enough time to relax at our home to watch our favorite shows on television. Forget about the weekdays, even many of us are occupied on weekends too as there are some works always left for those days. Also, a lot of time we normally spend in traveling from one place to another in order to complete those works. And due to those busy schedules, the fun elements are missing somewhere; and we are compelled to live in a dull and monotonic life without the basic entertainments that we deserve.</p>
+<p style="text-align: justify;"><img class="size-medium wp-image-25393 alignleft" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/man-1205084_640-300x208.jpg" alt="" width="300" height="208" srcset="https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/man-1205084_640-300x208.jpg 300w, https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/man-1205084_640.jpg 640w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<p style="text-align: justify;">Not to worry, the technology has been evolved over the years so immensely that you can have all the entrainment on the go without missing your favorite TV series or the blockbuster movies.</p>
+<p style="text-align: justify;">There are internet streaming services from the leading players in the market that can provide you the daily dose of entertainment which can be watched on your phone, laptop, or any other such portable devices on the go without stopping your work.</p>
+<p style="text-align: justify;">You have the freedom to leave your living room without leaving your favorite shows. There are some exceptionally great streaming applications available in the market to satisfy all your entertainment needs. And the good news is that the leading media house BBC is reinventing its existing iPlayer not just to compete with the video on demand giants like Netflix and Amazon Prime Video but also aiming to be number one online TV service provider in the UK by 2020. Let us see what is in store for you in the upcoming revamped iPlayer.</p>
+<h3 style="text-align: justify;">BBC Reinventing iPlayer</h3>
+<p style="text-align: justify;">BBC is planning to take up its iPlayer to a next level from the existing catch-up service mode. Instead of the on demand broadcasted shows, you will be going to watch the brand new shows exclusively launch for iPlayer.  Let us see what BBC is planning to offer in its upcoming iPlayer.</p>
+<p style="text-align: justify;"><img class="alignright wp-image-25394 " src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/adult-2179262_640-300x200.jpg" alt="" width="294" height="196" srcset="https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/adult-2179262_640-300x200.jpg 300w, https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/adult-2179262_640.jpg 640w" sizes="(max-width: 294px) 100vw, 294px" /></p>
+<p>It will be more into personalization; the focus would be on the user&#8217;s preference. Based on the user&#8217;s usage pattern and the machine learning algorithm, the application will show the contents</p>
+<ul>
+<li>Soon you will be required to sign-in to the iPlayer to view the contents. A user sign in is required for all iPlayer services, a much-required step towards personalization. Another interesting thing, according to various media reports, BBC is planning to introduce mood based classification in its upcoming iPlayer</li>
+</ul>
+<p>The mood-based classification feature of iPlayer will ask you the kind of shows you want to view. And based on your answer it will suggest you the related shows, be it happy, sad, comedy or whatever you want according to your mood or interest</p>
+<p>As per media reports, they are further planning to release exclusive contents only for iPlayer. Be it new programs, drama, comedy or entertainment shows, iPlayer will be the first place to view all the brand new releases</p>
+<p style="text-align: justify;">There may be some other new features that will come with the iPlayer to provide you the ultimate entertainment as the media house is determined to make it a number one online TV service provider in the UK by 2020. For the people who do not want to be interrupted with the advertisements in between their favorite show, the existing iPlayer is providing no advertisements viewing facility to its UK based viewers. But for the users residing outside of UK are still receive the advertisements during their favorite shows.</p>
+<p style="text-align: justify;">While BBC is trying hard to boost its existing iPlayer with some great features, the real test will be to sustain and grow in the market against the other giants in the same platform such as Netflix and Amazon Prime video services. But as a user, you have multiple options to choose from the existing internet streaming service providers. Let us discuss the two big players in this zone- Netflix and Amazon Prime video.</p>
+<h3 style="text-align: justify;">Netflix the Competitor</h3>
+<p style="text-align: justify;">Netflix is an American company founded in the year 1997 to provide DVD rental by mail services. Later it expanded its wings into film and television production, as well as online distribution, and now it is a renowned name in the internet streaming and video on demand service providers. It has <strong>more than 98 million subscribers worldwide</strong>. Let us discuss some of the great features of this popular service provider.</p>
+<p style="text-align: justify;"><img class="alignleft wp-image-25395 size-medium" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/children-593313_640-300x200.jpg" alt="" width="300" height="200" srcset="https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/children-593313_640-300x200.jpg 300w, https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/children-593313_640.jpg 640w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<ul style="text-align: justify;">
+<li>It has huge international presence spread across the globe. There are around 190 countries where you can avail the service of Netflix</li>
+<li>You can view the original contents through its online archives of films and television. Last year there are around 126 original series or films released on Netflix which is a record in itself, more than any other network or cable channel</li>
+<li>It is available on multiple platforms; you can get your dose of entertainment on multiple devices such as PC, Laptop, Smartphone, Tablets, Smart TV and other media players</li>
+<li>You can watch unlimited contents anywhere on your internet connected device without any commercial advertisements</li>
+<li>It supports almost all the latest popular web browsers like Google Chrome, Safari, Mozilla Firefox, Internet Explorer, Opera and Microsoft Edge on Windows 10</li>
+</ul>
+<p style="text-align: justify;">Netflix has already created a name in the market having a presence across the globe. Amazon Prime Video is another notable player in the market as the brand Amazon associated with it.</p>
+<h3 style="text-align: justify;">Amazon Prime Video</h3>
+<p style="text-align: justify;">Amazon Prime Video is another popular internet streaming service provider having the presence in almost across the globe except for few countries. Started as Amazon Unbox in the year 2006 in the United States, the Amazon Prime Video is popular among many households worldwide. Let us see some of its notable features.</p>
+<p style="text-align: justify;"><img class="alignright wp-image-25396 size-medium" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/music-2471122_640-300x200.jpg" alt="" width="300" height="200" srcset="https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/music-2471122_640-300x200.jpg 300w, https://www.tutorialspoint.com/articles/wp-content/uploads/2017/07/music-2471122_640.jpg 640w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<ul style="text-align: justify;">
+<li>You can download your favorite movies and TV shows anytime anywhere on multiple devices over the Wi-Fi or cellular network</li>
+<li>As it presence in multiple countries, it contains local movies and TV shows for the local customers. You can watch your regional movies and shows on Netflix</li>
+<li>You can also see the IMDB rating score before viewing a movie or songs that help you to choose the best one without wasting your time</li>
+<li>Once you sign-up as a prime member, you have the access to its huge library of movies and TV shows that you can enjoy without any hassle. You can also enjoy streaming of your favorite channels as per your subscriptions</li>
+</ul>
+<p style="text-align: justify;">There are many other features that helping the organization to increase its popularity. Both the Netflix and Amazon Prime Video are the strong contenders for the iPlayer. BBC is focusing more on personalization, which can be a good feature but there also other value added features that can compete with the other players in the market.</p>
+<blockquote>
+<p style="text-align: justify;">Finally, for the BBC&#8217;s iPlayer it is not an easy going as there are already established internet streaming service providers such as Amazon Prime Video and Netflix are available in the market enjoying a big share of the business. Although, the BBC is primarily focusing on being the number one online TV service provider in the UK by 2020, there are other users outside of UK also keenly waiting to see the reinvented iPlayer once it is available to them.</p>
+</blockquote>
+<!-- Begin Yuzo --><div class='yuzo_related_post style-1'  data-version='5.12.70'><div class='yuzo_clearfixed yuzo__title'><h3>Other Interesting Posts</h3></div><div class='yuzo_wraps'>
+						  <div class="relatedthumb relatedpost-21743 box_shadow_related" style="width:230px;float:left;overflow:hidden;text-align:center;">  
+							  
+							  <a  href="https://www.tutorialspoint.com/articles/review-on-amazon-prime-video-vs-netflix"  >
+									  <div class="yuzo-img-wrap " style="/*width: 230px;height:160px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://www.tutorialspoint.com/articles/wp-content/uploads/2016/12/rsz_video_streaming.jpg') 50% 50% no-repeat;width: 230px;;max-width:100%;height:160px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;font-weight:bold;">Review on Amazon Prime Video Vs Netflix</span>
+							  
+							  
+							  </a>
+
+						  </div></div> <!-- end wrap -->
+</div> <style>
+								.yuzo_related_post img{width:230px !important; height:160px !important;}
+								.yuzo_related_post .relatedthumb{line-height:16px;background: !important;color:!important;}
+								.yuzo_related_post .relatedthumb:hover{background:#ffffff !important; -webkit-transition: background 0.2s linear; -moz-transition: background 0.2s linear; -o-transition: background 0.2s linear; transition: background 0.2s linear;;color:!important;}
+								.yuzo_related_post .relatedthumb a{color:!important;}
+								.yuzo_related_post .relatedthumb a:hover{ color:}!important;}
+								.yuzo_related_post .relatedthumb:hover a{ color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo__text--title{ color:!important;}
+								.yuzo_related_post .yuzo_text, .yuzo_related_post .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo_text, .yuzo_related_post:hover .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb{  margin: 0px  0px  5px  0px;   padding: 15px  15px  15px  15px;  }
+								.yuzo_related_post .relatedthumb{
+display:block!important;
+-webkit-transition:-webkit-transform 0.3s ease-out!important;
+-moz-transition:-moz-transform 0.3s ease-out!important;
+-o-transition:-o-transform 0.3s ease-out!important;
+-ms-transition:-ms-transform 0.3s ease-out!important;
+transition:transform 0.3s ease-out!important;
+}
+.yuzo_related_post .relatedthumb:hover{
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1)
+}
+.yuzo_related_post{
+	overflow:inherit!important;
+}
+								</style> <script>
+						  jQuery(document).ready(function( $ ){
+							jQuery('.yuzo_related_post .yuzo_wraps').equalizer({ columns : '> div' });
+						   });
+						  </script> <!-- End Yuzo :) -->	   
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 735;
+google_ad_height = 300;
+google_ad_format = "735x300_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="postnavi"> <div class="left"> <a href="https://www.tutorialspoint.com/articles/how-to-mail-a-business-contact-for-the-first-time" rel="prev">&laquo; Previous</a></div>    <div class="right"> <a href="https://www.tutorialspoint.com/articles/ransomware-locky-a-new-threat-decoded-and-how-to-protect-yourself" rel="next">Next &raquo;</a></div> 
+<div class="clear"></div></div> <!--end .postnavi-->
+<div class="clear"></div>
+<div class="tags">	 
+</div> <!--end .tags--></div> <!--end .entry-->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/articles/bbc-is-reinventing-iplayer-to-contend-with-netflix-and-amazon','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/articles/bbc-is-reinventing-iplayer-to-contend-with-netflix-and-amazon','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/articles/bbc-is-reinventing-iplayer-to-contend-with-netflix-and-amazon&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/articles/bbc-is-reinventing-iplayer-to-contend-with-netflix-and-amazon','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/articles/bbc-is-reinventing-iplayer-to-contend-with-netflix-and-amazon&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/articles/bbc-is-reinventing-iplayer-to-contend-with-netflix-and-amazon&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

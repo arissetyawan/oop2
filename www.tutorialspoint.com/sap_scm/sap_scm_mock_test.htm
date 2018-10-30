@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP SCM Mock Test - TutorialsPoint</title>
+<meta name="description" content="SAP SCM Mock Test - Learn SAP SCM in simple and easy steps starting from basic to advanced concepts with examples including Overview, Components, Benefits, Demand Management, Creating PIR, Material Requirement Planning, Planned Order Creation, Production Order Creation, Goods Issue, Production Order Confirmation, Production Order Cancellation, Integration, Integration Models, Master Data, Resources, Production Data Structures, Transfer Changed Master Data, Transfer Changed BOMs, Models and Versions, Applications, Advanced Planning Optimization APO, Extended Warehouse, Transportation Management, Supply Network Collaboration, Forecasting and Replenishment, Consultant Responsibilities." />
+<meta name="keywords" content="SAP SCM, Tutorial, Overview, Components, Benefits, Demand Management, Creating PIR, Material Requirement Planning, Planned Order Creation, Production Order Creation, Goods Issue, Production Order Confirmation, Production Order Cancellation, Integration, Integration Models, Master Data, Resources, Production Data Structures, Transfer Changed Master Data, Transfer Changed BOMs, Models and Versions, Applications, Advanced Planning Optimization APO, Extended Warehouse, Transportation Management, Supply Network Collaboration, Forecasting and Replenishment, Consultant Responsibilities." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #036db0 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #036db0 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #036db0 !important;}
+.submenu-item{ border-bottom: 2px solid #036db0 !important; border-top: 2px solid #036db0 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#036db0; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_scm/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_scm/images/sap-scm-mini-logo.jpg" alt="SAP SCM Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP SCM Tutorial</li>
+<li><a href="/sap_scm/index.htm">SAP SCM - Home</a></li>
+<li><a href="/sap_scm/sap_scm_overview.htm">SAP SCM - Overview</a></li>
+<li><a href="/sap_scm/sap_scm_components.htm">SAP SCM - Components</a></li>
+<li><a href="/sap_scm/sap_scm_benefits.htm">SAP SCM - Benefits</a></li>
+<li><a href="/sap_scm/sap_scm_demand_management.htm">SAP SCM - Demand Management</a></li>
+<li><a href="/sap_scm/sap_scm_creating_pir.htm">SAP SCM - Creating PIR</a></li>
+<li><a href="/sap_scm/sap_scm_material_requirement_planning.htm">Material Requirement Planning</a></li>
+<li><a href="/sap_scm/sap_scm_planned_order_creation.htm">SAP SCM - Planned Order Creation</a></li>
+<li><a href="/sap_scm/sap_scm_production_order_creation.htm">Production Order Creation</a></li>
+<li><a href="/sap_scm/sap_scm_goods_issue.htm">SAP SCM - Goods Issue</a></li>
+<li><a href="/sap_scm/sap_scm_production_order_confirmation.htm">Production Order Confirmation</a></li>
+<li><a href="/sap_scm/sap_scm_production_order_cancellation.htm">Production Order Cancellation</a></li>
+<li><a href="/sap_scm/sap_scm_integration.htm">SAP SCM - Integration</a></li>
+<li><a href="/sap_scm/sap_scm_integration_models.htm">SAP SCM - Integration Models</a></li>
+<li><a href="/sap_scm/sap_scm_master_data.htm">SAP SCM - Master Data</a></li>
+<li><a href="/sap_scm/sap_scm_resources.htm">SAP SCM - Resources</a></li>
+<li><a href="/sap_scm/sap_scm_production_data_structures.htm">Production Data Structures</a></li>
+<li><a href="/sap_scm/sap_scm_transfer_changed_master_data.htm">Transfer Changed Master Data</a></li>
+<li><a href="/sap_scm/sap_scm_transfer_changed_boms.htm">SAP SCM - Transfer Changed BOMs</a></li>
+<li><a href="/sap_scm/sap_scm_models_and_versions.htm">SAP SCM - Models and Versions</a></li>
+<li><a href="/sap_scm/sap_scm_applications.htm">SAP SCM - Applications</a></li>
+<li><a href="/sap_scm/sap_scm_advanced_planning_and_optimization_apo.htm">Advanced Planning Optimization</a></li>
+<li><a href="/sap_scm/sap_scm_extended_warehouse.htm">SAP SCM - Extended Warehouse</a></li>
+<li><a href="/sap_scm/sap_scm_transportation_management.htm">Transportation Management</a></li>
+<li><a href="/sap_scm/sap_scm_supply_network_collaboration.htm">Supply Network Collaboration</a></li>
+<li><a href="/sap_scm/sap_scm_forecasting_and_replenishment.htm">Forecasting &amp; Replenishment</a></li>
+<li><a href="/sap_scm/sap_scm_consultant_responsibilities.htm">Consultant Responsibilities</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP SCM Useful Resources</li>
+<li><a href="/sap_scm/sap_scm_questions_answers.htm">SAP SCM - Questions Answers</a></li>
+<li><a href="/sap_scm/sap_scm_quick_guide.htm">SAP SCM - Quick Guide</a></li>
+<li><a href="/sap_scm/sap_scm_useful_resources.htm">SAP SCM - Useful Resources</a></li>
+<li><a href="/sap_scm/sap_scm_discussion.htm">SAP SCM - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP SCM Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_scm/sap_scm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_scm/sap_scm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>SAP SCM</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/sap_scm/sap_scm_mock_test.htm?min=1&max=12"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/sap_scm/sap_scm_mock_test.htm?min=13&max=24"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/sap_scm/sap_scm_mock_test.htm?min=25&max=37"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/sap_scm/sap_scm_mock_test.htm?min=38&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>SAP SCM Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which of the following module deals with activities associated in transformation of goods from raw material, movement of goods to end users and information work flows?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Sales and Distribution</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Supply Chain Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Warehouse Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Production Planning</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : B</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - SCM stands for?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Supply Continuity Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Supply Crisis Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Supplier Change Management</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Supply Chain Management</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>SAP Supply Chain Management is one of the key module in SAP ERP and controls Production Planning, business forecasting and demand planning, and helps the organization to manage their supply chain process in a dynamic environment.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Which of the following is not a key attribute of Supply Chain Management process?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Inventory Control</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Goods Movement</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Logistics</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Customer power</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : D</h3>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which of the following application is not part of Supply Chain Management process?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP Supply Network Collaboration SNC</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SAP Extended Warehouse Management EWM</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Advanced Planning and Optimization (APO)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Customer Relationship Management CRM</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - Forecasting and Replenishment FRE</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The primary applications are SAP General Areas, SAP Supply Network Collaboration SNC, SAP Extended Warehouse Management EWM, Advanced Planning and Optimization (APO), Forecasting and Replenishment FRE and SAP Transportation Management TM.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - In which of planning strategy, stock is produced without sales order and is used to meet customer demands in future?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Make to Stock Planning strategy</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Make to Order Planning strategy</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Demand Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p><b>Make to Stock Planning strategy (MTS)</b> &minus;</p>
+<p>This is planning strategy where stock is produced without sales order. It is used to meet customer demands in future.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - In MTO planning strategy, finish products are not produced until you receive sales order from a customer?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : A</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - When you use Planning strategy 10, which of the following is correct?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Only PIR quantity is considered for MRP run &amp; PIR requirement type is VSF.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Sales order are completely ignored.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - For MRP run maximum of 2 PIR and Sales order can be considered</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>When you use Planning strategy 10, only PIR quantity is considered for MRP run and sales order are completely ignored. In this PIR requirement type LSF and is reduced when you deliver stock to customer.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - Functions related to Supply Chain management in SAP ERP system are all of the following except?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Supply chain planning</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Supply chain execution</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Supply chain collaboration</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Supply chain cooperation</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - Supply chain coordination</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p><b>SC Collaboration</b> &minus;</p>
+<p>This is used to help in making collaborative forecasts and agreements.</p>
+<p><b>SC Planning</b> &minus;</p>
+<p>This is used to generate the operational plans as per current and relevant data in the system.</p>
+<p><b>SC coordination</b> &minus;</p>
+<p>This component in Supply Chain is used to coordinate the exchange of data and information between different business units.</p>
+<p><b>SC Execution</b> &minus;</p>
+<p>This is used to ensure that you execute the supply chain plans in the best possible manner to get the desired result.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - In a manufacturing enterprise, which of the following is not a part of Internal Supply chain management?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Procurement Cycle</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Sales and Distribution Cycle</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Marketing Cycle</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Manufacturing Cycle</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : C</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following movement type is used for Goods Receipt in to Warehouse?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - 101</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 102</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 103</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 122</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : A</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - In SCM, which of the following process deals with demand planning to link to Customer Relationship Management CRM to get data related to customer campaigns?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Forecasting</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Supply Network Planning</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Production Planning and Detailed Scheduling</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p><b>Forecasting</b> &minus;</p>
+<p>To perform demand planning and forecasting, you can link to Customer Relationship Management CRM to get data related to customer campaigns, etc.</p>
+<p><b>Supply Network Planning SNP</b> &minus;</p>
+<p>To view organization as a network of locations and to check stock projections and stock keeping criteria. Calculations in SNP drive dependent requirements down to supplying locations production and receiving stores.</p>
+<p><b>Production Planning and Detailed Scheduling</b> &minus;</p>
+<p>This is to check the dependent requirements from locations within the supply network, passed down from SNP.</p>
+<p>This is linked with Material Requirement Planning MRP in Production Planning, which determines the inbound material required to complete a production order.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Which of the following is/are benefits of Supply Chain Management process?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - To reduce accounts receivable collections with better visibility into the AR process, aging and extension of credit, and help to reduce day’s sales outstanding using SCM process.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - To effectively manage forecasting and handling sudden changes in demand and supply process.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - To effectively use Net Fixed assets NFA like plants and equipment.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - To meet customer demands, you can smartly plan and manage Supply chain Management process in an organization.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of the above</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : E</h3>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>E</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/sap_scm/sap_scm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/sap_scm/pdf/sap_scm_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_scm/sap_scm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">sap_scm_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_scm/sap_scm_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_scm/sap_scm_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_scm/sap_scm_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_scm/sap_scm_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_scm/sap_scm_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_scm/sap_scm_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

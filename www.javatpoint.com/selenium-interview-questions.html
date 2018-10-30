@@ -1,0 +1,837 @@
+ 
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8">
+<link rel="SHORTCUT ICON" href="images/logo/icon.png" />
+<link rel="stylesheet" type="text/css" href="link.css" />
+<title>Selenium Interview Questions - javatpoint</title>
+<meta name="keywords" content="selenium, interview, questions, beginners, professionals, basic, frequently, asked"/>
+<meta name="description" content="Selenium Interview Questions for beginners and professionals with a list of top frequently asked selenium interview questions and answers with java, .net, php, database, hr, spring, hibernate, android, oracle, sql, asp.net, c#, python, c, c++ etc."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">						
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="canonical" href="https://www.javatpoint.com/selenium-interview-questions" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta name="twitter:title" property="og:title" content="Selenium Interview Questions - javatpoint" />
+<meta name="twitter:description" property="og:description" content="Selenium Interview Questions for beginners and professionals with a list of top frequently asked selenium interview questions and answers with java, .net, php, database, hr, spring, hibernate, android, oracle, sql, asp.net, c#, python, c, c++ etc." />
+<meta property="og:url" content="https://www.javatpoint.com/selenium-interview-questions" />
+<meta property="og:site_name" content="www.javatpoint.com" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@pagejavatpoint"/>
+<meta name="twitter:domain" content="www.javatpoint.com"/>
+<meta name="twitter:creator" content="@pagejavatpoint"/>
+<script  id="feedify_webscript" >
+var feedify = feedify || {};
+window.feedify_options={fedify_url:"https://feedify.net/"};
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src = feedify_options.fedify_url+'getjs/feedbackembad-min-1.0.js';
+document.getElementsByTagName('head')[0].appendChild(s);
+</script>
+<link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+</head> 
+<body onload="highlightlink()"> 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8679</button>
+
+<div id="page" style="margin:-8px;background-color:#f5f5f4">
+<div id="container" >
+
+ <div  class="header">
+<table style="width:100%;margin-bottom:5px">
+    <tr>
+        <td>
+            <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px">
+                <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo" /></a>
+            </div>
+            <div style="float:left;width:60%;">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                
+            </div>
+            
+        </td>
+    </tr>
+        <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>-->
+
+</table>
+ </div>
+
+ <div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="images/menuhome64.png" onclick="showmenu()"/></span>
+<span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+</div>
+<div style="margin:0px;padding:0px;clear:both">
+<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> 
+<input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..."  title="Search on Javatpoint"/>
+<input type="hidden" name="sitesearch" value="www.javatpoint.com"/>
+</form>
+</div>
+</div>
+ 
+<div id="link" style="clear:both">
+ <div  class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com">Home</a></li>
+<li><a href="interview-questions-and-answers"  class="selected">Interview Questions</a></li>
+<li><a href="java-tutorial">Java</a></li>
+<li><a href="c-programming-language-tutorial">C</a></li>
+<li><a href="sql-tutorial">SQL</a></li>
+<li><a href="android-tutorial">Android</a></li>
+<li><a href="html-tutorial">HTML</a></li>
+<li><a href="xml-tutorial">XML</a></li>
+<li><a href="javascript-tutorial">JavaScript</a></li>
+<li><a href="ajax-tutorial">Ajax</a></li>
+<li><a href="cloud-computing-tutorial">Cloud</a></li>
+<li><a href="python-tutorial">Python</a></li>
+<li><a href="web-services-tutorial">Web Services</a></li>
+<li><a href="examaccess">Quiz</a></li>
+<li><a href="free-java-projects">Projects</a></li>
+<li><a href="comment.jsp">Comment</a></li>
+<li><a href="forum">Forum</a></li>
+<li><a href="training">Training</a></li>
+
+</ul>
+<br style="clear: left" />
+</div>
+</div>
+<div class="mobilemenu" style="clear:both">
+ <!--<button onclick="showmenu()">Content Menu</button>-->
+ <script async
+src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cm_300x250_Mob_14/9 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:300px;height:250px"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="7014272519"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+
+<div id="menu">
+<a target="_blank" href="https://play.google.com/store/apps/details?id=my.example.javatpoint" style="padding-left:10px;color:blue;text-decoration:none"><img src="images/logo/androidhome.png" style="height:20px" alt="Javatpoint interview questions Android App"/> Download Android App</a> 
+
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">All Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="interview-tips"><span>Interview Tips</span></a>
+<a href="job-interview-questions"><span>JOB/HR Interview</span></a>
+<a href="competency-based-interview-questions"><span>Competency Interview</span></a>
+<a href="business-analyst-interview-questions"><span>Business Analyst</span></a>
+<a href="behavioral-interview-questions"><span>Behavioral Interview</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Company Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="ibm-interview-questions"><span>IBM Interview</span></a>
+<a href="infosys-interview-questions"><span>Infosys Interview</span></a>
+<a href="capgemini-interview-questions"><span>Capgemini Interview</span></a>
+<a href="cognizant-interview-questions"><span>Cognizant Interview</span></a>
+<a href="wipro-interview-questions"><span>Wipro Interview</span></a>
+<a href="accenture-interview-questions"><span>Accenture Interview</span></a>
+<a href="igate-interview-questions"><span>iGate Interview</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Technical Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="c-interview-questions"><span>C Interview</span></a>
+<a href="cpp-interview-questions"><span>C++ Interview</span></a>
+<a href="data-structure-interview-questions"><span>Data Structure Interview</span></a>
+<a href="linux-interview-questions"><span>Linux Interview</span></a>
+<a href="unix-interview-questions"><span>Unix Interview</span></a>
+<a href="shell-scripting-interview-questions"><span>Shell Scripting</span></a>
+<a href="networking-interview-questions"><span>Networking Interview</span></a>
+<a href="ccna-interview-questions"><span>CCNA Interview</span></a>
+<a href="android-interview-questions"><span>Android Interview</span></a>
+<a href="cloud-computing-interview-questions"><span>Cloud Computing</span></a>
+<a href="hadoop-interview-questions"><span>Hadoop Interview</span></a>
+<a href="software-testing-interview-questions"><span>Testing/QTP Interview</span></a>
+<a href="selenium-interview-questions"><span>Selenium Interview</span></a>
+<a href="web-services-interview-questions"><span>Web Services Interview</span></a>
+<a href="operating-system-interview-questions"><span>OS Interview</span></a>
+<a href="excel-interview-questions"><span>Excel Interview</span></a>
+<a href="seo-interview-questions"><span>SEO Interview</span></a>
+<a href="digital-marketing-interview-questions-and-answers"><span>Digital Marketing</span></a>
+<a href="python-interview-questions"><span>Python Interview</span></a>
+<a href="django-interview-questions-and-answers"><span>Django Interview</span></a>
+<a href="pascal-interview-questions-and-answers"><span>Pascal Interview</span></a>
+<a href="ruby-interview-questions"><span>Ruby Interview</span></a>
+<a href="ruby-on-rails-interview-questions"><span>Ruby on Rails Interview</span></a>
+<a href="memcached-interview-questions-and-answers"><span>Memcached Interview</span></a>
+<a href="go-programming-interview-questions"><span>Go Interview</span></a>
+<a href="openstack-interview-questions-and-answers"><span>OpenStack Interview</span></a>
+<a href="scala-interview-questions"><span>Scala Interview</span></a>
+<a href="control-systems-interview-questions"><span>Control Systems</span></a>
+<a href="electrical-machines-interview-questions"><span>Electrical Machines</span></a>
+<a href="power-system-interview-questions"><span>Power System</span></a>
+<a href="digital-electronics-interview-questions"><span>Digital Electronics</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Web Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="html-interview-questions"><span>HTML Interview</span></a>
+<a href="css-interview-questions"><span>CSS Interview</span></a>
+<a href="javascript-interview-questions"><span>JavaScript Interview</span></a>
+<a href="jquery-interview-questions"><span>jQuery Interview</span></a>
+<a href="angularjs-interview-questions"><span>AngularJS Interview</span></a>
+<a href="node-js-interview-questions"><span>Node.js Interview</span></a>
+<a href="ajax-interview-questions"><span>AJAX Interview</span></a>
+<a href="xml-interview-questions"><span>XML Interview</span></a>
+<a href="dojo-interview-questions-and-answers"><span>Dojo Interview</span></a>
+<a href="backbone-js-interview-questions-and-answers"><span>Backbone.js Interview</span></a>
+<a href="ember-js-interview-questions"><span>Ember.js Interview</span></a>
+<a href="xhtml-interview-questions"><span>XHTML Interview</span></a>
+<a href="xslt-interview-questions"><span>XSLT Interview</span></a>
+<a href="xpath-interview-questions"><span>XPath Interview</span></a>
+<a href="xquery-interview-questions"><span>XQuery Interview</span></a>
+<a href="xforms-interview-questions"><span>XForms Interview</span></a>
+<a href="sass-interview-questions-and-answers"><span>SASS Interview</span></a>
+<a href="coffeescript-interview-questions-and-answers"><span>CoffeeScript Interview</span></a>
+<a href="less-interview-questions-and-answers"><span>LESS Interview</span></a>
+<a href="perl-interview-questions"><span>Perl Interview</span></a>
+<a href="pure-css-interview-questions"><span>Pure.CSS Interview</span></a>
+<a href="materialize-css-interview-questions"><span>Materialize Interview</span></a>
+<a href="framework7-interview-questions"><span>Framework7 Interview</span></a>
+<a href="svg-interview-questions"><span>SVG Interview</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">PHP Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="php-interview-questions"><span>PHP Interview</span></a>
+<a href="wordpress-interview-questions"><span>Wordpress Interview</span></a>
+<a href="joomla-interview-questions-and-answers"><span>Joomla Interview</span></a>
+<a href="drupal-interview-questions-and-answers"><span>Drupal Interview</span></a>
+<a href="magento-interview-questions-and-answers"><span>Magento Interview</span></a>
+<a href="codeigniter-interview-questions-and-answers"><span>CodeIgniter Interview</span></a>
+<a href="phalcon-interview-questions"><span>Phalcon Interview</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">.Net Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="dot-net-interview-questions"><span>.Net Interview</span></a>
+<a href="c-sharp-interview-questions"><span>C# Interview</span></a>
+<a href="asp-dot-net-interview-questions"><span>ASP.NET Interview</span></a>
+<a href="ado-dot-net-interview-questions"><span>ADO.NET Interview</span></a>
+<a href="wcf-interview-questions"><span>WCF Interview</span></a>
+<a href="wpf-interview-questions"><span>WPF Interview</span></a>
+<a href="silverlight-interview-questions-and-answers"><span>Silverlight Interview</span></a>
+<a href="fsharp-interview-questions"><span>F# Interview</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Java Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="corejava-interview-questions"><span>Java 1 Interview</span></a>
+<a href="corejava-interview-questions-2"><span>Java 2 Interview</span></a>
+<a href="corejava-interview-questions-3"><span>Exception &amp; String</span></a>
+<a href="java-multithreading-interview-questions"><span>Multithreading </span></a>
+<a href="java-collections-interview-questions"><span>Collections Interview</span></a>
+<a href="jdbc-interview-questions"><span>JDBC Interview</span></a>
+<a href="servletinterview"><span>Servlet Interview</span></a>
+<a href="jspinterview"><span>JSP Interview</span></a>
+<a href="ejb-interview-questions"><span>EJB Interview</span></a>
+<a href="struts-interview-questions"><span>Struts Interview</span></a>
+<a href="hibernate-interview-questions"><span>Hibernate Interview</span></a>
+<a href="spring-interview-questions"><span>Spring Interview</span></a>
+<a href="spring-boot-interview-questions"><span>Spring Boot Interview</span></a>
+<a href="jpa-interview-questions"><span>JPA Interview</span></a>
+<a href="maven-interview-questions"><span>Maven Interview</span></a>
+<a href="junit-interview-questions"><span>JUnit Interview</span></a>
+<a href="jsf-interview-questions"><span>JSF Interview</span></a>
+<a href="primefaces-interview-questions"><span>PrimeFaces Interview</span></a>
+<a href="richfaces-interview-questions"><span>RichFaces Interview</span></a>
+<a href="gwt-interview-questions"><span>GWT Interview</span></a>
+<a href="jdb-interview-questions"><span>JDB Interview</span></a>
+<a href="jogl-interview-questions"><span>JOGL Interview</span></a>
+<a href="jbpm-interview-questions"><span>jBPM Interview</span></a>
+
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Database Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="dbms-interview-questions"><span>DBMS Interview</span></a>
+<a href="sql-interview-questions"><span>SQL Interview</span></a>
+<a href="pl-sql-interview-questions"><span>PL/SQL Interview</span></a>
+<a href="oracle-interview-questions"><span>Oracle Interview</span></a>
+<a href="mysql-interview-questions"><span>MySql Interview</span></a>
+<a href="sql-server-interview-questions"><span>SQL Server Interview</span></a>
+<a href="mongodb-interview-questions"><span>MongoDB Interview</span></a>
+<a href="cassandra-interview-questions-and-answers"><span>Cassandra Interview</span></a>
+<a href="db2-interview-questions-and-answers"><span>DB2 Interview</span></a>
+<a href="microsoft-access-interview-questions-and-answers"><span>Access Interview</span></a>
+<a href="sqlite-interview-questions"><span>SQLite Interview</span></a>
+<a href="couchdb-interview-questions"><span>CouchDB Interview</span></a>
+<a href="neo4j-interview-questions-and-answers"><span>Neo4j Interview</span></a>
+<a href="mariadb-interview-questions"><span>MariaDB Interview</span></a>
+<a href="pouchdb-interview-questions"><span>PouchDB Interview</span></a>
+<a href="redis-interview-questions-and-answers"><span>Redis Interview</span></a>
+</div>
+<table  id="leftad">
+<tr><td>
+<img src="images/wh.JPG" alt="space"/>
+</td></tr>
+<tr><td>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:inline-block;width:160px;height:600px"
+        data-ad-client="ca-pub-4699858549023382"
+        data-ad-slot="4476401222"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+<br><br>
+</td></tr>
+</table>
+</div>
+
+<div class="onlycontent">
+
+<div class="onlycontentad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord"
+style="display:inline-block"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="city">
+<table>
+<tr><td>
+
+<img src="interview/images/selenium-interview-questions.png" alt="Selenium Interview Questions" class="imageright"/>
+<h1 class="h1">Selenium Interview Questions</h1>
+<p>A list of frequently asked <strong>Selenium interview questions</strong> and answers are given below.</p>
+<h3 class="h3">Basic Level - Selenium Interview Questions</h3>
+
+<h3 class="h3">1) What is test automation or automation testing? </h3>
+<p>Automation testing enables the use of specialized tools to automate the execution of manually designed test cases without any human intervention. Automation testing tools can access the test data, controls the execution of tests and compares the actual result against the expected result. Consequently, generating detailed test reports of the system under test.</p>
+<hr/>
+<h3 class="h3">2) What are the advantages of automation testing?</h3>
+<ul class="points">
+<li>Automation testing supports both functional and performance test on an application.</li> 
+<li>It supports the execution of repeated test cases.</li> 
+<li>It facilitates parallel execution. </li> 
+<li>It aids in testing a large test matrix. </li> 
+<li>It improves accuracy because there are no chances of human errors. </li> 
+<li>It saves time and money.</li> 
+</ul>
+<hr/>
+<h3 class="h3">3) Name some of the commonly used Automation Testing tools that are used for Functional Automation.</h3>
+<ul class="points">
+<li>Quick Test Professional, provided by HP.</li>
+<li>Rational Robot, provided by IBM.</li>
+<li>Coded UI, provided by Microsoft.</li>
+<li>Selenium, open source.</li>
+<li>Auto It, Open Source.</li>
+</ul> 
+<hr/>
+<h3 class="h3">4) Name some of the commonly used Automation Testing tools that are used for Non-Functional Automation.</h3>
+<ul class="points">
+<li>Load Runner, provided by Hp.</li>
+<li>JMeter, provided by Apache.</li>
+<li>Burp Suite, provided by PortSwigger.</li>
+<li>Acunetix, provided by Acunetix.</li>
+</ul>
+<hr/>
+<h3 class="h3">5) What is Selenium?</h3>
+<p>Selenium is one of the most widely used open source Web UI (User Interface) automation testing suite. <strong>Jason Huggins</strong> developed Selenium in 2004 as an internal tool at <strong>Thought Works</strong>. Selenium supports automation across different browsers, platforms, and programming languages. </p>
+<hr/>
+<h3 class="h3">6) What are the different components of Selenium?</h3>
+<p>Selenium is not just a single tool but a suite of software's, each having a different approach to support automation testing. It comprises of four major components which include:</p>
+<ol class="points">
+<li>Selenium Integrated Development Environment (IDE)</li>
+<li>Selenium Remote Control (Now Deprecated)</li>
+<li>WebDriver</li>
+<li>Selenium Grid</li>
+</ol>
+<hr/>
+<h3 class="h3">7) List out the names of programming languages, browsers and operating systems that are supported by Selenium.</h3>
+<p>Selenium supports various operating systems, browsers and programming languages. Following is the list:</p>
+<ul class="points">
+<li><strong>Programming Languages</strong>: C#, Java, Python, PHP, Ruby, Perl, JavaScript. </li>
+<li><strong>Operating Systems</strong>: Android, iOS, Windows, Linux, Mac, Solaris.</li>
+<li><strong>Browsers</strong>: Google Chrome, Mozilla Firefox, Internet Explorer, Edge, Opera, Safari, etc.</li>
+</ul>
+<hr/>
+<h3 class="h3">8) What are the significant changes/upgrades in various Selenium versions?</h3>
+<p><strong>Selenium v1.0:  </strong></p>
+<ul class="points">
+<li>Version 1.0 was the initial release of Selenium.</li>
+<li>It included three tools:  Selenium IDE, Selenium RC, and Selenium Grid. </li>
+</ul>
+<p><strong>Selenium v2.0:</strong></p>
+<ul class="points">
+<li>Selenium WebDriver was introduced replacing Selenium RC in version "2.0".</li>
+<li>With the onset of WebDriver, RC got deprecated and moved to the legacy package.</li>
+</ul>
+<p><strong>Selenium v3:</strong></p>
+<ul class="points">
+<li>The latest release Selenium 3 has new added features and functionalities.</li>
+<li>It includes Selenium IDE, Selenium WebDriver, and Selenium Grid.</li>
+</ul>
+<hr/>
+<h3 class="h3">9) List some of the test types that are supported by Selenium.</h3>
+<p>Selenium supports two types of testing:</p>
+<ul class="points">
+<li>Functional Testing</li> 
+<li>Regression Testing</li> 
+<li>Sanity Testing</li> 
+<li>Smoke Testing</li> 
+<li>Responsive Testing</li> 
+<li>Cross Browser Testing</li> 
+<li>UI testing (black box)</li> 
+<li>Integration Testing</li> 
+</ul>
+<hr/>
+<h3 class="h3">10) What is Selenium IDE?</h3>
+<p>Selenium IDE is implemented as Firefox extension which provides record and playback functionality on test scripts. It allows testers to export recorded scripts in many languages like HTML, Java, Ruby, RSpec, Python, C#, JUnit and TestNG.  </p>
+<p>Selenium IDE has limited scope, and the generated test scripts are not very robust, and portable.</p>
+<hr/>
+<h3 class="h3">11) What do you mean by Selenese?</h3>
+<p>Selenium commands, also known as "Selenese" are the set of commands used in Selenium that run your tests. For example, command - open (URL); launches the desired URL in the specified browser and it accept both relative and absolute URLs.</p>
+<p>A sequence of Selenium commands (Selenese) together is known as a test script.</p>
+<hr/>
+<h3 class="h3">12) What are the different ways of locating a web element in Selenium?</h3>
+<p>In Selenium, web elements are identified and located with the help of Locators. Locators specify a target location which uniquely defines the web element in the context of a web application. Thus, to identify web elements accurately and precisely we have different types of locators in Selenium:</p>
+<ul class="points">
+<li>ID</li>
+<li>ClassName</li>
+<li>Name</li>
+<li>TagName</li>
+<li>LinkText</li>
+<li>PartialLinkText</li>
+<li>Xpath</li>
+<li>CSS Selector</li>
+<li>DOM</li>
+</ul>
+<hr/>
+<h3 class="h3">13) How many types of WebDriver API's are available in Selenium?</h3>
+<p>The list of WebDriver API's which are used to automate browser include:</p>
+<ul class="points">
+<li>AndroidDriver</li>
+<li>ChromeDriver</li>
+<li>EventFiringWebDriver</li>
+<li>FirefoxDriver</li>
+<li>HtmlUnitDriver</li>
+<li>InternetExplorerDriver</li>
+<li>iPhoneDriver</li>
+<li>iPhoneSimulatorDriver</li>
+<li>RemoteWebDriver</li>
+</ul>
+<hr/>
+<h3 class="h3">14) List out some of the Automation tools which could be integrated with Selenium to achieve continuous testing.</h3>
+<p>Selenium can be used to automate functional tests and can be integrated with automation test tools such as <strong>Maven, Jenkins, &Docker</strong> to achieve continuous testing. It can also be integrated with tools such as <strong>TestNG, &JUnit</strong> for managing test cases and generating reports.</p>
+<hr/>
+<h3 class="h3">15) What do you mean by the assertion in Selenium?</h3>
+<p>The assertion is used as a verification point. It verifies that the state of the application conforms to what is expected.  The types of assertion are "assert", "verify" and "waitFor".</p>
+<hr/>
+<h3 class="h3">16) Explain the difference between assert and verify commands?</h3>
+<p><strong>Assert</strong>: Assert command checks if the given condition is true or false. If the condition is true, the program control will execute the next phase of testing, and if the condition is false, execution will stop, and nothing will be executed.</p>
+<p><strong>Verify</strong>: Verify command also checks if the given condition is true or false. It doesn't halt program execution, i.e., any failure during verification would not stop the execution, and all the test phases would be executed.</p>
+<hr/>
+<h3 class="h3">17) What do you mean by XPath? </h3>
+<ul class="points">
+<li>XPath is a language used for locating nodes in XML documents.</li>
+<li>XPath can be used as a substitute when you don't have a suitable id or name attribute for the element you want to locate.</li>
+<li>XPath provides locating strategies like:
+	<ul class="points">
+		<li>XPath Absolute</li>
+		<li>XPath Attributes</li>
+	</ul>
+</li>
+</ul>
+<hr/>
+<h3 class="h3">18) Explain XPath Absolute and XPath attributes.</h3>
+<p><strong>XPath Absolute:</strong></p>
+<ul class="points">
+<li>XPath Absolute enables users to mention the complete XPath location from the root HTML tag to the specific elements.</li>
+<li>Syntax: //html/body/tag1[index]/tag2[index]/.../tagN[index]</li>
+<li>Example: //html/body/div[2]/div/div[2]/div/div/div/fieldset/form/div[1]/input[1]</li>
+</ul>
+<p><strong>XPath Attributes:</strong></p>
+<ul class="points">
+<li>XPath Attributes is always recommended when you don't have a suitable id or name attribute for the element you want to locate.</li>
+<li>Syntax: //htmltag[@attribute1='value1' and @attribute2='value2']</li>
+<li>Example: //input[@id='passwd' and @placeholder='password']</li>
+</ul>
+<hr/>
+<h3 class="h3">19) What is the difference between "/" and "//" in XPath?</h3>
+<p><strong>Single Slash "/":</strong> Single slash is used to create XPath with absolute path.</p>
+<p><strong>Double Slash "//":</strong> Double slash is used to create XPath with the relative path.</p>
+<hr/>
+<h3 class="h3">20) What are the different types of annotations which are used in Selenium?</h3>
+<p>JUnit annotations which can be used are:</p>
+<ul class="points">
+<li>Test</li>
+<li>Before</li>
+<li>After</li>
+<li>Ignore</li>
+<li>BeforeClass</li>
+<li>AfterClass</li>
+<li>RunWith</li>
+</ul>
+<hr/>
+<h3 class="h3">21) What are the WebDriver supported Mobile Testing Drivers?</h3>
+<p>WebDriver supported "mobile testing drivers" are: </p>
+<ul class="points">
+<li>AndroidDriver</li>
+<li>IphoneDriver</li>
+<li>OperaMobileDriver</li>
+</ul>
+<hr/>
+<h3 class="h3">22) What are the popular programming languages supported by Selenium WebDriver to write Test Cases?</h3>
+<ul class="points">
+<li>JAVA</li>
+<li>PHP</li>
+<li>Python</li>
+<li>C#</li>
+<li>Ruby</li>
+<li>Perl</li>
+</ul>
+<hr/>
+<h3 class="h3">23) What is the difference between type keys and type commands?</h3>
+<p>TypeKeys() will trigger JavaScript event in most of the cases whereas .type() won't.</p>
+<hr/>
+<h3 class="h3">24) What is the difference between "type" and "typeAndWait" command?</h3>
+<p>"type" command is used to type keyboard key values into the text box of software web application. It can also be used for selecting values of combo box whereas "typeAndWait" command is used when your typing is completed and software web page start reloading. This command will wait for software application page to reload. If there is no page reload event on typing, you have to use a simple "type" command.</p>
+<hr/>
+<h3 class="h3">25) What is the difference between findElement() and findElements()?</h3>
+<p><strong>findElement():</strong> It is used to find the first element within the current page using the given "locating mechanism". It returns a single WebElement.</p>
+<p><strong>findElements():</strong> It uses the given "locating mechanism" to find all the elements within the current page. It returns a list of web elements.
+<hr/>
+<h3 class="h3">26) What is the wait? How many types of waits in selenium?</h3>
+<p>Selenium Webdriver introduces the concept of waits for the AJAX-based application. There are two types of waits:</p>
+<ol class="points">
+<li>Implicit Wait</li>
+<li>Explicit Wait</li>
+</ol>
+<hr/>
+<h3 class="h3">27) What is the main disadvantage of implicit wait?</h3>
+<p>The main disadvantage of implicit wait is that it slows down test performance.</p>
+<p>Another disadvantage of implicit wait is:</p>
+<p>Suppose, you set the waiting limit to be 10 seconds, and the elements appear in the DOM in 11 seconds, your tests will be failed because you told it to wait a maximum of 10 seconds.</p>
+<hr/>
+<h3 class="h3">28) What is Selenium Grid?</h3>
+<p>Selenium Grid facilitates you to distribute your tests on multiple machines and all of them at the same time. So, you can execute tests on Internet Explorer on Windows and Safari on Mac machine using the same text script. It reduces the time of test execution and provides quick feedback.</p>
+<hr/>
+<h3 class="h3">Advance Level - Selenium Interview Questions</h3>
+<h3 class="h3">29) How can we launch different browsers in Selenium WebDriver?</h3>
+<p>We have to create an instance of a driver of that particular browser. </p>
+<div class="codeblock"><textarea name="code" class="java">
+WebDriver driver =newFirefoxDriver();
+</textarea></div>
+<p>Here, "WebDriver" is an interface, and we are creating a reference variable "driver" of type WebDriver, instantiated using "FireFoxDriver" class.</p>
+<hr/>
+<h3 class="h3">30) Write a code snippet to launch Firefox browser in WebDriver.</h3>
+<div class="codeblock"><textarea name="code" class="java">
+publicclassFirefoxBrowserLaunchDemo {
+
+publicstaticvoid main(String[] args) {
+
+//Creating a driver object referencing WebDriver interface
+WebDriver driver;
+
+//Setting webdriver.gecko.driver property
+System.setProperty("webdriver.gecko.driver", pathToGeckoDriver + "\\geckodriver.exe");
+
+//Instantiating driver object and launching browser
+driver = newFirefoxDriver();
+
+//Using get() method to open a webpage
+driver.get("http://javatpoint.com");
+
+//Closing the browser
+driver.quit();
+
+    }
+
+}
+</textarea></div>
+<hr/>
+<h3 class="h3">31) Write a code snippet to launch Chrome browser in WebDriver.</h3>
+<div class="codeblock"><textarea name="code" class="java">
+publicclassChromeBrowserLaunchDemo {
+
+publicstaticvoid main(String[] args) {
+
+//Creating a driver object referencing WebDriver interface
+WebDriver driver;
+
+//Setting the webdriver.chrome.driver property to its executable's location
+System.setProperty("webdriver.chrome.driver", "/lib/chromeDriver/chromedriver.exe");
+	
+//Instantiating driver object
+driver = newChromeDriver();
+
+//Using get() method to open a webpage
+driver.get("http://javatpoint.com");
+
+//Closing the browser
+driver.quit();
+
+    }
+
+}
+</textarea></div>
+<hr/>
+<h3 class="h3">32) Write a code snippet to launch Internet Explorer browser in WebDriver.</h3>
+<div class="codeblock"><textarea name="code" class="java">
+publicclassIEBrowserLaunchDemo {
+
+publicstaticvoid main(String[] args) {
+
+//Creating a driver object referencing WebDriver interface
+WebDriver driver;
+
+//Setting the webdriver.ie.driver property to its executable's location
+System.setProperty("webdriver.ie.driver", "/lib/IEDriverServer/IEDriverServer.exe");
+	
+//Instantiating driver object
+driver = newInternetExplorerDriver();
+
+//Using get() method to open a webpage
+driver.get("http://javatpoint.com");
+
+//Closing the browser
+driver.quit();
+
+    }
+
+}
+</textarea></div>
+<hr/>
+<h3 class="h3">33) Write a code snippet to perform right-click an element in WebDriver.</h3>
+<p>We will use <strong>Action class</strong> to generate user event like right-click an element in WebDriver.</p>
+<div class="codeblock"><textarea name="code" class="java">
+Actions action = newActions(driver);
+WebElement element = driver.findElement(By.id("elementId"));
+action.contextClick(element).perform();
+</textarea></div>
+<hr/>
+<h3 class="h3">34) Write a code snippet to perform mouse hover in WebDriver.</h3>
+<div class="codeblock"><textarea name="code" class="java">
+Actions action = newActions(driver);
+WebElement element = driver.findElement(By.id("elementId"));
+action.moveToElement(element).perform();
+</textarea></div>
+<hr/>
+<h3 class="h3">35) How do you perform drag and drop operation in WebDriver?</h3>
+<p>Code snippet to perform drag and drop operation:  </p>
+<div class="codeblock"><textarea name="code" class="java">
+//WebElement on which drag and drop operation needs to be performed
+WebElementfromWebElement = driver.findElement(By Locator of fromWebElement);
+
+//WebElement to which the above object is dropped
+WebElementtoWebElement = driver.findElement(By Locator of toWebElement);
+
+//Creating object of Actions class to build composite actions
+Actions builder = newActions(driver);
+
+//Building a drag and drop action
+Action dragAndDrop = builder.clickAndHold(fromWebElement)
+		     .moveToElement(toWebElement)
+		     .release(toWebElement)
+	     .build();
+
+//Performing the drag and drop action
+dragAndDrop.perform();
+</textarea></div>
+<hr/>
+<h3 class="h3">36) What are the different methods to refresh a web page in WebDriver?</h3>
+<p>There are multiple ways of refreshing a page in Webdriver.</p>
+<p>1. Using driver.navigate command -</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.navigate().refresh();
+</textarea></div>
+<p>2. Using driver.getCurrentUrl() with driver.get() command -</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.get(driver.getCurrentUrl());
+</textarea></div>
+<p>3. Using driver.getCurrentUrl() with driver.navigate() command -</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.navigate().to(driver.getCurrentUrl());
+</textarea></div>
+<p>4. Pressing an F5 key on any textbox using the sendKeys command -</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.findElement(By textboxLocator).sendKeys(Keys.F5);
+</textarea></div>
+<p>5. Passing ascii value of the F5 key, i.e., "\uE035" using the sendKeys command -</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.findElement(By textboxLocator).sendKeys("\uE035");
+</textarea></div>
+<hr/>
+<h3 class="h3">37) Write a code snippet to navigate back and forward in browser history?</h3>
+<p>Navigate back in browser history:</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.navigate().back();
+</textarea></div>
+<p>Navigate forward in browser history:</p>
+<div class="codeblock"><textarea name="code" class="java">
+driver.navigate().forward();
+</textarea></div>
+<hr/>
+<h3 class="h3">38) How to invoke an application in WebDriver? </h3>
+<div class="codeblock"><textarea name="code" class="java">
+driver.get("url"); or
+driver.navigate().to("url");
+</textarea></div>
+<hr/>
+<br/>
+<div id="interviewcategory">
+<table class="alt">
+<tr><td><a href="job-interview-questions"><span>Job/HR Interview Questions</span></a></td><td><a href="database-interview-questions"><span>Database Interview Questions</span></a></td></tr>
+
+<tr><td><a href="pl-sql-interview-questions"><span>PL/SQL Interview Questions</span></a></td><td><a href="sql-interview-questions"><span>SQL Interview Questions</span></a></td></tr>
+<tr><td><a href="oracle-interview-questions"><span>Oracle Interview Questions</span></a></td><td><a href="android-interview-questions"><span>Android Interview Questions</span></a></td></tr>
+<tr><td><a href="sql-server-interview-questions"><span>SQL Server Interview Questions</span></a></td><td><a href="mysql-interview-questions"><span>MySQL Interview Questions</span></a></td></tr>
+<tr><td><a href="corejava-interview-questions#corebasicsinterview">Java Basics Interview Questions</a></td>
+<td><a href="corejava-interview-questions#oopsinterview">Java OOPs Interview Questions</a></td></tr>
+<tr><td><a href="java-multithreading-interview-questions">Java Multithreading Questions</a></td>
+<td><a href="corejava-interview-questions-3">Java String &amp; Exception Questions</a></td></tr>
+<tr><td><a href="java-collections-interview-questions">Java Collection Interview Questions</a></td>
+<td><a href="jdbc-interview-questions">JDBC Interview Questions</a></td></tr>
+<tr><td><a href="servletinterview">Servlet Interview Questions</a></td>
+<td><a href="jspinterview">JSP Interview Questions</a></td></tr>
+<tr><td><a href="spring-interview-questions"><span>Spring Interview Questions</span></a></td><td><a href="hibernate-interview-questions"><span>Hibernate Interview Questions</span></a></td></tr>
+
+</table>
+</div>
+
+</td></tr>
+</table>
+</div>
+<div style="margin-left:0%">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="7776236568"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+</div>
+</div>
+
+<div id="right">
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8834194653550774";
+/* Cm_160x600_Jatpoint_New */
+google_ad_slot = "8466405376";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+
+</div>
+
+<div class="right1024" style="float:left;margin-left:10px;margin-top:10px;">
+<!-- BuySellAds Zone Code -->
+<div id="bsap_1308242" class="bsarocks bsap_f89f460b122809aeb9c89378ec2fe379"></div>
+<!-- End BuySellAds Zone Code -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- right1024only -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:120px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="2180118716"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br/><br/><br/><br/>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- right1024only -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:120px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="2180118716"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="footer" style="clear:both;width:100%">
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>--><div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p><ul class="points"> <li>Website Designing</li><li>Website Development</li><li>Java Development</li><li>PHP Development</li><li>WordPress</li><li>Graphic Designing</li><li>Logo</li><li>Digital Marketing</li><li>On Page and Off Page SEO</li><li>PPC</li><li>Content Development</li><li>Corporate Training</li><li>Classroom and Online Training</li><li>Data Entry</li></ul> <p style="padding-bottom:60px"></p></div><div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p></div><!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a><a rel="nofollow" href="http://www.hindi-typing.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/><p>Hindi-Typing</p></div></a></marquee></div>--><script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script><div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://www.javatpoint.com/images/social/rss1.png" alt="RSS Feed"/></a> <a target="_blank"  rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://www.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"/></a> <a  rel="nofollow" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://www.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"/></a> <a target="_blank" rel="nofollow" href="https://plus.google.com/u/0/+javatpoint"><img src="https://www.javatpoint.com/images/social/google1.png" alt="Google Page"/></a> <a target="_blank" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://www.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"/></a> <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://www.javatpoint.com/images/youtube32.png" alt="YouTube"/></a> <a target="_blank" rel="nofollow" href="https://javatpoint.blogspot.com"><img src="https://www.javatpoint.com/images/social/blog.png" alt="Blog Page"/></a> </div><footer class="footer1"><div class="column4"><h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a></div><div class="column4"><h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow" target="_blank" href="http://www.hindi-typing.com">Hindi-typing.com</a><a rel="nofollow" target="_blank" href="http://www.shayaree.com">Shayaree.com</a><a rel="nofollow" target="_blank" href="https://www.wordcountee.com">Wordcountee.com</a><a rel="nofollow" target="_blank" href="https://www.charactercountee.com">Charactercountee.com</a><a rel="nofollow" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a></div><div class="column4"><h3>Our Services</h3><p>Website Development</p><p>Android Development</p><p>Website Designing</p><p>Digital Marketing</p><p>Summer Training</p><p>Industrial Training</p><p>College Campus Training</p></div><div class="column4"><h3>Contact</h3><p>Address: G-13, 2nd Floor, Sec-3</p><p>Noida, UP, 201301, India</p><p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a></div></footer><footer class="footer2"><p>&copy; Copyright 2011-2018 www.javatpoint.com. All rights reserved. <a rel="nofollow" target="_blank" href="https://www.sssit.org">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p></footer>
+</div>
+
+</div></div>
+
+<script src="js/shcoreandbrush.js"></script>
+<script type="text/javascript"> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+</body> 
+</html>
+    

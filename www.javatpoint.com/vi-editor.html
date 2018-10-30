@@ -1,0 +1,448 @@
+ <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Vi Editor - javatpoint</title><link rel="SHORTCUT ICON" href="/images/logo/icon.png" />
+<link rel="stylesheet" type="text/css" href="/link.css"/>
+<meta name="keywords" content="linux, tutorial, beginners, professionals, introduction, example, command, file, directory, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi"/><meta name="description" content="Linux Vi Editor Introduction for beginners and professionals with examples on files, directories, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi etc.."/><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="https://www.javatpoint.com/vi-editor" />
+<meta property="og:title" content="Vi Editor - javatpoint" /><meta property="og:description" content="Linux Vi Editor Introduction for beginners and professionals with examples on files, directories, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi etc.." />
+<meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta name="twitter:title" property="og:title" content="Vi Editor - javatpoint" /><meta name="twitter:description" property="og:description" content="Linux Vi Editor Introduction for beginners and professionals with examples on files, directories, permission, backup, ls, man, pwd, cd, chmod, man, shell, pipes, filters, regex, vi etc.." /><meta property="og:url" content="https://www.javatpoint.com/vi-editor" /><meta property="og:site_name" content="www.javatpoint.com" /><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@pagejavatpoint"/><meta name="twitter:domain" content="www.javatpoint.com"/><meta name="twitter:creator" content="@pagejavatpoint"/>
+<script  id="feedify_webscript" >
+var feedify = feedify || {};
+window.feedify_options={fedify_url:"https://feedify.net/"};
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src = feedify_options.fedify_url+'getjs/feedbackembad-min-1.0.js';
+document.getElementsByTagName('head')[0].appendChild(s);
+</script>
+<link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+</head> 
+<body onload="highlightlink()"> 
+<!-- /13406045/javatpoint_cmda -->
+<div id='div-gpt-ad-1512468834310-0' style='height:1px; width:1px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512468834310-0'); });
+</script>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
+<div id="page" style="margin:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><table style="width:100%;margin-bottom:5px">
+    <tr>
+        <td>
+            <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px">
+                <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo" /></a>
+            </div>
+            <div style="float:left;width:60%;">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                
+            </div>
+            
+        </td>
+    </tr>
+        <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>-->
+
+</table> </div>
+<div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"/></span>
+<span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+
+</div>
+<div style="margin:0px;padding:0px;clear:both">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+<!--<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint"/><input type="hidden" name="sitesearch" value="www.javatpoint.com"/></form>-->
+
+</div>
+</div>
+<div id="link" style="clear:both">  <div  class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com">Home</a></li>
+<li><a href="c-programming-language-tutorial">C</a></li>
+<li><a href="java-tutorial">Java</a></li>
+<li><a href="linux-tutorial" class="selected">Linux</a></li>
+<li><a href="shell-scripting-tutorial">Shell Scripting</a></li>
+<li><a href="sql-tutorial">SQL</a></li>
+<li><a href="html-tutorial">HTML</a></li>
+<li><a href="css-tutorial">CSS</a></li>
+<li><a href="javascript-tutorial">JavaScript</a></li>
+<li><a href="xml-tutorial">XML</a></li>
+<li><a href="ajax-tutorial">Ajax</a></li>
+<li><a href="python-tutorial">Python</a></li>
+<li><a href="android-tutorial">Android</a></li>
+<li><a href="examaccess">Quiz</a></li>
+<li><a href="free-java-projects">Projects</a></li>
+<li><a href="corejava-interview-questions">Interview Q</a></li>
+<li><a href="comment.jsp">Comment</a></li>
+<li><a href="forum">Forum</a></li>
+</ul>
+<br style="clear: left" />
+</div></div>
+<div class="mobilemenu" style="clear:both"> 
+<script async
+src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cm_300x250_Mob_14/9 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:300px;height:250px"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="7014272519"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="menu">
+ <div class="leftmenu2"  >
+ <a href="linux-tutorial"><span>Introduction to Linux</span></a>
+ <a href="linux-directories"><span>Linux Directories</span></a>
+ <a href="linux-files"><span>Linux Files</span></a>
+ <a href="linux-man"><span>Linux Man Pages</span></a>
+<a href="linux-filters"><span>Linux Filters</span></a>
+<a href="linux-input-output-redirection"><span>Linux I/O Redirection</span></a>
+<a href="linux-basic-unix-tools"><span>Linux Unix Tools</span></a> 
+<a href="linux-regular-expression"><span>Linux Regular Expression</span></a>
+<a href="linux-users"><span>Linux Users </span></a>
+<a href="linux-file-ownership"><span>Linux File Security</span></a>
+<a href="linux-shell-commands"><span>Linux Shell Expansion</span></a>
+<a href="linux-networking-commands"><span>Linux Networking</span></a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Linux vi Editor</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="vi-editor">Vi Editor</a>
+<a href="vi-commands">Vi Commands</a>
+<a href="linux-vi-switch">1) switch</a>
+<a href="linux-vi-move">2) move</a>
+<a href="linux-vi-jump">3) jump</a>
+<a href="linux-vi-delete">4) delete</a>
+<a href="linux-vi-undo-and-repeat">5) undo and repeat</a>
+<a href="linux-vi-cut-copy-paste">6) cut, copy, paste</a>
+<a href="linux-vi-cut-copy-paste-blocks">7) cut, copy, paste blocks</a>
+<a href="linux-vi-start-and-end">8) Start and end</a>
+<a href="linux-vi-joining">9) Joining</a>
+<a href="linux-vi-word">10) word</a>
+<a href="linux-vi-searhing">11)  Search</a>
+<a href="linux-vi-replace-all">12) Replace all</a>
+<a href="linux-vi-text-buffers">13) Text Buffers</a>
+<a href="linux-vi-abbreviations">14) Abbreviations</a>
+</div>
+<div class="leftmenu2">
+<a href="vi-editor"><span>vi editor</span></a>
+<a href="linux-system-admin-commands"><span>Linux System Admin</span></a>
+<a href="linux-commands"><span>100+ Linux Commands</span></a>
+<a href="linux-interview-questions"><span>Linux Interview</span></a>
+</div>
+<img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"/>
+<br/>
+<div id="leftad" style="margin-left:20px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javatpointleft -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="4476401222"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="onlycontent">
+<div class="onlycontentad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord"
+style="display:inline-block"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="onlycontentinner">
+<div id="city">
+<table>
+<tr><td>
+
+<div id="bottomnextup">
+<a class="next" href="vi-commands">next &rarr;</a>
+<a class="next" href="linux-networking-commands">&larr; prev</a>
+</div>
+
+<h1 class="h1">Vi editor</h1>
+<hr/>
+<h2 class="h2"> What is vi</h2>
+<p>The vi editor is elaborated as <strong>vi</strong>sual editor. It is installed in every Unix system. It is a very powerful application. An improved version of vi editor is <strong> vim </strong> but most Linux systems have vi editor installed.</p>
+<p><strong>vi editor has two modes:</strong></p>
+<ul class="points">
+<li><strong>Command Mode:</strong> In command mode, actions are taken on the file. The vi editor starts in command mode. Typed words will act as commands in vi editor. To pass a command you have to be in command mode.</li>
+<li><strong>Insert Mode:</strong> In insert mode, entered text will be inserted into the file.<strong> Esc </strong> key will take you to the command mode from insert mode.</li>
+</ul>
+<p>By default, vi editor starts in command mode. To enter text, you have to be in insert mode, just type <strong>'i'</strong> and you'll be in insert mode. Although, after typing <strong> i </strong> nothing will appear on the screen but you'll be in insert mode. Now you can type anything.</p>
+<p>To exit from insert mode press <strong> Esc </strong> key, you'll be directed to command mode.</p>
+<p>If you are not sure which mode you are in, press Esc key twice and you'll be in command mode.</p>
+<hr/>
+<h2 class="h2">Using vi</h2>
+<p>The vi editor tool is an interactive tool as it displays changes made in the file on the screen while you edit the file.</p>
+<p>In vi editor you can insert, edit or remove a word as cursor moves throughout the file.</p>
+<p>Commands are specified for each function like to delete it's x or dd.</p>
+<p>The vi editor is case-sensitive. For example,<strong> p </strong> allows you to paste after the current line while <strong> P </strong> allows you to paste before the current line.</p>
+<p><strong>vi syntax:</strong></p>
+<div class="codeblock"><textarea  name="code" class="html">
+vi &lt;fileName&gt;
+</textarea></div>
+<p>In the terminal when you'll type vi command with a file name, the terminal will get clear and content of the file will be displayed. If there is no such file, then a new file will be created and once completed file will be saved with the mentioned file name.</p>
+<hr/>
+<h2 class="h2">Linux vi example</h2>
+<p>Let's understand vi through an example:</p>
+<p>To start vi open your terminal and type vi command followed by file name. If your file is in some other directory, you can specify the file path. And if in case, your file doesn't exist, it will create a new file with the specified name at the given location.</p>
+<p><strong>Example:</strong></p>
+<div class="codeblock"><textarea  name="code" class="html">
+vi /home/sssit/Downloads/file.txt
+</textarea></div>
+<img src="linux/images/linux-vi-intro1.png" alt="Linux Vi Editor1"/>
+<p>Look at the above snapshot, we are creating a new file <strong> file.txt </strong> (as this file doesn't exist) and have entered the full path for the directory <strong> Downloads.</strong> </p>
+
+<h2 class="h2">Command mode</h2>
+<p>This is what you'll see when you'll press enter after the above command. If you'll start typing, nothing will appear as you are in command mode. By default vi opens in command mode.</p>
+<img src="linux/images/linux-vi-intro2.png" alt="Linux Vi Editor1"/>
+<p>Look at the above snapshot, it is blank as it is a new file. To start typing, you have to move to the insert mode.  At the end of the terminal window, directory name and file name are displayed.</p>
+
+<h2 class="h2">Insert mode</h2>
+<p>To move to the insert mode press <strong> i.</strong> Although, there are other commands also to move to insert mode which we'll study in next page.</p>
+<img src="linux/images/linux-vi-intro3.png" alt="Linux Vi Editor3"/>
+<p>Look at the above snapshot, after pressing <strong> i </strong> we have entered into insert mode. Now we can write anything. To move to the next line press enter.</p>
+<p>Once you have done with your typing, press <strong> esc </strong> key to return to the command mode.</p>
+<hr/>
+<h2 class="h2">To save and quit</h2>
+<p>You can save and quit vi editor from command mode. Before writing save or quit command you have to press colon <strong> (:).</strong> Colon allows you to give instructions to vi.</p>
+<p><strong>exit vi table:</strong></p>
+<table class="alt">
+    <tr>
+        <th>Commands</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>:wq</td>
+        <td>Save and quit</td>
+    </tr>
+    <tr>
+        <td>:w</td>
+        <td>Save</td>
+    </tr>
+    <tr>
+        <td>:q</td>
+        <td>Quit</td>
+    </tr>
+    <tr>
+        <td>:w fname</td>
+        <td>Save as fname</td>
+    </tr>
+    <tr>
+        <td>ZZ </td>
+        <td>Save and quit</td>
+    </tr>
+    <tr>
+        <td>:q! </td>
+        <td>Quit discarding changes made</td>
+    </tr>
+    <tr>
+        <td>:w! </td>
+        <td>Save (and write to non-writable file) </td>
+    </tr>
+</table>
+<p>To exit from vi, first ensure that you are in command mode. Now, type :wq and press enter. It will save and quit vi.</p>
+<p>Type <strong>:wq</strong> to save and exit the file.</p>
+<img src="linux/images/linux-vi-intro4.png" alt="Linux Vi Editor4"/>
+<p>Look at the above snapshot, command :wq will save and quit the vi editor. When you'll type it in command mode, it will automatically come at bottom left corner.</p>
+<p>If you want to quit without saving the file, use <strong> :q.</strong> This command will only work when you have not made any changes in the file.</p>
+<img src="linux/images/linux-vi-intro5.png" alt="Linux Vi Editor5"/>
+<p>Look at the above snapshot, this file is modified and hence on typing <strong>:q</strong> it displays this message at bottom left corner.</p>
+<p>The above file can be saved with the command <strong> :!q.</strong> It discards the changes made in the file and save it.</p>
+<img src="linux/images/linux-vi-intro6.png" alt="Linux Vi Editor6"/>
+<p>Look at the above snapshot, we have typed <strong> :!q,</strong> it will save our file by discarding the changes made.</p>
+<hr/>
+<h2 class="h2 center textshadow">Vi Editor Index</h2>
+<hr/>
+<div class="responsivediv">
+<div class="col-2">
+<p><strong>Vi Editor</strong></p>
+<ul class="points">
+<li><a href="vi-editor">Vi Editor</a></li>
+<li><a href="vi-commands">Vi Commands</a></li>
+<li><a href="linux-vi-switch">1) switch</a></li>
+<li><a href="linux-vi-move">2) move</a></li>
+<li><a href="linux-vi-jump">3) jump</a></li>
+<li><a href="linux-vi-delete">4) delete</a></li>
+<li><a href="linux-vi-undo-and-repeat">5) undo and repeat</a></li>
+<li><a href="linux-vi-cut-copy-paste">6) cut, copy, paste</a></li>
+</ul>
+</div>
+<div class="col-2">
+<ul class="points">
+<li><a href="linux-vi-cut-copy-paste-blocks">7) cut, copy, paste blocks</a></li>
+<li><a href="linux-vi-start-and-end">8) Start and end</a></li>
+<li><a href="linux-vi-joining">9) Joining</a></li>
+<li><a href="linux-vi-word">10) word</a></li>
+<li><a href="linux-vi-searhing">11)  Search</a></li>
+<li><a href="linux-vi-replace-all">12) Replace all</a></li>
+<li><a href="linux-vi-text-buffers">13) Text Buffers</a></li>
+<li><a href="linux-vi-abbreviations">14) Abbreviations</a></li>
+</ul>
+</div>
+</div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="vi-commands">Vi Commands</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+
+<div id="bottomnext">
+<a style="float:left" class="next" href="linux-networking-commands">&larr; prev</a>
+<a style="float:right" class="next" href="vi-commands">next &rarr;</a>
+</div>
+
+<br/><br/>
+</td></tr></table>
+</div>
+<!-- contribute start-->
+
+<!-- contribute end-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="7776236568"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2 class="h2">Please Share</h2>
+<a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/vi-editor"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"/></a>
+<a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/vi-editor"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"/></a>
+<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://www.javatpoint.com/vi-editor"><img src="https://www.javatpoint.com/images/google-plus32.png" alt="google plus"/></a>
+<a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/vi-editor"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"/></a>
+<!--<a rel="nofollow" title="Tumblr" target="_blank" href="https://www.tumblr.com/share/link?url=https://www.javatpoint.com/vi-editor"><img src="https://www.javatpoint.com/images/tumblr32.png" alt="tumbler"/></a>-->
+
+<!-- latest tutorials start -->
+<h2 class="h2">Learn Latest Tutorials</h2>
+<div class="firsthomecontent">
+                        <a href="https://www.javatpoint.com/selenium-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/selenium/images/selenium-home.jpg" alt="Selenium tutorial" />
+                                <p>Selenium</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/control-system-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/control-system/images/control-system-home.jpg" alt="Control Systems tutorial" />
+                                <p>Control System</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/rust-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/rust/images/rust-home.jpg" alt="Rust Programming tutorial" />
+                                <p>Rust</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/intellij-idea-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/intellij-idea/images/intellij-idea-home.png" alt="Intellij Idea tutorial" />
+                                <p>Intellij</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/dbms-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/dbms/images/dbms-home.jpg" alt="DBMS tutorial" />
+                                <p>DBMS</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/aptitude/quantitative">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Quantitative Aptitude tutorial" />
+                                <p>Aptitude</p>
+                            </div>
+                        </a>
+</div>
+
+</div>
+
+
+<br><br/><div class="mobilemenu" style="clear:both">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins class="adsbygoogle"     style="display:block"     data-ad-client="ca-pub-4699858549023382"     data-ad-slot="8222866318"     data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br/><br/>
+
+
+</div>
+<div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br/><br/>
+</div>
+<br/>
+<div id="footer" style="clear:both;width:100%">
+
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>--><div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p><ul class="points"> <li>Website Designing</li><li>Website Development</li><li>Java Development</li><li>PHP Development</li><li>WordPress</li><li>Graphic Designing</li><li>Logo</li><li>Digital Marketing</li><li>On Page and Off Page SEO</li><li>PPC</li><li>Content Development</li><li>Corporate Training</li><li>Classroom and Online Training</li><li>Data Entry</li></ul> <p style="padding-bottom:60px"></p></div><div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p></div><!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a><a rel="nofollow" href="http://www.hindi-typing.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/><p>Hindi-Typing</p></div></a></marquee></div>--><script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script><div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://www.javatpoint.com/images/social/rss1.png" alt="RSS Feed"/></a> <a target="_blank"  rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://www.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"/></a> <a  rel="nofollow" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://www.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"/></a> <a target="_blank" rel="nofollow" href="https://plus.google.com/u/0/+javatpoint"><img src="https://www.javatpoint.com/images/social/google1.png" alt="Google Page"/></a> <a target="_blank" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://www.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"/></a> <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://www.javatpoint.com/images/youtube32.png" alt="YouTube"/></a> <a target="_blank" rel="nofollow" href="https://javatpoint.blogspot.com"><img src="https://www.javatpoint.com/images/social/blog.png" alt="Blog Page"/></a> </div><footer class="footer1"><div class="column4"><h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a></div><div class="column4"><h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow" target="_blank" href="http://www.hindi-typing.com">Hindi-typing.com</a><a rel="nofollow" target="_blank" href="http://www.shayaree.com">Shayaree.com</a><a rel="nofollow" target="_blank" href="https://www.wordcountee.com">Wordcountee.com</a><a rel="nofollow" target="_blank" href="https://www.charactercountee.com">Charactercountee.com</a><a rel="nofollow" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a></div><div class="column4"><h3>Our Services</h3><p>Website Development</p><p>Android Development</p><p>Website Designing</p><p>Digital Marketing</p><p>Summer Training</p><p>Industrial Training</p><p>College Campus Training</p></div><div class="column4"><h3>Contact</h3><p>Address: G-13, 2nd Floor, Sec-3</p><p>Noida, UP, 201301, India</p><p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a></div></footer><footer class="footer2"><p>&copy; Copyright 2011-2018 www.javatpoint.com. All rights reserved. <a rel="nofollow" target="_blank" href="https://www.sssit.org">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p></footer>
+</div></div></div>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4699858549023382",
+          enable_page_level_ads: true
+     });
+</script>
+
+<script src="/js/shcoreandbrush.js"></script><script> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+</body> </html> 

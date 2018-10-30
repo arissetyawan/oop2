@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Java Online Quiz - TutorialsPoint</title>
+<meta name="description" content="Java Online Quiz - Learning Java in simple and easy steps : A beginner's tutorial containing complete knowledge of Java Syntax Object Oriented Language, Methods, Overriding, Inheritance, Polymorphism, Interfaces, Packages, Collections, Networking, Multithreading, Generics, Multimedia, Serialization, GUI." />
+<meta name="keywords" content="Java, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Inheritance, Polymorphism, Interfaces, Packages, Collections, Networking, Multithreading, Generics, Multimedia, Serialization, GUI." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #eb4847 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #eb4847 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #eb4847 !important;}
+.submenu-item{ border-bottom: 2px solid #eb4847 !important; border-top: 2px solid #eb4847 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#eb4847; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/java/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+   vertical-align:middle !important;
+   text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/java/images/java-mini-logo.jpg" alt="Java Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/java_online_training/index.asp" target="_blank"><img src="/java/images/java-video-tutorials.jpg" alt="Java Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Tutorial</li>
+<li><a href="/java/index.htm">Java - Home</a></li>
+<li><a href="/java/java_overview.htm">Java - Overview</a></li>
+<li><a href="/java/java_environment_setup.htm">Java - Environment Setup</a></li>
+<li><a href="/java/java_basic_syntax.htm">Java - Basic Syntax</a></li>
+<li><a href="/java/java_object_classes.htm">Java - Object &amp; Classes</a></li>
+<li><a href="/java/java_constructors.htm">Java - Constructors</a></li>
+<li><a href="/java/java_basic_datatypes.htm">Java - Basic Datatypes</a></li>
+<li><a href="/java/java_variable_types.htm">Java - Variable Types</a></li>
+<li><a href="/java/java_modifier_types.htm">Java - Modifier Types</a></li>
+<li><a href="/java/java_basic_operators.htm">Java - Basic Operators</a></li>
+<li><a href="/java/java_loop_control.htm">Java - Loop Control</a></li>
+<li><a href="/java/java_decision_making.htm">Java - Decision Making</a></li>
+<li><a href="/java/java_numbers.htm">Java - Numbers</a></li>
+<li><a href="/java/java_characters.htm">Java - Characters</a></li>
+<li><a href="/java/java_strings.htm">Java - Strings</a></li>
+<li><a href="/java/java_arrays.htm">Java - Arrays</a></li>
+<li><a href="/java/java_date_time.htm">Java - Date &amp; Time</a></li>
+<li><a href="/java/java_regular_expressions.htm">Java - Regular Expressions</a></li>
+<li><a href="/java/java_methods.htm">Java - Methods</a></li>
+<li><a href="/java/java_files_io.htm">Java - Files and I/O</a></li>
+<li><a href="/java/java_exceptions.htm">Java - Exceptions</a></li>
+<li><a href="/java/java_innerclasses.htm">Java - Inner classes</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Object Oriented</li>
+<li><a href="/java/java_inheritance.htm">Java - Inheritance</a></li>
+<li><a href="/java/java_overriding.htm">Java - Overriding</a></li>
+<li><a href="/java/java_polymorphism.htm">Java - Polymorphism</a></li>
+<li><a href="/java/java_abstraction.htm">Java - Abstraction</a></li>
+<li><a href="/java/java_encapsulation.htm">Java - Encapsulation</a></li>
+<li><a href="/java/java_interfaces.htm">Java - Interfaces</a></li>
+<li><a href="/java/java_packages.htm">Java - Packages</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Advanced</li>
+<li><a href="/java/java_data_structures.htm">Java - Data Structures</a></li>
+<li><a href="/java/java_collections.htm">Java - Collections</a></li>
+<li><a href="/java/java_generics.htm">Java - Generics</a></li>
+<li><a href="/java/java_serialization.htm">Java - Serialization</a></li>
+<li><a href="/java/java_networking.htm">Java - Networking</a></li>
+<li><a href="/java/java_sending_email.htm">Java - Sending Email</a></li>
+<li><a href="/java/java_multithreading.htm">Java - Multithreading</a></li>
+<li><a href="/java/java_applet_basics.htm">Java - Applet Basics</a></li>
+<li><a href="/java/java_documentation.htm">Java - Documentation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Useful Resources</li>
+<li><a href="/java/java_questions_answers.htm">Java - Questions and Answers</a></li>
+<li><a href="/java/java_quick_guide.htm">Java - Quick Guide</a></li>
+<li><a href="/java/java_useful_resources.htm">Java - Useful Resources</a></li>
+<li><a href="/java/java_discussion.htm">Java - Discussion</a></li>
+<li><a href="/javaexamples/index.htm">Java - Examples</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Java Online Quiz</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/java/java_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/java/java_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Following quiz provides Multiple Choice Questions (MCQs) related to <b>Core Java</b>. You will have to read all the given answers and click over the correct answer. If you are not sure about the answer then you can check the answer using <b>Show Answer</b> button. You can use <b>Next Quiz</b> button to check new set of questions in the quiz.</p>
+<img src="/images/questions_and_answers.png" alt="Questions and Answers" />
+
+<div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 1</span> - Static functions can be accessed using null reference.</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>True, Static functions can be accessed via class name or via null reference.</p>
+</div>
+<div class="E" id='E6'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 2</span> - What is the size of short variable?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 8 bit</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 16 bit</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 32 bit</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 64 bit</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>The short data type is represented by 16-bit signed two's complement integer.
+<p>Minimum value: -32,768</p>
+<p>Maximum value: 32,767</p>
+</div>
+<div class="E" id='E11'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q28">
+<p><span>Q 3</span> - What is the default value of double variable?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - 0.0d</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 0.0f</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 0</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - not defined</a></p>
+</div>
+<div class="A" id='A28'>
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>double variable has default value of 0.0d if defined as an instance/static variable.</p>
+</div>
+<div class="E" id='E28'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('28')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q37">
+<p><span>Q 4</span> - Which of the following stands true about default modifier of class members?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - By default, variables, methods and constructors can be accessed by subclass only.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - By default, variables, methods and constructors can be accessed by any class lying in any package.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - By default, variables, methods and constructors can be accessed by any class lying in the same package.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> -  None of the above.</a></p>
+</div>
+<div class="A" id='A37'>
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>By default, variables, methods and constructors can be accessed by any class lying in the same package.</p>
+</div>
+<div class="E" id='E37'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('37')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q48">
+<p><span>Q 5</span> - What is class variable?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - class variables are static variables within a class but outside any method.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - class variables are variables defined inside methods, constructors or blocks.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - class variables are variables within a class but outside any method.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id='A48'>
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Class variables are variables declared with in a class, outside any method, with the static keyword.</p>
+</div>
+<div class="E" id='E48'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('48')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q58">
+<p><span>Q 6</span> - Can be constructor be made final?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - True.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - False.</a></p>
+</div>
+<div class="A" id='A58'>
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>No, this is not possible.</p>
+</div>
+<div class="E" id='E58'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('58')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q62">
+<p><span>Q 7</span> - What is function overloading?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Methods with same name but different parameters.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Methods with same name but different return types.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Methods with same name, same parameter types but different parameter names.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id='A62'>
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>If a class has multiple functions by same name but different parameters, it is known as Method Overloading.</p>
+</div>
+<div class="E" id='E62'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('62')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q75">
+<p><span>Q 8</span> - What are Wrapper classes?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - These are classes that allow primitive types to be accessed as objects.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - These are classes that wraps functionality of an existing class.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id='A75'>
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>These are classes that allow primitive types to be accessed as objects. Example: Integer, Character, Double, Boolean etc.</p>
+</div>
+<div class="E" id='E75'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('75')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q87">
+<p><span>Q 9</span> - Is it necessary that each try block must be followed by a finally block?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - True.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - False.</a></p>
+</div>
+<div class="A" id='A87'>
+<h3>Answer : B</h3>
+<h3>Explaination</h3>
+<p>It is not necessary that each try block must be followed by a finally block. It should be followed by either a catch block or a finally block.</p>
+</div>
+<div class="E" id='E87'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('87')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q99">
+<p><span>Q 10</span> - When finally block gets executed?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Always when try block get executed, no matter exception occured or not.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Always when a method get executed, no matter exception occured or not.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Always when a try block get executed, if exception do not occur.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Only when exception occurs in try block code.</a></p>
+</div>
+<div class="A" id='A99'>
+<h3>Answer : A</h3>
+<h3>Explaination</h3> 
+<p>Always when try block get executed, no matter exception occured or not.</p>
+</div>
+<div class="E" id='E99'>
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('99')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/java/java_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/java/java_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">java_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/java/java_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/java/java_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/java/java_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/java/java_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/java/java_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/java/java_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

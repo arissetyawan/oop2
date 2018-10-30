@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>The Best Technical Questions And Answers</title>
+<meta name="Description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals"/>
+<meta name="Keywords" content="Technical, Questions,  Answers, Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="The Best Technical Questions And Answers" />
+<meta name="twitter:description" property="og:description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+
+   <div class="mui-container container-top">   
+      <div class="">    
+        <!-- center column content -->
+         <div class="">    
+            <div class="mui-col-md-8">
+               <div id="question_index_id">      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostOVFWSlhuNmhIOWdNa25RaFZSd3dwQT09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Refresh-Image-Tkinter-after-10-seconds-Interval-Python-3" target='_blank'> Refresh Image Tkinter after 10 seconds Interval (Python 3)</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09">
+</div>                              <div class="qa_description">
+                              
+Hi all, I am really new in programming and doing pretty well so far but now it becomes to a stand-still. I am trying to refresh an image after 10 seconds.&nbsp; Now I found an example program that does what I need but not by pressing the enter key (line 9) but want it to wait after 3 seconds and than update the image. I sure hope that someone can give me so help.&nbsp; Thanks in andvance, R.....                               </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivOVFWSlhuNmhIOWdNa25RaFZSd3dwQT09" data-qshare="qpostOVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivOVFWSlhuNmhIOWdNa25RaFZSd3dwQT09" data-qshare="qpostOVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09" style="display:none;">
+                                    <div id="comments_list_OVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeOVFWSlhuNmhIOWdNa25RaFZSd3dwQT09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='YzBwbkJrRHdwaExJYU1jL3h0V20rdz09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="YzBwbkJrRHdwaExJYU1jL3h0V20rdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostYzBwbkJrRHdwaExJYU1jL3h0V20rdz09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/What-is-the-scope-of-manual-testing-for-carrier" target='_blank'> What is the scope of manual testing for carrier?</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_YzBwbkJrRHdwaExJYU1jL3h0V20rdz09">
+</div>                              <div class="qa_description">
+                              
+I want to make my carrier in testing so I want to know what is the scope of manual testing for carrier? 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="YzBwbkJrRHdwaExJYU1jL3h0V20rdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="YzBwbkJrRHdwaExJYU1jL3h0V20rdz09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="YzBwbkJrRHdwaExJYU1jL3h0V20rdz09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivYzBwbkJrRHdwaExJYU1jL3h0V20rdz09" data-qshare="qpostYzBwbkJrRHdwaExJYU1jL3h0V20rdz09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivYzBwbkJrRHdwaExJYU1jL3h0V20rdz09" data-qshare="qpostYzBwbkJrRHdwaExJYU1jL3h0V20rdz09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='YzBwbkJrRHdwaExJYU1jL3h0V20rdz09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='YzBwbkJrRHdwaExJYU1jL3h0V20rdz09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_YzBwbkJrRHdwaExJYU1jL3h0V20rdz09" style="display:none;">
+                                    <div id="comments_list_YzBwbkJrRHdwaExJYU1jL3h0V20rdz09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeYzBwbkJrRHdwaExJYU1jL3h0V20rdz09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='NDgrQW5qQllNTmo0YjRNL29lV0I4dz09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="NDgrQW5qQllNTmo0YjRNL29lV0I4dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostNDgrQW5qQllNTmo0YjRNL29lV0I4dz09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Verification-techniques-in-testing-domain" target='_blank'> Verification techniques in testing domain</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_NDgrQW5qQllNTmo0YjRNL29lV0I4dz09">
+</div>                              <div class="qa_description">
+                              
+Which of the following is a verification technique? a) Assembly test b) Desk checking c) Component test d) Product test guys please give answer as soon as possible with right answer 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="NDgrQW5qQllNTmo0YjRNL29lV0I4dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="NDgrQW5qQllNTmo0YjRNL29lV0I4dz09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="NDgrQW5qQllNTmo0YjRNL29lV0I4dz09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivNDgrQW5qQllNTmo0YjRNL29lV0I4dz09" data-qshare="qpostNDgrQW5qQllNTmo0YjRNL29lV0I4dz09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivNDgrQW5qQllNTmo0YjRNL29lV0I4dz09" data-qshare="qpostNDgrQW5qQllNTmo0YjRNL29lV0I4dz09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='NDgrQW5qQllNTmo0YjRNL29lV0I4dz09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='NDgrQW5qQllNTmo0YjRNL29lV0I4dz09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_NDgrQW5qQllNTmo0YjRNL29lV0I4dz09" style="display:none;">
+                                    <div id="comments_list_NDgrQW5qQllNTmo0YjRNL29lV0I4dz09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeNDgrQW5qQllNTmo0YjRNL29lV0I4dz09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostS2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Cplusplus-function-to-count-nodes-in-O-1-constant-time" target='_blank'> C++ function to count nodes in O(1) constant time</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09">
+</div>                              <div class="qa_description">
+                              
+Please send me C++ function that will count nodes in O(1) constant time, without passing parameters in function. 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivS2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09" data-qshare="qpostS2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivS2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09" data-qshare="qpostS2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09" style="display:none;">
+                                    <div id="comments_list_S2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeS2h4eTM2MGk3V0F0dm5Yamk2dGZGUT09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostMjJoT3MvZmJoUVpFdThUOWFKNWZyZz09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Need-xml-code-to-upload-in-Tally-ERP-9" target='_blank'> Need xml code to upload in Tally ERP 9</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09">
+</div>                              <div class="qa_description">
+                              
+Hi All, I want to convert excel file to tally xml file to import the same to tally ERP 9. I need to create the stock item with group , category and tax details. i will do the mail merge with the code. I will send the excel sheet or the xml code file.Below is the code - , Please let me know how to convert or to create a xml code to upload the same to Tally ERP Thank you&nbsp; Srinivas P Baligeri 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivMjJoT3MvZmJoUVpFdThUOWFKNWZyZz09" data-qshare="qpostMjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivMjJoT3MvZmJoUVpFdThUOWFKNWZyZz09" data-qshare="qpostMjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09" style="display:none;">
+                                    <div id="comments_list_MjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeMjJoT3MvZmJoUVpFdThUOWFKNWZyZz09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostRHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/How-to-add-Visible-On-click-Button-in-HTML-Code" target='_blank'> How to add Visible On click Button in HTML Code ?</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09">
+</div>                              <div class="qa_description">
+                              
+I want add on click button in my website page to show the SSC CPO Result&nbsp; for students. I am trying in simple HTML but it is not changing the color after click on the same. How to add button link change the color on clicking it&nbsp; 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivRHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09" data-qshare="qpostRHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivRHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09" data-qshare="qpostRHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09" style="display:none;">
+                                    <div id="comments_list_RHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeRHRsdWdjcW5wR0tUSWUvWE1QUCt6Zz09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostUVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/CherryPy-and-Library-Loader" target='_blank'> CherryPy and Library Loader</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09">
+</div>                              <div class="qa_description">
+                              
+Hi to all,&nbsp; in the tutorial "CherryPy - A Working Application" i seen that the example use the library loader. But i haven't found how to get this library where is my fault? &nbsp; https://www.tutorialspoint.com/cherrypy/cherrypy_a_working_application.htm &nbsp; 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivUVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09" data-qshare="qpostUVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivUVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09" data-qshare="qpostUVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09" style="display:none;">
+                                    <div id="comments_list_UVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeUVhBQTlQTlBZQnRMSWI4L1pmRE1sQT09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostRkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Dot-odp-to-pdf-docx-file-conversion-in-Java-using-tika-jar-files" target='_blank'> Dot.odp to pdf/docx file conversion in Java using tika jar files</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09">
+</div>                              <div class="qa_description">
+                              
+I am &nbsp;trying to convert a odp file into .pdf/.docx file using tika jar files, how to &nbsp;extract text of odp file and write the text into .docx /pdf file ? 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivRkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09" data-qshare="qpostRkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivRkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09" data-qshare="qpostRkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09" style="display:none;">
+                                    <div id="comments_list_RkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeRkJzRzN2THBxM1ZtcFRyTUw2NlV4Zz09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostejI4dmlCUEp6MURydlI4S0ZzQkNHUT09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Salesforce-Marketing-Cloud" target='_blank'> Salesforce Marketing Cloud?</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09">
+</div>                              <div class="qa_description">
+                              
+I'm new to Salesforce Marketing Cloud, Can anyone provide suggestions like how to create a developer account for Salesforce marketing cloud, what are the concepts involved in marketing cloud etc. 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivejI4dmlCUEp6MURydlI4S0ZzQkNHUT09" data-qshare="qpostejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivejI4dmlCUEp6MURydlI4S0ZzQkNHUT09" data-qshare="qpostejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09" style="display:none;">
+                                    <div id="comments_list_ejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeejI4dmlCUEp6MURydlI4S0ZzQkNHUT09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                                    <div class="question_follow">      
+                     <div class="">                              
+                        <div class="qa_widget">                                
+                           <div class="qa_links">
+                              <div class="mui-dropdown">
+                                                                          
+                                 <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+                                 <ul class="mui-dropdown__menu arrow_box">                   
+                                                                  
+                                   <li><a class="comments_view qa_comments_view" data-entid='OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09' data-entity='Q'  title="Comments"><i class="fa fa-comment-dots"></i> Comments<span></span> </a>  </li>
+                        <li><a href="javascript:void(0);" class="question_category" data-qid="OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                                    
+                                                                     </ul>                
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                           <div class="qa_post" id="qpostOVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09">
+                              <h1>
+                                 <a href="https://www.tutorialspoint.com/Noob-can-t-duplicate-results-in-scripting-tutorial" target='_blank'> Noob can&#039;t duplicate results in scripting tutorial</a>
+                              </h1>
+                                                            
+<div class="qa_category" id="tags_OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09">
+</div>                              <div class="qa_description">
+                              
+Created &amp; chmod a+x executable file named write-ip.sh on Desktop containing originalAddress=@(ifconfig | grep "inet addr" | head &ndash;n 1 | cut &ndash;d ":" &ndash;f 2 | cut &ndash;d " " &ndash;f 1) &nbsp;echo $originalAddress result is 'syntax error near unexpected token '(' tried googling and hacking it for hours with no luck Help, please! 
+                              </div>                                                
+                           </div>                                                      
+                          <div class="clear"></div>     
+                           <div class="qa_links_right">
+                              <div class="mui-dropdown">                  
+                                 <a class="question_follow  btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"><i class="fa fa-plus"></i>&nbsp;&nbsp;Follow</a>
+                                 <a class="question_answer btn btn-info btn-lg question_btn" data-qid="OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"><i class="fa fa-comment-alt-lines"></i> Answer</a>                  
+                                 <a class="question_btn question_edit" data-qid="OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"><i class="fa fa-edit"></i> Edit Question</a>
+                                 </ul>   
+                              </div>
+                           </div>
+                                       
+                           <div class="qa-links-left">
+                              <div class="qa_social_dtls">
+                                 <a href="javascript:void(0);" class="btnFBQShare" data-shareid="qusModalDivOVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09" data-qshare="qpostOVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"><i class="fa fa-facebook-f"></i> </a>
+                                 <a href="javascript:void(0);" class="btnTwitterQShare" data-shareid="qusModalDivOVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09" data-qshare="qpostOVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"><i class="fa fa-twitter"></i> </a>
+                                 <a class="qa_vote" data-entid='OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09' data-evote='L'  data-entity='LQ' title="Upvote"><i class="fa fa-thumbs-up"></i> <b> </b> </a>
+                                 <a class="qa_vote" data-entid='OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09' data-evote='D'  data-entity='LQ' title="Downvote" ><i class="fa fa-thumbs-down"></i> <b> </b></a>
+                                 <div class="clear"></div>
+                                 <div class="qa_comments" id="comments_OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09" style="display:none;">
+                                    <div id="comments_list_OVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"></div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="clear"></div>
+                           <div id="qeOVhzYWlTeHNxZFRoUzV0TnJ0Vko5QT09"></div>  
+                                                      <div class="clear"></div>
+                                                   </div>    
+                        <div class="clear"></div>                          
+                     </div> 
+                     <div class="clear"></div>
+                  </div>      
+                    
+                  <div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+                     <div class="pages">
+                        <a href="https://www.tutorialspoint.com/questions/unanswered.php?page=5"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=1">1</a>  ... <a class="number" title="Go to page 3 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=3">3</a> <a class="number" title="Go to page 4 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=4">4</a> <a class="number" title="Go to page 5 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=5">5</a> <a title="Go to page 6 of 20" class="current number" href="https://www.tutorialspoint.com/questions/unanswered.php?page=6">6</a> <a class="number" title="Go to page 7 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=7">7</a> <a class="number" title="Go to page 8 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=8">8</a> <a class="number" title="Go to page 9 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=9">9</a>  ... <a class="number" title="Go to page 20 of 20" href="https://www.tutorialspoint.com/questions/unanswered.php?page=20">20</a> <a  href="https://www.tutorialspoint.com/questions/unanswered.php?page=7" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+                     </div>
+                  </div>
+                  <div class="clear"></div>
+                  <div class="bottomgooglead qa_widget align-center">
+                     <div class="bottomadtag">Advertisements</div>
+                     <script><!--
+                        var width = 580;
+                        var height = 400;
+                        var format = "580x400_as";
+                        if( window.innerWidth < 468 ){
+                            width = 300;
+                            height = 250;
+                            format = "300x250_as";
+                         }
+                         google_ad_client = "pub-7133395778201029";
+                         google_ad_width = width;
+                         google_ad_height = height;
+                         google_ad_format = format;
+                         google_ad_type = "image";
+                         google_ad_channel ="";
+                              //-->
+                     </script>
+                     <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                  </div>
+               </div> 
+               <div class="loader_bg" id="loader_image">
+                  <img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+               </div>
+            </div>
+         </div> 
+         <!-- end of center column content -->   
+         <div class="mui-col-md-4">    
+            <!-- right column content -->      
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/questions/unanswered.php?page=6','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/questions/unanswered.php?page=6','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/questions/unanswered.php?page=6&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/questions/unanswered.php?page=6&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/questions/unanswered.php?page=6&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/questions/unanswered.php?page=6&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="">
+      <button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+   </div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad">Advertisements</div>
+      <div class="rightgooglead">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      google_ad_format = "300x250_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      google_ad_format = "300x600_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "ca-pub-2537027957187252";
+      /* Right Side Ad */
+      google_ad_slot = "right_side_ad";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+    
+   <div id="contribution_menu"></div>
+   <div class="clear"></div>    
+      <div class="left_nav_header left_top_margin"><i class="fa fa-question-circle"></i> Unanswered Questions     
+      <a href="https://www.tutorialspoint.com/questions/unanswered.php" class="qa_pop_btn qa_pop_save"><i class="fa fa-plus"></i> View All</a>
+   </div>
+   <div id="latest_questions"></div>      
+   
+</div>
+
+<script>
+   $(document).ready(function () {
+      getRightMenu();
+      function getRightMenu(){
+         $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetRightMenu.php",
+            method: "POST",
+            success: function (data) {
+            $('#contribution_menu').html(data);
+            }
+         });
+      }
+            getLatestQuestions();
+         function getLatestQuestions() {
+            $.ajax({
+               url: baseurl + "questions/ajax/ajaxGetLatestQuestions.php",
+               method: "POST",
+               success: function (data) {
+               $('#latest_questions').html(data);
+               }
+            });
+         }
+          });
+</script> 
+         </div>
+         <!-- end of right column content -->   
+      </div>
+   </div>    
+   <!-- End of Body Content -->
+
+   
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

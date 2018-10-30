@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>ASP.NET - Data Caching</title>
+<meta name="description" content="ASP.NET Data Caching - Free ASP.NET Tutorials, Reference Manual, and Quick Guide for Beginners. Learn ASP.NET starting from Environment Setup, Basic Controls, Directives, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel control, LINQ, Database Access, Security, Debugging, Error Handling, Configuration and Deployment." />
+<meta name="keywords" content="Free, ASP.NET, Tutorial, Reference, Manual, Guide, Beginners, Event Handling, Life Cycle, ADO.NET, AJAX control, Web Services, Add Rotator, Panel, control, LINQ, Database Access, Security, Debugging, Error, Handling, Configuration, Deployment." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #147dc2 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #147dc2 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #147dc2 !important;}
+.submenu-item{ border-bottom: 2px solid #147dc2 !important; border-top: 2px solid #147dc2 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#147dc2; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/asp.net/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/asp.net/images/asp.net-mini-logo.jpg" alt="ASP.NET Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">ASP.NET Tutorial</li>
+<li><a target="_top" href="/asp.net/index.htm">ASP.NET - Home</a></li>
+<li><a target="_top" href="/asp.net/asp.net_introduction.htm">ASP.NET - Introduction</a></li>
+<li><a target="_top" href="/asp.net/asp.net_environment_setup.htm">ASP.NET - Environment</a></li>
+<li><a target="_top" href="/asp.net/asp.net_life_cycle.htm">ASP.NET - Life Cycle</a></li>
+<li><a target="_top" href="/asp.net/asp.net_first_example.htm">ASP.NET - First Example</a></li>
+<li><a target="_top" href="/asp.net/asp.net_event_handling.htm">ASP.NET - Event Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_side.htm">ASP.NET - Server Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_server_controls.htm">ASP.NET - Server Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_html_server.htm">ASP.NET - HTML Server</a></li>
+<li><a target="_top" href="/asp.net/asp.net_client_side.htm">ASP.NET - Client Side</a></li>
+<li><a target="_top" href="/asp.net/asp.net_basic_controls.htm">ASP.NET - Basic Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_directives.htm">ASP.NET - Directives</a></li>
+<li><a target="_top" href="/asp.net/asp.net_managing_state.htm">ASP.NET - Managing State</a></li>
+<li><a target="_top" href="/asp.net/asp.net_validators.htm">ASP.NET - Validators</a></li>
+<li><a target="_top" href="/asp.net/asp.net_database_access.htm">ASP.NET - Database Access</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ado_net.htm">ASP.NET - ADO.net</a></li>
+<li><a target="_top" href="/asp.net/asp.net_file_uploading.htm">ASP.NET - File Uploading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ad_rotator.htm">ASP.NET - Ad Rotator</a></li>
+<li><a target="_top" href="/asp.net/asp.net_calenders.htm">ASP.NET - Calendars</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_views.htm">ASP.NET - Multi Views</a></li>
+<li><a target="_top" href="/asp.net/asp.net_panel_controls.htm">ASP.NET - Panel Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_ajax_control.htm">ASP.NET - AJAX Control</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_sources.htm">ASP.NET - Data Sources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_binding.htm">ASP.NET - Data Binding</a></li>
+<li><a target="_top" href="/asp.net/asp.net_custom_controls.htm">ASP.NET - Custom Controls</a></li>
+<li><a target="_top" href="/asp.net/asp.net_personalization.htm">ASP.NET - Personalization</a></li>
+<li><a target="_top" href="/asp.net/asp.net_error_handling.htm">ASP.NET - Error Handling</a></li>
+<li><a target="_top" href="/asp.net/asp.net_debugging.htm">ASP.NET - Debugging</a></li>
+<li><a target="_top" href="/asp.net/asp.net_linq.htm">ASP.NET - LINQ</a></li>
+<li><a target="_top" href="/asp.net/asp.net_security.htm">ASP.NET - Security</a></li>
+<li><a target="_top" href="/asp.net/asp.net_data_caching.htm">ASP.NET - Data Caching</a></li>
+<li><a target="_top" href="/asp.net/asp.net_web_services.htm">ASP.NET - Web Services</a></li>
+<li><a target="_top" href="/asp.net/asp.net_multi_threading.htm">ASP.NET - Multi Threading</a></li>
+<li><a target="_top" href="/asp.net/asp.net_configuration.htm">ASP.NET - Configuration</a></li>
+<li><a target="_top" href="/asp.net/asp.net_deployment.htm">ASP.NET - Deployment</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">ASP.NET Resources</li>
+<li><a target="_top" href="/asp.net/asp.net_quick_guide.htm">ASP.NET - Quick Guide</a></li>
+<li><a target="_top" href="/asp.net/asp.net_useful_resources.htm">ASP.NET - Useful Resources</a></li>
+<li><a target="_top" href="/asp.net/asp.net_discussion.htm">ASP.NET - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>ASP.NET - Data Caching</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_security.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_web_services.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h2>What is Caching?</h2>
+<p>Caching is a technique of storing frequently used data/information in memory, so that, when the same data/information is needed next time, it could be directly retrieved from the memory instead of being generated by the application.</p>
+<p>Caching is extremely important for performance boosting in ASP.NET, as the pages and controls are dynamically generated here. It is especially important for data related transactions, as these are expensive in terms of response time.</p>
+<p>Caching places frequently used data in quickly accessed media such as the random access memory of the computer. The ASP.NET runtime includes a key-value map of CLR objects called cache. This resides with the application and is available via the HttpContext and System.Web.UI.Page.</p>
+<p>In some respect, caching is similar to storing the state objects. However, the storing information in state objects is deterministic, i.e., you can count on the data being stored there, and caching of data is nondeterministic.</p>
+<p>The data will not be available in the following cases:</p>
+<ul class="list">
+<li>If its lifetime expires,</li>
+<li>If the application releases its memory,</li>
+<li>If caching does not take place for some reason.</li>
+</ul>
+<p>You can access items in the cache using an indexer and may control the lifetime of objects in the cache and set up links between the cached objects and their physical sources.</p>
+<h2>Caching in ASP.Net</h2>
+<p>ASP.NET provides the following different types of caching:</p>
+<ul class="list">
+<li><p><b>Output Caching</b> : Output cache stores a copy of the finally rendered HTML pages or part of pages sent to the client. When the next client requests for this page, instead of regenerating the page, a cached copy of the page is sent, thus saving time.</p></li> 
+<li><p><b>Data Caching</b> : Data caching means caching data from a data source. As long as the cache is not expired, a request for the data will be fulfilled from the cache. When the cache is expired, fresh data is obtained by the data source and the cache is refilled.</p></li> 
+<li><p><b>Object Caching</b> : Object caching is caching the objects on a page, such as data-bound controls. The cached data is stored in server memory.</p></li> 
+<li><p><b>Class Caching</b> : Web pages or web services are compiled into a page class in the assembly, when run for the first time. Then the assembly is cached in the server. Next time when a request is made for the page or service, the cached assembly is referred to. When the source code is changed, the CLR recompiles the assembly.</p></li> 
+<li><p><b>Configuration Caching</b> : Application wide configuration information is stored in a configuration file. Configuration caching stores the configuration information in the server memory.</p></li>
+</ul>
+<p>In this tutorial, we will consider output caching, data caching, and object caching.</p>
+<h2>Output Caching</h2>
+<p>Rendering a page may involve some complex processes such as, database access, rendering complex controls etc. Output caching allows bypassing the round trips to server by caching data in memory. Even the whole page could be cached. </p>
+<p>The OutputCache directive is responsible of output caching. It enables output caching and provides certain control over its behaviour.</p>
+<p>Syntax for OutputCache directive:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ OutputCache Duration="15" VaryByParam="None" %&gt;
+</pre>
+<p>Put this directive under the page directive. This tells the environment to cache the page for 15 seconds. The following event handler for page load would help in testing that the page was really cached.</p>
+<pre class="prettyprint notranslate">
+protected void Page_Load(object sender, EventArgs e)
+{
+   Thread.Sleep(10000);  
+   Response.Write("This page was generated and cache at:" +
+   DateTime.Now.ToString());
+}
+</pre>
+<p>The <b>Thread.Sleep()</b> method stops the process thread for the specified time. In this example, the thread is stopped for 10 seconds, so when the page is loaded for first time, it takes 10 seconds. However, next time you refresh the page it does not take any time, as the page is retrieved from the cache without being loaded.</p>
+<p>The OutputCache directive has the following attributes, which helps in controlling the behaviour of the output cache:</p>
+<table class="table table-bordered" >
+<tr>
+<th style="width:30%">Attribute</th>
+<th style="width:30%">Values</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>DiskCacheable</td>
+<td>true/false</td>
+<td>Specifies that output could be written to a disk based cache.</td>
+</tr>
+<tr>
+<td>NoStore</td>
+<td>true/false</td>
+<td>Specifies that the "no store" cache control header is sent or not.</td>
+</tr>
+<tr>
+<td>CacheProfile</td>
+<td>String name</td>
+<td>Name of a cache profile as to be stored in web.config.</td>
+</tr>
+<tr>
+<td>VaryByParam</td>
+<td>
+<p>None</p>
+<p>*</p>Param- name</td>
+<td>Semicolon delimited list of string specifies query string values in a GET request or variable in a POST request.</td>
+</tr>
+<tr>
+<td>VaryByHeader</td>
+<td>
+<p>*</p>
+<p>Header names</p>
+</td>
+<td>Semicolon delimited list of strings specifies headers that might be submitted by a client.</td>
+</tr>
+<tr>
+<td>VaryByCustom</td>
+<td>
+<p>Browser</p>
+<p>Custom string</p>
+</td>
+<td>Tells ASP.NET to vary the output cache by browser name and version or by a custom string.</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>
+<p>Any</p>
+<p>Client</p>
+<p>Downstream</p>
+<p>Server</p>
+<p>None</p>
+</td>
+<td>
+<p>Any: page may be cached anywhere.</p>
+<p>Client: cached content remains at browser.</p>
+<p>Downstream: cached content stored in downstream and server both.</p>
+<p>Server: cached content saved only on server.</p>
+<p>None: disables caching.</p>
+</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Number</td>
+<td>Number of seconds the page or control is cached.</td>
+</tr>
+</table>
+<p>Let us add a text box and a button to the previous example and add this event handler for the button.</p>
+<pre class="prettyprint notranslate">
+protected void btnmagic_Click(object sender, EventArgs e)
+{
+   Response.Write("&lt;br&gt;&lt;br&gt;");
+   Response.Write("&lt;h2&gt; Hello, " + this.txtname.Text + "&lt;/h2&gt;");
+}
+</pre>
+<p>Change the OutputCache directive:</p>
+<pre class="prettyprint notranslate">
+&lt;%@ OutputCache Duration="60" VaryByParam="txtname" %&gt;
+</pre>
+<p>When the program is executed, ASP.NET caches the page on the basis of the name in the text box.</p>
+<h2>Data Caching</h2>
+<p>The main aspect of data caching is caching the data source controls. We have already discussed that the data source controls represent data in a data source, like a database or an XML file. These controls derive from the abstract class DataSourceControl and have the following inherited properties for implementing caching:</p>
+<ul class="list">
+<li><p><b>CacheDuration</b> - It sets the number of seconds for which the data source will cache data.</p></li> 
+<li><p><b>CacheExpirationPolicy</b> - It defines the cache behavior when the data in cache has expired.</p></li> 
+<li><p><b>CacheKeyDependency</b> - It identifies a key for the controls that auto-expires the content of its cache when removed.</p></li> 
+<li><p><b>EnableCaching</b> - It specifies whether or not to cache the data.</p></li> 
+</ul>
+<h3>Example</h3>
+<p>To demonstrate data caching, create a new website and add a new web form on it. Add a SqlDataSource control with the database connection already used in the data access tutorials.</p>
+<p>For this example, add a label to the page, which would show the response time for the page.</p>
+<pre class="prettyprint notranslate">
+&lt;asp:Label ID="lbltime" runat="server"&gt;&lt;/asp:Label&gt;
+</pre>
+<p>Apart from the label, the content page is same as in the data access tutorial. Add an event handler for the page load event:</p>
+<pre class="prettyprint notranslate">
+protected void Page_Load(object sender, EventArgs e)
+{
+   lbltime.Text = String.Format("Page posted at: {0}", DateTime.Now.ToLongTimeString());
+}
+</pre>
+<p>The designed page should look as shown:</p>
+<img src="/asp.net/images/data_caching.jpg" alt="Data Caching" />
+<p>When you execute the page for the first time, nothing different happens, the label shows that, each time you refresh the page, the page is reloaded and the time shown on the label changes.</p>
+<p>Next, set the EnableCaching attribute of the data source control to be 'true' and set the Cacheduration attribute to '60'. It will implement caching and the cache will expire every 60 seconds.</p>
+<p>The timestamp changes with every refresh, but if you change the data in the table within these 60 seconds, it is not shown before the cache expires.</p>
+<pre class="prettyprint notranslate">
+&lt;asp:SqlDataSource ID = "SqlDataSource1" runat = "server" 
+   ConnectionString = "&lt;%$ ConnectionStrings: ASPDotNetStepByStepConnectionString %&gt;" 
+   ProviderName = "&lt;%$ ConnectionStrings: ASPDotNetStepByStepConnectionString.ProviderName %&gt;" 
+   SelectCommand = "SELECT * FROM [DotNetReferences]"
+   EnableCaching = "true" CacheDuration = "60"&gt;         
+&lt;/asp:SqlDataSource&gt;
+</pre>
+<h2>Object Caching</h2>
+<p>Object caching provides more flexibility than other cache techniques. You can use object caching to place any object in the cache. The object can be of any type - a data type, a web control, a class, a dataset object, etc.  The item is added to the cache simply by assigning a new key name, shown as follows Like:</p>
+<pre class="prettyprint notranslate">
+Cache["key"] = item;
+</pre>
+<p>ASP.NET also provides the Insert() method for inserting an object to the cache. This method has four overloaded versions. Let us see them:</p>
+<table class="table table-bordered" >
+<tr>
+<th style="width:30%">Overload</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Cache.Insert((key, value);</td>
+<td>Inserts an item into the cache with the key name and value with default priority and expiration.</td>
+</tr>
+<tr>
+<td>Cache.Insert(key, value, dependencies);</td>
+<td>Inserts an item into the cache with key, value, default priority, expiration and a CacheDependency name that links to other files or items so that when these change the cache item remains no longer valid.</td>
+</tr>
+<tr>
+<td>Cache.Insert(key, value, dependencies, absoluteExpiration, slidingExpiration);</td>
+<td>This indicates an expiration policy along with the above issues.</td>
+</tr>
+<tr>
+<td>Cache.Insert(key, value, dependencies, absoluteExpiration, slidingExpiration, priority, onRemoveCallback);</td>
+<td>This along with the parameters also allows you to set a priority for the cache item and a delegate that, points to a method to be invoked when the item is removed.</td>
+</tr>
+</table>
+<p>Sliding expiration is used to remove an item from the cache when it is not used for the specified time span. The following code snippet stores an item with a sliding expiration of 10 minutes with no dependencies.</p>
+<pre class="prettyprint notranslate">
+Cache.Insert("my_item", obj, null, DateTime.MaxValue, TimeSpan.FromMinutes(10));
+</pre>
+<h3>Example</h3>
+<p>Create a page with just a button and a label. Write the following code in the page load event:</p>
+<pre class="prettyprint notranslate">
+protected void Page_Load(object sender, EventArgs e)
+{
+   if (this.IsPostBack)
+   {
+      lblinfo.Text += "Page Posted Back.&lt;br/&gt;";
+   }
+   else
+   {
+      lblinfo.Text += "page Created.&lt;br/&gt;";
+   }
+   
+   if (Cache["testitem"] == null)
+   {
+      lblinfo.Text += "Creating test item.&lt;br/&gt;";
+      DateTime testItem = DateTime.Now;
+      lblinfo.Text += "Storing test item in cache ";
+      lblinfo.Text += "for 30 seconds.&lt;br/&gt;";
+      Cache.Insert("testitem", testItem, null, 
+      DateTime.Now.AddSeconds(30), TimeSpan.Zero);
+   }
+   else
+   {
+      lblinfo.Text += "Retrieving test item.&lt;br/&gt;";
+      DateTime testItem = (DateTime)Cache["testitem"];
+      lblinfo.Text += "Test item is: " + testItem.ToString();
+      lblinfo.Text += "&lt;br/&gt;";
+   }
+      
+   lblinfo.Text += "&lt;br/&gt;";
+}
+</pre>
+<p>When the page is loaded for the first time, it says:</p>
+<pre class="result notranslate">
+Page Created.
+Creating test item.
+Storing test item in cache for 30 seconds.
+</pre>
+<p>If you click on the button again within 30 seconds, the page is posted back but the label control gets its information from the cache as shown:</p>
+<pre class="result notranslate">
+Page Posted Back.
+Retrieving test item.
+Test item is: 14-07-2010 01:25:04
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/asp.net/asp.net_security.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="/asp.net/pdf/asp.net_data_caching.pdf" title="ASP.NET - Data Caching" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="/asp.net/asp.net_web_services.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/asp.net/asp.net_data_caching.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_data_caching.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/asp.net/asp.net_data_caching.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/asp.net/asp.net_data_caching.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_data_caching.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/asp.net/asp.net_data_caching.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

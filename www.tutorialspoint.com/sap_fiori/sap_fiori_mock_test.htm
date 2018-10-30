@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP Fiori Mock Test - TutorialsPoint</title>
+<meta name="description" content="SAP Fiori Mock Test -  Learn SAP Fiori starting from Introduction, Architecture, NetWeaver Gateway, Installation, Launchpad, OData Services, Transactional Apps, Fact Sheets, Analytical Apps, Theme Designer, Security, Data Flow, WorkFlow, Extension, UI5 Concepts, UI5 Design Patterns." />
+<meta name="keywords" content="SAP Fiori, Tutorial, Introduction, Architecture, NetWeaver Gateway, Installation, Launchpad, OData Services, Transactional Apps, Fact Sheets, Analytical Apps, Theme Designer, Security, Data Flow, WorkFlow, Extension, UI5 Concepts, UI5 Design Patterns." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #014286 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #014286 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #014286 !important;}
+.submenu-item{ border-bottom: 2px solid #014286 !important; border-top: 2px solid #014286 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#014286; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_fiori/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_fiori/images/sap-fiori-mini-logo.jpg" alt="SAP Fiori Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Fiori Tutorial</li>
+<li><a href="/sap_fiori/index.htm">SAP Fiori - Home</a></li>
+<li><a href="/sap_fiori/sap_fiori_introduction.htm">SAP Fiori - Introduction</a></li>
+<li><a href="/sap_fiori/sap_fiori_architecture.htm">SAP Fiori - Architecture</a></li>
+<li><a href="/sap_fiori/sap_fiori_netweaver_gateway.htm">SAP Fiori - NetWeaver Gateway</a></li>
+<li><a href="/sap_fiori/sap_fiori_installation.htm">SAP Fiori - Installation</a></li>
+<li><a href="/sap_fiori/sap_fiori_launchpad.htm">SAP Fiori - Launchpad</a></li>
+<li><a href="/sap_fiori/sap_fiori_odata_services.htm">SAP Fiori - OData Services</a></li>
+<li><a href="/sap_fiori/sap_fiori_transactional_apps.htm">SAP Fiori - Transactional Apps</a></li>
+<li><a href="/sap_fiori/sap_fiori_fact_sheets.htm">SAP Fiori - Fact Sheets</a></li>
+<li><a href="/sap_fiori/sap_fiori_analytical_apps.htm">SAP Fiori - Analytical Apps</a></li>
+<li><a href="/sap_fiori/sap_fiori_theme_designer.htm">SAP Fiori - Theme Designer</a></li>
+<li><a href="/sap_fiori/sap_fiori_security.htm">SAP Fiori - Security</a></li>
+<li><a href="/sap_fiori/sap_fiori_data_flow.htm">SAP Fiori - Data Flow</a></li>
+<li><a href="/sap_fiori/sap_fiori_workflow.htm">SAP Fiori - WorkFlow</a></li>
+<li><a href="/sap_fiori/sap_fiori_extension.htm">SAP Fiori - Extension</a></li>
+<li><a href="/sap_fiori/sap_fiori_ui5_concepts.htm">SAP Fiori - UI5 Concepts</a></li>
+<li><a href="/sap_fiori/sap_fiori_ui5_design_patterns.htm">SAP Fiori - UI5 Design Patterns</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Fiori Useful Resources</li>
+<li><a href="/sap_fiori/sap_fiori_questions_answers.htm">SAP Fiori - Questions and Answers</a></li>
+<li><a href="/sap_fiori/sap_fiori_quick_guide.htm">SAP Fiori - Quick Guide</a></li>
+<li><a href="/sap_fiori/sap_fiori_useful_resources.htm">SAP Fiori - Useful Resources</a></li>
+<li><a href="/sap_fiori/sap_fiori_discussion.htm">SAP Fiori - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ 
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP Fiori Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_fiori/sap_fiori_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_fiori/sap_fiori_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>SAP Fiori Framework</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/sap_fiori/sap_fiori_mock_test.htm?min=1&max=12"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/sap_fiori/sap_fiori_mock_test.htm?min=13&max=24"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/sap_fiori/sap_fiori_mock_test.htm?min=25&max=37"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/sap_fiori/sap_fiori_mock_test.htm?min=38&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>SAP Fiori Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - While configuring Back End Server in SAP Fiori, which of the following is a valid step?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Set up SAP Fiori search</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Configure targets for KPIs</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Installation of SAP Fiori Infrastructure</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Assign role with OData service authorization to users.</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>In configuring ABAP back-end server we define Role, users and authorizations. Assigning OData service roles and RFC authorization is defined in ABAP back-end server.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - When you configure SAP Fiori Apps, you install KPI framework for which of the following App types?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Analytical Apps</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Smart Business</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Transactional Apps</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Factsheets</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Analytical apps and the SAP Smart Business apps share the setup of HANA XS engine and KPI Framework only (in Smart Business Apps).</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - To communicate between SAP Fiori Backend and Frontend server, which of the following connection type is configured?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - HTTPS</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - RFC connection Type 3</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - RFC connection Type 2</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - TCP/IP</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>To define a trust relationship between SAP system and SAP NetWeaver gateway host by configuring SAP system to be trusting system and NetWeaver gateway host to be the trusted system. It enables remote logon for users who use the same user data in both SAP NetWeaver Gateway host and SAP system.</p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - While configuring SAP NetWeaver Gateway, to activate OData service which of the following service is used by Fiori Launchpad?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - /UI2/PAGE_BUILDER_CONF</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - /UI2/PAGE_BUILDER_CUST</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - /UI2/PAGE_BUILDER_PERS</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - /UI2/TRANSPORT</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>/UI2/TRANSPORT -– This is used by Launchpad designer.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - In SAP Fiori, which of the following technology provides a viable option for creating a secure SSO infrastructure if you're considering extending single sign-on to extranet or cross-company scenarios?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP Single Sign on</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - X.509 certificates</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Kerberos</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Window AD authentication</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>X.509 certificates</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - Is it possible to connect SAP Fiori apps to non-SAP back end system?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SAP Fiori doesn’t support non SAP back end system</a></p> 
+</div>
+<div class="A" id='A6'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - While configuring factsheets, to make connection objects available in in search which of the following has to start?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Users and Authorization</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Indexing</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - PFCG roles</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - UI services</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>To make the objects in the connectors available in the search, you have to start or schedule indexing for the new connectors. In admin cockpit choose the connectors you want to schedule indexing for and then choose activate. Below Object type, select one or more search and analysis models. Select start immediately to trigger indexing immediately or schedule for a later time. Select OK.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - While you configuring SAP Fiori Launchpad, it comes under configuration of which of the following Fiori component?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP Fiori Back End server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SAP Web Dispatcher</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - SAP Front End server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - User authentication and roles</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : C</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - You can implement enhanced security in SAP Back end server while configuring Central Hub deployment of NetWeaver gateway. Which of the following allow you to implement this?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - As Gateway is configured multiple times</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Business suite and NW gateway are deployed on same server</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Business logic and Backend data from UI layer</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - It is recommended for test environment</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>UI layer and SAP NetWeaver gateway is contained in ABAP Front-end server. The ABAP back end server contains business logic and back end data. Separating business logic and back end data from UI layer has below advantages &minus;</p>
+<p>Single Point of maintenance for UI issues- such as browser support and updated version of SAP UI5 libraries.</p>
+<p>Central place for theming and branding SAP Fiori Apps. Routing and composition of multiple backend systems is supported.</p>
+<p>Single Point of access to backend systems and enhanced security because of no direct access to backend system. SAP recommends Central Hub deployment especially for Productive environment. Separate NetWeaver Gateway system is required.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - When you apply SAP Fiori support pack, it consists of?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - UI5 Controls library and SAP Fiori Launchpad.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - UI development for the respective Business suite products such as ERP, SRM, CRM, SCM, etc.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - New Apps released as well as bugs/fixes for existing apps.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Development and generation tools to create OData services.</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : C</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - While configuring SAP Fiori architecture, Transaction apps, Factsheets and Analytical apps are configured on which of the following systems?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Hana XS engine, Search models, Any DB</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Hana XS engine, Search models, Reverse Proxy</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Any DB, Search models, Hana XS engine</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Any DB, HANA XS engine, Search models</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Transaction Apps are only apps that don’t have to run on Hana system. They can run on any Database. All factsheets, Analytical apps and Small Business Apps run on SAP Hana. Only Fact sheet requires Search Models. Only Analytical Apps requires Hana XS Engine and KPI Framework is needed for Smarts Business Apps.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - In SAP Fiori Analytical apps, which of the below is integrated with SAP HANA XS engine?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - SAP HANA database</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Web server in SAP HANA</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Application server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>A</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/sap_fiori/sap_fiori_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/sap_fiori/pdf/sap_fiori_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_fiori/sap_fiori_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">sap_fiori_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_fiori/sap_fiori_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_fiori/sap_fiori_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_fiori/sap_fiori_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_fiori/sap_fiori_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_fiori/sap_fiori_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_fiori/sap_fiori_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

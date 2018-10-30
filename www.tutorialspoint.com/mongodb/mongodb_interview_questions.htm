@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>MongoDB Interview Questions - tutorialspoint</title>
+<meta name="description" content="MongoDB Interview Questions - Learn MongoDB in simple and easy steps starting from basic to advanced concepts with examples including what is mongoD?, why and where you should use it?, Environment Setup, creating collection, document." />
+<meta name="keywords" content="Mongodb, overview, Advantages, Environment, Data Modelling, Create Database, Drop Database, Create Collection, Drop Collection, Data Types, Insert Document, Query Document, Update Document, Delete Document, Projection, Limiting Records, Sorting, Records, Indexing, Aggregration, Replication, Sharding, Create Backup, Deployment, Java, PHP, Relationships, Database References, Covered Queries, Analyzing Queries, Atomic Operations, Advanced Indexing, Indexing Limitations, ObjectId, Map Reduce, Text Search, Regular Expression, Rockmongo, GridFS, Capped Collections, Auto-Increment Sequence." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #459e36 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #459e36 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #459e36 !important;}
+.submenu-item{ border-bottom: 2px solid #459e36 !important; border-top: 2px solid #459e36 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#459e36; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/mongodb/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/mongodb/images/mongodb-mini-logo.jpg" alt="MongoDB Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">MongoDB Tutorial</li>
+<li><a href="/mongodb/index.htm">MongoDB - Home</a></li>
+<li><a href="/mongodb/mongodb_overview.htm">MongoDB - Overview</a></li>
+<li><a href="/mongodb/mongodb_advantages.htm">MongoDB - Advantages</a></li>
+<li><a href="/mongodb/mongodb_environment.htm">MongoDB - Environment</a></li>
+<li><a href="/mongodb/mongodb_data_modeling.htm">MongoDB - Data Modeling</a></li>
+<li><a href="/mongodb/mongodb_create_database.htm">MongoDB - Create Database</a></li>
+<li><a href="/mongodb/mongodb_drop_database.htm">MongoDB - Drop Database</a></li>
+<li><a href="/mongodb/mongodb_create_collection.htm">MongoDB - Create Collection</a></li>
+<li><a href="/mongodb/mongodb_drop_collection.htm">MongoDB - Drop Collection</a></li>
+<li><a href="/mongodb/mongodb_datatype.htm">MongoDB - Data Types</a></li>
+<li><a href="/mongodb/mongodb_insert_document.htm">MongoDB - Insert Document</a></li>
+<li><a href="/mongodb/mongodb_query_document.htm">MongoDB - Query Document</a></li>
+<li><a href="/mongodb/mongodb_update_document.htm">MongoDB - Update Document</a></li>
+<li><a href="/mongodb/mongodb_delete_document.htm">MongoDB - Delete Document</a></li>
+<li><a href="/mongodb/mongodb_projection.htm">MongoDB - Projection</a></li>
+<li><a href="/mongodb/mongodb_limit_record.htm">MongoDB - Limiting Records</a></li>
+<li><a href="/mongodb/mongodb_sort_record.htm">MongoDB - Sorting Records</a></li>
+<li><a href="/mongodb/mongodb_indexing.htm">MongoDB - Indexing</a></li>
+<li><a href="/mongodb/mongodb_aggregation.htm">MongoDB - Aggregation</a></li>
+<li><a href="/mongodb/mongodb_replication.htm">MongoDB - Replication</a></li>
+<li><a href="/mongodb/mongodb_sharding.htm">MongoDB - Sharding</a></li>
+<li><a href="/mongodb/mongodb_create_backup.htm">MongoDB - Create Backup</a></li>
+<li><a href="/mongodb/mongodb_deployment.htm">MongoDB - Deployment</a></li>
+<li><a href="/mongodb/mongodb_java.htm">MongoDB - Java</a></li>
+<li><a href="/mongodb/mongodb_php.htm">MongoDB - PHP</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Advanced MongoDB</li>
+<li><a href="/mongodb/mongodb_relationships.htm">MongoDB - Relationships</a></li>
+<li><a href="/mongodb/mongodb_database_references.htm">MongoDB - Database References</a></li>
+<li><a href="/mongodb/mongodb_covered_queries.htm">MongoDB - Covered Queries</a></li>
+<li><a href="/mongodb/mongodb_analyzing_queries.htm">MongoDB - Analyzing Queries</a></li>
+<li><a href="/mongodb/mongodb_atomic_operations.htm">MongoDB - Atomic Operations</a></li>
+<li><a href="/mongodb/mongodb_advanced_indexing.htm">MongoDB - Advanced Indexing</a></li>
+<li><a href="/mongodb/mongodb_indexing_limitations.htm">MongoDB - Indexing Limitations</a></li>
+<li><a href="/mongodb/mongodb_objectid.htm">MongoDB - ObjectId</a></li>
+<li><a href="/mongodb/mongodb_map_reduce.htm">MongoDB - Map Reduce</a></li>
+<li><a href="/mongodb/mongodb_text_search.htm">MongoDB - Text Search</a></li>
+<li><a href="/mongodb/mongodb_regular_expression.htm">MongoDB - Regular Expression</a></li>
+<li><a href="/mongodb/working_with_rockmongo.htm">Working with Rockmongo</a></li>
+<li><a href="/mongodb/mongodb_gridfs.htm">MongoDB - GridFS</a></li>
+<li><a href="/mongodb/mongodb_capped_collections.htm">MongoDB - Capped Collections</a></li>
+<li><a href="/mongodb/mongodb_autoincrement_sequence.htm">Auto-Increment Sequence</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">MongoDB Useful Resources</li>
+<li><a href="/mongodb/mongodb_questions_answers.htm">MongoDB - Questions and Answers</a></li>
+<li><a href="/mongodb/mongodb_quick_guide.htm">MongoDB - Quick Guide</a></li>
+<li><a href="/mongodb/mongodb_useful_resources.htm">MongoDB - Useful Resources</a></li>
+<li><a href="/mongodb/mongodb_discussion.htm">MongoDB - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>MongoDB Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/mongodb/mongodb_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/mongodb/mongodb_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>MongoDB Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>MongoDB</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label>What are NoSQL databases? What are the different types of NoSQL databases?</label>
+<div class="toggle-content">
+<p>A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases (like SQL, Oracle, etc.).</p>
+<p>
+Types of NoSQL databases:
+<ul class="list">
+<li>Document Oriented</li> 
+<li>Key Value </li>
+<li>Graph </li>
+<li>Column Oriented</li>
+</ul>
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>What kind of NoSQL database MongoDB is?</label>
+<div class="toggle-content">
+<p>MongoDB is a document oriented database. It stores data in the form of BSON structure based documents. These documents are stored in a collection.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which are the most important features of MongoDB?</label>
+<div class="toggle-content">
+<p>
+<ul class="list">
+<li>Flexible data model in form of documents </li> 
+<li>Agile and highly scalable database </li>
+<li>Faster than traditional databases </li>
+<li>Expressive query language  </li>
+</ul>
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is a Namespace in MongoDB?</label>
+<div class="toggle-content">
+<p>A Namespace is the concatenation of the database name and collection name.
+For e.g. school.students with school as the database and students as the collection
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which all languages can be used with MongoDB?</label>
+<div class="toggle-content">
+<p>Currently, MonggoDB provides official driver support for C, C++, C#, Java, Node.js, Perl, PHP, Python, Ruby, Scala, Go and Erlang. MongoDB can easily be used with any of these languages. There are some other community supported drivers too but the above mentioned ones are officially provided by MongoDB.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Compare SQL databases and MongoDB at a high level.</label>
+<div class="toggle-content">
+<p>SQL databases store data in form of tables, rows, columns and records. This data is stored in a pre-defined data model which is not very much flexible for today's real-world highly growing applications. MongoDB in contrast uses a flexible structure which can be easily modified and extended. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How is MongoDB better than other SQL databases?</label>
+<div class="toggle-content">
+<p>MongoDB allows a highly flexible and scalable document structure. For e.g. one data document in MongoDB can have five columns and the other one in the same collection can have ten columns. Also, MongoDB database are faster as compared to SQL databases due to efficient indexing and storage techniques.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Compare MongoDB and CouchDB at high level.</label>
+<div class="toggle-content">
+<p>Although both of these databases are document oriented, MongoDB is a better choice for applications which need dynamic queries and good performance on a very big database. On the other side, CouchDB is better used for applications with occasionally changing queries and pre-defined queries. </p>
+</div>
+</section>
+    <section class="toggle">
+<label>Does MongoDB support foreign key constraints?</label>
+<div class="toggle-content">
+<p>No. MongoDB does not support such relationships.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Does MongoDB support ACID transaction management and locking functionalities?</label>
+<div class="toggle-content">
+<p>No. MongoDB does not support default multi-document ACID transactions. However, MongoDB provides atomic operation on a single document.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can you achieve primary key - foreign key relationships in MongoDB?</label>
+<div class="toggle-content">
+<p>By default MongoDB does not support such primary key - foreign key relationships. However, we can achieve this concept by embedding one document inside another. Foe e.g. an address document can be embedded inside customer document.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Does MongoDB need a lot of RAM?</label>
+<div class="toggle-content">
+<p>No. MongoDB can be run even on a small amount of RAM. MongoDB dynamically allocates and de-allocates RAM based on the requirements of other processes.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Does MongoDB pushes the writes to disk immediately or lazily?</label>
+<div class="toggle-content">
+<p>MongoDB pushes the data to disk lazily. It updates the immediately written to the journal but writing the data from journal to disk happens lazily.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Explain the structure of ObjectID in MongoDB.</label>
+<div class="toggle-content">
+<p>
+ObjectID is a 12-byte BSON type with:
+<ul class="list">
+<li>4 bytes value representing seconds </li>
+<li>3 byte machine identifier</li>
+<li>2 byte process id </li>
+<li>3 byte counter</li>
+</ul>
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>MongoDB uses BSON to represent document structures. True or False?</label>
+<div class="toggle-content">
+<p>True</p>
+</div>
+</section>
+<section class="toggle">
+<label>If you remove a document from database, does MongoDB remove it from disk?</label>
+<div class="toggle-content">
+<p>Yes. Removing a document from database removes it from disk too.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Mention the command to insert a document in a database called school and collection called persons.</label>
+<div class="toggle-content">
+<pre class="prettyprint">
+use school;
+db.persons.insert( { name: "kadhir", dept: "CSE" } )
+</pre> 
+</div>
+</section>
+<section class="toggle">
+<label>What are Indexes in MongoDB?</label>
+<div class="toggle-content">
+<p>Indexes support the efficient execution of queries in MongoDB. Without indexes, MongoDB must perform a collection scan, i.e. scan every document in a collection, to select those documents that match the query statement. If an appropriate index exists for a query, MongoDB can use the index to limit the number of documents it must inspect.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How many indexes does MongoDB create by default for a new collection? </label>
+<div class="toggle-content">
+<p>By default, MongoDB created the _id collection for every collection. </p>
+</div>
+</section>
+<section class="toggle">
+<label>Can you create an index on an array field in MongoDB? If yes, what happens in this case?</label>
+<div class="toggle-content">
+<p>Yes. An array field can be indexed in MongoDB. In this case, MongoDB would index each value of the array. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is a covered query in MongoDB?</label>
+<div class="toggle-content">
+<p>
+A covered query is the one in which:    
+<ul class="list">
+<li> fields used in the query are part of an index used in the query, and </li>
+<li> the fields returned in the results are in the same index </li>
+</ul>
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>Why is a covered query important?</label>
+<div class="toggle-content">
+<p>Since all the fields are covered in the index itself, MongoDB can match the query condition as well as return the result fields using the same index without looking inside the documents. Since indexes are stored in RAM or sequentially located on disk, such access is a lot faster.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Does MongoDB provide a facility to do text searches? How?</label>
+<div class="toggle-content">
+<p>Yes. MongoDB supports creating text indexes to support text search inside string content. This was a new feature which can introduced in version 2.6. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What happens if an index does not fit into RAM?  </label>
+<div class="toggle-content">
+<p>If the indexes do not fit into RAM, MongoDB reads data from disk which is relatively very much slower than reading from RAM.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Mention the command to list all the indexes on a particular collection.</label>
+<div class="toggle-content">
+<pre class="prettyprint">
+db.collection.getIndexes()
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>At what interval does MongoDB write updates to the disk?</label>
+<div class="toggle-content">
+<p>By default configuration, MongoDB writes updates to the disk every 60 seconds. However, this is configurable with the commitIntervalMs and syncPeriodSecs options.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can you achieve transaction and locking in MongoDB?</label>
+<div class="toggle-content">
+<p>
+To achieve concepts of transaction and locking in MongoDB, we can use the nesting of documents, also called embedded documents. MongoDB supports atomic operations within a single document. 
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is Aggregation in MongoDB?</label>
+<div class="toggle-content">
+<p>Aggregations operations process data records and return computed results. Aggregation operations group values from multiple documents together, and can perform a variety of operations on the grouped data to return a single result. MongoDB provides three ways to perform aggregation: the aggregation pipeline, the map-reduce function, and single purpose aggregation methods and commands.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is Sharding in MongoDB? Explain.</label>
+<div class="toggle-content">
+<p>Sharding is a method for storing data across multiple machines. MongoDB uses sharding to support deployments with very large data sets and high throughput operations.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is Replication in MongoDB? Explain.</label>
+<div class="toggle-content">
+<p>Replication is the process of synchronizing data across multiple servers. Replication provides redundancy and increases data availability. With multiple copies of data on different database servers, replication protects a database from the loss of a single server. Replication also allows you to recover from hardware failure and service interruptions.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are Primary and Secondary Replica sets?</label>
+<div class="toggle-content">
+<p>Primary and master nodes are the nodes that can accept writes. MongoDB's replication is 'single-master:' only one node can accept write operations at a time.</p>
+<p>Secondary and slave nodes are read-only nodes that replicate from the primary.</p>
+</div>
+</section>
+<section class="toggle">
+<label>By default, MongoDB writes and reads data from both primary and secondary replica sets. True or False.</label>
+<div class="toggle-content">
+<p>False. MongoDB writes data only to the primary replica set.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Why are MongoDB data files large in size?</label>
+<div class="toggle-content">
+<p>MongoDB preallocates data files to reserve space and avoid file system fragmentation when you setup the server. </p>
+</div>
+</section>
+<section class="toggle">
+<label>When should we embed one document within another in MongoDB?</label>
+<div class="toggle-content">
+<p>
+You should consider embedding documents for:
+<ul class="list">
+<li>'contains' relationships between entities</li>
+<li>One-to-many relationships </li>
+<li>Performance reasons</li>
+</ul> 
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>Why MongoDB is not preferred over a 32-bit system?</label>
+<div class="toggle-content">
+<p>
+When running a 32-bit build of MongoDB, the total storage size for the server, including data and indexes, is 2 gigabytes. For this reason, do not deploy MongoDB to production on 32-bit machines.
+</p>
+<p>
+If you're running a 64-bit build of MongoDB, there's virtually no limit to storage size.
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is a Storage Engine in MongoDB</label>
+<div class="toggle-content">
+<p>A storage engine is the part of a database that is responsible for managing how data is stored on disk. For example, one storage engine might offer better performance for read-heavy workloads, and another might support a higher-throughput for write operations.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which are the two storage engines used by MongoDB?</label>
+<div class="toggle-content">
+<p>MongoDB uses MMAPv1 and WiredTiger.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the role of a profiler in MongoDB? Where does the writes all the data?</label>
+<div class="toggle-content">
+<p>
+The database profiler collects fine grained data about MongoDB write operations, cursors, database commands on a running mongod instance. You can enable profiling on a per-database or per-instance basis.
+</p>
+<p>
+The database profiler writes all the data it collects to the system.profile collection, which is a capped collection.
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>How does Journaling work in MongoDB?</label>
+<div class="toggle-content">
+<p>When running with journaling, MongoDB stores and applies write operations in memory and in the on-disk journal before the changes are present in the data files on disk. Writes to the journal are atomic, ensuring the consistency of the on-disk journal files. With journaling enabled, MongoDB creates a journal subdirectory within the directory defined by dbPath, which is /data/db by default.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Mention the command to check whether you are on the master server or not.</label>
+<div class="toggle-content">
+<p>db.isMaster()</p>
+</div>
+</section>
+<section class="toggle">
+<label>Can you configure the cache size for MMAPv1? How?</label>
+<div class="toggle-content">
+<p>No. MMAPv1 does not allow configuring the cache size.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Can you configure the cache size for WiredTiger? How?</label>
+<div class="toggle-content">
+<p>For the WiredTiger storage engine, you can specify the maximum size of the cache that WiredTiger will use for all data. This can be done using storage.wiredTiger.engineConfig.cacheSizeGB option.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How does MongoDB provide concurrency?</label>
+<div class="toggle-content">
+<p>MongoDB uses reader-writer locks that allow concurrent readers shared access to a resource, such as a database or collection, but give exclusive access to a single write operation.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can you isolate your cursors from intervening with the write operations?</label>
+<div class="toggle-content">
+<p>You can use the snapshot() method on a cursor to isolate the operation for a very specific case.
+snapshot() traverses the index on the _id field and guarantees that the query will return each document no more than once.
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>Can one MongoDB operation lock more than one databases? If yes, how?</label>
+<div class="toggle-content">
+<p>Yes. Operations like copyDatabase(), repairDatabase(), etc. can lock more than onne databases involved.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can concurrency affect replica sets primary?</label>
+<div class="toggle-content">
+<p>In replication, when MongoDB writes to a collection on the primary, MongoDB also writes to the primary's oplog, which is a special collection in the local database. Therefore, MongoDB must lock both the collection's database and the local database.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is GridFS?</label>
+<div class="toggle-content">
+<p>GridFS is a specification for storing and retrieving files that exceed the BSON-document size limit of 16MB. Instead of storing a file in a single document, GridFS divides a file into parts, or chunks, and stores each of those chunks as a separate document.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Can you run multiple Javascript operations in a single mongod instance?</label>
+<div class="toggle-content">
+<p>Yes. The V8 JavaScript engine added in 2.4 allows multiple JavaScript operations to run at the same time.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which command can be used to provide various information on the query plans used by a MongoDB query?</label>
+<div class="toggle-content">
+<p>The explain() command can be used for this information. The possible modes are: 'queryPlanner', 'executionStats', and 'allPlansExecution'.</p>
+</div>
+</section>
+
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/mongodb/mongodb_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/mongodb/mongodb_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">mongodb_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>The Best Technical Questions And Answers</title>
+<meta name="Description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals"/>
+<meta name="Keywords" content="Technical, Questions,  Answers, Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="The Best Technical Questions And Answers" />
+<meta name="twitter:description" property="og:description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="canonical" href="https://www.tutorialspoint.com/following/Maheshwari-Thakur-1" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+ 
+
+<div class="page_wrapper">
+   <div class="timeline_header_wrapper"> 
+      <div class="cover_container">
+         <div class="cover_wrapper">
+                             <img src="https://www.tutorialspoint.com/assets/profiles/13574/cover/cover_Maheshwari-Thakur-1.jpg?time=1539993246"  id="cover-img" alt="Cover Image"  style="margin-top:0px;display:block" />
+                             <div class="cover_progress"></div>
+         </div>
+
+         <div class="cover_resize_wrapper">
+                              <img src="https://www.tutorialspoint.com/assets/profiles/13574/cover/cover_Maheshwari-Thakur-1.jpg?time=1539993246"  id="org-photo" alt="Cover Image"  style="top:0px;display:block;display:block" />
+
+                                              
+             <div class="cover_progress"></div>
+             <div class="drag_div" style="text-align:center">Drag to reposition</div>
+         </div>
+         <div class="cover_loader" style="display:none">
+            <div class="cover_background"></div>
+            <img src="https://www.tutorialspoint.com/questions/images/loader.gif">
+         </div>            
+      </div>
+
+      <div class="mui-container">
+                 </div>
+    </div>
+
+    <div class="user_profile_container">
+        <div class="user_profile_bg">
+            <div class="mui-container"> 
+                <div class="">   
+                    <div class="mui-col-md-12">
+                        <div class="profile_image">
+                            <div id="profileImageUpdate">
+                                <img src="https://www.tutorialspoint.com/assets/profiles/13574/profile/200_99671-1512545646.jpg" alt="Profile Image" class='zoomable' id="userprofileimg">
+                                                            </div>
+                            <div class="user_profile_details">
+                                <h4><span>Maheshwari Thakur</span></h4> 
+                                <div class="clear"></div>
+                                                  
+                                <div class="clear"></div>                                  
+                            </div>                  
+                        </div>
+                        <div class="clear"></div>
+                        <div class="user_followers_bar">
+                            <div class="user_follow_links">
+                                                                <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="View Profile"><span class=""> Profile <br/> <b><i class="fa fa-user-edit"></i></b></span></a>
+                                                                    <a href="https://www.tutorialspoint.com/following/Maheshwari-Thakur-1" title='0 Following'><span class="active_bars">Following <br/>
+                                            <b>
+                                                0                                            </b>
+                                       </span></a>
+                                       <a href="https://www.tutorialspoint.com/followers/Maheshwari-Thakur-1" title='0 Followers'><span class="">Followers <br/>
+                                            <b>
+                                                0                                            </b>
+                                        </span>
+                                       </a>
+                                                                        <a href="javascript:void();" class="no_cursor">
+                                        <span title="Your profile has 3285 points">Score   <br/>
+                                            <b>3.29 K</b>
+                                        </span>
+                                    </a>
+                                                                </div>
+
+                                                            <div class="prof_follw " id="profile_follow">
+                                    <a href="javascript:void(0);"  class="user_follow" data-uid='WmFSTm5UTDNyeWtKV0dFWnFjOUVnUT09'><i class="fa fa-user-plus"></i> <b>Follow</b></a>
+                                </div>
+                                 
+
+                            <div class="user_follow_icons">
+                                <div class="fo_icons"><i class="fa fa-facebook-f"></i></div><div class="fo_icons"><i class="fa fa-twitter"></i></div><div class="fo_icons"><i class="fa fa-linkedin-in"></i></div><div class="fo_icons"><i class="fa fa-google-plus-g"></i></div><div class="fo_icons"><i class="fa fa-internet-explorer" style="margin:0px 4px 0px -7px"></i></div>            
+
+                            </div>
+
+                        <div class="clear"></div>
+                        </div> 
+                        <input type="hidden" id="uid" value="WmFSTm5UTDNyeWtKV0dFWnFjOUVnUT09" />
+                        <input type="hidden" id="user_title" value="Maheshwari-Thakur-1" />
+                        <input type="hidden" id="cover_flag" value="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="user_content_container">
+    <div class="mui-container">
+        <div class="">
+            <div class="mui-col-md-12">
+                <!-- center column content -->
+                <div class="mui-col-md-8">
+                    <div class="inner-header"><span>Maheshwari Thakur</span> following <span>0</span> users</div>  
+                    <div id="user_profile">
+                                            </div>     
+                    <div class="loader_bg" id="loader_image">
+                        <img src="https://www.tutorialspoint.com/questions/images/loader.gif" width="80" alt="loader" />
+                    </div>
+                </div>
+                <!-- end of center column content -->   
+
+                <!-- right column content -->  
+                <div class="mui-col-md-4">    
+                    <!-- profile right column content -->
+  
+
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/following/Maheshwari-Thakur-1','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/following/Maheshwari-Thakur-1','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/following/Maheshwari-Thakur-1&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/following/Maheshwari-Thakur-1&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/following/Maheshwari-Thakur-1&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/following/Maheshwari-Thakur-1&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+<button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+<div id="profileRight" class="">
+         <ul class="left_navv" style="text-align:center; border-radius:2px;margin:5px 0px;">
+         <li style="text-align:center;">
+            <div class="left_signin">New to Tutorialspoint
+               <p>Sign up now to get your own personalized profile! </p>
+            </div>
+            <button class="qa_pop_save" onclick="loginPopup('signUp');"><i class="fa fa-sign-out"></i> Register</button>
+         </li>   
+      </ul>
+         
+    <div class="left_nav_header">
+        <i class="fa fa-plus-hexagon"></i> Contribution            
+    </div> 
+    <ul class="left_navv">   
+        <li>
+            <a href="https://www.tutorialspoint.com/questions/Maheshwari-Thakur-1"><i class="fa fa-question-circle"></i> Questions 
+                            </a>
+        </li>
+        <li><a href="https://www.tutorialspoint.com/answers/Maheshwari-Thakur-1" ><i class="fa fa-comment-alt-lines"></i> Answers  
+                            </a></li>  
+        <li><a href="https://www.tutorialspoint.com/suggestions/Maheshwari-Thakur-1"><i class="fa fa-comment-alt-check"></i> Suggestions </a></li>  
+        
+    </ul> 
+
+
+       <div class="clear"></div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad" style="position:relative; left:20px;">Advertisements</div>
+      <div class="rightgooglead">
+         <script><!--
+            google_ad_client = "pub-7133395778201029";
+            google_ad_width = 300;
+            google_ad_height = 250;
+            google_ad_format = "300x250_as";
+            google_ad_type = "image";
+            google_ad_channel ="";
+         //--></script>
+         <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+      </div>
+
+      <div class="rightgooglead extra">
+         <script><!--
+            google_ad_client = "pub-7133395778201029";
+            google_ad_width = 300;
+            google_ad_height = 600;
+            google_ad_format = "300x600_as";
+            google_ad_type = "image";
+            google_ad_channel ="";
+            //--></script>
+         <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+      </div>
+
+      <div class="rightgooglead extra">
+         <script><!--
+            google_ad_client = "ca-pub-2537027957187252";
+            /* Right Side Ad */
+            google_ad_slot = "right_side_ad";
+            google_ad_width = 300;
+            google_ad_height = 250;
+            //-->
+         </script>
+         <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+
+
+</div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        getTopWriters();
+        function getTopWriters() {
+            $.ajax({
+                url: baseurl + "questions/ajax/ajaxGetTopWriters.php",
+                method: "POST",
+                success: function (data) {
+                    $('#divTopWriters').html(data);
+                }
+            });
+        }
+    });
+</script>
+<!-- end of profile right column content -->                </div>
+                <!-- end of right column content -->     
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var start_from = 20;
+    var v = false;
+    var lastFlag = false;
+    var uid = $('#uid').val();
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            $('.wrap_loader').css('height', $(document).height() - 40);
+            $('.search_bg_mask').css('height', $(document).height() - 40);
+            if (Math.round($(window).scrollTop()) == Math.round($(document).height() - $(window).height())) {
+                if (lastFlag == false) {
+                    getUsers(uid, start_from, 20);
+                    start_from = start_from + 20;
+                }
+            }
+        });
+    });
+    function getUsers(uid, start_from, limit_val) {
+        $('#loader_image').show();
+        $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetUserFollowing.php",
+            method: "POST",
+            data: {'uid': uid, 'start_from': start_from, "limit_val": limit_val}
+        }).done(function (returnData) {
+            if (returnData == '') {
+                lastFlag = true;
+                $('#user_profile').append("<div class='admin_qa_widget'>No more profiles available</div>").fadeIn('slow');
+                $('#loader_image').hide();
+            }
+            $('#user_profile').append(returnData).fadeIn('slow');
+            progressively.init({});
+            $('#loader_image').hide();
+        });
+    }
+</script>
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

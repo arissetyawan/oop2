@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>C# Data Types</title>
+<meta name="description" content="C# Data Types - Learn C# in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<meta name="keywords" content="C#, Tutorial, Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #FE9400 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #FE9400 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #FE9400 !important;}
+.submenu-item{ border-bottom: 2px solid #FE9400 !important; border-top: 2px solid #FE9400 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#FE9400; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/csharp/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   vertical-align:middle !important;
+   text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/csharp/images/csharp-mini-logo.jpg" alt="Csharp Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/csharp_online_training/index.asp" target="_blank"><img src="/csharp/images/csharp-video-tutorials.jpg" alt="C# Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Basic Tutorial</li>
+<li><a href="/csharp/index.htm">C# - Home</a></li>
+<li><a href="/csharp/csharp_overview.htm">C# - Overview</a></li>
+<li><a href="/csharp/csharp_environment_setup.htm">C# - Environment</a></li>
+<li><a href="/csharp/csharp_program_structure.htm">C# - Program Structure</a></li>
+<li><a href="/csharp/csharp_basic_syntax.htm">C# - Basic Syntax</a></li>
+<li><a href="/csharp/csharp_data_types.htm">C# - Data Types</a></li>
+<li><a href="/csharp/csharp_type_conversion.htm">C# - Type Conversion</a></li>
+<li><a href="/csharp/csharp_variables.htm">C# - Variables</a></li>
+<li><a href="/csharp/csharp_constants.htm">C# - Constants</a></li>
+<li><a href="/csharp/csharp_operators.htm">C# - Operators</a></li>
+<li><a href="/csharp/csharp_decision_making.htm">C# - Decision Making</a></li>
+<li><a href="/csharp/csharp_loops.htm">C# - Loops</a></li>
+<li><a href="/csharp/csharp_encapsulation.htm">C# - Encapsulation</a></li>
+<li><a href="/csharp/csharp_methods.htm">C# -  Methods</a></li>
+<li><a href="/csharp/csharp_nullables.htm">C# -  Nullables</a></li>
+<li><a href="/csharp/csharp_arrays.htm">C# - Arrays</a></li>
+<li><a href="/csharp/csharp_strings.htm">C# - Strings</a></li>
+<li><a href="/csharp/csharp_struct.htm">C# - Structure</a></li>
+<li><a href="/csharp/csharp_enums.htm">C# - Enums</a></li>
+<li><a href="/csharp/csharp_classes.htm">C# - Classes</a></li>
+<li><a href="/csharp/csharp_inheritance.htm">C# - Inheritance</a></li>
+<li><a href="/csharp/csharp_polymorphism.htm">C# - Polymorphism</a></li>
+<li><a href="/csharp/csharp_operator_overloading.htm">C# - Operator Overloading</a></li>
+<li><a href="/csharp/csharp_interfaces.htm">C# - Interfaces</a></li>
+<li><a href="/csharp/csharp_namespaces.htm">C# - Namespaces</a></li>
+<li><a href="/csharp/csharp_preprocessor_directives.htm">C# - Preprocessor Directives</a></li>
+<li><a href="/csharp/csharp_regular_expressions.htm">C# - Regular Expressions</a></li>
+<li><a href="/csharp/csharp_exception_handling.htm">C# - Exception Handling</a></li>
+<li><a href="/csharp/csharp_file_io.htm">C# - File I/O</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Advanced Tutorial</li>
+<li><a href="/csharp/csharp_attributes.htm">C# - Attributes</a></li>
+<li><a href="/csharp/csharp_reflection.htm">C# - Reflection</a></li>
+<li><a href="/csharp/csharp_properties.htm">C# - Properties</a></li>
+<li><a href="/csharp/csharp_indexers.htm">C# - Indexers</a></li>
+<li><a href="/csharp/csharp_delegates.htm">C# - Delegates</a></li>
+<li><a href="/csharp/csharp_events.htm">C# - Events</a></li>
+<li><a href="/csharp/csharp_collections.htm">C# - Collections</a></li>
+<li><a href="/csharp/csharp_generics.htm">C# - Generics</a></li>
+<li><a href="/csharp/csharp_anonymous_methods.htm">C# - Anonymous Methods</a></li>
+<li><a href="/csharp/csharp_unsafe_codes.htm">C# - Unsafe Codes</a></li>
+<li><a href="/csharp/csharp_multithreading.htm">C# - Multithreading</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Useful Resources</li>
+<li><a href="/csharp/csharp_questions_answers.htm">C# - Questions and Answers</a></li>
+<li><a href="/csharp/csharp_quick_guide.htm">C# - Quick Guide</a></li>
+<li><a href="/csharp/csharp_useful_resources.htm">C# - Useful Resources</a></li>
+<li><a href="/csharp/csharp_discussion.htm">C# - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>C# - Data Types</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_basic_syntax.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_type_conversion.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>The variables in C#, are categorized into the following types &minus;</p>
+<ul class="list">
+<li>Value types</li>
+<li>Reference types</li>
+<li>Pointer types</li>
+</ul>
+<h2>Value Type</h2>
+<p>Value type variables can be assigned a value directly. They are derived from the class <b> System.ValueType</b>.</p>
+<p>The value types directly contain data. Some examples are <b>int, char, and float</b>, which stores numbers, alphabets, and floating point numbers, respectively. When you declare an <b>int</b> type, the system allocates memory to store the value.</p>
+<p>The following table lists the available value types in C# 2010 &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th class="ts" width="10%">Type</th>
+<th class="ts" width="35%">Represents</th>
+<th class="ts" width="45%">Range</th>
+<th style="width:10%;">Default Value</th>
+</tr>
+<tr>
+<td style="text-align:center;">bool</td>
+<td>Boolean value</td>
+<td>True or False</td>
+<td style="text-align:center;">False</td>
+</tr>
+<tr>
+<td style="text-align:center;">byte</td>
+<td>8-bit unsigned integer</td>
+<td>0 to 255</td>
+<td style="text-align:center;">0</td>
+</tr>
+<tr>
+<td style="text-align:center;">char</td>
+<td>16-bit Unicode character</td>
+<td>U +0000 to U +ffff</td>
+<td style="text-align:center;">'\0'</td>
+</tr>
+<tr>
+<td class="ts">decimal</td>
+<td>128-bit precise decimal values with 28-29 significant digits</td>
+<td style="vertical-align:middle;">(-7.9 x 10<sup>28</sup> to 7.9 x 10<sup>28</sup>) 
+/ 10<sup>0</sup> to 28
+</td>
+<td class="ts">0.0M</td>
+</tr>
+<tr>
+<td class="ts">double</td>
+<td>64-bit double-precision floating point type</td>
+<td>(+/-)5.0 x 10<sup>-324</sup> to (+/-)1.7 x 10<sup>308</sup></td>
+<td class="ts">0.0D</td>
+</tr>
+<tr>
+<td class="ts">float</td>
+<td>32-bit single-precision floating point type</td>
+<td style="vertical-align:middle;">-3.4 x 10<sup>38</sup> to + 3.4 x 10<sup>38</sup></td>
+<td class="ts">0.0F</td>
+</tr>
+<tr>
+<td class="ts">int</td>
+<td>32-bit signed integer type</td>
+<td style="vertical-align:middle;">-2,147,483,648 to 2,147,483,647</td>
+<td class="ts">0</td>
+</tr>
+<tr>
+<td class="ts">long</td>
+<td>64-bit signed integer type</td>
+<td>-9,223,372,036,854,775,808 to 
+9,223,372,036,854,775,807
+</td>
+<td class="ts">0L</td>
+</tr>
+<tr>
+<td style="text-align:center;">sbyte</td>
+<td>8-bit signed integer type</td>
+<td>-128 to 127</td>
+<td style="text-align:center;">0</td>
+</tr>
+<tr>
+<td class="ts">short</td>
+<td>16-bit signed integer type</td>
+<td style="vertical-align:middle;">-32,768 to 32,767</td>
+<td class="ts">0</td>
+</tr>
+<tr>
+<td class="ts">uint</td>
+<td>32-bit unsigned integer type</td>
+<td style="vertical-align:middle;">0 to 4,294,967,295</td>
+<td class="ts">0</td>
+</tr>
+<tr>
+<td class="ts">ulong</td>
+<td>64-bit unsigned integer type</td>
+<td style="vertical-align:middle;">0 to 18,446,744,073,709,551,615</td>
+<td class="ts">0</td>
+</tr>
+<tr>
+<td class="ts">ushort</td>
+<td>16-bit unsigned integer type</td>
+<td style="vertical-align:middle;">0 to 65,535</td>
+<td class="ts">0</td>
+</tr>
+</table>
+<p>To get the exact size of a type or a variable on a particular platform, you can use the <b>sizeof</b> method. The expression <i>sizeof(type)</i> yields the storage size of the object or type in bytes. Following is an example to get the size of <i>int</i> type on any machine &minus;</p>
+<a href="http://tpcg.io/0migdg" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+
+namespace DataTypeApplication {
+   class Program {
+      static void Main(string[] args) {
+         Console.WriteLine("Size of int: {0}", sizeof(int));
+         Console.ReadLine();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Size of int: 4
+</pre>
+<h2>Reference Type</h2>
+<p>The reference types do not contain the actual data stored in a variable, but they contain a reference to the variables.</p>
+<p>In other words, they refer to a memory location. Using multiple variables, the reference types can refer to a memory location. If the data in the memory location is changed by one of the variables, the other variable automatically reflects this change in value. Example of <b>built-in</b> reference types are: <b>object</b>, <b>dynamic,</b> and <b>string</b>.</p>
+<h3>Object Type</h3>
+<p>The <b>Object Type</b> is the ultimate base class for all data types in C# Common Type System (CTS). Object is an alias for System.Object class. The object types can be assigned values of any other types, value types, reference types, predefined or user-defined types. However, before assigning values, it needs type conversion.</p>
+<p>When a value type is converted to object type, it is called <b>boxing</b> and on the other hand, when an object type is converted to a value type, it is called <b>unboxing</b>.</p>
+<pre class="prettyprint notranslate">
+object obj;
+obj = 100; // this is boxing
+</pre>
+<h3>Dynamic Type</h3>
+<p>You can store any type of value in the dynamic data type variable. Type checking for these types of variables takes place at run-time.</p>
+<p>Syntax for declaring a dynamic type is &minus;</p>
+<pre class="result notranslate">
+dynamic &lt;variable_name&gt; = value;
+</pre>
+<p>For example,</p>
+<pre class="prettyprint notranslate">
+dynamic d = 20;
+</pre>
+<p>Dynamic types are similar to object types except that type checking for object type variables takes place at compile time, whereas that for the dynamic type variables takes place at run time.</p>
+<h3>String Type</h3>
+<p>The <b>String Type</b> allows you to assign any string values to a variable. The string type is an alias for the System.String class. It is derived from object type. The value for a string type can be assigned using string literals in two forms: quoted and @quoted.</p> 
+<p>For example,</p>
+<pre class="prettyprint notranslate">
+String str = "Tutorials Point";
+</pre>
+<p>A @quoted string literal looks as follows &minus;</p>
+<pre class="prettyprint notranslate">
+@"Tutorials Point";
+</pre>
+<p>The user-defined reference types are: class, interface, or delegate. We will discuss these types in later chapter.</p>
+<h2>Pointer Type</h2>
+<p>Pointer type variables store the memory address of another type. Pointers in C# have the same capabilities as the pointers in C or C++.</p>
+<p>Syntax for declaring a pointer type is &minus;</p>
+<pre class="prettyprint notranslate">
+type* identifier;
+</pre>
+<p>For example,</p>
+<pre class="prettyprint notranslate">
+char* cptr;
+int* iptr;
+</pre>
+<p>We will discuss pointer types in the chapter 'Unsafe Codes'.</p>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_basic_syntax.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_type_conversion.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/csharp/csharp_data_types.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_data_types.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_data_types.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/csharp/csharp_data_types.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_data_types.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_data_types.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

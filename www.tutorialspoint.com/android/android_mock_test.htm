@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Android Mock Test - Questions Set From 1 to 25</title>
+<meta name="description" content="Android Mock Test Questions Set From 1 to 25 - Learn Android Programming and how to develop android mobile phone and ipad applications starting from Environment setup, application components, activity lifecycle, service lifecycle, application architecture, publishing application, debugging applications, handling events, layouts, menus, user interface controls, styles and themes, handling rotation, fonts management, send email, data storage, managing media, send sms, phone calls." />
+<meta name="keywords" content="Android, programming, tutorial, beginners, develop, mobile phone, Environment Setup, Application Components, Activity Lifecycle, Service Lifecycle, Application Architecture, Publishing Application, Debugging Applications, Handling Events, Layouts, User Interface Controls, Styles and Themes, Handling Rotation, data storage, managing media, Send Email, Send SMS, Phone Calls." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #a5c63b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #a5c63b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #a5c63b !important;}
+.submenu-item{ border-bottom: 2px solid #a5c63b !important; border-top: 2px solid #a5c63b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#a5c63b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/android/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/android/images/android-mini-logo.jpg" alt="Android Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/android_online_training/index.asp" target="_blank"><img src="/android/images/android-video-tutorials.jpg" alt="Android Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Basics</li>
+<li><a target="_top" href="/android/index.htm">Android - Home</a></li>
+<li><a target="_top" href="/android/android_overview.htm">Android - Overview</a></li>
+<li><a target="_top" href="/android/android_environment_setup.htm">Android - Environment Setup</a></li>
+<li><a target="_top" href="/android/android_architecture.htm">Android - Architecture</a></li>
+<li><a target="_top" href="/android/android_application_components.htm">Android - Application Components</a></li>
+<li><a target="_top" href="/android/android_hello_world_example.htm">Android - Hello World Example</a></li>
+<li><a target="_top" href="/android/android_resources.htm">Android - Resources</a></li>
+<li><a target="_top" href="/android/android_acitivities.htm">Android - Activities</a></li>
+<li><a target="_top" href="/android/android_services.htm">Android - Services</a></li>
+<li><a target="_top" href="/android/android_broadcast_receivers.htm">Android - Broadcast Receivers</a></li>
+<li><a target="_top" href="/android/android_content_providers.htm">Android - Content Providers</a></li>
+<li><a target="_top" href="/android/android_fragments.htm">Android - Fragments</a></li>
+<li><a target="_top" href="/android/android_intents_filters.htm">Android - Intents/Filters</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android - User Interface</li>
+<li><a target="_top" href="/android/android_user_interface_layouts.htm">Android - UI Layouts</a></li>
+<li><a target="_top" href="/android/android_user_interface_controls.htm">Android - UI Controls</a></li>
+<li><a target="_top" href="/android/android_event_handling.htm">Android - Event Handling</a></li>
+<li><a target="_top" href="/android/android_styles_and_themes.htm">Android - Styles and Themes</a></li>
+<li><a target="_top" href="/android/android_custom_components.htm">Android - Custom Components</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Advanced Concepts</li>
+<li><a target="_top" href="/android/android_drag_and_drop.htm">Android - Drag and Drop</a></li>
+<li><a target="_top" href="/android/android_notifications.htm">Android - Notifications</a></li>
+<li><a target="_top" href="/android/android_location_based_services.htm">Location Based Services</a></li>
+<li><a target="_top" href="/android/android_sending_email.htm">Android - Sending Email</a></li>
+<li><a target="_top" href="/android/android_sending_sms.htm">Android - Sending SMS</a></li>
+<li><a target="_top" href="/android/android_phone_calls.htm">Android - Phone Calls</a></li>
+<li><a target="_top" href="/android/android_publishing_application.htm">Publishing Android Application</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Useful Examples</li>
+<li><a target="_top" href="/android/android_alert_dialoges.htm">Android - Alert Dialoges</a>
+<li><a target="_top" href="/android/android_animations.htm">Android - Animations</a>
+<li><a target="_top" href="/android/android_audio_capture.htm">Android - Audio Capture</a>
+<li><a target="_top" href="/android/android_audiomanager.htm">Android - AudioManager</a>
+<li><a target="_top" href="/android/android_auto_complete.htm">Android - Auto Complete</a>
+<li><a target="_top" href="/android/android_best_practices.htm">Android - Best Practices</a>
+<li><a target="_top" href="/android/android_bluetooth.htm">Android - Bluetooth</a>
+<li><a target="_top" href="/android/android_camera.htm">Android - Camera</a>
+<li><a target="_top" href="/android/android_clipboard.htm">Android - Clipboard</a>
+<li><a target="_top" href="/android/android_custom_fonts.htm">Android - Custom Fonts</a>
+<li><a target="_top" href="/android/android_data_backup.htm">Android - Data Backup</a>
+<li><a target="_top" href="/android/android_developer_tools.htm">Android - Developer Tools</a>
+<li><a target="_top" href="/android/android_emulator.htm">Android - Emulator</a>
+<li><a target="_top" href="/android/android_facebook_integration.htm">Android - Facebook Integration</a>
+<li><a target="_top" href="/android/android_gestures.htm">Android - Gestures</a>
+<li><a target="_top" href="/android/android_google_maps.htm">Android - Google Maps</a>
+<li><a target="_top" href="/android/android_image_effects.htm">Android - Image Effects</a>
+<li><a target="_top" href="/android/android_imageswitcher.htm">Android - ImageSwitcher</a>
+<li><a target="_top" href="/android/android_internal_storage.htm">Android - Internal Storage</a>
+<li><a target="_top" href="/android/android_jetplayer.htm">Android - JetPlayer</a>
+<li><a target="_top" href="/android/android_json_parser.htm">Android - JSON Parser</a>
+<li><a target="_top" href="/android/android_linkedin_integration.htm">Android - Linkedin Integration</a>
+<li><a target="_top" href="/android/android_loading_spinner.htm">Android - Loading Spinner</a>
+<li><a target="_top" href="/android/android_localization.htm">Android - Localization</a>
+<li><a target="_top" href="/android/android_login_screen.htm">Android - Login Screen</a>
+<li><a target="_top" href="/android/android_mediaplayer.htm">Android - MediaPlayer</a>
+<li><a target="_top" href="/android/android_multitouch.htm">Android - Multitouch</a>
+<li><a target="_top" href="/android/android_navigation.htm">Android - Navigation</a>
+<li><a target="_top" href="/android/android_network_connection.htm">Android - Network Connection</a>
+<li><a target="_top" href="/android/android_nfc_guide.htm">Android - NFC Guide</a>
+<li><a target="_top" href="/android/android_php_mysql.htm">Android - PHP/MySQL</a>
+<li><a target="_top" href="/android/android_progress_circle.htm">Android - Progress Circle</a>
+<li><a target="_top" href="/android/android_progressbar.htm">Android - ProgressBar</a>
+<li><a target="_top" href="/android/android_push_notification.htm">Android - Push Notification</a>
+<li><a target="_top" href="/android/android_renderscript.htm">Android - RenderScript</a>
+<li><a target="_top" href="/android/android_rss_reader.htm">Android - RSS Reader</a>
+<li><a target="_top" href="/android/android_screen_cast.htm">Android - Screen Cast</a>
+<li><a target="_top" href="/android/android_sdk_manager.htm">Android - SDK Manager</a>
+<li><a target="_top" href="/android/android_sensors.htm">Android - Sensors</a>
+<li><a target="_top" href="/android/android_session_management.htm">Android - Session Management</a>
+<li><a target="_top" href="/android/android_shared_preferences.htm">Android - Shared Preferences</a>
+<li><a target="_top" href="/android/android_sip_protocol.htm">Android - SIP Protocol</a>
+<li><a target="_top" href="/android/android_spelling_checker.htm">Android - Spelling Checker</a>
+<li><a target="_top" href="/android/android_sqlite_database.htm">Android - SQLite Database</a>
+<li><a target="_top" href="/android/android_support_library.htm">Android - Support Library</a>
+<li><a target="_top" href="/android/android_testing.htm">Android - Testing</a>
+<li><a target="_top" href="/android/android_text_to_speech.htm">Android - Text to Speech</a>
+<li><a target="_top" href="/android/android_textureview.htm">Android - TextureView</a>
+<li><a target="_top" href="/android/android_twitter_integration.htm">Android - Twitter Integration</a>
+<li><a target="_top" href="/android/android_ui_design.htm">Android - UI Design</a>
+<li><a target="_top" href="/android/android_ui_patterns.htm">Android - UI Patterns</a>
+<li><a target="_top" href="/android/android_ui_testing.htm">Android - UI Testing</a>
+<li><a target="_top" href="/android/android_webview_layout.htm">Android - WebView Layout</a>
+<li><a target="_top" href="/android/android_wi_fi.htm">Android - Wi-Fi</a>
+<li><a target="_top" href="/android/android_widgets.htm">Android - Widgets</a>
+<li><a target="_top" href="/android/android_xml_parsers.htm">Android - XML Parsers</a>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Android Useful Resources</li>
+<li><a target="_top" href="/android/android_questions_answers.htm">Android - Questions and Answers</a></li>
+<!--<li><a target="_top" href="/android/android_quick_guide.htm">Android - Quick Guide</a></li>-->
+<li><a target="_top" href="/android/android_useful_resources.htm">Android - Useful Resources</a></li>
+<li><a target="_top" href="/android/android_discussion.htm">Android - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Android Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/android/android_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/android/android_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>Android</b>. You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/android/android_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/android/android_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/android/android_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/android/android_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>Android Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - What is Android?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Android is a stack of software's for mobility</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Google mobile device name</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Virtual machine</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Android is a stack of software applications for mobile devices, which includes an operating system,  middleware applications, and some key applications. It executes within own process and own instance of Dalvik Virtual Machine. 
+ DVM executes byte code and later transforms into .dex format files.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - What is an activity in Android?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Activity performs the actions on the screen</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Manage the Application content</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Screen UI</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Activity is a single screen in an application, Activity performs the actions on the screen(UI)</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - Explain android activity life cycle?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - onCreate() &minus;&gt; onStart() &minus;&gt; onActivityStarted() &minus;&gt; onResume() &minus;&gt; onPause() &minus;&gt; onStop() &minus;&gt; onActivityDistroy() &minus;&gt; onDestroy()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - OnCreate() &minus;&gt; onStart() &minus;&gt;onResume() &minus;&gt; onPause() &minus;&gt; onStop() &minus;&gt; onRestart() &minus;&gt; onDestroy()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - OnCreate() &minus;&gt; onStart() &minus;&gt; onPause() &minus;&gt; onResume() &minus;&gt; onStop() &minus;&gt; onDestroy()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - &minus;&gt;onResume()</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>OnCreate() &minus; The system will call this,when an activity is created first time.</p>
+<p>onStart() &minus; The system will call this,when an activity starts the actions/action on UI.</p>
+<p>onResume() &minus; The system will call this, when onRestart() or onPause() is called.</p>
+<p>onPause() &minus;&gt; The system will call this, when an activity going into the background.</p>
+<p>onStop() &minus; The system will call this, when an activity going into stop.</p>
+<p>onRestart() &minus; The system will call this, when an activity going to stop stage and to start the activity again.</p>
+<p>onDestroy() &minus; The system will call this, when an activity going in stop mode.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Is it possible to have an activity without UI to perform action/actions?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Not possible</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Wrong question</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Yes, it is possible</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Generally, every activity is having its UI(Layout). But if a developer wants to create an activity without UI, he can do it.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - How to get a response from an activity in Android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - startActivityToResult()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - startActiivtyForResult()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Bundle()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>startActivityForResult(Intent intent,int requestCode) will give the response from second activity to first activity as a result.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</Span> - Can a user save all database updates in onStop ()?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Yes, a user can save all database updates in onStop()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - No, a user can save in onSavedInstance()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - No, a user can save in a Bundle()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - No, In some situations, a user can't reach onStop() </a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Due to low memory problem. your application will close before reaching onStop()</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - How to kill an activity in Android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - finish()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - finishActivity(int requestCode)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - A &amp; B</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - kill()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - None of the Above </a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>finish() &minus; It is used to close the activity.</p>
+<p>finish(int requestCode) &minus; It is used to close the activity with requestCode.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - How to pass the data between activities in Android?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Intent</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Content Provider</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Broadcast receiver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the Above </a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : A </h3>
+<h3>Explanation</h3>
+<p>An Intent is used to connect one activity to another activity and having a message passing mechanism between activities.</p>
+</div> 
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - What is a context in android ?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - It is an interface to store global information about an application </a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - It is used to create  new components.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Android has two contexts, those are getContext() and getApplicationContext()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of Above</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - None of Above </a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p> Context is used to create new components or objects like views and it is used to start activity and services. Android has two kinds of contexts and those are getContext() and getApplicationContext().</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - What is Pending Intent in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - It is a kind of an intent </a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - It is used to pass the data between activities</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - It will fire at a future point of time.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the Above </a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p> Pending Intent is fired or triggered at a future point of time.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - What is android view group?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Collection of views and other child views</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Base class of building blocks </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Layouts</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the Above </a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>View Group is collaborating with views and other child views,It is an invisible container and base classes for layouts.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - What are the layouts available in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Linear Layout</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Frame Layout </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Table Layout</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Relative Layout </a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of above </a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>Android is having Linear Layout(Horizontal and Vertical), Frame Layout, Table Layout, and Relative Layout.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - What is the difference between margin and padding in android layout?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Margin is specifying the extra space left on all four sides in layout</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Padding is used to offset the content of a view by specific px or dp </a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both A and B are correct</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above </a></p>
+</div>
+<div class="A" id='A13'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p> Margin specifies the space left on four sides in the layout and padding specifies the exact position where the element going to be taking place in the layout.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> -How many sizes are supported by Android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Android supported all sizes </a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Android does not support all sizes</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Android supports small,normal, large and extra-large sizes </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Size is undefined in android  </a></p>
+</div>
+<div class="A" id='A14'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>X-large screens are having at least 960dp*720dp resolutions</p>
+<p>Large screens are having at least 640dp*480dp resolutions</p>
+<p>Normal screens are having at least 470dp*320dp resolutions</p>
+<p> Small screens are having at least 426dp*320dp resolutions</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - WHich of the following is/are are the subclasses in Android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Action Bar Activity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Launcher Activity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Preference Activity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Tab Activity </a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of above</a></p>
+</div>
+<div class="A" id='A15'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>Action bar,Launcher, Preference and Tab activities are subclasses of activities in android</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - What is Manifest.xml in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - It has information about layout in an application</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - It has the information about activities in an application</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - It has all the information about an application</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above</a></p>
+</div>
+<div class="A" id='A16'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Manifest.xml is having information about application as number components in your application,Activity information,service information, and icon about an application</p>
+<p>Each application has at least one Manifest file. Without manifest file we can't generate the APK file.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - What is splash screen in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Initial activity of an application</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Initial service of an application</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Initial method of an application</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Initial screen of an application</a></p>
+</div>
+<div class="A" id='A17'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Splash is an activity. Generally it appears as initial screen of an application and works based on thread concept.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - What is the life cycle of services in android?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - onCreate()&minus;&gt;onStartCommand()&minus;&gt;onDestory()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - onRecieve()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - final()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Service life cycle is same as activity life cycle. </a></p>
+</div>
+<div class="A" id='A18'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>Service life cycle is as onCreate()&minus;&gt;onStartCommand()&minus;&gt;onDestory().</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - On which thread services work in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Worker Thread</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Own Thread</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Main Thread</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above. </a></p>
+</div>
+<div class="A" id='A19'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Services, by default, work on Main thread. You can start services from any thread, but if you want to update the UI, you need to call Main thread.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> -How to move services to foreground in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Services always work in Foreground only</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - No,We can't do this query</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Using startService(Intent intent)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - startFordgroud(int id, Notification notification). </a></p>
+</div>
+<div class="A" id='A20'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>We have to call startFordgroud(int id,Notification notification) to make services as foreground services. When it comes to foreground, it will show a notification.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> -What are the functionalities of Binder services in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Binder is responsible to manage the thread while using aidl in android</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Binder is responsible for marshalling and un-marshalling of the data</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - A &amp; B</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Binder is a kind of interface</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - None of the above </a></p>
+</div>
+<div class="A" id='A21'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Binder is responsible to manage the thread while creating aidl and is responsible to do marshalling and un-marshalling of the data. Binders have sub functionalities and interface for clients</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - What is the difference between services and thread in android?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Services performs functionalities in the background. By default services run on main thread only</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Thread and services are having same functionalities.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Thread works on services</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above </a></p>
+</div>
+<div class="A" id='A22'>
+<h3>Answer : A </h3>
+<h3>Explanation</h3>
+<p>Services work in the background without any UI and it updates UI by using thread. By default, every service is having a main thread.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> -How to stop the services in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - finish()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - system.exit().</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - By manually</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - stopSelf() and stopService() </a></p>
+</div>
+<div class="A" id='A23'>
+<h3>Answer : D </h3>
+<h3>Explanation</h3>
+<p>We can stop the services by stopSelf() and stopService(), in some cases android will kill the services due to the low memory problem.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> -How to pass the data from activity to services in android?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - We can store the data in a common database and access the data on services as well as in Activity </a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - We can't pass data from activity to services.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Using putExtra() method in intent, we can pass the data using setResult()</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - A &amp; C</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - None of the above </a></p>
+</div>
+<div class="A" id='A24'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Using putExtra() method, we can send the data. While using it, we need to call setResult() method in services. We can also store data in a common database and access it on services as well as in Activity. </p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> -What are the return values of onStartCommand() in android services?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - START_STICKY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - START_NOT_STICKY</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - START_REDELIVER_INTENT</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - None of the above </a></p>
+</div>
+<div class="A" id='A25'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>START_STICKY &minus; If android stops services forcefully, using with START_STICKY, it can be restarted automatically without the user interaction.</p>
+<p>START_NOT_STICKY &minus; If android stops services forcefully, it will not restart services till user start services.</p>
+<p>START_REDELIVER_INTENT &minus; If android stops services forcefully, it will restart services by re-sending an intent.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>E</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>E</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>D</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/android/android_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/android/pdf/android_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/android/android_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">android_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/android/android_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/android/android_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/android/android_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/android/android_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/android/android_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/android/android_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

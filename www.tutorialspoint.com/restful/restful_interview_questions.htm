@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>RESTful Web services Interview Questions</title>
+<meta name="description" content="RESTful Web Services Interview Questions - Learn RESTful Web Services in simple and easy steps starting from Introduction, Environment Setup, First Application, Resources, Messages, Addressing, Methods, Statelessness, Caching, Security, Java (JAX-RS)" />
+<meta name="keywords" content="RESTful Web Services Introduction, Environment Setup, First Application, Resources, Messages, Addressing, Methods, Statelessness, Caching, Security, Java (JAX-RS)" />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #008db9 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #008db9 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #008db9 !important;}
+.submenu-item{ border-bottom: 2px solid #008db9 !important; border-top: 2px solid #008db9 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#008db9; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/restful/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/restful/images/restful-mini-logo.jpg" alt="RESTful Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">RESTful Tutorial</li>
+<li><a href="/restful/index.htm">RESTful - Home</a></li>
+<li><a href="/restful/restful_introduction.htm">RESTful - Introduction</a></li>
+<li><a href="/restful/restful_environment.htm">RESTful - Environment Setup</a></li>
+<li><a href="/restful/restful_first_application.htm">RESTful - First Application</a></li>
+<li><a href="/restful/restful_resources.htm">RESTful - Resources</a></li>
+<li><a href="/restful/restful_messages.htm">RESTful - Messages</a></li>
+<li><a href="/restful/restful_addressing.htm">RESTful - Addressing</a></li>
+<li><a href="/restful/restful_methods.htm">RESTful - Methods</a></li>
+<li><a href="/restful/restful_statelessness.htm">RESTful - Statelessness</a></li>
+<li><a href="/restful/restful_caching.htm">RESTful - Caching</a></li>
+<li><a href="/restful/restful_security.htm">RESTful - Security</a></li>
+<li><a href="/restful/restful_jax_rs.htm">RESTful - Java (JAX-RS)</a></li>
+<li class="heading">RESTful Useful Resources</li>
+<li><a href="/restful/restful_questions_answers.htm">RESTful - Questions and Answers</a></li>
+<li><a href="/restful/restful_quick_guide.htm">RESTful - Quick Guide</a></li>
+<li><a href="/restful/restful_useful_resources.htm">RESTful - Useful Resources</a></li>
+<li><a href="/restful/restful_discussion.htm">RESTful - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>RESTful Web services - Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/restful/restful_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/restful/restful_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>RESTful Web services Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>RESTful Web services</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label> What REST stands for?</label>
+<div class="toggle-content">
+<p>REST stands for REpresentational State Transfer.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is REST?</label>
+<div class="toggle-content">
+<p>REST is web standards based architecture and uses HTTP Protocol for data communication. It revolves around resource where every component is a resource and a resource is accessed by a common interface using HTTP standard methods. REST was first introduced by Roy Fielding in 2000.</p>
+<p>In REST architecture, a REST Server simply provides access to resources and REST client accesses and presents the resources. Here each resource is identified by URIs/ global IDs. REST uses various representations to represent a resource like text, JSON and XML. Now a days JSON is the most popular format being used in web services.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Name some of the commonly used HTTP methods used in REST based architecture?</label>
+<div class="toggle-content">
+<p>Following well known HTTP methods are commonly used in REST based architecture &minus;</p>
+<ul class="list">
+<li><p><b>GET</b> &minus; Provides a read only access to a resource.</p></li>
+<li><p><b>PUT</b> &minus; Used to create a new resource.</p></li>
+<li><p><b>DELETE</b> &minus; Ued to remove a resource.</p></li>
+<li><p><b>POST</b> &minus; Used to update a existing resource or create a new resource.</p></li>
+<li><p><b>OPTIONS</b> &minus; Used to get the supported operations on a resource.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are webservices?</label>
+<div class="toggle-content">
+<p>A web service is a collection of open protocols and standards used for exchanging data between applications or systems. Software applications written in various programming languages and running on various platforms can use web services to exchange data over computer networks like the Internet in a manner similar to inter-process communication on a single computer.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are RESTful webservices?</label>
+<div class="toggle-content">
+<p>Web services based on REST Architecture are known as RESTful web services. These web services use HTTP methods to implement the concept of REST architecture. A RESTful web service usually defines a URI, Uniform Resource Identifier a service, provides resource representation such as JSON and set of HTTP Methods.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Resource in REST?</label>
+<div class="toggle-content">
+<p>REST architecture treats every content as a resource. These resources can be text files, html pages, images, videos or dynamic business data. REST Server simply provides access to resources and REST client accesses and modifies the resources. Here each resource is identified by URIs/ global IDs.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How to represent a resource in REST?</label>
+<div class="toggle-content">
+<p>REST uses various representations to represent a resource where text, JSON, XML. XML and JSON are the most popular representations of resources.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the best practices to design a resource representation?</label>
+<div class="toggle-content">
+<p>Following are important points to be considered while designing a representation format of a resource in a RESTful web services &minus;</p>
+<ul class="list">
+<li><p><b>Understandability</b> &minus; Both Server and Client should be able to understand and utilize the representation format of the resource.</p></li>
+<li><p><b>Completeness</b> &minus; Format should be able to represent a resource completely. For example, a resource can contain another resource. Format should be able to represent simple as well as complex structures of resources.</p></li>
+<li><p><b>Linkablity</b> &minus; A resource can have a linkage to another resource, a format should be able to handles such situations.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Which protocol is used by RESTful webservices?</label>
+<div class="toggle-content">
+<p>RESTful web services make use of HTTP protocol as a medium of communication between client and server.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is messaging in RESTful webservices?</label>
+<div class="toggle-content">
+<p>A client sends a message in form of a HTTP Request and server responds in form of a HTTP Response. This technique is termed as Messaging. These messages contain message data and metadata i.e. information about message itself.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the core components of a HTTP Request?</label>
+<div class="toggle-content">
+<p>A HTTP Request has five major parts &minus;</p>
+<ul class="list">
+<li><p><b>Verb</b> &minus; Indicate HTTP methods such as GET, POST, DELETE, PUT etc.</p></li>
+<li><p><b>URI</b> &minus; Uniform Resource Identifier (URI) to identify the resource on server.</p></li>
+<li><p><b>HTTP Version</b> &minus; Indicate HTTP version, for example HTTP v1.1 .</p></li>
+<li><p><b>Request Header</b> &minus; Contains metadata for the HTTP Request message as key-value pairs. For example, client ( or browser) type, format supported by client, format of message body, cache settings etc.</p></li>
+<li><p><b>Request Body</b> &minus; Message content or Resource representation.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the core components of a HTTP response?</label>
+<div class="toggle-content">
+<p>A HTTP Response has four major parts &minus;</p>
+<ul class="list">
+<li><p><b>Status/Response Code</b> &minus; Indicate Server status for the requested resource. For example 404 means resource not found and 200 means response is ok.</p></li>
+<li><p><b>HTTP Version</b> &minus; Indicate HTTP version, for example HTTP v1.1 .</p></li>
+<li><p><b>Response Header</b> &minus; Contains metadata for the HTTP Response message as key-value pairs. For example, content length, content type, response date, server type etc.</p></li>
+<li><p><b>Response Body</b> &minus; Response message content or Resource representation.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is addressing in RESTful webservices?</label>
+<div class="toggle-content">
+<p>Addressing refers to locating a resource or multiple resources lying on the server. It is analogous to locate a postal address of a person.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is URI?</label>
+<div class="toggle-content">
+<p>URI stands for Uniform Resource Identifier. Each resource in REST architecture is identified by its URI.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is purpose of a URI in REST based webservices?</label>
+<div class="toggle-content">
+<p>Purpose of an URI is to locate a resource(s) on the server hosting the web service.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is format of a URI in REST architecture?</label>
+<div class="toggle-content">
+<p>A URI is of following format &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;protocol&gt;://&lt;service-name&gt;/&lt;ResourceType&gt;/&lt;ResourceID&gt;
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of HTTP Verb in REST based webservices?</label>
+<div class="toggle-content">
+<p>VERB identifies the operation to be performed on the resource.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the best practices to create a standard URI for a web service?</label>
+<div class="toggle-content">
+<p>Following are important points to be considered while designing a URI &minus;</p>
+<ul class="list">
+<li><p><b>Use Plural Noun</b> &minus; Use plural noun to define resources. For example, we've used users to identify users as a resource.</p></li>
+<li><p><b>Avoid using spaces</b> &minus; Use underscore(_) or hyphen(-) when using a long resource name, for example, use authorized_users instead of authorized%20users.</p></li>
+<li><p><b>Use lowercase letters</b> &minus; Although URI is case-insensitive, it is good practice to keep url in lower case letters only.</p></li>
+<li><p><b>Maintain Backward Compatibility</b> &minus; As Web Service is a public service, a URI once made public should always be available. In case, URI gets updated, redirect the older URI to new URI using HTTP Status code, 300.</p></li>
+<li><p><b>Use HTTP Verb</b> &minus; Always use HTTP Verb like GET, PUT, and DELETE to do the operations on the resource. It is not good to use operations names in URI.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is statelessness in RESTful Webservices?</label>
+<div class="toggle-content">
+<p>As per REST architecture, a RESTful web service should not keep a client state on server. This restriction is called statelessness. It is responsibility of the client to pass its context to server and then server can store this context to process client's further request. For example, session maintained by server is identified by session identifier passed by the client.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of statelessness in RESTful Webservices?</label>
+<div class="toggle-content">
+<p>Following are the benefits of statelessness in RESTful web services &minus;</p>
+<ul class="list">
+<li><p>Web services can treat each method request independently.</p></li>
+<li><p>Web services need not to maintain client's previous interactions. It simplifies application design.</p></li>
+<li><p>As HTTP is itself a statelessness protocol, RESTful Web services work seamlessly with HTTP protocol.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the disadvantages of statelessness in RESTful Webservices?</label>
+<div class="toggle-content">
+<p>Following is the disadvantage of statelessness in RESTful web services &minus;</p>
+<p>Web services need to get extra information in each request and then interpret to get the client's state in case client interactions are to be taken care of.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you mean by idempotent operation?</label>
+<div class="toggle-content">
+<p>Idempotent operations means their result will always same no matter how many times these operations are invoked.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which type of Webservices methods are to be idempotent?</label>
+<div class="toggle-content">
+<p>PUT and DELETE operations are idempotent.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which type of Webservices methods are to be read only?</label>
+<div class="toggle-content">
+<p>GET operations are read only and are safe.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between PUT and POST operations?</label>
+<div class="toggle-content">
+<p>PUT and POST operation are nearly same with the difference lying only in the result where PUT operation is idempotent and POST operation can cause different result.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What should be the purpose of OPTIONS method of RESTful web services?</label>
+<div class="toggle-content">
+<p>It should list down the supported operations in a web service and should be read only.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What should be the purpose of HEAD method of RESTful web services?</label>
+<div class="toggle-content">
+<p>It should return only HTTP Header, no Body and should be read only.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is caching?</label>
+<div class="toggle-content">
+<p>Caching refers to storing server response in client itself so that a client needs not to make server request for same resource again and again. A server response should have information about how a caching is to be done so that a client caches response for a period of time or never caches the server response.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which header of HTTP response, provides the date and time of the resource when it was created?</label>
+<div class="toggle-content">
+<p>Date header provides the date and time of the resource when it was created.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which header of HTTP response, provides the date and time of the resource when it was last modified?</label>
+<div class="toggle-content">
+<p>Last Modified header provides the date and time of the resource when it was last modified.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which header of HTTP response provides control over caching?</label>
+<div class="toggle-content">
+<p>Cache-Control is the primary header to control caching.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which header of HTTP response sets expiration date and time of caching?</label>
+<div class="toggle-content">
+<p>Expires header sets expiration date and time of caching.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which directive of Cache Control Header of HTTP response indicates that resource is cachable by any component?</label>
+<div class="toggle-content">
+<p>Public directive indicates that resource is cachable by any component.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which directive of Cache Control Header of HTTP response indicates that resource is cachable by only client and server, no intermediary can cache the resource?</label>
+<div class="toggle-content">
+<p>Private directive indicates that resource is cachable by only client and server, no intermediary can cache the resource.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which directive of Cache Control Header of HTTP response indicates that resource is not cachable?</label>
+<div class="toggle-content">
+<p>no-cache/no-store directive indicates that resource is not cachable.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which directive of Cache Control Header of HTTP response can set the time limit of caching?</label>
+<div class="toggle-content">
+<p>max-age directive indicates that the caching is valid up to max-age in seconds. After this, client has to make another request.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which directive of Cache Control Header of HTTP response provides indication to server to revalidate resource if max-age has passed?</label>
+<div class="toggle-content">
+<p>must-revalidate directive provides indication to server to revalidate resource if max-age has passed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the best practices for caching?</label>
+<div class="toggle-content">
+<p>Always keep static contents like images, css, JavaScript cacheable, with expiration date of 2 to 3 days.
+Never keep expiry date too high.</p>
+Dynamic contents should be cached for few hours only.
+</div>
+</section>
+<section class="toggle">
+<label> What are the best practices to be followed while designing a secure RESTful web service?</label>
+<div class="toggle-content">
+<p>As RESTful web services work with HTTP URLs Paths so it is very important to safeguard a RESTful web service in the same manner as a website is be secured. Following are the best practices to be followed while designing a RESTful web service &minus;</p>
+<ul class="list">
+<li><p><b>Validation</b> &minus; Validate all inputs on the server. Protect your server against SQL or NoSQL injection attacks.</p></li>
+<li><p><b>Session based authentication</b> &minus; Use session based authentication to authenticate a user whenever a request is made to a Web Service method.</p></li>
+<li><p><b>No sensitive data in URL</b> &minus; Never use username, password or session token in URL , these values should be passed to Web Service via POST method.</p></li>
+<li><p><b>Restriction on Method execution</b> &minus; Allow restricted use of methods like GET, POST, DELETE. GET method should not be able to delete data.</p></li>
+<li><p><b>Validate Malformed XML/JSON</b> &minus; Check for well formed input passed to a web service method.</p></li>
+<li><p><b>Throw generic Error Messages</b> &minus; A web service method should use HTTP error messages like 403 to show access forbidden etc.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the purpose of HTTP Status Code?</label>
+<div class="toggle-content">
+<p>HTTP Status code are standard codes and refers to predefined status of task done at server. For example, HTTP Status 404 states that requested resource is not present on server.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 200 states?</label>
+<div class="toggle-content">
+<p>It means, OK, shows success.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 201 states?</label>
+<div class="toggle-content">
+<p>It means, CREATED, when a resource is successful created using POST or PUT request. Return link to newly created resource using location header.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 204 states?</label>
+<div class="toggle-content">
+<p>It means, NO CONTENT, when response body is empty for example, a DELETE request.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 304 states?</label>
+<div class="toggle-content">
+<p>It means, NOT MODIFIED, used to reduce network bandwidth usage in case of conditional GET requests. Response body should be empty. Headers should have date, location etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 400 states?</label>
+<div class="toggle-content">
+<p>It means, BAD REQUEST, states that invalid input is provided e.g. validation error, missing data.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 401 states?</label>
+<div class="toggle-content">
+<p>It means, FORBIDDEN, states that user is not having access to method being used for example, delete access without admin rights.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 404 states?</label>
+<div class="toggle-content">
+<p>It means, NOT FOUND, states that method is not available.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 409 states?</label>
+<div class="toggle-content">
+<p>It means, CONFLICT, states conflict situation while executing the method for example, adding duplicate entry.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What HTTP Status Code 500 states?</label>
+<div class="toggle-content">
+<p>It means, INTERNAL SERVER ERROR, states that server has thrown some exception while executing the method.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is JAX-RS?</label>
+<div class="toggle-content">
+<p>JAX-RS stands for JAVA API for RESTful Web Services. JAX-RS is a JAVA based programming language API and specification to provide support for created RESTful Webservices. Its 2.0 version was released in 24 May 2013. JAX-RS makes heavy use of annotations available from Java SE 5 to simplify development of JAVA based web services creation and deployment. It also provides supports for creating clients for RESTful web services.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/restful/restful_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/restful/restful_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">restful_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/restful/restful_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/restful/restful_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/restful/restful_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/restful/restful_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/restful/restful_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/restful/restful_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

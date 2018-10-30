@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>The Best Technical Questions And Answers</title>
+<meta name="Description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals"/>
+<meta name="Keywords" content="Technical, Questions,  Answers, Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="The Best Technical Questions And Answers" />
+<meta name="twitter:description" property="og:description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+
+<div class="mui-container container-top">   
+<!-- center column content -->
+   
+<div class="mui-col-md-8">
+<div id="question_index_id">      
+<div class="question_section">                                   
+   <div class="qa_widget">                                
+   <!-- /60931893/Native_QnA -->
+   <div id='div-gpt-ad-1532956972128-0'>
+   <script>
+   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+   </script>
+   </div>
+   </div>                    
+</div>
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09" data-aid="YkNaRkl3OTVZRTIwd3FVUkRxYXorQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivYkNaRkl3OTVZRTIwd3FVUkRxYXorQT09" data-qtitle=How-to-handle-invalid-arguments-with-argparse-in-Python data-utitle=Rajendra-Dharmkar>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-handle-invalid-arguments-with-argparse-in-Python" target='_blank'> How to handle invalid arguments with argparse in Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09">
+</div>            <div class="qa_description">
+            
+I use argparse to parse command line arguments and by default on receiving invalid arguments it prints help message and exits.&nbsp; , &nbsp;How to catch this exception when it receives invalid.....             </div>
+            <div class="qa_comments" id="comments_UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09" style="display:none;">
+            <div id="comments_list_UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar"><img src='https://www.tutorialspoint.com/assets/profiles/9963/profile/60_124173-1512724240.jpg' alt='Rajendra Dharmkar' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar">Rajendra Dharmkar</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>We rewrite given code as follows#foo.py import argparse class InvalidArgError(Exception):pass parser = argparse.ArgumentParser() parser.add_argument("echo") args = parser.parse_args() try: print (args.echo) raise InvalidArgError except InvalidArgError as e: print eWhen this script is run at the terminal as follows$ python foo.py echo barWe get the following outputusage: foo.py [-h] echo foo.py: error: ... <a href="https://www.tutorialspoint.com/How-to-handle-invalid-arguments-with-argparse-in-Python#Rajendra-Dharmkar"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeUnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='YkNaRkl3OTVZRTIwd3FVUkRxYXorQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="UnRVOGxVNVRqUTRYdmRVRkZ1Umk5dz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='YkNaRkl3OTVZRTIwd3FVUkRxYXorQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='YkNaRkl3OTVZRTIwd3FVUkRxYXorQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_YkNaRkl3OTVZRTIwd3FVUkRxYXorQT09" style="display:none;">
+<div id="comments_list_YkNaRkl3OTVZRTIwd3FVUkRxYXorQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09" data-aid="VWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivVWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09" data-qtitle=How-can-I-write-a-try-except-block-that-catches-all-Python-exceptions data-utitle=Manogna>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-can-I-write-a-try-except-block-that-catches-all-Python-exceptions" target='_blank'> How can I write a try/except block that catches all Python exceptions?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09">
+</div>            <div class="qa_description">
+            
+ For the following code , how do I write a try/except block that catches all exceptions? 
+            </div>
+            <div class="qa_comments" id="comments_VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09" style="display:none;">
+            <div id="comments_list_VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna"><img src='https://www.tutorialspoint.com/assets/profiles/11051/profile/60_103575-1512718394.jpg' alt='Manogna' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna">Manogna</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>It is a general thumb rule that though you can catch all exceptions using code like below, you shouldn&rsquo;t:try: &nbsp; &nbsp; #do_something() except: &nbsp; &nbsp; print "Exception Caught!"However, this will also catch exceptions like KeyboardInterrupt we may not be interested in. Unless you re-raise the exception right away &ndash; we ... <a href="https://www.tutorialspoint.com/How-can-I-write-a-try-except-block-that-catches-all-Python-exceptions#Manogna"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeVFhMZTlHUUdrZFAxQUVQcm53aW15Zz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='VWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="VFhMZTlHUUdrZFAxQUVQcm53aW15Zz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='VWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='VWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_VWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09" style="display:none;">
+<div id="comments_list_VWdSMWU2NXpxQlZTUGdhYU9OaWNPUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09" data-aid="S2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivS2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09" data-qtitle=How-to-raise-an-exception-in-one-except-block-and-catch-it-in-a-later-except-block-in-Python data-utitle=Manogna>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-raise-an-exception-in-one-except-block-and-catch-it-in-a-later-except-block-in-Python" target='_blank'> How to raise an exception in one except block and catch it in a later except block in Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09">
+</div>            <div class="qa_description">
+            
+ I would like to know if it is possible in python to raise an exception in one except block and catch it in a later except block. I have tried to implement this in code below, however it is not.....             </div>
+            <div class="qa_comments" id="comments_Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09" style="display:none;">
+            <div id="comments_list_Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna"><img src='https://www.tutorialspoint.com/assets/profiles/11051/profile/60_103575-1512718394.jpg' alt='Manogna' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna">Manogna</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Only a single except clause in a try block is invoked. If you want the exception to be caught higher up then you will need to use nested try blocks.Let us write 2 try...except blocks like this:try: try: 1/0 except ArithmeticError as e: if str(e) == "Zero division": print ("thumbs ... <a href="https://www.tutorialspoint.com/How-to-raise-an-exception-in-one-except-block-and-catch-it-in-a-later-except-block-in-Python#Manogna"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeMi92Z21YdUN4REJjN01YUEJ2Rm9RUT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='S2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Mi92Z21YdUN4REJjN01YUEJ2Rm9RUT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='S2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='S2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_S2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09" style="display:none;">
+<div id="comments_list_S2tKMWFsSnRuVmZDT1B5UlFKOVB1dz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09" data-aid="WW9EaCszVGNIVXdFbTlMKzBFUDRKQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivWW9EaCszVGNIVXdFbTlMKzBFUDRKQT09" data-qtitle=How-to-catch-a-thread-s-exception-in-the-caller-thread-in-Python data-utitle=Manogna>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-catch-a-thread-s-exception-in-the-caller-thread-in-Python" target='_blank'> How to catch a thread&#039;s exception in the caller thread in Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09">
+</div>            <div class="qa_description">
+            
+ I have the following script which copies files from one location to another. If the files cannot be copied, an exception is thrown. The following code does not work: , How to catch the exception? 
+            </div>
+            <div class="qa_comments" id="comments_ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09" style="display:none;">
+            <div id="comments_list_ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna"><img src='https://www.tutorialspoint.com/assets/profiles/11051/profile/60_103575-1512718394.jpg' alt='Manogna' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna">Manogna</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>The problem is that thread_obj.start() returns immediately. The child thread that you started executes in its own context, in its own stack. Any exception that occurs there is in the context of the child thread. You have to communicate this information to the parent thread by passing some message.The code ... <a href="https://www.tutorialspoint.com/How-to-catch-a-thread-s-exception-in-the-caller-thread-in-Python#Manogna"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeZzRacWl3eVdTakF3UzBHVmJRYXVFZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='WW9EaCszVGNIVXdFbTlMKzBFUDRKQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="ZzRacWl3eVdTakF3UzBHVmJRYXVFZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='WW9EaCszVGNIVXdFbTlMKzBFUDRKQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='WW9EaCszVGNIVXdFbTlMKzBFUDRKQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_WW9EaCszVGNIVXdFbTlMKzBFUDRKQT09" style="display:none;">
+<div id="comments_list_WW9EaCszVGNIVXdFbTlMKzBFUDRKQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09" data-aid="R216T2xDY1RGTllSSWNFSDQzWWhuQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivR216T2xDY1RGTllSSWNFSDQzWWhuQT09" data-qtitle=How-to-catch-an-exception-while-using-a-Python-with-statement data-utitle=Manogna>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-catch-an-exception-while-using-a-Python-with-statement" target='_blank'> How to catch an exception while using a Python &#039;with&#039; statement?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09">
+</div>            <div class="qa_description">
+            
+ I have a code: , How to raise exception while using python &lsquo;with&rsquo; statement? 
+            </div>
+            <div class="qa_comments" id="comments_SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09" style="display:none;">
+            <div id="comments_list_SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna"><img src='https://www.tutorialspoint.com/assets/profiles/11051/profile/60_103575-1512718394.jpg' alt='Manogna' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna">Manogna</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>The code can be rewritten to catch the exception as follows:try: &nbsp; &nbsp; &nbsp;with open("myFile.txt") as f: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print(f.readlines()) except: &nbsp; &nbsp; print('No such file or directory')We get the following outputC:/Users/TutorialsPoint1/~.py No such file or directory <a href="https://www.tutorialspoint.com/How-to-catch-an-exception-while-using-a-Python-with-statement#Manogna"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeSDBTalFLRFdqZ3NabjV3aFVjS3hNZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='R216T2xDY1RGTllSSWNFSDQzWWhuQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="SDBTalFLRFdqZ3NabjV3aFVjS3hNZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='R216T2xDY1RGTllSSWNFSDQzWWhuQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='R216T2xDY1RGTllSSWNFSDQzWWhuQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_R216T2xDY1RGTllSSWNFSDQzWWhuQT09" style="display:none;">
+<div id="comments_list_R216T2xDY1RGTllSSWNFSDQzWWhuQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="QkYzbjNIY0FNNnp6K09MYkxTUGczZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="QkYzbjNIY0FNNnp6K09MYkxTUGczZz09" data-aid="Q1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="QkYzbjNIY0FNNnp6K09MYkxTUGczZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="QkYzbjNIY0FNNnp6K09MYkxTUGczZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivQ1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09" data-qtitle=Suggest-a-cleaner-way-to-handle-Python-exceptions data-utitle=Manogna>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Suggest-a-cleaner-way-to-handle-Python-exceptions" target='_blank'> Suggest a cleaner way to handle Python exceptions?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_QkYzbjNIY0FNNnp6K09MYkxTUGczZz09">
+</div>            <div class="qa_description">
+            
+ I have the following code where there is repetitive clean up involved. , Is there an elegant way of handling repetitive clean-ups in exception handling? 
+            </div>
+            <div class="qa_comments" id="comments_QkYzbjNIY0FNNnp6K09MYkxTUGczZz09" style="display:none;">
+            <div id="comments_list_QkYzbjNIY0FNNnp6K09MYkxTUGczZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna"><img src='https://www.tutorialspoint.com/assets/profiles/11051/profile/60_103575-1512718394.jpg' alt='Manogna' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Manogna" title="Manogna">Manogna</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>We can use the finally clause to clean up whether an exception is thrown or not:try: &nbsp; #some code here except: &nbsp; handle_exception() finally: &nbsp; do_cleanup()If the cleanup is to be done in the event of an exception, we can code like this:should_cleanup = True try: &nbsp; #some code here ... <a href="https://www.tutorialspoint.com/Suggest-a-cleaner-way-to-handle-Python-exceptions#Manogna"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeQkYzbjNIY0FNNnp6K09MYkxTUGczZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='Q1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="QkYzbjNIY0FNNnp6K09MYkxTUGczZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='Q1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='Q1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_Q1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09" style="display:none;">
+<div id="comments_list_Q1djTSszUDBMMzZ2ZXd3Wk1Sa0NQdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09" data-aid="ZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09" data-qtitle=How-to-write-custom-Python-Exceptions-with-Error-Codes-and-Error-Messages data-utitle=Rajendra-Dharmkar>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-write-custom-Python-Exceptions-with-Error-Codes-and-Error-Messages" target='_blank'> How to write custom Python Exceptions with Error Codes and Error Messages?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09">
+</div>            <div class="qa_description">
+            
+I have an application App with error codes and error messages like this in the code below. , How do I write custom python exceptions with error codes and error messages? 
+            </div>
+            <div class="qa_comments" id="comments_VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09" style="display:none;">
+            <div id="comments_list_VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar"><img src='https://www.tutorialspoint.com/assets/profiles/9963/profile/60_124173-1512724240.jpg' alt='Rajendra Dharmkar' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar">Rajendra Dharmkar</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>We can write custom exception classes with error codes and error messages as follows:class ErrorCode(Exception): &nbsp; &nbsp; def __init__(self, code): &nbsp; &nbsp; &nbsp; &nbsp; self.code = code &nbsp; &nbsp; try: &nbsp; &nbsp; raise ErrorCode(401) except ErrorCode as e: &nbsp; &nbsp; print "Received error with code:", e.codeWe get outputC:/Users/TutorialsPoint1/~.py Received error ... <a href="https://www.tutorialspoint.com/How-to-write-custom-Python-Exceptions-with-Error-Codes-and-Error-Messages#Rajendra-Dharmkar"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeVE9BTEY4REtzeUtPcnBlbGlWYnBZdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='ZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="VE9BTEY4REtzeUtPcnBlbGlWYnBZdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='ZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='ZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_ZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09" style="display:none;">
+<div id="comments_list_ZndFU2FHc25ESmcwVGZPZ1JtTmRjQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">
+   <div class="qa_widget">
+      <!-- /60931893/tutorial_top -->
+      <div id='div-gpt-ad-1532153686945-4' class='topgooglead'>
+         <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532153686945-4'); });
+         </script>
+      </div>
+   </div>
+</div><div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="MFFCVnY0cFlzM1BDcS9PMWtENno0dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="MFFCVnY0cFlzM1BDcS9PMWtENno0dz09" data-aid="TnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="MFFCVnY0cFlzM1BDcS9PMWtENno0dz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="MFFCVnY0cFlzM1BDcS9PMWtENno0dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivTnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09" data-qtitle=Are-Python-Exceptions-runtime-errors data-utitle=Rajendra-Dharmkar>
+            <h2>
+               <a href="https://www.tutorialspoint.com/Are-Python-Exceptions-runtime-errors" target='_blank'> Are Python Exceptions runtime errors?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_MFFCVnY0cFlzM1BDcS9PMWtENno0dz09">
+</div>            <div class="qa_description">
+            
+If I run the code given below , I get an error. Is it a python RuntimeError? 
+            </div>
+            <div class="qa_comments" id="comments_MFFCVnY0cFlzM1BDcS9PMWtENno0dz09" style="display:none;">
+            <div id="comments_list_MFFCVnY0cFlzM1BDcS9PMWtENno0dz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar"><img src='https://www.tutorialspoint.com/assets/profiles/9963/profile/60_124173-1512724240.jpg' alt='Rajendra Dharmkar' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar">Rajendra Dharmkar</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>All python exceptions are not runtime errors, some are syntax errors as well.If you run the given code, you get the following output.File "C:/Users/TutorialsPoint1/~.py", line 4 else: ^ SyntaxError: invalid syntaxWe see that it is syntax error and not a runtime error.Errors or inaccuracies in a program are often called ... <a href="https://www.tutorialspoint.com/Are-Python-Exceptions-runtime-errors#Rajendra-Dharmkar"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeMFFCVnY0cFlzM1BDcS9PMWtENno0dz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='TnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="MFFCVnY0cFlzM1BDcS9PMWtENno0dz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='TnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='TnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_TnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09" style="display:none;">
+<div id="comments_list_TnBnUE4ybEVDa0ZpT3lzczRLMHdCUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09" data-aid="OXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivOXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09" data-qtitle=How-to-handle-python-exception-inside-if-statement data-utitle=Rajendra-Dharmkar>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-handle-python-exception-inside-if-statement" target='_blank'> How to handle python exception inside if statement?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09">
+</div>            <div class="qa_description">
+            
+I have the following code with an exception inside if statement , I am not able to catch the exception. How to catch the exception? 
+            </div>
+            <div class="qa_comments" id="comments_T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09" style="display:none;">
+            <div id="comments_list_T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar"><img src='https://www.tutorialspoint.com/assets/profiles/9963/profile/60_124173-1512724240.jpg' alt='Rajendra Dharmkar' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar">Rajendra Dharmkar</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>The code can be written as follows to catch the exceptiona, b=5, 0 try: &nbsp; &nbsp;if b != 0: &nbsp; &nbsp; &nbsp; &nbsp;print a/b &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; &nbsp;a/b &nbsp; &nbsp; &nbsp; &nbsp;raise ZeroDivisionError except Exception as e: &nbsp; &nbsp; &nbsp; &nbsp;print eWe get the following outputC:/Users/TutorialsPoint1/~.py integer division ... <a href="https://www.tutorialspoint.com/How-to-handle-python-exception-inside-if-statement#Rajendra-Dharmkar"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeT200anQ3cHpsV1RjOGh2Z1pJaUVNUT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='OXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="T200anQ3cHpsV1RjOGh2Z1pJaUVNUT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='OXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='OXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_OXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09" style="display:none;">
+<div id="comments_list_OXZoV0hwUmFwV0Z0bWhCeXphRUpUQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Z2hTN1JJcmNnZzhTemhDZExBUUxydz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Z2hTN1JJcmNnZzhTemhDZExBUUxydz09" data-aid="QWFzLzZSNWR0VDUrb3hRL0hheDJHZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Z2hTN1JJcmNnZzhTemhDZExBUUxydz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Z2hTN1JJcmNnZzhTemhDZExBUUxydz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivQWFzLzZSNWR0VDUrb3hRL0hheDJHZz09" data-qtitle=How-to-check-if-string-or-a-substring-of-string-ends-with-suffix-in-Python data-utitle=Rajendra-Dharmkar>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-check-if-string-or-a-substring-of-string-ends-with-suffix-in-Python" target='_blank'> How to check if string or a substring of string ends with suffix in Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Z2hTN1JJcmNnZzhTemhDZExBUUxydz09">
+</div>            <div class="qa_description">
+            
+I have a string which is basically a file path of a .py file. , How do check if it ends in py? 
+            </div>
+            <div class="qa_comments" id="comments_Z2hTN1JJcmNnZzhTemhDZExBUUxydz09" style="display:none;">
+            <div id="comments_list_Z2hTN1JJcmNnZzhTemhDZExBUUxydz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar"><img src='https://www.tutorialspoint.com/assets/profiles/9963/profile/60_124173-1512724240.jpg' alt='Rajendra Dharmkar' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar">Rajendra Dharmkar</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Python has a method endswith(string) in the String class. This method accepts a suffix string that you want to search and is called on a string object. You can call this method in the following way:string = 'C:/Users/TutorialsPoint1/~.py' print(string.endswith('.py'))OUTPUTTrueThere is another way to find if a string ends with a ... <a href="https://www.tutorialspoint.com/How-to-check-if-string-or-a-substring-of-string-ends-with-suffix-in-Python#Rajendra-Dharmkar"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeZ2hTN1JJcmNnZzhTemhDZExBUUxydz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='QWFzLzZSNWR0VDUrb3hRL0hheDJHZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Z2hTN1JJcmNnZzhTemhDZExBUUxydz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='QWFzLzZSNWR0VDUrb3hRL0hheDJHZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='QWFzLzZSNWR0VDUrb3hRL0hheDJHZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_QWFzLzZSNWR0VDUrb3hRL0hheDJHZz09" style="display:none;">
+<div id="comments_list_QWFzLzZSNWR0VDUrb3hRL0hheDJHZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09" data-aid="YUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivYUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09" data-qtitle=How-to-check-whether-a-string-ends-with-one-from-a-list-of-suffixes-in-Python data-utitle=Rajendra-Dharmkar>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-check-whether-a-string-ends-with-one-from-a-list-of-suffixes-in-Python" target='_blank'> How to check whether a string ends with one from a list of suffixes in Python?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09">
+</div>            <div class="qa_description">
+            
+, How do I check if the above string ends in one from a list of suffixes? 
+            </div>
+            <div class="qa_comments" id="comments_Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09" style="display:none;">
+            <div id="comments_list_Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar"><img src='https://www.tutorialspoint.com/assets/profiles/9963/profile/60_124173-1512724240.jpg' alt='Rajendra Dharmkar' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Rajendra-Dharmkar" title="Rajendra Dharmkar">Rajendra Dharmkar</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>Python has a method endswith(tuple) in the String class. This method accepts a tuple of strings that you want to search and is called on a string object. You can call this method in the following way:string = 'core java' print(string.endswith(('txt', 'xml', 'java', 'orld')))OUTPUTTrueThere is another way to find if ... <a href="https://www.tutorialspoint.com/How-to-check-whether-a-string-ends-with-one-from-a-list-of-suffixes-in-Python#Rajendra-Dharmkar"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeZjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='YUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Zjd2OVZvdGwzQzcxVDRqRWdMYmlVUT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='YUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='YUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_YUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09" style="display:none;">
+<div id="comments_list_YUhVczJ1RFZlSUhEVk9uaFVDQUcwUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09" data-aid="WmRLNjVGOWl1engzMUNvd1hFM2JIQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivWmRLNjVGOWl1engzMUNvd1hFM2JIQT09" data-qtitle=How-do-I-add-a-simple-jQuery-script-to-WordPress data-utitle=Amit-D>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-do-I-add-a-simple-jQuery-script-to-WordPress" target='_blank'> How do I add a simple jQuery script to WordPress?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09">
+</div>            <div class="qa_description">
+            
+ I have created a lot of websites on WordPress. For adding functionalities, I generally use WordPress plugins, but now I don&rsquo;t want to add more number of plugins. I want to learn how to a.....             </div>
+            <div class="qa_comments" id="comments_dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09" style="display:none;">
+            <div id="comments_list_dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D"><img src='https://www.tutorialspoint.com/assets/profiles/13349/profile/60_63530-1512538715.jpg' alt='Amit D' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D">Amit D</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>WordPress is an open source CMS, used to develop dynamic websites. Let&rsquo;s learn how to add jQuery script to WordPress. In the WordPress Theme&nbsp;folder, create a folder "js", and add a file in that. That file will be your Query file with extension &ldquo;.js&rdquo;. Add your jQuery script to that ... <a href="https://www.tutorialspoint.com/How-do-I-add-a-simple-jQuery-script-to-WordPress#Amit-D"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qedkoyckFjb2hjMi9xWlhVR0plQ2JOUT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='WmRLNjVGOWl1engzMUNvd1hFM2JIQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="dkoyckFjb2hjMi9xWlhVR0plQ2JOUT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='WmRLNjVGOWl1engzMUNvd1hFM2JIQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='WmRLNjVGOWl1engzMUNvd1hFM2JIQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_WmRLNjVGOWl1engzMUNvd1hFM2JIQT09" style="display:none;">
+<div id="comments_list_WmRLNjVGOWl1engzMUNvd1hFM2JIQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09" data-aid="bERXd0hhTVdUb0RVU0pBeGZJRXgxUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivbERXd0hhTVdUb0RVU0pBeGZJRXgxUT09" data-qtitle=How-to-call-a-jQuery-plugin-without-specifying-any-elements data-utitle=Amit-D>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-call-a-jQuery-plugin-without-specifying-any-elements" target='_blank'> How to call a jQuery plugin without specifying any elements?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09">
+</div>            <div class="qa_description">
+            
+ While working on jQuery, I want to call a jQuery plugin, but I do not want to mention any of the elements. Is this possible to achieve in jQuery? If yes, then which jQuery method is used to ca.....             </div>
+            <div class="qa_comments" id="comments_Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09" style="display:none;">
+            <div id="comments_list_Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D"><img src='https://www.tutorialspoint.com/assets/profiles/13349/profile/60_63530-1512538715.jpg' alt='Amit D' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D">Amit D</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>To call a jQuery plugin without specifying any elements, use extend method. Here&rsquo;s a snippet showing how to call a jQuery plugin without specifying any elements:$.fn.extend({ &nbsp; myFunction1: function(){...} });  $.extend({ &nbsp; myFunction2: function(){...} });Above, you can see we&rsquo;re calling myFunction1 and myFunction2 without specifying any elements and using ... <a href="https://www.tutorialspoint.com/How-to-call-a-jQuery-plugin-without-specifying-any-elements#Amit-D"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeY2Jlak9UYUFNTzBvcXpkTlhMRklhZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='bERXd0hhTVdUb0RVU0pBeGZJRXgxUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Y2Jlak9UYUFNTzBvcXpkTlhMRklhZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='bERXd0hhTVdUb0RVU0pBeGZJRXgxUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='bERXd0hhTVdUb0RVU0pBeGZJRXgxUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_bERXd0hhTVdUb0RVU0pBeGZJRXgxUT09" style="display:none;">
+<div id="comments_list_bERXd0hhTVdUb0RVU0pBeGZJRXgxUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09" data-aid="em5LSEkreS9vVGZIdGoxSUF6eDduZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivem5LSEkreS9vVGZIdGoxSUF6eDduZz09" data-qtitle=How-to-call-a-function-inside-a-jQuery-plugin-from-outside data-utitle=Amit-D>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-call-a-function-inside-a-jQuery-plugin-from-outside" target='_blank'> How to call a function inside a jQuery plugin from outside?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09">
+</div>            <div class="qa_description">
+            
+ I need to set property for the elements. Also, I am quite confused with how to use jQuery plugins. How can I call a function inside a jQuery plugin from outside and print the result in log. 
+            </div>
+            <div class="qa_comments" id="comments_QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09" style="display:none;">
+            <div id="comments_list_QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D"><img src='https://www.tutorialspoint.com/assets/profiles/13349/profile/60_63530-1512538715.jpg' alt='Amit D' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D">Amit D</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>To call a function inside a jQuery plugin from outside, try to run the following code. The code updates the name with jQuery as an example using properties:Live Demo&lt;html&gt; &nbsp; &nbsp;&lt;head&gt; &nbsp; &nbsp; &nbsp; &lt;script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt; &nbsp; &nbsp; &nbsp; &lt;script&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$.fn.person = function(prop) { ... <a href="https://www.tutorialspoint.com/How-to-call-a-function-inside-a-jQuery-plugin-from-outside#Amit-D"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeQjFMalVYM2ZENVhMN1FDaUpGRlNLZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='em5LSEkreS9vVGZIdGoxSUF6eDduZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="QjFMalVYM2ZENVhMN1FDaUpGRlNLZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='em5LSEkreS9vVGZIdGoxSUF6eDduZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='em5LSEkreS9vVGZIdGoxSUF6eDduZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_em5LSEkreS9vVGZIdGoxSUF6eDduZz09" style="display:none;">
+<div id="comments_list_em5LSEkreS9vVGZIdGoxSUF6eDduZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09" data-aid="MFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivMFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09" data-qtitle=How-to-call-a-jQuery-plugin-function-outside-the-plugin data-utitle=Amit-D>
+            <h2>
+               <a href="https://www.tutorialspoint.com/How-to-call-a-jQuery-plugin-function-outside-the-plugin" target='_blank'> How to call a jQuery plugin function outside the plugin?</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09">
+</div>            <div class="qa_description">
+            
+ I am working on jQuery and its plugins. I am quite confused with how to use jQuery plugins. How can I call a jQuery plugin function outside the plugin? 
+            </div>
+            <div class="qa_comments" id="comments_dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09" style="display:none;">
+            <div id="comments_list_dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D"><img src='https://www.tutorialspoint.com/assets/profiles/13349/profile/60_63530-1512538715.jpg' alt='Amit D' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Amit-D" title="Amit D">Amit D</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 6th Dec, 2017            </div>
+            <div class="clear"></div>
+            <p>jQuery is a JavaScript library introduced to make development with JavaScript easier. It reduces the development time. Let us see how to call a jQuery plugin function outside the plugin.For calling, wrap the jQuery method for returning the instance of the constructor. Call prototype methods on it.For example, $.fn.myFunction = ... <a href="https://www.tutorialspoint.com/How-to-call-a-jQuery-plugin-function-outside-the-plugin#Amit-D"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qedlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='MFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="dlhmZzdyTjhrUVJvZjhVcGE2Nm9FQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='MFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='MFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_MFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09" style="display:none;">
+<div id="comments_list_MFNMbTVnVWNJSkQ2cHVRcU1SUDJSUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+  
+</div>      
+<div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+   <div class="pages">
+      <a href="https://www.tutorialspoint.com/questions/821"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 825" href="https://www.tutorialspoint.com/questions/1">1</a>  ... <a class="number" title="Go to page 819 of 825" href="https://www.tutorialspoint.com/questions/819">819</a> <a class="number" title="Go to page 820 of 825" href="https://www.tutorialspoint.com/questions/820">820</a> <a class="number" title="Go to page 821 of 825" href="https://www.tutorialspoint.com/questions/821">821</a> <a title="Go to page 822 of 825" class="current number" href="https://www.tutorialspoint.com/questions/822">822</a> <a class="number" title="Go to page 823 of 825" href="https://www.tutorialspoint.com/questions/823">823</a> <a class="number" title="Go to page 824 of 825" href="https://www.tutorialspoint.com/questions/824">824</a> <a class="number" title="Go to page 825 of 825" href="https://www.tutorialspoint.com/questions/825">825</a> <a  href="https://www.tutorialspoint.com/questions/823" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+   </div>
+</div>
+<div class="clear"></div>
+<div class="bottomgooglead qa_widget align-center">
+   <div class="bottomadtag">Advertisements</div>
+      <script><!--
+      var width = 580;
+      var height = 400;
+      var format = "580x400_as";
+      if( window.innerWidth < 468 ){
+         width = 300;
+         height = 250;
+         format = "300x250_as";
+      }
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = width;
+      google_ad_height = height;
+      google_ad_format = format;
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</div> 
+<div class="loader_bg" id="loader_image">
+<img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+</div>
+
+<!-- end of center column content -->   
+
+<div class="mui-col-md-4">    
+<!-- right column content -->      
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/questions/index.php?page=822','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=822','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=822&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=822&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=822&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/questions/index.php?page=822&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="">
+      <button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+   </div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad">Advertisements</div>
+      <div class="rightgooglead">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      google_ad_format = "300x250_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      google_ad_format = "300x600_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "ca-pub-2537027957187252";
+      /* Right Side Ad */
+      google_ad_slot = "right_side_ad";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+    
+   <div id="contribution_menu"></div>
+   <div class="clear"></div>    
+      <div class="left_nav_header left_top_margin"><i class="fa fa-question-circle"></i> Unanswered Questions     
+      <a href="https://www.tutorialspoint.com/questions/unanswered.php" class="qa_pop_btn qa_pop_save"><i class="fa fa-plus"></i> View All</a>
+   </div>
+   <div id="latest_questions"></div>      
+   
+</div>
+
+<script>
+   $(document).ready(function () {
+      getRightMenu();
+      function getRightMenu(){
+         $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetRightMenu.php",
+            method: "POST",
+            success: function (data) {
+            $('#contribution_menu').html(data);
+            }
+         });
+      }
+            getLatestQuestions();
+         function getLatestQuestions() {
+            $.ajax({
+               url: baseurl + "questions/ajax/ajaxGetLatestQuestions.php",
+               method: "POST",
+               success: function (data) {
+               $('#latest_questions').html(data);
+               }
+            });
+         }
+          });
+</script> 
+</div>
+<!-- end of right column content -->   
+</div>
+<!-- End of Body Content -->
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

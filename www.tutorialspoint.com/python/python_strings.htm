@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Python Strings</title>
+<meta name="description" content="Python Strings - Learn Python in simple and easy steps starting from basic to advanced concepts with examples including Python Syntax Object Oriented Language, Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML Programming." />
+<meta name="Keywords" content="Python, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Networking, Multithreading,Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML, Programming." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(/python/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #fdbf00 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fdbf00 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fdbf00 !important;}
+.submenu-item{ border-bottom: 2px solid #fdbf00 !important; border-top: 2px solid #fdbf00 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#fdbf00; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/python/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/python/images/python-mini.jpg" alt="Python Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Basic Tutorial</li>
+<li><a target="_top" href="/python/index.htm">Python - Home</a></li>
+<li><a target="_top" href="/python/python_overview.htm">Python - Overview</a></li>
+<li><a target="_top" href="/python/python_environment.htm">Python - Environment Setup</a></li>
+<li><a target="_top" href="/python/python_basic_syntax.htm">Python - Basic Syntax</a></li>
+<li><a target="_top" href="/python/python_variable_types.htm">Python - Variable Types</a></li>
+<li><a target="_top" href="/python/python_basic_operators.htm">Python - Basic Operators</a></li>
+<li><a target="_top" href="/python/python_decision_making.htm">Python - Decision Making</a></li>
+<li><a target="_top" href="/python/python_loops.htm">Python - Loops</a></li>
+<li><a target="_top" href="/python/python_numbers.htm">Python - Numbers</a></li>
+<li><a target="_top" href="/python/python_strings.htm">Python - Strings</a></li>
+<li><a target="_top" href="/python/python_lists.htm">Python - Lists</a></li>
+<li><a target="_top" href="/python/python_tuples.htm">Python - Tuples</a></li>
+<li><a target="_top" href="/python/python_dictionary.htm">Python - Dictionary</a></li>
+<li><a target="_top" href="/python/python_date_time.htm">Python - Date &amp; Time</a></li>
+<li><a target="_top" href="/python/python_functions.htm">Python - Functions</a></li>
+<li><a target="_top" href="/python/python_modules.htm">Python - Modules</a></li>
+<li><a target="_top" href="/python/python_files_io.htm">Python - Files I/O</a></li>
+<li><a target="_top" href="/python/python_exceptions.htm">Python - Exceptions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Advanced Tutorial</li>
+<li><a target="_top" href="/python/python_classes_objects.htm">Python - Classes/Objects</a></li>
+<li><a target="_top" href="/python/python_reg_expressions.htm">Python - Reg Expressions</a></li>
+<li><a target="_top" href="/python/python_cgi_programming.htm">Python - CGI Programming</a></li>
+<li><a target="_top" href="/python/python_database_access.htm">Python - Database Access</a></li>
+<li><a target="_top" href="/python/python_networking.htm">Python - Networking</a></li>
+<li><a target="_top" href="/python/python_sending_email.htm">Python - Sending Email</a></li>
+<li><a target="_top" href="/python/python_multithreading.htm">Python - Multithreading</a></li>
+<li><a target="_top" href="/python/python_xml_processing.htm">Python - XML Processing</a></li>
+<li><a target="_top" href="/python/python_gui_programming.htm">Python - GUI Programming</a></li>
+<li><a target="_top" href="/python/python_further_extensions.htm">Python - Further Extensions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python  Useful Resources</li>
+<li><a target="_top" href="/python/python_questions_answers.htm">Python - Questions and Answers</a></li>
+<li><a target="_top" href="/python/python_quick_guide.htm">Python - Quick Guide</a></li>
+<li><a target="_top" href="/python/python_tools_utilities.htm">Python - Tools/Utilities</a></li>
+<li><a target="_top" href="/python/python_useful_resources.htm">Python - Useful Resources</a></li>
+<li><a target="_top" href="/python/python_discussion.htm">Python - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Python - Strings</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/python/python_numbers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/python/python_lists.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes. Creating strings is as simple as assigning a value to a variable. For example &minus;</p>
+<pre class="prettyprint notranslate">
+var1 = 'Hello World!'
+var2 = "Python Programming"
+</pre>
+<h2>Accessing Values in Strings</h2>
+<p>Python does not support a character type; these are treated as strings of length one, thus also considered a substring.</p>
+<p>To access substrings, use the square brackets for slicing along with the index or indices to obtain your substring. For example &minus;</p>
+<a href="http://tpcg.io/5Cb59z" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+var1 = 'Hello World!'
+var2 = "Python Programming"
+
+print "var1[0]: ", var1[0]
+print "var2[1:5]: ", var2[1:5]
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+var1[0]:  H
+var2[1:5]:  ytho
+</pre>
+<h2>Updating Strings</h2>
+<p>You can "update" an existing string by (re)assigning a variable to another string. The new value can be related to its previous value or to a completely different string altogether. For example &minus;</p>
+<a href="http://tpcg.io/TTnzkV" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+var1 = 'Hello World!'
+print "Updated String :- ", var1[:6] + 'Python'
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Updated String :-  Hello Python
+</pre>
+<h2>Escape Characters</h2>
+<p>Following table is a list of escape or non-printable characters that can be represented with backslash notation.</p>
+<p>An escape character gets interpreted; in a single quoted as well as double quoted strings.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">Backslash notation</th>
+<th style="text-align:center;">Hexadecimal character</th>
+<th class="ts">Description</th>
+</tr>
+<tr>
+<td>\a</td>
+<td>0x07</td>
+<td>Bell or alert</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>0x08</td>
+<td>Backspace</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>&nbsp;</td>
+<td>Control-x</td>
+</tr>
+<tr>
+<td>\C-x</td>
+<td>&nbsp;</td>
+<td>Control-x</td>
+</tr>
+<tr>
+<td>\e</td>
+<td>0x1b</td>
+<td>Escape</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>0x0c</td>
+<td>Formfeed</td>
+</tr>
+<tr>
+<td>\M-\C-x</td>
+<td>&nbsp;</td>
+<td>Meta-Control-x</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>0x0a</td>
+<td>Newline</td>
+</tr>
+<tr>
+<td>\nnn</td>
+<td>&nbsp;</td>
+<td>Octal notation, where n is in the range 0.7</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>0x0d</td>
+<td>Carriage return</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>0x20</td>
+<td>Space</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>0x09</td>
+<td>Tab</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>0x0b</td>
+<td>Vertical tab</td>
+</tr>
+<tr>
+<td>\x</td>
+<td>&nbsp;</td>
+<td>Character x</td>
+</tr>
+<tr>
+<td class="ts">\xnn</td>
+<td>&nbsp;</td>
+<td>Hexadecimal notation, where n is in the range 0.9, a.f, or A.F</td>
+</tr>
+</table>
+<h2>String Special Operators</h2>
+<p>Assume string variable <b>a</b> holds 'Hello' and variable <b>b</b> holds 'Python', then &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:10%">Operator</th>
+<th style="text-align:center;width:45%">Description</th>
+<th style="text-align:center;">Example</th>
+</tr>
+<tr>
+<td class="ts">+</td>
+<td>Concatenation - Adds values on either side of the operator</td>
+<td class="ts">a + b will give HelloPython</td>
+</tr>
+<tr>
+<td class="ts">*</td>
+<td>Repetition - Creates new strings, concatenating multiple copies of the same
+string</td>
+<td class="ts">a*2 will give -HelloHello</td>
+</tr>
+<tr>
+<td class="ts">[]</td>
+<td>Slice - Gives the character from the given index</td>
+<td class="ts">a[1] will give e</td>
+</tr>
+<tr>
+<td class="ts">[ : ]</td>
+<td>Range Slice - Gives the characters from the given range</td>
+<td class="ts">a[1:4] will give ell</td>
+</tr>
+<tr>
+<td class="ts">in</td>
+<td>Membership - Returns true if a character exists in the given string</td>
+<td class="ts">H in a will give 1</td>
+</tr>
+<tr>
+<td class="ts">not in </td>
+<td>Membership - Returns true if a character does not exist in the given string</td>
+<td class="ts">M not in a will give 1</td>
+</tr>
+<tr>
+<td class="ts">r/R</td>
+<td>Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.</td>
+<td class="ts">print r'\n' prints \n and print R'\n'prints \n</td>
+</tr>
+<tr>
+<td class="ts">%</td>
+<td>Format - Performs String formatting</td>
+<td class="ts">See at next section</td>
+</tr>
+</table>
+<h2>String Formatting Operator</h2>
+<p>One of Python's coolest features is the string format operator %. This operator is unique to strings and makes up for the pack of having functions from C's printf() family. Following is a simple example &minus;</p>
+<a href="http://tpcg.io/wIUTuU" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+print "My name is %s and weight is %d kg!" % ('Zara', 21)
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+My name is Zara and weight is 21 kg!
+</pre>
+<p>Here is the list of complete set of symbols which can be used along with % &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:30%">Format Symbol</th>
+<th style="text-align:center;">Conversion</th>
+</tr>
+<tr>
+<td class="ts">%c</td>
+<td>character</td>
+</tr>
+<tr>
+<td class="ts">%s</td>
+<td>string conversion via str() prior to formatting</td>
+</tr>
+<tr>
+<td class="ts">%i</td>
+<td>signed decimal integer</td>
+</tr>
+<tr>
+<td class="ts">%d</td>
+<td>signed decimal integer</td>
+</tr>
+<tr>
+<td class="ts">%u</td>
+<td>unsigned decimal integer</td>
+</tr>
+<tr>
+<td class="ts">%o</td>
+<td>octal integer</td>
+</tr>
+<tr>
+<td class="ts">%x</td>
+<td>hexadecimal integer (lowercase letters)</td>
+</tr>
+<tr>
+<td class="ts">%X</td>
+<td>hexadecimal integer (UPPERcase letters)</td>
+</tr>
+<tr>
+<td class="ts">%e</td>
+<td>exponential notation (with lowercase 'e')</td>
+</tr>
+<tr>
+<td class="ts">%E</td>
+<td>exponential notation (with UPPERcase 'E')</td>
+</tr>
+<tr>
+<td class="ts">%f</td>
+<td>floating point real number</td>
+</tr>
+<tr>
+<td class="ts">%g</td>
+<td>the shorter of %f and %e</td>
+</tr>
+<tr>
+<td class="ts">%G</td>
+<td>the shorter of %f and %E</td>
+</tr>
+</table>
+<p>Other supported symbols and functionality are listed in the following table &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:30%">Symbol</th>
+<th style="text-align:center;">Functionality</th>
+</tr>
+<tr>
+<td class="ts">*</td>
+<td>argument specifies width or precision</td>
+</tr>
+<tr>
+<td class="ts">-</td>
+<td>left justification</td>
+</tr>
+<tr>
+<td class="ts">+</td>
+<td>display the sign</td>
+</tr>
+<tr>
+<td class="ts">&lt;sp&gt;</td>
+<td>leave a blank space before a positive number</td>
+</tr>
+<tr>
+<td class="ts">#</td>
+<td>add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.</td>
+</tr>
+<tr>
+<td class="ts">0</td>
+<td>pad from left with zeros (instead of spaces)</td>
+</tr>
+<tr>
+<td class="ts">%</td>
+<td>'%%' leaves you with a single literal '%'</td>
+</tr>
+<tr>
+<td class="ts">(var)</td>
+<td>mapping variable (dictionary arguments)</td>
+</tr>
+<tr>
+<td class="ts">m.n.</td>
+<td>m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)</td>
+</tr>
+</table>
+<h2>Triple Quotes</h2>
+<p>Python's triple quotes comes to the rescue by allowing strings to span multiple lines, including verbatim NEWLINEs, TABs, and any other special characters.</p>
+<p>The syntax for triple quotes consists of three consecutive <b>single or double</b> quotes.</p>
+<a href="http://tpcg.io/szN9rw" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+para_str = """this is a long string that is made up of
+several lines and non-printable characters such as
+TAB ( \t ) and they will show up that way when displayed.
+NEWLINEs within the string, whether explicitly given like
+this within the brackets [ \n ], or just a NEWLINE within
+the variable assignment will also show up.
+"""
+print para_str
+</pre>
+<p>When the above code is executed, it produces the following result. Note how every single special character has been converted to its printed form, right down to the last NEWLINE at the end of the string between the "up." and closing triple quotes. Also note that NEWLINEs occur either with an explicit carriage return at the end of a line or its escape code (\n) &minus;</p>
+<pre class="result notranslate">
+this is a long string that is made up of
+several lines and non-printable characters such as
+TAB (    ) and they will show up that way when displayed.
+NEWLINEs within the string, whether explicitly given like
+this within the brackets [
+ ], or just a NEWLINE within
+the variable assignment will also show up.
+</pre>
+<p>Raw strings do not treat the backslash as a special character at all. Every character you put into a raw string stays the way you wrote it &minus;</p>
+<a href="http://tpcg.io/Gfq9Hl" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+print 'C:\\nowhere'
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+C:\nowhere
+</pre>
+<p>Now let's make use of raw string. We would put expression in <b>r'expression'</b> as follows &minus;</p>
+<a href="http://tpcg.io/ExGqoY" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+#!/usr/bin/python
+
+print r'C:\\nowhere'
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+C:\\nowhere
+</pre>
+<h2>Unicode String</h2>
+<p>Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world. I'll restrict my treatment of Unicode strings to the following &minus;</p>
+<a href="http://tpcg.io/HUYVB4" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate tryit">
+#!/usr/bin/python
+
+print u'Hello, world!'
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Hello, world!
+</pre>
+<p>As you can see, Unicode strings use the prefix u, just as raw strings use the prefix r.</p>
+<h2>Built-in String Methods</h2>
+<p>Python includes the following built-in methods to manipulate strings &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:10%">Sr.No.</th>
+<th style="text-align:center;">Methods with Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><a href="/python/string_capitalize.htm">capitalize()</a>
+<p>Capitalizes first letter of string</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><a href="/python/string_center.htm">center(width, fillchar)</a>
+<p>Returns a space-padded string with the original string centered to a total of width columns.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><a href="/python/string_count.htm">count(str, beg= 0,end=len(string))</a>
+<p>Counts how many times str occurs in string or in a substring of string if starting index beg and ending index end are given.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><a href="/python/string_decode.htm">decode(encoding='UTF-8',errors='strict')</a>
+<p>Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><a href="/python/string_encode.htm">encode(encoding='UTF-8',errors='strict')</a>
+<p>Returns encoded string version of string; on error, default is to raise a ValueError unless errors is given with 'ignore' or 'replace'.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><a href="/python/string_endswith.htm">endswith(suffix, beg=0, end=len(string))</a>
+<p>Determines if string or a substring of string (if starting index beg and ending index end are given) ends with suffix; returns true if so and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><a href="/python/string_expandtabs.htm">expandtabs(tabsize=8)</a>
+<p>Expands tabs in string to multiple spaces; defaults to 8 spaces per tab if tabsize not provided.</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><a href="/python/string_find.htm">find(str, beg=0 end=len(string))</a>
+<p>Determine if str occurs in string or in a substring of string if starting index beg and ending index end are given returns index if found and -1 otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><a href="/python/string_index.htm">index(str, beg=0, end=len(string))</a>
+<p>Same as find(), but raises an exception if str not found.</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><a href="/python/string_isalnum.htm">isalnum()</a>
+<p>Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><a href="/python/string_isalpha.htm">isalpha()</a>
+<p>Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><a href="/python/string_isdigit.htm">isdigit()</a>
+<p>Returns true if string contains only digits and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><a href="/python/string_islower.htm">islower()</a>
+<p>Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td><a href="/python/string_isnumeric.htm">isnumeric()</a>
+<p>Returns true if a unicode string contains only numeric characters and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><a href="/python/string_isspace.htm">isspace()</a>
+<p>Returns true if string contains only whitespace characters and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td><a href="/python/string_istitle.htm">istitle()</a>
+<p>Returns true if string is properly "titlecased" and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">17</td>
+<td><a href="/python/string_isupper.htm">isupper()</a>
+<p>Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">18</td>
+<td><a href="/python/string_join.htm">join(seq)</a>
+<p>Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.</p></td>
+</tr>
+<tr>
+<td class="ts">19</td>
+<td><a href="/python/string_len.htm">len(string)</a>
+<p>Returns the length of the string</p></td>
+</tr>
+<tr>
+<td class="ts">20</td>
+<td><a href="/python/string_ljust.htm">ljust(width[, fillchar])</a>
+<p>Returns a space-padded string with the original string left-justified to a total of width columns.</p></td>
+</tr>
+<tr>
+<td class="ts">21</td>
+<td><a href="/python/string_lower.htm">lower()</a>
+<p>Converts all uppercase letters in string to lowercase.</p></td>
+</tr>
+<tr>
+<td class="ts">22</td>
+<td><a href="/python/string_lstrip.htm">lstrip()</a>
+<p>Removes all leading whitespace in string.</p></td>
+</tr>
+<tr>
+<td class="ts">23</td>
+<td><a href="/python/string_maketrans.htm">maketrans()</a>
+<p>Returns a translation table to be used in translate function.</p></td>
+</tr>
+<tr>
+<td class="ts">24</td>
+<td><a href="/python/string_max.htm">max(str)</a>
+<p>Returns the max alphabetical character from the string str.</p></td>
+</tr>
+<tr>
+<td class="ts">25</td>
+<td><a href="/python/string_min.htm">min(str)</a>
+<p>Returns the min alphabetical character from the string str.</p></td>
+</tr>
+<tr>
+<td class="ts">26</td>
+<td><a href="/python/string_replace.htm">replace(old, new [, max])</a>
+<p>Replaces all occurrences of old in string with new or at most max occurrences if max given.</p></td>
+</tr>
+<tr>
+<td class="ts">27</td>
+<td><a href="/python/string_rfind.htm">rfind(str, beg=0,end=len(string))</a>
+<p>Same as find(), but search backwards in string.</p></td>
+</tr>
+<tr>
+<td class="ts">28</td>
+<td><a href="/python/string_rindex.htm">rindex( str, beg=0, end=len(string))</a>
+<p>Same as index(), but search backwards in string.</p></td>
+</tr>
+<tr>
+<td class="ts">29</td>
+<td><a href="/python/string_rjust.htm">rjust(width,[, fillchar])</a>
+<p>Returns a space-padded string with the original string right-justified to a total of width columns.</p></td>
+</tr>
+<tr>
+<td class="ts">30</td>
+<td><a href="/python/string_rstrip.htm">rstrip()</a>
+<p>Removes all trailing whitespace of string.</p></td>
+</tr>
+<tr>
+<td class="ts">31</td>
+<td><a href="/python/string_split.htm">split(str="", num=string.count(str))</a>
+<p>Splits string according to delimiter str (space if not provided) and returns list of substrings; split into at most num substrings if given.</p></td>
+</tr>
+<tr>
+<td class="ts">32</td>
+<td><a href="/python/string_splitlines.htm">splitlines( num=string.count('\n'))</a>
+<p>Splits string at all (or num) NEWLINEs and returns a list of each line with NEWLINEs removed.</p></td>
+</tr>
+<tr>
+<td class="ts">33</td>
+<td><a href="/python/string_startswith.htm">startswith(str, beg=0,end=len(string))</a>
+<p>Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.</p></td>
+</tr>
+<tr>
+<td class="ts">34</td>
+<td><a href="/python/string_strip.htm">strip([chars])</a>
+<p>Performs both lstrip() and rstrip() on string.</p></td>
+</tr>
+<tr>
+<td class="ts">35</td>
+<td><a href="/python/string_swapcase.htm">swapcase()</a>
+<p>Inverts case for all letters in string.</p></td>
+</tr>
+<tr>
+<td class="ts">36</td>
+<td><a href="/python/string_title.htm">title()</a>
+<p>Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.</p></td>
+</tr>
+<tr>
+<td class="ts">37</td>
+<td><a href="/python/string_translate.htm">translate(table, deletechars="")</a>
+<p>Translates string according to translation table str(256 chars), removing those in the del string.</p></td>
+</tr>
+<tr>
+<td class="ts">38</td>
+<td><a href="/python/string_upper.htm">upper()</a>
+<p>Converts lowercase letters in string to uppercase.</p></td>
+</tr>
+<tr>
+<td class="ts">39</td>
+<td><a href="/python/string_zfill.htm">zfill (width)</a>
+<p>Returns original string leftpadded with zeros to a total of width characters; intended for numbers, zfill() retains any sign given (less one zero).</p></td>
+</tr>
+<tr>
+<td class="ts">40</td>
+<td><a href="/python/string_isdecimal.htm">isdecimal()</a>
+<p>Returns true if a unicode string contains only decimal characters and false otherwise.</p></td>
+</tr>
+</table>
+<hr />
+<div class="pre-btn">
+<a href="/python/python_numbers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/python/python_lists.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/python/python_strings.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/python/python_strings.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/python/python_strings.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/python/python_strings.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/python/python_strings.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/python/python_strings.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script src="/theme/js/jquery.colorbox-min.js"></script>
+<script>
+   var tryit = new $.TryIt('/python/try_python.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

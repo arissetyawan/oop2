@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP SRM Interview Questions - TutorialsPoint</title>
+<meta name="description" content="SAP SRM Interview Questions - Learn SAP SRM starting from the Overview, Navigation, Functions, Software Components, Deployment Options, Contract Management, Creating a Central Contract, Bid Invitation, Quotation and Live Auction Cockpit, Procurement, Invoicing and Purchase Order, Shopping Cart, Supplier Self-Service, Post Installation For LAC, Configuring Single Sign-on, Supplier Evaluation, SRM MDM Catalog Upgrade, Security, System Landscape, Network and Communication Security, Auditing and Logging." />
+<meta name="keywords" content="SAP SAP SRM, Tutorial, Overview, Navigation, Functions, Software Components, Deployment Options, Contract Management, Creating a Central Contract, Bid Invitation, Quotation and Live Auction Cockpit, Procurement, Invoicing and Purchase Order, Shopping Cart, Supplier Self-Service, Post Installation For LAC, Configuring Single Sign-on, Supplier Evaluation, SRM MDM Catalog Upgrade, Security, System Landscape, Network and Communication Security, Auditing and Logging." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #018547 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #018547 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #018547 !important;}
+.submenu-item{ border-bottom: 2px solid #018547 !important; border-top: 2px solid #018547 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#018547; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_srm/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_srm/images/sap-srm-mini-logo.jpg" alt="SAP srm Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP SRM Tutorial</li>
+<li><a href="/sap_srm/index.htm">SAP SRM - Home</a></li>
+<li><a href="/sap_srm/sap_srm_overview.htm">SAP SRM - Overview</a></li>
+<li><a href="/sap_srm/sap_srm_navigation.htm">SAP SRM - Navigation</a></li>
+<li><a href="/sap_srm/sap_srm_functions.htm">SAP SRM - Functions</a></li>
+<li><a href="/sap_srm/sap_srm_software_components.htm">SAP SRM - Software Components</a></li>
+<li><a href="/sap_srm/sap_srm_deployment_options.htm">SAP SRM - Deployment Options</a></li>
+<li><a href="/sap_srm/sap_srm_contract_management.htm">SAP SRM - Contract Management</a></li>
+<li><a href="/sap_srm/sap_srm_creating_a_central_contract.htm">SAP SRM - Creating Central Contract</a></li>
+<li><a href="/sap_srm/sap_srm_bid_invitation.htm">SAP SRM - Bid Invitation</a></li>
+<li><a href="/sap_srm/sap_srm_quotation_and_live_auction_cockpit.htm">Quotation and Live Auction
+Cockpit</a></li>
+<li><a href="/sap_srm/sap_srm_procurement.htm">SAP SRM - Procurement</a></li>
+<li><a href="/sap_srm/sap_srm_invoicing_and_purchase_order.htm">Invoicing And Purchase Order</a></li>
+<li><a href="/sap_srm/sap_srm_shopping_cart.htm">SAP SRM - Shopping Cart</a></li>
+<li><a href="/sap_srm/sap_srm_supplier_self_service.htm">SAP SRM - Supplier Self-Service</a></li>
+<li><a href="/sap_srm/sap_srm_post_installation_for_lac.htm">SAP SRM - Post Installation For LAC</a></li>
+<li><a href="/sap_srm/sap_srm_configuring_single_sign_on.htm">Configuring Single Sign-on</a></li>
+<li><a href="/sap_srm/sap_srm_supplier_evaluation.htm">SAP SRM - Supplier Evaluation</a></li>
+<li><a href="/sap_srm/sap_srm_mdm_catalog_upgrade.htm">SAP SRM - MDM Catalog Upgrade</a></li>
+<li><a href="/sap_srm/sap_srm_security.htm">SAP SRM - Security</a></li>
+<li><a href="/sap_srm/sap_srm_system_landscape.htm">SAP SRM - System Landscape</a></li>
+<li><a href="/sap_srm/sap_srm_network_and_communication_security.htm">Network &amp; Communication Security</a></li>
+<li><a href="/sap_srm/sap_srm_auditing_and_logging.htm">SAP SRM - Auditing &amp; Logging</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP SRM Useful Resources</li>
+<li><a href="/sap_srm/sap_srm_questions_answers.htm">SAP SRM - Questions Answers</a></li>
+<li><a href="/sap_srm/sap_srm_quick_guide.htm">SAP SRM - Quick Guide</a></li>
+<li><a href="/sap_srm/sap_srm_useful_resources.htm">SAP SRM - Useful Resources</a></li>
+<li><a href="/sap_srm/sap_srm_discussion.htm">SAP SRM - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP SRM Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/sap_srm/sap_srm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_srm/sap_srm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>SAP SRM Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>SAP SRM</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label> What is the use of SAP Supplier Relationship Management?</label>
+<div class="toggle-content"> 
+<p>SAP Supplier Relationship Management SRM is SAP product that facilitates the procurement of goods via a web based platform. Organizations can procure all type of products like direct and indirect material, services and this can be integrated with SAP ERP modules and other non-SAP back end systems for accounting and planning.</p>
+<p>SAP SRM allows you to optimize your procurement process to work effectively with suppliers to get long term benefits and also to perform forecasting, procurement cycle and to work with partners. You can reduce the time span and costing of procurement cycle using innovative methods to manage business processes with key suppliers.</p>
+<p>SAP Supplier Relationship Management supports the full procurement cycle i.e. starting from source and purchase to pay through complete procurement process with suppliers and effectively managing supplier to build long term relationship.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the key functions that you perform under SAP SRM module?</label>
+<div class="toggle-content"> 
+<p><b>Catalog Management</b></p>
+<p>Suppliers can easily manage catalog data and can be easily integrated with business processes like accounting, finance and planning.</p>
+<p><b>Procure to Pay Optimization</b></p>
+<p>Using SAP SRP product, you can streamline procure to pay life cycle and improve communication with supplier and cost management.</p>
+<p><b>Self Service Procurement</b></p>
+<p>End users can search products using multiple product catalog and helps them to find and purchase product that are compliant with purchase and procurement policy of the company.</p>
+<p><b>Reporting Functionality</b></p>
+<p>Using SAP Supplier Relationship management, you can create reports related to procurement activities, compliance and contract management, and managing costing in procurement process.</p>
+<p><b>Contract Management</b></p>
+<p>You can manage contracts using centralize secure repository that helps to reduce compliance violations and allows end users to follow business processes during self-service procurement.</p>
+</div>
+</section>
+<section class="toggle">
+<label> In SAP SRM, where do you create quotations and process them?</label>
+<div class="toggle-content"> 
+<p>Bidding Engine</p>
+</div>
+</section>
+<section class="toggle">
+<label> If you want to search a particular product or a supplier, how can you do this?</label>
+<div class="toggle-content"> 
+<p>In SAP SRM portal, you can easily perform search for different products and suppliers. Search criteria is easy to use.</p>
+<p>You can also restrict the number of entries in search.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of workflows in SAP Supplier Relationship Management?</label>
+<div class="toggle-content"> 
+<p>Workflows are used to perform easy approvals of PO’s allows organization to perform goods requisition easy and simple.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When you install SAP SRM application, what technical components get install with SRM software?</label>
+<div class="toggle-content"> 
+<p><b>SAP SRM: Software Components</b></p>
+<p>There are various application and technology components that are part of SAP Supplier Relationship management product. Application components include component that are required to create RFx and submit bids, for financial management, BI needs, Enterprise portal for application interaction and other various components to perform different functions.</p>
+<p>Technology component consists of NetWeaver Process Integration to integrate with SAP and non-SAP external systems, SAP GUI for configuration, and R/3 plugin for master data.</p>
+<p>Let’s see each of the component under application and technology in detail &minus;</p>
+<p><b>SAP Supplier Relationship Management Server</b></p>
+<p>SAP SRM server includes SAP SRM server and SAP Bidding engine. SAP SRM is based on SAP NetWeaver application server and is available for different platforms and database. You can check all the releases of SAP SRM on SAP Market place under PAM.</p>
+<p><b>SAP SRM Bidding engine</b></p>
+<p>SAP Bidding engine can be used to create and process requests for bids, bidders can submit bids and other functions in RFx.</p>
+<p>Bidding engine defines the rules for bidding and bidders can use it to submit bids in the system.</p>
+<p><b>SAP NetWeaver BI</b></p>
+<p>In SAP SRM spend analysis, BI is primary used and requires Application server ABAP on the same system. It may also require Java Application server and SAP Enterprise portal.</p>
+<p><b>SAP NetWeaver Enterprise Portal</b></p>
+<p>This is used as entry point for users to manage applications and information related to Supplier Relationship management. It provides role based and secure access to applications and services.</p>
+<p><b>Online Transaction Processing System</b></p>
+<p>Various systems can be used for back end transaction processing to manage material and financial queries. SAP ERP system can be used and data exchange occurs between SAP SRM and SAP ERP system.</p>
+<p>You can also install SAP SRM as standalone without a backend system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> In SAP SRM Standalone deployment, where do the processing occurs?</label>
+<div class="toggle-content"> 
+<p>In a standalone deployment model, all the procurement processing is performed in SAP SRM system and back end accounting system is used for invoice financial processing.</p>
+<p>In a Standalone scenario, purchase order management, shopping cart and goods receipt and invoices are processed in SRM system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Where do you use Standalone deployment model in SRM?</label>
+<div class="toggle-content"> 
+<p>When there is no operational backend system for material management and there exists only financial accounting systems in landscape.</p>
+<p>When you want to move all procurement activities in SAP SRM system and hence allow companies to decrease the work load on the backend procurement system by transferring buyers which are interested to procure from selected options.</p>
+<p>It is recommended for customers who want to maintain only minimal product data and only rely on supplier catalogs.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between classic and extended classic option?</label>
+<div class="toggle-content"> 
+<p>In a classing deployment model, you process the shopping cart in SAP SRM and supporting documents are processed in backend ERP system.</p>
+<p>You can perform goods receipt or invoices in any of the system.</p>
+<p>In extended classic deployment model, procurement process takes place in SAP SRM system and PO is generated in SRM system and a read only copy is created in back end ERP system.</p>
+<p>You can perform goods receipt or invoices in any of the system as in case of classic scenario.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Where do you use Classic deployment scenario in SRM?</label>
+<div class="toggle-content"> 
+<p>For those customers who has a strong backend procurement system and where buyers do not want to use multiple systems for their operations.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Provide an example of decoupled deployment scenario in SAP SRM?</label>
+<div class="toggle-content"> 
+<p>Consider a customer who wants to use the standalone model for certain indirect materials and routine services, the classic scenario for stock materials to utilize inventory and planning capabilities of backend materials management system, the extended classic scenario to perform effective supplier management to provide response for PO’s.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Contract? Can you place multiple contracts for similar goods in SAP SRM Contract Management?</label>
+<div class="toggle-content"> 
+<p>In SAP SRM, contract is defined as a negotiation between a supplier and an organization for supply of goods and material or delivery of services within defined terms and conditions in a specific time period. These contracts are placed at central secure location to resolve the lack of visibility into contract across the different groups.</p>
+<p>This allows you to manage different local contracts with different terms and conditions for the similar type of goods.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the benefit of using Central Contract management process?</label>
+<div class="toggle-content"> 
+<p>Central contract management allows buyers form different part of company from different locations to take advantage of negotiated terms and conditions. The terms and conditions are transitioned into a central contract and to be distributed to local purchasing group to perform procurement process for the company.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you perform SAP ERP integration with SAP SRM to perform upload of Contracts?</label>
+<div class="toggle-content"> 
+<p>To upload the central contracts and to schedule agreements from SAP ERP system to SAP SRM system, you can use program BBP_CONTRACT_INITIAL_UPLOAD. As per your configuration these contracts are loaded and scheduled from ERP to SAP SRM system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you perform a search for Contracts in SAP SRM?</label>
+<div class="toggle-content"> 
+<p>To perform contract search you can use TREX search engine. This search engine is provided with SAP SRM but you have to install it and run program to create indexing for all the available contracts. You should run program BBP_TREX_INDEX_ADMIN that creates a new indexes for existing documents and helps you to perform indexing for all new or changed documents when a contract is saved.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Live Auction Cockpit LAC?</label>
+<div class="toggle-content"> 
+<p>LAC web presentation server is a J2ee based software application. This provides user with an option of real time bidding, real time monitoring and reverse auction options.</p>
+<p>Apart from these technology component also includes SAP Process Integrator for integrating processes from different systems, SAP GUI for configuration and R/e plug in for data exchange between one or more R/3 systems and other components.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you upload and manage central contracts in ERP?</label>
+<div class="toggle-content"> 
+<p>You can upload contracts in SAP ERP system by going to SAP ERP Central Component &rarr; Logistics &rarr; Materials Management &rarr; Purchasing &rarr; Outline Purchase agreements with vendors &rarr; Contract &rarr; Central Contract &rarr; SRM Central Contract</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to edit a completed central contract?</label>
+<div class="toggle-content"> 
+<p> No</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different fields in a Central contact?</label>
+<div class="toggle-content"> 
+<p>You can see different tabs- header tab, overview tab and distribution tab in a Contract. In overview tab go to fill the item details and general header data. You can fill the below details in a contract &minus;</p>
+<p><b>Target Quantity and value</b></p>
+<p>In this field, you need to enter the target quantity and target value. This defines the quantity which shows the number of units to be purchased from a supplier in a time period.</p>
+<p><b>Release Value</b></p>
+<p>It is defined as accumulated value of all POs against the central contract.</p>
+<p><b>Basic Contract</b></p>
+<p>Now if you define a contract as basic contract, it only contains header data and conditions and you can’t put line items and cannot be distributed to a catalog.</p>
+<p><b>Item Category</b></p>
+<p>Under item category, you can define following options &minus;</p>
+<p><b>Normal</b></p>
+<p>When you define item category as normal, it must contain a product category.</p>
+<p><b>Product category</b></p>
+<p>Under product category, you need to define a target value and a product category item always refer to all connected catalogs.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When a contract is set to completed status?</label>
+<div class="toggle-content"> 
+<p>When a contract is expired or released status and you select close contract, the status of contract is set to complete and this is irreversible status.</p>
+<p>You can search the completed contracts and use them as template for creating new contracts.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between in negotiation and in renew status of a contract?</label>
+<div class="toggle-content"> 
+<p><b>In Negotiation</b></p>
+<p>When a contract is selected for renew and is in saved state, the status of contract is set as in negotiation.</p>
+<p><b>In Renewal</b></p>
+<p>This is set when you select a contract for renew is in released state.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Request for quotation RFx?</label>
+<div class="toggle-content"> 
+<p>A bid invitation is defined as a request from a buyer to a supplier to submit a quotation for goods or services as per mentioned criteria. Bid invitation is also known as request for quotation RFx.</p>
+<p>A request for quotation RFx is an invitation sent to supplier by an organization’s purchase department to submit RFx response for the supply of certain goods under specified terms and condition. RFx document contains information like vendor name, vendor's address, goods quantities and delivery dates for the material. You can create RFx with reference to a purchase requisition and all the information is copied from the purchase requisition.  When RFx is created without any reference, you can enter the details manually in RFx document.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between public and restricted bid invitation?</label>
+<div class="toggle-content"> 
+<p><b>Public Bid Invitations</b></p>
+<p>These bid invitations are available to all bidders via a web portal. Bidders can access the url available on web portal to login to SAP bidding engine and there they can enter the bids. If you want some specific bidders to send the bid, you can directly email them the bid invitation.</p>
+<p><b>Restricted Bid invitations</b></p>
+<p>In restricted bid invitations, hyperlink to login to SAP bidding engine is sent to some specific set of bidders via email. Bidders can login to Bidding engine and enter the bid.</p>
+</div>
+</section>
+<section class="toggle">
+<label> While creating a bid invitation, is it possible to search for suppliers/bidders?</label>
+<div class="toggle-content"> 
+<p>You can search for suppliers/bidders from the supplier directories and extend the bid invitation to these bidders in case of public invitation.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Explain bid invitation and Quotation process in SAP SRM?</label>
+<div class="toggle-content"> 
+<p>A Quotation is defined as a response to RFx where a bidder confirms the goods selling and services to buyers/purchasers as per specific criteria. As part of bid invitation process when the email is triggered, supplier gets the information on the request for quotation. Suppliers start bidding as per the bid invitation and when they submit the bid in SAP Bidding engine, final price is shown. Suppliers can bid till the end date is reached and once bids are closed, purchases can perform a price comparison to get the best supplier and to award the bid, and purchase order can be raised for the best supplier.</p>
+</div>
+</section>
+<section class="toggle">
+<label> If you get less number of quotation for RFx, what can be done to fix this?</label>
+<div class="toggle-content"> 
+<p>When number of bidders are less or purchase feels that there is not a best bid. He can always convert RFx to live auction.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create a Live Auction?</label>
+<div class="toggle-content"> 
+<p>To create a live auction, purchasers can use SAP Bidding engine and auction takes place in Live Auction cockpit. Purchasers can create live auction &minus;</p>
+<ul class="list">
+<li>Using an Auction template</li>
+<li>By copying an auction</li>
+<li>In SRM portal from the Sourcing application</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> When you convert RFx to Live Auction, what happens to Request for Quotation RFx?</label>
+<div class="toggle-content"> 
+<p>When you convert RFx to an auction, RFx is set to the status Completed and there are no changes that you can make to RFx.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to integrate procurement function between SAP ERP and SAP SRM function?</label>
+<div class="toggle-content"> 
+<p>Yes, Procurement functions are seamlessly integrated between SAP ERP and SRM. There are various business functions that allow a fully integrated, end-to-end procurement management solution to improve both compliance and procurement management process as per business requirement. It helps in closing the gap in ERP sourcing functionality using SRM capabilities and provides a common UI for designing integrated procurement processes.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of configuring number ranges in SRM?</label>
+<div class="toggle-content"> 
+<p>Number ranges must be established for EBP shopping carts as well as any potential purchasing document so that unique numbers can be generated in the backend R/3 system from EBP. The EBP system needs a number range established that automatically takes the next available number and assigns it to the document which will be created in R/3.configuration must also be established in R/3 to correlate with the ranges in EBP so that conflict never arise when purchasing document. </p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Organization structure in SAP SRM?</label>
+<div class="toggle-content"> 
+<p>To set attributes that define the users` shopping experience. Examples of such attributes are company code, plant and cost centers that the user can order against, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Provide an example of business partner and partner function?</label>
+<div class="toggle-content"> 
+<p>Business Partner includes stake holders like customer, supplier, etc.</p>
+<p>Partner Function includes invoicing party, supplying party, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which option can be used to faster the procurement process for customers?</label>
+<div class="toggle-content"> 
+<p>Customer Shopping Cart</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are different types of shopping carts?</label>
+<div class="toggle-content"> 
+<p>Professional Shopping Cart</p>
+<p>Simple shopping Cart</p>
+</div>
+</section>
+<section class="toggle">
+<label> In Standalone scenario, where do al processing is done for shopping cart?</label>
+<div class="toggle-content"> 
+<p>In a standalone scenario, shopping cart and other processing is done in SRM system and only final invoice is sent to backend system for financial accounting.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Professional and Simple shopping cart?</label>
+<div class="toggle-content"> 
+<p><b>Professional Shopping Cart Form</b></p>
+<p>In this shopping cart, most of the fields are used by professional buyers and employees. In header section, you have details of shopping cart- cart number, name, status, created date and who has created the shopping cart.</p>
+<p><b>Simple Shopping Cart Form</b></p>
+<p>Like the above shopping cart, you can use a simplified shopping cart form with less number of fields. This is suitable for users who has no experience and limited authorization.</p>
+<p>It only depends on the catalogs and no other options are there for purchasing.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which processes of SAP SRM is linked with SAP MM?</label>
+<div class="toggle-content"> 
+<p>To replicate Purchase Organization, Purchase group, material master, vendor master from backend. You can create PO in SRM and replicate PO in the R/3.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of supplier management function in SRM?</label>
+<div class="toggle-content"> 
+<p>It is used for managing supplier performance, implementing technologies, processes, policies, and procedures to support the purchasing process.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When do you suggest to use shopping cart?</label>
+<div class="toggle-content"> 
+<p>This is recommended for purchases with less experience to perform purchasing.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different steps in a shopping cart wizard?</label>
+<div class="toggle-content"> 
+<p>Key steps in Shopping cart &minus;</p>
+<ul class="list">
+<li>Selecting Goods/Services</li>
+<li>Shopping Cart </li>
+<li>Complete and Order</li>
+<li>Confirmation</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is Supplier Self Service process? What are the key advantages of using SUS?</label>
+<div class="toggle-content"> 
+<p>Supplier self-service is one of the component in SRM that shortens the procurement life cycle time and reduce the costing of procurement process. In SUS, suppliers are provided with access to purchaser’s procurement system and they are able to provide fast response.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Explain key business processes in SAP Supplier Relationship Management process?</label>
+<div class="toggle-content"> 
+<p>Following are the business process in SAP SRM &minus;</p>
+<ul class="list">
+<li><p>Procure to pay - we can integrate catalog based requisition and gain the benefits of e-procurement.</p></li>
+<li><p>Catalog management - manages catalog data as master data that is deeply integrated.</p></li>
+<li><p>Centralize sourcing - gain visibility into the demand for goods and services.</p></li>
+<li><p>Centralized contract management - consolidates contract information.</p></li>
+<li><p>Supplier collaboration - links supplier to our purchasing processes through the supplier portal</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of company code?</label>
+<div class="toggle-content"> 
+<p>By assigning a company code, you can keep financial and legal parameters and reports remain separate in the system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you perform supplier evaluation in SAP SRM module?</label>
+<div class="toggle-content"> 
+<p>Supplier evaluation is one of the key process in mainting and improving long term relationship with the suppliers.</p>
+<p>SAP supports two main methodologies for Supplier Evaluation &minus;</p>
+<p>Event-driven evaluation, triggered from confirmation, invoice, and advanced supplier list.</p>
+<p>Ad-hoc surveys using the Supplier Survey Cockpit</p>
+</div>
+</section>
+<section class="toggle">
+<label> Where do you define a supplier evaluation area in SAP system?</label>
+<div class="toggle-content"> 
+<p>To define Evaluation area, go to SRM Server &rarr; Supplier Evaluation &rarr; Evaluation Area</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of internal number ranges in for RFx and quotations in Bidding Engine?</label>
+<div class="toggle-content"> 
+<p>Using internal number ranges, bids does not have a link to any R/3 purchasing document, they are completely local to the ERP system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are different evaluation categories as part of supplier evaluation process?</label>
+<div class="toggle-content"> 
+<p>In supplier evaluation, you can divide each survey as per evaluation category. This refers to the questionnaire and the target group.</p>
+<p><b>Example</b> &minus; Delivery, Quality, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the key tasks that are performed using SAP SRM module?</label>
+<div class="toggle-content"> 
+<p>SAP SRM performs SUS, catalog management, Procurement, Supplier Evaluation, Central Contracts, shopping carts and Live Auction Cockpit.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of configuring number ranges in SAP SRM system?</label>
+<div class="toggle-content"> 
+<p>Number ranges is used to define for shopping carts and purchasing document for EBP, to generate unique number in R/3 backend system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different deployment options that you can use for Live Auction Cockpit?</label>
+<div class="toggle-content"> 
+<ul class="list"> 
+<li>Live Auction Cockpit on Java Web Server</p>
+<li>Live Auction Cockpit on ABAP Web Server</p>
+<li>Live Auction Cockpit on Java Web Server in supplier self-services</p>
+<li>Live Auction Cockpit on ABAP Web Server in supplier self-services</p>
+</ul>
+</div>
+</section>
+
+<h2>What is Next?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/sap_srm/sap_srm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_srm/sap_srm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">sap_srm_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_srm/sap_srm_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_srm/sap_srm_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_srm/sap_srm_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_srm/sap_srm_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_srm/sap_srm_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_srm/sap_srm_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

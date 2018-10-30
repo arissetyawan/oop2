@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>OBIEE Mock Test - TutorialsPoint</title>
+<meta name="description" content="OBIEE Mock Test - Learn OBIEE in simple and easy steps starting from basic to advanced concepts with examples including Data Warehouse, Dimensional Modeling, Schema, Basics, Components, Architecture, Repositories, Business Layer, Presentation Layer, Testing Repository, Multiple Logical Table Sources, Calculation Measures, Dimension Hierarchies, Level-Based Measures, Aggregates, Variables, Dashboards, Filters, Views, Prompts, Security, Administration." />
+<meta name="keywords" content="OBIEE, Tutorial, Data Warehouse, Dimensional Modeling, Schema, Basics, Components, Architecture, Repositories, Business Layer, Presentation Layer, Testing Repository, Multiple Logical Table Sources, Calculation Measures, Dimension Hierarchies, Level-Based Measures, Aggregates, Variables, Dashboards, Filters, Views, Prompts, Security, Administration." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #ea1b22 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #ea1b22 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #ea1b22 !important;}
+.submenu-item{ border-bottom: 2px solid #ea1b22 !important; border-top: 2px solid #ea1b22 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#ea1b22; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/obiee/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/obiee/images/obiee-mini-logo.jpg" alt="OBIEE Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">OBIEE Tutorial</li>
+<li><a href="/obiee/index.htm">OBIEE - Home</a></li>
+<li><a href="/obiee/obiee_data_warehouse.htm">OBIEE - Data Warehouse</a></li>
+<li><a href="/obiee/obiee_dimensional_modeling.htm">OBIEE - Dimensional Modeling</a></li>
+<li><a href="/obiee/obiee_schema.htm">OBIEE - Schema</a></li>
+<li><a href="/obiee/obiee_basics.htm">OBIEE - Basics</a></li>
+<li><a href="/obiee/obiee_components.htm">OBIEE - Components</a></li>
+<li><a href="/obiee/obiee_architecture.htm">OBIEE - Architecture</a></li>
+<li><a href="/obiee/obiee_repositories.htm">OBIEE - Repositories</a></li>
+<li><a href="/obiee/obiee_business_layer.htm">OBIEE - Business Layer</a></li>
+<li><a href="/obiee/obiee_presentation_layer.htm">OBIEE - Presentation Layer</a></li>
+<li><a href="/obiee/obiee_testing_repository.htm">OBIEE - Testing Repository</a></li>
+<li><a href="/obiee/obiee_multiple_logical_table_sources.htm">OBIEE - Multiple Logical Table</a></li>
+<li><a href="/obiee/obiee_calculation_measures.htm">OBIEE - Calculation Measures</a></li>
+<li><a href="/obiee/obiee_dimension_hierarchies.htm">OBIEE - Dimension Hierarchies</a></li>
+<li><a href="/obiee/obiee_level_based_measures.htm">OBIEE - Level-Based Measures</a></li>
+<li><a href="/obiee/obiee_aggregates.htm">OBIEE - Aggregates</a></li>
+<li><a href="/obiee/obiee_variables.htm">OBIEE - Variables</a></li>
+<li><a href="/obiee/obiee_dashboards.htm">OBIEE - Dashboards</a></li>
+<li><a href="/obiee/obiee_filters.htm">OBIEE - Filters</a></li>
+<li><a href="/obiee/obiee_views.htm">OBIEE - Views</a></li>
+<li><a href="/obiee/obiee_prompts.htm">OBIEE - Prompts</a></li>
+<li><a href="/obiee/obiee_security.htm">OBIEE - Security</a></li>
+<li><a href="/obiee/obiee_administration.htm">OBIEE - Administration</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">OBIEE Useful Resources</li>
+<li><a href="/obiee/obiee_questions_answers.htm">OBIEE - Questions Answers</a></li>
+<li><a href="/obiee/obiee_quick_guide.htm">OBIEE - Quick Guide</a></li>
+<li><a href="/obiee/obiee_useful_resources.htm">OBIEE - Useful Resources</a></li>
+<li><a href="/obiee/obiee_discussion.htm">OBIEE - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>OBIEE Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/obiee/obiee_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/obiee/obiee_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>OBIEE</b>.  You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/obiee/obiee_mock_test.htm?min=1&max=12"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/obiee/obiee_mock_test.htm?min=13&max=24"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/obiee/obiee_mock_test.htm?min=25&max=37"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/obiee/obiee_mock_test.htm?min=38&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>OBIEE Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - OBIEE stands for?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Oracle Business Intelligence Enterprise Edition</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Oracle Business Intelligence Express Edition</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Oracle Business Interactive Enterprise Edition</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Oracle Business Intelligence Enterprise Express</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Which of the following component types are responsible to run OBIEE system as compared to components used for creating interactive dashboards?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Client Components</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Server Components</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Business Layer components</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Server components are responsible to run OBIEE system and client components interact with user to create reports and dashboards.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - In OBIEE architecture, Scheduler is part of which of the following component?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Server Components</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Client Components</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Business Layer Components</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>OBIEE Server Components &minus;</p>
+<ul class="list">
+<li>Oracle BI (OBIEE) Server</li>
+<li>Oracle Presentation Server</li>
+<li>Application Server</li>
+<li>Scheduler</li>
+<li>Cluster Controller</li>
+</ul>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - Which of the following component takes the request from users via browser and pass all requests to OBIEE server?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - OBIEE Presentation Server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - OBIEE Application Server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - OBIEE Scheduler</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Oracle BI Server</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p><b>OBIEE Presentation Server</b></p>
+<p>It takes the request from users via browser and pass all requests to OBIEE server.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - OBIEE Application Server helps to work on client components and Oracle provides Oracle10g Application server with OBIEE suite?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p> 
+</div>
+<div class="A" id='A5'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - In OBIEE architecture, which of the following component is used to star and stop all components of BI system and is managed and controlled by Fusion Middleware Controller?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Web Logic Server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Node Manager</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Oracle Process Manager and Notification Server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of these</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p><b>Oracle Process Manager and Notification Server (OPMN)</b> &minus;</p>
+<p>OPMN is used to star and stop all components of BI system. It is managed and controlled by Fusion Middleware Controller.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - Which of the following contains all metadata of the BI Server and is managed through the administration tool?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> -Oracle BI Java Host</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - OBIEE Repositories</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - BI Presentation Server</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Oracle BI Server</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : B</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - Designing an OBIEE repository using administration tool is how many layer process?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 2</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - 3</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - 4</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 5</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>It is a three layer process- starting from Physical Layer (Schema Design), Business Model Layer, Presentation Layer.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - While creating a new repository, which of the following meta types you can import?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Foreign Keys</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - System tables</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Synonyms</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Alias</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - All of the above</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>Accept the meta types you want to import &rarr; You can select Tables, Keys, Foreign Keys, System tables, Synonyms, Alias, Views, etc.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - Which of the following components are not managed in OBIEE repository?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Jobs</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Catalog</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Variables</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Keys</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : B</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - Which of the following doesn’t represent a measure column in table?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Additive</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Semi-additive</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Count-additive</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - Non-additive</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : D</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - Physical join is recommended to be used in?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Physical Layer</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - BMM Layer</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Presentation Layer</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>E</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>A</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/obiee/obiee_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/obiee/pdf/obiee_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/obiee/obiee_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">obiee_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/obiee/obiee_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/obiee/obiee_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/obiee/obiee_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/obiee/obiee_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/obiee/obiee_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/obiee/obiee_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

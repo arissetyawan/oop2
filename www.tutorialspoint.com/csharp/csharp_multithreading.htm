@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>C# Multithreading</title>
+<meta name="description" content="C# Multithreading - Learn C# in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<meta name="keywords" content="C#, Tutorial, Overview, Environment setup, Program Structure, Basic Syntax, Data Types, Type Conversion, Variables, Constants, Operators, Decision Making, Loops, Methods, Nullables, Arrays, Strings, Struct, Enums, File I/O, Classes, Encapsulation, Interfaces, Inheritance, Namespaces, Polymophism, Operator Overloading, Encapsulation, Reflection, Attributes, Properties, Indexes, Delegates, Events, Collections, Generics, Anonymous Methods, Unsafe Codes, Preprocessor Directives, Multithreading, Regular Expression, and Exception Handling." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #FE9400 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #FE9400 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #FE9400 !important;}
+.submenu-item{ border-bottom: 2px solid #FE9400 !important; border-top: 2px solid #FE9400 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#FE9400; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/csharp/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   vertical-align:middle !important;
+   text-align:center !important;   
+}
+</style>
+<div class="mini-logo">
+<img src="/csharp/images/csharp-mini-logo.jpg" alt="Csharp Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/csharp_online_training/index.asp" target="_blank"><img src="/csharp/images/csharp-video-tutorials.jpg" alt="C# Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Basic Tutorial</li>
+<li><a href="/csharp/index.htm">C# - Home</a></li>
+<li><a href="/csharp/csharp_overview.htm">C# - Overview</a></li>
+<li><a href="/csharp/csharp_environment_setup.htm">C# - Environment</a></li>
+<li><a href="/csharp/csharp_program_structure.htm">C# - Program Structure</a></li>
+<li><a href="/csharp/csharp_basic_syntax.htm">C# - Basic Syntax</a></li>
+<li><a href="/csharp/csharp_data_types.htm">C# - Data Types</a></li>
+<li><a href="/csharp/csharp_type_conversion.htm">C# - Type Conversion</a></li>
+<li><a href="/csharp/csharp_variables.htm">C# - Variables</a></li>
+<li><a href="/csharp/csharp_constants.htm">C# - Constants</a></li>
+<li><a href="/csharp/csharp_operators.htm">C# - Operators</a></li>
+<li><a href="/csharp/csharp_decision_making.htm">C# - Decision Making</a></li>
+<li><a href="/csharp/csharp_loops.htm">C# - Loops</a></li>
+<li><a href="/csharp/csharp_encapsulation.htm">C# - Encapsulation</a></li>
+<li><a href="/csharp/csharp_methods.htm">C# -  Methods</a></li>
+<li><a href="/csharp/csharp_nullables.htm">C# -  Nullables</a></li>
+<li><a href="/csharp/csharp_arrays.htm">C# - Arrays</a></li>
+<li><a href="/csharp/csharp_strings.htm">C# - Strings</a></li>
+<li><a href="/csharp/csharp_struct.htm">C# - Structure</a></li>
+<li><a href="/csharp/csharp_enums.htm">C# - Enums</a></li>
+<li><a href="/csharp/csharp_classes.htm">C# - Classes</a></li>
+<li><a href="/csharp/csharp_inheritance.htm">C# - Inheritance</a></li>
+<li><a href="/csharp/csharp_polymorphism.htm">C# - Polymorphism</a></li>
+<li><a href="/csharp/csharp_operator_overloading.htm">C# - Operator Overloading</a></li>
+<li><a href="/csharp/csharp_interfaces.htm">C# - Interfaces</a></li>
+<li><a href="/csharp/csharp_namespaces.htm">C# - Namespaces</a></li>
+<li><a href="/csharp/csharp_preprocessor_directives.htm">C# - Preprocessor Directives</a></li>
+<li><a href="/csharp/csharp_regular_expressions.htm">C# - Regular Expressions</a></li>
+<li><a href="/csharp/csharp_exception_handling.htm">C# - Exception Handling</a></li>
+<li><a href="/csharp/csharp_file_io.htm">C# - File I/O</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Advanced Tutorial</li>
+<li><a href="/csharp/csharp_attributes.htm">C# - Attributes</a></li>
+<li><a href="/csharp/csharp_reflection.htm">C# - Reflection</a></li>
+<li><a href="/csharp/csharp_properties.htm">C# - Properties</a></li>
+<li><a href="/csharp/csharp_indexers.htm">C# - Indexers</a></li>
+<li><a href="/csharp/csharp_delegates.htm">C# - Delegates</a></li>
+<li><a href="/csharp/csharp_events.htm">C# - Events</a></li>
+<li><a href="/csharp/csharp_collections.htm">C# - Collections</a></li>
+<li><a href="/csharp/csharp_generics.htm">C# - Generics</a></li>
+<li><a href="/csharp/csharp_anonymous_methods.htm">C# - Anonymous Methods</a></li>
+<li><a href="/csharp/csharp_unsafe_codes.htm">C# - Unsafe Codes</a></li>
+<li><a href="/csharp/csharp_multithreading.htm">C# - Multithreading</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">C# Useful Resources</li>
+<li><a href="/csharp/csharp_questions_answers.htm">C# - Questions and Answers</a></li>
+<li><a href="/csharp/csharp_quick_guide.htm">C# - Quick Guide</a></li>
+<li><a href="/csharp/csharp_useful_resources.htm">C# - Useful Resources</a></li>
+<li><a href="/csharp/csharp_discussion.htm">C# - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>C# - Multithreading</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_unsafe_codes.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>A <b>thread</b> is defined as the execution path of a program. Each thread defines a unique flow of control. If your application involves complicated and time consuming operations, then it is often helpful to set different execution paths or threads, with each thread performing a particular job.</p>
+<p>Threads are <b>lightweight processes</b>. One common example of use of thread is implementation of concurrent programming by modern operating systems. Use of threads saves wastage of CPU cycle and increase efficiency of an application.</p>
+<p>So far we wrote the programs where a single thread runs as a single process which is the running instance of the application. However, this way the application can perform one job at a time. To make it execute more than one task at a time, it could be divided into smaller threads.</p>
+<h2>Thread Life Cycle</h2>
+<p>The life cycle of a thread starts when an object of the System.Threading.Thread class is created and ends when the thread is terminated or completes execution.</p>
+<p>Following are the various states in the life cycle of a thread &minus;</p>
+<ul class="list">
+<li><p><b>The Unstarted State</b> &minus; It is the situation when the instance of the thread is created but the Start method is not called.</p></li>
+<li><p><b>The Ready State</b> &minus; It is the situation when the thread is ready to run and waiting CPU cycle.</p></li>
+<li><p><b>The Not Runnable State</b> &minus; A thread is not executable, when</p>
+<ul class="list">
+<li>Sleep method has been called</li>
+<li>Wait method has been called</li>
+<li>Blocked by I/O operations</li>
+</ul>
+</li>
+<li><p><b>The Dead State</b> &minus; It is the situation when the thread completes execution or is aborted.</p></li>
+</ul>
+<h2>The Main Thread</h2>
+<p>In C#, the <b>System.Threading.Thread</b> class is used for working with threads. It allows creating and accessing individual threads in a multithreaded application. The first thread to be executed in a process is called the <b>main</b> thread.</p>
+<p>When a C# program starts execution, the main thread is automatically created. The threads created using the <b>Thread</b> class are called the child threads of the main thread. You can access a thread using the <b>CurrentThread</b> property of the Thread class.</p>
+<p>The following program demonstrates main thread execution &minus;</p>
+<a href="http://tpcg.io/RG4pez" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication {
+   class MainThreadProgram {
+      static void Main(string[] args) {
+         Thread th = Thread.CurrentThread;
+         th.Name = "MainThread";
+         
+         Console.WriteLine("This is {0}", th.Name);
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+This is MainThread
+</pre>
+<h2>Properties and Methods of the Thread Class</h2>
+<p>The following table shows some most commonly used <b>properties</b> of the <b>Thread</b> class &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Property &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>CurrentContext</b></p>
+<p>Gets the current context in which the thread is executing.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>CurrentCulture</b></p>
+<p>Gets or sets the culture for the current thread.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>CurrentPrinciple</b></p>
+<p>Gets or sets the thread's current principal (for role-based security).</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>CurrentThread</b></p>
+<p>Gets the currently running thread.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>CurrentUICulture</b></p>
+<p>Gets or sets the current culture used by the Resource Manager to look up culture-specific resources at run-time.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>ExecutionContext</b></p>
+<p>Gets an ExecutionContext object that contains information about the various contexts of the current thread.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>IsAlive</b></p>
+<p>Gets a value indicating the execution status of the current thread.</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>IsBackground</b></p>
+<p>Gets or sets a value indicating whether or not a thread is a background thread.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>IsThreadPoolThread</b></p>
+<p>Gets a value indicating whether or not a thread belongs to the managed thread pool.</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>ManagedThreadId</b></p>
+<p>Gets a unique identifier for the current managed thread.</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>Name</b></p>
+<p>Gets or sets the name of the thread.</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><p><b>Priority</b></p>
+<p>Gets or sets a value indicating the scheduling priority of a thread.</p></td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><p><b>ThreadState</b></p>
+<p>Gets a value containing the states of the current thread.</p></td>
+</tr>
+</table>
+<p>The following table shows some of the most commonly used <b>methods</b> of the <b>Thread</b> class &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>public void Abort()</b></p>
+<p>Raises a ThreadAbortException in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>public static LocalDataStoreSlot AllocateDataSlot()</b></p>
+<p>Allocates an unnamed data slot on all the threads. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>public static LocalDataStoreSlot AllocateNamedDataSlot(string name)</b></p>
+<p>Allocates a named data slot on all threads. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>public static void BeginCriticalRegion()</b></p>
+<p>Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception might jeopardize other tasks in the application domain.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>public static void BeginThreadAffinity()</b></p>
+<p>Notifies a host that managed code is about to execute instructions that depend on the identity of the current physical operating system thread.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>public static void EndCriticalRegion()</b></p>
+<p>Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception are limited to the current task.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>public static void EndThreadAffinity()</b></p>
+<p>Notifies a host that managed code has finished executing instructions that depend on the identity of the current physical operating system thread.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p><b>public static void FreeNamedDataSlot(string name)</b></p>
+<p>Eliminates the association between a name and a slot, for all threads in the process. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p><b>public static Object GetData(LocalDataStoreSlot slot)</b></p>
+<p>Retrieves the value from the specified slot on the current thread, within the current thread's current domain. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><p><b>public static AppDomain GetDomain()</b></p>
+<p>Returns the current domain in which the current thread is running.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><p><b>public static AppDomain GetDomainID()</b></p>
+<p>Returns a unique application domain identifier</p>
+</td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><p><b>public static LocalDataStoreSlot GetNamedDataSlot(string name)</b></p>
+<p>Looks up a named data slot. For better performance, use fields that are marked with the ThreadStaticAttribute attribute instead.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><p><b>public void Interrupt()</b></p>
+<p>Interrupts a thread that is in the WaitSleepJoin thread state.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td><p><b>public void Join()</b></p>
+<p>Blocks the calling thread until a thread terminates, while continuing to perform standard COM and SendMessage pumping. This method has different overloaded forms.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><p><b>public static void MemoryBarrier()</b></p>
+<p>Synchronizes memory access as follows: The processor executing the current thread cannot reorder instructions in such a way that memory accesses prior to the call to MemoryBarrier execute after memory accesses that follow the call to MemoryBarrier.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td><p><b>public static void ResetAbort()</b></p>
+<p>Cancels an Abort requested for the current thread.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">17</td>
+<td><p><b>public static void SetData(LocalDataStoreSlot slot, Object data)</b></p>
+<p>Sets the data in the specified slot on the currently running thread, for that thread's current domain. For better performance, use fields marked with the ThreadStaticAttribute attribute instead.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">18</td>
+<td><p><b>public void Start()</b></p>
+<p>Starts a thread.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">19</td>
+<td><p><b>public static void Sleep(int millisecondsTimeout)</b></p>
+<p>Makes the thread pause for a period of time.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">20</td>
+<td><p><b>public static void SpinWait(int iterations)</b></p>
+<p>Causes a thread to wait the number of times defined by the iterations parameter</p>
+</td>
+</tr>
+<tr>
+<td class="ts">21</td>
+<td><p><b>public static byte VolatileRead(ref byte address)</b></p>
+<p><b>public static double VolatileRead(ref double address)</b></p>
+<p><b>public static int VolatileRead(ref int address)</b></p>
+<p><b>public static Object VolatileRead(ref Object address)</b></p>
+<p>Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache. This method has different overloaded forms. Only some are given above.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">22</td>
+<td><p><b>public static void VolatileWrite(ref byte address,byte value)</b></p>
+<p><b>public static void VolatileWrite(ref double address, double value)</b></p>
+<p><b>public static void VolatileWrite(ref int address, int value)</b></p>
+<p><b>public static void VolatileWrite(ref Object address, Object value)</b></p>
+<p>Writes a value to a field immediately, so that the value is visible to all processors in the computer. This method has different overloaded forms. Only some are given above.</p></td>
+</tr>
+<tr>
+<td class="ts">23</td>
+<td><p><b>public static bool Yield()</b></p>
+<p>Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.</p>
+</td>
+</tr>
+</table>
+<h2>Creating Threads</h2>
+<p>Threads are created by extending the Thread class. The extended Thread class then calls the <b>Start()</b> method to begin the child thread execution.</p>
+<p>The following program demonstrates the concept &minus;</p>
+<a href="http://tpcg.io/JZqjry" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication {
+   class ThreadCreationProgram {
+      public static void CallToChildThread() {
+         Console.WriteLine("Child thread starts");
+      }
+      static void Main(string[] args) {
+         ThreadStart childref = new ThreadStart(CallToChildThread);
+         Console.WriteLine("In Main: Creating the Child thread");
+         Thread childThread = new Thread(childref);
+         childThread.Start();
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+In Main: Creating the Child thread
+Child thread starts
+</pre>
+<h2>Managing Threads</h2>
+<p>The Thread class provides various methods for managing threads.</p>
+<p>The following example demonstrates the use of the <b>sleep()</b> method for making a thread pause for a specific period of time.</p>
+<a href="http://tpcg.io/abFQ14" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication {
+   class ThreadCreationProgram {
+      public static void CallToChildThread() {
+         Console.WriteLine("Child thread starts");
+         
+         // the thread is paused for 5000 milliseconds
+         int sleepfor = 5000; 
+         
+         Console.WriteLine("Child Thread Paused for {0} seconds", sleepfor / 1000);
+         Thread.Sleep(sleepfor);
+         Console.WriteLine("Child thread resumes");
+      }
+      
+      static void Main(string[] args) {
+         ThreadStart childref = new ThreadStart(CallToChildThread);
+         Console.WriteLine("In Main: Creating the Child thread");
+         
+         Thread childThread = new Thread(childref);
+         childThread.Start();
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+In Main: Creating the Child thread
+Child thread starts
+Child Thread Paused for 5 seconds
+Child thread resumes
+</pre>
+<h2>Destroying Threads</h2>
+<p>The <b>Abort()</b> method is used for destroying threads.</p>
+<p>The runtime aborts the thread by throwing a <b>ThreadAbortException</b>. This exception cannot be caught, the control is sent to the <i>finally</i> block, if any.</p>
+<p>The following program illustrates this &minus;</p>
+<a href="http://tpcg.io/kwJreN" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+<pre class="prettyprint notranslate">
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication {
+   class ThreadCreationProgram {
+      public static void CallToChildThread() {
+         try {
+            Console.WriteLine("Child thread starts");
+            
+            // do some work, like counting to 10
+            for (int counter = 0; counter &lt;= 10; counter++) {
+               Thread.Sleep(500);
+               Console.WriteLine(counter);
+            }
+            
+            Console.WriteLine("Child Thread Completed");
+         } catch (ThreadAbortException e) {
+            Console.WriteLine("Thread Abort Exception");
+         } finally {
+            Console.WriteLine("Couldn't catch the Thread Exception");
+         }
+      }
+      static void Main(string[] args) {
+         ThreadStart childref = new ThreadStart(CallToChildThread);
+         Console.WriteLine("In Main: Creating the Child thread");
+         
+         Thread childThread = new Thread(childref);
+         childThread.Start();
+         
+         //stop the main thread for some time
+         Thread.Sleep(2000);
+         
+         //now abort the child
+         Console.WriteLine("In Main: Aborting the Child thread");
+         
+         childThread.Abort();
+         Console.ReadKey();
+      }
+   }
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+In Main: Creating the Child thread
+Child thread starts
+0
+1
+2
+In Main: Aborting the Child thread
+Thread Abort Exception
+Couldn't catch the Thread Exception 
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/csharp/csharp_unsafe_codes.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/csharp/csharp_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/csharp/csharp_multithreading.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_multithreading.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/csharp/csharp_multithreading.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/csharp/csharp_multithreading.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_multithreading.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/csharp/csharp_multithreading.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

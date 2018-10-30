@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Python Environment Setup</title>
+<meta name="description" content="Python Environment Setup - Learn Python in simple and easy steps starting from basic to advanced concepts with examples including Python 3 Syntax Object Oriented Language, Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML Programming." />
+<meta name="Keywords" content="Python, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Networking, Multithreading,Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML, Programming." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(/python/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #fdbf00 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fdbf00 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fdbf00 !important;}
+.submenu-item{ border-bottom: 2px solid #fdbf00 !important; border-top: 2px solid #fdbf00 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#fdbf00; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/python/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/python/images/python-mini.jpg" alt="Python Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Basic Tutorial</li>
+<li><a target="_top" href="/python/index.htm">Python - Home</a></li>
+<li><a target="_top" href="/python/python_overview.htm">Python - Overview</a></li>
+<li><a target="_top" href="/python/python_environment.htm">Python - Environment Setup</a></li>
+<li><a target="_top" href="/python/python_basic_syntax.htm">Python - Basic Syntax</a></li>
+<li><a target="_top" href="/python/python_variable_types.htm">Python - Variable Types</a></li>
+<li><a target="_top" href="/python/python_basic_operators.htm">Python - Basic Operators</a></li>
+<li><a target="_top" href="/python/python_decision_making.htm">Python - Decision Making</a></li>
+<li><a target="_top" href="/python/python_loops.htm">Python - Loops</a></li>
+<li><a target="_top" href="/python/python_numbers.htm">Python - Numbers</a></li>
+<li><a target="_top" href="/python/python_strings.htm">Python - Strings</a></li>
+<li><a target="_top" href="/python/python_lists.htm">Python - Lists</a></li>
+<li><a target="_top" href="/python/python_tuples.htm">Python - Tuples</a></li>
+<li><a target="_top" href="/python/python_dictionary.htm">Python - Dictionary</a></li>
+<li><a target="_top" href="/python/python_date_time.htm">Python - Date &amp; Time</a></li>
+<li><a target="_top" href="/python/python_functions.htm">Python - Functions</a></li>
+<li><a target="_top" href="/python/python_modules.htm">Python - Modules</a></li>
+<li><a target="_top" href="/python/python_files_io.htm">Python - Files I/O</a></li>
+<li><a target="_top" href="/python/python_exceptions.htm">Python - Exceptions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Advanced Tutorial</li>
+<li><a target="_top" href="/python/python_classes_objects.htm">Python - Classes/Objects</a></li>
+<li><a target="_top" href="/python/python_reg_expressions.htm">Python - Reg Expressions</a></li>
+<li><a target="_top" href="/python/python_cgi_programming.htm">Python - CGI Programming</a></li>
+<li><a target="_top" href="/python/python_database_access.htm">Python - Database Access</a></li>
+<li><a target="_top" href="/python/python_networking.htm">Python - Networking</a></li>
+<li><a target="_top" href="/python/python_sending_email.htm">Python - Sending Email</a></li>
+<li><a target="_top" href="/python/python_multithreading.htm">Python - Multithreading</a></li>
+<li><a target="_top" href="/python/python_xml_processing.htm">Python - XML Processing</a></li>
+<li><a target="_top" href="/python/python_gui_programming.htm">Python - GUI Programming</a></li>
+<li><a target="_top" href="/python/python_further_extensions.htm">Python - Further Extensions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python  Useful Resources</li>
+<li><a target="_top" href="/python/python_questions_answers.htm">Python - Questions and Answers</a></li>
+<li><a target="_top" href="/python/python_quick_guide.htm">Python - Quick Guide</a></li>
+<li><a target="_top" href="/python/python_tools_utilities.htm">Python - Tools/Utilities</a></li>
+<li><a target="_top" href="/python/python_useful_resources.htm">Python - Useful Resources</a></li>
+<li><a target="_top" href="/python/python_discussion.htm">Python - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Python - Environment Setup</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/python/python_overview.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/python/python_basic_syntax.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Python is available on a wide variety of platforms including Linux and Mac OS X. Let's understand how to set up our Python environment.</p>
+<h2>Local Environment Setup</h2>
+<p>Open a terminal window and type "python" to find out if it is already installed and which version is installed.</p>
+<ul class="list">
+<li>Unix (Solaris, Linux, FreeBSD, AIX, HP/UX, SunOS, IRIX, etc.)</li>
+<li>Win 9x/NT/2000</li>
+<li>Macintosh (Intel, PPC, 68K)</li>
+<li>OS/2</li>
+<li>DOS (multiple versions)</li>
+<li>PalmOS</li>
+<li>Nokia mobile phones</li>
+<li>Windows CE</li>
+<li>Acorn/RISC OS</li>
+<li>BeOS</li>
+<li>Amiga</li>
+<li>VMS/OpenVMS</li>
+<li>QNX</li>
+<li>VxWorks</li>
+<li>Psion</li>
+<li>Python has also been ported to the Java and .NET virtual machines</li>
+</ul>
+<h2>Getting Python</h2>
+<p>The most up-to-date and current source code, binaries, documentation, news, etc., is available on the official website of Python <a href="https://www.python.org/" target="_blank" rel="nofollow">https://www.python.org/</a></p>
+<p>You can download Python documentation from <a href="https://www.python.org/doc/" target="_blank" rel="nofollow">https://www.python.org/doc/</a>. The documentation is available in HTML, PDF, and PostScript formats.</p>
+<h2>Installing Python</h2>
+<p>Python distribution is available for a wide variety of platforms. You need to download only the binary code applicable for your platform and install Python.</p>
+<p>If the binary code for your platform is not available, you need a C compiler to compile the source code manually. Compiling the source code offers more flexibility in terms of choice of features that you require in your installation.</p>
+<p>Here is a quick overview of installing Python on various platforms &minus;</p>
+<h3>Unix and Linux Installation</h3>
+<p>Here are the simple steps to install Python on Unix/Linux machine.</p>
+<ul class="list">
+<li><p>Open a Web browser and go to <a href="https://www.python.org/downloads/" target="_blank" rel="nofollow">https://www.python.org/downloads/</a>.</p></li>
+<li><p>Follow the link to download zipped source code available for Unix/Linux.</p></li>
+<li><p>Download and extract files.</p></li>
+<li><p>Editing the <i>Modules/Setup</i> file if you want to customize some options.</p></li>
+<li><p>run ./configure script</p></li>
+<li><p>make</p></li>
+<li><p>make install</p></li>
+</ul>
+<p>This installs Python at standard location <i>/usr/local/bin</i> and its libraries at <i>/usr/local/lib/pythonXX</i> where XX is the version of Python.</p>
+<h3>Windows Installation</h3>
+<p>Here are the steps to install Python on Windows machine.</p>
+<ul class="list">
+<li><p>Open a Web browser and go to <a href="https://www.python.org/downloads/" target="_blank" rel="nofollow">https://www.python.org/downloads/</a>.</p></li>
+<li><p>Follow the link for the Windows installer <i>python-XYZ.msi</i> file where XYZ is the version you need to install.</p></li>
+<li><p>To use this installer <i>python-XYZ.msi</i>, the Windows system must support Microsoft Installer 2.0. Save the installer file to your local machine and then run it to find out if your machine supports MSI.</p></li>
+<li><p>Run the downloaded file. This brings up the Python install wizard, which is really easy to use. Just accept the default settings, wait until the install is finished, and you are done.</p></li>
+</ul>
+<h3>Macintosh Installation</h3>
+<p>Recent Macs come with Python installed, but it may be several years out of date. See <a href="https://www.python.org/download/mac/" target="_blank" rel="nofollow">http://www.python.org/download/mac/</a> for instructions on getting the current version along with extra tools to support development on the Mac. For older Mac OS's before Mac OS X 10.3 (released in 2003), MacPython is available.</p>
+<p>Jack Jansen maintains it and you can have full access to the entire documentation at his website &minus; <a href="http://www.cwi.nl/~jack/macpython.html" target="_blank" rel="nofollow">http://www.cwi.nl/~jack/macpython.html</a>. You can find complete installation details for Mac OS installation.</p>
+<h2>Setting up PATH</h2>
+<p>Programs and other executable files can be in many directories, so operating systems provide a search path that lists the directories that the OS searches for executables.</p>
+<p>The path is stored in an environment variable, which is a named string maintained by the operating system. This variable contains information available to the command shell and other programs.</p>
+<p>The <b>path</b> variable is named as PATH in Unix or Path in Windows (Unix is case sensitive; Windows is not).</p>
+<p>In Mac OS, the installer handles the path details. To invoke the Python interpreter from any particular directory, you must add the Python directory to your path.</p>
+<h2>Setting path at Unix/Linux</h2>
+<p>To add the Python directory to the path for a particular session in Unix &minus;</p>
+<ul class="list">
+<li><p><b>In the csh shell</b> &minus; type setenv PATH "$PATH:/usr/local/bin/python" and press Enter.</p></li>
+<li><p><b>In the bash shell (Linux)</b> &minus; type export ATH="$PATH:/usr/local/bin/python" and press Enter.</p></li>
+<li><p><b>In the sh or ksh shell</b> &minus; type PATH="$PATH:/usr/local/bin/python" and press Enter.</p></li>
+<li><p><b>Note</b> &minus; /usr/local/bin/python is the path of the Python directory</p></li>
+</ul>
+<h2>Setting path at Windows</h2>
+<p>To add the Python directory to the path for a particular session in Windows &minus;</p>
+<p><b>At the command prompt</b> &minus; type path %path%;C:\Python and press Enter.</p>
+<p><b>Note</b> &minus;  C:\Python is the path of the Python directory</p>
+<h2>Python Environment Variables</h2>
+<p>Here are important environment variables, which can be recognized by Python &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Variable &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>PYTHONPATH</b></p>
+<p>It has a role similar to PATH. This variable tells the Python interpreter where to locate the module files imported into a program. It should include the Python source library directory and the directories containing Python source code. PYTHONPATH is sometimes preset by the Python installer.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>PYTHONSTARTUP</b></p>
+<p>It contains the path of an initialization file containing Python source code. It is executed every time you start the interpreter. It is named as .pythonrc.py in Unix and it
+contains commands that load utilities or modify PYTHONPATH.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>PYTHONCASEOK</b></p>
+<p>It is used in Windows to instruct Python to find the first case-insensitive match in an import statement. Set this variable to any value to activate it.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>PYTHONHOME</b></p>
+<p>It is an alternative module search path. It is usually embedded in the PYTHONSTARTUP or PYTHONPATH directories to make switching module libraries easy.</p></td>
+</tr>
+</table>
+<h2>Running Python</h2>
+<p>There are three different ways to start Python &minus;</p>
+<h3>Interactive Interpreter</h3>
+<p>You can start Python from Unix, DOS, or any other system that provides you a command-line interpreter or shell window.</p>
+<p>Enter <b>python</b> the command line.</p>
+<p>Start coding right away in the interactive interpreter.</p>
+<pre class="result notranslate">
+$python # Unix/Linux
+or
+python% # Unix/Linux
+or
+C:&gt; python # Windows/DOS
+</pre>
+<p>Here is the list of all the available command line options &minus;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Option &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>-d</b></p>
+<p>It provides debug output.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>-O</b></p>
+<p>It generates optimized bytecode (resulting in .pyo files).</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>-S</b></p>
+<p>Do not run import site to look for Python paths on startup.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>-v</b></p>
+<p>verbose output (detailed trace on import statements).</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>-X</b></p>
+<p>disable class-based built-in exceptions (just use strings); obsolete starting with version 1.6.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>-c cmd</b></p>
+<p>run Python script sent in as cmd string</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>file</b></p>
+<p>run Python script from given file</p></td>
+</tr>
+</tbody>
+</table>
+<h3>Script from the Command-line</h3>
+<p>A Python script can be executed at command line by invoking the interpreter on your application, as in the following &minus;</p>
+<pre class="result notranslate">
+$python script.py # Unix/Linux
+
+or
+
+python% script.py # Unix/Linux
+
+or 
+
+C: &gt;python script.py # Windows/DOS
+</pre>
+<p><b>Note</b> &minus; Be sure the file permission mode allows execution.</p>
+<h3>Integrated Development Environment</h3>
+<p>You can run Python from a Graphical User Interface (GUI) environment as well, if you have a GUI application on your system that supports Python.</p>
+<ul class="list">
+<li><p><b>Unix</b> &minus; IDLE is the very first Unix IDE for Python.</p></li>
+<li><p><b>Windows</b> &minus; PythonWin is the first Windows interface for Python and is an IDE with a GUI.</p></li>
+<li><p><b>Macintosh</b> &minus; The Macintosh version of Python  along with the IDLE IDE is available from the main website, downloadable as either MacBinary or BinHex'd files.</p></li>
+</ul>
+<p>If you are not able to set up the environment properly, then you can take help from your system admin. Make sure the Python environment is properly set up and working perfectly fine.</p>
+<p><b>Note</b> &minus; All the examples given in subsequent chapters are executed with Python 2.4.3 version available on CentOS flavor of Linux.</p>
+<p>We already have set up Python Programming environment online, so that you can execute all the available examples online at the same time when you are learning theory. Feel free to modify any example and execute it online.</p>
+<hr />
+<div class="pre-btn">
+<a href="/python/python_overview.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/python/python_basic_syntax.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/python/python_environment.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/python/python_environment.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/python/python_environment.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/python/python_environment.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/python/python_environment.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/python/python_environment.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script src="/theme/js/jquery.colorbox-min.js"></script>
+<script>
+   var tryit = new $.TryIt('/python/try_python.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

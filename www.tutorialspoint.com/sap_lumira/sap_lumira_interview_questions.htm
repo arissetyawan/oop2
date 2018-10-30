@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP Lumira Interview Questions - TutorialsPoint</title>
+<meta name="description" content="SAP Lumira Interview Questions - Learn SAP Lumira starting from Overview, Data Sources, Data Acquisition, Editing Acquired Data, Viewing Connections, Working with Excel Files, Working with CSV Files, Connecting SAP HANA Views, Download from SAP HANA, Universe as a Data Source, Using Query with SQL, Working Modes, Prepare Phase, Visualize Phase, Compose Phase, Share Phase, New Document, Creating Charts, Chart Types, Conditional Formatting, Preparing Data in Prepare Tab, Editing Data, Formatting Numbers and Dates, Enriching Data, Working with Datasets, Visualizing Data, Legend Colors, Creating Stories, Slideshows, Customizing Stories, Sharing Charts, Stories and Datasets, Publishing Datasets." />
+<meta name="keywords" content="SAP Lumira, Tutorial, Overview, Data Sources, Data Acquisition, Editing Acquired Data, Viewing Connections, Working with Excel Files, Working with CSV Files, Connecting SAP HANA Views, Download from SAP HANA, Universe as a Data Source, Using Query with SQL, Working Modes, Prepare Phase, Visualize Phase, Compose Phase, Share Phase, New Document, Creating Charts, Chart Types, Conditional Formatting, Preparing Data in Prepare Tab, Editing Data, Formatting Numbers and Dates, Enriching Data, Working with Datasets, Visualizing Data, Legend Colors, Creating Stories, Slideshows, Customizing Stories, Sharing Charts, Stories and Datasets, Publishing Datasets." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #263d83 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #263d83 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #263d83 !important;}
+.submenu-item{ border-bottom: 2px solid #263d83 !important; border-top: 2px solid #263d83 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#263d83; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_lumira/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_lumira/images/sap-lumira-mini-logo.jpg" alt="SAP Lumira Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/sap_lumira_online_training/index.asp" target="_blank"><img src="/sap_lumira/images/sap_lumira_video_tutorials.jpg" alt="SAP Lumira Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Lumira Tutorial</li>
+<li><a href="/sap_lumira/index.htm">SAP Lumira - Home</a></li>
+<li><a href="/sap_lumira/sap_lumira_overview.htm">SAP Lumira - Overview</a></li>
+<li><a href="/sap_lumira/sap_lumira_data_sources.htm">SAP Lumira - Data Sources</a></li>
+<li><a href="/sap_lumira/sap_lumira_data_acquisition.htm">SAP Lumira - Data Acquisition</a></li>
+<li><a href="/sap_lumira/sap_lumira_editing_acquired_data.htm">SAP Lumira - Editing Acquired Data</a></li>
+<li><a href="/sap_lumira/sap_lumira_viewing_connections.htm">SAP Lumira - Viewing Connections</a></li>
+<li><a href="/sap_lumira/sap_lumira_working_with_excel_files.htm">SAP Lumira - Working with Excel Files</a></li>
+<li><a href="/sap_lumira/sap_lumira_working_csv_files.htm">SAP Lumira - Working with CSV Files</a></li>
+<li><a href="/sap_lumira/sap_lumira_connecting_hana_views.htm">SAP Lumira - Connecting HANA Views</a></li>
+<li><a href="/sap_lumira/sap_lumira_download_hana.htm">SAP Lumira - Download from HANA</a></li>
+<li><a href="/sap_lumira/sap_lumira_universe_data_source.htm">SAP Lumira - Universe as a Data Src</a></li>
+<li><a href="/sap_lumira/sap_lumira_using_query_sql.htm">SAP Lumira - Using Query with SQL</a></li>
+<li><a href="/sap_lumira/sap_lumira_working_modes.htm">SAP Lumira - Working Modes</a></li>
+<li><a href="/sap_lumira/sap_lumira_prepare_phase.htm">SAP Lumira - Prepare Phase</a></li>
+<li><a href="/sap_lumira/sap_lumira_visualize_phase.htm">SAP Lumira - Visualize Phase</a></li>
+<li><a href="/sap_lumira/sap_lumira_compose_phase.htm">SAP Lumira - Compose Phase</a></li>
+<li><a href="/sap_lumira/sap_lumira_share_phase.htm">SAP Lumira - Share Phase</a></li>
+<li><a href="/sap_lumira/sap_lumira_new_document.htm">SAP Lumira - New Document</a></li>
+<li><a href="/sap_lumira/sap_lumira_creating_charts.htm">SAP Lumira - Creating Charts</a></li>
+<li><a href="/sap_lumira/sap_lumira_chart_types.htm">SAP Lumira - Chart Types</a></li>
+<li><a href="/sap_lumira/sap_lumira_conditional_formatting.htm">SAP Lumira - Conditional Formatting</a></li>
+<li><a href="/sap_lumira/sap_lumira_preparing_data_in_tab.htm">SAP Lumira - Preparing Data in Tab</a></li>
+<li><a href="/sap_lumira/sap_lumira_editing_data.htm">SAP Lumira - Editing Data</a></li>
+<li><a href="/sap_lumira/sap_lumira_formatting_numbers_dates.htm">SAP Lumira - Numbers &amp; Dates</a></li>
+<li><a href="/sap_lumira/sap_lumira_enriching_data.htm">SAP Lumira - Enriching Data</a></li>
+<li><a href="/sap_lumira/sap_lumira_working_with_datasets.htm">SAP Lumira - Working with Datasets</a></li>
+<li><a href="/sap_lumira/sap_lumira_visualizing_data.htm">SAP Lumira - Visualizing Data</a></li>
+<li><a href="/sap_lumira/sap_lumira_legend_colors.htm">SAP Lumira - Legend Colors</a></li>
+<li><a href="/sap_lumira/sap_lumira_creating_stories.htm">SAP Lumira - Creating Stories</a></li>
+<li><a href="/sap_lumira/sap_lumira_slideshows.htm">SAP Lumira - Slideshows</a></li>
+<li><a href="/sap_lumira/sap_lumira_customizing_stories.htm">SAP Lumira - Customizing Stories</a></li>
+<li><a href="/sap_lumira/sap_lumira_charts_stories_datasets.htm">Lumira - Charts, Stories &amp; Datasets</a></li>
+<li><a href="/sap_lumira/sap_lumira_publishing_datasets.htm">SAP Lumira - Publishing Datasets</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP Lumira Useful Resources</li>
+<li><a href="/sap_lumira/sap_lumira_questions_answers.htm">SAP Lumira - Questions Answers</a></li>
+<li><a href="/sap_lumira/sap_lumira_quick_guide.htm">SAP Lumira - Quick Guide</a></li>
+<li><a href="/sap_lumira/sap_lumira_useful_resources.htm">SAP Lumira - Useful Resources</a></li>
+<li><a href="/sap_lumira/sap_lumira_discussion.htm">SAP Lumira - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP Lumira Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/sap_lumira/sap_lumira_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_lumira/sap_lumira_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>SAP Lumira Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>SAP Lumira</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer:</p>
+<section class="toggle">
+<label> Why do we use SAP Lumira as BI tool?</label>
+<div class="toggle-content"> 
+<p>It allows you to predict future outcomes and forecast as per changing market situations.</p>
+<p>You can create data visualizations and stories from multiple data sources.</p>
+<p>It helps you to adapt data to organizational needs to create stories with visualizations.</p>
+<p>You can share the visualizations on different platforms like SAP HANA, BO Explorer, Business Objects BI Platform, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Why do we use custom calculations in data set?</label>
+<div class="toggle-content"> 
+<p>You can create custom calculations in Lumira data Visualization which are not available in data set or at database level.</p>
+<p><b>Example</b></p>
+<p>You have a “Salary” column in the data set, you can add a new calculated column with name “Bonus” and can apply a calculation on Salary to get the value of this column.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of different tabs in Lumira?</label>
+<div class="toggle-content"> 
+<p><b>Prepare</b></p>
+<p>This is used to import data set in SAP Lumira.  Data cleansing is done and converted into the appropriate measures or attributes for the reports.</p>
+<p>You can add new custom calculations here.</p>
+<p><b>Visualize</b></p>
+<p>This tab is used to add graphs and charts on the data that has been imported and organized in Prepare tab. You can add different attributes and measures to Label axis.</p>
+<p><b>Compose</b></p>
+<p>This is used to create stories and presentation, including background colors, titles, pictures, and text.</p>
+<p><b>Share</b></p>
+<p>This tab is used to publish your visualizations to different platforms or with different set of users in BI Repository.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you connect SAP Lumira to HANA Modeling views?</label>
+<div class="toggle-content"> 
+<p>You can connect to SAP HANA Modeling views in SAP Lumira. You have 2 options &minus;</p>
+<ul class="list">
+<li>Connect to SAP HANA</li>
+<li>Download from SAP HANA</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between two options to connection to HANA Modeling views?</label>
+<div class="toggle-content"> 
+<p>By selecting option - “connect to SAP HANA”. This will allow you to access data in read mode and you can visualize data in charts.</p>
+<p>Download from SAP HANA</p>
+<p>This options allows you to copy the data locally and you can edit and manipulate the data to visualize in the charts.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can we add hidden columns from an excel spreadsheets to Lumira dataset?</label>
+<div class="toggle-content"> 
+<p>Yes, on Advance option to select custom range. You can also include hidden rows and columns.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When you acquire a data set, it comes under which of the tab to perform data cleansing and editing?</label>
+<div class="toggle-content"> 
+<p><b>Prepare</b></p>
+<p>This is used to import data set in SAP Lumira.  Data cleansing is done and converted into the appropriate measures or attributes for the reports.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How can you acquire data from an InfoProvider in Lumira dataset?</label>
+<div class="toggle-content"> 
+<p>Add new dataset &rarr; connect to SAP Business Warehouse</p>
+</div>
+</section>
+<section class="toggle">
+<label> When you use query with SQL option to acquire data set, you can see few of the connections in red and green. What is the meaning?</label>
+<div class="toggle-content"> 
+<p>To use SQL query to create dataset, go to file &rarr; New</p>
+<p>Click on Query with SQL option to download a dataset and click on Next. JDBC drivers has to be installed for database middleware for using SQL query. The access driver is .jar files you can download from vendor site and copy to driver folder in application path.</p>
+<p>Select SQL query, all queries in green presents drivers are installed properly for middleware. Select database middleware for target database and click on Next.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different connection parameters that can be configured while using Query with SQL as data source?</label>
+<div class="toggle-content"> 
+<p>Connection Pool Mode: To keep connection active</p>
+<p>Pool timeout: Time duration to keep connection active in minutes.</p>
+<p>Array Fetch Size: to determine number of rows to fetch from target database.</p>
+<p>Array Bind Size: Larger bind array, more number of rows will be fetched.</p>
+<p>Login Timeout: Time before a connection attempts a timeout.</p>
+<p>JDBC Driver Properties</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different panels in Prepare tab for data cleansing and applying filters?</label>
+<div class="toggle-content"> 
+<p><b>Dimension and Measure Panel</b></p>
+<p>It contains list of all dimensions and measures acquired in data set. Number in front of each object represents its data type.</p>
+<p>You can use different tools in this panel to edit the data objects and to add hierarchies.</p>
+<p><b>Dataset Selector</b></p>
+<p>You can select between multiple datasets or you can also acquire a new dataset using this option.</p>
+<p><b>Filter Bar</b></p>
+<p>This represents filter applied to any dimension in dataset. To add a filter click on the icon in front of dataset and click on Filter.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is chart canvas?</label>
+<div class="toggle-content"> 
+<p>This is used to create or modify a visualization. You can directly drag attributes and measures to chart canvas or can add to chart builder.</p>
+<p>You can add various tools like</p>
+<ul class="list">
+<li>Sorted by Dimensions</li>
+<li>Add or Edit a ranking by measures</li>
+<li>Clear Chart</li>
+<li>Fit chart to frame</li>
+<li>Reprompt</li>
+<li>Refresh</li>
+<li>Settings</li>
+<li>Maximize</li>
+<li>Undo</li>
+<li>Redo</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different chart canvas properties that you can set in Lumira?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Chart Canvas Layout</li>
+<li>Chart Style</li>
+<li>Template</li>
+<li>Font Zoom, etc.</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Where do you define properties for Chart Canvas?</label>
+<div class="toggle-content"> 
+<p>Go to File &rarr; Preferences &rarr; Charts</p>
+<p>Here you can define various properties for chart canvas.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of compose tab?</label>
+<div class="toggle-content"> 
+<p>You can create different stories in SAP Lumira in presentation style document using visualization, graphics and other customizations that has been applied to dataset.</p>
+<p>Once you go to compose tab you get multiple options to select an Infographic, Board or a Report.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different chart types in SAP Lumira?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Bar Chart</li>
+<li>Column Chart</li>
+<li>Radar Chart</li>
+<li>Pie Chart</li>
+<li>Donut Chart</li>
+<li>Tree</li>
+<li>Scatter Plot</li>
+<li>Bubble Chart</li>
+<li>Network Chart</li>
+<li>And many more</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Which chart types are best suited to show correlation between different values?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Scatter Plot</li>
+<li>Bubble Chart</li>
+<li>Network Chart</li>
+<li>Numeric Point</li>
+<li>Tree</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Geography charts in SAP Lumira? What are different chart types under this category?</label>
+<div class="toggle-content"> 
+<p>It is used to present map of country or globe present in the analysis. Common chart types are &minus;</p>
+<ul class="list">
+<li>Geo Bubble Chart</li>
+<li>Geo Choropleth Chart</li>
+<li>Geo Pie Chart</li>
+<li>Geo Map</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is Conditional formatting?</label>
+<div class="toggle-content"> 
+<p>It is used to mention critical data points in a chart by different values meeting certain condition. Multiple conditional formatting rules can be applied on measures or dimensions.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which chart types support conditional formatting in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>Conditional formatting can be applied on &minus;</p>
+<ul class="list">
+<li>Bar and Column charts (except 3D column charts)</li>
+<li>Pie chart</li>
+<li>Donut chart</li>
+<li>Scatter chart</li>
+<li>Bubble chart</li>
+<li>Cross tab</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Can you add multiple data sets in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>Yes, you can select between multiple datasets or you can also acquire a new dataset using this option.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of filters?</label>
+<div class="toggle-content"> 
+<p>Filters are used to limit the data in Lumira Visualizations. You can pass various filter conditions to restrict data comes in visualizations and stories.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can we add filters in charts under Visualize tab?</label>
+<div class="toggle-content"> 
+<p>Yes, you can apply filter on a chart in Visualize tab. Click on Add filter and select aa dimension or a measure to add a filter to the chart.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of display formatting option in Prepare tab?</label>
+<div class="toggle-content"> 
+<p>You can set the below formatting for an attribute or dimension &minus;</p>
+<ul class="list">
+<li>Select a Value format</li>
+<li>Choose a Display format</li>
+<li>Prefix or suffix</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Can we convert data types in SAP Lumira for dataset?</label>
+<div class="toggle-content"> 
+<p>You can also convert data type into another. In Prepare tab &rarr; Go to column heading &rarr; Options</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of hierarchies?</label>
+<div class="toggle-content"> 
+<p>Hierarchies are used to display data at different granularity level and you can drill up/down at different levels for better understanding of relationship between objects.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is geography hierarchy? How we can create geography hierarchy in dataset?</label>
+<div class="toggle-content"> 
+<p>When data is acquired, application looks for dimension containing location and present with an icon.</p>
+<p>Click on option icon in front of a dimension &rarr; Create a Geographic hierarchy &rarr; By Names (this option is available only for string dimensions).</p>
+<p>New window will open with name Geographical data &rarr; select the dimension to map to hierarchy and click on Confirm.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the meaning of Green, yellow and red while acquiring data for a hierarchy?</label>
+<div class="toggle-content"> 
+<p>Locations mapped exactly are marked with green.</p>
+<p>Locations with more than one possible match (for example, if more than one city named London was found) are marked with yellow.</p>
+<p>Locations not found in the geographic database are marked with Red.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do use hierarchies in the charts added to chart canvas in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>When hierarchies are defined on dataset, you can use drill up or drill down option to move to next level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a custom hierarchy?</label>
+<div class="toggle-content"> 
+<p>You can create hierarchies using any available combination of dimensions in acquired dataset.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create custom hierarchies in SAP Lumira? How do you define level in a custom hierarchy?</label>
+<div class="toggle-content"> 
+<p>Let us say you want to create a custom hierarchy on Category &rarr; Product</p>
+<p>Select Category &rarr; Options &rarr; Create a Custom hierarchy</p>
+<p>New window will open. Enter the name of hierarchy and select the other dimensions to add to next levels and click on Create. Arrows can be used to change the level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How you can open multiple dataset in a single Lumira document?</label>
+<div class="toggle-content"> 
+<p>It allows you to open multiple datasets in a single document and you can add dataset to a document.</p>
+<p>Go to Data pane at the top &rarr; Add new Dataset</p>
+</div>
+</section>
+<section class="toggle">
+<label> You have added multiple data sets in SAP Lumira. How do you perform merging of datasets?</label>
+<div class="toggle-content"> 
+<p>You can also merge two dataset by using Join operator.</p>
+<p>Go to Data pane at the top &rarr; Combine &rarr; Merge</p>
+</div>
+</section>
+<section class="toggle">
+<label> To perform a merge on multiple datasets, what are the conditions to perform a merge?</label>
+<div class="toggle-content"> 
+<p><b>To merge</b></p>
+<p>They should have same key column.</p>
+<p>Column with same data type can be merged.</p>
+<p>All columns will be merged.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Merge type option in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>Merge type defines the type of join. You can select from different join types – Inner join, outer join, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the different between combine and Append datasets in Lumira?</label>
+<div class="toggle-content"> 
+<p>Merge is used to apply different joins on datasets.</p>
+<p>You can use Union operator to append two datasets.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you append datasets in Lumira?</label>
+<div class="toggle-content"> 
+<p>To append datasets in Lumira, go to Data &rarr; Combine &rarr; Append</p>
+<p>To use append, both tables should contain same number of columns and compatible data types. Only compatible data types can be appended.</p>
+</div>
+</section>
+<section class="toggle">
+<label> You have acquired datasets with different number of columns and different data types, when you perform append on these datasets what will happen?</label>
+<div class="toggle-content"> 
+<p>When you perform an append and both source and target dimensions are different, message appears-Union cannot happen.</p>
+</div>
+</section>
+<section class="toggle">
+<label> If you want to see how data is spread over multiple axis in a single chart, which option you can use in Lumira?</label>
+<div class="toggle-content"> 
+<p>You can also add measures as a dimension in SAP Lumira. To do this add two or more measures as dimensions in the chart. This can be used to check how data is spread over multiple axis in a single chart.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you use measures as dimensions in SAP Lumira charts?</label>
+<div class="toggle-content"> 
+<p>Go to Settings and click on use Measures as dimensions option. Once you select this option, measures are displayed as new measure dimension in Dimension panel.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to ass custom charts in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>You can use SAP Lumira software development kit SDK. You can add custom charts in SAP Lumira using VizPacker and these charts will be added to list of available charts in canvas.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create stories in SAP Lumira in left, right, top and bottom slide show formats in compose tab?</label>
+<div class="toggle-content"> 
+<p>To create a slide show, go to Compose &rarr; Board &rarr; Create. You can select different types of charts Left, Right, Bottom, Top, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to create customize stories in SAP Lumira? How you can add company logos, custom images to Lumira presentations?</label>
+<div class="toggle-content"> 
+<p>You can also create customize stories in SAP Lumira. To create customize stories, you can add different types of pages in a story. To add a page click on Add Page and select a page you want to add to story.</p>
+<p>Drag the Visualization from left panel to the story. You can also add images from local machine. Go to Pictures and click on &plus; sign.</p>
+</div>
+</section>
+<section class="toggle">
+<label> To see the available built in images to add to Lumira presentations, where you can add these to stories?</label>
+<div class="toggle-content"> 
+<p>There are inbuilt images that can be used in a story. Go to Pictogram on left side and it will show you all the available pictograms that can be used in a story.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different formats you can export your data sets in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>You can save dataset as .csv or. xls file.</p>
+<p>To do this go to Share tab and select the dataset from left panel. Go to File &rarr; Export As</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to print the visualizations? How can we print the visluazations in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>Yes, To Print a Visualization, go to Share tab &rarr; Select Visualizations and you will get an option to Print Visualization at the top.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When you publish a dataset to SAP HANA, all the visualizations that are created on dataset are also published?</label>
+<div class="toggle-content"> 
+<p>Select the dataset to be published. Once you select the dataset you will see the options to publish dataset to HANA. Only dataset is published to HANA server and not visualizations.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Can you send visualization in email to other users? What are the different export sizes that can be used?</label>
+<div class="toggle-content"> 
+<p>Yes, you can export a visualization to a printer or can also send in an email to a user. Go to options in a Visualization and click on Send by mail.</p>
+<p>Choose an Export Size-</p>
+<p>Small, Medium, Large</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different data sources you can use in Lumira to acquire dataset?</label>
+<div class="toggle-content"> 
+<p><b>You can use below data sources in SAP Lumira</b></p>
+<ul class="list">
+<li>Excel file as a data source</li>
+<li>Working with CSV files</li>
+<li>Clipboard</li>
+<li>Connecting SAP HANA views</li>
+<li>Universe as a data source</li>
+<li>Using Query with SQL</li>
+<li>Using SAP BW InfoProvider as data source</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do use Universes as data source to acquire dataset in SAP Lumira?</label>
+<div class="toggle-content"> 
+<p>Universes that are created with .unx extension using Information Design Tool/.unv files created in UDT and published to BI repository can be used as data source in SAP Lumira.</p>
+<p>Go to File &rarr; New &rarr; Click on Universe option to connect and to download a dataset.</p>
+</div>
+</section>
+<h2>What is Next ?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/sap_lumira/sap_lumira_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_lumira/sap_lumira_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">sap_lumira_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_lumira/sap_lumira_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_lumira/sap_lumira_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_lumira/sap_lumira_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_lumira/sap_lumira_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_lumira/sap_lumira_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_lumira/sap_lumira_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

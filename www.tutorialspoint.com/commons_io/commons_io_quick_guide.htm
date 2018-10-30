@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Apache Commons IO Quick Guide</title>
+<meta name="description" content="Apache Commons IO Quick Guide - Learn Apache Commons IO in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Utility Classes  Examples, IOUtils, FileUtils, FilenameUtils, FileSystemUtils, IOCase, LineIterator, Filter Classes  Examples, NameFileFilter, WildcardFileFilter, SuffixFileFilter, PrefixFileFilter, OrFileFilter, AndFileFilter, File Monitor Classes Examples, FileEntry, FileAlterationObserver, FileAlterationMonitor, Comparator Classes Examples, NameFileComparator, SizeFileComparator, LastModifiedFileComparator, Stream Classes Examples, TeeInputStream, TeeOutputStream." />
+<meta name="keywords" content="Apache Commons IO, Tutorial, Learning, Overview, Environment Setup, Utility Classes  Examples, IOUtils, FileUtils, FilenameUtils, FileSystemUtils, IOCase, LineIterator, Filter Classes  Examples, NameFileFilter, WildcardFileFilter, SuffixFileFilter, PrefixFileFilter, OrFileFilter, AndFileFilter, File Monitor Classes Examples, FileEntry, FileAlterationObserver, FileAlterationMonitor, Comparator Classes Examples, NameFileComparator, SizeFileComparator, LastModifiedFileComparator, Stream Classes Examples, TeeInputStream, TeeOutputStream." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #E70429 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #E70429 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #E70429 !important;}
+.submenu-item{ border-bottom: 2px solid #E70429 !important; border-top: 2px solid #E70429 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#E70429; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/commons_io/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+   text-align:center !important;
+   vertical-align:middle !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/commons_io/images/commons_io_mini_logo.jpg" alt="Apache Commons IO Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Apache Commons IO Tutorial</li>
+<li><a href="/commons_io/index.htm">Commons IO - Home</a></li>
+<li><a href="/commons_io/commons_io_overview.htm">Commons IO - Overview</a></li>
+<li><a href="/commons_io/commons_io_environment.htm">Commons IO - Environment Setup</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Utility Classes Examples</li>
+<li><a href="/commons_io/commons_io_ioutils.htm">Commons IO - IOUtils Class</a></li>
+<li><a href="/commons_io/commons_io_fileutils.htm">Commons IO - FileUtils Class</a></li>
+<li><a href="/commons_io/commons_io_filenameutils.htm">Commons IO - FilenameUtils Class</a></li>
+<li><a href="/commons_io/commons_io_filesystemutils.htm">Commons IO - FileSystemUtils Class</a></li>
+<li><a href="/commons_io/commons_io_iocase.htm">Commons IO - IOCase Class</a></li>
+<li><a href="/commons_io/commons_io_lineiterator.htm">Commons IO - LineIterator Class</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Filter Classes Examples</li>
+<li><a href="/commons_io/commons_io_namefilefilter.htm">Commons IO - NameFileFilter Class</a></li>
+<li><a href="/commons_io/commons_io_wildcardfilefilter.htm">WildcardFileFilter Class</a></li>
+<li><a href="/commons_io/commons_io_suffixfilefilter.htm">Commons IO - SuffixFileFilter Class</a></li>
+<li><a href="/commons_io/commons_io_prefixfilefilter.htm">Commons IO - PrefixFileFilter Class</a></li>
+<li><a href="/commons_io/commons_io_orfilefilter.htm">Commons IO - OrFileFilter Class</a></li>
+<li><a href="/commons_io/commons_io_andfilefilter.htm">Commons IO - AndFileFilter Class</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">File Monitor Classes Examples</li>
+<li><a href="/commons_io/commons_io_fileentry.htm">Commons IO - FileEntry Class</a></li>
+<li><a href="/commons_io/commons_io_filealterationobserver.htm">FileAlterationObserver Class</a></li>
+<li><a href="/commons_io/commons_io_filealterationmonitor.htm">FileAlterationMonitor Class</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Comparator Classes Examples</li>
+<li><a href="/commons_io/commons_io_namefilecomparator.htm">NameFileComparator Class</a></li>
+<li><a href="/commons_io/commons_io_sizefilecomparator.htm">SizeFileComparator Class</a></li>
+<li><a href="/commons_io/commons_io_lastmodifiedfilecomparator.htm">LastModifiedFileComparator Class</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Stream Classes Examples</li>
+<li><a href="/commons_io/commons_io_teeinputstream.htm">TeeInputStream Class</a></li>
+<li><a href="/commons_io/commons_io_teeoutputstream.htm">TeeOutputStream Class</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Commons IO Useful Resources</li>
+<li><a href="/commons_io/commons_io_quick_guide.htm">Commons IO - Quick Guide</a></li>
+<li><a href="/commons_io/commons_io_useful_resources.htm">Commons IO - Useful Resources</a></li>
+<li><a href="/commons_io/commons_io_discussion.htm">Commons IO - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Apache Commons IO - Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/commons_io/commons_io_teeoutputstream.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/commons_io/commons_io_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Apache Commons IO - Overview</h1>
+<p>Apache Commons IO library provides various utility classes for common operations for File IO covering wide range of use cases. It helps avoid writing boilerplate code. Apache Commons IO library provides classes for following categories &minus;</p>
+<ul class="list">
+<li><p><b>Utility classes</b> &minus; These classes under <i>org.apache.commons.io</i> package provides file and string comparison. Following are some of the examples.</p>
+<ul class="list">
+<li><p><b>IOUtils</b> &minus; Provides utility methods for reading, writing and copying files. The methods works with InputStream, OutputStream, Reader and Writer.</p></li>
+<li><p><b>FilenameUtils</b> &minus; Provides method to work with file names without using File Object. It works on different operating systems in similar way.</p></li>
+<li><p><b>FileUtils</b> &minus; Provides method to manipulates files like moving, opening, checking existence, reading of file etc. These methods use File Object.</p></li>
+<li><p><b>IOCase</b> &minus; Provides method for string manipulation and comparison.</p></li>
+<li><p><b>FileSystemUtils</b> &minus; Provides method to get the free space on a disk drive.</p></li>
+<li><p><b>LineIterator</b> &minus; Provides a flexible way to work with a line-based file.</p></li>
+</ul>
+</li>
+<li><p><b>Filter classes</b> &minus; Filter classes under <i>org.apache.commons.io.filefilter</i> package provides methods to filter files based on logical criteria instead of string based tedious comparisons. Following are some of the examples.</p>
+<ul class="list">
+<li><p><b>NameFileFilter</b> &minus; Filters file-names for a name.</p></li>
+<li><p><b>WildcardFileFilter</b> &minus; Filters files using the supplied wildcards.</p></li>
+<li><p><b>SuffixFileFilter</b> &minus; Filters files based on suffix. This is used in retrieving all the files of a particular type.</p></li>
+<li><p><b>PrefixFileFilter</b> &minus; Filters files based on prefix.</p></li>
+<li><p><b>OrFileFilter</b> &minus; Provides conditional OR logic across a list of file filters. Returns true if any filters in the list return true. Otherwise, it returns false.</p></li>
+<li><p><b>AndFileFilter</b> &minus; Provides conditional And logic across a list of file filters. Returns false if any filters in the list return false. Otherwise, it returns true.</p></li>
+</ul>
+</li>
+<li><p><b>File Monitor classes</b> &minus; File monitor classes under <i>org.apache.commons.io.monitor</i> package provides control to track changes in a specific file or folder and allows to do action accordingly on the changes. Following are some of the examples.</p>
+<ul class="list">
+<li><p><b>FileEntry</b> &minus; Provides the state of a file or directory, File attributes at a point in time.</p></li>
+<li><p><b>FileAlterationObserver</b> &minus; Represents the state of files below a root directory, checks the filesystem and notifies listeners of create, change or delete events.</p></li>
+<li><p><b>FileAlterationMonitor</b> &minus; Represents a thread that spawns a monitoring thread triggering any registered FileAlterationObserver at a specified interval.</p></li>
+</ul>
+</li>
+<li><p><b>Comparator classes</b> &minus; File monitor classes under <i>org.apache.commons.io.comparator</i> package allow to compare and sort files and directories easily.</p>
+<ul class="list">
+<li><p><b>NameFileComparator</b> &minus; Compare the names of two files.</p></li>
+<li><p><b>SizeFileComparator</b> &minus; Compare the size of two files.</p></li>
+<li><p><b>LastModifiedFileComparator</b> &minus; Compare the last modified dates of two files.</p></li>
+</ul>
+</li>
+<li><p><b>Stream classes</b> &minus; There are multiple implementation of InputStream under <i>org.apache.commons.io.input</i> package and of OutputStream under <i>org.apache.commons.io.output</i> package to do useful tasks on streams. Following are some of the examples.</p>
+<ul class="list">
+<li><p><b>NullOutputStream</b> &minus; Absorbs all data sent with any error.</p></li>
+<li><p><b>TeeOutputStream</b> &minus; Sends output to two streams.</p></li>
+<li><p><b>ByteArrayOutputStream</b> &minus; Faster version of JDK class.</p></li>
+<li><p><b>CountingOutputStream</b> &minus; Counts the number of bytes passed through the stream.</p></li>
+<li><p><b>CountingOutputStream</b> &minus; Counts the number of bytes passed through the stream.</p></li>
+<li><p><b>ProxyOutputStream</b> &minus; Changes the calls to proxied stream.</p></li>
+<li><p><b>LockableFileWriter</b> &minus; A FileWriter to create lock files and allow simple cross thread file lock handling.</p></li>
+</ul>
+</li>
+</ul>
+<h1>Apache Commons IO - Environment Setup</h1>
+<h2>Local Environment Setup</h2>
+<p>If you are still willing to set up your environment for Java programming language, then this section guides you on how to download and set up Java on your machine. Please follow the steps mentioned below to set up the environment.</p>
+<p>Java SE is freely available from the link <a rel="nofollow" href="https://java.sun.com/javase/downloads/index_jdk5.jsp" target="_blank">Download Java</a>. So you download a version based on your operating system.</p>
+<p>Follow the instructions to download Java and run the <b>.exe</b> to install Java on your machine. Once you have installed Java on your machine, you would need to set environment variables to point to correct installation directories &minus;</p>
+<h2>Setting up the Path for Windows 2000/XP</h2>
+<p>We are assuming that you have installed Java in <i>c:\Program Files\java\jdk</i> directory &minus;</p>
+<ul class="list">
+<li><p>Right-click on 'My Computer' and select 'Properties'.</p></li>
+<li><p>Click on the 'Environment variables' button under the 'Advanced' tab.</p></li>
+<li><p>Now, alter the 'Path' variable so that it also contains the path to the Java executable. Example, if the path is currently set to 'C:\WINDOWS\SYSTEM32', then change your path to read 'C:\WINDOWS\SYSTEM32;c:\Program Files\java\jdk\bin'.</p></li>
+</ul>
+<h2>Setting up the Path for Windows 95/98/ME</h2>
+<p>We are assuming that you have installed Java in <i>c:\Program Files\java\jdk</i> directory &minus;</p>
+<ul class="list">
+<li><p>Edit the 'C:\autoexec.bat' file and add the following line at the end &minus; 'SET PATH=%PATH%;C:\Program Files\java\jdk\bin'</p></li>
+</ul>
+<h2>Setting up the Path for Linux, UNIX, Solaris, FreeBSD</h2>
+<p>Environment variable PATH should be set to point to where the Java binaries have been installed. Refer to your shell documentation if you have trouble doing this.</p>
+<p>Example, if you use bash as your shell, then you would add the following line to the end of your '.bashrc: export PATH=/path/to/java:$PATH'</p>
+<h2>Popular Java Editors</h2>
+<p>To write your Java programs, you need a text editor. There are many sophisticated IDEs available in the market. But for now, you can consider one of the following &minus;</p>
+<ul class="list">
+<li><p><b>Notepad</b> &minus; On Windows machine you can use any simple text editor like Notepad (Recommended for this tutorial), TextPad.</p></li>
+<li><p><b>Netbeans</b> &minus; It is a Java IDE that is open-source and free which can be downloaded from <a rel="nofollow" href="https://www.netbeans.org/index.html" target="_blank">https://www.netbeans.org/index.html</a>.</p></li>
+<li><p><b>Eclipse</b> &minus; It is also a Java IDE developed by the eclipse open-source community and can be downloaded from <a rel="nofollow" href="https://www.eclipse.org/" target="_blank">https://www.eclipse.org/</a>.</p></li>
+</ul>
+<h2>Download Common IO Archive</h2>
+<p>Download the latest version of Apache Common IO jar file from <a rel="nofollow" target="_blank" rel="nofollow" href="https://commons.apache.org/proper/commons-io/download_io.cgi">commons-io-2.6-bin.zip</a>. At the time of writing this tutorial, we have downloaded <i>commons-io-2.6-bin.zip</i> and copied it into C:\>Apache folder.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">OS</th> 
+<th style="text-align:center;">Archive name</th>
+</tr>
+<tr>
+<td>Windows</td>
+<td>commons-io-2.6-bin.zip</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>commons-io-2.6-bin.tar.gz</td>
+</tr>
+<tr>
+<td>Mac</td>
+<td>commons-io-2.6-bin.tar.gz</td>
+</tr>
+</table>
+<h2>Set Apache Common IO Environment</h2>
+<p>Set the <b>APACHE_HOME</b> environment variable to point to the base directory location where Apache jar is stored on your machine. Assuming, we've extracted commons-io-2.6-bin.zip in Apache folder on various Operating Systems as follows.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">OS</th>
+<th style="text-align:center;">Output</th>
+</tr>
+<tr>
+<td>Windows</td>
+<td>Set the environment variable APACHE_HOME to C:\Apache</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>export APACHE_HOME=/usr/local/Apache</td>
+</tr>
+<tr>
+<td>Mac</td>
+<td>export APACHE_HOME=/Library/Apache</td>
+</tr>
+</table>
+<h2>Set CLASSPATH Variable</h2>
+<p>Set the <b>CLASSPATH</b> environment variable to point to the Common IO jar location. Assuming, you have stored commons-io-2.6-bin.zip in Apache folder on various Operating Systems as follows.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">OS</th>
+<th style="text-align:center;">Output</th>
+</tr>
+<tr>
+<td class="ts">Windows</td>
+<td>Set the environment variable CLASSPATH to %CLASSPATH%;%APACHE_HOME%\commons-io-2.6.jar;.;</td>
+</tr>
+<tr>
+<td class="ts">Linux</td>
+<td>export CLASSPATH=$CLASSPATH:$APACHE_HOME/commons-io-2.6.jar:.</td>
+</tr>
+<tr>
+<td class="ts">Mac</td>
+<td>export CLASSPATH=$CLASSPATH:$APACHE_HOME/commons-io-2.6.jar:.</td>
+</tr>
+</table>
+<h1>Apache Commons IO - IOUtils</h1>
+<p>Provides utility methods for reading, writing and copying files. The methods works with InputStream, OutputStream, Reader and Writer.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.IOUtils</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class IOUtils
+   extends Object
+</pre>
+<h2>Features</h2>
+<ul class="list">
+<li>Provides static utility methods for input/output operations.</li>
+<li>toXXX() &minus; reads data from a stream.</li>
+<li>write() &minus; write data to a stream.</li>
+<li>copy() &minus; copy all data to a stream to another stream.</li>
+<li>contentEquals &minus; compare the contents of two streams.</li>
+</ul>
+<h2>Example of IOUtils Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.apache.commons.io.IOUtils;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         //Using BufferedReader
+         readUsingTraditionalWay();
+
+         //Using IOUtils
+         readUsingIOUtils();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   //reading a file using buffered reader line by line
+   public static void readUsingTraditionalWay() throws IOException {
+      try(BufferedReader bufferReader 
+         = new BufferedReader( new InputStreamReader(  
+            new FileInputStream("input.txt") ) )) {
+         String line;
+         while( ( line = bufferReader.readLine() ) != null ) {
+            System.out.println( line );
+         }
+      }
+   }
+
+   //reading a file using IOUtils in one go
+   public static void readUsingIOUtils() throws IOException {
+      try(InputStream in = new FileInputStream("input.txt")) {
+         System.out.println( IOUtils.toString( in , "UTF-8") );
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<h1>Apache Commons IO - FileUtils</h1>
+<p>Provides method to manipulates files like moving, opening, checking existence, reading of file etc. These methods use File Object.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.FileUtils</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class FileUtils
+   extends Object
+</pre>
+<h2>Features</h2>
+<ul class="list">
+<li>Methods to write to a file.</li>
+<li>Methods to read from a file.</li>
+<li>Methods to make a directory including parent directories.</li>
+<li>Methods to copy files and directories.</li>
+<li>Methods to delete files and directories.</li>
+<li>Methods to convert to and from a URL.</li>
+<li>Methods to list files and directories by filter and extension.</li>
+<li>Methods to compare file content.</li>
+<li>Methods to file last changed date.</li>
+<li>Methods to calculating a checksum.</li>
+</ul>
+<h2>Example of FileUtils Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+
+import org.apache.commons.io.FileUtils;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         //Using FileUtils
+         usingFileUtils();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingFileUtils() throws IOException {
+      //get the file object
+      File file = FileUtils.getFile("input.txt");
+
+      //get the temp directory
+      File tmpDir = FileUtils.getTempDirectory();
+
+      System.out.println(tmpDir.getName());
+
+      //copy file to temp directory
+      FileUtils.copyFileToDirectory(file, tmpDir);
+
+      //create a new file
+      File newTempFile = FileUtils.getFile(tmpDir, file.getName());
+
+      //get the content
+      String data = FileUtils.readFileToString(newTempFile, Charset.defaultCharset());
+
+      //print the content
+      System.out.println(data);
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Temp
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<h1>Apache Commons IO - FilenameUtils</h1>
+<p>Provides method to work with file names without using File Object. It works on different operating systems in similar way. This class solves problems when moving from a Windows based development machine to a Unix based production machine.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.FilenameUtils</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class FilenameUtils
+   extends Object
+</pre>
+<h2>Features</h2>
+<p>This class defines six components within a filename. Consider an example location as <b>C:\dev\project\file.txt</b>. Then the components are &minus;</p>
+<ul class="list">
+<li>Prefix - C:\</li>
+<li>Relative Path - dev\project\</li>
+<li>Absolute path - C:\dev\project\</li>
+<li>Name - file.txt</li>
+<li>Base name - file</li>
+<li>Extension - txt</li>
+</ul>
+<p>To identify a directory, add a separator to file name.</p>
+<h2>Example of FilenameUtils Class</h2>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.IOException;
+import org.apache.commons.io.FilenameUtils;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         //Using FilenameUtils
+         usingFilenameUtils();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingFilenameUtils() throws IOException {
+      String path = "C:\\dev\\project\\file.txt";
+      System.out.println("Full Path: " +FilenameUtils.getFullPath(path));
+      System.out.println("Relative Path: " +FilenameUtils.getPath(path));
+      System.out.println("Prefix: " +FilenameUtils.getPrefix(path));
+      System.out.println("Extension: " + FilenameUtils.getExtension(path));
+      System.out.println("Base: " + FilenameUtils.getBaseName(path));
+      System.out.println("Name: " + FilenameUtils.getName(path));
+
+      String filename = "C:/commons/io/../lang/project.xml";
+      System.out.println("Normalized Path: " + FilenameUtils.normalize(filename));
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Full Path: C:\dev\project\
+Relative Path: dev\project\
+Prefix: C:\
+Extension: txt
+Base: file
+Name: file.txt
+Normalized Path: C:\commons\lang\project.xml
+</pre>
+<h1>Apache Commons IO - FileSystemUtils</h1>
+<p>Provides method to get the free space on a disk drive.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.FileSystemUtils</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class FileSystemUtils
+   extends Object
+</pre>
+<h2>Example of FileSystemUtils Class</h2>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.IOException;
+
+import org.apache.commons.io.FileSystemUtils;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         System.out.println("Free Space " + FileSystemUtils.freeSpaceKb("C:/") + " Bytes");
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Free Space 61355640 kb
+</pre>
+<h1>Apache Commons IO - IOCase</h1>
+<p>Enumeration of IO case sensitivity. Different Operating systems have different rules for case-sensitivity for file names. For example Windows is case-insensitive for file naming while Unix is case-sensitive. IOCase captures that difference, provides an enumeration to control how filename comparisons should be performed. It also provides methods to use the enumeration to perform comparisons.</p>
+<h2>Enum Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.IOCase</b> Enum &minus;</p>
+<pre class="prettyprint notranslate">
+public enum IOCase
+   extends Enum&lt;IOCase&gt; implements Serializable
+</pre>
+<h2>Example of IOCase Enum</h2>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.IOException;
+import org.apache.commons.io.IOCase;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingIOCase();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingIOCase() throws IOException {
+      String text = "Welcome to TutorialsPoint. Simply Easy Learning.";
+      String text1 = "WELCOME TO TUTORIALSPOINT. SIMPLY EASY LEARNING.";
+
+      System.out.println("Ends with Learning (case sensitive): " +
+      IOCase.SENSITIVE.checkEndsWith(text1, "Learning."));
+
+      System.out.println("Ends with Learning (case insensitive): " +
+      IOCase.INSENSITIVE.checkEndsWith(text1, "Learning."));
+
+      System.out.println("Equality Check  (case sensitive): " +
+      IOCase.SENSITIVE.checkEquals(text, text1));
+
+      System.out.println("Equality Check  (case insensitive): " +
+      IOCase.INSENSITIVE.checkEquals(text, text1));
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Ends with Learning (case sensitive): false
+Ends with Learning (case insensitive): true
+Equality Check  (case sensitive): false
+Equality Check  (case insensitive): true
+</pre>
+<h1>Apache Commons IO - LineIterator</h1>
+<p>Provides a flexible way to work with a line-based file.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.LineIterator</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class LineIterator
+   extends Object implements Iterator&lt;String&gt;, Closeable
+</pre>
+<h2>Example of LineIterator Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+Learn web technologies,
+prepare exams,
+code online,
+all at one place.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingLineIterator();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingLineIterator() throws IOException {
+      //get the file object
+      File file = FileUtils.getFile("input.txt");
+
+      try(LineIterator lineIterator = FileUtils.lineIterator(file)) {
+         System.out.println("Contents of input.txt");
+         while(lineIterator.hasNext()) {
+            System.out.println(lineIterator.next());
+         }
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Contents of input.txt
+Welcome to TutorialsPoint. Simply Easy Learning.
+Learn web technologies,
+prepare exams,
+code online,
+all at one place.
+</pre>
+<h1>Apache Commons IO - NameFileFilter</h1>
+<p>Filters file-names for a name.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.filefilter.NameFileFilter</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class NameFileFilter
+   extends AbstractFileFilter implements Serializable
+</pre>
+<h2>Example of NameFileFilter Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p>Let's print all files and directories in the current directory and then filter a file whose name is Input.txt.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.IOCase;
+import org.apache.commons.io.filefilter.NameFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingNameFileFilter();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingNameFileFilter() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+      
+      //get names of all files and directory in current directory
+      String[] files = currentDirectory.list();
+      System.out.println("All files and Folders.\n");
+      for( int i = 0; i &lt; files.length; i++ ) {
+         System.out.println(files[i]);
+      }
+      
+      System.out.println("\nFile with name input.txt\n");
+      String[] acceptedNames = {"input", "input.txt"};
+      String[] filesNames = currentDirectory.list( new NameFileFilter(acceptedNames, IOCase.INSENSITIVE) );
+
+      for( int i = 0; i &lt; filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+All files and Folders.
+
+.classpath
+.project
+.settings
+bin
+input.txt
+src
+
+File with name input.txt
+
+input.txt
+</pre>
+<h1>Apache Commons IO - WildcardFileFilter</h1>
+<p>Filters files using the supplied wildcards.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.filefilter.WildcardFileFilter</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class WildcardFileFilter
+   extends AbstractFileFilter implements Serializable
+</pre>
+<h2>Example of WildcardFileFilter Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p>Let's print all files and directories in the current directory and then filter a file whose name ends with <b>t</b>.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.filefilter.WildcardFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingWildcardFileFilter();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+   
+   public static void usingWildcardFileFilter() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+      
+      //get names of all files and directory in current directory
+      String[] files = currentDirectory.list();
+      System.out.println("All files and Folders.\n");
+      for( int i = 0; i &lt; files.length; i++ ) {
+         System.out.println(files[i]);
+      }
+      
+      System.out.println("\nFile name ending with t.\n");
+      String[] filesNames = currentDirectory.list( new WildcardFileFilter("*t") );
+      for( int i = 0; i &lt; filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+All files and Folders.
+
+.classpath
+.project
+.settings
+bin
+input.txt
+src
+
+File name ending with t
+
+.project
+input.txt
+</pre>
+<h1>Apache Commons IO - SuffixFileFilter</h1>
+<p>Filters files based on suffix. This is used in retrieving all the files of a particular type.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.filefilter.SuffixFileFilter</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class SuffixFileFilter
+   extends AbstractFileFilter implements Serializable
+</pre>
+<h2>Example of SuffixFileFilter Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p>Let's print all files and directories in the current directory and then filter a file with extension txt.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.filefilter.SuffixFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingSuffixFileFilter();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingSuffixFileFilter() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+      
+      //get names of all files and directory in current directory
+      String[] files = currentDirectory.list();
+      System.out.println("All files and Folders.\n");
+      for( int i = 0; i &lt; files.length; i++ ) {
+         System.out.println(files[i]);
+      }
+      
+      System.out.println("\nFile with extenstion txt\n");
+      String[] filesNames = currentDirectory.list( new SuffixFileFilter("txt") );
+      for( int i = 0; i &lt; filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+All files and Folders.
+
+.classpath
+.project
+.settings
+bin
+input.txt
+src
+
+File with extenstion txt
+
+input.txt
+</pre>
+<h1>Apache Commons IO - PrefixFileFilter</h1>
+<p>Filters files based on prefix.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.filefilter.PrefixFileFilter</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class PrefixFileFilter
+   extends AbstractFileFilter implements Serializable
+</pre>
+<h2>Example of PrefixFileFilter Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p>Let's print all files and directories in the current directory and then filter a file with name starting with input.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.filefilter.PrefixFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingPrefixFileFilter();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingPrefixFileFilter() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+      
+      //get names of all files and directory in current directory
+      String[] files = currentDirectory.list();
+      System.out.println("All files and Folders.\n");
+      for( int i = 0; i &lt; files.length; i++ ) {
+         System.out.println(files[i]);
+      }
+      
+      System.out.println("\nFile starting with input\n");
+      String[] filesNames = currentDirectory.list( new PrefixFileFilter("input") );
+      for( int i = 0; i &lt; filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+All files and Folders.
+
+.classpath
+.project
+.settings
+bin
+input.txt
+src
+
+File with extenstion txt
+
+input.txt
+</pre>
+<h1>Apache Commons IO - OrFileFilter</h1>
+<p>Provides conditional OR logic across a list of file filters. Returns true if any filters in the list return true. Otherwise, it returns false.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.filefilter.OrFileFilter</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class OrFileFilter
+   extends AbstractFileFilter implements ConditionalFileFilter, Serializable
+</pre>
+<h2>Example of OrFileFilter Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p>Let's print all files and directories in the current directory and then filter a file with name starting with . or ends with t.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.filefilter.OrFileFilter;
+import org.apache.commons.io.filefilter.PrefixFileFilter;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingOrFileFilter();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingOrFileFilter() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+      
+      //get names of all files and directory in current directory
+      String[] files = currentDirectory.list();
+      System.out.println("All files and Folders.\n");
+      for( int i = 0; i &lt; files.length; i++ ) {
+         System.out.println(files[i]);
+      }
+      
+      System.out.println("\nFile starting with . or ends with t\n");
+      String[] filesNames = currentDirectory.list(
+         new OrFileFilter(new PrefixFileFilter("."), new WildcardFileFilter("*t")));
+      for( int i = 0; i &lt; filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+All files and Folders.
+
+.classpath
+.project
+.settings
+bin
+input.txt
+src
+
+File starting with . or ends with t
+
+.classpath
+.project
+.settings
+input.txt
+</pre>
+<h1>Apache Commons IO - AndFileFilter</h1>
+<p>Provides conditional And logic across a list of file filters. Returns true if all filters in the list return true. Otherwise, it returns false.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.filefilter.AndFileFilter</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class AndFileFilter
+   extends AbstractFileFilter implements ConditionalFileFilter, Serializable
+</pre>
+<h2>Example of AndFileFilter Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p>Let's print all files and directories in the current directory and then filter a file with name starting with . and ends with t.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.filefilter.AndFileFilter;
+import org.apache.commons.io.filefilter.PrefixFileFilter;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingAndFileFilter();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingAndFileFilter() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+      
+      //get names of all files and directory in current directory
+      String[] files = currentDirectory.list();
+      System.out.println("All files and Folders.\n");
+      for( int i = 0; i &lt; files.length; i++ ) {
+         System.out.println(files[i]);
+      }
+      
+      System.out.println("\nFile starting with . and ends with t\n");
+      String[] filesNames = currentDirectory.list(
+         new AndFileFilter(new PrefixFileFilter("."), new WildcardFileFilter("*t")));
+      for( int i = 0; i &lt; filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+All files and Folders.
+
+.classpath
+.project
+.settings
+bin
+input.txt
+src
+
+File starting with . or ends with t
+
+.project
+</pre>
+<h1>Apache Commons IO - FileEntry</h1>
+<p>Provides the state of a file or directory, File attributes at a point in time.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.monitor.FileEntry</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class FileEntry
+   extends Object implements Serializable
+</pre>
+<h2>Features</h2>
+<p>FileEntry class object provides following file attributes at a point in time.</p>
+<ul class="list">
+<li>getName() &minus; file name.</li>
+<li>exists() &minus; checks if file exists or not.</li>
+<li>isDirectory() &minus; checks if file is a directory.</li>
+<li>lastModified() &minus; gives last modified date time.</li>
+<li>listFiles() &minus; gives content of directory.</li>
+</ul>
+<h2>Example of FileEntry Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.monitor.FileEntry;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingFileEntry();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingFileEntry() throws IOException {
+      //get the file object
+      File file = FileUtils.getFile("input.txt");
+
+      FileEntry fileEntry = new FileEntry(file);
+
+      System.out.println("Monitored File: " + fileEntry.getFile());
+      System.out.println("File name: " + fileEntry.getName());
+      System.out.println("Is Directory: " + fileEntry.isDirectory());
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Monitored File: input.txt
+File name: input.txt
+Is Directory: false
+</pre>
+<h1>Commons IO - FileAlterationObserver</h1>
+<p>Represents the state of files below a root directory, checks the filesystem and notifies listeners of create, change or delete events.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.monitor.FileAlterationObserver</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class FileAlterationObserver
+   extends Object implements Serializable
+</pre>
+<h2>Example of FileAlterationObserver Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileDeleteStrategy;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
+import org.apache.commons.io.monitor.FileAlterationMonitor;
+import org.apache.commons.io.monitor.FileAlterationObserver;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingFileAlterationObserver();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingFileAlterationObserver() throws IOException {
+      //get the file object
+      File inputFile = FileUtils.getFile("input.txt");
+      String absolutePath = inputFile.getAbsolutePath();
+      String parent = absolutePath.substring(0,absolutePath.indexOf("input.txt"));   
+      File parentDirectory = FileUtils.getFile(parent);
+
+      FileAlterationObserver observer = new FileAlterationObserver(parentDirectory);
+
+      observer.addListener(new FileAlterationListenerAdaptor() {
+
+         @Override
+         public void onDirectoryCreate(File file) {
+            System.out.println("Folder created: " + file.getName());
+         }
+
+         @Override
+         public void onDirectoryDelete(File file) {
+            System.out.println("Folder deleted: " + file.getName());
+         } 
+
+         @Override
+         public void onFileCreate(File file) {
+            System.out.println("File created: " + file.getName());
+         }
+
+         @Override
+         public void onFileDelete(File file) {
+            System.out.println("File deleted: " + file.getName());
+         }  
+      });
+
+      //create a monitor to check changes after every 500 ms
+      FileAlterationMonitor monitor = new FileAlterationMonitor(500, observer);
+
+      try {
+         monitor.start();
+
+         //create a new directory
+         File newFolder = new File("test");
+         File newFile = new File("test1");
+
+         newFolder.mkdirs();
+         Thread.sleep(1000);
+         newFile.createNewFile();
+         Thread.sleep(1000);
+         FileDeleteStrategy.NORMAL.delete(newFolder);
+         Thread.sleep(1000);
+         FileDeleteStrategy.NORMAL.delete(newFile);
+         Thread.sleep(1000);
+
+         monitor.stop(10000);
+
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      } catch(InterruptedException e) {
+         System.out.println(e.getMessage());
+      } catch (Exception e) {
+         System.out.println(e.getMessage());
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Folder created: test
+File created: test1
+Folder deleted: test
+File deleted: test1
+</pre>
+<h1>Apache Commons IO - FileAlterationMonitor</h1>
+<p>Represents a thread that spawns a monitoring thread triggering any registered FileAlterationObserver at a specified interval.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.monitor.FileAlterationMonitor</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public final class FileAlterationMonitor
+   extends Object implements Runnable
+</pre>
+<h2>Example of FileAlterationMonitor Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileDeleteStrategy;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
+import org.apache.commons.io.monitor.FileAlterationMonitor;
+import org.apache.commons.io.monitor.FileAlterationObserver;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingFileAlterationMonitor();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingFileAlterationMonitor() throws IOException {
+      //get the file object
+      File inputFile = FileUtils.getFile("input.txt");
+      String absolutePath = inputFile.getAbsolutePath();
+      String parent = absolutePath.substring(0,absolutePath.indexOf("input.txt"));   
+      File parentDirectory = FileUtils.getFile(parent);
+
+      FileAlterationObserver observer = new FileAlterationObserver(parentDirectory);
+
+      observer.addListener(new FileAlterationListenerAdaptor(){
+
+         @Override
+         public void onDirectoryCreate(File file) {
+            System.out.println("Folder created: " + file.getName());
+         }
+
+         @Override
+         public void onDirectoryDelete(File file) {
+            System.out.println("Folder deleted: " + file.getName());
+         } 
+
+         @Override
+         public void onFileCreate(File file) {
+            System.out.println("File created: " + file.getName());
+         }
+
+         @Override
+         public void onFileDelete(File file) {
+            System.out.println("File deleted: " + file.getName());
+         }  
+      });
+
+      //create a monitor to check changes after every 500 ms
+      FileAlterationMonitor monitor = new FileAlterationMonitor(500, observer);
+
+      try {
+         monitor.start();
+
+         //create a new directory
+         File newFolder = new File("test");
+         File newFile = new File("test1");
+
+         newFolder.mkdirs();
+         Thread.sleep(1000);
+         newFile.createNewFile();
+         Thread.sleep(1000);
+         FileDeleteStrategy.NORMAL.delete(newFolder);
+         Thread.sleep(1000);
+         FileDeleteStrategy.NORMAL.delete(newFile);
+         Thread.sleep(1000);
+
+         monitor.stop(10000);
+
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      } catch(InterruptedException e) {
+         System.out.println(e.getMessage());
+      } catch (Exception e) {
+         System.out.println(e.getMessage());
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Folder created: test
+File created: test1
+Folder deleted: test
+File deleted: test1
+</pre>
+<h1>Apache Commons IO - NameFileComparator</h1>
+<p>Compare the names of two files. NameFileComparator can be used to sort lists or arrays of files using their name either in a case-sensitive, case-insensitive or system dependent case sensitive way.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.comparator.NameFileComparator</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class NameFileComparator
+   extends Object implements Serializable
+</pre>
+<h2>Example of NameFileComparator Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
+
+import org.apache.commons.io.IOCase;
+import org.apache.commons.io.comparator.NameFileComparator;
+import org.apache.commons.io.filefilter.FileFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingNameFileComparator();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingNameFileComparator() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+
+      NameFileComparator comparator = new NameFileComparator(IOCase.INSENSITIVE);
+
+      File[] sortedFiles = comparator.sort(currentDirectory.listFiles((FileFilter)FileFileFilter.FILE));
+
+      System.out.println("Sorted By Name: ");
+      for(File file:sortedFiles) {      
+         System.out.println(file.getName());
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Sorted By Name: 
+.classpath
+.project
+input.txt
+</pre>
+<h1>Apache Commons IO - SizeFileComparator</h1>
+<p>Compare the sizes of two files/directory. SizeFileComparator can be used to sort lists or arrays of files using their size or directories based on their no. of children.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.comparator.SizeFileComparator</b> Class -</p>
+<pre class="prettyprint notranslate">
+public class SizeFileComparator
+   extends Object implements Serializable
+</pre>
+<h2>Example of SizeFileComparator Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
+
+import org.apache.commons.io.comparator.SizeFileComparator;
+import org.apache.commons.io.filefilter.FileFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingSizeFileComparator();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingSizeFileComparator() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+
+      SizeFileComparator comparator = new SizeFileComparator();
+
+      File[] sortedFiles = 
+         comparator.sort(currentDirectory.listFiles((FileFilter)FileFileFilter.FILE));
+
+      System.out.println("Sorted By Size: ");
+      for(File file:sortedFiles) {      
+         System.out.println(file.getName() + ", size(kb) :" + file.length());
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Sorted By Size: 
+input.txt, size:124
+.project, size:382
+.classpath, size:441
+</pre>
+<h1>Commons IO - LastModifiedFileComparator</h1>
+<p>Compare the last modified dates of two files/directory. LastModifiedFileComparator can be used to sort lists or arrays of files/directories using their last modified dates.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.comparator.LastModifiedFileComparator</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class LastModifiedFileComparator
+   extends Object implements Serializable
+</pre>
+<h2>Example of LastModifiedFileComparator Class</h2>
+<p>Here is the input file we need to parse &minus;</p>
+<pre class="result notranslate">
+Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
+import java.util.Date;
+
+import org.apache.commons.io.comparator.LastModifiedFileComparator;
+import org.apache.commons.io.filefilter.FileFileFilter;
+
+public class IOTester {
+   public static void main(String[] args) {
+      try {
+         usingLastModifiedFileComparator();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingLastModifiedFileComparator() throws IOException {
+      //get the current directory
+      File currentDirectory = new File(".");
+
+      LastModifiedFileComparator comparator = new LastModifiedFileComparator();
+
+      File[] sortedFiles = comparator.sort(currentDirectory.listFiles((FileFilter)FileFileFilter.FILE));
+
+      System.out.println("Sorted By Last Modified date: ");
+      for(File file:sortedFiles) {      
+         System.out.println(file.getName() + ", Modified on: " + new Date(file.lastModified()));
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Sorted By Last Modified date: 
+.project, Modified on: Thu Oct 12 19:06:45 IST 2017
+.classpath, Modified on: Mon Nov 20 13:09:55 IST 2017
+input.txt, Modified on: Mon Nov 20 19:27:55 IST 2017
+</pre>
+<h1>Apache Commons IO - TeeInputStream</h1>
+<p>It is an InputStream proxy that transparently writes a copy of all bytes read from the proxied stream to a given OutputStream. The proxied input stream is closed when the close() method on this proxy is called. It can be used to operate two streams collectively at a time.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.input.TeeInputStream</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class TeeInputStream
+   extends ProxyInputStream
+</pre>
+<h2>Example of TeeInputStream Class</h2>
+<p>In this example, closing a TeeInputStream closes the TeeInputStream as well as TeeOutputStream objects.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import org.apache.commons.io.input.TeeInputStream;
+import org.apache.commons.io.output.TeeOutputStream;
+
+public class IOTester {
+
+   private static final String SAMPLE = "Welcome to TutorialsPoint. Simply Easy Learning.";
+   public static void main(String[] args) {
+      try {
+         usingTeeInputStream();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingTeeInputStream() throws IOException {
+      TeeInputStream teeInputStream = null;
+      TeeOutputStream teeOutputStream = null;
+
+      try {
+         ByteArrayInputStream inputStream = new ByteArrayInputStream(SAMPLE.getBytes("US-ASCII"));
+         ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+         ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
+
+         teeOutputStream = new TeeOutputStream(outputStream1, outputStream2);
+         teeInputStream = new TeeInputStream(inputStream, teeOutputStream, true);
+         teeInputStream.read(new byte[SAMPLE.length()]);
+
+         System.out.println("Output stream 1: " + outputStream1.toString());
+         System.out.println("Output stream 2: " + outputStream2.toString());
+
+      } catch (IOException e) {
+         System.out.println(e.getMessage());
+      } finally {
+         //teeIn.close() closes teeIn and teeOut which in turn closes the out1 and out2.       
+         try { 
+            teeInputStream.close(); 
+         } catch (IOException e) { 
+            System.out.println(e.getMessage());
+         }
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Output stream 1: Welcome to TutorialsPoint. Simply Easy Learning.
+Output stream 2: Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<h1>Apache Commons IO - TeeOutputStream</h1>
+<p>TeeOutputStream splits OutputStream. It is named after the unix 'tee' command. It allows a stream to be branched to two streams.</p>
+<h2>Class Declaration</h2>
+<p>Following is the declaration for <b>org.apache.commons.io.output.TeeOutputStream</b> Class &minus;</p>
+<pre class="prettyprint notranslate">
+public class TeeOutputStream
+   extends ProxyOutputStream
+</pre>
+<h2>Example of TeeOutputStream Class</h2>
+<p>In this example, TeeOutputStream accepts two output streams as parameter and passing data to TeeOutputStream set data to both output streams.</p>
+<p><i>IOTester.java</i></p>
+<pre class="prettyprint notranslate">
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import org.apache.commons.io.input.TeeInputStream;
+import org.apache.commons.io.output.TeeOutputStream;
+
+public class IOTester {
+
+   private static final String SAMPLE = "Welcome to TutorialsPoint. Simply Easy Learning.";
+
+   public static void main(String[] args) {
+      try {
+         usingTeeInputStream();
+      } catch(IOException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public static void usingTeeInputStream() throws IOException {
+      TeeInputStream teeInputStream = null;
+      TeeOutputStream teeOutputStream = null;
+
+      try {
+         ByteArrayInputStream inputStream = new ByteArrayInputStream(SAMPLE.getBytes("US-ASCII"));
+         ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+         ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
+
+         teeOutputStream = new TeeOutputStream(outputStream1, outputStream2);
+         teeInputStream = new TeeInputStream(inputStream, teeOutputStream, true);
+         teeInputStream.read(new byte[SAMPLE.length()]);
+
+         System.out.println("Output stream 1: " + outputStream1.toString());
+         System.out.println("Output stream 2: " + outputStream2.toString());
+
+      } catch (IOException e) {
+         System.out.println(e.getMessage());
+      } finally {
+         //teeIn.close() closes teeIn and teeOut which in turn closes the out1 and out2.       
+         try { 
+            teeInputStream.close(); 
+         } catch (IOException e) { 
+            System.out.println(e.getMessage());
+         }
+      }
+   }
+}
+</pre>
+<h2>Output</h2>
+<p>It will print the following result.</p>
+<pre class="result notranslate">
+Output stream 1: Welcome to TutorialsPoint. Simply Easy Learning.
+Output stream 2: Welcome to TutorialsPoint. Simply Easy Learning.
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/commons_io/commons_io_teeoutputstream.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/commons_io/commons_io_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/commons_io/commons_io_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/commons_io/commons_io_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/commons_io/commons_io_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/commons_io/commons_io_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/commons_io/commons_io_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/commons_io/commons_io_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

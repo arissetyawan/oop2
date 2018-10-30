@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Android Content Providers</title>
+<meta name="description" content="Android Content Providers - Learn Android Programming and how to develop android mobile phone and ipad applications starting from Environment setup, application components, activity lifecycle, service lifecycle, application architecture, publishing application, debugging applications, handling events, layouts, menus, user interface controls, styles and themes, handling rotation, fonts management, send email, data storage, managing media, send sms, phone calls." />
+<meta name="keywords" content="Android, programming, tutorial, beginners, develop, mobile phone, Environment Setup, Application Components, Activity Lifecycle, Service Lifecycle, Application Architecture, Publishing Application, Debugging Applications, Handling Events, Layouts, User Interface Controls, Styles and Themes, Handling Rotation, data storage, managing media, Send Email, Send SMS, Phone Calls." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #a5c63b !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #a5c63b url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #a5c63b !important;}
+.submenu-item{ border-bottom: 2px solid #a5c63b !important; border-top: 2px solid #a5c63b !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#a5c63b; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/android/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/android/images/android-mini-logo.jpg" alt="Android Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/android_online_training/index.asp" target="_blank"><img src="/android/images/android-video-tutorials.jpg" alt="Android Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Basics</li>
+<li><a target="_top" href="/android/index.htm">Android - Home</a></li>
+<li><a target="_top" href="/android/android_overview.htm">Android - Overview</a></li>
+<li><a target="_top" href="/android/android_environment_setup.htm">Android - Environment Setup</a></li>
+<li><a target="_top" href="/android/android_architecture.htm">Android - Architecture</a></li>
+<li><a target="_top" href="/android/android_application_components.htm">Android - Application Components</a></li>
+<li><a target="_top" href="/android/android_hello_world_example.htm">Android - Hello World Example</a></li>
+<li><a target="_top" href="/android/android_resources.htm">Android - Resources</a></li>
+<li><a target="_top" href="/android/android_acitivities.htm">Android - Activities</a></li>
+<li><a target="_top" href="/android/android_services.htm">Android - Services</a></li>
+<li><a target="_top" href="/android/android_broadcast_receivers.htm">Android - Broadcast Receivers</a></li>
+<li><a target="_top" href="/android/android_content_providers.htm">Android - Content Providers</a></li>
+<li><a target="_top" href="/android/android_fragments.htm">Android - Fragments</a></li>
+<li><a target="_top" href="/android/android_intents_filters.htm">Android - Intents/Filters</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android - User Interface</li>
+<li><a target="_top" href="/android/android_user_interface_layouts.htm">Android - UI Layouts</a></li>
+<li><a target="_top" href="/android/android_user_interface_controls.htm">Android - UI Controls</a></li>
+<li><a target="_top" href="/android/android_event_handling.htm">Android - Event Handling</a></li>
+<li><a target="_top" href="/android/android_styles_and_themes.htm">Android - Styles and Themes</a></li>
+<li><a target="_top" href="/android/android_custom_components.htm">Android - Custom Components</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Advanced Concepts</li>
+<li><a target="_top" href="/android/android_drag_and_drop.htm">Android - Drag and Drop</a></li>
+<li><a target="_top" href="/android/android_notifications.htm">Android - Notifications</a></li>
+<li><a target="_top" href="/android/android_location_based_services.htm">Location Based Services</a></li>
+<li><a target="_top" href="/android/android_sending_email.htm">Android - Sending Email</a></li>
+<li><a target="_top" href="/android/android_sending_sms.htm">Android - Sending SMS</a></li>
+<li><a target="_top" href="/android/android_phone_calls.htm">Android - Phone Calls</a></li>
+<li><a target="_top" href="/android/android_publishing_application.htm">Publishing Android Application</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Android Useful Examples</li>
+<li><a target="_top" href="/android/android_alert_dialoges.htm">Android - Alert Dialoges</a>
+<li><a target="_top" href="/android/android_animations.htm">Android - Animations</a>
+<li><a target="_top" href="/android/android_audio_capture.htm">Android - Audio Capture</a>
+<li><a target="_top" href="/android/android_audiomanager.htm">Android - AudioManager</a>
+<li><a target="_top" href="/android/android_auto_complete.htm">Android - Auto Complete</a>
+<li><a target="_top" href="/android/android_best_practices.htm">Android - Best Practices</a>
+<li><a target="_top" href="/android/android_bluetooth.htm">Android - Bluetooth</a>
+<li><a target="_top" href="/android/android_camera.htm">Android - Camera</a>
+<li><a target="_top" href="/android/android_clipboard.htm">Android - Clipboard</a>
+<li><a target="_top" href="/android/android_custom_fonts.htm">Android - Custom Fonts</a>
+<li><a target="_top" href="/android/android_data_backup.htm">Android - Data Backup</a>
+<li><a target="_top" href="/android/android_developer_tools.htm">Android - Developer Tools</a>
+<li><a target="_top" href="/android/android_emulator.htm">Android - Emulator</a>
+<li><a target="_top" href="/android/android_facebook_integration.htm">Android - Facebook Integration</a>
+<li><a target="_top" href="/android/android_gestures.htm">Android - Gestures</a>
+<li><a target="_top" href="/android/android_google_maps.htm">Android - Google Maps</a>
+<li><a target="_top" href="/android/android_image_effects.htm">Android - Image Effects</a>
+<li><a target="_top" href="/android/android_imageswitcher.htm">Android - ImageSwitcher</a>
+<li><a target="_top" href="/android/android_internal_storage.htm">Android - Internal Storage</a>
+<li><a target="_top" href="/android/android_jetplayer.htm">Android - JetPlayer</a>
+<li><a target="_top" href="/android/android_json_parser.htm">Android - JSON Parser</a>
+<li><a target="_top" href="/android/android_linkedin_integration.htm">Android - Linkedin Integration</a>
+<li><a target="_top" href="/android/android_loading_spinner.htm">Android - Loading Spinner</a>
+<li><a target="_top" href="/android/android_localization.htm">Android - Localization</a>
+<li><a target="_top" href="/android/android_login_screen.htm">Android - Login Screen</a>
+<li><a target="_top" href="/android/android_mediaplayer.htm">Android - MediaPlayer</a>
+<li><a target="_top" href="/android/android_multitouch.htm">Android - Multitouch</a>
+<li><a target="_top" href="/android/android_navigation.htm">Android - Navigation</a>
+<li><a target="_top" href="/android/android_network_connection.htm">Android - Network Connection</a>
+<li><a target="_top" href="/android/android_nfc_guide.htm">Android - NFC Guide</a>
+<li><a target="_top" href="/android/android_php_mysql.htm">Android - PHP/MySQL</a>
+<li><a target="_top" href="/android/android_progress_circle.htm">Android - Progress Circle</a>
+<li><a target="_top" href="/android/android_progressbar.htm">Android - ProgressBar</a>
+<li><a target="_top" href="/android/android_push_notification.htm">Android - Push Notification</a>
+<li><a target="_top" href="/android/android_renderscript.htm">Android - RenderScript</a>
+<li><a target="_top" href="/android/android_rss_reader.htm">Android - RSS Reader</a>
+<li><a target="_top" href="/android/android_screen_cast.htm">Android - Screen Cast</a>
+<li><a target="_top" href="/android/android_sdk_manager.htm">Android - SDK Manager</a>
+<li><a target="_top" href="/android/android_sensors.htm">Android - Sensors</a>
+<li><a target="_top" href="/android/android_session_management.htm">Android - Session Management</a>
+<li><a target="_top" href="/android/android_shared_preferences.htm">Android - Shared Preferences</a>
+<li><a target="_top" href="/android/android_sip_protocol.htm">Android - SIP Protocol</a>
+<li><a target="_top" href="/android/android_spelling_checker.htm">Android - Spelling Checker</a>
+<li><a target="_top" href="/android/android_sqlite_database.htm">Android - SQLite Database</a>
+<li><a target="_top" href="/android/android_support_library.htm">Android - Support Library</a>
+<li><a target="_top" href="/android/android_testing.htm">Android - Testing</a>
+<li><a target="_top" href="/android/android_text_to_speech.htm">Android - Text to Speech</a>
+<li><a target="_top" href="/android/android_textureview.htm">Android - TextureView</a>
+<li><a target="_top" href="/android/android_twitter_integration.htm">Android - Twitter Integration</a>
+<li><a target="_top" href="/android/android_ui_design.htm">Android - UI Design</a>
+<li><a target="_top" href="/android/android_ui_patterns.htm">Android - UI Patterns</a>
+<li><a target="_top" href="/android/android_ui_testing.htm">Android - UI Testing</a>
+<li><a target="_top" href="/android/android_webview_layout.htm">Android - WebView Layout</a>
+<li><a target="_top" href="/android/android_wi_fi.htm">Android - Wi-Fi</a>
+<li><a target="_top" href="/android/android_widgets.htm">Android - Widgets</a>
+<li><a target="_top" href="/android/android_xml_parsers.htm">Android - XML Parsers</a>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Android Useful Resources</li>
+<li><a target="_top" href="/android/android_questions_answers.htm">Android - Questions and Answers</a></li>
+<!--<li><a target="_top" href="/android/android_quick_guide.htm">Android - Quick Guide</a></li>-->
+<li><a target="_top" href="/android/android_useful_resources.htm">Android - Useful Resources</a></li>
+<li><a target="_top" href="/android/android_discussion.htm">Android - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Android - Content Providers</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/android/android_broadcast_receivers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/android/android_fragments.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<blockquote><p>A content provider component supplies data from one application to others on request. Such requests are handled by the methods of the ContentResolver class. A content provider can use different ways to store its data and the data can be stored in a database, in files, or even over a network.</p></blockquote>
+<img src="/android/images/content.jpg" alt="content provider" />
+<h4 align="center"> ContentProvider</h4>
+<blockquote><b>sometimes it is required to share data across applications. This is where content providers become very useful.</b></blockquote>
+<p>Content providers let you centralize content in one place and have many different applications access it as needed. A content provider behaves very much like a database where you can query it, edit its content, as well as add or delete content using insert(), update(), delete(), and query() methods. In most cases this data is stored in an <b>SQlite</b> database.</p>
+<p>A content provider is implemented as a subclass of <b>ContentProvider</b> class and must implement a standard set of APIs that enable other applications to perform transactions.</p>
+<pre class="prettyprint notranslate">
+public class My Application extends  ContentProvider {
+}
+</pre>
+<h2>Content URIs</h2>
+<p>To query a content provider, you specify the query string in the form of a URI which has following format &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;prefix&gt;://&lt;authority&gt;/&lt;data_type&gt;/&lt;id&gt;
+</pre>
+<p>Here is the detail of various parts of the URI &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Sr.No</th>
+<th style="text-align:center">Part &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">1</td>
+<td><p><b>prefix</b></p>
+<p>This is always set to content://</p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">2</td>
+<td><p><b>authority</b></p>
+<p>This specifies the name of the content provider, for example <i>contacts</i>,  <i>browser</i> etc. For third-party content providers, this could be the fully qualified name, such as <i>com.tutorialspoint.statusprovider</i></p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">3</td>
+<td><p><b>data_type</b></p>
+<p>This indicates the type of data that this particular provider provides. For example, if you are getting all the contacts from the <i>Contacts</i> content provider, then the data path would be <i>people</i> and URI would look like this<i>content://contacts/people</i></p></td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">4</td>
+<td><p><b>id</b></p>
+<p>This specifies the specific record requested. For example, if you are looking for contact number 5 in the Contacts content provider then URI would look like this <i>content://contacts/people/5</i>.</p></td>
+</tr>
+</table>
+<h2>Create Content Provider</h2>
+<p>This involves number of simple steps to create your own content provider.</p>
+<ul class="list">
+<li><p>First of all you need  to create a Content Provider class that extends the <i>ContentProviderbaseclass.</i> </p></li>
+<li><p>Second, you need to define your content provider URI address which will be used to access the content.</p></li>
+<li><p>Next you will need to create your own database to keep the content. Usually, Android uses SQLite database and framework needs to override <i>onCreate()</i> method which will use SQLite Open Helper method to create or open the provider's database. When your application is launched, the <i>onCreate()</i> handler of each of its Content Providers is called on the main application thread.</p></li>
+<li><p>Next you will have to implement Content Provider queries to perform different database specific operations.</p></li> 
+<li><p>Finally register your Content Provider in your activity file using &lt;provider&gt; tag.</p></li> 
+</ul>
+<p>Here is the list of methods which you need to override in Content Provider class to have your Content Provider working &minus;</p>
+<img src="/android/images/content1.jpg" alt="content provider" />
+<h4 align="center">ContentProvider</h4>
+<ul class="list">
+<li><p><b>onCreate()</b> This method is called when the provider is started.</p></li>
+<li><p><b>query()</b> This method receives a request from a client. The result is returned as a Cursor object.</p></li>
+<li><p><b>insert()</b>This method inserts a new record into the content provider.</p></li>
+<li><p><b>delete()</b> This method deletes an existing record from the content provider.</p></li>
+<li><p><b>update()</b> This method updates an existing record from the content provider.</p></li>
+<li><p><b>getType()</b> This method returns the MIME type of the data at the given URI.</p></li>
+</ul>
+<h2>Example</h2>
+<p>This example will explain you how to create your own <i>ContentProvider</i>. So let's follow the following steps to similar to what we followed while creating <i>Hello World Example</i>&minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center">Step</th>
+<th style="text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>You will use Android StudioIDE to create an Android application and name it as <i>My Application</i> under a package <i>com.example.MyApplication</i>, with blank Activity.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Modify main activity file <i>MainActivity.java</i> to add two new methods <i>onClickAddName()</i> and <i>onClickRetrieveStudents()</i>.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>Create a new java file called  <i>StudentsProvider.java</i> under the package <i>com.example.MyApplication</i> to define your actual provider and associated methods.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>Register your content provider in your <i>AndroidManifest.xml</i> file using &lt;provider.../&gt; tag </td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>Modify the default content of <i>res/layout/activity_main.xml</i> file to include a small GUI to add students records.</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>No need to change string.xml.Android studio take care of string.xml file.</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td>Run the application to launch Android emulator and verify the result of the changes done in the application.</td>
+</tr>
+</table>
+<p>Following is the content of the modified main activity file <b>src/com.example.MyApplication/MainActivity.java</b>. This file can include each of the fundamental life cycle methods. We have added two new methods <i>onClickAddName()</i> and <i>onClickRetrieveStudents()</i> to handle user interaction with the application.</p>
+<pre class="prettyprint notranslate">
+package com.example.MyApplication;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Activity;
+
+import android.content.ContentValues;
+import android.content.CursorLoader;
+
+import android.database.Cursor;
+
+import android.view.Menu;
+import android.view.View;
+
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+   }
+   public void onClickAddName(View view) {
+      // Add a new student record
+      ContentValues values = new ContentValues();
+      values.put(StudentsProvider.NAME,
+         ((EditText)findViewById(R.id.editText2)).getText().toString());
+
+      values.put(StudentsProvider.GRADE,
+         ((EditText)findViewById(R.id.editText3)).getText().toString());
+
+      Uri uri = getContentResolver().insert(
+         StudentsProvider.CONTENT_URI, values);
+
+      Toast.makeText(getBaseContext(),
+         uri.toString(), Toast.LENGTH_LONG).show();
+   }
+   public void onClickRetrieveStudents(View view) {
+      // Retrieve student records
+      String URL = "content://com.example.MyApplication.StudentsProvider";
+
+      Uri students = Uri.parse(URL);
+      Cursor c = managedQuery(students, null, null, null, "name");
+
+      if (c.moveToFirst()) {
+         do{
+            Toast.makeText(this,
+               c.getString(c.getColumnIndex(StudentsProvider._ID)) +
+                  ", " +  c.getString(c.getColumnIndex( StudentsProvider.NAME)) +
+                     ", " + c.getString(c.getColumnIndex( StudentsProvider.GRADE)),
+            Toast.LENGTH_SHORT).show();
+         } while (c.moveToNext());
+      }
+   }
+}
+</pre>
+<p>Create new file StudentsProvider.java under <i>com.example.MyApplication</i> package and following is the content of <b>src/com.example.MyApplication/StudentsProvider.java</b> &minus;</p>
+<pre class="prettyprint notranslate">
+package com.example.MyApplication;
+
+import java.util.HashMap;
+
+import android.content.ContentProvider;
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.UriMatcher;
+
+import android.database.Cursor;
+import android.database.SQLException;
+
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+
+import android.net.Uri;
+import android.text.TextUtils;
+
+public class StudentsProvider extends ContentProvider {
+   static final String PROVIDER_NAME = "com.example.MyApplication.StudentsProvider";
+   static final String URL = "content://" + PROVIDER_NAME + "/students";
+   static final Uri CONTENT_URI = Uri.parse(URL);
+
+   static final String _ID = "_id";
+   static final String NAME = "name";
+   static final String GRADE = "grade";
+
+   private static HashMap&lt;String, String&gt; STUDENTS_PROJECTION_MAP;
+
+   static final int STUDENTS = 1;
+   static final int STUDENT_ID = 2;
+
+   static final UriMatcher uriMatcher;
+   static{
+      uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+      uriMatcher.addURI(PROVIDER_NAME, "students", STUDENTS);
+      uriMatcher.addURI(PROVIDER_NAME, "students/#", STUDENT_ID);
+   }
+
+   /**
+      * Database specific constant declarations
+   */
+   
+   private SQLiteDatabase db;
+   static final String DATABASE_NAME = "College";
+   static final String STUDENTS_TABLE_NAME = "students";
+   static final int DATABASE_VERSION = 1;
+   static final String CREATE_DB_TABLE =
+      " CREATE TABLE " + STUDENTS_TABLE_NAME +
+         " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+         " name TEXT NOT NULL, " +
+         " grade TEXT NOT NULL);";
+
+   /**
+      * Helper class that actually creates and manages
+      * the provider's underlying data repository.
+   */
+   
+   private static class DatabaseHelper extends SQLiteOpenHelper {
+      DatabaseHelper(Context context){
+         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+      }
+
+      @Override
+      public void onCreate(SQLiteDatabase db) {
+         db.execSQL(CREATE_DB_TABLE);
+      }
+
+      @Override
+      public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+         db.execSQL("DROP TABLE IF EXISTS " +  STUDENTS_TABLE_NAME);
+         onCreate(db);
+      }
+   }
+
+   @Override
+   public boolean onCreate() {
+      Context context = getContext();
+      DatabaseHelper dbHelper = new DatabaseHelper(context);
+
+      /**
+         * Create a write able database which will trigger its
+         * creation if it doesn't already exist.
+      */
+         
+      db = dbHelper.getWritableDatabase();
+      return (db == null)? false:true;
+   }
+
+   @Override
+   public Uri insert(Uri uri, ContentValues values) {
+      /**
+         * Add a new student record
+      */
+      long rowID = db.insert(	STUDENTS_TABLE_NAME, "", values);
+
+      /**
+         * If record is added successfully
+      */
+      if (rowID &gt; 0) {
+         Uri _uri = ContentUris.withAppendedId(CONTENT_URI, rowID);
+         getContext().getContentResolver().notifyChange(_uri, null);
+         return _uri;
+      }
+        
+      throw new SQLException("Failed to add a record into " + uri);
+   }
+
+   @Override
+   public Cursor query(Uri uri, String[] projection, 
+      String selection,String[] selectionArgs, String sortOrder) {
+      SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+      qb.setTables(STUDENTS_TABLE_NAME);
+
+      switch (uriMatcher.match(uri)) {
+         case STUDENTS:
+            qb.setProjectionMap(STUDENTS_PROJECTION_MAP);
+         break;
+
+         case STUDENT_ID:
+            qb.appendWhere( _ID + "=" + uri.getPathSegments().get(1));
+         break;
+         
+         default:   
+      }
+
+      if (sortOrder == null || sortOrder == ""){
+         /**
+            * By default sort on student names
+         */
+         sortOrder = NAME;
+      }
+      
+      Cursor c = qb.query(db,	projection,	selection, 
+         selectionArgs,null, null, sortOrder);
+      /**
+         * register to watch a content URI for changes
+      */
+      c.setNotificationUri(getContext().getContentResolver(), uri);
+      return c;
+   }
+
+   @Override
+   public int delete(Uri uri, String selection, String[] selectionArgs) {
+      int count = 0;
+      switch (uriMatcher.match(uri)){
+         case STUDENTS:
+            count = db.delete(STUDENTS_TABLE_NAME, selection, selectionArgs);
+         break;
+
+         case STUDENT_ID:
+            String id = uri.getPathSegments().get(1);
+            count = db.delete( STUDENTS_TABLE_NAME, _ID +  " = " + id +
+               (!TextUtils.isEmpty(selection) ? " 
+               AND (" + selection + ')' : ""), selectionArgs);
+            break;
+         default:
+            throw new IllegalArgumentException("Unknown URI " + uri);
+      }
+
+      getContext().getContentResolver().notifyChange(uri, null);
+      return count;
+   }
+
+   @Override
+   public int update(Uri uri, ContentValues values, 
+      String selection, String[] selectionArgs) {
+      int count = 0;
+      switch (uriMatcher.match(uri)) {
+         case STUDENTS:
+            count = db.update(STUDENTS_TABLE_NAME, values, selection, selectionArgs);
+         break;
+
+         case STUDENT_ID:
+            count = db.update(STUDENTS_TABLE_NAME, values, 
+               _ID + " = " + uri.getPathSegments().get(1) +
+               (!TextUtils.isEmpty(selection) ? " 
+               AND (" +selection + ')' : ""), selectionArgs);
+            break;
+         default:
+            throw new IllegalArgumentException("Unknown URI " + uri );
+      }
+        
+      getContext().getContentResolver().notifyChange(uri, null);
+      return count;
+   }
+
+   @Override
+   public String getType(Uri uri) {
+      switch (uriMatcher.match(uri)){
+         /**
+            * Get all student records
+         */
+         case STUDENTS:
+            return "vnd.android.cursor.dir/vnd.example.students";
+         /**
+            * Get a particular student
+         */
+         case STUDENT_ID:
+            return "vnd.android.cursor.item/vnd.example.students";
+         default:
+            throw new IllegalArgumentException("Unsupported URI: " + uri);
+      }
+   }
+}
+</pre>
+<p>Following will the modified content of  <i>AndroidManifest.xml</i> file. Here we have added &lt;provider.../&gt; tag to include our content provider:</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.MyApplication"&gt;
+
+   &lt;application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"&gt;
+         &lt;activity android:name=".MainActivity"&gt;
+            &lt;intent-filter&gt;
+               &lt;action android:name="android.intent.action.MAIN" /&gt;
+               &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+         &lt;/activity&gt;
+        
+      &lt;provider android:name="StudentsProvider"
+         android:authorities="com.example.MyApplication.StudentsProvider"/&gt;
+   &lt;/application&gt;
+&lt;/manifest&gt;
+</pre>
+<p>Following will be the content of <b>res/layout/activity_main.xml</b> file&minus;</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingBottom="@dimen/activity_vertical_margin"
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   tools:context="com.example.MyApplication.MainActivity"&gt;
+
+   &lt;TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Content provider"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:textSize="30dp" /&gt;
+
+   &lt;TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tutorials point "
+      android:textColor="#ff87ff09"
+      android:textSize="30dp"
+      android:layout_below="@+id/textView1"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageButton"
+      android:src="@drawable/abc"
+      android:layout_below="@+id/textView2"
+      android:layout_centerHorizontal="true" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/button2"
+      android:text="Add Name"
+      android:layout_below="@+id/editText3"
+      android:layout_alignRight="@+id/textView2"
+      android:layout_alignEnd="@+id/textView2"
+      android:layout_alignLeft="@+id/textView2"
+      android:layout_alignStart="@+id/textView2"
+      android:onClick="onClickAddName"/&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText"
+      android:layout_below="@+id/imageButton"
+      android:layout_alignRight="@+id/imageButton"
+      android:layout_alignEnd="@+id/imageButton" /&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText2"
+      android:layout_alignTop="@+id/editText"
+      android:layout_alignLeft="@+id/textView1"
+      android:layout_alignStart="@+id/textView1"
+      android:layout_alignRight="@+id/textView1"
+      android:layout_alignEnd="@+id/textView1"
+      android:hint="Name"
+      android:textColorHint="@android:color/holo_blue_light" /&gt;
+
+   &lt;EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText3"
+      android:layout_below="@+id/editText"
+      android:layout_alignLeft="@+id/editText2"
+      android:layout_alignStart="@+id/editText2"
+      android:layout_alignRight="@+id/editText2"
+      android:layout_alignEnd="@+id/editText2"
+      android:hint="Grade"
+      android:textColorHint="@android:color/holo_blue_bright" /&gt;
+
+   &lt;Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Retrive student"
+      android:id="@+id/button"
+      android:layout_below="@+id/button2"
+      android:layout_alignRight="@+id/editText3"
+      android:layout_alignEnd="@+id/editText3"
+      android:layout_alignLeft="@+id/button2"
+      android:layout_alignStart="@+id/button2"
+      android:onClick="onClickRetrieveStudents"/&gt;
+&lt;/RelativeLayout&gt;
+</pre>
+<p>Make sure you have following content of  <b>res/values/strings.xml</b> file:</p>
+<pre class="prettyprint notranslate">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;string name="app_name"&gt;My Application&lt;/string&gt;
+&lt;/resources&gt;;
+</pre>
+<p>Let's try to run our modified <b>My Application</b> application we just created. I assume you had created your <b>AVD</b> while doing environment set-up. To run the app from Android Studio IDE, open one of your project's activity files and click Run <img class="inline" src="/android/images/eclipse_run.jpg" alt="Android StudioRun Icon" /> icon from the tool bar. Android Studio installs the app on your AVD and starts it and if everything is fine with your set-up and application, it will display following Emulator window, be patience because it may take sometime based on your computer speed &minus;</p>
+<img src="/android/images/content2.jpg" alt="Android Content Provider Demo" />
+<p>Now let's enter student <b>Name</b> and <b>Grade</b> and finally click on <b>Add Name</b> button, this will add student record in the database and will flash a message at the bottom showing ContentProvider URI along with record number added in the database. This operation makes use of our <b>insert()</b> method. Let's repeat this process to add few more students in the database of our content provider.</p>
+<img src="/android/images/content3.jpg" alt="Add Records using ContentProvider" />
+<p>Once you are done with adding records in the database, now its time to ask ContentProvider to give us those records back, so let's click <b>Retrieve Students</b> button which will fetch and display all the records one by one which is as per our the implementation of our <b>query()</b> method.</p>
+<p>You can write activities against update and delete operations by providing callback functions in <b>MainActivity.java</b> file and then modify user interface to have buttons for update and deleted operations in the same way as we have done for add and read operations.</p>
+<p>This way you can use existing Content Provider like Address Book or you can use Content Provider concept in developing nice database oriented applications where you can perform all sort of database operations like read, write, update and delete as explained above in the example.</p>
+<hr />
+<div class="pre-btn">
+<a href="/android/android_broadcast_receivers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/android/android_fragments.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/android/android_content_providers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/android/android_content_providers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/android/android_content_providers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/android/android_content_providers.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/android/android_content_providers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/android/android_content_providers.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

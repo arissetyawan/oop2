@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>MVC Framework Online Quiz - TutorialsPoint</title>
+<meta name="description" content="MVC Framework Online Quiz - Learn MVC Framework in Web Design in simple and easy steps starting from basic to advanced concepts with examples including Introduction, Architecture and Flow, MVC and ASP.NET Web Forms, Folders, Models, Controllers, Views, Layouts, Routing Engine, Filters and Action Filters, First Application, Advance MVC Example, Ajax Support, Exception Handling, Bundling and Minification." />
+<meta name="keywords" content="MVC Framework, Introduction, Architecture and Flow, MVC and ASP.NET Web Forms, Folders, Models, Controllers, Views, Layouts, Routing Engine, Filters and Action Filters, First Application, Advance MVC Example, Ajax Support, Exception Handling, Bundling and Minification." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #007074 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #007074 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #007074 !important;}
+.submenu-item{ border-bottom: 2px solid #007074 !important; border-top: 2px solid #007074 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#007074; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/mvc_framework/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/mvc_framework/images/mvc-framework-mini-logo.jpg" alt="MVC Framework Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">MVC Framework Tutorial</li>
+<li><a href="/mvc_framework/index.htm">MVC Framework - Home</a></li>
+<li><a href="/mvc_framework/mvc_framework_introduction.htm">MVC Framework - Introduction</a></li>
+<li><a href="/mvc_framework/mvc_framework_architecture.htm">MVC Framework - Architecture</a></li>
+<li><a href="/mvc_framework/mvc_framework_asp.net_forms.htm">MVC Framework - ASP.NET Forms</a></li>
+<li><a href="/mvc_framework/mvc_framework_first_application.htm">MVC Framework - First Application</a></li>
+<li><a href="/mvc_framework/mvc_framework_folders.htm">MVC Framework - Folders</a></li>
+<li><a href="/mvc_framework/mvc_framework_models.htm">MVC Framework - Models</a></li>
+<li><a href="/mvc_framework/mvc_framework_controllers.htm">MVC Framework - Controllers</a></li>
+<li><a href="/mvc_framework/mvc_framework_views.htm">MVC Framework - Views</a></li>
+<li><a href="/mvc_framework/mvc_framework_layouts.htm">MVC Framework - Layouts</a></li>
+<li><a href="/mvc_framework/mvc_framework_routing_engine.htm">MVC Framework - Routing Engine</a></li>
+<li><a href="/mvc_framework/mvc_framework_action_filters.htm">MVC Framework - Action Filters</a></li>
+<li><a href="/mvc_framework/mvc_framework_advanced_example.htm">Advanced Example</a></li>
+<li><a href="/mvc_framework/mvc_framework_ajax_support.htm">MVC Framework - Ajax Support</a></li>
+<li><a href="/mvc_framework/mvc_framework_bundling.htm">MVC Framework - Bundling</a></li>
+<li><a href="/mvc_framework/mvc_framework_exception_handling.htm">Exception Handling</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">MVC Framework Useful Resources</li>
+<li><a href="/mvc_framework/mvc_framework_questions_answers.htm">Questions &amp; Answers</a></li>
+<li><a href="/mvc_framework/mvc_framework_quick_guide.htm">MVC Framework - Quick Guide</a></li>
+<li><a href="/mvc_framework/mvc_framework_resources.htm">MVC Framework - Resources</a></li>
+<li><a href="/mvc_framework/mvc_framework_discussion.htm">MVC Framework - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ 
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>MVC Framework Online Quiz</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/mvc_framework/mvc_framework_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/mvc_framework/mvc_framework_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Following quiz provides Multiple Choice Questions (MCQs) related to <b>MVC Framework</b>. You will have to read all the given answers and click over the correct answer. If you are not sure about the answer then you can check the answer using <b>Show Answer</b> button. You can use <b>Next Quiz</b> button to check new set of questions in the quiz.</p>
+<img src="/images/questions_and_answers.png" alt="Questions and Answers" />
+
+<div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 1</span> - You have been given requirements for a dashboard page that will contain summary information from your order processing system in a single display table. However, this summarization needs to be done by combining data requests from the order system, the shipping system, and the accounting system. The dashboard page will be the only place you use this combined data. What is the best way to implement this requirement?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Make the various data requests and compile the information in the controller for display.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Create an individual model for each of the data requests, and then create a view- specific model that calls those models and merges the data.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Create a model for the summary data and handle the various data requests within that model as well as the merging of the data.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Create an individual model for each of the data requests and then merge the data on the client side for display.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - C and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>B.You will have a better chance of code reuse if you break down the separate calls into their own models and then create another model to pull them together and compile them.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 2</span> - You are adding a reporting vertical to an enterprise application. Many of the reports will be run every morning by a set of users. Some of the reports will be identical as every member of a team will get the same report sometime in the morning. What kind of caching will provide an improvement in performance? (Choose all that apply.)</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Data caching</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Page output caching with duration of two minutes </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Page output caching with duration of four hours </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Windows AppFabric caching</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - A, C and D</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A16'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>E.Data caching with the appropriate timeout will enable the data needed for the reports to be stored so that the call to the database is not necessary.A page output caching of four hours caches the output of the report for the whole morning and should eliminate the need for the report to be run a second time.AppFabric caching acts much like data caching to eliminate the need for additional calls to the database to generate the reports.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q28">
+<p><span>Q 3</span> - In which of the following scenarios should you include validation? (Choose all that apply.)</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - You have an online diary with two form fields, a title, and a large subject box. A title is not required, and the subject content is stored in a database column with no maximum size.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The web application you maintain has an area that serves as a pass-through to another company's web services. The form contains personal information, such as address and phone number, and is used to set up a profile on the company's retirement partner website. The partner has never given you any instructions as to what is or is not required to be sent to them.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Your application is a long wizard that college students use to apply for financial aid. They do not have access to the application until they are already logged on to the system so the application knows who they are. Most students will log on many times to finish the application, so any field might or might not be completed at any time. </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - You are developing a simple form that helps home brewers keep track of their process. The form provides two input fields: Date/time and ph level. The Date/ time box needs to be an ordinary text box because people around the world might enter the date differently, in a way that is meaningful to them. The ph level can be either a numeric value or a text description.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - C and A both</a></p>
+<p><a class="true" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A28'>
+<h3>Answer : F</h3>
+<h3>Explanation</h3>
+<p>F.You should build in validation to check that at least one field has been populated before saving an entry.Although the partner company has not provided any requirements, your company is responsible for data entry and therefore should ensure that the data passing through the application meets some minimum criteria.The application has many entry fields so it is difficult to predict when an entry hits a valid stage. However, you already know you have constraints on the data being input because of the size of the database columns in which you will be storing them. A MaxLength validator on each field would help ensure that there is no loss of data.Although either field in the form can be anything, they should have a maximum length limit imposed so the data does not exceed the size of the database column they will be stored in. You should also validate that neither field is empty.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('28')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q40">
+<p><span>Q 4</span> - Your company has joined an industry accessibility group and you are a member. As one of your responsibilities, you have been asked to estimate the time it would take to modify your corporate site for accessibility. What should you consider to properly estimate the required time? (Choose all that apply.)</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - The amount of text in the website</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The level of current usage of HTML helpers in your views</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - The numbers of controllers in the application</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - The complexity of your data entry forms</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - B and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A40'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>E.Because ASP.NET MVC 3 HTML helpers are not ARIA compliant, you need to write custom HTML helpers or use a different process to create HTML forms.Because many of the problems with accessibility are related to giving context to content, complex forms need a thorough review to ensure that labels and section context are provided for every element on the page.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('40')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q41">
+<p><span>Q 5</span> - You are globalizing an application and are compiling a list of items that need to be translated. Which items should be included on the list? (Choose all that apply.)</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Images that are used as part of the menu structure</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The company logo </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Server error-logging messages</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Button tooltips</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - A and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A41'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>E. Images that are being used for menus likely have text displayed on them. That text should be localized, and extra sets of buttons might have to be created.Tooltips are supposed to give extra contextual help about the item the mouse hovers over. It is important to get them translated.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('41')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q60">
+<p><span>Q 6</span> - What is an advantage to using first chance exception notification?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - The ability to capture and handle all exceptions that occur within the application in one place</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The ability to log an exception after it is handled by its appropriate error handling code </a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - The ability to log an exception before it is touched by any other error handler </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - The ability to forward an exception to an error handler based on the type of exception that was thrown</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - A and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A60'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>C.The first chance exception handler enables you to examine an exception and take some action before it is touched by any other handler</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('60')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q66">
+<p><span>Q 7</span> - What do you need to do to use IntelliTrace from within Windows Azure? (Choose all that apply.)</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Publish the solution from any version of Visual Studio Professional 2012 or higher.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Select the Enable IntelliTrace check box before publishing the solution. </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Ensure that you made all configuration changes in the Web.config file that will turn on IntelliTrace. </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Download and view the IntelliTrace logs through a web browser.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - Download and view the IntelliTrace logs through Visual Studio Ultimate 2012.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>F</span> - B and E both</a></p>
+</div>
+<div class="A" id='A66'>
+<h3>Answer : F</h3>
+<h3>Explanation</h3>
+<p>F.When publishing the projects, you can configure the process to deploy in debug mode with IntelliTrace enabled.You can view the IntelliTrace logs through Visual Studio after download.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('66')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q71">
+<p><span>Q 8</span> - What interfaces or classes should be implemented or inherited when creating custom authentication that is based on a non-Windows, third-party provider? (Choose all that apply.)</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - ActiveDirectoryMembershipProvider</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - IIdentity </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SqlMembershipProvider </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Iprincipal</a></p>
+<p><a class="true" href="javascript:void(0);"><span>E</span> - B and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A71'>
+<h3>Answer : E</h3>
+<h3>Explanation</h3>
+<p>E.IIdentity describes the user that was authenticated.IPrincipal provides the security context of the user on whose behalf the code is running.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('71')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q87">
+<p><span>Q 9</span> - You are implementing an ASP.NET MVC 2 Web application. The URL with path /Home/Details/{country} will return a page that provides information about the named country. You need to ensure that requests for this URL that contains an unrecognized country value will not be processed by the Details action of HomeController.What should you do?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Add the ValidateAntiForgeryToken attribute to the Details action method.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Add the Bind attribute to the country parameter of the Details action method. Set the attribute's Prefix property to Country. </a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Create a class that implements the IRouteConstraint interface. Configure the default route to use this class. </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Create a class that implements the IRouteHandler interface. Configure the default route to use this class.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - A and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above	</a></p>
+</div>
+<div class="A" id='A87'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>C.IrouteConstraint interface is implemented to configure default route to implement custom logic</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('87')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q100">
+<p><span>Q 10</span> - . How to return the JSON from action method in ASP.Net MVC?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> -  return JSON()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - return ActionResult() </a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - return viewResult() </a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - return Result()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - C and D both</a></p>
+<p><a class="false" href="javascript:void(0);"><span>F</span> - All of the above</a></p>
+</div>
+<div class="A" id='A100'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>A.JSON are used to return JSON result in MVC</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('100')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><hr />
+<div class="pre-btn">
+<a href="/mvc_framework/mvc_framework_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/mvc_framework/mvc_framework_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">mvc_framework_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/mvc_framework/mvc_framework_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/mvc_framework/mvc_framework_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/mvc_framework/mvc_framework_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/mvc_framework/mvc_framework_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/mvc_framework/mvc_framework_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/mvc_framework/mvc_framework_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>Html Programming Examples</title>
+<meta name="Description" content="Html Programming Examples - Learn Html programming language with online examples. Practice Programming Code Examples online. Compile and Execute Html Code Online. Live demo examples for Html Programming Code."/>
+<meta name="Keywords" content="Html, Programming, Examples, Coding, Live, Demo, Pratice, Compile, Execute" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="Html Programming Examples" />
+<meta name="twitter:description" property="og:description" content="Html Programming Examples - Learn Html programming language with online examples. Practice Programming Code Examples online. Compile and Execute Html Code Online. Live demo examples for Html Programming Code." />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<style>
+.embed-box{z-index:999; background:#fff; margin:-8px 0px 0px 0px; padding:10px; font-size:13px; line-height:20px; right:4px; width:185px;float:right;}
+.qa_widget h2{margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; border-bottom:0px solid #ccc!important;}
+.rightgooglead{top:5px;}
+.qa_widget .qa_links{margin:5px 0px 5px 0px; float:left;}
+.left_navv li{background:url(https://www.tutorialspoint.com/images/list-icon.png) no-repeat 2% 60%; padding:7px 10px 7px 26px;}
+pre.prettyprint {max-height:350px;}
+#right_menu_extra{width:300px;}
+h2 a{ color:#333; }
+</style>
+<div class="mui-container container-top">   
+    <div class="">    
+        <!-- center column content -->
+         <div class="">    
+            <div class="mui-col-md-8">
+                <div id="divIndexQuestions">  
+                    <div class="question_section">    
+                     <div class="qa_widget">                                
+                     <!-- /60931893/Native_QnA -->
+                     <div id='div-gpt-ad-1532956972128-0'>
+                     <script>
+                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+                     </script>
+                     </div>
+                     </div>                    
+                  </div>
+                                            <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/ciQ42A/bulma-components-rightaligned-dropdown'>Bulma Components Rightaligned Dropdown</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;title&quot;&gt;
+            Right Aligned Dropdown
+            &lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class = &quot;dropdown is-right&quot;&gt;
+               &lt;div class = &quot;dropdown-trigger&quot;&gt;
+                  &lt;button class = &quot;button&quot; aria-haspopup=&quot;true&quot; aria-controls=&quot;dropdown-menu4&quot;&gt;
+                  &lt;span&gt;Countries&lt;/span&gt;
+                  &lt;span class = &quot;icon is-small&quot;&gt;
+                  &lt;i class = &quot;fas fa-angle-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                  &lt;/button&gt;
+               &lt;/div&gt;
+               &lt;div class = &quot;dropdown-menu&quot; id=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                  &lt;div class = &quot;dropdown-content&quot;&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     India
+                     &lt;/a&gt;
+                     &lt;a class = &quot;dropdown-item&quot;&gt;
+                     England
+                     &lt;/a&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item is-active&quot;&gt;
+                     Australia
+                     &lt;/a&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     Srilanka
+                     &lt;/a&gt;
+                     &lt;hr class = &quot;dropdown-divider&quot;&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     South Africa
+                     &lt;/a&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;script&gt;           
+               document.addEventListener('DOMContentLoaded', function () {                        
+               var dropdown = document.querySelector('.dropdown');                         
+               dropdown.addEventListener('click', function(event) {                                 
+                 event.stopPropagation();                          
+                 dropdown.classList.toggle('is-active');
+               });
+               });
+               
+            &lt;/script&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/ciQ42A" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/ciQ42A" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/DvPp8d/bulma-components-dropdown-hoverable'>Bulma Components Dropdown Hoverable</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;title&quot;&gt;
+            Hoverable Dropdown
+            &lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class = &quot;dropdown is-hoverable&quot;&gt;
+               &lt;div class = &quot;dropdown-trigger&quot;&gt;
+                  &lt;button class = &quot;button&quot; aria-haspopup=&quot;true&quot; aria-controls=&quot;dropdown-menu4&quot;&gt;
+                  &lt;span&gt;Countries&lt;/span&gt;
+                  &lt;span class = &quot;icon is-small&quot;&gt;
+                  &lt;i class = &quot;fas fa-angle-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                  &lt;/button&gt;
+               &lt;/div&gt;
+               &lt;div class = &quot;dropdown-menu&quot; id=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                  &lt;div class = &quot;dropdown-content&quot;&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     India
+                     &lt;/a&gt;
+                     &lt;a class = &quot;dropdown-item&quot;&gt;
+                     England
+                     &lt;/a&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item is-active&quot;&gt;
+                     Australia
+                     &lt;/a&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     Srilanka
+                     &lt;/a&gt;
+                     &lt;hr class = &quot;dropdown-divider&quot;&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     South Africa
+                     &lt;/a&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;script&gt;           
+               document.addEventListener('DOMContentLoaded', function () {                        
+               var dropdown = document.querySelector('.dropdown');                         
+               dropdown.addEventListener('click', function(event) {                                 
+                 event.stopPropagation();                          
+                 dropdown.classList.toggle('is-active');
+               });
+               });
+               
+            &lt;/script&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/DvPp8d" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/DvPp8d" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/ZSv03Q/bulma-components-basic-dropdown'>Bulma Components Basic Dropdown</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;title&quot;&gt;
+            Basic Dropdown
+            &lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class = &quot;dropdown&quot;&gt;
+               &lt;div class = &quot;dropdown-trigger&quot;&gt;
+                  &lt;button class = &quot;button&quot; aria-haspopup=&quot;true&quot; aria-controls=&quot;dropdown-menu&quot;&gt;
+                  &lt;span&gt;Countries&lt;/span&gt;
+                  &lt;span class = &quot;icon is-small&quot;&gt;
+                  &lt;i class = &quot;fa fa-angle-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                  &lt;/button&gt;
+               &lt;/div&gt;
+               &lt;div class = &quot;dropdown-menu&quot; id=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                  &lt;div class = &quot;dropdown-content&quot;&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     India
+                     &lt;/a&gt;
+                     &lt;a class = &quot;dropdown-item&quot;&gt;
+                     England
+                     &lt;/a&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item is-active&quot;&gt;
+                     Australia
+                     &lt;/a&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     Srilanka
+                     &lt;/a&gt;
+                     &lt;hr class = &quot;dropdown-divider&quot;&gt;
+                     &lt;a href=&quot;#&quot; class = &quot;dropdown-item&quot;&gt;
+                     South Africa
+                     &lt;/a&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;script&gt;
+               //DOMContentLoaded - it fires when initial HTML document has been completely loaded
+               document.addEventListener('DOMContentLoaded', function () {
+               // querySelector - it returns the element within the document that matches the specified selector
+               var dropdown = document.querySelector('.dropdown');
+                 
+               //addEventListener - attaches an event handler to the specified element.
+               dropdown.addEventListener('click', function(event) {
+                 
+               //event.stopPropagation() - it stops the bubbling of an event to parent elements, by preventing parent event handlers from being executed
+               event.stopPropagation();
+                
+               //classList.toggle - it toggles between adding and removing a class name from an element
+               dropdown.classList.toggle('is-active');
+               });
+               });        
+            &lt;/script&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/ZSv03Q" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/ZSv03Q" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/BXdXwy/bulma-components-card'>Bulma Components Card</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;meta charset = &quot;utf-8&quot;&gt;
+   &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+   &lt;title&gt;Card&lt;/title&gt;
+   &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+   &lt;script defer src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;script defer src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;  
+      &lt;div class = &quot;container&quot;&gt;
+         &lt;h1 class = &quot;is-size-2&quot;&gt;Card&lt;/h1&gt;&lt;br&gt;
+         &lt;div class = &quot;card&quot;&gt;
+            &lt;div class = &quot;card-image&quot;&gt;
+               &lt;figure class = &quot;image is-3by1&quot;&gt;
+               &lt;img src = &quot;http://3.bp.blogspot.com/-B8jn4_pTmko/Vi3zmDIhnII/AAAAAAAACBY/5EEv6Ep_z6w/s1600/tutorialpoint.png&quot; alt=&quot;Placeholder image&quot;&gt;
+               &lt;/figure&gt;
+            &lt;/div&gt;
+            &lt;div class = &quot;card-content&quot;&gt;
+               &lt;div class = &quot;media&quot;&gt;
+                  &lt;div class = &quot;media-left&quot;&gt;
+                     &lt;figure class = &quot;image is-48x48&quot;&gt;
+                     &lt;img src = &quot;https://lh3.ggpht.com/FnKKlX-4e6SZjODG0_9TMd5FZ7zuO_OOh7lbRgqB8DxWTZVUiALW6qh3YUT6xARYdZQ=w720-h310&quot; alt=&quot;Placeholder image&quot;&gt;
+                     &lt;/figure&gt;
+                  &lt;/div&gt;
+                  &lt;div class = &quot;media-content&quot;&gt;
+                     &lt;p class = &quot;title is-4&quot;&gt;Tutorialspoint&lt;/p&gt;
+                     &lt;p class = &quot;subtitle is-6&quot;&gt;https://www.tutorialspoint.com/&lt;/p&gt;
+                     &lt;time datetime = &quot;2016-1-1&quot;&gt;11:09 PM - 1 Jan 2016&lt;/time&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;          
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;  
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/BXdXwy" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/BXdXwy" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/SsYPgK/bulma-component-breadcrumb-sizes'>Bulma Component Breadcrumb Sizes</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Breadcrumb - Sizes&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script defer src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+      &lt;script defer src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;h1 class = &quot;is-size-2&quot;&gt;Breadcrumb Sizes&lt;/h1&gt;&lt;br&gt;
+            &lt;p class = &quot;is-size-5&quot;&gt;Small&lt;/p&gt;
+            &lt;nav class = &quot;breadcrumb is-small&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+            
+            &lt;!-- &lt;p class = &quot;is-size-3&quot;&gt;Alignment&lt;/p&gt;&lt;br&gt; --&gt;
+            &lt;p class = &quot;is-size-5&quot;&gt;Medium&lt;/p&gt;
+            &lt;br&gt;
+            &lt;nav class = &quot;breadcrumb is-medium&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+            
+            &lt;p class = &quot;is-size-5&quot;&gt;Large&lt;/p&gt;
+            &lt;br&gt;
+            &lt;nav class = &quot;breadcrumb is-large&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/SsYPgK" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/SsYPgK" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/U8b8ZN/bulma-component-breadcrumb-with-icons'>Bulma Component Breadcrumb with Icons</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Breadcrumb - Icons&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script defer src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+      &lt;script defer src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;     
+            &lt;p class = &quot;is-size-4&quot;&gt;Breadcrumb with Icons&lt;/p&gt;
+            &lt;nav class = &quot;breadcrumb&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                        &lt;span class = &quot;icon is-small&quot;&gt;
+                           &lt;i class = &quot;fas fa-home&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Home&lt;/span&gt;
+                     &lt;/a&gt;
+                  &lt;/li&gt;
+                  
+                  &lt;li&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                        &lt;span class = &quot;icon is-small&quot;&gt;
+                           &lt;i class = &quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Tutorialspoint&lt;/span&gt;
+                     &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                        &lt;span class = &quot;icon is-small&quot;&gt;
+                           &lt;i class = &quot;fas fa-puzzle-piece&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Bulma&lt;/span&gt;
+                     &lt;/a&gt;
+                  &lt;/li&gt;
+                  
+                  &lt;li class = &quot;is-active&quot;&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                        &lt;span class = &quot;icon is-small&quot;&gt;
+                           &lt;i class = &quot;fas fa-thumbs-up&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Documentation&lt;/span&gt;
+                     &lt;/a&gt;
+                  &lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;p class = &quot;is-size-4&quot;&gt;Different types of Breadcrumbs&lt;/p&gt;
+            &lt;br&gt;
+            
+            &lt;nav class = &quot;breadcrumb has-arrow-separator&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;br&gt;
+            
+            &lt;nav class = &quot;breadcrumb has-bullet-separator&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;br&gt;
+            
+            &lt;nav class = &quot;breadcrumb has-dot-separator&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;br&gt;
+            
+            &lt;nav class = &quot;breadcrumb has-succeeds-separator&quot; aria-label=&quot;breadcrumbs&quot;&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tutorialspoint&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bulma&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class = &quot;is-active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/nav&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/U8b8ZN" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/U8b8ZN" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/Us5mJV/bulma-elements-title-subtitle'>Bulma  Elements Title Subtitle</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;is-size-3&quot;&gt;Title and Subtitle&lt;/span&gt;&lt;br&gt;
+            &lt;h1 class = &quot;title&quot;&gt;Tutorialspoint (title)&lt;/h1&gt;
+            &lt;h2 class = &quot;subtitle&quot;&gt;easy way for learning online (subtitle)&lt;/h2&gt;
+            &lt;span class = &quot;is-size-3&quot;&gt;Sizes of Title and Subtitle&lt;/span&gt;&lt;br&gt;
+            &lt;h1 class = &quot;title is-1&quot;&gt;Tutorialspoint (is-1)&lt;/h1&gt;
+            &lt;h1 class = &quot;subtitle is-1&quot;&gt;easy way for learning online&lt;/h1&gt;
+            &lt;br&gt;
+            &lt;h2 class = &quot;title is-2&quot;&gt;Tutorialspoint (is-2)&lt;/h2&gt;
+            &lt;h2 class = &quot;subtitle is-2&quot;&gt;easy way for learning online&lt;/h2&gt;
+            &lt;br&gt;
+            &lt;h3 class = &quot;title is-3&quot;&gt;Tutorialspoint (is-3)&lt;/h3&gt;
+            &lt;h3 class = &quot;subtitle is-3&quot;&gt;easy way for learning online&lt;/h3&gt;
+            &lt;br&gt;
+            &lt;h4 class = &quot;title is-4&quot;&gt;Tutorialspoint (is-4)&lt;/h4&gt;
+            &lt;h4 class = &quot;subtitle is-4&quot;&gt;easy way for learning online&lt;/h4&gt;
+            &lt;br&gt;
+            &lt;h5 class = &quot;title is-5&quot;&gt;Tutorialspoint (is-5)&lt;/h5&gt;
+            &lt;h5 class = &quot;subtitle is-5&quot;&gt;easy way for learning online&lt;/h5&gt;
+            &lt;br&gt;
+            &lt;h6 class = &quot;title is-6&quot;&gt;Tutorialspoint (is-6)&lt;/h6&gt;
+            &lt;h6 class = &quot;subtitle is-6&quot;&gt;easy way for learning online&lt;/h6&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/Us5mJV" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/Us5mJV" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/4hdV6f/bulma-elements-list-of-tags'>Bulma Elements List of Tags</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;title&quot;&gt;
+            Tags
+            &lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;span class = &quot;is-size-5&quot;&gt;List of tags&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class = &quot;tags&quot;&gt;
+               &lt;span class = &quot;tag&quot;&gt;India&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;Srilanka&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;England&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;Australia&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;Spain&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;Russia&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;South Africa&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;Ireland&lt;/span&gt;
+               &lt;span class = &quot;tag&quot;&gt;Zimbabwe&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;span class = &quot;is-size-5&quot;&gt;Tags with Delete and Color Combinations&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class = &quot;tags has-addons&quot;&gt;
+               &lt;span class = &quot;tag is-success&quot;&gt;India&lt;/span&gt;
+               &lt;a class = &quot;tag is-delete&quot;&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class = &quot;tags has-addons&quot;&gt;
+               &lt;span class = &quot;tag is-warning&quot;&gt;Srilanka&lt;/span&gt;
+               &lt;a class = &quot;tag is-delete&quot;&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class = &quot;tags has-addons&quot;&gt;
+               &lt;span class = &quot;tag is-danger&quot;&gt;Srilanka&lt;/span&gt;
+               &lt;a class = &quot;tag is-delete&quot;&gt;&lt;/a&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/4hdV6f" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/4hdV6f" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/NxgqbQ/bulma-elements-tag'>Bulma Elements Tag</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;title&quot;&gt;
+            Tags
+            &lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;span class = &quot;is-size-5&quot;&gt;Basic Tag&lt;/span&gt;&lt;br&gt;
+            &lt;span class = &quot;tag&quot;&gt;
+            Simple Tag
+            &lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;span class = &quot;is-size-5&quot;&gt;Tag Colors&lt;/span&gt;&lt;br&gt;
+            &lt;span class = &quot;tag is-black&quot;&gt;Black&lt;/span&gt;
+            &lt;span class = &quot;tag is-dark&quot;&gt;Dark&lt;/span&gt;
+            &lt;span class = &quot;tag is-light&quot;&gt;Light&lt;/span&gt;
+            &lt;span class = &quot;tag is-white&quot;&gt;White&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+            &lt;span class = &quot;tag is-primary&quot;&gt;Primary&lt;/span&gt;
+            &lt;span class = &quot;tag is-link&quot;&gt;Link&lt;/span&gt;
+            &lt;span class = &quot;tag is-info&quot;&gt;Info&lt;/span&gt;
+            &lt;span class = &quot;tag is-success&quot;&gt;Success&lt;/span&gt;
+            &lt;span class = &quot;tag is-warning&quot;&gt;Warning&lt;/span&gt;
+            &lt;span class = &quot;tag is-danger&quot;&gt;Danger&lt;/span&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;span class = &quot;is-size-5&quot;&gt;Tag Sizes&lt;/span&gt;&lt;br&gt;
+            &lt;span class = &quot;tag is-primary is-medium&quot;&gt;Medium&lt;/span&gt;
+            &lt;span class = &quot;tag is-info is-large&quot;&gt;Large&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/NxgqbQ" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/NxgqbQ" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                                                <div class="clsQuestionSection">      
+                            <div class="">   
+                                <div class="qa_widget qa_widget_popup">                                
+                                    <div class="qa_post" >
+                                        <h2>  
+                                        <a href='/programming_example/1lGTQg/bulma-elements-bordered-table'>Bulma Elements Bordered Table</a>                                       </h2>
+                                        <div class="qa_category">
+                                       <a href='/html_programming_examples/'><span>html</span></a>                                       </div>  
+                                       <p class="qa_post_desc">
+                                          <pre class="prettyprint" style="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = &quot;utf-8&quot;&gt;
+      &lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1&quot;&gt;
+      &lt;title&gt;Bulma Elements Example&lt;/title&gt;
+      &lt;link rel = &quot;stylesheet&quot; href = &quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&quot;&gt;
+      &lt;script src = &quot;https://use.fontawesome.com/releases/v5.1.0/js/all.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;section class = &quot;section&quot;&gt;
+         &lt;div class = &quot;container&quot;&gt;
+            &lt;span class = &quot;is-size-5&quot;&gt;
+            Bordered Table
+            &lt;/span&gt;&lt;br&gt;
+            &lt;table class = &quot;table is-bordered&quot;&gt;
+               &lt;thead&gt;
+                  &lt;tr&gt;
+                     &lt;th&gt;Position&lt;/th&gt;
+                     &lt;th&gt;Name&lt;/th&gt;
+                     &lt;th&gt;Country&lt;/th&gt;
+                  &lt;/tr&gt;
+               &lt;/thead&gt;
+               &lt;tfoot&gt;
+                  &lt;tr&gt;
+                     &lt;th&gt;&lt;abbr title=&quot;Position&quot;&gt;Pos&lt;/abbr&gt;&lt;/th&gt;
+                     &lt;th&gt;Player&lt;/th&gt;
+                     &lt;th&gt;&lt;abbr title=&quot;Played for the country&quot;&gt;Country&lt;/abbr&gt;&lt;/th&gt;
+                  &lt;/tr&gt;
+               &lt;/tfoot&gt;
+               &lt;tbody&gt;
+                  &lt;tr&gt;
+                     &lt;td&gt;1&lt;/td&gt;
+                     &lt;td&gt;Sachin&lt;/td&gt;
+                     &lt;td&gt;India&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                     &lt;td&gt;2&lt;/td&gt;
+                     &lt;td&gt;Smith&lt;/td&gt;
+                     &lt;td&gt;Australia&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                     &lt;td&gt;3&lt;/td&gt;
+                     &lt;td&gt;Joe Root&lt;/td&gt;
+                     &lt;td&gt;England&lt;/td&gt;
+                  &lt;/tr&gt;
+               &lt;/tbody&gt;
+            &lt;/table&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+                                       </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="qa_social_links"> 
+                                       <div class="">
+                                       <div class="qa_links">                                           
+                                          <a href="http://tpcg.io/1lGTQg" target="_blank" rel="nofollow" class="demo"><button type="button" class="question_btn"><i class="fa fa-external-link"></i> Live Demo</button></a> 
+                                                                                    <button type="button" class="btnEmbed question_btn"><i class="fa fa-code"></i> Embed URL </button> 
+                                          <div style="display:none;" class="divEmbed arrow_boxx embed-box">
+                                             <input type="text" value="http://tpcg.io/1lGTQg" />
+                                          </div>
+                                       </div>
+                                       </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="clear"></div>
+                        </div>      
+                          
+                    <div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+                        <div class="pages">
+                            <a href="/html_programming_examples/4"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 372" href="/html_programming_examples/1">1</a> <a class="number" title="Go to page 2 of 372" href="/html_programming_examples/2">2</a> <a class="number" title="Go to page 3 of 372" href="/html_programming_examples/3">3</a> <a class="number" title="Go to page 4 of 372" href="/html_programming_examples/4">4</a> <a title="Go to page 5 of 372" class="current number" href="/html_programming_examples/5">5</a> <a class="number" title="Go to page 6 of 372" href="/html_programming_examples/6">6</a> <a class="number" title="Go to page 7 of 372" href="/html_programming_examples/7">7</a> <a class="number" title="Go to page 8 of 372" href="/html_programming_examples/8">8</a>  ... <a class="number" title="Go to page 372 of 372" href="/html_programming_examples/372">372</a> <a  href="/html_programming_examples/6" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bottomgooglead qa_widget align-center">
+                        <div class="bottomadtag">Advertisements</div>
+                        <script type="text/javascript"><!--
+                           var width = 580;
+                           var height = 400;
+                           var format = "580x400_as";
+                           if( window.innerWidth < 468 ){
+                               width = 300;
+                               height = 250;
+                               format = "300x250_as";
+                            }
+                            google_ad_client = "pub-7133395778201029";
+                            google_ad_width = width;
+                            google_ad_height = height;
+                            google_ad_format = format;
+                            google_ad_type = "image";
+                            google_ad_channel ="";
+                                 //-->
+                  </script>
+                  <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+               </div>
+                        </div> 
+               <div class="loader_bg" id="divLoader">
+                   <img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+               </div>
+            </div>
+         </div> 
+
+<!-- end of center column content -->   
+<div class="mui-col-md-4">    
+<div id="right_menu_extra">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/html_programming_examples/','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/html_programming_examples/','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/html_programming_examples/&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/html_programming_examples/&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/html_programming_examples/&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/html_programming_examples/&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="rightgooglead">
+      <script type="text/javascript"><!--
+         google_ad_client = "pub-7133395778201029";
+         google_ad_width = 300;
+         google_ad_height = 250;
+         google_ad_format = "300x250_as";
+         google_ad_type = "image";
+         google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+   </div>
+   <div class="rightgooglead extra">
+      <script type="text/javascript"><!--
+         google_ad_client = "ca-pub-2537027957187252";
+         google_ad_width = 300;
+         google_ad_height = 600;
+         google_ad_format = "300x600_as";
+         google_ad_type = "image";
+         google_ad_channel ="";
+         //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+   </div>
+   <div class="rightgooglead extra">
+      <script type="text/javascript"><!--
+         google_ad_client = "ca-pub-2537027957187252";
+         /* Right Side Ad */
+         google_ad_slot = "right_side_ad";
+         google_ad_width = 300;
+         google_ad_height = 250;
+         //-->
+      </script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+   </div>   
+<div id="divRightMenu">
+<div class="left_nav_header">
+<i class="fa-cubes"></i> Programming Examples            
+</div> 
+<ul class="left_navv">  
+<li><a href="/angularjs_programming_examples/"><i class="fa-check-square-o"></i>Angularjs Programming Examples</a></li>
+<li><a href="/asm_programming_examples/"><i class="fa-check-square-o"></i>ASM Programming Examples</a></li>
+<li><a href="/bootstrap_programming_examples/"><i class="fa-check-square-o"></i>Bootstrap Programming Examples</a></li>
+<li><a href="/c_programming_examples/"><i class="fa-check-square-o"></i>C Programming Examples</a></li>
+<li><a href="/cpp_programming_examples/"><i class="fa-check-square-o"></i>C++ Programming Examples</a></li>
+<li><a href="/clojure_programming_examples/"><i class="fa-check-square-o"></i>Clojure Programming Examples</a></li>
+<li><a href="/cobol_programming_examples/"><i class="fa-check-square-o"></i>Cobol Programming Examples</a></li>
+<li><a href="/csharp_programming_examples/"><i class="fa-check-square-o"></i>CSharp Programming Examples</a></li>
+<li><a href="/css_programming_examples/"><i class="fa-check-square-o"></i>CSS Programming Examples</a></li>
+<li><a href="/d_programming_examples/"><i class="fa-check-square-o"></i>D Programming Examples</a></li>
+<li><a href="/d3js_programming_examples/"><i class="fa-check-square-o"></i>D3JS Programming Examples</a></li>
+<li><a href="/dart_programming_examples/"><i class="fa-check-square-o"></i>Dart Programming Examples</a></li>
+<li><a href="/elixir_programming_examples/"><i class="fa-check-square-o"></i>Elixir Programming Examples</a></li>
+<li><a href="/erlang_programming_examples/"><i class="fa-check-square-o"></i>Erlang Programming Examples</a></li>
+<li><a href="/fortran_programming_examples/"><i class="fa-check-square-o"></i>Fortran Programming Examples</a></li>
+<li><a href="/fsharp_programming_examples/"><i class="fa-check-square-o"></i>FSharp Programming Examples</a></li>
+<li><a href="/golang_programming_examples/"><i class="fa-check-square-o"></i>Golang Programming Examples</a></li>
+<li><a href="/groovy_programming_examples/"><i class="fa-check-square-o"></i>Groovy Programming Examples</a></li>
+<li><a href="/haskell_programming_examples/"><i class="fa-check-square-o"></i>Haskell Programming Examples</a></li>
+<li><a href="/html_programming_examples/"><i class="fa-check-square-o"></i>HTML Programming Examples</a></li>
+<li><a href="/java_programming_examples/"><i class="fa-check-square-o"></i>Java Programming Examples</a></li>
+<li><a href="/java8_programming_examples/"><i class="fa-check-square-o"></i>Java8 Programming Examples</a></li>
+<li><a href="/javascript_programming_examples/"><i class="fa-check-square-o"></i>Javascript Programming Examples</a></li>
+<li><a href="/jquery_programming_examples/"><i class="fa-check-square-o"></i>jQuery Programming Examples</a></li>
+<li><a href="/jqueryui_programming_examples/"><i class="fa-check-square-o"></i>jQueryUI Programming Examples</a></li>
+<li><a href="/jython_programming_examples/"><i class="fa-check-square-o"></i>Jython Programming Examples</a></li>
+<li><a href="/kotlin_programming_examples/"><i class="fa-check-square-o"></i>Kotlin Programming Examples</a></li>
+<li><a href="/lisp_programming_examples/"><i class="fa-check-square-o"></i>LISP Programming Examples</a></li>
+<li><a href="/lolcode_programming_examples/"><i class="fa-check-square-o"></i>LOLCODE Programming Examples</a></li>
+<li><a href="/lua_programming_examples/"><i class="fa-check-square-o"></i>LUA Programming Examples</a></li>
+<li><a href="/mathml_programming_examples/"><i class="fa-check-square-o"></i>MathML Programming Examples</a></li>
+<li><a href="/node_programming_examples/"><i class="fa-check-square-o"></i>Node Programming Examples</a></li>
+<li><a href="/objective_c_programming_examples/"><i class="fa-check-square-o"></i>Objective C Programming Examples</a></li>
+<li><a href="/octave_programming_examples/"><i class="fa-check-square-o"></i>Octave Programming Examples</a></li>
+<li><a href="/pascal_programming_examples/"><i class="fa-check-square-o"></i>Pascal Programming Examples</a></li>
+<li><a href="/perl_programming_examples/"><i class="fa-check-square-o"></i>Perl Programming Examples</a></li>
+<li><a href="/php_programming_examples/"><i class="fa-check-square-o"></i>PHP Programming Examples</a></li>
+<li><a href="/phpweb_programming_examples/"><i class="fa-check-square-o"></i>PHPWeb Programming Examples</a></li>
+<li><a href="/python_programming_examples/"><i class="fa-check-square-o"></i>Python Programming Examples</a></li>
+<li><a href="/python3_programming_examples/"><i class="fa-check-square-o"></i>Python3 Programming Examples</a></li>
+<li><a href="/rexx_programming_examples/"><i class="fa-check-square-o"></i>Rexx Programming Examples</a></li>
+<li><a href="/rscript_programming_examples/"><i class="fa-check-square-o"></i>RScript Programming Examples</a></li>
+<li><a href="/ruby_programming_examples/"><i class="fa-check-square-o"></i>Ruby Programming Examples</a></li>
+<li><a href="/scala_programming_examples/"><i class="fa-check-square-o"></i>Scala Programming Examples</a></li>
+<li><a href="/swift_programming_examples/"><i class="fa-check-square-o"></i>Swift Programming Examples</a></li>
+<li><a href="/tcl_programming_examples/"><i class="fa-check-square-o"></i>TCL Programming Examples</a></li>
+<li><a href="/vb.net_programming_examples/"><i class="fa-check-square-o"></i>VB.net Programming Examples</a></li>
+</ul> 
+</div>
+      
+</div>
+</div>
+                
+                <!-- end of right column content -->   
+            </div>
+        </div>
+    </div>
+    <!-- End of Body Content -->
+	<script>
+	$(document).ready(function(){
+		$('.btnEmbed').click(function(e){
+			e.stopPropagation();
+			e.preventDefault();
+			$('.divEmbed').hide();
+			$(this).next().show();
+		});
+		$('.divEmbed').click(function(e){
+			e.stopPropagation();
+		});
+		$(document).click(function(e){
+			$('.divEmbed').hide();
+		});
+	});
+	</script>
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

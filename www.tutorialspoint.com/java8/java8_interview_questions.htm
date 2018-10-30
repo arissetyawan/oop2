@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Java 8 Interview Questions</title>
+<meta name="description" content="Java 8 Interview Questions - Learn Java 8 in simple and easy steps starting from basic to advanced concepts with examples including Overview, Environment Setup, Lambda Expressions, Method Reference, Functional Interfaces, Default methods, Streams, Optional Class, Nashorn JavaScript Engine, New Date Time API, Base64." />
+<meta name="keywords" content="Java 8, Overview, Environment Setup, Lambda Expressions, Method Reference, Functional Interfaces, Default methods, Streams, Optional Class, Nashorn JavaScript Engine, New Date Time API, Base64." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #0C6AC4 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #0C6AC4 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #0C6AC4 !important;}
+.submenu-item{ border-bottom: 2px solid #0C6AC4 !important; border-top: 2px solid #0C6AC4 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#0C6AC4; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/java8/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts {
+  vertical-align:middle !important;
+  text-align:center !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/java8/images/java-8-mini-logo.jpg" alt="Java 8 Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Java 8 Tutorial</li>
+<li><a href="/java8/index.htm">Java 8 - Home</a></li>
+<li><a href="/java8/java8_overview.htm">Java 8 - Overview</a></li>
+<li><a href="/java8/java8_environment.htm">Java 8 - Environment Setup</a></li>
+<li><a href="/java8/java8_lambda_expressions.htm">Java 8 - Lambda Expressions</a></li>
+<li><a href="/java8/java8_method_references.htm">Java 8 - Method References</a></li>
+<li><a href="/java8/java8_functional_interfaces.htm">Java 8 - Functional Interfaces</a></li>
+<li><a href="/java8/java8_default_methods.htm">Java 8 - Default Methods</a></li>
+<li><a href="/java8/java8_streams.htm">Java 8 - Streams</a></li>
+<li><a href="/java8/java8_optional_class.htm">Java 8 - Optional Class</a></li>
+<li><a href="/java8/java8_nashorn_java_script.htm">Java 8 - Nashorn JavaScript</a></li>
+<li><a href="/java8/java8_datetime_api.htm">Java 8 - New Date/Time API</a></li>
+<li><a href="/java8/java8_base64.htm">Java 8 - Base64</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Java 8 Useful Resources</li>
+<li><a href="/java8/java8_questions_answers.htm">Java 8 - Questions and Answers</a></li>
+<li><a href="/java8/java8_quick_guide.htm">Java 8 - Quick Guide</a></li>
+<li><a href="/java8/java8_useful_resources.htm">Java 8 - Useful Resources</a></li>
+<li><a href="/java8/java8_discussion.htm">Java 8 - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Java 8 Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/java8/java8_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/java8/java8_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>Java 8 Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>Java 8 Language</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label>What are the new features introduced in JAVA 8?</label>
+<div class="toggle-content">
+<p>There are dozens of features added to Java 8, the most significant ones are mentioned below &minus;</p>
+<ul class="list">
+<li><p><b>Lambda expression</b> &minus; Adds functional processing capability to Java.</p></li>
+<li><p><b>Method references</b> &minus; Referencing functions by their names instead of invoking them directly. Using functions as parameter.</p></li>
+<li><p><b>Default method</b> &minus; Interface to have default method implementation.</p></li>
+<li><p><b>New tools</b> &minus; New compiler tools and utilities are added like 'jdeps' to figure out dependencies.</p></li>
+<li><p><b>Stream API</b> &minus; New stream API to facilitate pipeline processing.</p></li>
+<li><p><b>Date Time API</b> &minus; Improved date time API.</p></li>
+<li><p><b>Optional</b> &minus; Emphasis on best practices to handle null values properly.</p></li>
+<li><p><b>Nashorn, JavaScript Engine</b> &minus; A Java-based engine to execute JavaScript code.</p></li>
+</ul>
+<p>Along with these new featuers, lots of feature enhancements are done under-the-hood, at both compiler and JVM level.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you sort a list of string using Java 8 lambda expression?</label>
+<div class="toggle-content">
+<p>Following code sorts a list of string using Java 8 lambda expression:</p>
+<pre class="prettyprint notranslate">
+//sort using java 8
+private void sortUsingJava8(List&lt;String&gt; names) {
+  Collections.sort(names, (s1, s2) -&gt; s1.compareTo(s2));
+}
+</pre>
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the characteristics of a Java 8 lambda expression?</label>
+<div class="toggle-content">
+<p>A lambda expression is characterized by the following syntax -</p>
+<pre class="prettyprint notranslate">
+parameter &minus;&gt; expression body
+</pre>
+<p>Following are the important characteristics of a lambda expression &minus;</p>
+<ul class="list">
+<li><p><b>Optional type declaration</b> &minus; No need to declare the type of a parameter. The compiler can inference the same from the value of the parameter.</p></li>
+<li><p><b>Optional parenthesis around parameter</b> &minus; No need to declare a single parameter in parenthesis. For multiple parameters, parentheses are required.</p></li>
+<li><p><b>Optional curly braces</b> &minus; No need to use curly braces in expression body if the body contains a single statement.</p></li>
+<li><p><b>Optional return keyword</b> &minus; The compiler automatically returns the value if the body has a single expression to return the value. Curly braces are required to indicate that expression returns a value.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>Why lambda expression is to be used?</label>
+<div class="toggle-content">
+<p>Lambda expressions are used primarily to define inline implementation of a functional interface, i.e., an interface with a single method only. In the above example, we've used various types of lambda expressions to define the operation method of MathOperation interface. Then we have defined the implementation of sayMessage of GreetingService.</p>
+<p>Lambda expression eliminates the need of anonymous class and gives a very simple yet powerful functional programming capability to Java.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What kind of variable you can access in an lambda expression??</label>
+<div class="toggle-content">
+<p>Using lambda expression, you can refer to final variable or effectively final variable (which is assigned only once). Lambda expression throws a compilation error, if a variable is assigned a value the second time.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are method references?</label>
+<div class="toggle-content">
+<p>Method references help to point to methods by their names. A method reference is described using :: (double colon) symbol. A method reference can be used to point the following types of methods &minus;</p>
+<ul class="list">
+<li><p>Static methods</p></li>
+<li><p>Instance methods</p></li>
+<li><p>Constructors using new operator (TreeSet::new)</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>Explain the System.out::println expression.</label>
+<div class="toggle-content">
+<p>System.out::println method is a static method reference to println method of out object of System class.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are functional interfaces?</label>
+<div class="toggle-content">
+<p>Functional interfaces have a single functionality to exhibit. For example, a Comparable interface with a single method 'compareTo' is used for comparison purpose. Java 8 has defined a lot of functional interfaces to be used extensively in lambda expressions.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of BiConsumer&lt;T,U&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts two input arguments, and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of BiFunction&lt;T,U,R&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts two arguments and produces a result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of BinaryOperator&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation upon two operands of the same type, producing a result of the same type as the operands.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of BiPredicate&lt;T,U&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a predicate (Boolean-valued function) of two arguments.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of BooleanSupplier functional interface?</label>
+<div class="toggle-content">
+<p>It represents a supplier of Boolean-valued results.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of Consumer&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts a single input argument and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleBinaryOperator functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation upon two double-valued operands and producing a double-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleConsumer functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts a single double-valued argument and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleFunction&lt;R&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts a double-valued argument and produces a result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoublePredicate functional interface?</label>
+<div class="toggle-content">
+<p>It represents a predicate (Boolean-valued function) of one double-valued argument.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleSupplier functional interface?</label>
+<div class="toggle-content">
+<p>It represents a supplier of double-valued results.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleToIntFunction functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts a double-valued argument and produces an int-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleToLongFunction functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts a double-valued argument and produces a long-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of DoubleUnaryOperator functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation on a single double-valued operand that produces a double-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of Function&lt;T,R&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts one argument and produces a result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntBinaryOperator functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation upon two int-valued operands and produces an int-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntConsumer functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts a single int-valued argument and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntFunction&lt;R&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts an int-valued argument and produces a result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntPredicate functional interface?</label>
+<div class="toggle-content">
+<p>It represents a predicate (Boolean-valued function) of one int-valued argument.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntSupplier functional interface?</label>
+<div class="toggle-content">
+<p>It represents a supplier of int-valued results.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntToDoubleFunction functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts an int-valued argument and produces a double-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntToLongFunction functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts an int-valued argument and produces a long-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of IntUnaryOperator functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation on a single int-valued operand that produces an int-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongBinaryOperator functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation upon two long-valued operands and produces a long-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongConsumer functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts a single long-valued argument and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongFunction&lt;R&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts a long-valued argument and produces a result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongPredicate functional interface?</label>
+<div class="toggle-content">
+<p>It represents a predicate (Boolean-valued function) of one long-valued argument.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongSupplier functional interface?</label>
+<div class="toggle-content">
+<p>It represents a supplier of long-valued results.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongToDoubleFunction functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts a long-valued argument and produces a double-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongToIntFunction functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts a long-valued argument and produces an int-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of LongUnaryOperator functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation on a single long-valued operand that produces a long-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ObjDoubleConsumer&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts an object-valued and a double-valued argument, and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ObjIntConsumer&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts an object-valued and an int-valued argument, and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ObjLongConsumer&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation that accepts an object-valued and a long-valued argument, and returns no result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of Predicate&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a predicate (Boolean-valued function) of one argument.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of Supplier&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a supplier of results.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ToDoubleBiFunction&lt;T,U&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts two arguments and produces a double-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ToDoubleFunction&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that produces a double-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ToIntBiFunction&lt;T,U&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts two arguments and produces an int-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ToIntFunction&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that produces an int-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ToLongBiFunction&lt;T,U&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that accepts two arguments and produces a long-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ToLongFunction&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents a function that produces a long-valued result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of UnaryOperator&lt;T&gt; functional interface?</label>
+<div class="toggle-content">
+<p>It represents an operation on a single operand that produces a result of the same type as its operand.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are default methods?</label>
+<div class="toggle-content">
+<p>With java 8, an interface can have default implementation of a function in interfaces.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are static default methods?</label>
+<div class="toggle-content">
+<p>An interface can also have static helper methods from Java 8 onwards.</p>
+<pre class="prettyprint notranslate">
+public interface vehicle {
+   default void print() {
+      System.out.println("I am a vehicle!");
+   }
+ 
+   static void blowHorn() {
+      System.out.println("Blowing horn!!!");
+   }
+}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you call a default method of an interface in a class?</label>
+<div class="toggle-content">
+<p>Using super keyword along with interface name.</p>
+<pre class="prettyprint notranslate">
+interface Vehicle {
+   default void print() {
+      System.out.println("I am a vehicle!");
+   }
+}
+class Car implements Vehicle {
+   public void print() {
+      Vehicle.super.print();                  
+   }
+}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you call a static method of an interface in a class?</label>
+<div class="toggle-content">
+<p>Using name of the interface.</p>
+<pre class="prettyprint notranslate">
+interface Vehicle {
+   static void blowHorn() {
+      System.out.println("Blowing horn!!!");
+   }
+}
+class Car implements Vehicle {
+   public void print() {
+      Vehicle.blowHorn();                  
+   }
+}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is streams in Java 8?</label>
+<div class="toggle-content">
+<p>Stream represents a sequence of objects from a source, which supports aggregate operations.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is stream pipelining in Java 8?</label>
+<div class="toggle-content">
+<p>Most of the stream operations return stream itself so that their result can be pipelined. These operations are called intermediate operations and their function is to take input, process them, and return output to the target. collect() method is a terminal operation which is normally present at the end of the pipelining operation to mark the end of the stream.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the difference between Collections and Stream in Java8 ?</label>
+<div class="toggle-content">
+<p>Stream operations do the iterations internally over the source elements provided, in contrast to Collections where explicit iteration is required.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of forEach method of stream in java 8?</label>
+<div class="toggle-content">
+<p>Stream has provided a new method 'forEach' to iterate each element of the stream.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you print 10 random numbers using forEach of java 8?</label>
+<div class="toggle-content">
+<p>The following code segment shows how to print 10 random numbers using forEach.</p>
+<pre class="prettyprint notranslate">
+Random random = new Random();
+random.ints().limit(10).forEach(System.out::println);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of map method of stream in java 8?</label>
+<div class="toggle-content">
+<p>The 'map' method is used to map each element to its corresponding result.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you print unique squares of numbers in java 8?</label>
+<div class="toggle-content">
+<p>The following code segment prints unique squares of numbers using map.</p>
+<pre class="prettyprint notranslate">
+List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+//get list of unique squares
+List&lt;Integer&gt; squaresList = numbers.stream().map( i -&gt; i*i).distinct().collect(Collectors.toList());
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of filter method of stream in java 8?</label>
+<div class="toggle-content">
+<p>The 'filter' method is used to eliminate elements based on a criteria. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you print count of empty strings in java 8?</label>
+<div class="toggle-content">
+<p>The following code segment prints a count of empty strings using filter.</p>
+<pre class="prettyprint notranslate">
+List&lt;String&gt;strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+//get count of empty string
+int count = strings.stream().filter(string &minus;&gt; string.isEmpty()).count();
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of limit method of stream in java 8?</label>
+<div class="toggle-content">
+<p>The 'limit' method is used to reduce the size of the stream. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you print 10 random numbers in java 8?</label>
+<div class="toggle-content">
+<p>The following code segment shows how to print 10 random numbers.</p>
+<pre class="prettyprint notranslate">
+Random random = new Random();
+random.ints().limit(10).forEach(System.out::println);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of sorted method of stream in java 8?</label>
+<div class="toggle-content">
+<p>The 'sorted' method is used to sort the stream. </p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you print 10 random numbers in a sorted order in java 8?</label>
+<div class="toggle-content">
+<p>The following code segment shows how to print 10 random numbers in a sorted order.</p>
+<pre class="prettyprint notranslate">
+Random random = new Random();
+random.ints().limit(10).sorted().forEach(System.out::println);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is Parallel Processing in Java 8?</label>
+<div class="toggle-content">
+<p>parallelStream is the alternative of stream for parallel processing. Take a look at the following code segment that prints a count of empty strings using parallelStream.</p>
+<pre class="prettyprint notranslate">
+List&lt;String&gt; strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+//get count of empty string
+int count = strings.parallelStream().filter(string &minus;&gt; string.isEmpty()).count();
+//It is very easy to switch between sequential and parallel streams.
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What are collectors in Java 8?</label>
+<div class="toggle-content">
+<p>Collectors are used to combine the result of processing on the elements of a stream. Collectors can be used to return a list or a string.</p>
+<pre class="prettyprint notranslate">
+List&lt;String&gt;strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+List&lt;String&gt; filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());
+System.out.println("Filtered List: " + filtered);
+String mergedString = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(", "));
+System.out.println("Merged String: " + mergedString);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What are Statistics collectors in Java 8?</label>
+<div class="toggle-content">
+<p>With Java 8, statistics collectors are introduced to calculate all statistics when stream processing is being done.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the highest number present in a list using Java 8?</label>
+<div class="toggle-content">
+<p>Following code will print the highest number present in a list.</p>
+<pre class="prettyprint notranslate">
+List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+IntSummaryStatistics stats = integers.stream().mapToInt((x) &minus;&gt; x).summaryStatistics();
+System.out.println("Highest number in List : " + stats.getMax());
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the lowest number present in a list using Java 8?</label>
+<div class="toggle-content">
+<p>Following code will print the highest number present in a list.</p>
+<pre class="prettyprint notranslate">
+List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+IntSummaryStatistics stats = integers.stream().mapToInt((x) &minus;&gt; x).summaryStatistics();
+System.out.println("Lowest number in List : " + stats.getMin());
+</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the sum of all numbers present in a list using Java 8?</label>
+<div class="toggle-content">
+<p>Following code will print the sum of all numbers present in a list.</p>
+<pre class="prettyprint notranslate">
+List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+IntSummaryStatistics stats = integers.stream().mapToInt((x) &minus;&gt; x).summaryStatistics();
+System.out.println("Sum of all numbers : " + stats.getSum());
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the average of all numbers present in a list using Java 8?</label>
+<div class="toggle-content">
+<p>Following code will print the average of all numbers present in a list.</p>
+<pre class="prettyprint notranslate">
+List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+IntSummaryStatistics stats = integers.stream().mapToInt((x) &minus;&gt; x).summaryStatistics();
+System.out.println("Average of all numbers : " + stats.getAverage());
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>What is Optional in Java8?</label>
+<div class="toggle-content">
+<p>Optional is a container object which is used to contain not-null objects. Optional object is used to represent null with absent value. This class has various utility methods to facilitate code to handle values as 'available' or 'not available' instead of checking null values. It is introduced in Java 8 and is similar to what Optional is in Guava.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is Nashorn in Java8?</label>
+<div class="toggle-content">
+<p>With Java 8, Nashorn, a much improved javascript engine is introduced, to replace the existing Rhino. Nashorn provides 2 to 10 times better performance, as it directly compiles the code in memory and passes the bytecode to JVM. Nashorn uses invokedynamics feature, introduced in Java 7 to improve performance.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is jjs in JAVA8?</label>
+<div class="toggle-content">
+<p>For Nashorn engine, JAVA 8 introduces a new command line tool, jjs, to execute javascript codes at console.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Can you execute javascript code from java 8 code base?</label>
+<div class="toggle-content">
+<p>Yes! Using ScriptEngineManager, JavaScript code can be called and interpreted in Java.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is local datetime API in JAVA8?</label>
+<div class="toggle-content">
+<p>Local &minus; Simplified date-time API with no complexity of timezone handling.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is zoned datetime API in JAVA8?</label>
+<div class="toggle-content">
+<p>Zoned &minus; Specialized date-time API to deal with various timezones.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is chromounits in java8?</label>
+<div class="toggle-content">
+<p>java.time.temporal.ChronoUnit enum is added in Java 8 to replace the integer values used in old API to represent day, month, etc.</p> 
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the current date using local datetime api of java8?</label>
+<div class="toggle-content">
+<p>Following code gets the current date using local datetime api &minus;</p>
+<pre class="prettyprint notranslate">
+//Get the current date
+LocalDate today = LocalDate.now();
+System.out.println("Current date: " + today);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you add 1 week to current date using local datetime api of java8?</label>
+<div class="toggle-content">
+<p>Following code adds 1 week to current date using local datetime api &minus;</p>
+<pre class="prettyprint notranslate">
+//add 1 week to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextWeek = today.plus(1, ChronoUnit.WEEKS);
+System.out.println("Next week: " + nextWeek);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you add 1 month to current date using local datetime api of java8?</label>
+<div class="toggle-content">
+<p>Following code adds 1 month to current date using local datetime api:</p>
+<pre class="prettyprint notranslate">
+//add 1 month to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextMonth = today.plus(1, ChronoUnit.MONTHS);
+System.out.println("Next month: " + nextMonth);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you add 1 year to current date using local datetime api of java8?</label>
+<div class="toggle-content">
+<p>Following code adds 1 year to current date using local datetime api &minus;</p>
+<pre class="prettyprint notranslate">
+//add 1 year to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextYear = today.plus(1, ChronoUnit.YEARS);
+System.out.println("Next year: " + nextYear);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you add 10 years to current date using local datetime api of java8?</label>
+<div class="toggle-content">
+<p>Following code adds 10 years to current date using local datetime api &minus;</p>
+<pre class="prettyprint notranslate">
+//add 10 years to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextDecade = today.plus(1, ChronoUnit.DECADES);
+System.out.println("Date after ten year: " + nextDecade);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get next tuesday using java8?</label>
+<div class="toggle-content">
+<p>Following code gets next tuesday using java8 &minus;</p>
+<pre class="prettyprint notranslate">
+//get the next tuesday
+LocalDate today = LocalDate.now();
+LocalDate nextTuesday = today.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+System.out.println("Next Tuesday on : " + nextTuesday);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get second saturday of next month using java8?</label>
+<div class="toggle-content">
+<p>Following code gets second saturday of next month using java8 &minus;</p>
+<pre class="prettyprint notranslate">
+//get the second saturday of next month
+LocalDate firstInYear = LocalDate.of(date1.getYear(),date1.getMonth(), 1);
+LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+System.out.println("Second Saturday on : " + secondSaturday);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the instant of current date in terms of milliseconds using java8?</label>
+<div class="toggle-content">
+<p>Following code gets the instant of current date in terms of milliseconds &minus;</p>
+<pre class="prettyprint notranslate">
+//Get the instant of current date in terms of milliseconds
+Instant now = currentDate.toInstant();
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the instant of local date time using time in of milliseconds using java8?</label>
+<div class="toggle-content">
+<p>Following code gets the instant of local date time using time in of milliseconds &minus;</p>
+<pre class="prettyprint notranslate">
+Instant now = currentDate.toInstant();
+ZoneId currentZone = ZoneId.systemDefault();
+LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
+System.out.println("Local date: " + localDateTime);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the instant of zoned date time using time in of milliseconds using java8?</label>
+<div class="toggle-content">
+<p>Following code gets the instant of zoned date time using time in of milliseconds &minus;</p>
+<pre class="prettyprint notranslate">
+Instant now = currentDate.toInstant();
+ZoneId currentZone = ZoneId.systemDefault();
+ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
+System.out.println("Zoned date: " + zonedDateTime);
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>Which class implements a decoder for decoding byte data using the Base64 encoding scheme in Java8?</label>
+<div class="toggle-content">
+<p>static class Base64.Decoder &minus; This class implements a decoder for decoding byte data using the Base64 encoding scheme as specified in RFC 4648 and RFC 2045.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Which class implements an encoder for encoding byte data using the Base64 encoding scheme in Java8?</label>
+<div class="toggle-content">
+<p>static class Base64.Encoder &minus; This class implements an encoder for encoding byte data using the Base64 encoding scheme as specified in RFC 4648 and RFC 2045.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a Base64 decoder?</label>
+<div class="toggle-content">
+<p>getDecoder() method of Base64 class returns a Base64.Decoder that decodes using the Basic type base64 encoding scheme.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a Base64 encoder?</label>
+<div class="toggle-content">
+<p>getEncoder() method of Base64 class returns a Base64.Encoder that encodes using the Basic type base64 encoding scheme.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a Base64 decoder that decodes using the MIME type base64 encoding scheme?</label>
+<div class="toggle-content">
+<p>getMimeDecoder() method of Base64 class returns a Base64.Decoder that decodes using the MIME type base64 decoding scheme.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a Base64 encoder that encodes using the MIME type base64 encoding scheme? </label>
+<div class="toggle-content">
+<p>getMimeEncoder() method of Base64 class returns a Base64.Encoder that encodes using the MIME type base64 encoding scheme.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a Base64 decoder that decodes using the URL and Filename safe type base64 encoding scheme?</label>
+<div class="toggle-content">
+<p>getUrlDecoder() method of Base64 class returns a Base64.Decoder that decodes using the URL and Filename safe type base64 encoding scheme.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a Base64 encoder that encodes using the URL and Filename safe type base64 encoding scheme?</label>
+<div class="toggle-content">
+<p>getUrlEncoder() method of Base64 class returns a Base64.Encoder that encodes using the URL and Filename safe type base64 encoding scheme.</p>
+</div>
+</section>
+<h2>What is Next?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/java8/java8_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/java8/java8_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">java8_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/java8/java8_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/java8/java8_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/java8/java8_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/java8/java8_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/java8/java8_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/java8/java8_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

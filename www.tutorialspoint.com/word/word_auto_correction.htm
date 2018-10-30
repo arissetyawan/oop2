@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Auto Correction in Word 2010</title>
+<meta name="description" content="Auto Correction in Word 2010 - Learn Microsoft Office 2010 in simple and easy steps starting from basic to advanced concepts with examples including Explore Window, Backstage View, Entering Text, Move Around, open, Close documents, Context Help, Insert, Select, Delete, Move Test, Copy and Paste, Find and Replace, Spell Check, Special Symbols, Undo Changes, Setting Text Fonts, Text Decoration, Change Test Case, Color, Alignments, Indent Paragraphs, Create Bullets, Set Line Spacing, Set Tabs, Apply Formatting, Adjust Page Margins, Add, Insert, Blank, Cover Page Numbers, Page Orientation, format documents, save documents, compare documents, email, Preview documents, print documents, zoom in and out, header and footer, Move, Resize, Merging, Split cells, Add Formula tables, Quick Styles, Use Templates, graphics, Auto Correction, Formatting, clip art, smart art, borders and shades, translation and cover pages, Set Watermark." />
+<meta name="keywords" content="Microsoft, Office, Word, 2010, Tutorials, Learning, Beginners, Basics, Explore Window, Backstage View, Entering Text, Move Around, open, Close documents, Context Help, Insert, Select, Delete, Move Test, Copy and Paste, Find and Replace, Spell Check, Special Symbols, Undo Changes, Setting Text Fonts, Text Decoration, Change Test Case, Color, Alignments, Indent Paragraphs, Create Bullets, Set Line Spacing, Set Tabs, Apply Formatting, Adjust Page Margins, Add, Insert, Blank, Cover Page Numbers, Page Orientation, format documents, save documents, compare documents, email, Preview documents, print documents, zoom in and out, header and footer, Move, Resize, Merging, Split cells, Add Formula tables, Quick Styles, Use Templates, graphics, Auto Correction, Formatting, clip art, smart art, borders and shades, translation and cover pages, Set Watermark." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #0d8ade !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #0d8ade url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #0d8ade !important;}
+.submenu-item{ border-bottom: 2px solid #0d8ade !important; border-top: 2px solid #0d8ade !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#0d8ade; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/word/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/word/images/word-2010-mini-logo.jpg" alt="Word 2010 tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/ms_word_online_training/index.asp" target="_blank"><img src="/word/images/ms-word-video-tutorials.jpg" alt="Word Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">MS Word Basics</li>
+<li><a href="/word/index.htm">Word - Home</a></li>
+<li><a href="/word/word_getting_started.htm">Word - Getting Started</a></li>
+<li><a href="/word/word_explore_window.htm">Word - Explore Window</a></li>
+<li><a href="/word/word_backstage_view.htm">Word - Backstage View</a></li>
+<li><a href="/word/word_entering_text.htm">Word - Entering Text</a></li>
+<li><a href="/word/word_move_around.htm">Word - Move Around</a></li>
+<li><a href="/word/word_save_document.htm">Word - Save Document</a></li>
+<li><a href="/word/word_open_document.htm">Word - Opening a Document</a></li>
+<li><a href="/word/word_close_document.htm">Word - Closing Document</a></li>
+<li><a href="/word/word_context_help.htm">Word - Context Help</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Editing Documents</li>
+<li><a href="/word/word_insert_text.htm">Word - Insert Text</a></li>
+<li><a href="/word/word_select_text.htm">Word - Select Text</a></li>
+<li><a href="/word/word_delete_text.htm">Word - Delete Text</a></li>
+<li><a href="/word/word_move_text.htm">Word - Move Text</a></li>
+<li><a href="/word/word_copy_paste.htm">Word - Copy &amp; Paste</a></li>
+<li><a href="/word/word_find_replace.htm">Word - Find &amp; Replace</a></li>
+<li><a href="/word/word_spell_check.htm">Word - Spell Check</a></li>
+<li><a href="/word/word_zoom_in_out.htm">Word - Zoom In-Out</a></li>
+<li><a href="/word/word_special_symbols.htm">Word - Special Symbols</a></li>
+<li><a href="/word/word_undo_changes.htm">Word - Undo Changes</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Formatting Text</li>
+<li><a href="/word/word_setting_text_fonts.htm">Word - Setting Text Fonts</a></li>
+<li><a href="/word/word_text_decoration.htm">Word - Text Decoration</a></li>
+<li><a href="/word/word_change_text_case.htm">Word - Change Text Case</a></li>
+<li><a href="/word/word_change_text_color.htm">Word - Change Text Color</a></li>
+<li><a href="/word/word_text_alignments.htm">Word - Text Alignments</a></li>
+<li><a href="/word/word_indent_paragraphs.htm">Word - Indent Paragraphs</a></li>
+<li><a href="/word/word_create_bullets.htm">Word - Create Bullets</a></li>
+<li><a href="/word/word_set_line_spacing.htm">Word - Set Line Spacing</a></li>
+<li><a href="/word/word_borders_shades.htm">Word - Borders and Shades</a></li>
+<li><a href="/word/word_set_tabs.htm">Word - Set Tabs</a></li>
+<li><a href="/word/word_apply_formatting.htm">Word - Apply Formatting</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Formatting Pages</li>
+<li><a href="/word/word_adjust_margins.htm">Word - Adjust Page Margins</a></li>
+<li><a href="/word/word_header_footer.htm">Word - Header and Footer</a></li>
+<li><a href="/word/word_add_page_numbers.htm">Word - Add Page Numbers</a></li>
+<li><a href="/word/word_insert_page_breaks.htm">Word - Insert Page Breaks</a></li>
+<li><a href="/word/word_insert_blank_page.htm">Word - Insert Blank Page</a></li>
+<li><a href="/word/word_cover_pages.htm">Word - Cover Pages</a></li>
+<li><a href="/word/word_page_orientation.htm">Word - Page Orientation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Working with Tables</li>
+<li><a href="/word/word_create_table.htm">Word - Create a Table</a></li>
+<li><a href="/word/word_rows_columns.htm">Word - Rows &amp; Columns</a></li>
+<li><a href="/word/word_move_table.htm">Word - Move a Table</a></li>
+<li><a href="/word/word_resize_table.htm">Word - Resize a Table</a></li>
+<li><a href="/word/word_merging_cells.htm">Word - Merging Cells</a></li>
+<li><a href="/word/word_split_table.htm">Word - Split a Table</a></li>
+<li><a href="/word/word_split_cells.htm">Word - Split Cells</a></li>
+<li><a href="/word/word_add_formula.htm">Word - Add Formula</a></li>
+<li><a href="/word/table_borders_shades.htm">Word - Borders &amp; Shades</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Advanced Operations</li>
+<li><a href="/word/word_quick_styles.htm">Word - Quick Styles</a></li>
+<li><a href="/word/word_use_templates.htm">Word - Use Templates</a></li>
+<li><a href="/word/word_use_graphics.htm">Word - Use Graphics</a></li>
+<li><a href="/word/word_auto_correction.htm">Word - Auto Correction</a></li>
+<li><a href="/word/word_auto_formatting.htm">Word - Auto Formatting</a></li>
+<li><a href="/word/word_table_of_contents.htm">Word - Table of Contents</a></li>
+<li><a href="/word/word_preview_documents.htm">Word - Preview Documents</a></li>
+<li><a href="/word/word_printing_documents.htm">Word - Printing Documents</a></li>
+<li><a href="/word/word_email_documents.htm">Word - Email Documents</a></li>
+<li><a href="/word/word_translate_documents.htm">Word - Translate Document</a></li>
+<li><a href="/word/word_compare_documents.htm">Word - Compare Document</a></li>
+<li><a href="/word/word_document_security.htm">Word - Document Security</a></li>
+<li><a href="/word/word_set_watermark.htm">Word - Set Watermark</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Word Useful Resources</li>
+<li><a href="/word/word_quick_guide.htm">Word - Quick Guide</a></li>
+<li><a href="/word/word_useful_resources.htm">Word - Useful Resources</a></li>
+<li><a href="/word/word_discussion.htm">Word - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Auto Correction in Word 2010</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/word/word_use_graphics.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/word/word_auto_formatting.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In this chapter, we will discuss auto correction in Word 2010. The AutoCorrect feature automatically corrects common typographical errors when you make them. Let us learn how to use the auto correction option available in Microsoft Word 2010 to correct the spelling automatically as you type the words in your documents.</p>
+<h2>Setting AutoCorrect</h2>
+<p>The following steps will help to enable the AutoCorrect feature in Microsoft Word.</p>
+<p><b>Step 1</b> &minus; Click the <b>File tab</b>, click <b>Options</b>, and then click the <b>Proofing</b> option available in the left most column, it will display the <b>Word Options</b> dialog box.</p>
+<img src="/word/images/word_options.jpg" alt="Word Options" />
+<p><b>Step 2</b> &minus; Click the <b>AutoCorrect Options</b> button which will display the <b>AutoCorrect</b> dialog box and then click the <b>AutoCorrect</b> tab. Now you have to make sure all the options are enabled, especially the <b>Replace Text as you type</b> option. It is also recommended to be careful when you turn off an option.</p>
+<img src="/word/images/autocorrect_options.jpg" alt="AutoCorrect Options" />
+<p><b>Step 3</b> &minus; Select from among the following options, depending on your preferences.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">S.No</th>
+<th style="text-align:center;">Option and Description</th>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td><p><b>Show AutoCorrect Options Buttons</b></p>
+<p>This option will be used to display a small blue button or bar beneath text that was automatically corrected. Click this button to see a menu, where you can undo the correction or set AutoCorrect options.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">2</td>
+<td><p><b>Correct TWo INitial CApitals</b></p>
+<p>This option changes the second letter in a pair of capital letters to lowercase.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">3</td>
+<td>
+<p><b>Capitalize first letter of sentences</b></p>
+<p>This option capitalizes the first letter following the end of a sentence.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">4</td>
+<td>
+<p><b>Capitalize first letter of table cells</b></p>
+<p>This option will be used to capitalize the first letter of a word in a table cell.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">5</td>
+<td>
+<p><b>Capitalize names of days</b></p>
+<p>This option will be used to capitalize the names of the days of the week.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">6</td>
+<td>
+<p><b>Correct accidental usage of cAPS LOCK key</b></p>
+<p>This option will be used to correct capitalization errors that occur when you type with the CAPS LOCK key depressed and turns off this key.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">7</td>
+<td>
+<p><b>Replace text as you type</b></p>
+<p>This option replaces typographical errors with the correct words as shown in the list beneath it.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">8</td>
+<td>
+<p><b>Automatically use suggestions from the spelling checker</b></p>
+<p>This option tells Word to replace spelling errors with words from the dictionary as you type.</p>
+</td>
+</tr>
+</table>
+<p>Although Word comes preconfigured with hundreds of AutoCorrect entries, you can also manually add entries using the following dialog box and use the <b>Replace</b> and <b>With</b> text boxes to add more entries. I added an entry for <b>Markiting</b> which should be replaced with <b>Marketing</b>. You can use the <b>Add</b> button to add multiple entries.</p>
+<p><b>Step 4</b> &minus; Click <b>OK</b> to close the <b>AutoCorrect</b> Options dialog box and again click <b>OK</b> to close the <b>Word Options</b> dialog box. Now try to type <b>Markiting</b> and as soon as you type this word, Microsoft Word autocorrects it with the correct word <b>Marketing</b> word.</p>
+<hr />
+<div class="pre-btn">
+<a href="/word/word_use_graphics.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/word/word_auto_formatting.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/word/word_auto_correction.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/word/word_auto_correction.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/word/word_auto_correction.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/word/word_auto_correction.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/word/word_auto_correction.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/word/word_auto_correction.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

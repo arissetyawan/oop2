@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+<title>The Best Technical Questions And Answers</title>
+<meta name="Description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals"/>
+<meta name="Keywords" content="Technical, Questions,  Answers, Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />      
+<meta charset="UTF-8">
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:domain" content="tutorialspoint.com"/>
+<meta property="og:image" content="https://www.tutorialspoint.com/questions/images/qa_logo.jpg" />  
+<meta name="twitter:title" property="og:title" content="The Best Technical Questions And Answers" />
+<meta name="twitter:description" property="og:description" content="The Best Technical Questions And Answers related to Java, C, C++, PHP, Pearl, Sql, Javascript, HTML, Python, DBMS, MySQL, Computer Network, Operating System, C#, Compiler, Computer, Fundamentals" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="search" type="application/opensearchdescription+xml" title="tutorialspoint" href="https://www.tutorialspoint.com/questions/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="TutorialsPoint Videos &raquo; Feed" href="https://www.tutorialspoint.com/questions/feeds/" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">   
+<link href="https://cdn.muicss.com/mui-0.9.39/extra/mui-rem.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://www.tutorialspoint.com/questions/css/global.css?v=2.992">   
+<script src="https://www.tutorialspoint.com/questions/js/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/fontawesome.js?v=1.15"></script>
+<script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+<script>  
+var baseurl = 'https://www.tutorialspoint.com/';
+var homeurl = 'https://www.tutorialspoint.com';
+var script_userid = '';
+var webp = false; 
+var page_flag;   
+</script>
+<script src="https://www.tutorialspoint.com/questions/js/qa.js?v=1.3"></script>
+<script src="https://www.tutorialspoint.com/theme/js/questions/run_prettify.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/60931893/tutorial_bottom_leader_board', [[480, 320], [580, 400], [468, 60], [300, 250], [336, 280], [600, 200], [600, 400]], 'div-gpt-ad-1532153686945-0').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_bottom', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-1').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_middle', [[300, 600], [300, 250]], 'div-gpt-ad-1532153686945-2').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/tutorial_right_top', [300, 250], 'div-gpt-ad-1532153686945-3').addService(googletag.pubads());
+    googletag.defineSlot('/60931893/Native_QnA', ['fluid', [550, 250]], 'div-gpt-ad-1532956972128-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/60931893/tutorial_top', [[550, 250], 'fluid'], 'div-gpt-ad-1532153686945-4').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div id="tp-mobile-overlaybg" class="tp-mobile-overlay-none" onclick="close_obs_sidenav()"></div>
+<div class="alert alert-success" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-times alert-close" title="close"></i><span></span></div>
+<div class="wrap_loader">
+   <div class="imgLoader">     
+      <img  src="/images/loading-cg.gif" alt="Tutorialspoint" width="70" height="70" />     
+   </div>
+</div>
+
+<!-- header top navigation for desktop/large screens -->
+<header class="mui-appbar-nav-top mui-z1 navbar-fixed nav-down">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">
+<div class="tp-primary-header mui-top-home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fa fa-home"></i> <span>Home</span></a></div>
+<div class="tp-primary-header mui-top-qa"><a href="https://www.tutorialspoint.com/questions/index.php" target="_blank" title="Questions & Answers - The Best Technical Questions and Answers - TutorialsPoint"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a></div>
+<div class="tp-primary-header mui-top-tools"><a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fa fa-cogs"></i> <span>Tools</span></a></div>
+<div class="tp-primary-header mui-top-coding-ground"><a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fa fa-code"></i> <span>Coding Ground </span></a> </div>
+<div class="tp-primary-header mui-top-current-affairs"><a href="https://www.tutorialspoint.com/current_affairs/index.htm" target="_blank" title="Current Affairs - 2016, 2017 and 2018 | General Knowledge for Competitive Exams"><i class="fa fa-globe"></i> <span>Current Affairs</span> </a></div>
+<div class="tp-primary-header mui-top-upsc"><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fa fa-user-tie"></i> <span>UPSC Notes</span></a></div>      
+<div class="tp-primary-header mui-top-tutors"><a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fa fa-user"></i> <span>Online Tutors</span></a></div>
+<div class="tp-primary-header mui-top-examples"><a href="https://www.tutorialspoint.com/programming_examples/" target="_blank" title="Programming Examples"><i class="fa fa-wrench"></i> <span>Code Examples</span></a></div>
+<div class="tp-primary-header mui-top-whiteboard"><a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fa fa-chalkboard"></i> <span>Whiteboard</span></a></div>
+<div class="tp-primary-header mui-top-net-meeting"><a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fa fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> </div>
+<div class="tp-primary-header mui-top-articles"><a href="https://www.tutorialspoint.com/articles/" target="_blank" title="Short Articles"><i class="fa fa-file-signature"></i> <span>Articles</span></a> </div>
+</div>
+</header>
+<!-- end of header top navigation for desktop/large screens -->
+
+<!-- header secondary navigation -->
+<header class="mui-appbar mui--z1">
+<div class="mui-container" style="padding-left:0px; padding-right:0px;">  
+<div class="tp-logo">
+   <a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+      <img src="https://www.tutorialspoint.com/images/logo.png" alt="Tutorialspoint"/>
+   </a>
+</div>
+<div class="tp-secondary-header tp-library">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="tp-secondary-header tp-videos">
+<a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="tp-secondary-header tp-ebooks">
+<a href="https://store.tutorialspoint.com"><i class="fa fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="tp-secondary-header tp-search">
+<div class="searchform_block">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<div class="tp-secondary-header tp-profile mui-dropdown">
+ 
+<a class="ancHeadLogin" id="regist" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+<a class="ancHeadLogin"  data-type="signIn"  href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+   
+<div class="mui-dropdown__menu up_arrow" id="profile_menu_block">
+</div>
+</div>
+
+<!-- mobile right panel -->
+<div class="tp-mobile-nav-links">
+   <button type="button" class="question_btn" onclick="openNav()"><i class="fa fa-bars"></i></button>      
+   <div id="tp-mobile-right-panel" class="tp-mobile-panel">
+      <ul class="">                   
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-cubes"></i> Library</a></li>
+         <li><a href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa fa-video"></i> Videos</a></li>
+         <li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-book"></i> eBooks</a></li>
+         <li>
+             
+               <a class="ancHeadLogin" data-type="signUp" href="javascript:void(0);"><i class="fa fa-user-edit"></i> <span>Register</span></a>
+               <a class="ancHeadLogin" data-type="signIn" href="javascript:void(0);"><i class="fa fa-sign-out"></i> <span>Login</span></a>
+                  
+            <ul class="mui-dropdown__menu" id="profile_menu_block_mobile">
+                           </ul>
+         </li>         
+      </ul>
+   </div>
+</div>
+<!-- mobile right panel -->
+</div>
+</header> 
+
+<div class="mui-container">
+   <div class="mui-col-md-12" style="padding-left:0px; padding-right:0px;">
+      <div class="searchform_block tp-mobile-search">
+         <form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid" />
+            <input class="header-search-box" type="text" id="search-string-mobile" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" />
+            <button><i class="fa fa-search"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+
+<div class="mui-container container-top">   
+<!-- center column content -->
+   
+<div class="mui-col-md-8">
+<div id="question_index_id">      
+<div class="question_section">                                   
+   <div class="qa_widget">                                
+   <!-- /60931893/Native_QnA -->
+   <div id='div-gpt-ad-1532956972128-0'>
+   <script>
+   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532956972128-0'); });
+   </script>
+   </div>
+   </div>                    
+</div>
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09" data-aid="dlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivdlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09" data-qtitle=timezone-transitions-get-function-in-php data-utitle=Maheshwari-Thakur-1>
+            <h2>
+               <a href="https://www.tutorialspoint.com/timezone-transitions-get-function-in-php" target='_blank'> timezone_transitions_get() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09" style="display:none;">
+            <div id="comments_list_a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="Maheshwari Thakur"><img src='https://www.tutorialspoint.com/assets/profiles/13574/profile/60_99671-1512545646.jpg' alt='Maheshwari Thakur' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Maheshwari-Thakur-1" title="Maheshwari Thakur">Maheshwari Thakur</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The timezone_transitions_get() function returns all transitions for the timezone. Syntax  timezone_transitions_get(obj)  Parameters  obj  &minus; DateTimeZone object  Return The timezone_transitions_get() function returns numerically indexed array containing associative array with all transitions on success or FALSE on failure. Example The following is an example &minus;  Live ... <a href="https://www.tutorialspoint.com/timezone-transitions-get-function-in-php#Maheshwari-Thakur-1"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qea1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='dlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="a1dJRk1JSlhCQnVPSWlRdmg0VVJRZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='dlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='dlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_dlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09" style="display:none;">
+<div id="comments_list_dlVpVkRmZEJiOUZScG5NMGJ6cTRMdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09" data-aid="Ums3Mm1jS25HTUJkTWcydUFCaisrUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivUms3Mm1jS25HTUJkTWcydUFCaisrUT09" data-qtitle=md5-file-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/md5-file-function-in-php" target='_blank'> md5_file() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09" style="display:none;">
+            <div id="comments_list_cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The md5_file() function is used to calculate the md5 hash of a given file. Let us first learn what is MD5 &minus; "The MD5 message-digest algorithm takes as input a message of arbitrary length and produces as output a 128-bit "fingerprint" or "message digest" of the input. The MD5 algorithm ... <a href="https://www.tutorialspoint.com/md5-file-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qecnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='Ums3Mm1jS25HTUJkTWcydUFCaisrUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="cnNGR1l4c3gzSmFLSS9wWlI1c2p2dz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='Ums3Mm1jS25HTUJkTWcydUFCaisrUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='Ums3Mm1jS25HTUJkTWcydUFCaisrUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_Ums3Mm1jS25HTUJkTWcydUFCaisrUT09" style="display:none;">
+<div id="comments_list_Ums3Mm1jS25HTUJkTWcydUFCaisrUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="TmliczI0WGFCUnVJWlUrNE5ZYllPdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="TmliczI0WGFCUnVJWlUrNE5ZYllPdz09" data-aid="Y2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="TmliczI0WGFCUnVJWlUrNE5ZYllPdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="TmliczI0WGFCUnVJWlUrNE5ZYllPdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivY2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09" data-qtitle=localeconv-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/localeconv-function-in-php" target='_blank'> localeconv() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_TmliczI0WGFCUnVJWlUrNE5ZYllPdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_TmliczI0WGFCUnVJWlUrNE5ZYllPdz09" style="display:none;">
+            <div id="comments_list_TmliczI0WGFCUnVJWlUrNE5ZYllPdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The localeconv() function is used to get numeric formatting information. It returns the following array elements &minus;  [decimal_point] - Decimal point character [thousands_sep] - Thousands separator [int_curr_symbol] - Currency symbol (example: USD) [currency_symbol] - Currency symbol (example: $) [mon_decimal_point] - Monetary decimal point character [mon_thousands_sep] - Monetary thousands separator ... <a href="https://www.tutorialspoint.com/localeconv-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeTmliczI0WGFCUnVJWlUrNE5ZYllPdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='Y2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="TmliczI0WGFCUnVJWlUrNE5ZYllPdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='Y2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='Y2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_Y2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09" style="display:none;">
+<div id="comments_list_Y2I5WUVUcDU1TElhZG5wQTBjQ2xaQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="TVRYVGU5MEVLWitlOU12enpCdmJjdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="TVRYVGU5MEVLWitlOU12enpCdmJjdz09" data-aid="SmUzV3gvSXZmT0hia1h2cE44UHcxUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="TVRYVGU5MEVLWitlOU12enpCdmJjdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="TVRYVGU5MEVLWitlOU12enpCdmJjdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivSmUzV3gvSXZmT0hia1h2cE44UHcxUT09" data-qtitle=lcfirst-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/lcfirst-function-in-php" target='_blank'> lcfirst() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_TVRYVGU5MEVLWitlOU12enpCdmJjdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_TVRYVGU5MEVLWitlOU12enpCdmJjdz09" style="display:none;">
+            <div id="comments_list_TVRYVGU5MEVLWitlOU12enpCdmJjdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The lcfirst function is used to make a string's first character should be lowercase. It returns the converted string. Syntax  lcfirst(str)  Parameters  str &minus; The string to convert.  Return The lcfirst() function returns the converted string. The following is an example &minus;  Example  Live ... <a href="https://www.tutorialspoint.com/lcfirst-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeTVRYVGU5MEVLWitlOU12enpCdmJjdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='SmUzV3gvSXZmT0hia1h2cE44UHcxUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="TVRYVGU5MEVLWitlOU12enpCdmJjdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='SmUzV3gvSXZmT0hia1h2cE44UHcxUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='SmUzV3gvSXZmT0hia1h2cE44UHcxUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_SmUzV3gvSXZmT0hia1h2cE44UHcxUT09" style="display:none;">
+<div id="comments_list_SmUzV3gvSXZmT0hia1h2cE44UHcxUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="dVgrWEZBc0Mvd09NV29RQjNYWHplZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="dVgrWEZBc0Mvd09NV29RQjNYWHplZz09" data-aid="ZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="dVgrWEZBc0Mvd09NV29RQjNYWHplZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="dVgrWEZBc0Mvd09NV29RQjNYWHplZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09" data-qtitle=implode-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/implode-function-in-php" target='_blank'> implode() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_dVgrWEZBc0Mvd09NV29RQjNYWHplZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_dVgrWEZBc0Mvd09NV29RQjNYWHplZz09" style="display:none;">
+            <div id="comments_list_dVgrWEZBc0Mvd09NV29RQjNYWHplZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The implode() function is used to join array elements with a string. Syntax  implode(separator, arr)  Parameters  separator &minus; Specifies what to include between the array elements. The default is ""  arr &minus; The array to join to a string  Return The implode() function returns a ... <a href="https://www.tutorialspoint.com/implode-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qedVgrWEZBc0Mvd09NV29RQjNYWHplZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='ZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="dVgrWEZBc0Mvd09NV29RQjNYWHplZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='ZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='ZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_ZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09" style="display:none;">
+<div id="comments_list_ZFJROU1BZFAwMXI5MFVMMDdXZXBkdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09" data-aid="R05vOS9MdWtGTUcwN0xBeXprVkRGZz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivR05vOS9MdWtGTUcwN0xBeXprVkRGZz09" data-qtitle=htmlspecialchars-decode-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/htmlspecialchars-decode-function-in-php" target='_blank'> htmlspecialchars_decode() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09" style="display:none;">
+            <div id="comments_list_ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The html_special_chars_decode() function is used to convert convert special HTML entities back to characters. The following are the HTML entities that will be decoded &minus;  & amp; becomes & (ampersand) & quot; becomes " (double quote) & #039; becomes ' (single quote) & lt; becomes &lt; (less than) & ... <a href="https://www.tutorialspoint.com/htmlspecialchars-decode-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='R05vOS9MdWtGTUcwN0xBeXprVkRGZz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="ajQwTHBqZ0NYbG92RWFtS1NoeTNEQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='R05vOS9MdWtGTUcwN0xBeXprVkRGZz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='R05vOS9MdWtGTUcwN0xBeXprVkRGZz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_R05vOS9MdWtGTUcwN0xBeXprVkRGZz09" style="display:none;">
+<div id="comments_list_R05vOS9MdWtGTUcwN0xBeXprVkRGZz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09" data-aid="M05aeXVGcnpaMU9PcTBHK0lEcUtkdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivM05aeXVGcnpaMU9PcTBHK0lEcUtkdz09" data-qtitle=html-entity-decode-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/html-entity-decode-function-in-php" target='_blank'> html_entity_decode() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09" style="display:none;">
+            <div id="comments_list_eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The html_entity_decode() is used to convert HTML entities to their application characters Syntax  html_entity_decode(str, flags, character-set)  Parameters  str &minus; The string to decode flags &minus; Specifies how to handle quotes. The following are the quote styles &minus;  ENT_COMPAT - Default. Decodes only double quotes ENT_QUOTES - ... <a href="https://www.tutorialspoint.com/html-entity-decode-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeeWJ2eU1mOUNlVUxCTitVa0hobkhCZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='M05aeXVGcnpaMU9PcTBHK0lEcUtkdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="eWJ2eU1mOUNlVUxCTitVa0hobkhCZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='M05aeXVGcnpaMU9PcTBHK0lEcUtkdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='M05aeXVGcnpaMU9PcTBHK0lEcUtkdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_M05aeXVGcnpaMU9PcTBHK0lEcUtkdz09" style="display:none;">
+<div id="comments_list_M05aeXVGcnpaMU9PcTBHK0lEcUtkdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">
+   <div class="qa_widget">
+      <!-- /60931893/tutorial_top -->
+      <div id='div-gpt-ad-1532153686945-4' class='topgooglead'>
+         <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1532153686945-4'); });
+         </script>
+      </div>
+   </div>
+</div><div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09" data-aid="RmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivRmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09" data-qtitle=hebrevc-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/hebrevc-function-in-php" target='_blank'> hebrevc() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09" style="display:none;">
+            <div id="comments_list_ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The hebrevc() function is used to convert logical Hebrew text to visual text with newline conversion. It also converts new lines (\n) into &lt;br&gt;. Syntax  hebrevc(str, maxcharline)  Parameters  str &minus; Hebrew input string maxcharline &minus; The maximum number of characters per line that will be returned.  ... <a href="https://www.tutorialspoint.com/hebrevc-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeZVNsd2pSTTZpZVpZbW1penZaOHdFdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='RmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="ZVNsd2pSTTZpZVpZbW1penZaOHdFdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='RmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='RmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_RmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09" style="display:none;">
+<div id="comments_list_RmJSUFFCZkVLZXdZWnRVZU5TTnE0Zz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="NHpKcDJMb002YWZOaDRITlhTdFlEdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="NHpKcDJMb002YWZOaDRITlhTdFlEdz09" data-aid="NnRoTEFUMUxsOFExdWtCSFVyVlRHdz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="NHpKcDJMb002YWZOaDRITlhTdFlEdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="NHpKcDJMb002YWZOaDRITlhTdFlEdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivNnRoTEFUMUxsOFExdWtCSFVyVlRHdz09" data-qtitle=get-html-translation-table-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/get-html-translation-table-function-in-php" target='_blank'> get_html_translation_table() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_NHpKcDJMb002YWZOaDRITlhTdFlEdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_NHpKcDJMb002YWZOaDRITlhTdFlEdz09" style="display:none;">
+            <div id="comments_list_NHpKcDJMb002YWZOaDRITlhTdFlEdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The get_html_translation_table() function returns the translation table used by htmlspecialchars() and htmlentities(). Syntax  get_html_translation_table(func, table, flags)  Parameters  func &minus; The translation table to return. The following are the possible values &minus;  HTML_SPECIALCHARS - Default. Translates some characters that need URL-encoding to be shown properly on a ... <a href="https://www.tutorialspoint.com/get-html-translation-table-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeNHpKcDJMb002YWZOaDRITlhTdFlEdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='NnRoTEFUMUxsOFExdWtCSFVyVlRHdz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="NHpKcDJMb002YWZOaDRITlhTdFlEdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='NnRoTEFUMUxsOFExdWtCSFVyVlRHdz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='NnRoTEFUMUxsOFExdWtCSFVyVlRHdz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_NnRoTEFUMUxsOFExdWtCSFVyVlRHdz09" style="display:none;">
+<div id="comments_list_NnRoTEFUMUxsOFExdWtCSFVyVlRHdz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09" data-aid="YkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivYkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09" data-qtitle=explode-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/explode-function-in-php" target='_blank'> explode() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09" style="display:none;">
+            <div id="comments_list_RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The explode() function is used to split a string by string. Syntax  explode(delimiter, str, limit)  Parameters  delimiter &minus; The boundary string str &minus; String to split limit &minus; Specifies the number of array elements to return.  The following are possible values &minus;  Greater than 0 ... <a href="https://www.tutorialspoint.com/explode-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeRmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='YkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="RmFVbkx5WmFoUjJHMmMwNWQrQXBaQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='YkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='YkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_YkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09" style="display:none;">
+<div id="comments_list_YkpSRlc2V2JiUXRKeEtaNVNyZ2dGUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09" data-aid="L1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivL1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09" data-qtitle=crypt-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/crypt-function-in-php" target='_blank'> crypt() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09" style="display:none;">
+            <div id="comments_list_SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The crypt() function is used to hash the string using using algorithms like DES, Blowfish, or MD5. Note &minus; This function behaves different on different operating systems. The following are some constants used together with the crypt() function.  [CRYPT_STD_DES] - Standard DES-based hash with two character salt from the ... <a href="https://www.tutorialspoint.com/crypt-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeSGVaM2czZlVLdVFtVEsvbG1NTDdRZz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='L1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="SGVaM2czZlVLdVFtVEsvbG1NTDdRZz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='L1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='L1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_L1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09" style="display:none;">
+<div id="comments_list_L1l4V3ZTSGRBSTVJeC9vOVRPNGgyUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09" data-aid="M00vbllHZi83RFZYS1NXdlVvV0E0dz09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivM00vbllHZi83RFZYS1NXdlVvV0E0dz09" data-qtitle=count-chars-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/count-chars-function-in-php" target='_blank'> count_chars() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09" style="display:none;">
+            <div id="comments_list_R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The count_charss() method is used to returns the information about character used in a string Syntax  cont_chars(str, mode)  Parameters  str &minus; String to be checked. mode &minus; Specifies the return modes. 0 is default. The possible return modes are &minus;  0 - an array with the ... <a href="https://www.tutorialspoint.com/count-chars-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeR01sbC9pNUh2bWsyMUlwbSsrV2E2dz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='M00vbllHZi83RFZYS1NXdlVvV0E0dz09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="R01sbC9pNUh2bWsyMUlwbSsrV2E2dz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='M00vbllHZi83RFZYS1NXdlVvV0E0dz09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='M00vbllHZi83RFZYS1NXdlVvV0E0dz09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_M00vbllHZi83RFZYS1NXdlVvV0E0dz09" style="display:none;">
+<div id="comments_list_M00vbllHZi83RFZYS1NXdlVvV0E0dz09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="UHJmRkRwcHBTUFBmOURETnhzUmtqQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="UHJmRkRwcHBTUFBmOURETnhzUmtqQT09" data-aid="ME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="UHJmRkRwcHBTUFBmOURETnhzUmtqQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="UHJmRkRwcHBTUFBmOURETnhzUmtqQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09" data-qtitle=convert-cyr-string-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/convert-cyr-string-function-in-php" target='_blank'> convert_cyr_string() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_UHJmRkRwcHBTUFBmOURETnhzUmtqQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_UHJmRkRwcHBTUFBmOURETnhzUmtqQT09" style="display:none;">
+            <div id="comments_list_UHJmRkRwcHBTUFBmOURETnhzUmtqQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The convert_cyr_string() function is used to convert from one Cyrillic character set to another. The supported Cyrillic character-sets are &minus;   k - koi8-r w - windows-1251 i - iso8859-5 a - x-cp866 d - x-cp866 m - x-mac-cyrillic  Syntax  convert_cyr_string(str, from, to)  Parameters  str ... <a href="https://www.tutorialspoint.com/convert-cyr-string-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeUHJmRkRwcHBTUFBmOURETnhzUmtqQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='ME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="UHJmRkRwcHBTUFBmOURETnhzUmtqQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='ME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='ME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_ME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09" style="display:none;">
+<div id="comments_list_ME1CMFpUWmpRZDUxMmV2L0RaUXNTUT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09" data-aid="Nzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivNzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09" data-qtitle=chr-function-in-php data-utitle=Samual-Sam>
+            <h2>
+               <a href="https://www.tutorialspoint.com/chr-function-in-php" target='_blank'> chr() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09" style="display:none;">
+            <div id="comments_list_QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam"><img src='https://www.tutorialspoint.com/assets/profiles/13514/profile/60_83486-1512649303.jpg' alt='Samual Sam' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Samual-Sam" title="Samual Sam">Samual Sam</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The chr() function returns the specific characters. It converts an ASCII value to a character. Syntax  chr(ascii)  Parameters  ascii &minus; Specify the ASCII value  Return The chr() function returns the character of the ASCII value passed. The following is an example &minus;   Example  ... <a href="https://www.tutorialspoint.com/chr-function-in-php#Samual-Sam"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeQlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='Nzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="QlJOa3pRV2hzbXVYTTAyOGdMQmVmdz09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='Nzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='Nzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_Nzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09" style="display:none;">
+<div id="comments_list_Nzl5RXJoT0N5dWxFd2p1U0lqUTF1QT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+<div class="question_section">      
+   <div class="">                              
+      <div class="qa_widget">                                
+         <div class="qa_links">
+            <div class="mui-dropdown">
+                              <button type="button" class="dropdown-toggle btn btn-info question_btn" data-mui-toggle="dropdown"><i class="fa fa-ellipsis-h-alt ellipses-icon"></i></button>
+               <ul class="mui-dropdown__menu arrow_box">                   
+                                    <li>
+                     <a href="javascript:void(0)" class="question_follow btn btn-info btn-lg question_btn" title="0  Follower, Follow Question"  data-qid ="Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09"><i class="fa fa-plus"></i>&nbsp;&nbsp; Follow</a>                                       
+                  </li>
+                  <li>
+                  <a href="javascript:void(0);" class="answer_edit" data-qid="Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09" data-aid="NDMrdERkSnhKZThyYWpCUVVOdUVuQT09"  title="Suggest/Edit Answer"><i class="fa fa-edit"></i> Edit Answer</a>
+                  </li>                  
+                  <li><a href="javascript:void(0);" class="question_edit" data-qid="Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09"><i class="fa fa-pen-square"></i> Edit Question</a></li>
+                  <li><a href="javascript:void(0);" class="question_category" data-qid="Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09"><i class="fa fa-grip-vertical"></i> Edit Categories</a></li>
+                  
+                                 </ul>                
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="qa_post qa_list" id="ansModalDivNDMrdERkSnhKZThyYWpCUVVOdUVuQT09" data-qtitle=bin2hex-function-in-php data-utitle=Karthikeya-Boyini>
+            <h2>
+               <a href="https://www.tutorialspoint.com/bin2hex-function-in-php" target='_blank'> bin2hex() function in PHP</a>
+            </h2>                              
+            
+<div class="qa_category" id="tags_Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09">
+<a href='https://www.tutorialspoint.com/questions/category/PHP' target='_blank'><span>PHP</span></a><a href='https://www.tutorialspoint.com/questions/category/Programming' target='_blank'><span>Programming</span></a><a href='https://www.tutorialspoint.com/questions/category/Server-Side-Programming' target='_blank'><span>Server Side Programming</span></a></div>            <div class="qa_description">
+                        </div>
+            <div class="qa_comments" id="comments_Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09" style="display:none;">
+            <div id="comments_list_Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09"></div>
+             </div>                                        
+         </div>                           
+         <div class="qa_answer_widget">
+           <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini"><img src='https://www.tutorialspoint.com/assets/profiles/13518/profile/60_31598-1537784993.jpg' alt='karthikeya Boyini' /></a> 
+            <div class="qa_answer_detail">
+               <a href="https://www.tutorialspoint.com/profile/Karthikeya-Boyini" title="karthikeya Boyini">karthikeya Boyini</a>    
+            </div>
+             <div class="qa_answer_dtm">
+               Answered on 16th Oct, 2018            </div>
+            <div class="clear"></div>
+            <p>The bin2hex() function is used to convert primary data to hexadecimal representation Syntax  bin2hex(str)  Parameters  str &minus; The string to be converted.  Return The bin2hex() function converts a string of ASCII characters to hexadecimal values. The following is an example &minus;   Example  Live ... <a href="https://www.tutorialspoint.com/bin2hex-function-in-php#Karthikeya-Boyini"><span class="read_more">Read More</span></a></p>                              
+         </div>
+         <div class="clear"></div>
+         <div id="qeTm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09"></div>  
+                  <div class="clear"></div>
+         <div class="qa_social_links">                               
+
+<div class="qa_links_right">
+<div class="mui-dropdown">
+<a href="javascript:void(0)" class="comments_view qa_comments_view" data-entid='NDMrdERkSnhKZThyYWpCUVVOdUVuQT09' data-entity='A'  title="View Answer Comments"><i class="fa fa-comment-dots"></i> Comments</a> 
+
+   <a href="javascript:void(0)" class="question_answer btn btn-info btn-lg question_btn" data-qid="Tm9NYWxjaGcvSCtQZ2h5cVRiWVVwQT09" title="Give New Answer"><i class="fa fa-comment-alt-lines"></i> Answer</a>
+   </div>  
+</div>
+      <div class="qa-links-left">
+                 <a href="javascript:void(0)" class="qa_vote" data-entid='NDMrdERkSnhKZThyYWpCUVVOdUVuQT09' data-evote='L'  data-entity='LA' title="Upvote"><i class="fa fa-thumbs-up"></i> <b>0 </b> </a>
+         <a href="javascript:void(0)" class="qa_vote" data-entid='NDMrdERkSnhKZThyYWpCUVVOdUVuQT09' data-evote='D'  data-entity='LA' title="Downvote"><i class="fa fa-thumbs-down"></i> <b>0 </b></a>      
+      </div>
+<div class="clear"></div> 
+<div class="qa_comments" id="comments_NDMrdERkSnhKZThyYWpCUVVOdUVuQT09" style="display:none;">
+<div id="comments_list_NDMrdERkSnhKZThyYWpCUVVOdUVuQT09"></div>
+</div>                     
+</div> 
+      </div>    
+      <div class="clear"></div>                          
+   </div> 
+   <div class="clear"></div>
+</div>      
+  
+</div>      
+<div class="job-index qa_widget" style="padding:0px 10px 0px 10px!important; margin:0px!important;">
+   <div class="pages">
+      <a href="https://www.tutorialspoint.com/questions/8"  title="Previous Page"><i class='fa-arrow-left'></i> Previous</a> <a class="number" title="Go to page 1 of 825" href="https://www.tutorialspoint.com/questions/1">1</a>  ... <a class="number" title="Go to page 6 of 825" href="https://www.tutorialspoint.com/questions/6">6</a> <a class="number" title="Go to page 7 of 825" href="https://www.tutorialspoint.com/questions/7">7</a> <a class="number" title="Go to page 8 of 825" href="https://www.tutorialspoint.com/questions/8">8</a> <a title="Go to page 9 of 825" class="current number" href="https://www.tutorialspoint.com/questions/9">9</a> <a class="number" title="Go to page 10 of 825" href="https://www.tutorialspoint.com/questions/10">10</a> <a class="number" title="Go to page 11 of 825" href="https://www.tutorialspoint.com/questions/11">11</a> <a class="number" title="Go to page 12 of 825" href="https://www.tutorialspoint.com/questions/12">12</a>  ... <a class="number" title="Go to page 825 of 825" href="https://www.tutorialspoint.com/questions/825">825</a> <a  href="https://www.tutorialspoint.com/questions/10" title="Next Page">Next <i class='fa-arrow-right'></i></a>
+   </div>
+</div>
+<div class="clear"></div>
+<div class="bottomgooglead qa_widget align-center">
+   <div class="bottomadtag">Advertisements</div>
+      <script><!--
+      var width = 580;
+      var height = 400;
+      var format = "580x400_as";
+      if( window.innerWidth < 468 ){
+         width = 300;
+         height = 250;
+         format = "300x250_as";
+      }
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = width;
+      google_ad_height = height;
+      google_ad_format = format;
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</div> 
+<div class="loader_bg" id="loader_image">
+<img src="https://www.tutorialspoint.com/images/questions/loader.gif" width="80" alt="Loading..." />
+</div>
+
+<!-- end of center column content -->   
+
+<div class="mui-col-md-4">    
+<!-- right column content -->      
+<div class="right-menu">
+      <div class="right-blog">
+      <a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/questions/index.php?page=9','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/facebookIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=9','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/twitterIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/questions/index.php?page=9&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/linkedinIcon.jpg" alt="img" />
+      </a>      
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=9&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/StumbleUponIcon.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/questions/index.php?page=9&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/reddit.jpg" alt="img" />
+      </a>
+      <a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.blogger.com/blog-this.g?u=https://www.tutorialspoint.com/questions/index.php?page=9&amp;n='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+      <img src="/images/blogger.jpg" alt="img" />
+      </a>
+      <div class="clear"></div>
+   </div>
+   <div class="">
+      <button id="ask_question" class="qa_button_save"><i class="fa fa-question-circle"></i> Ask Question</button>
+   </div>
+   <!-- right column adds -->
+   <div class="qa_adds">
+      <div class="google-ad">Advertisements</div>
+      <div class="rightgooglead">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      google_ad_format = "300x250_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "pub-7133395778201029";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      google_ad_format = "300x600_as";
+      google_ad_type = "image";
+      google_ad_channel ="";
+      //--></script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+      <div class="rightgooglead extra">
+      <script><!--
+      google_ad_client = "ca-pub-2537027957187252";
+      /* Right Side Ad */
+      google_ad_slot = "right_side_ad";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+   </div>
+   <!-- end of right column adds -->
+    
+   <div id="contribution_menu"></div>
+   <div class="clear"></div>    
+      <div class="left_nav_header left_top_margin"><i class="fa fa-question-circle"></i> Unanswered Questions     
+      <a href="https://www.tutorialspoint.com/questions/unanswered.php" class="qa_pop_btn qa_pop_save"><i class="fa fa-plus"></i> View All</a>
+   </div>
+   <div id="latest_questions"></div>      
+   
+</div>
+
+<script>
+   $(document).ready(function () {
+      getRightMenu();
+      function getRightMenu(){
+         $.ajax({
+            url: baseurl + "questions/ajax/ajaxGetRightMenu.php",
+            method: "POST",
+            success: function (data) {
+            $('#contribution_menu').html(data);
+            }
+         });
+      }
+            getLatestQuestions();
+         function getLatestQuestions() {
+            $.ajax({
+               url: baseurl + "questions/ajax/ajaxGetLatestQuestions.php",
+               method: "POST",
+               success: function (data) {
+               $('#latest_questions').html(data);
+               }
+            });
+         }
+          });
+</script> 
+</div>
+<!-- end of right column content -->   
+</div>
+<!-- End of Body Content -->
+
+<div class="footer-copyright">
+<div class="mui-container tp-footer-social-links">
+  <div class="">
+      <div class="mui-col-md-4">
+         <h3>Follow</h3>
+         <a title="Follow us on Facebook" rel="nofollow" href="https://www.facebook.com/tutorialspointindia" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> </a>
+         <a title="Follow us on Google+" rel="nofollow" href="https://plus.google.com/u/0/+tutorialspoint" class="google" target="_blank"><i class="fa fa-google-plus-g"></i> </a>
+         <a title="Follow us on Twitter" rel="nofollow" href="http://www.twitter.com/tutorialspoint" class="twitter" target="_blank"><i class="fa fa-twitter"></i> </a>
+         <a title="Follow us on Linkedin" rel="nofollow" href="http://www.linkedin.com/company/tutorialspoint" class="linkedin" target="_blank"><i class="fa fa-linkedin-in"></i> </a>         
+         <a title="Follow us on Youtube" rel="nofollow" href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" class="linkedin" target="_blank"><i class="fa fa-youtube"></i> </a>         
+      </div>
+      <div class="mui-col-md-4">
+         <a href="index.htm" class="logo"><img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"></a>
+         <p><span>&copy; Copyright 2018. All Rights Reserved.</span></p>
+      </div>
+      <div class="mui-col-md-4 news-group">
+         <h3 style="padding:0px 0px 0px 0px;">Newsletter</h3>
+         <div class="">
+            <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') { this.value = ''; }" onblur="if (this.value == '') {
+               this.value = 'Enter email for newsletter...'; }">
+            <span class="input_group_button"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+            <div id="newsresponse" style="display:none;"></div>
+         </div>         
+         <ul>
+            <li><a href="/about/about_privacy.htm#cookies"><i class="fa fa-globe"></i> Cookies Policy</a></li>
+            <li><a href="/about/faq.htm"><i class="fa fa-question-circle"></i> FAQ's</a></li>
+            <li><a href="/about/about_helping.htm"><i class="fa fa-hands-helping"></i> Helping</a></li>
+            <li><a href="/about/contact_us.htm"><i class="fa fa-user"></i> Contact</a></li>
+         </ul>         
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="mui_main_modal">   
+<div id="mui_popup_modal" class=""> </div>
+</div>
+
+<script src="https://www.tutorialspoint.com/questions/js/progressively.js"></script>
+<script src="https://www.tutorialspoint.com/questions/js/qa_footer.js?v=1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-17');
+</script>
+</body>
+</html>

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Apache POI Word Quick Guide</title>
+<meta name="description" content="Apache POI Word Quick Guide - Learn Apache POI Word in simple and easy steps starting from basic to advanced concepts with examples including Overview, Apache POI Installation, Core Classes, Document, Paragraph, Borders, Tables, Font Style and Alignment, Text Extraction." />
+<meta name="keywords" content="Apache POI Word, Tutorials, Overview, Apache POI Installation, Core Classes, Document, Paragraph, Borders, Tables, Font Style and Alignment, Text Extraction." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #0e6fce !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #0e6fce url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #0e6fce !important;}
+.submenu-item{ border-bottom: 2px solid #0e6fce !important; border-top: 2px solid #0e6fce !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#0e6fce; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/apache_poi_word/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.ts{
+  vertical-align:middle !important;
+  text-align:center !important;
+}
+</style>
+<div class="mini-logo">
+<img src="/apache_poi_word/images/apache-poi-word-mini-logo.jpg" alt="Apache POI Word Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Apache POI Word Tutorial</li>
+<li><a class="left" href="/apache_poi_word/index.htm">Apache POI Word - Home</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_overview.htm">Apache POI Word - Overview</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_installation.htm">Apache POI Word - Installation</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_core_classes.htm">Apache POI Word - Core Classes</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_document.htm">Apache POI Word - Document</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_paragraph.htm">Apache POI Word - Paragraph</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_borders.htm">Apache POI Word - Borders</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_tables.htm">Apache POI Word - Tables</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_font_style.htm">Apache POI Word - Font &amp; Alignment</a></li>
+<li><a class="left" href="/apache_poi_word/apache_poi_word_text_extraction.htm">Apache POI Word - Text Extraction</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Apache POI Word Useful Resources</li>
+<li><a href="/apache_poi_word/apache_poi_word_quick_guide.htm">Apache POI Word - Quick Guide</a></li>
+<li><a href="/apache_poi_word/apache_poi_word_useful_resources.htm">Apache POI Word - Useful Resources</a></li>
+<li><a href="/apache_poi_word/apache_poi_word_discussion.htm">Apache POI Word - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Apache POI Word - Quick Guide</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/apache_poi_word/apache_poi_word_text_extraction.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/apache_poi_word/apache_poi_word_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h1>Apache POI Word - Overview</h1>
+<p>Many a time, a software application is required to generate reference documents in Microsoft Word file format. Sometimes, an application is even expected to receive Word files as input data.</p>
+<p>Any Java programmer who wants to produce MS-Office files as output must use a predefined and read-only API to do so.</p>
+<h2>What is Apache POI?</h2>
+<p>Apache POI is a popular API that allows programmers to create, modify, and display MS-Office files using Java programs. It is an open source library developed and distributed by Apache Software Foundation to design or modify MS-Office files using Java program. It contains classes and methods to decode the user input data or a file into MS-Office documents.</p>
+<h2>Components of Apache POI</h2>
+<p>Apache POI contains classes and methods to work on all OLE2 Compound documents of MS-Office. The list of components of this API is given below &minus;</p>
+<ul class="list">
+<li><p><b>POIFS (Poor Obfuscation Implementation File System)</b> &minus; This component is the basic factor of all other POI elements. It is used to read different files explicitly.</p></li>
+<li><p><b>HSSF (Horrible SpreadSheet Format)</b> &minus; It is used to read and write .xls format of MS-Excel files.</p></li>
+<li><p><b>XSSF (XML SpreadSheet Format)</b> &minus; It is used for .xlsx file format of MS-Excel.</p></li>
+<li><p><b>HPSF (Horrible Property Set Format)</b> &minus; It is used to extract property sets of the MS-Office files.</p></li>  
+<li><p><b>HWPF (Horrible Word Processor Format)</b> &minus; It is used to read and write .doc extension files of MS-Word.</p></li>
+<li><p><b>XWPF (XML Word Processor Format)</b> &minus; It is used to read and write <b>.docx</b> extension files of MS-Word.</p></li>
+<li><p><b>HSLF (Horrible Slide Layout Format)</b> &minus; It is used to read, create, and edit PowerPoint presentations.</p></li> 
+<li><p><b>HDGF (Horrible DiaGram Format)</b> &minus; It contains classes and methods for MS-Visio binary files.</p></li>
+<li><p><b>HPBF (Horrible PuBlisher Format)</b> &minus; It is used to read and write MS-Publisher files.</p></li>
+</ul>
+<p>This tutorial guides you through the process of working on MS-Word files using Java. Therefore the discussion is confined to HWPF and XWPF components.</p>
+<p><b>Note</b> &minus; OLDER VERSIONS OF POI SUPPORT BINARY FILE FORMATS SUCH AS DOC, XLS, PPT, ETC. VERSION 3.5 ONWARDS, POI SUPPORTS OOXML FILE FORMATS OF MS-OFFICE SUCH AS DOCX, XLSX, PPTX, ETC.</p>
+<h1>Apache POI Word - Installation</h1>
+<p>This chapter takes you through the process of setting up Apache POI on Windows and Linux based systems. Apache POI can be easily installed and integrated with your current Java environment, following a few simple steps without any complex setup procedures. User administration is required while installation.</p>
+<h2>System Requirements</h2>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td>JDK</td>
+<td>Java SE 2 JDK 1.5 or above</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>1 GB RAM (recommended)</td>
+</tr>
+<tr>
+<td>Disk Space</td>
+<td>No minimum requirement</td>
+</tr>
+<tr>
+<td>Operating System Version</td>
+<td>Windows XP or above, Linux</td>
+</tr>
+</table>
+<p>Let us now proceed with the steps to install Apache POI.</p>
+<h3>Step 1: Verify your Java Installation</h3>
+<p>First of all, you need to have Java Software Development Kit (SDK) installed on your system. To verify this, execute any of the two commands mentioned below, depending on the platform you are working on.</p>
+<p>If the Java installation has been done properly, then it will display the current version and specification of your Java installation. A sample output is given in the following table &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Platform</th>
+<th style="text-align:center;">Command</th>
+<th style="text-align:center;">Sample Output</th>
+</tr>
+<tr>
+<td class="ts">Windows</td>
+<td class="ts"><p>Open command console and type &minus;</p>
+<p><b>\&gt;java –version</b></p></td>
+<td><p>Java version "1.7.0_60"</p>
+<p>Java (TM) SE Run Time Environment (build 1.7.0_60-b19)</p>
+<p>Java Hotspot (TM) 64-bit Server VM (build 24.60-b09,mixed mode)</p></td>
+</tr>
+<tr>
+<td class="ts">Linux</td>
+<td class="ts"><p>Open command terminal and type &minus;</p>
+<p><b>$java –version</b></p></td>
+<td><p>java version "1.7.0_25"</p>
+<p>Open JDK Runtime Environment (rhel-2.3.10.4.el6_4-x86_64)</p>
+<p>Open JDK 64-Bit Server VM (build 23.7-b01, mixed mode)</p></td>
+</tr>
+</table>
+<ul class="list">
+<li><p>We assume that the readers of this tutorial have Java SDK version 1.7.0_60 installed on their system.</p></li>
+<li><p>In case you do not have Java SDK, download its current version from <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" rel="nofollow" target="_blank">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a> and have it installed.</p></li>
+</ul>
+<h3>Step 2: Set your Java Environment</h3>
+<p>Set the environment variable JAVA_HOME to point to the base directory location where Java is installed on your machine. For example,</p>
+<table class="table table-bordered" >
+<tr>
+<th style="text-align:center;">Platform</th>
+<th style="text-align:center;">Description</th>
+</tr>
+<tr>
+<td class="ts">Windows</td>
+<td class="ts">Set JAVA_HOME to C:\ProgramFiles\java\jdk1.7.0_60</td>
+</tr>
+<tr>
+<td class="ts">Linux</td>
+<td class="ts">Export  JAVA_HOME = /usr/local/java-current</td>
+</tr>
+</table>
+<p>Append the full path of Java compiler location to the System Path.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Platform</th>
+<th style="text-align:center;">Description</th>
+</tr>
+<tr>
+<td class="ts">Windows</td>
+<td>Append the String "C:\Program Files\Java\jdk1.7.0_60\bin" to the end of the system variable PATH.</td>
+</tr>
+<tr>
+<td style="text-align:center;">Linux</td>
+<td>Export PATH = $PATH:$JAVA_HOME/bin/</td>
+</tr>
+</table>
+<p>Execute the command <b>java - version</b> from the command prompt as explained above.</p>
+<h3>Step 3: Install Apache POI Library</h3>
+<p>Download the latest version of Apache POI from <a href="https://poi.apache.org/download.html" rel="nofollow" target="_blank"> https://poi.apache.org/download.html</a> and unzip its contents to a folder from where the required libraries can be linked to your Java program. Let us assume the files are collected in a folder on C drive.</p>
+<p>The following images shows the directories and the file structure inside the downloaded folder &minus;</p>
+<img src="/apache_poi_word/images/jar_hirarchi.jpg" alt="Jar Hierarchy1" />
+<p></p>
+<img src="/apache_poi_word/images/jar_hirarchi_2.jpg" alt="Jar Hierarchy2" />
+<p>Add the complete path of the five <b>jars</b> as highlighted in the above image to the CLASSPATH.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Platform</th>
+<th style="text-align:center;">Description</th>
+</tr>
+<tr>
+<td class="ts">Windows</td>
+<td><p>Append the following strings to the end of the user variable CLASSPATH &minus;</p>
+<p>“C:\poi-3.9\poi-3.9-20121203.jar;”</p> 
+<p>“C:\poi-3.9\poi-ooxml-3.9-20121203.jar;”</p> 
+<p>“C:\poi-3.9\poi-ooxml-schemas-3.9-20121203.jar;”</p> 
+<p>“C:\poi-3.9\ooxml-lib\dom4j-1.6.1.jar;”</p>  
+<p>“C:\poi-3.9\ooxml-lib\xmlbeans-2.3.0.jar;.;” </p></td>
+</tr>
+<tr>
+<td class="ts">Linux</td>
+<td><p>Export CLASSPATH = $CLASSPATH:</p>
+<p>/usr/share/poi-3.9/poi-3.9-20121203.tar:</p>
+<p>/usr/share/poi-3.9/poi-ooxml-schemas-3.9-20121203.tar:</p>
+<p>/usr/share/poi-3.9/poi-ooxml-3.9-20121203.tar:</p>
+<p>/usr/share/poi-3.9/ooxml-lib/dom4j-1.6.1.tar:</p>
+<p>/usr/share/poi-3.9/ooxml-lib/xmlbeans-2.3.0.tar</p></td>
+</tr>
+</table>
+<h1>Apache POI Word - Core Classes</h1>
+<p>This chapter takes you through the classes and methods of Apache POI for managing a Word document.</p>
+<h2>Document</h2>
+<p>This is a marker interface (interface do not contain any methods), that notifies that the implemented class can be able to create a word document.</p>
+<h2>XWPFDocument</h2>
+<p>This is a class under <b>org.apache.poi.xwpf.usermodel</b> package. It is used to create MS-Word Document with .docx file format.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>commit()</b></p> 
+<p>Commits and saves the document.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>createParagraph()</b></p> 
+<p>Appends a new paragraph to this document.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>createTable()</b></p> 
+<p>Creates an empty table with one row and one column as default.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>createTOC()</b></p>
+<p>Creates a table of content for Word document.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>getParagraphs()</b></p> 
+<p>Returns the paragraph(s) that holds the text of the header or footer.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>getStyle()</b></p> 
+<p>Returns the styles object used.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at &minus;</p>
+<p><a href="https://poi.apache.org/apidocs/index.html?org/apache/poi/openxml4j/opc/internal/package-summary.html" rel="nofollow" target="_blank">Package org.apache.poi.openxml4j.opc.internal</a>.</p>
+<h2>XWPFParagraph</h2>
+<p>This is a class under <b>org.apache.poi.xwpf.usermodel</b> package and is used to create paragraph in a word document. This instance is also used to add all types of elements into word document.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>createRun()</b></p>
+<p>Appends a new run to this paragraph.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>getAlignment()</b></p>
+<p>Returns the paragraph alignment which shall be applied to the text in this paragraph.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>setAlignment(ParagraphAlignment align)</b></p>
+<p>Specifies the paragraph alignment which shall be applied to the text in this paragraph.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setBorderBottom(Borders border)</b></p>
+<p>Specifies the border which shall be displayed below a set of paragraphs, which have the same set of paragraph border settings.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>setBorderLeft(Borders border)</b></p>
+<p>Specifies the border which shall be displayed on the left side of the page around the specified paragraph.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>setBorderRight(Borders border)</b></p>
+<p>Specifies the border which shall be displayed on the right side of the page around the specified paragraph.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p><b>setBorderTop(Borders border)</b></p>
+<p>Specifies the border which shall be displayed above a set of paragraphs which have the same set of paragraph border settings.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at &minus;</p>
+<p><a href="https://poi.apache.org/apidocs/index.html?org/apache/poi/openxml4j/opc/internal/package-summary.html." rel="nofollow" target="_blank">POI API Documentation</a></p>
+<h2>XWPFRun</h2>
+<p>This is a class under <b>org.apache.poi.xwpf.usermodel</b> package and is used to add a region of text to the paragraph.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>addBreak()</b></p>
+<p>Specifies that a break shall be placed at the current location in the run content.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>addTab()</b></p>
+<p>Specifies that a tab shall be placed at the current location in the run content.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>setColor(java.lang.String rgbStr)</b></p>
+<p>Sets text color.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setFontSize(int size)</b></p>
+<p>Specifies the font size which shall be applied to all noncomplex script characters in the content of this run when displayed.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p><b>setText(java.lang.String value)</b></p>
+<p>Sets the text of this text run.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p><b>setBold(boolean value)</b></p>
+<p>Specifies whether the bold property shall be applied to all non-complex script characters in the content of this run when displayed in a document.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at &minus;</p>
+<p><a href="https://poi.apache.org/apidocs/index.html?org/apache/poi/openxml4j/opc/internal/package-summary.html." rel="nofollow" target="_blank">POI API Documentation</a></p>
+<h2>XWPFStyle</h2>
+<p>This is a class under <b>org.apache.poi.xwpf.usermodel</b> package and is used to add different styles to the object elements in a word document.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>getNextStyleID()</b></p>
+<p>It is used to get StyleID of the next style.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>getStyleId()</b></p>
+<p>It is used to get StyleID of the style.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>getStyles()</b></p>
+<p>It is used to get styles.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setStyleId(java.lang.String styleId)</b></p>
+<p>It is used to set styleID.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at &minus;</p>
+<p><a href="https://poi.apache.org/apidocs/index.html?org/apache/poi/openxml4j/opc/internal/package-summary.html." rel="nofollow" target="_blank">POI API Documentation</a></p>
+<h2>XWPFTable</h2>
+<p>This is a class under <b>org.apache.poi.xwpf.usermodel</b> package and is used to add table data into a word document.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>addNewCol()</b></p>
+<p>Adds a new column for each row in this table.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>addRow(XWPFTableRow row, int pos)</b></p>
+<p>Adds a new Row to the table at position pos.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>createRow()</b></p>
+<p>Creates a new XWPFTableRow object with as many cells as the number of columns defined in that moment.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>setWidth(int width)</b></p>
+<p>Sets the width of the column.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at:
+<a href="https://poi.apache.org/apidocs/index.html?org/apache/poi/openxml4j/opc/internal/package-summary.html." rel="nofollow" target="_blank">POI API Documentation</a></p>
+<h2>XWPFWordExtractor</h2>
+<p>This is a class under <b>org.apache.poi.xwpf.extractor</b> package. It is a basic parser class used to extract the simple text from a Word document.</p>
+<h3>Class Methods</h3>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>getText()</b></p>
+<p>Retrieves all the text from the document.</p></td>
+</tr>
+</table>
+<p>For the remaining methods of this class, refer the complete API document at:
+<a href="https://poi.apache.org/apidocs/index.html?org/apache/poi/openxml4j/opc/internal/package-summary.html." rel="nofollow" target="_blank">POI API Documentation</a></p>
+<h1>Apache POI Word - Document</h1>
+<p>Here the term 'document' refers to a MS-Word file. After completion of this chapter, you will be able to create new documents and open existing documents using your Java program.</p>
+<h2>Create Blank Document</h2>
+<p>The following simple program is used to create a blank MS-Word document &minus;</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
+public class CreateDocument {
+
+   public static void main(String[] args)throws Exception  {
+   
+      //Blank Document
+      XWPFDocument document = new XWPFDocument(); 
+		
+      //Write the Document in file system
+      FileOutputStream out = new FileOutputStream( new File("createdocument.docx"));
+      document.write(out);
+      out.close();
+      System.out.println("createdocument.docx written successully");
+   }
+}
+</pre>
+<p>Save the above Java code as <b>CreateDocument.java,</b> and then compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac  CreateDocument.java
+$java CreateDocument
+</pre>
+<p>If your system environment is configured with the POI library, it will compile and execute to generate a blank Excel file named <b>createdocument.docx</b> in your current directory and display the following output in the command prompt &minus;</p>
+<pre class="result notranslate">
+createdocument.docx written successfully
+</pre>
+<h1>Apache POI Word - Paragraph</h1>
+<p>In this chapter you will learn how to create a Paragraph and how to add it to a document using Java. Paragraph is a part of a page in a Word file.</p>
+<p>After completing this chapter, you will be able to create a Paragraph and perform read operations on it.</p>
+<h2>Create a Paragraph</h2>
+<p>First of all, let us create a Paragraph using the referenced classes discussed in the earlier chapters. By following the previous chapter, create a Document first, and then we can create a Paragraph.</p>
+<p>The following code snippet is used to create a spreadsheet &minus;</p>
+<pre class="prettyprint notranslate">
+//Create Blank document
+   XWPFDocument document = new XWPFDocument();
+
+//Create a blank spreadsheet
+   XWPFParagraph paragraph = document.createParagraph();
+</pre>
+<h2>Run on Paragraph</h2>
+<p>You can enter the text or any object element, using <b>Run</b>. Using Paragraph instance you can create <b>run</b>.</p>
+<p>The following code snippet is used to create a Run.</p>
+<pre class="prettyprint notranslate">
+XWPFRun run = paragraph.createRun();
+</pre>
+<h2>Write into a Paragraph</h2>
+<p>Let us try entering some text into a document. Consider the below text data &minus;</p>
+<pre class="result notranslate">
+At tutorialspoint.com, we strive hard to provide quality tutorials for self-learning
+purpose in the domains of Academics, Information Technology, Management and Computer
+Programming Languages.
+</pre>
+<p>The following code is used to write the above data into a paragraph.</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+public class CreateParagraph {
+
+   public static void main(String[] args)throws Exception {
+
+      //Blank Document
+      XWPFDocument document = new XWPFDocument(); 
+      
+      //Write the Document in file system
+      FileOutputStream out = new FileOutputStream(new File("createparagraph.docx"));
+        
+      //create Paragraph
+      XWPFParagraph paragraph = document.createParagraph();
+      XWPFRun run = paragraph.createRun();
+      run.setText("At tutorialspoint.com, we strive hard to " +
+         "provide quality tutorials for self-learning " +
+         "purpose in the domains of Academics, Information " +
+         "Technology, Management and Computer Programming
+         Languages.");
+			
+      document.write(out);
+      out.close();
+      System.out.println("createparagraph.docx written successfully");
+   }
+}
+</pre>
+<p>Save the above Java code as <b>CreateParagraph.java,</b> and then compile and run it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac CreateParagraph.java
+$java CreateParagraph
+</pre>
+<p>It will compile and execute to generate a Word file named <b>createparagraph.docx</b> in your current directory and you will get the following output in the command prompt &minus;</p>
+<pre class="result notranslate">
+createparagraph.docx written successfully
+</pre>
+<p>The <b>createparagraph.docx</b> file looks as follows.</p>
+<img src="/apache_poi_word/images/createparagraph.jpg" alt="Create Paragraph" />
+<h1>Apache POI Word - Borders</h1>
+<p>In this chapter, you will learn how to apply border to a paragraph using Java programming.</p>
+<h2>Applying Border</h2>
+<p>The following code is used to apply Borders in a Document &minus;</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.poi.xwpf.usermodel.Borders;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+public class ApplyingBorder {
+
+   public static void main(String[] args)throws Exception {
+
+      //Blank Document
+      XWPFDocument document = new XWPFDocument(); 
+        
+      //Write the Document in file system
+      FileOutputStream out = new FileOutputStream(new File("applyingborder.docx"));
+        
+      //create paragraph
+      XWPFParagraph paragraph = document.createParagraph();
+        
+      //Set bottom border to paragraph
+      paragraph.setBorderBottom(Borders.BASIC_BLACK_DASHES);
+        
+      //Set left border to paragraph
+      paragraph.setBorderLeft(Borders.BASIC_BLACK_DASHES);
+        
+      //Set right border to paragraph
+      paragraph.setBorderRight(Borders.BASIC_BLACK_DASHES);
+        
+      //Set top border to paragraph
+      paragraph.setBorderTop(Borders.BASIC_BLACK_DASHES);
+        
+      XWPFRun run = paragraph.createRun();
+         run.setText("At tutorialspoint.com, we strive hard to " +
+         "provide quality tutorials for self-learning " +
+         "purpose in the domains of Academics, Information " +
+         "Technology, Management and Computer Programming " +
+         "Languages.");
+        
+      document.write(out);
+      out.close();
+      System.out.println("applyingborder.docx written successully");
+   }
+}
+</pre>
+<p>Save the above code in a file named <b>ApplyingBorder.java,</b> compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac ApplyingBorder.java
+$java ApplyingBorder
+</pre>
+<p>If your system is configured with the POI library, then it will compile and execute to generate a Word document named <b>applyingborder.docx</b> in your current directory and display the following output &minus;</p>
+<pre class="result notranslate">
+applyingborder.docx written successfully
+</pre>
+<p>The <b>applyingborder.docx</b> file looks as follows &minus;</p>
+<img src="/apache_poi_word/images/borderparagraph.jpg" alt="Border Paragraph" />
+<h1>Apache POI Word - Tables</h1>
+<p>In this chapter, you will learn how to create a table of data in a document. You can create a table data by using <b>XWPFTable</b> class. By adding each <b>Row</b> to table and adding each <b>cell</b> to <b>Row,</b> you will get table data.</p>
+<h2>Create Table</h2>
+<p>The following code is used to creating table in a document &minus;</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.poi.xwpf.usermodel.XWPFTableRow;
+
+public class CreateTable {
+
+   public static void main(String[] args)throws Exception {
+
+      //Blank Document
+      XWPFDocument document = new XWPFDocument();
+        
+      //Write the Document in file system
+      FileOutputStream out = new FileOutputStream(new File("create_table.docx"));
+        
+      //create table
+      XWPFTable table = document.createTable();
+		
+      //create first row
+      XWPFTableRow tableRowOne = table.getRow(0);
+      tableRowOne.getCell(0).setText("col one, row one");
+      tableRowOne.addNewTableCell().setText("col two, row one");
+      tableRowOne.addNewTableCell().setText("col three, row one");
+		
+      //create second row
+      XWPFTableRow tableRowTwo = table.createRow();
+      tableRowTwo.getCell(0).setText("col one, row two");
+      tableRowTwo.getCell(1).setText("col two, row two");
+      tableRowTwo.getCell(2).setText("col three, row two");
+		
+      //create third row
+      XWPFTableRow tableRowThree = table.createRow();
+      tableRowThree.getCell(0).setText("col one, row three");
+      tableRowThree.getCell(1).setText("col two, row three");
+      tableRowThree.getCell(2).setText("col three, row three");
+	
+      document.write(out);
+      out.close();
+      System.out.println("create_table.docx written successully");
+   }
+}
+</pre>
+<p>Save the above code in a file named <b>CreateTable.java.</b> Compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac CreateTable.java
+$java CreateTable
+</pre>
+<p>It generates a Word file named <b>createtable.docx</b> in your current directory and display the following output on the command prompt &minus;</p>
+<pre class="result notranslate">
+createtable.docx written successfully
+</pre>
+<p>The <b>createtable.docx</b> file looks as follows &minus;</p>
+<img src="/apache_poi_word/images/ctratetable.jpg" alt="Create Table" />
+<h1>Apache POI Word - Font &amp; Alignment</h1>
+<p>This chapter shows how to apply different font styles and alignments in a Word document using Java. Generally, Font Style contains: Font size, Type, Bold, Italic, and Underline. And Alignment is categorized into left, center, right, and justify.</p>
+<h2>Font Style</h2>
+<p>The following code is used to set different styles of font &minus;</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xwpf.usermodel.VerticalAlign;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+public class FontStyle {
+
+   public static void main(String[] args)throws Exception {
+
+      //Blank Document
+      XWPFDocument document = new XWPFDocument(); 
+        
+      //Write the Document in file system
+      FileOutputStream out = new FileOutputStream(new File("fontstyle.docx"));
+        
+      //create paragraph
+      XWPFParagraph paragraph = document.createParagraph();
+        
+      //Set Bold an Italic
+      XWPFRun paragraphOneRunOne = paragraph.createRun();
+      paragraphOneRunOne.setBold(true);
+      paragraphOneRunOne.setItalic(true);
+      paragraphOneRunOne.setText("Font Style");
+      paragraphOneRunOne.addBreak();
+        
+      //Set text Position
+      XWPFRun paragraphOneRunTwo = paragraph.createRun();
+      paragraphOneRunTwo.setText("Font Style two");
+      paragraphOneRunTwo.setTextPosition(100);
+ 
+      //Set Strike through and Font Size and Subscript
+      XWPFRun paragraphOneRunThree = paragraph.createRun();
+      paragraphOneRunThree.setStrike(true);
+      paragraphOneRunThree.setFontSize(20);
+      paragraphOneRunThree.setSubscript(VerticalAlign.SUBSCRIPT);
+      paragraphOneRunThree.setText(" Different Font Styles");
+        
+      document.write(out);
+      out.close();
+      System.out.println("fontstyle.docx written successully");
+   }
+}
+</pre>
+<p>Save the above code as <b>FontStyle.java</b> and then compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac FontStyle.java
+$java FontStyle
+</pre>
+<p>It will generate a Word file named <b>fontstyle.docx</b> in your current directory and display the following output on the command prompt &minus;</p>
+<pre class="result notranslate">
+fontstyle.docx written successfully
+</pre>
+<p>The <b>fontstyle.docx</b> file looks as follows.</p>
+<img src="/apache_poi_word/images/fontstyle.jpg" alt="Font Style" />
+<h2>Alignment</h2>
+<p>The following code is used to set alignment to the paragraph text &minus;</p>
+<pre class="prettyprint notranslate">
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+public class AlignParagraph {
+
+   public static void main(String[] args)throws Exception {
+
+      //Blank Document
+      XWPFDocument document = new XWPFDocument(); 
+        
+      //Write the Document in file system
+      FileOutputStream out = new FileOutputStream(
+      new File("alignparagraph.docx"));
+        
+      //create paragraph
+      XWPFParagraph paragraph = document.createParagraph();
+        
+      //Set alignment paragraph to RIGHT
+      paragraph.setAlignment(ParagraphAlignment.RIGHT);
+      XWPFRun run = paragraph.createRun();
+      run.setText("At tutorialspoint.com, we strive hard to " +
+         "provide quality tutorials for self-learning " +
+         "purpose in the domains of Academics, Information " +
+         "Technology, Management and Computer Programming " +
+         "Languages.");
+        
+      //Create Another paragraph
+      paragraph = document.createParagraph();
+        
+      //Set alignment paragraph to CENTER
+      paragraph.setAlignment(ParagraphAlignment.CENTER);
+      run = paragraph.createRun();
+      run.setText("The endeavour started by Mohtashim, an AMU " +
+         "alumni, who is the founder and the managing director " +
+         "of Tutorials Point (I) Pvt. Ltd. He came up with the " +
+         "website tutorialspoint.com in year 2006 with the help" +
+         "of handpicked freelancers, with an array of tutorials" +
+         " for computer programming languages. ");
+			
+      document.write(out);
+      out.close();
+      System.out.println("alignparagraph.docx written successfully");
+   }
+}
+</pre>
+<p>Save the above code as <b>AlignParagraph.java</b> and then compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac AlignParagraph.java
+$java AlignParagraph
+</pre>
+<p>It will generate a Word file named <b>alignparagraph.docx</b> in your current directory and display the following output in the command prompt &minus;</p>
+<pre class="result notranslate">
+alignparagraph.docx written successfully
+</pre>
+<p>The <b>alignparagraph.docx</b> file looks as follows &minus;</p>
+<img src="/apache_poi_word/images/alignparagraph.jpg" alt="Align Paragraph" />
+<h1>Apache POI Word - Text Extraction</h1>
+<p>This chapter explains how to extract simple text data from a Word document using Java. In case you want to extract metadata from a Word document, make use of Apache Tika.</p>
+<p>For .docx files, we use the class org.apache.poi.xwpf.extractor.XPFFWordExtractor that extracts and returns simple data from a Word file. In the same way, we have different methodologies to extract headings, footnotes, table data, etc. from a Word file.</p>
+<p>The following code shows how to extract simple text from a Word file &minus;</p>
+<pre class="prettyprint notranslate">
+import java.io.FileInputStream;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
+public class WordExtractor {
+
+   public static void main(String[] args)throws Exception {
+
+      XWPFDocument docx = new XWPFDocument(new FileInputStream("create_paragraph.docx"));
+      
+      //using XWPFWordExtractor Class
+      XWPFWordExtractor we = new XWPFWordExtractor(docx);
+      System.out.println(we.getText());
+   }
+}
+</pre>
+<p>Save the above code as <b>WordExtractor.java.</b> Compile and execute it from the command prompt as follows &minus;</p>
+<pre class="result notranslate">
+$javac WordExtractor.java
+$java WordExtractor
+</pre>
+<p>It will generate the following output: </p>
+<pre class="result notranslate">
+At tutorialspoint.com, we strive hard to provide quality tutorials for self-learning
+purpose in the domains of Academics, Information Technology, Management and Computer
+Programming Languages.
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/apache_poi_word/apache_poi_word_text_extraction.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/apache_poi_word/apache_poi_word_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/apache_poi_word/apache_poi_word_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/apache_poi_word/apache_poi_word_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/apache_poi_word/apache_poi_word_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/apache_poi_word/apache_poi_word_quick_guide.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/apache_poi_word/apache_poi_word_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/apache_poi_word/apache_poi_word_quick_guide.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Computer Applications</title>
+<meta name="description" content="Computer Applications - Learn computer fundamental concepts in simple and easy steps starting from Overview, Applications, Generations, Types, Components, CPU, Input Devices, Output Devices, Memory, RAM, ROM, Motherboard, Memory Units, Ports, Hardware, Software, Number System, Number Conversion, Data, Networking, Operating System, Internet, Intranet, Buying, Courses." />
+<meta name="keywords" content="Computer, Fundamentals, Tutorial, Beginners, Overview, Applications, Generations, Types, Components, CPU, Input Devices, Output Devices, Memory, RAM, ROM, Motherboard, Memory Units, Ports, Hardware, Software, Number System, Number Conversion, Data, Networking, Operating System, Internet, Intranet, Buying, Courses." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #0c6ac4 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #0c6ac4 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #0c6ac4 !important;}
+.submenu-item{ border-bottom: 2px solid #0c6ac4 !important; border-top: 2px solid #0c6ac4 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#0c6ac4; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/computer_fundamentals/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<style>
+.content img.raligned{margin: 5px 3px 0px 26px; float: right; width: 275px;}
+</style>
+<div class="mini-logo">
+<img src="/computer_fundamentals/images/computer-mini-logo.jpg" alt="Computer Fundamentals Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Computer Fundamentals</li>
+<li><a href="/computer_fundamentals/index.htm">Computer - Home</a></li>
+<li><a href="/computer_fundamentals/computer_overview.htm">Computer - Overview</a></li>
+<li><a href="/computer_fundamentals/computer_applications.htm">Computer - Applications</a></li>
+<li><a href="/computer_fundamentals/computer_generations.htm">Computer - Generations</a></li>
+<li><a href="/computer_fundamentals/computer_types.htm">Computer - Types</a></li>
+<li><a href="/computer_fundamentals/computer_components.htm">Computer - Components</a></li>
+<li><a href="/computer_fundamentals/computer_cpu.htm">Computer - CPU</a></li>
+<li><a href="/computer_fundamentals/computer_input_devices.htm">Computer - Input Devices</a></li>
+<li><a href="/computer_fundamentals/computer_output_devices.htm">Computer - Output Devices</a></li>
+<li><a href="/computer_fundamentals/computer_memory.htm">Computer - Memory</a></li>
+<li><a href="/computer_fundamentals/computer_ram.htm">Computer - RAM</a></li>
+<li><a href="/computer_fundamentals/computer_rom.htm">Computer - Read Only Memory</a></li>
+<li><a href="/computer_fundamentals/computer_motherboard.htm">Computer - Motherboard</a></li>
+<li><a href="/computer_fundamentals/computer_memory_units.htm">Computer - Memory Units</a></li>
+<li><a href="/computer_fundamentals/computer_ports.htm">Computer - Ports</a></li>
+<li><a href="/computer_fundamentals/computer_hardware.htm">Computer - Hardware</a></li>
+<li><a href="/computer_fundamentals/computer_software.htm">Computer - Software</a></li>
+<li><a href="/computer_fundamentals/computer_number_system.htm">Computer - Number System</a></li>
+<li><a href="/computer_fundamentals/computer_number_conversion.htm">Computer - Number Conversion</a></li>
+<li><a href="/computer_fundamentals/computer_data.htm">Computer - Data and Information</a></li>
+<li><a href="/computer_fundamentals/computer_networking.htm">Computer - Networking</a></li>
+<li><a href="/computer_fundamentals/computer_operating_system.htm">Computer - Operating System</a></li>
+<li><a href="/computer_fundamentals/computer_internet_intranet.htm">Computer - Internet and Intranet</a></li>
+<li><a href="/computer_fundamentals/computer_how_to_buy.htm">Computer - How to Buy?</a></li>
+<li><a href="/computer_fundamentals/computer_available_courses.htm">Computer - Available Courses</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Computer Useful Resources</li>
+<li><a href="/computer_fundamentals/computer_quick_guide.htm">Computer - Quick Guide</a></li>
+<li><a href="/computer_fundamentals/computer_useful_resources.htm">Computer - Useful Resources</a></li>
+<li><a href="/computer_fundamentals/computer_discussion.htm">Computer - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Computer - Applications</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/computer_fundamentals/computer_overview.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/computer_fundamentals/computer_generations.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In this chapter, we will discuss the application of computers in various fields.</p>
+<h2>Business</h2>
+<img class="raligned" src="/computer_fundamentals/images/computer_business.jpg" alt="Computer Fundamentals" />
+<p>A computer has high speed of calculation, diligence, accuracy, reliability, or versatility which has made it an integrated part in all business organizations.</p>
+<p>Computer is used in business organizations for &minus;</p>
+<ul class="list">
+<li>Payroll calculations</li>
+<li>Budgeting</li>
+<li>Sales analysis</li>
+<li>Financial forecasting</li>
+<li>Managing employee database</li>
+<li>Maintenance of stocks, etc.</li>
+</ul>
+<h2>Banking</h2>
+<img class="raligned" src="/computer_fundamentals/images/computer_banking.jpg" alt="Computer Banking" />
+<p>Today, banking is almost totally dependent on computers.</p>
+<p>Banks provide the following facilities &minus;</p>
+<ul class="list">
+<li><p>Online accounting facility, which includes checking current balance, making deposits and overdrafts, checking interest charges, shares, and trustee records.</p></li>
+<li><p>ATM machines which are completely automated are making it even easier for customers to deal with banks.</p></li>
+</ul>
+<h2>Insurance</h2>
+<img class="raligned" src="/computer_fundamentals/images/computer_insurance.jpg" alt="Computer Insurance" />
+<p>Insurance companies are keeping all records up-to-date with the help of computers. Insurance companies, finance houses, and stock broking firms are widely using computers for their concerns.</p>
+<p>Insurance companies are maintaining a database of all clients with information showing &minus;</p>
+<ul class="list">
+<li>Procedure to continue with policies</li>
+<li>Starting date of the policies</li>
+<li>Next due installment of a policy</li>
+<li>Maturity date</li>
+<li>Interests due</li>
+<li>Survival benefits</li>
+<li>Bonus</li>
+</ul>
+<h2>Education</h2>
+<img class="raligned" src="/computer_fundamentals/images/computer_education.jpg" alt="Computer Educational" />
+<p>The computer helps in providing a lot of facilities in the education system.</p>
+<ul class="list">
+<li><p>The computer provides a tool in the education system known as CBE (Computer Based Education).</p></li>
+<li><p>CBE involves control, delivery, and evaluation of learning.</p></li>
+<li><p>Computer education is rapidly increasing the graph of number of computer students.</p></li>
+<li><p>There are a number of methods in which educational institutions can use a computer to educate the students.</p></li>
+<li><p>It is used to prepare a database about performance of a student and analysis is carried out on this basis.</p></li>
+</ul>
+<h2>Marketing</h2>
+<p>In marketing, uses of the computer are following &minus;</p>
+<img class="raligned" src="/computer_fundamentals/images/computer_marketing.jpg" alt="Computer Marketing" />
+<ul class="list"> 
+<li><p><b>Advertising</b> &minus; With computers, advertising professionals create art and graphics, write and revise copy, and print and disseminate ads with the goal of selling more products.</p></li>
+<li><p><b>Home Shopping</b> &minus; Home shopping has been made possible through the use of computerized catalogues that provide access to product information and permit direct entry of orders to be filled by the customers.</p></li>
+</ul>
+<h2>Healthcare</h2>
+<p>Computers have become an important part in hospitals, labs, and dispensaries. They are being used in hospitals to keep the record of patients and medicines. It is also used in scanning and diagnosing different diseases. ECG, EEG, ultrasounds and CT scans, etc. are also done by computerized machines.</p>
+<p>Following are some major fields of health care in which computers are used.</p>
+<img class="raligned" src="/computer_fundamentals/images/computer_healthcare.jpg" alt="Computer Healthcare" />
+<ul class="list">
+<li><p><b>Diagnostic System</b> &minus; Computers are used to collect data and identify the cause of illness.</p></li>
+<li><p><b>Lab-diagnostic System</b> &minus; All tests can be done and the reports are prepared by computer.</p></li>
+<li><p><b>Patient Monitoring System</b> &minus; These are used to check the patient's signs for abnormality such as in Cardiac Arrest, ECG, etc.</p></li>
+<li><p><b>Pharma Information System</b> &minus; Computer is used to check drug labels, expiry dates, harmful side effects, etc.</p></li>
+<li><p><b>Surgery</b> &minus; Nowadays, computers are also used in performing surgery.</p></li>
+</ul>
+<h2>Engineering Design</h2>
+<p>Computers are widely used for Engineering purpose.</p>
+<p>One of the major areas is CAD (Computer Aided Design) that provides creation and modification of images. Some of the fields are &minus;</p> 
+<img class="raligned" src="/computer_fundamentals/images/computer_engineering.jpg" alt="Computer Engineering" />
+<ul class="list">
+<li><p><b>Structural Engineering</b> &minus; Requires stress and strain analysis for design of ships, buildings, budgets, airplanes, etc.</p></li>
+<li><p><b>Industrial Engineering</b> &minus; Computers deal with design, implementation, and improvement of integrated systems of people, materials, and equipment.</p></li>
+<li><p><b>Architectural Engineering</b> &minus; Computers help in planning towns, designing buildings, determining a range of buildings on a site using both 2D and 3D drawings.</p></li>
+</ul>
+<h2>Military</h2>
+<img class="raligned" src="/computer_fundamentals/images/computer_military.jpg" alt="Computer Military" />
+<p>Computers are largely used in defence. Modern tanks, missiles, weapons, etc. Military also employs computerized control systems. Some military areas where a computer has been used are &minus;</p>
+<ul class="list">
+<li>Missile Control</li>
+<li>Military Communication</li>
+<li>Military Operation and Planning</li>
+<li>Smart Weapons</li>
+</ul>
+<h2>Communication</h2>
+<p>Communication is a way to convey a message, an idea, a picture, or speech that is received and understood clearly and correctly by the person for whom it is meant. Some main areas in this category are &minus;</p>
+<img class="raligned" src="/computer_fundamentals/images/computer_communication.jpg" alt="Computer Communication" />
+<ul class="list">
+<li>E-mail</li>
+<li>Chatting</li>
+<li>Usenet</li>
+<li>FTP</li>
+<li>Telnet</li>
+<li>Video-conferencing</li>
+</ul>
+<h2>Government</h2>
+<p>Computers play an important role in government services. Some major fields in this category are &minus;</p>
+<img class="raligned" src="/computer_fundamentals/images/computer_government.jpg" alt="Computer Government" />
+<ul class="list">
+<li>Budgets</li>
+<li>Sales tax department</li>
+<li>Income tax department</li>
+<li>Computation of male/female ratio</li>
+<li>Computerization of voters lists</li>
+<li>Computerization of PAN card</li>
+<li>Weather forecasting</li>
+</ul> 
+<hr />
+<div class="pre-btn">
+<a href="/computer_fundamentals/computer_overview.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/computer_fundamentals/computer_generations.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/computer_fundamentals/computer_applications.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/computer_fundamentals/computer_applications.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/computer_fundamentals/computer_applications.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/computer_fundamentals/computer_applications.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/computer_fundamentals/computer_applications.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/computer_fundamentals/computer_applications.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP QM Interview Questions - TutorialsPoint</title>
+<meta name="description" content="SAP QM Interview Questions - Learn SAP QM in simple and easy steps starting from basic to advanced concepts with examples including Overview, Components, Integration, Master Data, Inspection Methods, Plan, Sampling, Quality Info Records, Lot, In-Process, Final Inspection, Result, Defects Recording, Usage Decision, Listing Inspection Lot, Quality Notification, Benefits, Tables, Consultant Responsibilities." />
+<meta name="keywords" content="SAP QM, Tutorial, Learning, Overview, Components, Integration, Master Data, Inspection Methods, Plan, Sampling, Quality Info Records, Lot, In-Process, Final Inspection, Result, Defects Recording, Usage Decision, Listing Inspection Lot, Quality Notification, Benefits, Tables, Consultant Responsibilities." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #b1353e !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #b1353e url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #b1353e !important;}
+.submenu-item{ border-bottom: 2px solid #b1353e !important; border-top: 2px solid #b1353e !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#b1353e; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_qm/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_qm/images/sap-qm-mini-logo.jpg" alt="SAP QM Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP QM Tutorial</li>
+<li><a href="/sap_qm/index.htm">SAP QM - Home</a></li>
+<li><a href="/sap_qm/sap_qm_overview.htm">SAP QM - Overview</a></li>
+<li><a href="/sap_qm/sap_qm_components.htm">SAP QM - Components</a></li>
+<li><a href="/sap_qm/sap_qm_integration.htm">SAP QM - Integration</a></li>
+<li><a href="/sap_qm/sap_qm_master_data.htm">SAP QM - Master Data</a></li>
+<li><a href="/sap_qm/sap_qm_inspection_methods.htm">SAP QM - Inspection Methods</a></li>
+<li><a href="/sap_qm/sap_qm_sampling.htm">SAP QM - Sampling</a></li>
+<li><a href="/sap_qm/sap_qm_inspection_plan.htm">SAP QM - Inspection Plan</a></li>
+<li><a href="/sap_qm/sap_qm_quality_info_records.htm">SAP QM - Quality Info Records</a></li>
+<li><a href="/sap_qm/sap_qm_lot_inspection.htm">SAP QM - Lot Inspection</a></li>
+<li><a href="/sap_qm/sap_qm_result_recording.htm">SAP QM - Result Recording</a></li>
+<li><a href="/sap_qm/sap_qm_usage_decision.htm">SAP QM - Usage Decision</a></li>
+<li><a href="/sap_qm/sap_qm_listing_inspection_lot.htm">SAP QM - Listing Inspection Lot</a></li>
+<li><a href="/sap_qm/sap_qm_inprocess_inspection.htm">SAP QM - In-Process Inspection</a></li>
+<li><a href="/sap_qm/sap_qm_final_inspection.htm">SAP QM - Final Inspection</a></li>
+<li><a href="/sap_qm/sap_qm_defects_recording.htm">SAP QM - Defects Recording</a></li>
+<li><a href="/sap_qm/sap_qm_quality_notification.htm">SAP QM - Quality Notification</a></li>
+<li><a href="/sap_qm/sap_qm_benefits.htm">SAP QM - Benefits</a></li>
+<li><a href="/sap_qm/sap_qm_tables.htm">SAP QM - Tables</a></li>
+<li><a href="/sap_qm/sap_qm_consultant_responsibilities.htm">Consultant Responsibilities</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP QM Useful Resources</li>
+<li><a href="/sap_qm/sap_qm_questions_answers.htm">SAP QM - Questions Answers</a></li>
+<li><a href="/sap_qm/sap_qm_quick_guide.htm">SAP QM - Quick Guide</a></li>
+<li><a href="/sap_qm/sap_qm_useful_resources.htm">SAP QM - Useful Resources</a></li>
+<li><a href="/sap_qm/sap_qm_discussion.htm">SAP QM - Discussion</a></li>
+</ul>
+
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP QM Interview Questions</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/sap_qm/sap_qm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_qm/sap_qm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>SAP QM Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>SAP QM</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label> What is the use of SAP Quality Management system?</label>
+<div class="toggle-content"> 
+<p>SAP Quality Management is part of SAP R/3 system and is integrated with other SAP modules like SAP Material Management MM, Production Planning PP and Plant Maintenance. QM is integral part of logistic management and is used to perform quality functions at incoming material, in process manufacturing process and raw material as well in the facility.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different functions in SAP Quality Management?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Quality Planning</li>
+<li>Quality Notifications</li>
+<li>Quality Inspection</li>
+</ul>
+<p>Quality planning allows to plan the inspection of goods from the vendor, raw material, work in process and final product.</p>
+<p>Quality notification includes the defect identification and steps to be taken by quality department.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is an Inspection plan in QM process?</label>
+<div class="toggle-content"> 
+<p>Inspection plan definition is an important part of the QM planning process. The inspection plan contains the number of characteristics of the item are to be inspected and list of tests to be performed for performing the inspection.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What comes under Quality assurance process?</label>
+<div class="toggle-content"> 
+<p>Under Quality assurance, it includes the quality inspection.</p>
+<p>A Quality inspection involves someone from the quality department inspects an item as per defined points in inspection plan. You perform the inspection based on one or more inspection lots, where a lot is a request to inspect a specific item.</p>
+<p>In SAP system, you can create Inspection lot either manually by a user or automatically in the system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What comes under Quality control process?</label>
+<div class="toggle-content"> 
+<p>Under quality control, you have quality notifications, standard reports and Quality notification system. What actions has to be taken as per defect finding.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Quality notification?</label>
+<div class="toggle-content"> 
+<p>The quality notification process includes recording problem that is either identified by a customer for a product manufactured in an organization, or in a company against the product of a supplier/vendor.</p>
+<p>Quality notification can be raised internally to raise an issue that has arisen on the production line. A quality notification can be assigned to an existing order or you can also create a new order as per the quality notification.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are different standard reports in SAP Quality Management System?</label>
+<div class="toggle-content"> 
+<p>You can create reports in QM system to check how many times a product has been identified with a defect and improvement areas that your company has to implement. There are number of reports that can be generated in QM &minus;</p>
+<p><b>Material Defects report</b></p>
+<p>It can be used to check the number of times an item has been identified with a defect status.</p>
+<p><b>Vendor Defect report</b></p>
+<p>This report is used to show the number of defected material supplied by a vendor.</p>
+<p>This can be checked by examining the inspection lots for goods receipts, a quality department can highlight vendors who are material which are failing in inspection.</p>
+<p><b>Customer Defect report</b></p>
+<p>This report is used to show the defects that were found on inspections for outbound deliveries. This helps organization to improve the quality of goods delivered and hence raise the customer satisfaction.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Which all modules SAP quality Management QM process is integrated with?</label>
+<div class="toggle-content"> 
+<ul class="list"> 
+<li>SAP Material Management</li>
+<li>SAP Production Planning</li>
+<li>SAP Sales and Distribution</li>
+<li>SAP Controlling</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What activities of SAP Material Management are integrated with Quality Management process?</label>
+<div class="toggle-content"> 
+<ul class="list"> 
+<li><p>You manage the quality details for materials, vendors and suppliers.</p></li>
+<li><p>You manage the releases for vendors and manufacturers and also monitor QM systems for suppliers.</p></li>
+<li><p>You manage the release status of delivery from vendor.</p></li>
+<li><p>You can maintain quality agreements and RFP details when you request for a quotations and purchase orders is raised for vendors.</p></li>
+<li><p>You can manage quality certificates for vendors.</p></li>
+<li><p>Using SAP QM process, you can also initiate an inspection at supplier site before there is delivery due from the supplier.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What activities of SAP Sales and Distribution are integrated with Quality Management process?</label>
+<div class="toggle-content"> 
+<p>You can integrate SAP QM with Sales and Distribution to perform the following activities &minus;</p>
+<p>You can manage quality information related to customer for sales and distribution process.</p>
+<p>In SAP QM system, you can initiate an inspection when a delivery is created against a purchase order.</p>
+<p>You can manage quality in sales &amp; distribution by performing quality notifications and RCA’s and by processing customer complaints to improve customer satisfaction.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What activities of Production Planning is integrated with Quality Management process?</label>
+<div class="toggle-content"> 
+<ul class="list"> 
+<li><p>You can integrate SAP QM with PP to perform the inspection planning and work scheduling in SAP system.</p></li>
+<li><p>As part of SAP quality management process, you handle inspection characteristics and also define characteristics for the operation.</p></li>
+<li><p>You can manage quality inspections for manufacturing orders.</p></li>
+<li><p>Using SAP QM, you can set up the final inspection from the goods receipt after production process is complete.</p></li>
+<li><p>You can use QM process to manage partial lots of a material during production which are different in quality.</p></li>
+<li><p>You can confirm the quality information as per manufacturing orders.</p></li>
+<li><p>Using SAP QM, you can monitor the production quality with the help of control charts and reports in Production planning.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What activities of Controlling is integrated with Quality Management process?</label>
+<div class="toggle-content"> 
+<p>You can integrate SAP QM with controlling process to manage the costs for defect control and non-confirmative costs in production process.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are Quantitative specifications under Master Inspection charactertics?</label>
+<div class="toggle-content"> 
+<p>You can directly get the results for quantitative specifications from inspection while doing result recording. You can set limits like minimum and maximum value for each parameter at master level. You can also attach the inspection method to inspection specification level.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are Qualitative specifications under Master Inspection charactertics?</label>
+<div class="toggle-content"> 
+<p>These specifications can take values like true/false or OK/Not OK.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you create an inspection method? An Inspection method can be created in one plant can be used in other plant?</label>
+<div class="toggle-content"> 
+<p>You can use inspection method to perform the inspection. An inspection method can be assigned to master inspection charactertics or directly to an inspection charactertics in an inspection plan.</p>
+<p>An Inspection method can be created in one plant same method can be used in other plant.</p>
+<p><b>Creating an Inspection method</b></p>
+<p>To create an inspection method, use T-code: QS31.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by Sampling Procedure?</label>
+<div class="toggle-content"> 
+<p>Sampling procedure in QM is used to determine the size of inspection lot to be used in inspection plan under Quality planning. You can define a sampling procedure as fixed sample, percentage or other sample.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is a Sampling scheme?</label>
+<div class="toggle-content"> 
+<p>A collection of sampling plans. You use a sampling scheme if you want to &minus;</p>
+<p>Determine the sample size on the basis of the lot size, inspection severity, or combination of inspection severity and AQL (actual quality level)</p>
+<p>Store how a decision is made to accept or reject a characteristic.</p>
+<p>Determine the number of physical samples, based on the lot size, or the number of containers in an inspection lot in sample management.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Sampling Type?</label>
+<div class="toggle-content"> 
+<p>The sampling type defines how a sample is calculated (for example, fixed sample, 100% inspection, use sampling scheme, percentage sample). Together with the valuation mode, the sampling type defines the parameters for sample determination.</p>
+<p>Using the sampling type, the system proposes a list of rules for sample determination. If there is only one rule available, this is automatically chosen.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Valuation mode in Sampling Procedure?</label>
+<div class="toggle-content"> 
+<p>The valuation mode defines the rules for accepting or rejecting a characteristic or sample. The sampling type and the valuation mode specify which parameters the system uses to determine a sample size.</p>
+</div>
+</section>
+<section class="toggle">
+<label> How do you set Inspection point in an Inspection lot?</label>
+<div class="toggle-content"> 
+<p>If you want to use inspection points in the sampling procedure, you need to set an indicator for the corresponding application area. This indicator specifies how many inspection points are to be created for each inspection lot.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the use of Quality Control Chart type? What does it specify?</label>
+<div class="toggle-content"> 
+<p>If you want to use quality control charts in a sampling procedure, you must enter a quality control chart type. The control chart type specifies &minus;</p>
+<ul class="list">
+<li>The characteristics for which the control chart is suited</li>
+<li>The control variables a chart contains</li>
+<li>How the control limits are calculated</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Where do you use Sampling Procedures?</label>
+<div class="toggle-content"> 
+<p>Sampling procedures can be referenced in task lists, material specifications and in the inspection setup. The where-used list displays the task lists, material specifications and inspection setup, in which a sampling procedure is used.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by Actual Quality Level value AQL?</label>
+<div class="toggle-content"> 
+<p>Maximum fraction of nonconforming units (as a percentage) or maximum number of defects per 100 units permitted for a lot to be accepted. The AQL (Acceptable Quality Level) is the quality level that represents the upper limit of a satisfactory average quality level for an acceptance sampling inspection.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What do you define in an Inspection plan?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li><p>Materials to be inspected.</p></li>
+<li><p>How the inspection of materials need to be taken place.</p></li>
+<li><p>What characteristics to be inspected, work center and inspection specifications.</p></li>
+<li><p>In the inspection plan, you have to define the sequence of inspection steps to be performed and the range of specifications as per master inspection characteristics MIC, sampling procedure to calculate the sample size for inspection, inspection method, etc.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do you manage defects in the material supplied by vendor/supplier?</label>
+<div class="toggle-content"> 
+<p>Quality info records are used to manage the supplier relation in an organization. When there is continuous defect in the material supplied by a vendor, you can use quality info records to block a vendor.</p>
+<p>When you create a purchase order, SAP system performs a check to find if a Quality info record is required and is available for combination of material and vendor.</p>
+<p>Quality information record has to be maintained when you use the source inspection functionality that means a material has to undergo an inspection prior to the material reaches the plant for Goods Receipt.</p>
+<p>You can set under Quality Info record that inspection is required when it is procured from vendor A and is not required if you procure from Vendor B.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are different valuation parameters, and how sampling plan depend on valuation parameter?</label>
+<div class="toggle-content"> 
+<p>You can create sampling schemes &minus;</p>
+<ul class="list">
+<li><p>For attributive inspections</p></li>
+<li><p>For variable inspections based on the s-method</p></li>
+<li><p>Without valuation parameters, if you use the sampling scheme in a sample-drawing procedure or in a sampling procedure that calls for a sample calculation without a task list</p></li>
+</ul>
+<p>Depending on the valuation parameter used, the sampling plan consists of &minus;</p>
+<ul class="list">
+<li>The sample size, acceptance number, and rejection number for attributive inspections.</li>
+<li>The sample size and K-factor for variable inspections.</li>
+<li>The sample size if without valuation parameters was specified.</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by lot inspection?</label>
+<div class="toggle-content"> 
+<p>In SAP system, you can perform the incoming inspection for different material like raw material inspection, in progress material inspection or final goods inspection. Good receipt is generated as part of purchasing or against a scheduling agreement.</p>
+<p>For each good receipt, SAP system creates a one inspection lot which contains details- vendor, date or purchase, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is result recording in QM process?</label>
+<div class="toggle-content"> 
+<p>You can do the result recording for the inspection lot created at the time of Goods Receipt.</p>
+<p>To perform the Result recording, go to T-code: QA32</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is usage decision again Inspection lot?</label>
+<div class="toggle-content"> 
+<p>Usage decision is used to decide whether you want to accept or reject the goods in the inspection lot based on the results of the inspection. As per inspection results the process is marked as completed.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Explain Quality Management specific data that you can maintain in material master to control the Inspection Plan?</label>
+<div class="toggle-content"> 
+<p>To control QM activities, you can, for example, define the following &minus;</p>
+<ul class="list">
+<li>Procurement data</li>
+<li>Procurement control key</li>
+<li>Certificate type</li>
+<li>Requirements for the vendor's QM system</li>
+<li>Technical delivery terms</li>
+</ul>
+<p>Display inspection setup &minus;</p>
+<ul class="list">
+<li>Inspection type</li>
+<li>Use of a task list or material specification</li>
+<li>Results recording for characteristics</li>
+<li>Quality score procedure</li>
+<li>Sample determination</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do you activate/deactivate Inspection type?</label>
+<div class="toggle-content"> 
+<p>Go to Logistics &rarr; Quality management &rarr; Quality planning &rarr; Logistics master data &rarr; Material &rarr; Inspection setup.</p>
+<p>Choose "Activate insp. type" or "Deactivate insp. Type.</p>
+</div>
+</section>
+<section class="toggle">
+<label> Is it possible to run the quality process for intermediate or finished product during the production process in SAP system?</label>
+<div class="toggle-content"> 
+<p>Yes, Example: Inspection in each shift, etc.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the inspection type for in process Inspection?</label>
+<div class="toggle-content"> 
+<p>The in process inspection has a reference to a production order in SAP system. You generate an Inspection lot at the time of production order release and inspection type for in-process inspection is 03 in the system. When there is a production order release, inspection lot will be automatically created in the system.</p>
+</div>
+</section>
+<section class="toggle">
+<label> When the final inspection is performed in QM process?</label>
+<div class="toggle-content"> 
+<p>You perform final inspection of goods after production goods receipt in SAP system. Inspection lot is created after goods receipt for a production order.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the inspection type for final inspection?</label>
+<div class="toggle-content"> 
+<p>Inspection lot type is 4 for final inspection.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Inspection Method and Inspection Plan?</label>
+<div class="toggle-content"> 
+<p>Inspection plan in SAP is normally a task list based high level object describing details about what characteristics must be tested in order to ensure the quality of the product.</p>
+<p>Inspection method is detailed info describing how to carry out inspection. It is a separate object and can be assigned to either characteristic or in the plan directly.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is the difference between Good Receipts Inspection and Source Inspection?</label>
+<div class="toggle-content"> 
+<p>Goods Receipt Inspection &minus;</p>
+<ul class="list">
+<li>Performed after receiving the goods</li>
+<li>Performed at receivers/customers place</li>
+<li>Goods receipt for purchase order triggers the  inspection lot creation</li>
+<li>Inspection lot is created after receiving the goods</li>
+</ul>
+<p>Source Inspection &minus;</p>
+<ul class="list">
+<li><p>Performed before receiving the goods</p></li>
+<li><p>Performed generally at suppliers place with customers participation</p></li>
+<li><p>Quality info record triggers the inspection lot creation. To trigger the lot open purchase order required for the Material, Plant and vendor combination.</p></li>
+<li><p>Inspection lot created before receiving the goods based on the lead time in Quality Info record. There is also option to create inspection lot after goods receipt.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain the different steps that are involved in Final inspection process?</label>
+<div class="toggle-content"> 
+<p>Final inspection process consists of the following steps &minus;</p>
+<ul class="list">
+<li>Creation and Confirmation of Production order</li>
+<li>Listing Inspection lot</li>
+<li>Attaching and releasing inspection lot</li>
+<li>Sampling</li>
+<li>Result recording</li>
+<li>Usage decision</li>
+<li>Posting the stock</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What do you understand by defect recording in Quality Management process?</label>
+<div class="toggle-content"> 
+<p>In SAP QM, you can capture different types of record which are identified at the time of inspection. SAP Quality notification can be used to analyze the defects identified and perform root cause analysis.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different types of defect that can be processed under defect recording?</label>
+<div class="toggle-content"> 
+<p><b>Complaints filed by customers</b></p>
+<p>This includes the defects identified in goods that are delivered to customers. You can use standard SAP Quality notification Q1 to record customer complaint and take action against problem reported by customer.</p>
+<p><b>Complaints identified in vendor delivered goods</b></p>
+<p>This includes the defect identified with quality of goods delivered from supplier/vendor. You use standard SAP QM notification type Q2 to record a complaint against vendor and take action for the incoming material.</p>
+<p><b>Internal Defects</b></p>
+<p>This includes recording internal problems which are identified at the time of in process quality inspection.  You use standard SAP QM notification type Q3 to deal with problems identified in goods manufactured in a company.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is Quality Notification?</label>
+<div class="toggle-content"> 
+<p>Quality notification you can record different type of problems occurred due to poor quality of goods. Quality notifications can be created for the following internal and external problems &minus;</p>
+<ul class="list">
+<li>Defect Analysis</li>
+<li>Customer Complaint</li>
+<li>Complaint against vendor</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How do you get Inspection lot certificates?</label>
+<div class="toggle-content"> 
+<p>Use QC21- Quality Certificate</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the different partner functions in SAP MM module?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Ordering Address OA</li>
+<li>Vendor VA</li>
+<li>Invoicing Party PI</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> How many Quality Principles are there? Could you name few?</label>
+<div class="toggle-content"> 
+<p>Eight</p>
+<ul class="list">
+<li>Customer Focus</li>
+<li>Leadership</li>
+<li>Process Approach</li>
+<li>Involvement of People</li>
+<li>System Approach to Management</li>
+<li>Continual Improvement</li>
+<li>Factual approach to decision making</li>
+<li>Mutually beneficial supplier relationship</li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Explain difference between Requirement class and Requirement type?</label>
+<div class="toggle-content"> 
+<p>Requirement type and requirement class are assign with planning strategy. Requirement type is only description but it is contend of requirement classes they control the creation and execution of PIR, Sale Order &amp; Stock consumption.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are the advantages of using SAP QM process?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li><p>SAP Quality management integration with other modules is one of the key aspect of quality management. You can implement the quality process in Material Management, Production planning and other SAP modules.</p></li>
+<li><p>You can access to data maintained in the system related to customer, vendor and supplier master.</p></li>
+<li><p>Using SAP QM, a standardize process can be implemented.</p></li>
+<li><p>SAP Quality management process helps you to incorporate the improvement process - by monitoring the processes, defect identification and quality notifications.</p></li>
+<li><p>You can perform automation of information flow by which inspection lot gets created automatically when you release the production order or goods receipt.</p></li> 
+<li><p>Using SAP quality management process, you can perform the quality compliance of raw materials when it is first delivered by vendors/suppliers and in process manufacturing and also after the production process is completed.</p></li>
+<li><p>SAP QM also responsible to perform the compliance with customer’s quality specifications you ship the goods to customer as per Purchase order.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> What is ISO standards for Quality Management?</label>
+<div class="toggle-content"> 
+<p>The ISO 9000 family of quality management systems standards is designed to help organizations ensure that they meet the needs of customers and other stakeholders while meeting statutory and regulatory requirements related to a product.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What is difference between vendor defect report and customer defect report?</label>
+<div class="toggle-content"> 
+<p><b>Vendor Defect report</b></p>
+<p>This report is used to show the number of defected material supplied by a vendor.</p>
+<p>This can be checked by examining the inspection lots for goods receipts, a quality department can highlight vendors who are material which are failing in inspection.</p>
+<p><b>Customer Defect report</b></p>
+<p>This report is used to show the defects that were found on inspections for outbound deliveries. This helps organization to improve the quality of goods delivered and hence raise the customer satisfaction.</p>
+</div>
+</section>
+<section class="toggle">
+<label> What are different search criteria you can use in Quality Management system?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>Material</li>
+<li>Inspection lot creation date</li>
+<li>Batch</li>
+<li>Vendor</li>
+<li>Inspection dates</li>
+<li>Plant</li>
+<li>Inspection type</li> 
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label> Name few common tables and their description in QM system?</label>
+<div class="toggle-content"> 
+<ul class="list">
+<li>QPAM Inspection catalog selected sets</li> 
+<li>QPMK Inspection characteristic master </li>
+<li>QPMT Master Inspection Characteristics Texts</li> 
+<li>QPMZ Master Inspection charactertics MIC</li> 
+<li>QMAT Inspection type for material parameters</li> 
+<li>QMHU shows QM link in Inspection lot and handling unit Item </li>
+<li>QMTB Inspection method master record </li>
+<li>QMTT Inspection Method texts</li>
+<li>QPAC Inspection catalog codes</li>
+</ul>
+</div>
+</section>
+
+<h2>What is Next?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="/sap_qm/sap_qm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_qm/sap_qm_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">sap_qm_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_qm/sap_qm_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_qm/sap_qm_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_qm/sap_qm_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_qm/sap_qm_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_qm/sap_qm_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_qm/sap_qm_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

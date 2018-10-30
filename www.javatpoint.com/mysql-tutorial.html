@@ -1,0 +1,666 @@
+ <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Learn MySQL Tutorial - javatpoint</title><link rel="SHORTCUT ICON" href="/images/logo/icon.png" />
+<link rel="stylesheet" type="text/css" href="/link.css"/>
+<meta name="keywords" content="mysql, tutorial, examples, CRUD, insert, query, update, delete, database, table, view, join, key "/><meta name="description" content="Learn MySQL tutorial for beginners and professionals with examples on CRUD, insert statement, select statement, update statement, delete statement, use database, keys, joins etc."/><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="https://www.javatpoint.com/mysql-tutorial" />
+<meta property="og:title" content="Learn MySQL Tutorial - javatpoint" /><meta property="og:description" content="Learn MySQL tutorial for beginners and professionals with examples on CRUD, insert statement, select statement, update statement, delete statement, use database, keys, joins etc." />
+<meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta name="twitter:title" property="og:title" content="Learn MySQL Tutorial - javatpoint" /><meta name="twitter:description" property="og:description" content="Learn MySQL tutorial for beginners and professionals with examples on CRUD, insert statement, select statement, update statement, delete statement, use database, keys, joins etc." /><meta property="og:url" content="https://www.javatpoint.com/mysql-tutorial" /><meta property="og:site_name" content="www.javatpoint.com" /><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@pagejavatpoint"/><meta name="twitter:domain" content="www.javatpoint.com"/><meta name="twitter:creator" content="@pagejavatpoint"/>
+<script  id="feedify_webscript" >
+var feedify = feedify || {};
+window.feedify_options={fedify_url:"https://feedify.net/"};
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src = feedify_options.fedify_url+'getjs/feedbackembad-min-1.0.js';
+document.getElementsByTagName('head')[0].appendChild(s);
+</script>
+<link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+</head> 
+<body onload="highlightlink()"> 
+<!-- /13406045/javatpoint_cmda -->
+<div id='div-gpt-ad-1512468834310-0' style='height:1px; width:1px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512468834310-0'); });
+</script>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
+<div id="page" style="margin:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><table style="width:100%;margin-bottom:5px">
+    <tr>
+        <td>
+            <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px">
+                <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo" /></a>
+            </div>
+            <div style="float:left;width:60%;">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                
+            </div>
+            
+        </td>
+    </tr>
+        <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>-->
+
+</table> </div>
+<div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"/></span>
+<span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+
+</div>
+<div style="margin:0px;padding:0px;clear:both">
+<script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+<!--<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint"/><input type="hidden" name="sitesearch" value="www.javatpoint.com"/></form>-->
+
+</div>
+</div>
+<div id="link" style="clear:both"> <div  class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com">Home</a></li>
+<li><a href="c-programming-language-tutorial">C</a></li>
+<li><a href="java-tutorial">Java</a></li>
+<li><a href="php-tutorial">PHP</a></li>
+<li><a href="mysql-tutorial" class="selected">MySQL</a></li>
+<li><a href="html-tutorial">HTML</a></li>
+<li><a href="sql-tutorial">SQL</a></li>
+<li><a href="pl-sql-tutorial">PL/SQL</a></li>
+<li><a href="python-tutorial">Python</a></li>
+<li><a href="web-services-tutorial">Web Services</a></li>
+<li><a href="examaccess">Quiz</a></li>
+<li><a href="free-java-projects">Projects</a></li>
+<li><a href="corejava-interview-questions">Interview Q</a></li>
+<li><a href="comment.jsp">Comment</a></li>
+<li><a href="forum">Forum</a></li>
+<li><a href="training">Training</a></li>
+
+</ul>
+<br style="clear: left" />
+</div></div>
+<div class="mobilemenu" style="clear:both"> 
+<script async
+src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cm_300x250_Mob_14/9 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:300px;height:250px"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="7014272519"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="menu">
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">MySQL Tutorial</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-tutorial">MySQL Tutorial</a>
+<a href="mysql-history">MySQL History</a>
+<a href="mysql-features">MySQL Features</a>
+<a href="mysql-data-types">MySQL Data Types</a>
+<a href="how-to-install-mysql">Install MySQL</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">MySQL Database</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-create-database">Create Database</a>
+<a href="mysql-select-database">Select Database</a>
+<a href="mysql-drop-database">Drop Database</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Table & Views</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-create-table">CREATE Table</a>
+<a href="mysql-alter-table">ALTER Table</a>
+<a href="mysql-truncate-table">TRUNCATE Table</a>
+<a href="mysql-drop-table">DROP Table</a>
+<a href="mysql-view">MySQL Views</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">MySQL Queries</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-queries">MySQL Queries</a>
+<a href="mysql-insert">INSERT Record</a>
+<a href="mysql-update">UPDATE Record</a>
+<a href="mysql-delete">DELETE Record</a>
+<a href="mysql-select">SELECT Record</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">MySQL Clauses</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-where">MySQL WHERE</a>
+<a href="mysql-distinct">MySQL DISTINCT</a>
+<a href="mysql-from">MySQL FROM</a>
+<a href="mysql-order-by">MySQL ORDER BY</a>
+<a href="mysql-group-by">MySQL GROUP BY</a>
+<a href="mysql-having">MySQL HAVING</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">MySQL Conditions</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-and">MySQL AND</a>
+<a href="mysql-or">MySQL OR</a>
+<a href="mysql-and-or">MySQL AND OR</a>
+<a href="mysql-like">MySQL LIKE</a>
+<a href="mysql-in">MySQL IN</a>
+<a href="mysql-not">MySQL NOT</a>
+<a href="mysql-is-null">MySQL IS NULL</a>
+<a href="mysql-is-not-null">MySQL IS NOT NULL</a>
+<a href="mysql-between">MySQL BETWEEN</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">MySQL Join</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-join">MySQL JOIN</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Aggregate Functions</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-count">MySQL count()</a>
+<a href="mysql-sum">MySQL sum()</a>
+<a href="mysql-average">MySQL avg()</a>
+<a href="mysql-min">MySQL min()</a>
+<a href="mysql-max">MySQL max()</a>
+<a href="mysql-first">MySQL first()</a>
+<a href="mysql-last">MySQL last()</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Differences</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mariadb-vs-mysql">MariaDB vs MySQL</a>
+<a href="postgresql-vs-mysql">PostgreSQL vs MySQL</a>
+</div>
+<div class="leftmenu2"  >
+<h2 class="spanh2"><span class="spanh2">Interview Questions</span></h2>
+</div>
+<div class="leftmenu" >
+<a href="mysql-interview-questions"><span>MySQL Interview</span></a>
+<a href="sql-interview-questions"><span>SQL Interview</span></a>
+<a href="pl-sql-interview-questions"><span>PL/SQL Interview</span></a>
+</div>
+<img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"/>
+<br/>
+<div id="leftad" style="margin-left:20px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javatpointleft -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="4476401222"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="onlycontent">
+<div class="onlycontentad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord"
+style="display:inline-block"
+data-ad-client="ca-pub-4699858549023382"
+data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="onlycontentinner">
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="mysql-history">next &rarr;</a>
+</div>
+
+<h1 class="h1">MySQL Tutorial</h1>
+<a href="http://training.javatpoint.com" target="_blank"><img src="corebasic/images/mysql-training.png" style="width:350px" class="imageright" alt="MySQL"/></a>
+<!--<img src="mysql/images/mysql-tutorial.png" alt="MySQL tutorial" style="float:right;padding-left:15px"/>-->
+<p>MySQL tutorial provides basic and advanced concepts of MySQL. Our MySQL tutorial is designed for beginners and professionals.</p>
+<p>MySQL is a relational database management system. It is open-source and free.</p>
+<p>Our MySQL tutorial includes all topics of MySQL database such as insert record, update record, delete record, select record, create table, drop table etc. There are also given MySQL interview questions to help you better understand the MySQL database.</p>
+
+<h2 class="h2">What is MySQL</h2>
+<p>MySQL is a fast, easy to use relational database. It is currently the most popular open-source database. It is very commonly used in conjunction with PHP scripts to create powerful and dynamic server-side applications.</p> 
+<p>MySQL is used for many small and big businesses. It is developed, marketed and supported by MySQL AB, a Swedish company. It is written in C and C++.</p>
+
+
+<h2 class="h2">Reasons of popularity</h2>
+<p>MySQL is becoming so popular because of these following reasons:</p>
+
+<ul class="points">
+<li>MySQL is an open-source database so you don't have to pay a single penny to use it.</li> 
+<li>MySQL is a very powerful program so it can handle a large set of functionality of the most expensive and powerful database packages.</li> 
+<li>MySQL is customizable because it is an open source database and the open-source GPL license facilitates programmers to modify the SQL software according to their own specific environment. </li> 
+<li>MySQL is quicker than other databases so it can work well even with the large data set.</li> 
+<li>MySQL supports many operating systems with many languages like PHP, PERL, C, C++, JAVA, etc.</li> 
+<li>MySQL uses a standard form of the well-known SQL data language.</li> 
+<li>MySQL is very friendly with PHP, the most popular language for web development.</li> 
+<li>MySQL supports large databases, up to 50 million rows or more in a table. The default file size limit for a table is 4GB, but you can increase this (if your operating system can handle it) to a theoretical limit of 8 million terabytes (TB).</li> 
+</ul>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_WTC_Responsive -->
+<ins class="adsbygoogle cm_jtp_wtc_responsive"
+     style="display:inline-block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6746133113"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<hr/>
+<h2 class="h2 center textshadow">MySQL Index</h2>
+<hr/>
+<div class="responsivediv">
+<div class="col-3">
+<p><strong>MySQL Tutorial</strong></p>
+<ul class="points">
+<li><a href="mysql-tutorial">MySQL Tutorial</a></li>
+<li><a href="mysql-history">MySQL History</a></li>
+<li><a href="mysql-features">MySQL Features</a></li>
+<li><a href="mysql-data-types">MySQL Data Types</a></li>
+<li><a href="how-to-install-mysql">Install MySQL</a></li>
+</ul>
+
+<p><strong>MySQL Database</strong></p>
+<ul class="points">
+<li><a href="mysql-create-database">Create Database</a></li>
+<li><a href="mysql-select-database">Select Database</a></li>
+<li><a href="mysql-drop-database">Drop Database</a></li>
+</ul>
+
+<p><strong>Table &amp; Views</strong></p>
+<ul class="points">
+<li><a href="mysql-create-table">CREATE Table</a></li>
+<li><a href="mysql-alter-table">ALTER Table</a></li>
+<li><a href="mysql-truncate-table">TRUNCATE Table</a></li>
+<li><a href="mysql-drop-table">DROP Table</a></li>
+<li><a href="mysql-view">MySQL Views</a></li>
+</ul>
+
+<p><strong>MySQL Queries</strong></p>
+<ul class="points">
+<li><a href="mysql-queries">MySQL Queries</a></li>
+<li><a href="mysql-insert">INSERT Record</a></li>
+<li><a href="mysql-update">UPDATE Record</a></li>
+<li><a href="mysql-delete">DELETE Record</a></li>
+<li><a href="mysql-select">SELECT Record</a></li>
+</ul>
+
+<p><strong>MySQL Clauses</strong></p>
+<ul class="points">
+<li><a href="mysql-where">MySQL WHERE</a></li>
+<li><a href="mysql-distinct">MySQL DISTINCT</a></li>
+<li><a href="mysql-from">MySQL FROM</a></li>
+<li><a href="mysql-order-by">MySQL ORDER BY</a></li>
+<li><a href="mysql-group-by">MySQL GROUP BY</a></li>
+<li><a href="mysql-having">MySQL HAVING</a></li>
+</ul>
+
+<p><strong>MySQL Conditions</strong></p>
+<ul class="points">
+<li><a href="mysql-and">MySQL AND</a></li>
+<li><a href="mysql-or">MySQL OR</a></li>
+<li><a href="mysql-and-or">MySQL AND OR</a></li>
+<li><a href="mysql-like">MySQL LIKE</a></li>
+<li><a href="mysql-in">MySQL IN</a></li>
+<li><a href="mysql-not">MySQL NOT</a></li>
+<li><a href="mysql-is-null">MySQL IS NULL</a></li>
+<li><a href="mysql-is-not-null">MySQL IS NOT NULL</a></li>
+<li><a href="mysql-between">MySQL BETWEEN</a></li>
+</ul>
+
+<p><strong>MySQL Join</strong></p>
+<ul class="points">
+<li><a href="mysql-join">MySQL JOIN</a></li>
+</ul>
+
+<p><strong>Aggregate Functions</strong></p>
+<ul class="points">
+<li><a href="mysql-count">MySQL count()</a></li>
+<li><a href="mysql-sum">MySQL sum()</a></li>
+<li><a href="mysql-average">MySQL avg()</a></li>
+<li><a href="mysql-min">MySQL min()</a></li>
+<li><a href="mysql-max">MySQL max()</a></li>
+<li><a href="mysql-first">MySQL first()</a></li>
+<li><a href="mysql-last">MySQL last()</a></li>
+</ul>
+
+<p><strong>Differences</strong></p>
+<ul class="points">
+<li><a href="mariadb-vs-mysql">MariaDB vs MySQL</a></li>
+<li><a href="postgresql-vs-mysql">PostgreSQL vs MySQL</a></li>
+</ul>
+
+<p><strong>Interview Questions</strong></p>
+<ul class="points">
+<li><a href="mysql-interview-questions">MySQL Interview</a></li>
+<li><a href="sql-interview-questions">SQL Interview</a></li>
+<li><a href="pl-sql-interview-questions">PL/SQL Interview</a></li>
+</ul>
+</div>
+
+
+<div class="col-3">
+<p><strong>MySQL Date/Time Functions</strong></p>
+<ul class="points">
+<li><a href="mysql-date-time">MySQL Date/Time</a></li>
+<li><a href="mysql-date-function">DATE() function</a></li>
+<li><a href="mysql-adddate-function">ADDDATE() function</a></li>
+<li><a href="mysql-curdate-function">CURDATE() function</a></li>
+<li><a href="mysql-current_date-function">CURRENT_DATE() function</a></li>
+<li><a href="mysql-date_add-function">DATE_ADD() function</a></li>
+<li><a href="mysql-date_format-function">DATE_FORMAT() function</a></li>
+<li><a href="mysql-datediff-function">DATEDIFF() function</a></li>
+<li><a href="mysql-day-function">DAY() function</a></li>
+<li><a href="mysql-dayname-function">DAYNAME() function</a></li>
+<li><a href="mysql-dayofmonth-function">DAYOFMONTH() function</a></li>
+<li><a href="mysql-dayofweek-function">DAYOFWEEK() function</a></li>
+<li><a href="mysql-dayofyear-function">DAYOFYEAR() function</a></li>
+<li><a href="mysql-from_days-function">From_days() function</a></li>
+<li><a href="mysql-hour-function">Hour() function</a></li>
+<li><a href="mysql-addtime-function">ADDTIME() function</a></li>
+<li><a href="mysql-current_time-function">CURRENT_TIME() function</a></li>
+<li><a href="mysql-current_timestamp-function">CURRENT_TIMESTAMP() function</a></li>
+<li><a href="mysql-curtime-function">CURTIME() function</a></li>
+<li><a href="mysql-last_day-function">last_day() function</a></li>
+<li><a href="mysql-localtime-function">localtime() function</a></li>
+<li><a href="mysql-localtimestamp-function">localtimestamp() function</a></li>
+<li><a href="mysql-makedate-function">makedate() function</a></li>
+<li><a href="mysql-maketime-function">maketime() function</a></li>
+<li><a href="mysql-microsecond-function">microsecond() function</a></li>
+<li><a href="mysql-minute-function">minute() function</a></li>
+<li><a href="mysql-month-function">month() function</a></li>
+<li><a href="mysql-monthname-function">monthname() function</a></li>
+<li><a href="mysql-now-function">now() function</a></li>
+<li><a href="mysql-period_add-function">period_add() function</a></li>
+<li><a href="mysql-period_diff-function">period_diff() function</a></li>
+<li><a href="mysql-quarter-function">quarter() function</a></li>
+<li><a href="mysql-sec_to_time-function">sec_to_time() function</a></li>
+<li><a href="mysql-second-function">second() function</a></li>
+<li><a href="mysql-str_to_date-function">str_to_date() function</a></li>
+<li><a href="mysql-subdate-function">Subdate() function</a></li>
+<li><a href="mysql-subtime-function">Subtime() function</a></li>
+<li><a href="mysql-sysdate-function">Sysdate() function</a></li>
+<li><a href="mysql-time-function">time() function</a></li>
+<li><a href="mysql-time_format-function">time_format() function</a></li>
+<li><a href="mysql-time_to_sec-function">time_to_sec() function</a></li>
+<li><a href="mysql-timediff-function">timediff() function</a></li>
+<li><a href="mysql-timestamp-function">timestamp() function</a></li>
+<li><a href="mysql-to_day-function">to_day() function</a></li>
+<li><a href="mysql-weekday-function">weekday() function</a></li>
+<li><a href="mysql-week-function">week() function</a></li>
+<li><a href="mysql-weekofyear-function">weekofyear() function</a></li>
+</ul>
+
+<p><strong>MySQL Math Functions</strong></p>
+<ul class="points">
+<li><a href="mysql-math">MySQL Math</a></li>
+<li><a href="mysql-math-abs-function">Math ABS() function</a></li>
+<li><a href="mysql-math-acos-function">Math ACOS() function</a></li>
+<li><a href="mysql-math-sign-function">Math SIGN() function</a></li>
+<li><a href="mysql-math-sin-function">Math SIN() function</a></li>
+<li><a href="mysql-math-sqrt-function">Math SQRT() function</a></li>
+<li><a href="mysql-math-sum-function">Math SUM() function</a></li>
+<li><a href="mysql-math-tan-function">Math TAN() function</a></li>
+<li><a href="mysql-math-truncate-function">Math TRUNCATE() function</a></li>
+<li><a href="mysql-math-asin-function">Math ASIN() function</a></li>
+<li><a href="mysql-math-atan2-function">Math ATAN2() function</a></li>
+<li><a href="mysql-math-atan-function">Math ATAN() function</a></li>
+<li><a href="mysql-math-avg-function">Math AVG() function</a></li>
+<li><a href="mysql-math-ceil-function">Math CEIL() function</a></li>
+<li><a href="mysql-math-ceiling-function">Math CEILING() function</a></li>
+<li><a href="mysql-math-cos-function">Math COS() function</a></li>
+<li><a href="mysql-math-cot-function">Math COT() function</a></li>
+<li><a href="mysql-math-count-function">Math COUNT() function</a></li>
+<li><a href="mysql-math-degrees-function">Math DEGREES() function</a></li>
+<li><a href="mysql-math-div-function">Math DIV() function</a></li>
+<li><a href="mysql-math-exp-function">Math EXP() function</a></li>
+<li><a href="mysql-math-floor-function">Math FLOOR() function</a></li>
+<li><a href="mysql-math-greatest-function">Math GREATEST() function</a></li>
+<li><a href="mysql-math-least-function">Math LEAST() function</a></li>
+<li><a href="mysql-math-ln-function">Math LN() function</a></li>
+<li><a href="mysql-math-log10-function">Math LOG10() function</a></li>
+<li><a href="mysql-math-log-function">Math LOG() function</a></li>
+<li><a href="mysql-math-log2-function">Math LOG2() function</a></li>
+<li><a href="mysql-math-max-function">Math MAX() function</a></li>
+<li><a href="mysql-math-min-function">Math MIN() function</a></li>
+<li><a href="mysql-math-mod-function">Math MOD() function</a></li>
+<li><a href="mysql-math-pi-function">Math PI() function</a></li>
+<li><a href="mysql-math-power-function">Math POWER() function</a></li>
+<li><a href="mysql-math-pow-function">Math POW() function</a></li>
+<li><a href="mysql-math-radians-function">Math RADIANS() function</a></li>
+<li><a href="mysql-math-rand-function">Math RAND() function</a></li>
+<li><a href="mysql-math-round-function">Math ROUND() function</a></li>
+</ul>
+</div>
+
+
+<div class="col-3">
+<p><strong>MSQL String Functions</strong></p>
+<ul class="points">
+<li><a href="mysql-string">MySQL String</a></li>
+<li><a href="mysql-string-concat_ws-function">String CONCAT_WS() function</a></li>
+<li><a href="mysql-string-concat-function">String CONCAT() function</a></li>
+<li><a href="mysql-string-character_length-function">String CHARACTER_LENGTH() function</a></li>
+<li><a href="mysql-string-elt-function">String ELT() function</a></li>
+<li><a href="mysql-string-export_set-function">String EXPORT_SET() function</a></li>
+<li><a href="mysql-string-field-function">String FIELD() function</a></li>
+<li><a href="mysql-string-find_in_set-function">String FIND_IN_SET() function</a></li>
+<li><a href="mysql-string-format-function">String FORMAT() function</a></li>
+<li><a href="mysql-string-from_base64-function">String FROM_BASE64() function</a></li>
+<li><a href="mysql-string-hex-function">String HEX() function</a></li>
+<li><a href="mysql-string-insert-function">String INSERT() function</a></li>
+<li><a href="mysql-string-instr-function">String INSTR() function</a></li>
+<li><a href="mysql-string-lcase-function">String LCASE() function</a></li>
+<li><a href="mysql-string-left-function">String LEFT() function</a></li>
+<li><a href="mysql-string-length-function">String LENGTH() function</a></li>
+<li><a href="mysql-string-like-function">String like() function</a></li>
+<li><a href="mysql-string-load_file-function">String LOAD_FILE() function</a></li>
+<li><a href="mysql-string-locate-function">String LOCATE() function</a></li>
+<li><a href="mysql-string-lower-function">String LOWER() function</a></li>
+<li><a href="mysql-string-lpad-function">String LPAD() function</a></li>
+<li><a href="mysql-string-ltrim-function">String LTRIM() function</a></li>
+<li><a href="mysql-string-make_set-function">String MAKE_SET() function</a></li>
+<li><a href="mysql-string-mid-function">String MID() function</a></li>
+<li><a href="mysql-string-octet_length-function">String OCTET_LENGTH() function</a></li>
+<li><a href="mysql-string-oct-function">String OCT() function</a></li>
+<li><a href="mysql-string-ord-function">String ORD() function</a></li>
+<li><a href="mysql-string-position-function">String POSITION() function</a></li>
+<li><a href="mysql-string-quote-function">String QUOTE() function</a></li>
+<li><a href="mysql-string-repeat-function">String REPEAT() function</a></li>
+<li><a href="mysql-string-replace-function">String REPLACE() function</a></li>
+<li><a href="mysql-string-reverse-function">String REVERSE() function</a></li>
+<li><a href="mysql-string-right-function">String RIGHT() function</a></li>
+<li><a href="mysql-string-rpad-function">String RPAD() function</a></li>
+<li><a href="mysql-string-rtrim-function">String RTRIM() function</a></li>
+<li><a href="mysql-string-soundex-function">String SOUNDEX() function</a></li>
+<li><a href="mysql-string-space-function">String SPACE() function</a></li>
+<li><a href="mysql-string-strcmp-function">String STRCMP() function</a></li>
+<li><a href="mysql-string-substr-function">String SUBSTR() function</a></li>
+<li><a href="mysql-string-substring_index-function">String SUBSTRING_INDEX() function</a></li>
+<li><a href="mysql-string-substring-function">String SUBSTRING() function</a></li>
+<li><a href="mysql-string-trim-function">String Trim() function</a></li>
+<li><a href="mysql-string-ucase-function">String UCASE() function</a></li>
+<li><a href="mysql-string-unhex-function">String UNHEX() function</a></li>
+<li><a href="mysql-string-upper-function">String UPPER() function</a></li>
+</ul>
+
+</div>
+</div>
+<hr/>
+<h2 class="h2">Prerequisite</h2>
+<p>Before learning MySQL, you must have the basic knowledge of computer fundamentals.</p>
+
+<h2 class="h2">Audience</h2>
+<p>Our MySQL tutorial is designed to help beginners and professionals.</p>
+
+<h2 class="h2">Problem</h2>
+<p>We assure that you will not find any problem in this MySQL tutorial. But if there is any mistake, please post the problem in contact form.</p>
+
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="mysql-history">MySQL History</a></span>
+</div>
+
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a style="float:right" class="next" href="mysql-history">next &rarr;</a>
+</div>
+
+<br/><br/>
+
+</td></tr>
+</table>
+
+
+
+</div>
+<!-- contribute start-->
+
+<!-- contribute end-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="7776236568"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2 class="h2">Please Share</h2>
+<a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/mysql-tutorial"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"/></a>
+<a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/mysql-tutorial"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"/></a>
+<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://www.javatpoint.com/mysql-tutorial"><img src="https://www.javatpoint.com/images/google-plus32.png" alt="google plus"/></a>
+<a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/mysql-tutorial"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"/></a>
+<!--<a rel="nofollow" title="Tumblr" target="_blank" href="https://www.tumblr.com/share/link?url=https://www.javatpoint.com/mysql-tutorial"><img src="https://www.javatpoint.com/images/tumblr32.png" alt="tumbler"/></a>-->
+
+<!-- latest tutorials start -->
+<h2 class="h2">Learn Latest Tutorials</h2>
+<div class="firsthomecontent">
+                        <a href="https://www.javatpoint.com/selenium-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/selenium/images/selenium-home.jpg" alt="Selenium tutorial" />
+                                <p>Selenium</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/control-system-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/control-system/images/control-system-home.jpg" alt="Control Systems tutorial" />
+                                <p>Control System</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/rust-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/tutorial/rust/images/rust-home.jpg" alt="Rust Programming tutorial" />
+                                <p>Rust</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/intellij-idea-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/intellij-idea/images/intellij-idea-home.png" alt="Intellij Idea tutorial" />
+                                <p>Intellij</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/dbms-tutorial">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/dbms/images/dbms-home.jpg" alt="DBMS tutorial" />
+                                <p>DBMS</p>
+                            </div>
+                        </a>
+                        <a href="https://www.javatpoint.com/aptitude/quantitative">
+                            <div class="homecontent"><img src="https://www.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Quantitative Aptitude tutorial" />
+                                <p>Aptitude</p>
+                            </div>
+                        </a>
+</div>
+
+</div>
+
+
+<br><br/><div class="mobilemenu" style="clear:both">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins class="adsbygoogle"     style="display:block"     data-ad-client="ca-pub-4699858549023382"     data-ad-slot="8222866318"     data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br/><br/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- newright -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4699858549023382"
+     data-ad-slot="6034912541"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br/><br/>
+
+
+</div>
+<div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br/><br/>
+</div>
+<br/>
+<div id="footer" style="clear:both;width:100%">
+
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>--><div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p><ul class="points"> <li>Website Designing</li><li>Website Development</li><li>Java Development</li><li>PHP Development</li><li>WordPress</li><li>Graphic Designing</li><li>Logo</li><li>Digital Marketing</li><li>On Page and Off Page SEO</li><li>PPC</li><li>Content Development</li><li>Corporate Training</li><li>Classroom and Online Training</li><li>Data Entry</li></ul> <p style="padding-bottom:60px"></p></div><div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p></div><!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a><a rel="nofollow" href="http://www.hindi-typing.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/><p>Hindi-Typing</p></div></a></marquee></div>--><script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script><div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://www.javatpoint.com/images/social/rss1.png" alt="RSS Feed"/></a> <a target="_blank"  rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://www.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"/></a> <a  rel="nofollow" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://www.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"/></a> <a target="_blank" rel="nofollow" href="https://plus.google.com/u/0/+javatpoint"><img src="https://www.javatpoint.com/images/social/google1.png" alt="Google Page"/></a> <a target="_blank" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://www.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"/></a> <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://www.javatpoint.com/images/youtube32.png" alt="YouTube"/></a> <a target="_blank" rel="nofollow" href="https://javatpoint.blogspot.com"><img src="https://www.javatpoint.com/images/social/blog.png" alt="Blog Page"/></a> </div><footer class="footer1"><div class="column4"><h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a></div><div class="column4"><h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow" target="_blank" href="http://www.hindi-typing.com">Hindi-typing.com</a><a rel="nofollow" target="_blank" href="http://www.shayaree.com">Shayaree.com</a><a rel="nofollow" target="_blank" href="https://www.wordcountee.com">Wordcountee.com</a><a rel="nofollow" target="_blank" href="https://www.charactercountee.com">Charactercountee.com</a><a rel="nofollow" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a></div><div class="column4"><h3>Our Services</h3><p>Website Development</p><p>Android Development</p><p>Website Designing</p><p>Digital Marketing</p><p>Summer Training</p><p>Industrial Training</p><p>College Campus Training</p></div><div class="column4"><h3>Contact</h3><p>Address: G-13, 2nd Floor, Sec-3</p><p>Noida, UP, 201301, India</p><p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a></div></footer><footer class="footer2"><p>&copy; Copyright 2011-2018 www.javatpoint.com. All rights reserved. <a rel="nofollow" target="_blank" href="https://www.sssit.org">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p></footer>
+</div></div></div>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4699858549023382",
+          enable_page_level_ads: true
+     });
+</script>
+
+<script src="/js/shcoreandbrush.js"></script><script> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+</body> </html> 

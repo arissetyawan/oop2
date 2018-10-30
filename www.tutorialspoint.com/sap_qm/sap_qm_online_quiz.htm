@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>SAP QM Online Quiz - TutorialsPoint</title>
+<meta name="description" content="SAP QM Online Quiz - Learn SAP QM in simple and easy steps starting from basic to advanced concepts with examples including Overview, Components, Integration, Master Data, Inspection Methods, Plan, Sampling, Quality Info Records, Lot, In-Process, Final Inspection, Result, Defects Recording, Usage Decision, Listing Inspection Lot, Quality Notification, Benefits, Tables, Consultant Responsibilities." />
+<meta name="keywords" content="SAP QM, Tutorial, Learning, Overview, Components, Integration, Master Data, Inspection Methods, Plan, Sampling, Quality Info Records, Lot, In-Process, Final Inspection, Result, Defects Recording, Usage Decision, Listing Inspection Lot, Quality Notification, Benefits, Tables, Consultant Responsibilities." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #b1353e !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #b1353e url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #b1353e !important;}
+.submenu-item{ border-bottom: 2px solid #b1353e !important; border-top: 2px solid #b1353e !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#b1353e; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sap_qm/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sap_qm/images/sap-qm-mini-logo.jpg" alt="SAP QM Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP QM Tutorial</li>
+<li><a href="/sap_qm/index.htm">SAP QM - Home</a></li>
+<li><a href="/sap_qm/sap_qm_overview.htm">SAP QM - Overview</a></li>
+<li><a href="/sap_qm/sap_qm_components.htm">SAP QM - Components</a></li>
+<li><a href="/sap_qm/sap_qm_integration.htm">SAP QM - Integration</a></li>
+<li><a href="/sap_qm/sap_qm_master_data.htm">SAP QM - Master Data</a></li>
+<li><a href="/sap_qm/sap_qm_inspection_methods.htm">SAP QM - Inspection Methods</a></li>
+<li><a href="/sap_qm/sap_qm_sampling.htm">SAP QM - Sampling</a></li>
+<li><a href="/sap_qm/sap_qm_inspection_plan.htm">SAP QM - Inspection Plan</a></li>
+<li><a href="/sap_qm/sap_qm_quality_info_records.htm">SAP QM - Quality Info Records</a></li>
+<li><a href="/sap_qm/sap_qm_lot_inspection.htm">SAP QM - Lot Inspection</a></li>
+<li><a href="/sap_qm/sap_qm_result_recording.htm">SAP QM - Result Recording</a></li>
+<li><a href="/sap_qm/sap_qm_usage_decision.htm">SAP QM - Usage Decision</a></li>
+<li><a href="/sap_qm/sap_qm_listing_inspection_lot.htm">SAP QM - Listing Inspection Lot</a></li>
+<li><a href="/sap_qm/sap_qm_inprocess_inspection.htm">SAP QM - In-Process Inspection</a></li>
+<li><a href="/sap_qm/sap_qm_final_inspection.htm">SAP QM - Final Inspection</a></li>
+<li><a href="/sap_qm/sap_qm_defects_recording.htm">SAP QM - Defects Recording</a></li>
+<li><a href="/sap_qm/sap_qm_quality_notification.htm">SAP QM - Quality Notification</a></li>
+<li><a href="/sap_qm/sap_qm_benefits.htm">SAP QM - Benefits</a></li>
+<li><a href="/sap_qm/sap_qm_tables.htm">SAP QM - Tables</a></li>
+<li><a href="/sap_qm/sap_qm_consultant_responsibilities.htm">Consultant Responsibilities</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">SAP QM Useful Resources</li>
+<li><a href="/sap_qm/sap_qm_questions_answers.htm">SAP QM - Questions Answers</a></li>
+<li><a href="/sap_qm/sap_qm_quick_guide.htm">SAP QM - Quick Guide</a></li>
+<li><a href="/sap_qm/sap_qm_useful_resources.htm">SAP QM - Useful Resources</a></li>
+<li><a href="/sap_qm/sap_qm_discussion.htm">SAP QM - Discussion</a></li>
+</ul>
+
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>SAP QM Online Quiz</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sap_qm/sap_qm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_qm/sap_qm_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Following quiz provides Multiple Choice Questions (MCQs) related to <b>SAP QM</b>. You will have to read all the given answers and click over the correct answer. If you are not sure about the answer then you can check the answer using <b>Show Answer</b> button. You can use <b>Next Quiz</b> button to check new set of questions in the quiz.</p>
+<img src="/images/questions_and_answers.png" alt="Questions and Answers" />
+
+<div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 1</span> - Which of the following module is integrated with QM to manage the releases for vendors and manufacturers and also monitor QM systems for suppliers?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - SAP Material Management</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SAP Production Planning</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - SAP Sales and Distribution</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SAP Controlling</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>You can integrate following tasks of SAP MM with QM &minus;</p>
+<ul class="list">
+<li><p>You manage the quality details for materials, vendors and suppliers.</p></li>
+<li><p>You manage the releases for vendors and manufacturers and also monitor QM systems for suppliers.</p></li>
+<li><p>You manage the release status of delivery from vendor.</p></li>
+<li><p>You can maintain quality agreements and RFP details when you request for a quotations and purchase orders is raised for vendors.</p></li>
+<li><p>You can manage quality certificates for vendors.</p></li>
+</ul>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 2</span> - You can assign an inspection method to master inspection charactertics or directly to an inspection charactertics in an inspection plan?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>You can use inspection method to perform the inspection. An inspection method can be assigned to master inspection charactertics or directly to an inspection charactertics in an inspection plan.</p>
+<p>An Inspection method can be created in one plant same method can be used in other plant.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 3</span> - A sampling plan defines the sample size specification for the inspection lot to determine if a sample is accepted or not accepted?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - True</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - False</a></p> 
+</div>
+<div class="A" id='A14'>
+<h3>Answer : A</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 4</span> - While defining a sampling procedure, which of the following make up inspection charactertics?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Sampling Type</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Valuation Mode</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Inspection Method Status</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - A &amp; B</a></p>
+<p><a class="false" href="javascript:void(0);"><span>E</span> - All of the above</a></p>
+</div>
+<div class="A" id='A19'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The rules for determining the sample are stored in the sampling type. The sampling type and valuation mode are combined for the inspection characteristics.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 5</span> - What do you understand by AQL?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Acceptable Quality Limit</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Automatic Quality Length</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Acceptable Quality Length</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Automatic Quality Limit</a></p>
+</div>
+<div class="A" id='A25'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>AQL (Acceptable Quality Level) is the quality level that represents the upper limit of a satisfactory average quality level for an acceptance sampling inspection.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q30">
+<p><span>Q 6</span> - What is SAP inspection type used for in process material inspection?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - 01</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - 02</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - 03</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - 04</a></p>
+</div>
+<div class="A" id='A30'>
+<h3>Answer : C</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('30')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q34">
+<p><span>Q 7</span> - What is the standard SAP QM notification type to record a complaint against vendor and take action for the incoming material?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Q1</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Q2</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Q3</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Not Defined</a></p>
+</div>
+<div class="A" id='A34'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>You can use standard SAP QM notification type Q2 to record a complaint against vendor and take action for the incoming material.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('34')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q36">
+<p><span>Q 8</span> - For costing and to decide how many goods are accepted, SAP QM is directly linked to?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - SAP MM</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SAP PP</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Controlling</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SAP Plant Maintenance</a></p>
+</div>
+<div class="A" id='A36'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>SAP QM is directed linked to controlling for costing and to decide how many goods are accepted. You update the vendor quality record in the system and this helps to find out if same vendor should continue to supply the material or there is a need to find a new source.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('36')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q43">
+<p><span>Q 9</span> - Which of the following document types are considered as Procurement document in procurement cycle?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Quality Certificates</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Quality Assurance document Q01</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Quality Purchase Order QP1</a></p> 
+</div>
+<div class="A" id='A43'>
+<h3>Answer : B</h3> 
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('43')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q49">
+<p><span>Q 10</span> - Which of the following can be used to adjust the probability of acceptance and the inspection effort, based on different quality situations?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Inspection Severity</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - AQL</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Sample Size</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A49'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>In SAP Quality Management process, you can vary inspection severity that allows to adjust the probability of acceptance and the inspection effort, based on different quality situations. The inspection severity is closely connected to the inspection scope. If all other conditions remain the same, different inspection severities lead to different inspection scopes or acceptance conditions.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('49')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><hr />
+<div class="pre-btn">
+<a href="/sap_qm/sap_qm_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sap_qm/sap_qm_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams.js"></script>
+<div class="parent-file">sap_qm_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sap_qm/sap_qm_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sap_qm/sap_qm_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sap_qm/sap_qm_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sap_qm/sap_qm_online_quiz.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sap_qm/sap_qm_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sap_qm/sap_qm_online_quiz.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

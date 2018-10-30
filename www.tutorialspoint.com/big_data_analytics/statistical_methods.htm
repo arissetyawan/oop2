@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Big Data Analytics Statistical Methods</title>
+<meta name="description" content="Big Data Analytics Statistical Methods - Learn Big Data Analytics in simple and easy steps starting from its Overview, Data Life Cycle, Methodology, Core Deliverables, Key Stakeholders, Data Analyst, Scientist, Problem Definition, Data Collection, Cleansing, Summarizing, Exploration,Visualization, Introduction to R, Introduction to SQL, Charts and Graphs, Data Analysis Tools, Statistical Methods, Machine Learning for Data Analysis, Naive Bayes Classifier, K-Means Clustering, Association Rules, Decision Trees, Logistic Regression, Time Series Analysis, Text Analytics, Online Learning." />
+<meta name="keywords" content="Big Data Analytics, Tutorial, Overview, Data Life Cycle, Methodology, Core Deliverables, Key Stakeholders, Data Analyst, Scientist, Problem Definition, Data Collection, Cleansing, Summarizing, Exploration,Visualization, Introduction to R, Introduction to SQL, Charts and Graphs, Data Analysis Tools, Statistical Methods, Machine Learning for Data Analysis, Naive Bayes Classifier, K-Means Clustering, Association Rules, Decision Trees, Logistic Regression, Time Series Analysis, Text Analytics, Online Learning." />
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+"HTML-CSS": {
+linebreaks: { automatic: true, width: "container" } 
+} 
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #cb026e !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #cb026e url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #cb026e !important;}
+.submenu-item{ border-bottom: 2px solid #cb026e !important; border-top: 2px solid #cb026e !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#cb026e; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/big_data_analytics/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/big_data_analytics/images/big-data-analytics-mini-logo.jpg" alt="Big Data Analytics Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Big Data Analytics Tutorial</li>
+<li><a href="/big_data_analytics/index.htm">Big Data Analytics - Home</a></li>
+<li><a href="/big_data_analytics/big_data_analytics_overview.htm">Big Data Analytics - Overview</a></li>
+<li><a href="/big_data_analytics/big_data_analytics_lifecycle.htm">Big Data Analytics - Data Life Cycle</a></li>
+<li><a href="/big_data_analytics/big_data_analytics_methodology.htm">Big Data Analytics - Methodology</a></li>
+<li><a href="/big_data_analytics/core_deliverables.htm">Core Deliverables</a></li>
+<li><a href="/big_data_analytics/key_stakeholders.htm">Key Stakeholders</a></li>
+<li><a href="/big_data_analytics/data_analyst.htm">Big Data Analytics - Data Analyst</a></li>
+<li><a href="/big_data_analytics/data_scientist.htm">Big Data Analytics - Data Scientist</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Big Data Analytics Project</li>
+<li><a href="/big_data_analytics/problem_definition.htm">Data Analytics - Problem Definition</a></li>
+<li><a href="/big_data_analytics/data_collection.htm">Big Data Analytics - Data Collection</a></li>
+<li><a href="/big_data_analytics/cleansing_data.htm">Big Data Analytics - Cleansing data</a></li>
+<li><a href="/big_data_analytics/summarizing_data.htm">Big Data Analytics - Summarizing</a></li>
+<li><a href="/big_data_analytics/data_exploration.htm">Big Data Analytics - Data Exploration</a></li>
+<li><a href="/big_data_analytics/data_visualization.htm">Data Visualization</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Big Data Analytics Methods</li>
+<li><a href="/big_data_analytics/r_introduction.htm">Big Data Analytics - Introduction to R</a></li>
+<li><a href="/big_data_analytics/introduction_to_sql.htm">Data Analytics - Introduction to SQL</a></li>
+<li><a href="/big_data_analytics/charts_and_graphs.htm">Big Data Analytics - Charts &amp; Graphs</a></li>
+<li><a href="/big_data_analytics/data_analysis_tools.htm">Big Data Analytics - Data Tools</a></li>
+<li><a href="/big_data_analytics/statistical_methods.htm">Data Analytics - Statistical Methods</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Advanced Methods</li>
+<li><a href="/big_data_analytics/machine_learning_data_analysis.htm">Machine Learning for Data Analysis</a></li>
+<li><a href="/big_data_analytics/naive_bayes_classifier.htm">Naive Bayes Classifier</a></li>
+<li><a href="/big_data_analytics/k_means_clustering.htm">K-Means Clustering</a></li>
+<li><a href="/big_data_analytics/association_rules.htm">Association Rules</a></li>
+<li><a href="/big_data_analytics/decision_trees.htm">Big Data Analytics - Decision Trees</a></li>
+<li><a href="/big_data_analytics/logistic_regression.htm">Logistic Regression</a></li>
+<li><a href="/big_data_analytics/time_series_analysis.htm">Big Data Analytics - Time Series</a></li>
+<li><a href="/big_data_analytics/text_analytics.htm">Big Data Analytics - Text Analytics</a></li>
+<li><a href="/big_data_analytics/online_learning.htm">Big Data Analytics - Online Learning</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Big Data Analytics Useful Resources</li>
+<li><a href="/big_data_analytics/big_data_analytics_quick_guide.htm">Big Data Analytics - Quick Guide</a></li>
+<li><a href="/big_data_analytics/big_data_analytics_useful_resources.htm">Big Data Analytics - Resources</a></li>
+<li><a href="/big_data_analytics/big_data_analytics_discussion.htm">Big Data Analytics - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Big Data Analytics - Statistical Methods</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/big_data_analytics/data_analysis_tools.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/big_data_analytics/machine_learning_data_analysis.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>When analyzing data, it is possible to have a statistical approach. The basic tools that are needed to perform basic analysis are &minus;</p>
+<ul class="list">
+<li>Correlation analysis</li>
+<li>Analysis of Variance</li>
+<li>Hypothesis Testing</li>
+</ul>
+<p>When working with large datasets, it doesn’t involve a problem as these methods aren’t computationally intensive with the exception of Correlation Analysis. In this case, it is always possible to take a sample and the results should be robust.</p>
+<h2>Correlation Analysis</h2>
+<p>Correlation Analysis seeks to find linear relationships between numeric variables. This can be of use in different circumstances. One common use is exploratory data analysis, in section 16.0.2 of the book there is a basic example of this approach. First of all, the correlation metric used in the mentioned example is based on the <b>Pearson coefficient</b>. There is however, another interesting metric of correlation that is not affected by outliers. This metric is called the spearman correlation.</p>
+<p>The <b>spearman correlation</b> metric is more robust to the presence of outliers than the Pearson method and gives better estimates of linear relations between numeric variable when the data is not normally distributed.</p>
+<pre class="prettyprint notranslate">
+library(ggplot2)
+
+# Select variables that are interesting to compare pearson and spearman 
+correlation methods. 
+x = diamonds[, c('x', 'y', 'z', 'price')]  
+
+# From the histograms we can expect differences in the correlations of both 
+metrics.  
+# In this case as the variables are clearly not normally distributed, the 
+spearman correlation 
+
+# is a better estimate of the linear relation among numeric variables. 
+par(mfrow = c(2,2)) 
+colnm = names(x) 
+for(i in 1:4) { 
+   hist(x[[i]], col = 'deepskyblue3', main = sprintf('Histogram of %s', colnm[i])) 
+} 
+par(mfrow = c(1,1)) 
+</pre>
+<p>From the histograms in the following figure, we can expect differences in the correlations of both metrics. In this case, as the variables are clearly not normally distributed, the spearman correlation is a better estimate of the linear relation among numeric variables.</p>
+<img src="/big_data_analytics/images/non_normal_distribution.jpg" alt="Non Normal Distribution" />
+<p>In order to compute the correlation in R, open the file <b>bda/part2/statistical_methods/correlation/correlation.R</b> that has this code section.</p>
+<pre class="result notranslate">
+## Correlation Matrix - Pearson and spearman
+cor_pearson &lt;- cor(x, method = 'pearson') 
+cor_spearman &lt;- cor(x, method = 'spearman')  
+
+### Pearson Correlation 
+print(cor_pearson) 
+#            x          y          z        price 
+# x      1.0000000  0.9747015  0.9707718  0.8844352 
+# y      0.9747015  1.0000000  0.9520057  0.8654209 
+# z      0.9707718  0.9520057  1.0000000  0.8612494 
+# price  0.8844352  0.8654209  0.8612494  1.0000000  
+
+### Spearman Correlation 
+print(cor_spearman) 
+#              x          y          z      price 
+# x      1.0000000  0.9978949  0.9873553  0.9631961 
+# y      0.9978949  1.0000000  0.9870675  0.9627188 
+# z      0.9873553  0.9870675  1.0000000  0.9572323 
+# price  0.9631961  0.9627188  0.9572323  1.0000000 
+</pre>
+<h2>Chi-squared Test</h2>
+<p>The chi-squared test allows us to test if two random variables are independent. This means that the probability distribution of each variable doesn’t influence the other. In order to evaluate the test in R we need first to create a contingency table, and then pass the table to the <b>chisq.test R</b> function.</p>
+<p>For example, let’s check if there is an association between the variables: cut and color from the diamonds dataset. The test is formally defined as &minus;</p>
+<ul class="list">
+<li>H0: The variable cut and diamond are independent</li>
+<li>H1: The variable cut and diamond are not independent</li>
+</ul>
+<p>We would assume there is a relationship between these two variables by their name, but the test can give an objective "rule" saying how significant this result is or not.</p>
+<p>In the following code snippet, we found that the p-value of the test is 2.2e-16, this is almost zero in practical terms. Then after running the test doing a <b>Monte Carlo simulation</b>, we found that the p-value is 0.0004998 which is still quite lower than the threshold 0.05. This result means that we reject the null hypothesis (H0), so we believe the variables <b>cut</b> and <b>color</b> are not independent.</p>
+<pre class="result notranslate">
+library(ggplot2)
+
+# Use the table function to compute the contingency table 
+tbl = table(diamonds$cut, diamonds$color) 
+tbl  
+
+#              D    E    F    G    H    I    J 
+# Fair       163  224  312  314  303  175  119 
+# Good       662  933  909  871  702  522  307 
+# Very Good 1513 2400 2164 2299 1824 1204  678 
+# Premium   1603 2337 2331 2924 2360 1428  808 
+# Ideal     2834 3903 3826 4884 3115 2093  896  
+
+# In order to run the test we just use the chisq.test function. 
+chisq.test(tbl)  
+
+# Pearson’s Chi-squared test 
+# data:  tbl 
+# X-squared = 310.32, df = 24, p-value &lt; 2.2e-16
+# It is also possible to compute the p-values using a monte-carlo simulation 
+# It's needed to add the simulate.p.value = TRUE flag and the amount of 
+simulations 
+chisq.test(tbl, simulate.p.value = TRUE, B = 2000)  
+
+# Pearson’s Chi-squared test with simulated p-value (based on 2000 replicates) 
+# data:  tbl 
+# X-squared = 310.32, df = NA, p-value = 0.0004998
+</pre>
+<h2>T-test</h2>
+<p>The idea of <b>t-test</b> is to evaluate if there are differences in a numeric variable # distribution between different groups of a nominal variable. In order to demonstrate this, I will select the levels of the Fair and Ideal levels of the factor variable cut, then we will compare the values a numeric variable among those two groups.</p>
+<pre class="result notranslate">
+data = diamonds[diamonds$cut %in% c('Fair', 'Ideal'), ]
+
+data$cut = droplevels.factor(data$cut) # Drop levels that aren’t used from the 
+cut variable 
+df1 = data[, c('cut', 'price')]  
+
+# We can see the price means are different for each group 
+tapply(df1$price, df1$cut, mean) 
+# Fair    Ideal  
+# 4358.758 3457.542
+</pre>
+<p>The t-tests are implemented in R with the <b>t.test</b> function. The formula interface to t.test is the simplest way to use it, the idea is that a numeric variable is explained by a group variable.</p>
+<p>For example: <b>t.test(numeric_variable ~ group_variable, data = data)</b>. In the previous example, the <b>numeric_variable</b> is <b>price</b> and the <b>group_variable</b> is <b>cut</b>.</p>
+<p>From a statistical perspective, we are testing if there are differences in the distributions of the numeric variable among two groups. Formally the hypothesis test is described with a null (H0) hypothesis and an alternative hypothesis (H1).</p>
+<ul class="list">
+<li><p>H0: There are no differences in the distributions of the price variable among the Fair and Ideal groups</p></li>
+<li><p>H1 There are differences in the distributions of the price variable among the Fair and Ideal groups</p></li>
+</ul>
+<p>The following can be implemented in R with the following code &minus;</p>
+<pre class="result notranslate">
+t.test(price ~ cut, data = data)
+
+# Welch Two Sample t-test 
+#  
+# data:  price by cut 
+# t = 9.7484, df = 1894.8, p-value &lt; 2.2e-16 
+# alternative hypothesis: true difference in means is not equal to 0 
+# 95 percent confidence interval: 
+#   719.9065 1082.5251 
+# sample estimates: 
+#   mean in group Fair mean in group Ideal  
+#   4358.758            3457.542   
+
+# Another way to validate the previous results is to just plot the 
+distributions using a box-plot 
+plot(price ~ cut, data = data, ylim = c(0,12000),  
+   col = 'deepskyblue3') 
+</pre>
+<p>We can analyze the test result by checking if the p-value is lower than 0.05. If this is the case, we keep the alternative hypothesis. This means we have found differences of price among the two levels of the cut factor. By the names of the levels we would have expected this result, but we wouldn’t have expected that the mean price in the Fail group would be higher than in the Ideal group. We can see this by comparing the means of each factor.</p>
+<p>The <b>plot</b> command produces a graph that shows the relationship between the price and cut variable. It is a box-plot; we have covered this plot in section 16.0.1 but it basically shows the distribution of the price variable for the two levels of cut we are analyzing.</p>
+<img src="/big_data_analytics/images/different_level_cut.jpg" alt="Different Level Cut" />
+<h2>Analysis of Variance</h2>
+<p>Analysis of Variance (ANOVA) is a statistical model used to analyze the differences among group distribution by comparing the mean and variance of each group, the model was developed by Ronald Fisher. ANOVA provides a statistical test of whether or not the means of several groups are equal, and therefore generalizes the t-test to more than two groups.</p>
+<p>ANOVAs are useful for comparing three or more groups for statistical significance because doing multiple two-sample t-tests would result in an increased chance of committing a statistical type I error.</p>
+<p>In terms of providing a mathematical explanation, the following is needed to understand the test.</p>
+<p style="text-align:center;"><i>x<sub>ij</sub> = x + (x<sub>i</sub> − x) + (x<sub>ij</sub> − x)</i></p>
+<p>This leads to the following model &minus;</p>
+<p style="text-align:center;"><i>x<sub>ij</sub> = &mu; + &alpha;<sub>i</sub> + &isin;<sub>ij</sub></i></p>
+<p>where &mu; is the grand mean and <i>&alpha;<sub>i</sub></i> is the ith group mean. The error term <i>&isin;<sub>ij</sub></i> is assumed to be iid from a normal distribution. The null hypothesis of the test is that &minus;</p>
+<p style="text-align:center;"><i>&alpha;<sub>1</sub> = &alpha;<sub>2</sub> = … = &alpha;<sub>k</sub></i></p>
+<p>In terms of computing the test statistic, we need to compute two values &minus;</p>
+<ul class="list">
+<li>Sum of squares for between group difference &minus;</li>
+</ul>
+<p>$$SSD_B = \sum_{i}^{k} \sum_{j}^{n}(\bar{x_{\bar{i}}} - \bar{x})^2$$</p>
+<ul class="list">
+<li>Sums of squares within groups</li>
+</ul>
+<p>$$SSD_W = \sum_{i}^{k} \sum_{j}^{n}(\bar{x_{\bar{ij}}} - \bar{x_{\bar{i}}})^2$$</p>
+<p>where SSD<sub>B</sub> has a degree of freedom of k−1 and SSD<sub>W</sub> has a degree of freedom of N−k. Then we can define the mean squared differences for each metric.</p>
+<p style="text-align:center;"><i>MS<sub>B</sub> = SSD<sub>B</sub> / (k - 1)</i></p>
+<p style="text-align:center;"><i>MS<sub>w</sub> = SSD<sub>w</sub> / (N - k)</i></p>
+<p>Finally, the test statistic in ANOVA is defined as the ratio of the above two quantities</p>
+<p style="text-align:center;"><i>F = MS<sub>B</sub> / MS<sub>w</sub></i></p>
+<p>which follows a F-distribution with <i>k−1</i> and <i>N−k</i> degrees of freedom. If null hypothesis is true, F would likely be close to 1. Otherwise, the between group mean square MSB is likely to be large, which results in a large F value.</p>
+<p>Basically, ANOVA examines the two sources of the total variance and sees which part contributes more. This is why it is called analysis of variance although the intention is to compare group means.</p>
+<p>In terms of computing the statistic, it is actually rather simple to do in R. The following example will demonstrate how it is done and plot the results.</p>
+<pre class="result notranslate">
+library(ggplot2)
+# We will be using the mtcars dataset 
+
+head(mtcars) 
+#                    mpg  cyl disp  hp drat  wt  qsec   vs am  gear carb 
+# Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4 
+# Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4 
+# Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1 
+# Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1 
+# Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2 
+# Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1  
+
+# Let's see if there are differences between the groups of cyl in the mpg variable. 
+data = mtcars[, c('mpg', 'cyl')]  
+fit = lm(mpg ~ cyl, data = mtcars) 
+anova(fit)  
+
+# Analysis of Variance Table 
+# Response: mpg 
+#           Df Sum Sq Mean Sq F value    Pr(&gt;F)     
+# cyl        1 817.71  817.71  79.561 6.113e-10 *** 
+# Residuals 30 308.33   10.28 
+# Signif. codes:  0 *** 0.001 ** 0.01 * 0.05 . 
+# Plot the distribution 
+plot(mpg ~ as.factor(cyl), data = mtcars, col = 'deepskyblue3')
+</pre>
+<p>The code will produce the following output &minus;</p>
+<img src="/big_data_analytics/images/variance_analysis.jpg" alt="Variance Analysis" />
+<p>The p-value we get in the example is significantly smaller than 0.05, so R returns the symbol '***' to denote this. It means we reject the null hypothesis and that we find differences between the mpg means among the different groups of the <b>cyl</b> variable.</p>
+<hr />
+<div class="pre-btn">
+<a href="/big_data_analytics/data_analysis_tools.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/big_data_analytics/machine_learning_data_analysis.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/big_data_analytics/statistical_methods.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/big_data_analytics/statistical_methods.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/big_data_analytics/statistical_methods.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/big_data_analytics/statistical_methods.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/big_data_analytics/statistical_methods.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/big_data_analytics/statistical_methods.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

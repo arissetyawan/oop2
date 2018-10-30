@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Sqoop Mock Test - TutorialsPoint</title>
+<meta name="description" content="Sqoop Mock Test - Learn Sqoop in simple and easy steps starting from basic to advanced concepts with examples including Introduction, Installation, Import, Import all tables, Export, Sqoop Job, Codegen, Eval, List Database, List Tables." /> 
+<meta name="keywords" content="Sqoop, Introduction, Installation, Import, Import all tables, Export, Sqoop Job, Codegen, Eval, List Database, List Tables." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #3daf2c !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #3daf2c url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #3daf2c !important;}
+.submenu-item{ border-bottom: 2px solid #3daf2c !important; border-top: 2px solid #3daf2c !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#3daf2c; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/sqoop/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/sqoop/images/sqoop-mini-logo.jpg" alt="Sqoop Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Sqoop Tutorial</li>
+<li><a href="/sqoop/index.htm">Sqoop - Home</a></li>
+<li><a href="/sqoop/sqoop_introduction.htm">Sqoop - Introduction</a></li>
+<li><a href="/sqoop/sqoop_installation.htm">Sqoop - Installation</a></li>
+<li><a href="/sqoop/sqoop_import.htm">Sqoop - Import</a></li>
+<li><a href="/sqoop/sqoop_import_all_tables.htm">Sqoop - Import-All-Tables</a></li>
+<li><a href="/sqoop/sqoop_export.htm">Sqoop - Export</a></li>
+<li><a href="/sqoop/sqoop_job.htm">Sqoop - Sqoop Job</a></li>
+<li><a href="/sqoop/sqoop_codegen.htm">Sqoop - Codegen</a></li>
+<li><a href="/sqoop/sqoop_eval.htm">Sqoop - Eval</a></li>
+<li><a href="/sqoop/sqoop_list_database.htm">Sqoop - List Databases</a></li>
+<li><a href="/sqoop/sqoop_list_table.htm">Sqoop - List Tables</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Sqoop Useful Resources</li>
+<li><a href="/sqoop/sqoop_questions_answers.htm">Sqoop - Questions and Answers</a></li>
+<li><a href="/sqoop/sqoop_quick_guide.htm">Sqoop - Quick Guide</a></li>
+<li><a href="/sqoop/sqoop_useful_resources.htm">Sqoop - Useful Resources</a></li>
+<li><a href="/sqoop/sqoop_discussion.htm">Sqoop - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Sqoop Mock Test</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/sqoop/sqoop_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/sqoop/sqoop_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This section presents you various set of Mock Tests related to <b>Sqoop</b>. You can download these sample mock tests at your local machine and solve offline at your convenience. Every mock test is supplied with a mock test key to let you verify the final score and grade yourself.</p>
+<img src="/images/online_mock_tests.png" alt="Questions and Answers" />
+<a href="/sqoop/sqoop_mock_test.htm?min=1&max=25"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test I</button></a>
+<a href="/sqoop/sqoop_mock_test.htm?min=26&max=50"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test II</button></a>
+<a href="/sqoop/sqoop_mock_test.htm?min=51&max=75"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test III</button></a>
+<a href="/sqoop/sqoop_mock_test.htm?min=76&max=100"><button type="button" class="btn btn-default btn-mt"><i class="icon  icon-file-pdf-o"></i> Mock Test IV</button></a>
+<style>
+.B, .answer-sheet{
+   display:none !important;
+}
+.Q a{
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<h1>Sqoop Mock Test I </h1>
+<div class="QA">
+<div class="Q" id="Q1">
+<p><span>Q 1</span> - Which of the following is used by sqoop to establish a connection with enterprise data warehouses?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - RDBMS driver</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - JDBC Driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - IDBC Driver</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - SQL Driver</a></p>
+</div>
+<div class="A" id='A1'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>The JDBC driver is a java program which has been traditionally providing data base connectivity to a variety of databases.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('1')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q2">
+<p><span>Q 2</span> - Besides the JDBC driver, sqoop also needs which of the following to connect to remote databases?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Putty</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - SSH</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Conenctor</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - sqoop client</a></p>
+</div>
+<div class="A" id='A2'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Sqoop Needs both JDBC driver and Database connector which is required to import data.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('2')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q3">
+<p><span>Q 3</span> - To run sqoop from multiple  nodes, it has to be installed in</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Any one of the in the local filesystem.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - each of the node where it is supposed to run</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Only on a pair of nodes of the cluster</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Need not be installed.</a></p>
+</div>
+<div class="A" id='A3'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>On installing in one node it, automatically  gets replicated to other nodes in the cluster.</p>
+</div>
+ <div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('3')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q4">
+<p><span>Q 4</span> - By default the records from databases imported to HDFS by sqoop are</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Tab separated</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Concatenated columns</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - space separated</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - comma separated</a></p>
+</div>
+<div class="A" id='A4'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The default record separator is comm.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('4')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 5</span> - To import data to Hadoop cluster from relational database sqoop create a mapreduce job. In this job</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - All the data is transferred in one go.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - each mapper transfers a slice of Table's data</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Each mapper transfers tables' data along with table's metadata (name of the columns etc)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Only the schema of relational table is validated without fetching data</a></p>
+</div>
+<div class="A" id='A5'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>A Mapreduce job executes multiple mappers and each mapper retrieves a slice of Table's data.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('5')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q6">
+<p><span>Q 6</span> - The parameter in sqoop which specifies the output directories when importing data is</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - --output-path</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --target-path</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - --output-dir</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - --target-dir</a></p>
+</div>
+<div class="A" id='A6'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The --target-dir and --warehouse-dir are the two parameters used for specifying the path where import will be done.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('6')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q7">
+<p><span>Q 7</span> - If there is already a target directory with the same name as the table being imported then </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - The  directory gets deleted and recreated.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - The sqoop job fails</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Another directory under the existing directory gets created.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - The existing directory gets renamed</a></p>
+</div>
+<div class="A" id='A7'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>To prevent accidental deletion of data the job fails.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('7')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q8">
+<p><span>Q 8</span> - To prevent the password from being mentioned in the sqoop import clause we can use the additional parameters</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - -p</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --password-file</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - both of these</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - cannot be prevented</a></p>
+</div>
+<div class="A" id='A8'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>The -P option asks for password from standard input without echoing and --password-file option reads the password value stored in some other file.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('8')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q9">
+<p><span>Q 9</span> - What are the two binary file formats supported by sqoop?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Avro &amp; SequenceFile</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Rcfile and SequenceFile</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - ORC file and RC file</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Avro and RC file</a></p>
+</div>
+<div class="A" id='A9'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>These are the two binary file formats supported by Sqoop.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('9')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q10">
+<p><span>Q 10</span> - While SequenceFile stores each record as key-value pair, the avro system stored records as</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Simple text</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - chained lists</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Linked lists</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - schema and data</a></p>
+</div>
+<div class="A" id='A10'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Sqoop generates the schema automatically when reading the data and stores the schema details along with the data in each Avro file generated.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('10')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q11">
+<p><span>Q 11</span> - The compression mechanism used by sqoop is</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - built in sqoop</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - delegated to Hadoop</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - supplied as a java plugin to sqoop</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Needs to be installed in the OS runnign sqoop</a></p>
+</div>
+<div class="A" id='A11'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>Sqoop does not have any inbuilt code to carry out file compression. It relies on Hadoop's compression settings.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('11')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q12">
+<p><span>Q 12</span> - For some databases sqoop can to faster data transefr by using the parameter</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - --bulkload</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --fastload</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - --dump</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - --direct</a></p>
+</div>
+<div class="A" id='A12'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The direct mode delegates the data transferring capabilities to the native untilities provided by the database.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('12')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 13</span> - The data type mapping between the database column and sqoop column can be overridden by using the parameter</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - --override-column-type</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --map-column-type</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - --override-column-java</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - --map-column-java</a></p>
+</div>
+<div class="A" id='A13'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>As sqoop uses the Java Data types internally, the mapping of the data types has to be done with Java Data Types.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('13')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q14">
+<p><span>Q 14</span> - What does the num-mappers parameter serves?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - force sqoop to use only one map task</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - set the number of map tasks sqoop can use</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> -  store the data imported by each map tasks in a separate file</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Fetch each row form the table using a new map task</a></p>
+</div>
+<div class="A" id='A14'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>The default number of map task ssqoop uses is 4.</p>
+<p>This can be altered using num-mappers parameter.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('14')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q15">
+<p><span>Q 15</span> - What is the default value used by sqoop when it encounters a missing value while importing form CSV file.</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - NULL</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - null</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - space character</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - No values</a></p>
+</div>
+<div class="A" id='A15'>
+<h3>Answer : B</h3>
+<h3>Explanation</h3>
+<p>unlike databases there is no NULL values in CSV files. Those are handled by sqoop by using null string.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('15')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q16">
+<p><span>Q 16</span> - What option can be used to import the entire database from a relational system using sqoop?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - --import-all-db</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --import-all-tables</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - --import-all</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - --import</a></p>
+</div>
+<div class="A" id='A16'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>The --import-all-tables is used to import all the tables from the database. The tables structure as well as data is imported one by one through this command.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('16')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q17">
+<p><span>Q 17</span> - what option can bne used to import only some of the table from a database while using the --import-all-tables parameter?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - --skip-tables</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --without-tables</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - --forgo-tables</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - --exclude-tables</a></p>
+</div>
+<div class="A" id='A17'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>You can mention the tables names along with the --exclude-table clause to skip a given number of tables while importing an entire database.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('17')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q18">
+<p><span>Q 18</span> - Sqoop supports </p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - full import of tables</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - partial import of data from tables</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both full and partial data import</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - Import both the table and its partitions</a></p>
+</div>
+<div class="A" id='A18'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>You can do both full and partial data import from tables but not a subset of columns from  a table.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('18')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q19">
+<p><span>Q 19</span> - What are the two different incremental modes of importing data into sqoop?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - merge and add</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - append and modified</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - merge and lastmodified</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - append and lastmodified</a></p>
+</div>
+<div class="A" id='A19'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The --incremental parameter is used to fetch only the new data (data which does not already exist in hadoop) . It is done as an append if there are columns specified to be checked for new data. it cal also use the  last modified  parameter which will use the last_updated_date column from the existing table to identify the new row.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('19')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q20">
+<p><span>Q 20</span> - What does the --last-value parameter in sqoop incremental import signify?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - What is the number of rows sucessfully imported in append type import</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - what is the date value to be used to select the rows for import in the last_update_date type import</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - The count of the number of rows that were succesful in the current import.</a></p>
+</div>
+<div class="A" id='A20'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>Sqoop uses the --last-value parameter in both the append mode and the last_update_date mode to import the incremental data form source.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('20')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q21">
+<p><span>Q 21</span> - The --options-file parameter is used to</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - save the import log</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - specify the name of the data files to be created after import</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - store all the sqoop  variables</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - store the parameters and their values in a file to be used by various sqoop commands.</a></p>
+</div>
+<div class="A" id='A21'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The command line options (the name and value of the parameters) that do not change from time to time can be saved into a file and used again and again. This is called an options file.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('21')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q22">
+<p><span>Q 22</span> - while specifying the connect string in the sqoop import  command,  for a Hadoop cluster, if we specify localhost in place of a server address(hostname or IP address) in the URI, then</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - The import job will connect to local databases</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Each node may connect to different databases</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - the import job may succeed</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - All of the above</a></p>
+</div>
+<div class="A" id='A22'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>Specifying localhost does not invalidate the command as some local database may be running and the node will be able to connect. So each node will connect to different database if they are available.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('22')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q23">
+<p><span>Q 23</span> - What is the disadvantage of storing password in the metastore as compared to storing in a password file?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - it is easily accessible</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - it may get deleted accidentally</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - It cannot be updated</a></p>
+<p><a class="true" href="javascript:void(0);"><span>D</span> - it is unencrypted</a></p>
+</div>
+<div class="A" id='A23'>
+<h3>Answer : D</h3>
+<h3>Explanation</h3>
+<p>The password file can be encrypted and prevented from reading by proper permissions. But metastore is unencrypted and cannot be prevented from reading.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('23')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q24">
+<p><span>Q 24</span> - What is the advantage of storing password in a metastore as compared to storing in password in a file?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - It can be run by any user with valid access to sqoop environment</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - The password in metastore can be updated while that in password file cannot be</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - The password file can be encrypted while the metastore cannot be encrypted</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - User intervention is required in password file but not in metastore.</a></p>
+</div>
+<div class="A" id='A24'>
+<h3>Answer : A</h3>
+<h3>Explanation</h3>
+<p>The main advantage of using metastore is it can be used by any user having access to the environment without knowing the password.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('24')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q25">
+<p><span>Q 25</span> - The argument in a saved sqoop job can be altered at run time by using the option</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - --alter</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - --newval</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - --exec</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - --changeparam</a></p>
+</div>
+<div class="A" id='A25'>
+<h3>Answer : C</h3>
+<h3>Explanation</h3>
+<p>For a saved job named 'job1' the --table parameter can be altered at run time by using the command below.</p>
+<p>sqoop job --exec job1 -- --table-newtable.</p>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer('25')"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>   <h1 class="answer-sheet">Answer Sheet</h1>
+   <table class="table table-bordered answer-sheet" style="border:2px solid #000; width:100%">
+   <tr>
+   <th>Question Number</th>
+   <th>Answer Key</th>
+   </tr>      <tr>
+      <td>1</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>2</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>3</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>4</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>5</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>6</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>7</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>8</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>9</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>10</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>11</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>12</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>13</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>14</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>15</td>
+      <td>B</td>
+      </tr>      <tr>
+      <td>16</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>17</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>18</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>19</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>20</td>
+      <td>C</td>
+      </tr>      <tr>
+      <td>21</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>22</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>23</td>
+      <td>D</td>
+      </tr>      <tr>
+      <td>24</td>
+      <td>A</td>
+      </tr>      <tr>
+      <td>25</td>
+      <td>C</td>
+      </tr></table><hr />
+<div class="pre-btn">
+<a href="/sqoop/sqoop_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="middle-btn">
+<a target="_blank" href="/sqoop/pdf/sqoop_mock_test_i.pdf"><i class="fa fa-download"></i> Download</a>
+</div>
+<div class="nxt-btn">
+<a href="/sqoop/sqoop_questions_answers.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="/theme/js/exams-min.js"></script>
+<div class="parent-file">sqoop_questions_answers.htm</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/sqoop/sqoop_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/sqoop/sqoop_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/sqoop/sqoop_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/sqoop/sqoop_mock_test.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/sqoop/sqoop_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/sqoop/sqoop_mock_test.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>

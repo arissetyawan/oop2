@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Servlet File Uploading</title>
+<meta name="description" content="Servlet File Uploading - Learning Java Servlets in simple and easy steps using this beginner's tutorial containing basic to advanced knowledge of Java Servlet Technology including Form Data, HTTP Request Header, Response Header, Status Codes, Cookies Handling and Session Tracking." />
+<meta name="keywords" content="Servlets, Tutorials, Learning, Beginners, Basics, Environment, Life Cycle, Examples, Client Request, Server Response, Http Codes, Writing Filters, Exceptions, Cookies, Sessions, Database Access, File Uploading, File Uploading, Internationalization." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="https://www.tutorialspoint.com/theme/js/script-min-v4.js?v=2"></script>
+<link rel="stylesheet" href="https://www.tutorialspoint.com/theme/css/style-min.css?v=3">
+<script>
+function openNav() {	
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("right_obs").style.display = "block";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+function close_obs_sidenav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("right_obs").style.display = "none";
+}
+</script>
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+.btnsbmt{ background: #d42426 !important;}
+ul.nav-list.primary>li a.videolink{    background: none; margin: 0px; padding: 0px; border: 1px solid #d6d6d6;}
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #d42426 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #d42426 !important;}
+.submenu-item{ border-bottom: 2px solid #d42426 !important; border-top: 2px solid #d42426 !important }
+.ace_scroller{overflow: auto!important;}
+a.demo{font-family: "Open Sans",Arial,sans-serif; background:#d42426; color:#fff; font-size:13px; padding:3px 10px; border:1px solid #d6d6d6; position:absolute; right:5px; margin:-6px 17px 0px 0px;}
+a.demo:hover{opacity:.8}
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/servlets/images/logo.png">
+      </a>
+      </h1>			
+      <ul class="tp-inline-block pull-right" id="tp-head-icons">
+        <li>
+           <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">
+              <i class="fa fa-th-large fa-lg"></i>
+           </div>
+        </li>
+     </ul>
+     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a target="_blank" href="/programming_examples/"><i class="fa fa-cubes"></i> &nbsp;Examples</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+    </div>
+     <div class="sidenav" id="mySidenav">
+     <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="/questions/index.php"><i class="fa fa-send"></i> Q/A </a> </li>
+               <li class="dropdown"><a class="dropdown" href="tutorialslibrary.htm"><span class="tut-lib"> Library </span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutors</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://store.tutorialspoint.com/"><i class="fa-usd"></i> Store </a> </li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+        </div>
+      </div>	
+     </div>	
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/servlets/images/servlets-mini-logo.jpg" alt="Servlets Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li><a class="videolink" href="/java_servlet_online_training/index.asp" target="_blank"><img src="/servlets/images/servlets-video-tutorials.jpg" alt="Servlets Video Tutorials" /></a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Servlets Tutorial</li>
+<li><a href="/servlets/index.htm">Servlets - Home</a></li>
+<li><a href="/servlets/servlets_overview.htm">Servlets - Overview</a></li>
+<li><a href="/servlets/servlets-environment-setup.htm">Servlets - Environment Setup</a></li>
+<li><a href="/servlets/servlets-life-cycle.htm">Servlets - Life Cycle</a></li>
+<li><a href="/servlets/servlets-first-example.htm">Servlets - Examples</a></li>
+<li><a href="/servlets/servlets-form-data.htm">Servlets - Form Data</a></li>
+<li><a href="/servlets/servlets-client-request.htm">Servlets - Client Request</a></li>
+<li><a href="/servlets/servlets-server-response.htm">Servlets - Server Response</a></li>
+<li><a href="/servlets/servlets-http-status-codes.htm">Servlets - Http Codes</a></li>
+<li><a href="/servlets/servlets-writing-filters.htm">Servlets - Writing Filters</a></li>
+<li><a href="/servlets/servlets-exception-handling.htm">Servlets - Exceptions</a></li>
+<li><a href="/servlets/servlets-cookies-handling.htm">Servlets - Cookies Handling</a></li>
+<li><a href="/servlets/servlets-session-tracking.htm">Servlets - Session Tracking</a></li>
+<li><a href="/servlets/servlets-database-access.htm">Servlets - Database Access</a></li>
+<li><a href="/servlets/servlets-file-uploading.htm">Servlets - File Uploading</a></li>
+<li><a href="/servlets/servlets-handling-date.htm">Servlets - Handling Date</a></li>
+<li><a href="/servlets/servlets-page-redirect.htm">Servlets - Page Redirect</a></li>
+<li><a href="/servlets/servlets-hits-counter.htm">Servlets - Hits Counter</a></li>
+<li><a href="/servlets/servlets-auto-refresh.htm">Servlets - Auto Refresh</a></li>
+<li><a href="/servlets/servlets-sending-email.htm">Servlets - Sending Email</a></li>
+<li><a href="/servlets/servlets-packaging.htm">Servlets - Packaging</a></li>
+<li><a href="/servlets/servlets-debugging.htm">Servlets - Debugging</a></li>
+<li><a href="/servlets/servlets-internationalization.htm">Servlets - Internationalization</a></li>
+<li><a href="/servlets/servlets-annotations.htm">Servlets - Annotations</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Servlets Useful Resources</li>
+<li><a href="/servlets/servlets-questions-answers.htm">Servlets - Questions and Answers</a></li>
+<li><a href="/servlets/servlets-quick-guide.htm">Servlets - Quick Guide</a></li>
+<li><a href="/servlets/servlets-useful-resources.htm">Servlets - Useful Resources</a></li>
+<li><a href="/servlets/servlets-discussion.htm">Servlets - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ 
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Servlets - File Uploading</h1>
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;text-align: center;">Advertisements</div>
+<div style="text-align: center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="/servlets/servlets-database-access.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/servlets/servlets-handling-date.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>A Servlet can be used with an HTML form tag to allow users to upload files to the server. An uploaded file could be a text file or image file or any document.</p>
+<h2>Creating a File Upload Form </h2> 
+<p>The following HTM code below creates an uploader form. Following are the important points to be noted down &minus;</p>
+<ul class="list">
+<li><p>The form <b>method</b> attribute should be set to <b>POST</b> method and GET method can not be used</p></li>
+<li><p>The form <b>enctype</b> attribute should be set to <b>multipart/form-data</b>.</p></li>
+<li><p>The form <b>action</b> attribute should be set to a servlet file which would handle file uploading at backend server. Following example is using <b>UploadServlet</b> servlet to upload file.</p></li>
+<li><p>To upload a single file you should use a single &lt;input .../&gt; tag with attribute type="file". To allow multiple files uploading, include more than one input tags with different values for the name attribute. The browser associates a Browse button with each of them.</p></li>
+</ul>
+<pre class="prettyprint notranslate"> 
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;File Uploading Form&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;h3&gt;File Upload:&lt;/h3&gt;
+      Select a file to upload: &lt;br /&gt;
+      &lt;form action = "UploadServlet" method = "post" enctype = "multipart/form-data"&gt;
+         &lt;input type = "file" name = "file" size = "50" /&gt;
+         &lt;br /&gt;
+         &lt;input type = "submit" value = "Upload File" /&gt;
+      &lt;/form&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>This will display following result which would allow to select a file from local PC and when user would click at "Upload File", form would be submitted along with the selected fil &minus;</p> 
+<pre class="result notranslate"> 
+<b>File Upload:</b> 
+Select a file to upload: <br /> 
+<input type="file" name="file" size="50" /> 
+<br /> 
+<input type="button" value="Upload File" /> 
+<br /> 
+NOTE: This is just dummy form and would not work.
+</pre>
+<h2>Writing Backend Servlet </h2>
+<p>Following is the servlet <b>UploadServlet</b> which would take care of accepting uploaded file and to store it in directory &lt;Tomcat-installation-directory&gt;/webapps/data. This directory name could also be added using an external configuration such as a <b>context-param</b> element in web.xml as follows &minus;</p>
+<pre class="prettyprint notranslate"> 
+&lt;web-app&gt;
+   ....
+   &lt;context-param&gt; 
+      &lt;description&gt;Location to store uploaded file&lt;/description&gt; 
+      &lt;param-name&gt;file-upload&lt;/param-name&gt; 
+      &lt;param-value&gt;
+         c:\apache-tomcat-5.5.29\webapps\data\
+      &lt;/param-value&gt; 
+   &lt;/context-param&gt;
+   ....
+&lt;/web-app&gt;
+</pre> 
+<p>Following is the source code for UploadServlet which can handle multiple file uploading at a time. Before proceeding you have make sure the followings &minus;</p>
+<ul class="list">
+<li><p>Following example depends on FileUpload, so make sure you have the latest version of <b>commons-fileupload.x.x.jar</b> file in your classpath. You can download it from <a href="https://commons.apache.org/fileupload/" rel="nofollow" target="_blank">https://commons.apache.org/fileupload/</a>.</p></li>
+<li><p>FileUpload depends on Commons IO, so make sure you have the latest version of <b>commons-io-x.x.jar</b> file in your classpath. You can download it from <a href="https://commons.apache.org/io/" rel="nofollow" target="_blank">https://commons.apache.org/io/</a>.</p></li>
+<li><p>While testing following example, you should upload a file which has less size than <i>maxFileSize</i> otherwise file would not be uploaded.</p></li>
+<li><p>Make sure you have created directories c:\temp and c:\apache-tomcat8.0.28\webapps\data well in advance. </p></li>
+</ul>
+<pre class="prettyprint notranslate">
+// Import required java libraries
+import java.io.*;
+import java.util.*;
+ 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.output.*;
+
+public class UploadServlet extends HttpServlet {
+   
+   private boolean isMultipart;
+   private String filePath;
+   private int maxFileSize = 50 * 1024;
+   private int maxMemSize = 4 * 1024;
+   private File file ;
+
+   public void init( ){
+      // Get the file location where it would be stored.
+      filePath = getServletContext().getInitParameter("file-upload"); 
+   }
+   
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, java.io.IOException {
+   
+      // Check that we have a file upload request
+      isMultipart = ServletFileUpload.isMultipartContent(request);
+      response.setContentType("text/html");
+      java.io.PrintWriter out = response.getWriter( );
+   
+      if( !isMultipart ) {
+         out.println("&lt;html&gt;");
+         out.println("&lt;head&gt;");
+         out.println("&lt;title&gt;Servlet upload&lt;/title&gt;");  
+         out.println("&lt;/head&gt;");
+         out.println("&lt;body&gt;");
+         out.println("&lt;p&gt;No file uploaded&lt;/p&gt;"); 
+         out.println("&lt;/body&gt;");
+         out.println("&lt;/html&gt;");
+         return;
+      }
+  
+      DiskFileItemFactory factory = new DiskFileItemFactory();
+   
+      // maximum size that will be stored in memory
+      factory.setSizeThreshold(maxMemSize);
+   
+      // Location to save data that is larger than maxMemSize.
+      factory.setRepository(new File("c:\\temp"));
+
+      // Create a new file upload handler
+      ServletFileUpload upload = new ServletFileUpload(factory);
+   
+      // maximum file size to be uploaded.
+      upload.setSizeMax( maxFileSize );
+
+      try { 
+         // Parse the request to get file items.
+         List fileItems = upload.parseRequest(request);
+	
+         // Process the uploaded file items
+         Iterator i = fileItems.iterator();
+
+         out.println("&lt;html&gt;");
+         out.println("&lt;head&gt;");
+         out.println("&lt;title&gt;Servlet upload&lt;/title&gt;");  
+         out.println("&lt;/head&gt;");
+         out.println("&lt;body&gt;");
+   
+         while ( i.hasNext () ) {
+            FileItem fi = (FileItem)i.next();
+            if ( !fi.isFormField () ) {
+               // Get the uploaded file parameters
+               String fieldName = fi.getFieldName();
+               String fileName = fi.getName();
+               String contentType = fi.getContentType();
+               boolean isInMemory = fi.isInMemory();
+               long sizeInBytes = fi.getSize();
+            
+               // Write the file
+               if( fileName.lastIndexOf("\\") &gt;= 0 ) {
+                  file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
+               } else {
+                  file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+               }
+               fi.write( file ) ;
+               out.println("Uploaded Filename: " + fileName + "&lt;br&gt;");
+            }
+         }
+         out.println("&lt;/body&gt;");
+         out.println("&lt;/html&gt;");
+         } catch(Exception ex) {
+            System.out.println(ex);
+         }
+      }
+      
+      public void doGet(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, java.io.IOException {
+
+         throw new ServletException("GET method used with " +
+            getClass( ).getName( )+": POST method required.");
+      }
+   }
+}
+</pre>
+<h2>Compile and Running Servlet</h2>
+<p>Compile above servlet UploadServlet and create required entry in web.xml file as follows.</p>
+<pre class="prettyprint notranslate"> 
+&lt;servlet&gt;
+   &lt;servlet-name&gt;UploadServlet&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;UploadServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;UploadServlet&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/UploadServlet&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</pre>
+<p>Now try to upload files using the HTML form which you created above. When you would try http://localhost:8080/UploadFile.htm, it would display following result which would help you uploading any file from your local machine.</p>
+<pre class="result notranslate"> 
+<b>File Upload:</b> 
+<p>Select a file to upload:</p>
+<input type="file" name="file" size="50" /> <br />
+<input type="button" value="Upload File" /> 
+</pre>
+<p>If your servlet script works fine, your file should be uploaded in c:\apache-tomcat8.0.28\webapps\data\ directory.</p>
+<hr />
+<div class="pre-btn">
+<a href="/servlets/servlets-database-access.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/servlets/servlets-handling-date.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'https://www.tutorialspoint.com/servlets/servlets-file-uploading.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'https://www.tutorialspoint.com/servlets/servlets-file-uploading.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'https://www.tutorialspoint.com/servlets/servlets-file-uploading.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=https://www.tutorialspoint.com/servlets/servlets-file-uploading.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=https://www.tutorialspoint.com/servlets/servlets-file-uploading.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=https://www.tutorialspoint.com/servlets/servlets-file-uploading.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_privacy.htm#cookies">Cookies Policy</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2018. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script src="/theme/js/custom-min.js?v=7"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script>
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+</html>
