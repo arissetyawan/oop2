@@ -1,0 +1,5 @@
+TODO UAS
+1. semua response tambahkan parameter format=json
+2. http status code: https://stackoverflow.com/questions/35767502/how-to-set-http-status-code-when-responding-to-servlet-client-from-filter-class
+3. create: 201, delete: 204, update, index, show: 200, login gagal: 401, ada error: 400
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

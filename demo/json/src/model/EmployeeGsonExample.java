@@ -47,10 +47,10 @@ public class EmployeeGsonExample {
     }
 
     public static Employee createEmployee() {
-
+        
         Employee emp = new Employee();
         emp.setId(100);
-        emp.setName("David");
+        emp.setName("Lex");
         emp.setPermanent(false);
         emp.setPhoneNumbers(new long[] { 123456, 987654 });
         emp.setRole("Manager");
