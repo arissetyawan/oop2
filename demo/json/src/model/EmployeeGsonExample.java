@@ -37,7 +37,15 @@ public class EmployeeGsonExample {
         // parse json string to object
         Employee emp1 = gson.fromJson(fileData, Employee.class);
 
+        String testData= "{'name': 'Jhon Peterbugs', 'age': 200}";
+        HashMap test = gson.fromJson(testData, HashMap.class);
+        
         // print object data
+        System.out.println("\n\testData Object\n\n" + test);
+        System.out.println("namanya: " + test.get("name"));
+        System.out.println("usianya: " + test.get("age"));
+        
+        
         System.out.println("\n\nEmployee Object\n\n" + emp1);
 
         // create JSON String from Object
