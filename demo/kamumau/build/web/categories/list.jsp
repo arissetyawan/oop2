@@ -3,6 +3,7 @@
     Created on : Oct 11, 2018, 8:27:04 PM
     Author     : x201
 --%>
+<%@page import="java.util.ArrayList"%>
 <link href="/WEB-INF/stylesheets/jumbotron.css" rel="stylesheet">
 
 <%@include file= "/layouts/header.jsp" %>
@@ -23,22 +24,20 @@
 <div class="container">
 
   <!-- Example row of columns -->
+  <jsp:useBean id="obj" class="model.Category"/>  
+
+    <%  
+    ArrayList<model.Category> categories= obj.all();  
+    out.println(categories);
+    %>  
+
   <div class="row">
-    <div class="col-md-4">
-      <h2>Category A</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-secondary" href="#" role="button">View products &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-      <h2>Category B</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-secondary" href="#" role="button">View products &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-      <h2>Category C</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View products &raquo;</a></p>
-    </div>
+    <c:forEach var="cat" items="${categories}"> 
+        <div class="col-md-4">
+          <h2>Name: <c:out value="${cat.getName()}" />, ID: <c:out value="${cat.getId()}" /></h2>
+           <p><a class="btn btn-secondary" href="#" role="button">View products &raquo;</a></p>
+        </div>
+      </c:forEach> 
   </div>
 
   <hr>

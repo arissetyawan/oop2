@@ -36,6 +36,12 @@ public class Category extends MyConnection {
     public void setName(String name) {
         this.name = name;
     }
+    public String getName() {
+        return this.name;
+    }
+    public int getId() {
+        return this.id;
+    }
 
     public Category find(int id){
         Category category = new Category();

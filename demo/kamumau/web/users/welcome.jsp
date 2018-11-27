@@ -1,5 +1,5 @@
 <%-- 
-    Document   : list
+    Document   : welcome page after successfully logged in
     Created on : Oct 11, 2018, 8:27:04 PM
     Author     : x201
 --%>

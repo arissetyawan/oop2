@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author x201
  */
-@WebServlet(name = "ProductsController", urlPatterns = {"/ProductsController"})
+@WebServlet(name = "ProductsController", urlPatterns = {"/"})
 public class ProductsController extends HttpServlet {
 
     /**

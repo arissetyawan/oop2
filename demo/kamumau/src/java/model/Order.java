@@ -3,7 +3,8 @@
  *  CREATE TABLE orders (
     id int NOT NULL AUTO_INCREMENT,
     no int NOT NULL,
-    user_id int NOT NULL,
+    seller_id int NOT NULL,
+    buyer_id int NOT NULL,
     created_at DATE NOT NULL,
     updated_at DATE NOT NULL,
     status VARCHAR(10) NOT NULL,
@@ -23,7 +24,8 @@ public class Order extends MyConnection{
     private final String tableName= "orders";
     private final String tableTransaction= "transactions";
     public int no;
-    public int user_id;
+    public int buyer_id;
+    public int seller_id;
     public Date created_at;
     public Date updated_at;
     private String status="new";
@@ -51,8 +53,20 @@ public class Order extends MyConnection{
         return no;
     }
 
-    public void setUser(int user_id) {
-        this.user_id= user_id;
+    public void setSeller(int id) {
+        this.seller_id= id;
+    }
+
+    public void setBuyer(int id) {
+        this.buyer_id= id;
+    }
+
+    public int getSeller() {
+        return this.seller_id;
+    }
+
+    public int getBuyer() {
+        return this.buyer_id;
     }
 
     public void setStatus(String status) {
@@ -136,7 +150,8 @@ public class Order extends MyConnection{
             if (res.next()) {
                 order.setId(res.getInt("id"));
                 order.setNo(res.getInt("no"));
-                order.setUser(res.getInt("user_id"));
+                order.setBuyer(res.getInt("buyer_id"));
+                order.setSeller(res.getInt("seller_id"));
                 order.setStatus(res.getString("status"));
                 order.setCreatedAt(res.getDate("created_at"));
                 order.setUpdatedAT(res.getDate("updated_at"));
@@ -164,8 +179,8 @@ public class Order extends MyConnection{
         return order;
     }
 
-    public Order initOrCeate(int user_id){
-        String query = "SELECT * FROM " + tableName + " WHERE user_id = " + user_id + " AND status='new'";
+    public Order initOrCeate(int seller_id,int buyer_id){
+        String query = "SELECT * FROM " + tableName + " WHERE seller_id = " + seller_id  + " AND buyer_id = " + buyer_id + " AND status='new'";
         Order order = new Order();
         try {
             Statement stmt = this.conn().createStatement();
@@ -173,13 +188,14 @@ public class Order extends MyConnection{
             if (res.next()) {
                 order.setId(res.getInt("id"));
                 order.setNo(res.getInt("no"));
-                order.setUser(res.getInt("user_id"));
+                order.setSeller(res.getInt("seller_id"));
+                order.setBuyer(res.getInt("buyer_id"));
                 order.setStatus(res.getString("status"));
                 order.setCreatedAt(res.getDate("created_at"));
                 order.setUpdatedAT(res.getDate("updated_at"));
             }
             else{
-                order.setUser(user_id);
+                order.setBuyer(buyer_id);
                 if(order.create()){
                    order= order.findByOrderNo(order.getNo());
                 }
@@ -193,7 +209,7 @@ public class Order extends MyConnection{
     private boolean create() {
         String now_date= generateDate();
         String status= "new";
-        String query = "INSERT INTO "+ tableName +"(no, user_id, created_at, updated_at,status) values ('" + this.generateNo() + "', '" + this.user_id  + "', '" +  now_date + "', '" + now_date + "','" + status + "')";
+        String query = "INSERT INTO "+ tableName +"(no, seller_id, buyer_id, created_at, updated_at,status) values ('" + this.generateNo() + "', '" + this.seller_id  + "', '" +  now_date + "', '" + now_date + "','" + status + "')";
         Order order = new Order();
         try {
             Statement stmt = this.conn().createStatement();

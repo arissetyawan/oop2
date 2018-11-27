@@ -53,6 +53,14 @@ public class ApplicationController extends HttpServlet {
         session.setAttribute("current_user", null);
     }
 
+    
+    public User getCurrentUser(HttpServletRequest request, HttpServletResponse response){
+//        HttpSession session = request.getSession();
+        User user = new User();
+        return user;
+//        return user.find(session.getAttribute("current_user"));
+    }
+
     public void mustLoggedIn(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
         HttpSession session = request.getSession();

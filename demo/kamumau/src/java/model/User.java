@@ -21,7 +21,7 @@ public class User extends MyConnection {
     }
     public boolean doLogin(){
         // find to db match it by email and password;
-        // select * from user where email = this.email and password= this.password
+        // select * from user where email = this.email and password= this.password AND status <> 'deleted'
         // if any return true
         this.id= 1; //get it from db 
         return true;
