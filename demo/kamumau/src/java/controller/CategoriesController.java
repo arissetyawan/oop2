@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -74,15 +75,24 @@ public class CategoriesController extends ApplicationController {
     private void listCategories(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         Category c= new Category();
-        List<Category> categories = c.all();
-        String format= request.getParameter("format");
+        List<Category> categories = c.all(); /*
+        return dari fungsi/method c.all kl kita lihat model Category -> array of category
+        sehingga ketika diassign ke variable categories maka variable ini bertipe List
+        dgn tiap2 element bertipe <Category>. yg dipelajari dari method ini: response xml, structure xml, standard encoding xml,
+        looping array of object dalam hal ini Category, penggunaan buffer string (kelas dari string utk
+        operasional string, bisa jg dgn String misal String s= "" dan operator s+= "blah",
+        escape character \ dan character line break "\n" */
+        String format= request.getParameter("format");//selsai jam 16:45
         if("xml".equals(format)){        
             response.setContentType("text/xml");
             PrintWriter out = response.getWriter();
             StringBuffer sb=new StringBuffer();
             sb.append("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n");
             sb.append("<categories>\n");
-            for (Category category : categories) {
+            for (Category category : categories) { //categories -> plural/jamak krn
+                //berasal dari hasil query di method c.all yg mana bertipe array dan masing2 element
+                //array itu bertipe Category shg ketika looping(mapping tiap2 element)
+                //menjadi variable category -> singular/single pun harus bertipe Category
                 sb.append("<category>\n");
                 sb.append("<id>"+ category.getId() + "</id>\n");
                 sb.append("<name>"+ category.getName() + "</name>\n");
@@ -96,16 +106,33 @@ public class CategoriesController extends ApplicationController {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             Gson gson= new Gson();
-            String categories_json = gson.toJson(categories);
-            response.getWriter().write(categories_json);
+            StringBuffer sb=new StringBuffer();
+            sb.append("{ 'categories': [");
+            int i= 0;
+           //{ 'categories': [{'id': 3,'name': 333},{'id': 3,'name': 333}]}
+           System.out.println(categories.size());
+            for (Category category : categories) { 
+                sb.append("{");
+                sb.append("'id': " + category.getId() + ",");
+                sb.append("'name': '"+ category.getName() + "'");
+                sb.append("}");
+                if(i < categories.size()-1){
+                    sb.append(",");
+                }
+                i += 1;
+            }
+            sb.append("]}");
+            System.out.println(sb.toString());
+            HashMap hm = gson.fromJson(sb.toString(), HashMap.class);
+            String string_hm= gson.toJson(hm);
+            response.getWriter().write(string_hm);
 
-//            String testData= "{'name': 'Jhon Peterbugs', 'age': 90}";
-//            HashMap test = gson.fromJson(testData, HashMap.class);
+//            String testData= "{'name': 'Jhon Peterbugs', 'age': 90}";// array("name" => 'jhon'), array("jon", "mike"), x ={"s" => 1, "f" => 2}// {s: 1, f: 2}
+//            HashMap test = gson.fromJson(testData, HashMap.class); // Hash / Array dengan key utk akses elemennya
 //            String test_json= gson.toJson(test);
 //            System.out.println("\n\testData Object\n\n" + test);
-//            System.out.println("namanya: " + test.get("name"));
+//            System.out.println("namanya: " + test.get("name")); // test.set("name", "Axel") -> overide value hash
 //            System.out.println("usianya: " + test.get("age"));
-//            // print object data
 //            response.getWriter().write(test_json);
 
         }

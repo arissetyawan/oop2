@@ -73,7 +73,6 @@ public class Category extends MyConnection {
         }
     }
 
-
     public ArrayList<Category> all(){
         String query = "SELECT * FROM " + tableName;
         ArrayList<Category> categories = new ArrayList<>();
