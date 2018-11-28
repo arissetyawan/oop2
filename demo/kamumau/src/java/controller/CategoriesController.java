@@ -109,6 +109,7 @@ public class CategoriesController extends ApplicationController {
             StringBuffer sb=new StringBuffer();
             sb.append("{ 'categories': [");
             int i= 0;
+            int category_size= categories.size()-1;
            //{ 'categories': [{'id': 3,'name': 333},{'id': 3,'name': 333}]}
            System.out.println(categories.size());
             for (Category category : categories) { 
@@ -116,7 +117,7 @@ public class CategoriesController extends ApplicationController {
                 sb.append("'id': " + category.getId() + ",");
                 sb.append("'name': '"+ category.getName() + "'");
                 sb.append("}");
-                if(i < categories.size()-1){
+                if(i < category_size){
                     sb.append(",");
                 }
                 i += 1;
