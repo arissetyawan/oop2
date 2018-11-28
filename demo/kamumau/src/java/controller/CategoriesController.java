@@ -107,11 +107,10 @@ public class CategoriesController extends ApplicationController {
             response.setCharacterEncoding("UTF-8");
             Gson gson= new Gson();
             StringBuffer sb=new StringBuffer();
+           //{ 'categories': [{'id': 3,'name': 333},{'id': 3,'name': 333}]}
             sb.append("{ 'categories': [");
             int i= 0;
             int category_size= categories.size()-1;
-           //{ 'categories': [{'id': 3,'name': 333},{'id': 3,'name': 333}]}
-           System.out.println(categories.size());
             for (Category category : categories) { 
                 sb.append("{");
                 sb.append("'id': " + category.getId() + ",");
