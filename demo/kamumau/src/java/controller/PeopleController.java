@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -43,10 +44,19 @@ public class PeopleController extends ApplicationController {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("action");
-        System.out.println(action);
-        if(action==null){
-            action= "list";
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        Enumeration<String> parameterNames = request.getParameterNames();
+
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            String[] paramValues = request.getParameterValues(paramName);
+            for (String paramValue : paramValues) {
+                System.out.println(paramName + ":" + paramValue);
+            }
         }
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        
+        if(action==null) action= "list";
         try {
             switch (action) {
                 case "new":

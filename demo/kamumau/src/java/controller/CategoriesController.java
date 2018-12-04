@@ -125,6 +125,16 @@ public class CategoriesController extends ApplicationController {
             System.out.println(sb.toString());
             HashMap hm = gson.fromJson(sb.toString(), HashMap.class);
             String string_hm= gson.toJson(hm);
+            //cara menambahkan header di response.
+            response.addHeader("creator", "PT. Poltek Indonesia");
+            // cara membaca header dari request.
+            System.out.println(request.getHeader("api-key"));
+            response.addHeader("you-key-on-request-was", request.getHeader("api-key"));
+            // this token usually set per API request on header
+            
+            
+//            response.sendError(401, "Unauthorized Access Bro !");//sendError
+            response.setStatus(200);
             response.getWriter().write(string_hm);
 
 //            String testData= "{'name': 'Jhon Peterbugs', 'age': 90}";// array("name" => 'jhon'), array("jon", "mike"), x ={"s" => 1, "f" => 2}// {s: 1, f: 2}
