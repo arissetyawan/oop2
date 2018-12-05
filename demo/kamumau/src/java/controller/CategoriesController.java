@@ -74,17 +74,17 @@ public class CategoriesController extends ApplicationController {
             
     private void listCategories(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        Category c= new Category();
-        List<Category> categories = c.all(); /*
+        Category c= new Category(); // panggil model Category instansiasikan ke variable object c
+        List<Category> categories = c.all(); /* panggil method all dari variable c krn kita akan menampilkan semua category maka c.all
         return dari fungsi/method c.all kl kita lihat model Category -> array of category
         sehingga ketika diassign ke variable categories maka variable ini bertipe List
         dgn tiap2 element bertipe <Category>. yg dipelajari dari method ini: response xml, structure xml, standard encoding xml,
         looping array of object dalam hal ini Category, penggunaan buffer string (kelas dari string utk
         operasional string, bisa jg dgn String misal String s= "" dan operator s+= "blah",
         escape character \ dan character line break "\n" */
-        String format= request.getParameter("format");//selsai jam 16:45
+        String format= request.getParameter("format"); //cara baca parameter dgn nama parameter "format"
         if("xml".equals(format)){        
-            response.setContentType("text/xml");
+            response.setContentType("text/xml"); //cara setup response content type ke client misal browser
             PrintWriter out = response.getWriter();
             StringBuffer sb=new StringBuffer();
             sb.append("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n");
@@ -103,11 +103,11 @@ public class CategoriesController extends ApplicationController {
             out.flush();
         }
         else if("json".equals(format)){
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            Gson gson= new Gson();
-            StringBuffer sb=new StringBuffer();
-           //{ 'categories': [{'id': 3,'name': 333},{'id': 3,'name': 333}]}
+            response.setContentType("application/json"); // set content type response agar client/browser tahu ini json
+            response.setCharacterEncoding("UTF-8"); // encoding set
+            Gson gson= new Gson();// intantiate lib Gson 
+            StringBuffer sb=new StringBuffer();//sb sbg variable penampung array of string 
+           //{ 'categories': [{'id': 3,'name': 333},{'id': 3,'name': 333}]} // format json yg akan dibuat
             sb.append("{ 'categories': [");
             int i= 0;
             int category_size= categories.size()-1;
@@ -123,8 +123,8 @@ public class CategoriesController extends ApplicationController {
             }
             sb.append("]}");
             System.out.println(sb.toString());
-            HashMap hm = gson.fromJson(sb.toString(), HashMap.class);
-            String string_hm= gson.toJson(hm);
+            HashMap hm = gson.fromJson(sb.toString(), HashMap.class); //memformat jadi hash
+            String string_hm= gson.toJson(hm);//convert to json
             //cara menambahkan header di response.
             response.addHeader("creator", "PT. Poltek Indonesia");
             // cara membaca header dari request.
@@ -132,9 +132,9 @@ public class CategoriesController extends ApplicationController {
             response.addHeader("you-key-on-request-was", request.getHeader("api-key"));
             // this token usually set per API request on header
             
-            
+            // token << setelah login dpt token : ascmoij3oklx,mjffewx
 //            response.sendError(401, "Unauthorized Access Bro !");//sendError
-            response.setStatus(200);
+            response.setStatus(200); //action create ke db/file/something
             response.getWriter().write(string_hm);
 
 //            String testData= "{'name': 'Jhon Peterbugs', 'age': 90}";// array("name" => 'jhon'), array("jon", "mike"), x ={"s" => 1, "f" => 2}// {s: 1, f: 2}
