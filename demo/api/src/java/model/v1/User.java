@@ -25,6 +25,10 @@ import pemalang.ActiveRecord;
  * 1. header api-key as defined in ApiController
  * 2. email
  * 3. password (without encryption)
+ * 
+ * login success will return token and message.
+ * this code doesn't has any bug or trap. the task
+ * is explained on LoginController.java method processRequestPost
  */
 public class User extends ActiveRecord {
     private String fullName;
