@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package v1.model;
+package model.v1;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 
 /**

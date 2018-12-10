@@ -1,11 +1,15 @@
+package controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +19,37 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author x201
  */
-public class ApplicationController extends HttpServlet {
+public class ApiController extends HttpServlet {
+    private final String API_KEY="46xncqkhm3fi748yix2k4j47hcz454s1a";
+
+    protected boolean checkAPIKEY(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String key= request.getHeader("api-key");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8"); 
+        Gson gson= new Gson(); 
+        boolean result= false;
+        if(API_KEY.equals(key)){
+            response.addHeader("api-key", API_KEY);
+            result= true;
+        }
+        else{
+            response.addHeader("api-key","invalid api key !");
+            response.sendError(401, "GAWAT ! UAS GAGAL gara-gara tidak memperhatikan cara set header ! Invalid application key");
+        }
+        return result;
+    }
+
+    protected void renderJson(String formattedHashText, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(checkAPIKEY(request, response)){
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8"); 
+            Gson gson= new Gson(); 
+            HashMap hm = gson.fromJson(formattedHashText, HashMap.class);
+            String string_hm= gson.toJson(hm);
+            response.setStatus(200);
+            response.getWriter().write(string_hm);
+        }
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

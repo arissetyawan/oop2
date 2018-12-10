@@ -3,23 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package v1.model;
+package model.v1;
 
-import java.nio.charset.Charset;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
-import static jdk.nashorn.internal.objects.NativeArray.join;
 import pemalang.ActiveRecord;
 
 /**
- *
- * @author x201
+ * users(
+ * email VARCHAR(45)
+ * password VARCHAR(45)
+ * api_token VARCHAR(45)
+ * id AUTO INCREMENT int
+ * @author arissetyawan.campus@gmail.com
+ * Please load the above schema to your DBMS. this case I use mysql
+ * login will need 3 parameters (Using postman):
+ * 1. header api-key as defined in ApiController
+ * 2. email
+ * 3. password (without encryption)
  */
 public class User extends ActiveRecord {
     private String fullName;
@@ -138,7 +143,7 @@ public class User extends ActiveRecord {
         this.setAttributes(h); //must use this to pass validation
     }
 
-    protected User login(String email, String password){
+    public User login(String email, String password){
         this.resetToken(); //initialize object as incorrect login
         String query = "SELECT * FROM " + this.tableName  + " WHERE email = '" + email + "' AND password= '" + password + "'";
         try {
