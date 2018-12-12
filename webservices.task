@@ -17,9 +17,9 @@ parameternya: username dan password
 >> ga usah bikin form / web pages x
 	/* contoh: cara buat response json di servlet
       data=  "{
-      "token" : user.getToken(),
-      "msg": 'Sukses'
-  }
+      'token' : " + user.getToken() + ",
+      'msg': 'Sukses'
+  }"
       HashMap hm = gson.fromJson(data, HashMap.class); //memformat jadi hash
       String string_hm= gson.toJson(hm);//convert to json
       response.setStatus(200); //action create ke db/file/something: 201
