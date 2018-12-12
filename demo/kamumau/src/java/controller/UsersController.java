@@ -67,31 +67,15 @@ public class UsersController extends ApplicationController {
 
     private void doLogin(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException, ServletException  {
-//                String email= request.getParameter("email");
-//                String passwd= request.getParameter("password");
-//                User user= new User();     
-//                user.setEmail(email);
-//                user.setPassword(passwd);
-            String passwd= request.getParameter("password"); //coba
-            String username= request.getParameter("username");
-            User user= new User();
-//        user.setPassword(passwd);
-//        System.out.println(user.getPassword());
-        
-         boolean statusLogin=   user.doLogin(username, passwd);
-         if(statusLogin){
-             
-             bentuk json OK dst
-         }
-         else{
-             asjfaslfaf
-                     
-         }
-////response.???
-//                logout(request, response);
+                String email= request.getParameter("email");
+                String passwd= request.getParameter("password");
+                User user= new User();     
+                user.setEmail(email);
+                user.setPassword(passwd);
+                logout(request, response);
 //                if(user.doLogin()){
-//                    setLoggedIn(user, request, response);
-//                    showWelcomePage(request, response);
+                    setLoggedIn(user, request, response);
+                    showWelcomePage(request, response);
 //                }
         }
     private void doLogout(HttpServletRequest request, HttpServletResponse response)
