@@ -32,7 +32,7 @@ public class EmployeeGsonExample {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         // read JSON file data as String
-        String fileData = new String(Files.readAllBytes(Paths.get("/media/x201/F67AEAC17AEA7DAD/TEACHING/poltek/demo/json/src/employee.txt")));
+        String fileData =new String(Files.readAllBytes(Paths.get("/media/x201/F67AEAC17AEA7DAD/TEACHING/poltek/demo/json/src/employee.txt")));
 
         // parse json string to object
         Employee emp1 = gson.fromJson(fileData, Employee.class);
@@ -41,7 +41,7 @@ public class EmployeeGsonExample {
         HashMap test = gson.fromJson(testData, HashMap.class);
         
         // print object data
-        System.out.println("\n\testData Object\n\n" + test);
+        System.out.println("\ntestData Object\n\n" + test);
         System.out.println("namanya: " + test.get("name"));
         System.out.println("usianya: " + test.get("age"));
         

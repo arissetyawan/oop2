@@ -19,11 +19,16 @@ public class User extends MyConnection {
     public void setPassword(String passwd){
         this.password= passwd;
     }
-    public boolean doLogin(){
+    public String getPassword(){
+        return this.password;
+    }
+    public boolean doLogin(String username, String pass){
         // find to db match it by email and password;
         // select * from user where email = this.email and password= this.password AND status <> 'deleted'
         // if any return true
         this.id= 1; //get it from db 
+                
+        System.out.println(username);
         return true;
     }
 

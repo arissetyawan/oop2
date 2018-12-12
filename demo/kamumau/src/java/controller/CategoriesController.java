@@ -127,7 +127,10 @@ public class CategoriesController extends ApplicationController {
             System.out.println(sb.toString());
             HashMap hm = gson.fromJson(sb.toString(), HashMap.class); //memformat jadi hash
             /*
-                data=  "{'id': " + user.getID() + ", 'name': " + user.getName() + "}";
+                data=  "{
+                "token" : user.getToken(),
+                "msg": 'Sukses'
+            }
                 HashMap hm = gson.fromJson(data, HashMap.class); //memformat jadi hash
                 String string_hm= gson.toJson(hm);//convert to json
                 response.setStatus(200); //action create ke db/file/something: 201
@@ -140,11 +143,13 @@ public class CategoriesController extends ApplicationController {
             // cara membaca header dari request.
             System.out.println(request.getHeader("api-key"));
 //            response.getParameter("username");//salah
-//            response.addHeader("username-kirimandariheader", request.getHeader("username"));
+            response.addHeader("username-kirimandariheader", request.getHeader("username"));
             response.addHeader("username-kirimandariparameter", request.getParameter("username"));
+            response.addHeader("password-kirimandariheader", request.getHeader("password"));
+            response.addHeader("password-kirimandariparameter", request.getParameter("password"));
             // this token usually set per API request on header
 
-            System.out.println(request.getParameter("username"));
+//            System.out.println(request.getParameter("username"));
             // token << setelah login dpt token : ascmoij3oklx,mjffewx
 //            response.sendError(401, "Ini contoh http code 401 Bro !");//sendError
             response.setStatus(200); //action create ke db/file/something
