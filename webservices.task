@@ -6,9 +6,9 @@ required knowledge for UAS:
 5. cara membaca parameter request, cara membaca header, 
 6. cara tahu request vs response
 7. cara susun custom json
-8. postman
+8. postman(cara set parameter dan cara set header di request, method POST dan GET)
 >>  WE ARE NOW IN OOP 2 (object oriented 2(advance) not OOP 1 (basic))
-LATIHAN SAMPE JAM 11.30 AM ===============================================
+LATIHAN SAMPE JAM 5PM ===============================================
 utk ngetest: pake Postman, HTTP Poster, Advance Rest Client, dll
 REPO: OOP2.GIT >> SUDAH ADA CONTOH2, JUGA REPO2 KELOMPOK
 
@@ -36,7 +36,7 @@ response jika gagal:
 	'message': 'Login failed'
 }
 //https://www.tutorialspoint.com/servlets/servlets-http-status-codes.htm
-response.setStatus(200); //302//201//400//401 (login gagal biasanya -advance)
+response.setStatus(200); //302//201//400//(401:login gagal biasanya -advance)
 STEP BY STEP
 1. create web project baru / pake yg dah ada "kamumau" is ok
 2. masukan MyConnection.java ke model/* utk yg buat baru
