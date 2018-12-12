@@ -1,0 +1,43 @@
+required knowledge for UAS:
+1. configurasi routing > web.xml //users?action=list <> users/list.jsp (X MVC)
+2. connection string (setup db) 
+3. membuat fungsi di model +cara ngetest
+4. cara memanggil model di controller
+5. cara membaca parameter request, cara membaca header, 
+6. cara tahu request vs response
+7. cara susun custom json
+8. postman
+>>  WE ARE NOW IN OOP 2 (object oriented 2(advance) not OOP 1 (basic))
+LATIHAN SAMPE JAM 11.30 AM ===============================================
+utk ngetest: pake Postman, HTTP Poster, Advance Rest Client, dll
+REPO: OOP2.GIT >> SUDAH ADA CONTOH2, JUGA REPO2 KELOMPOK
+
+Bikin /api/users?action=login atau pake /kamumau/users?action=login
+parameternya: username dan password
+>> ga usah bikin form / web pages x
+
+response jika berhasil login:
+{	
+	'token': "asfafaasafxafasfsa", //random string java. google: random string java code example
+	'message': "Login OK"
+}
+
+response jika gagal:
+{
+	'message': 'Login failed'
+}
+//https://www.tutorialspoint.com/servlets/servlets-http-status-codes.htm
+response.setStatus(200); //302//201//400//401 (login gagal biasanya -advance)
+STEP BY STEP
+1. create web project baru / pake yg dah ada "kamumau" is ok
+2. masukan MyConnection.java ke model/* utk yg buat baru
+3. bikin model User.java extends dari MyConnection, bikin kode login di User.java 
+4. test di TestUser.java
+5. pindahkan dan sesuaiakan ke controller UsersController.java
+5. web.xml disesuaikan routingnya
+6. test pake Postman(Recommended), HTTP Poster, Advance Rest Client, dll
+
+NOTE: dari code categories controller kita lihat ada
+2 cara kirim data: 1. parameter, 2. header
+ada bbrp method request yg sering digunakan yaitu POST dan GET
+ada bbrp status http response terutama utk W/S api: 200 (render sesuatu), 201 (create sesuatu ke db), 400 (biasanya utk hapus record dari db)
