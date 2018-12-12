@@ -15,7 +15,16 @@ REPO: OOP2.GIT >> SUDAH ADA CONTOH2, JUGA REPO2 KELOMPOK
 Bikin /api/users?action=login atau pake /kamumau/users?action=login
 parameternya: username dan password
 >> ga usah bikin form / web pages x
-
+	/* contoh: cara buat response json di servlet
+      data=  "{
+      "token" : user.getToken(),
+      "msg": 'Sukses'
+  }
+      HashMap hm = gson.fromJson(data, HashMap.class); //memformat jadi hash
+      String string_hm= gson.toJson(hm);//convert to json
+      response.setStatus(200); //action create ke db/file/something: 201
+      response.getWriter().write(string_hm);
+  */
 response jika berhasil login:
 {	
 	'token': "asfafaasafxafasfsa", //random string java. google: random string java code example
