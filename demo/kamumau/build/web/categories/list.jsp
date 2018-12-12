@@ -3,7 +3,7 @@
     Created on : Oct 11, 2018, 8:27:04 PM
     Author     : x201
 --%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList" %>
 <link href="/WEB-INF/stylesheets/jumbotron.css" rel="stylesheet">
 
 <%@include file= "/layouts/header.jsp" %>

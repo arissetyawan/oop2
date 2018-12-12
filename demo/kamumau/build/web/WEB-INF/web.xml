@@ -12,10 +12,6 @@
         <servlet-name>UsersController</servlet-name>
         <servlet-class>controller.UsersController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ApplicationController</servlet-name>
-        <servlet-class>controller.ApplicationController</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>PeopleController</servlet-name>
         <url-pattern>/people</url-pattern>
@@ -27,10 +23,6 @@
     <servlet-mapping>
         <servlet-name>UsersController</servlet-name>
         <url-pattern>/users</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ApplicationController</servlet-name>
-        <url-pattern>/application</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

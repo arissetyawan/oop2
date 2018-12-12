@@ -27,7 +27,7 @@ public class Person extends MyConnection{
     public String name;
     public String phone;
     public String profession;
-
+    public String token;
 
     public Person() {
         super();
@@ -105,6 +105,10 @@ public class Person extends MyConnection{
         }
     }
     
+    public Person find(int id){
+        return new Person();
+    }
+
     public boolean delete() {
         String query = "DELETE FROM " + tableName + " WHERE id = " + this.id + " ";
         try {
@@ -115,8 +119,15 @@ public class Person extends MyConnection{
             return false;
         }
     }
-    
-    public Person find(int id){
+    public void setToken(){
+        this.token = "Asfsamcom;sakfaascx"; //google: random string java example
+    }
+
+    public String getToken(){
+        return this.token;
+    }
+
+    public Person find_by_username_and_password(String u, String p){
         Person person = new Person();
         String query = "SELECT * FROM " + tableName + " WHERE id = " + id + " ";
         try {
@@ -127,6 +138,7 @@ public class Person extends MyConnection{
                 person.setPhone(res.getString("phone"));
                 person.setProfession(res.getString("profession"));
                 person.setId(res.getInt("id"));
+                person.setToken();
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

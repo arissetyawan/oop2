@@ -11,10 +11,12 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.annotation.HttpConstraint;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Category;
@@ -24,9 +26,9 @@ import model.User;
 /**
  *
  * @author x201
- */
+ */ 
 public class CategoriesController extends ApplicationController {
-
+ 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -102,7 +104,7 @@ public class CategoriesController extends ApplicationController {
             out.println(sb.toString());
             out.flush();
         }
-        else if("json".equals(format)){
+        else if("json".equals(format)){ //format=="json"
             response.setContentType("application/json"); // set content type response agar client/browser tahu ini json
             response.setCharacterEncoding("UTF-8"); // encoding set
             Gson gson= new Gson();// intantiate lib Gson 
@@ -124,16 +126,27 @@ public class CategoriesController extends ApplicationController {
             sb.append("]}");
             System.out.println(sb.toString());
             HashMap hm = gson.fromJson(sb.toString(), HashMap.class); //memformat jadi hash
+            /*
+                data=  "{'id': " + user.getID() + ", 'name': " + user.getName() + "}";
+                HashMap hm = gson.fromJson(data, HashMap.class); //memformat jadi hash
+                String string_hm= gson.toJson(hm);//convert to json
+                response.setStatus(200); //action create ke db/file/something: 201
+                response.getWriter().write(string_hm);
+            */
+                
             String string_hm= gson.toJson(hm);//convert to json
             //cara menambahkan header di response.
             response.addHeader("creator", "PT. Poltek Indonesia");
             // cara membaca header dari request.
             System.out.println(request.getHeader("api-key"));
-            response.addHeader("you-key-on-request-was", request.getHeader("api-key"));
+//            response.getParameter("username");//salah
+//            response.addHeader("username-kirimandariheader", request.getHeader("username"));
+            response.addHeader("username-kirimandariparameter", request.getParameter("username"));
             // this token usually set per API request on header
-            
+
+            System.out.println(request.getParameter("username"));
             // token << setelah login dpt token : ascmoij3oklx,mjffewx
-//            response.sendError(401, "Unauthorized Access Bro !");//sendError
+//            response.sendError(401, "Ini contoh http code 401 Bro !");//sendError
             response.setStatus(200); //action create ke db/file/something
             response.getWriter().write(string_hm);
 

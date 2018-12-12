@@ -40,3 +40,5 @@ NOTE: dari code categories controller kita lihat ada
 2 cara kirim data: 1. parameter, 2. header
 ada bbrp method request yg sering digunakan yaitu POST dan GET
 ada bbrp status http response terutama utk W/S api: 200 (render sesuatu), 201 (create sesuatu ke db), 400 (biasanya utk hapus record dari db)
+>>> yg sudah berhasil, ganti via header utk username dan passwordnya ktk request
+>>> responsenya juga, utk token pindah ke header dan message tetap pada body response json
