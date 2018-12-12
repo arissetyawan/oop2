@@ -151,8 +151,8 @@ public class CategoriesController extends ApplicationController {
 
 //            System.out.println(request.getParameter("username"));
             // token << setelah login dpt token : ascmoij3oklx,mjffewx
-//            response.sendError(401, "Ini contoh http code 401 Bro !");//sendError
-            response.setStatus(200); //action create ke db/file/something
+            response.sendError(401, "Ini contoh http code 401 Bro !");//sendError
+//            response.setStatus(401); //action create ke db/file/something
             response.getWriter().write(string_hm);
 
 //            String testData= "{'name': 'Jhon Peterbugs', 'age': 90}";// array("name" => 'jhon'), array("jon", "mike"), x ={"s" => 1, "f" => 2}// {s: 1, f: 2}
