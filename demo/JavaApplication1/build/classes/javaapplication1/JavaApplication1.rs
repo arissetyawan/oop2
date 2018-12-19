@@ -1,2 +1,0 @@
-javaapplication1.Mesin
-javaapplication1.JavaApplication1
