@@ -180,7 +180,7 @@ public class User extends ActiveRecord {
             Statement stmt = this.stateOpen();
             ResultSet res;
             res = this.runQuery(query);
-            if (res.next()) {
+            while (res.next()) {
               this.setObject(res);
             }
             this.stateClose();
